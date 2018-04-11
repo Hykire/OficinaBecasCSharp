@@ -1,10 +1,15 @@
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Modelo
 {
-    public class CoordinadorTutoria:Persona
+    class CoordinadorTutoria : Persona
     {
         private List<Tutor> tutores;
-
+        
         public CoordinadorTutoria()
         {
             tutores = new List<Tutor>();

@@ -1,9 +1,12 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class Administrador : Persona
+    class Administrador:Persona
     {
         private DateTime fechaContrato;
         private List<Solicitud> solicitudesAprobadas;
@@ -51,10 +54,10 @@ namespace Modelo
             }
         }
 
-        public void aprobarSolicitud(Solicitud solicitud);
+        public void aprobarSolicitud(Solicitud solicitud) { }
 
-        public void rechazarSolicitud(Solicitud solicitud);
+        public void rechazarSolicitud(Solicitud solicitud) { }
 
-        public void registrarBecario();
+        public void registrarBecario() { }
     }
 }

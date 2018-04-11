@@ -1,56 +1,50 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class Solicitud
+    class Solicitud
     {
-        private string idPostulacion;
-        private Persona Postulante;
+        private int id_solicitud;
         private DateTime fechaRegistrada;
-        private Beca Beca;
+        private Beca beca;
+        private Persona postulante;
 
-        public Solicitud()
+        public Beca _beca
         {
+            set
+            {
+                beca = value;
+            }
+            get
+            {
+                return beca;
+            }
         }
-
-        public string getIdPostulacion()
+        public Persona _postulante
         {
-            return idPostulacion;
+            set
+            {
+                postulante = value;
+            }
+            get
+            {
+                return postulante;
+            }
         }
-
-        public void setIdPostulacion(string idPostulacion)
+        public int _id_solicitud
         {
-            this.idPostulacion = idPostulacion;
-        }
-
-        public Persona getPostulante()
-        {
-            return Postulante;
-        }
-
-        public void setPostulante(Persona Postulante)
-        {
-            this.Postulante = Postulante;
-        }
-
-        public DateTime getFechaRegistrada()
-        {
-            return fechaRegistrada;
-        }
-
-        public void setFechaRegistrada(DateTime fechaRegistrada)
-        {
-            this.fechaRegistrada = fechaRegistrada;
-        }
-
-        public Beca getBeca()
-        {
-            return Beca;
-        }
-
-        public void setBeca(Beca Beca)
-        {
-            this.Beca = Beca;
+            set
+            {
+                id_solicitud = value;
+            }
+            get
+            {
+                return id_solicitud;
+            }
         }
     }
 }

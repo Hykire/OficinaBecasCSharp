@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class Postulante:Persona
+    class Postulante
     {
         private float promedio;
         private float craest;
