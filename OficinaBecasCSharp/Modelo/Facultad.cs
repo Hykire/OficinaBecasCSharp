@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Modelo {
     class Facultad {
-        int idFacultad; //Puede ser un string
-        string nombre;
-        char pabellon;
+        private int idFacultad; //Puede ser un string
+        private string nombre;
+        private char pabellon;
 
         public int IdFacultad { get => idFacultad; set => idFacultad = value; }
         public string Nombre { get => nombre; set => nombre = value; }
