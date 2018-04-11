@@ -9,7 +9,7 @@ namespace Modelo
     class Usuario
     {
         private string usuario;
-        private string pasword;
+        private string password;
 
         public Usuario()
         {
@@ -28,15 +28,15 @@ namespace Modelo
             }
         }
 
-        public string _pasword
+        public string _password
         {
             set
             {
-                pasword = value;
+                password = value;
             }
             get
             {
-                return pasword;
+                return password;
             }
         }
 
