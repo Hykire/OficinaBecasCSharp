@@ -40,10 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Beca.cs" />
     <Compile Include="Becado.cs" />
     <Compile Include="Cita.cs" />
+    <Compile Include="Documento.cs" />
+    <Compile Include="Especialidad.cs" />
     <Compile Include="Facultad.cs" />
     <Compile Include="Persona.cs" />
+    <Compile Include="Postulante.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tutor.cs" />
     <Compile Include="TipoUsuario.cs" />
@@ -53,8 +57,7 @@
     <Compile Include="CoordinadorAdministrativo.cs" />
     <Compile Include="CoordinadorTutoria.cs" />
     <Compile Include="Financiador.cs" />
-    <Compile Include="Postulacion.cs" />
-    <Compile Include="Postulante.cs" />
+    <Compile Include="Solicitud.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

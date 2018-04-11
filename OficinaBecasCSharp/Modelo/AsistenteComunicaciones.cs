@@ -1,6 +1,9 @@
-public class AsistenteComunicaciones : Persona{
-	
-	public AsistenteComunicaciones(){}
-	
-	public publicarAnuncio(Beca beca);
+namespace Modelo
+{
+    public class AsistenteComunicaciones:Persona {
+
+        public AsistenteComunicaciones() { }
+
+        public void publicarAnuncio(Beca beca) { }
+    }
 }
