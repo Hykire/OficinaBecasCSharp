@@ -48,6 +48,13 @@
     <Compile Include="Tutor.cs" />
     <Compile Include="TipoUsuario.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="Administrador.cs" />
+    <Compile Include="AsistenteComunicaciones.cs" />
+    <Compile Include="CoordinadorAdministrativo.cs" />
+    <Compile Include="CoordinadorTutoria.cs" />
+    <Compile Include="Financiador.cs" />
+    <Compile Include="Postulacion.cs" />
+    <Compile Include="Postulante.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
