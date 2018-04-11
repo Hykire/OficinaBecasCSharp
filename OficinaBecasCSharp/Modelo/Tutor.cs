@@ -18,6 +18,7 @@ namespace Modelo
             lstCitas = new List<Cita>();
         }
 
+        //añade un becado a la lista de becados x tutor
         public void añadirBecado(Becado b)
         {
             lstBecados.Add(b);
