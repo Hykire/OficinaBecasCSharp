@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Tutor
+    class Tutor:Persona
     {
         private List<Becado> lstBecados;
         private List<Cita> lstCitas;
