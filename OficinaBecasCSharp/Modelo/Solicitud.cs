@@ -9,9 +9,11 @@ namespace Modelo
     class Solicitud
     {
         private int id_solicitud;
-        private DateTime fechaRegistrada;
+        private DateTime fecha_soli;
         private Beca beca;
         private Persona postulante;
+        private string estado_beca;
+        private string estado_progreso;
 
         public Beca _beca
         {
@@ -44,6 +46,29 @@ namespace Modelo
             get
             {
                 return id_solicitud;
+            }
+        }
+
+        public string _estado_beca
+        {
+            set
+            {
+                estado_beca = value;
+            }
+            get
+            {
+                return estado_beca;
+            }
+        }
+        public string _estado_progreso
+        {
+            set
+            {
+                estado_progreso = value;
+            }
+            get
+            {
+                return estado_progreso;
             }
         }
     }

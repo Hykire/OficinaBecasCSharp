@@ -2,55 +2,110 @@ namespace Modelo
 {
     public class Financiador
     {
-        private string idFinanciador;
-        private string nombre;
+        private int id_financiador;
+        private string nombre_finan;
         private string razonSocial;
-        private string RUC;
+        private long RUC;
+        private string tipo_institucion;
+        private string pag_web;
+        private string email;
+        private int telefono;
 
         public Financiador()
         {
         }
 
-        public string getIdFinanciador()
+        public int _id_financiador
         {
-            return idFinanciador;
+            set
+            {
+                id_financiador = value;
+            }
+            get
+            {
+                return id_financiador;
+            }
         }
 
-        public void setIdFinanciador(string idFinanciador)
+        public string _nombre_finan
         {
-            this.idFinanciador = idFinanciador;
+            set
+            {
+                nombre_finan = value;
+            }
+            get
+            {
+                return nombre_finan;
+            }
         }
 
-        public string getNombre()
+        public string _razonSocial
         {
-            return nombre;
+            set
+            {
+                razonSocial = value;
+            }
+            get
+            {
+                return razonSocial;
+            }
         }
 
-        public void setNombre(string nombre)
+        public long _ruc
         {
-            this.nombre = nombre;
+            set
+            {
+                RUC = value;
+            }
+            get
+            {
+                return RUC;
+            }
         }
 
-        public string getRazonSocial()
+        public string _tipo_institucion
         {
-            return razonSocial;
+            set
+            {
+                tipo_institucion = value;
+            }
+            get
+            {
+                return tipo_institucion;
+            }
         }
-
-        public void setRazonSocial(string razonSocial)
+        public string _pag_web
         {
-            this.razonSocial = razonSocial;
+            set
+            {
+                pag_web = value;
+            }
+            get
+            {
+                return pag_web;
+            }
         }
-
-        public string getRUC()
+        public string _email
         {
-            return RUC;
+            set
+            {
+                email = value;
+            }
+            get
+            {
+                return email;
+            }
         }
-
-        public void setRUC(string RUC)
+        public int _telefono
         {
-            this.RUC = RUC;
+            set
+            {
+                telefono = value;
+            }
+            get
+            {
+                return telefono;
+            }
         }
-
-
     }
 }
