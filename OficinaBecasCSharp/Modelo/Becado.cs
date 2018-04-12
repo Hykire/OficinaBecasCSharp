@@ -4,6 +4,7 @@ namespace Modelo
 {
     class Becado
     {
+        private int id_becado;
         private string nombreApoderado;
         private string dirApoderado;
         private string telefApoderado;
@@ -12,6 +13,14 @@ namespace Modelo
         private string estado;
 
         public Becado(){}
+        
+        public void setId_becado(int id_becado){
+            this.id_becado = id_becado;
+        }
+        
+        public int getId_becado(){
+            return this.id_becado;
+        }
 
         public void setNombreApoderado(string nombreApoderado){
             this.nombreApoderado = nombreApoderado;
