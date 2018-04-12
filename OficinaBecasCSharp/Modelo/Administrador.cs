@@ -59,5 +59,9 @@ namespace Modelo
         public void rechazarSolicitud(Solicitud solicitud) { }
 
         public void registrarBecario() { }
+        public void AsignarPerfil()
+        {
+
+        }
     }
 }
