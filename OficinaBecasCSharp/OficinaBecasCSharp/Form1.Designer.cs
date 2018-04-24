@@ -1,4 +1,4 @@
-﻿namespace OficinaBecasCSharp
+﻿namespace Vista
 {
     partial class Form1
     {
