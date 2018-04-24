@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OficinaBecasCSharp", "OficinaBecasCSharp\OficinaBecasCSharp.csproj", "{F5B7937E-A978-4822-B4F9-9631B173E6F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "OficinaBecasCSharp\Vista.csproj", "{F5B7937E-A978-4822-B4F9-9631B173E6F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{ACD3FBC4-7477-4CB6-88C8-179DBE31CDFD}"
 EndProject
