@@ -45,11 +45,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministracionModificarBecario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministracionModificarBecario.Designer.cs">
+      <DependentUpon>AdministracionModificarBecario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministracionModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministracionModificarUsuario.Designer.cs">
+      <DependentUpon>AdministracionModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministracionNuevoBecario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministracionNuevoBecario.Designer.cs">
+      <DependentUpon>AdministracionNuevoBecario.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdministracionSistema.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdministracionSistema.Designer.cs">
       <DependentUpon>AdministracionSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministradorNuevoUsuario.Designer.cs">
+      <DependentUpon>AdministradorNuevoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="AgregarBecarioATutor.cs">
       <SubType>Form</SubType>
@@ -137,8 +161,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdministracionModificarBecario.resx">
+      <DependentUpon>AdministracionModificarBecario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministracionModificarUsuario.resx">
+      <DependentUpon>AdministracionModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministracionNuevoBecario.resx">
+      <DependentUpon>AdministracionNuevoBecario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdministracionSistema.resx">
       <DependentUpon>AdministracionSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministradorNuevoUsuario.resx">
+      <DependentUpon>AdministradorNuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarBecarioATutor.resx">
       <DependentUpon>AgregarBecarioATutor.cs</DependentUpon>
