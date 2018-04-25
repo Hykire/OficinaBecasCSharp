@@ -81,6 +81,18 @@
     <Compile Include="ConsultarBecas.Designer.cs">
       <DependentUpon>ConsultarBecas.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoordinadorComunicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoordinadorComunicaciones.Designer.cs">
+      <DependentUpon>CoordinadorComunicaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatosUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosUsuario.Designer.cs">
+      <DependentUpon>DatosUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editar Tutor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +110,12 @@
     </Compile>
     <Compile Include="GestionarTutores.Designer.cs">
       <DependentUpon>GestionarTutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionarUsuarios.Designer.cs">
+      <DependentUpon>GestionarUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="ModificarTXB.cs">
       <SubType>Form</SubType>
@@ -137,11 +155,20 @@
     <EmbeddedResource Include="ConsultarBecas.resx">
       <DependentUpon>ConsultarBecas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CoordinadorComunicaciones.resx">
+      <DependentUpon>CoordinadorComunicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosUsuario.resx">
+      <DependentUpon>DatosUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editar Tutor.resx">
       <DependentUpon>Editar Tutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarTutores.resx">
       <DependentUpon>GestionarTutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionarUsuarios.resx">
+      <DependentUpon>GestionarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarTXB.resx">
       <DependentUpon>ModificarTXB.cs</DependentUpon>
