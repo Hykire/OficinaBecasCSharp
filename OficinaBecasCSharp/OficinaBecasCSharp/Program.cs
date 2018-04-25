@@ -16,7 +16,7 @@ namespace Vista
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ConsultarBecas());
+            Application.Run(new Form1());  //aca ya ronie o francisco ponen el que comience de verdad
         }
     }
 }

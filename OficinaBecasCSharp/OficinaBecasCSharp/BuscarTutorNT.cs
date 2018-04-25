@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class BuscarBeca : Form
+    public partial class BuscarTutorNT : Form
     {
-        public BuscarBeca()
+        public BuscarTutorNT()
         {
             InitializeComponent();
         }
 
-        private void dgvBuscarBecas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnAñadir_Click(object sender, EventArgs e)
+        private void btnAgregarBTNT_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelarBTNT_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
