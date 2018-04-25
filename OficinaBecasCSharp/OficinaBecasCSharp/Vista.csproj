@@ -81,6 +81,18 @@
     <Compile Include="AgregarBecarioATutor.Designer.cs">
       <DependentUpon>AgregarBecarioATutor.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarCita.Designer.cs">
+      <DependentUpon>AgregarCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarFecha.Designer.cs">
+      <DependentUpon>AgregarFecha.cs</DependentUpon>
+    </Compile>
     <Compile Include="BuscarBeca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +104,12 @@
     </Compile>
     <Compile Include="BuscarBecarioABTXB.Designer.cs">
       <DependentUpon>BuscarBecarioABTXB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarBecarioT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarBecarioT.Designer.cs">
+      <DependentUpon>BuscarBecarioT.cs</DependentUpon>
     </Compile>
     <Compile Include="BuscarTutorNT.cs">
       <SubType>Form</SubType>
@@ -122,6 +140,12 @@
     </Compile>
     <Compile Include="Editar Tutor.Designer.cs">
       <DependentUpon>Editar Tutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarCita.Designer.cs">
+      <DependentUpon>EditarCita.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -179,11 +203,20 @@
     <EmbeddedResource Include="AgregarBecarioATutor.resx">
       <DependentUpon>AgregarBecarioATutor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AgregarCita.resx">
+      <DependentUpon>AgregarCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarFecha.resx">
+      <DependentUpon>AgregarFecha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarBeca.resx">
       <DependentUpon>BuscarBeca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarBecarioABTXB.resx">
       <DependentUpon>BuscarBecarioABTXB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarBecarioT.resx">
+      <DependentUpon>BuscarBecarioT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarTutorNT.resx">
       <DependentUpon>BuscarTutorNT.cs</DependentUpon>
@@ -199,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editar Tutor.resx">
       <DependentUpon>Editar Tutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarCita.resx">
+      <DependentUpon>EditarCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarTutores.resx">
       <DependentUpon>GestionarTutores.cs</DependentUpon>

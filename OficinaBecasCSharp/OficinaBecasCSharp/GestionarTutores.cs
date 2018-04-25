@@ -18,6 +18,7 @@ namespace Vista
             panelConsultarBecaT.Visible = false;
             panelBecariosXTutor.Visible = false;
             panelTutor.Visible = false;
+            PGestCitas.Visible = false;
             gbMenu.Show();
 
             CBTutorGBXT.SelectedIndex = 0;
@@ -25,6 +26,16 @@ namespace Vista
             TxtNombTutorBXT.Enabled = false;
             btnBXTVer.Enabled = false;
             DGVBXT.AutoGenerateColumns = false;
+
+            //panel citas
+            txtBFechaGC.Enabled = false;
+            txtBHoraGC.Enabled = false;
+            txtCodTutorGC.Enabled = false;
+            txtBTutorGC.Enabled = false;
+            txtCodBecGC.Enabled = false;
+            txtBBecarioGC.Enabled = false;
+            txtBLugarGC.Enabled = false;
+            txtBObsGC.Enabled = false;
         }
 
         private void btnEditarTutor_Click(object sender, EventArgs e)
@@ -48,6 +59,7 @@ namespace Vista
             panelConsultarBecaT.Visible = true;
             panelBecariosXTutor.Visible = false;
             panelTutor.Visible = false;
+            PGestCitas.Visible = false;
 
         }
 
@@ -67,11 +79,13 @@ namespace Vista
             panelConsultarBecaT.Visible = false;
             panelBecariosXTutor.Visible = false;
             panelTutor.Visible = true;
+            PGestCitas.Visible = false;
 
         }
 
         private void btnMNBesBecariosXtutor_Click(object sender, EventArgs e)
         {
+            PGestCitas.Visible = false;
             panelConsultarBecaT.Visible = false;
             panelBecariosXTutor.Visible = true;
             panelTutor.Visible = false;
@@ -136,6 +150,38 @@ namespace Vista
         private void panelConsultarBecaT_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnMNGesCitas_Click(object sender, EventArgs e)
+        {
+            PGestCitas.Visible = true;
+            panelConsultarBecaT.Visible = false;
+            panelBecariosXTutor.Visible = false;
+            panelTutor.Visible = false;
+        }
+
+        private void BAgregarCitaGC_Click(object sender, EventArgs e)
+        {
+            AgregarCita frmAgergar = new AgregarCita();
+            frmAgergar.ShowDialog();
+        }
+
+        private void BEliminarCitaGC_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBFechaGC.Text))
+            {
+                MessageBox.Show("Debe seleccionar una cita", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("¿Desea eliminar la cita seleccionada?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void BEditarCitaGC_Click(object sender, EventArgs e)
+        {
+            EditarCita frmAgergar = new EditarCita();
+            frmAgergar.ShowDialog();
         }
     }
 }
