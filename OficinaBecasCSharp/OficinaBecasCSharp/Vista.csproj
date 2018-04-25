@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministracionSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministracionSistema.Designer.cs">
+      <DependentUpon>AdministracionSistema.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarBecarioATutor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdministracionSistema.resx">
+      <DependentUpon>AdministracionSistema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarBecarioATutor.resx">
       <DependentUpon>AgregarBecarioATutor.cs</DependentUpon>
     </EmbeddedResource>
