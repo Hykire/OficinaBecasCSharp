@@ -27,14 +27,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelGestUsuarios = new System.Windows.Forms.Panel();
-            this.panelGestBecarios = new System.Windows.Forms.Panel();
-            this.btnElimBec = new System.Windows.Forms.Button();
-            this.btnModifBec = new System.Windows.Forms.Button();
-            this.btnNuevoBec = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnElimUsu = new System.Windows.Forms.Button();
             this.btnModifUsu = new System.Windows.Forms.Button();
             this.btnNuevoUsu = new System.Windows.Forms.Button();
@@ -42,15 +34,25 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panelGestBecarios = new System.Windows.Forms.Panel();
+            this.btnElimBec = new System.Windows.Forms.Button();
+            this.btnModifBec = new System.Windows.Forms.Button();
+            this.btnNuevoBec = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelGestUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelGestBecarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -80,7 +82,6 @@
             // 
             // panelGestUsuarios
             // 
-            this.panelGestUsuarios.Controls.Add(this.panelGestBecarios);
             this.panelGestUsuarios.Controls.Add(this.btnElimUsu);
             this.panelGestUsuarios.Controls.Add(this.btnModifUsu);
             this.panelGestUsuarios.Controls.Add(this.btnNuevoUsu);
@@ -92,83 +93,6 @@
             this.panelGestUsuarios.Name = "panelGestUsuarios";
             this.panelGestUsuarios.Size = new System.Drawing.Size(906, 550);
             this.panelGestUsuarios.TabIndex = 2;
-            // 
-            // panelGestBecarios
-            // 
-            this.panelGestBecarios.Controls.Add(this.btnElimBec);
-            this.panelGestBecarios.Controls.Add(this.btnModifBec);
-            this.panelGestBecarios.Controls.Add(this.btnNuevoBec);
-            this.panelGestBecarios.Controls.Add(this.button9);
-            this.panelGestBecarios.Controls.Add(this.textBox2);
-            this.panelGestBecarios.Controls.Add(this.label2);
-            this.panelGestBecarios.Controls.Add(this.dataGridView2);
-            this.panelGestBecarios.Location = new System.Drawing.Point(0, 0);
-            this.panelGestBecarios.Name = "panelGestBecarios";
-            this.panelGestBecarios.Size = new System.Drawing.Size(906, 550);
-            this.panelGestBecarios.TabIndex = 7;
-            // 
-            // btnElimBec
-            // 
-            this.btnElimBec.Location = new System.Drawing.Point(798, 45);
-            this.btnElimBec.Name = "btnElimBec";
-            this.btnElimBec.Size = new System.Drawing.Size(75, 23);
-            this.btnElimBec.TabIndex = 12;
-            this.btnElimBec.Text = "Eliminar";
-            this.btnElimBec.UseVisualStyleBackColor = true;
-            // 
-            // btnModifBec
-            // 
-            this.btnModifBec.Location = new System.Drawing.Point(703, 46);
-            this.btnModifBec.Name = "btnModifBec";
-            this.btnModifBec.Size = new System.Drawing.Size(75, 23);
-            this.btnModifBec.TabIndex = 11;
-            this.btnModifBec.Text = "Modificar";
-            this.btnModifBec.UseVisualStyleBackColor = true;
-            this.btnModifBec.Click += new System.EventHandler(this.btnModifBec_Click);
-            // 
-            // btnNuevoBec
-            // 
-            this.btnNuevoBec.Location = new System.Drawing.Point(602, 46);
-            this.btnNuevoBec.Name = "btnNuevoBec";
-            this.btnNuevoBec.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevoBec.TabIndex = 10;
-            this.btnNuevoBec.Text = "Nuevo";
-            this.btnNuevoBec.UseVisualStyleBackColor = true;
-            this.btnNuevoBec.Click += new System.EventHandler(this.btnNuevoBec_Click);
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(393, 45);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 9;
-            this.button9.Text = "Buscar";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(118, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(248, 22);
-            this.textBox2.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Busqueda";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(34, 101);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(839, 405);
-            this.dataGridView2.TabIndex = 6;
             // 
             // btnElimUsu
             // 
@@ -233,11 +157,99 @@
             this.dataGridView1.Size = new System.Drawing.Size(839, 405);
             this.dataGridView1.TabIndex = 0;
             // 
+            // panelGestBecarios
+            // 
+            this.panelGestBecarios.Controls.Add(this.btnElimBec);
+            this.panelGestBecarios.Controls.Add(this.btnModifBec);
+            this.panelGestBecarios.Controls.Add(this.btnNuevoBec);
+            this.panelGestBecarios.Controls.Add(this.button7);
+            this.panelGestBecarios.Controls.Add(this.textBox2);
+            this.panelGestBecarios.Controls.Add(this.label2);
+            this.panelGestBecarios.Controls.Add(this.dataGridView2);
+            this.panelGestBecarios.Location = new System.Drawing.Point(255, 12);
+            this.panelGestBecarios.Name = "panelGestBecarios";
+            this.panelGestBecarios.Size = new System.Drawing.Size(906, 550);
+            this.panelGestBecarios.TabIndex = 7;
+            // 
+            // btnElimBec
+            // 
+            this.btnElimBec.Location = new System.Drawing.Point(800, 59);
+            this.btnElimBec.Name = "btnElimBec";
+            this.btnElimBec.Size = new System.Drawing.Size(75, 23);
+            this.btnElimBec.TabIndex = 6;
+            this.btnElimBec.Text = "Eliminar";
+            this.btnElimBec.UseVisualStyleBackColor = true;
+            // 
+            // btnModifBec
+            // 
+            this.btnModifBec.Location = new System.Drawing.Point(705, 59);
+            this.btnModifBec.Name = "btnModifBec";
+            this.btnModifBec.Size = new System.Drawing.Size(75, 23);
+            this.btnModifBec.TabIndex = 5;
+            this.btnModifBec.Text = "Modificar";
+            this.btnModifBec.UseVisualStyleBackColor = true;
+            this.btnModifBec.Click += new System.EventHandler(this.btnModifBec_Click);
+            // 
+            // btnNuevoBec
+            // 
+            this.btnNuevoBec.Location = new System.Drawing.Point(604, 59);
+            this.btnNuevoBec.Name = "btnNuevoBec";
+            this.btnNuevoBec.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevoBec.TabIndex = 4;
+            this.btnNuevoBec.Text = "Nuevo";
+            this.btnNuevoBec.UseVisualStyleBackColor = true;
+            this.btnNuevoBec.Click += new System.EventHandler(this.btnNuevoBec_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(395, 58);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "Buscar";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(120, 59);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(248, 22);
+            this.textBox2.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(42, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Busqueda";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(36, 114);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(839, 405);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(33, 126);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(170, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Gestionar Becas";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
             // AdministracionSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1173, 574);
+            this.Controls.Add(this.panelGestBecarios);
             this.Controls.Add(this.panelGestUsuarios);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
@@ -246,10 +258,10 @@
             this.panel1.ResumeLayout(false);
             this.panelGestUsuarios.ResumeLayout(false);
             this.panelGestUsuarios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelGestBecarios.ResumeLayout(false);
             this.panelGestBecarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,9 +283,10 @@
         private System.Windows.Forms.Button btnElimBec;
         private System.Windows.Forms.Button btnModifBec;
         private System.Windows.Forms.Button btnNuevoBec;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button4;
     }
 }

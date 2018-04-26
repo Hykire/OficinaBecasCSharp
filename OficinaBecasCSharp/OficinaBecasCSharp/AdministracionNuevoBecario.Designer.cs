@@ -53,14 +53,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             this.button2.TabIndex = 60;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -324,6 +325,43 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Apoderado";
             // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(188, 158);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(240, 22);
+            this.textBox14.TabIndex = 66;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(10, 161);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(51, 17);
+            this.label16.TabIndex = 65;
+            this.label16.Text = "Correo";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(188, 120);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(125, 22);
+            this.textBox13.TabIndex = 64;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(188, 80);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(324, 22);
+            this.textBox12.TabIndex = 63;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(188, 41);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(200, 22);
+            this.textBox11.TabIndex = 43;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -350,43 +388,6 @@
             this.label15.Size = new System.Drawing.Size(58, 17);
             this.label15.TabIndex = 40;
             this.label15.Text = "Nombre";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(188, 41);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(200, 22);
-            this.textBox11.TabIndex = 43;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(188, 80);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(324, 22);
-            this.textBox12.TabIndex = 63;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(188, 120);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(125, 22);
-            this.textBox13.TabIndex = 64;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(10, 161);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 17);
-            this.label16.TabIndex = 65;
-            this.label16.Text = "Correo";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(188, 158);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(240, 22);
-            this.textBox14.TabIndex = 66;
             // 
             // AdministracionNuevoBecario
             // 

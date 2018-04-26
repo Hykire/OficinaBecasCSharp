@@ -12,6 +12,8 @@ namespace Vista {
     public partial class AdministracionSistema : Form {
         public AdministracionSistema() {
             InitializeComponent();
+            panelGestBecarios.Hide();
+            panelGestUsuarios.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e) {
@@ -20,8 +22,13 @@ namespace Vista {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            panelGestUsuarios.Hide();
             panelGestBecarios.Show();
+            panelGestUsuarios.Hide();
+        }
+        
+        private void button4_Click(object sender, EventArgs e) {
+            panelGestBecarios.Hide();
+            panelGestUsuarios.Hide();
         }
 
         private void button8_Click(object sender, EventArgs e) {
@@ -52,6 +59,13 @@ namespace Vista {
         private void btnModifUsu_Click(object sender, EventArgs e) {
             AdministracionModificarUsuario ventanaModificarUsuario = new AdministracionModificarUsuario();
             if (ventanaModificarUsuario.ShowDialog() == DialogResult.OK) {
+
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e) {
+            GestionarBecas ventanaGestionarBecas = new GestionarBecas();
+            if (ventanaGestionarBecas.ShowDialog() == DialogResult.OK) {
 
             }
         }
