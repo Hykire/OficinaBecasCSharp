@@ -8,16 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vista {
-    public partial class Principal : Form {
-
-        public Principal() {
+namespace Vista
+{
+    public partial class Login : Form
+    {
+        public Login()
+        {
             InitializeComponent();
         }
 
-        private void bunifuFlatButton4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
