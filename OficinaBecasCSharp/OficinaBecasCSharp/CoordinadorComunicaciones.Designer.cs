@@ -28,202 +28,305 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnGestionarConvocatoria = new System.Windows.Forms.Button();
-            this.cbConsulta = new System.Windows.Forms.ComboBox();
-            this.ContestóSolicitudFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoBeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadDeCréditos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatosPersonales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.btnFiltrarResultados = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.lbDatosPersonales = new System.Windows.Forms.Label();
-            this.lbCantidadCreditos = new System.Windows.Forms.Label();
-            this.lbTipoBeca = new System.Windows.Forms.Label();
-            this.lbSolicitud = new System.Windows.Forms.Label();
-            this.txtTipoBeca = new System.Windows.Forms.TextBox();
-            this.txtDatosPersonales = new System.Windows.Forms.TextBox();
-            this.txtCantidadCreditos = new System.Windows.Forms.TextBox();
-            this.cbSolicitud = new System.Windows.Forms.ComboBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.btnBeca = new System.Windows.Forms.Button();
+            this.txtDescripcionConvocatoria = new System.Windows.Forms.TextBox();
+            this.lbBeca = new System.Windows.Forms.Label();
+            this.lbDescripciónConvocatoria = new System.Windows.Forms.Label();
+            this.txtNombreConvocatoria = new System.Windows.Forms.TextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.cbBeca = new System.Windows.Forms.ComboBox();
+            this.txtNumeroEnviados = new System.Windows.Forms.TextBox();
+            this.txtNumeroRespuestas = new System.Windows.Forms.TextBox();
+            this.txtFechaConvocatoria = new System.Windows.Forms.TextBox();
+            this.lbNombreConvocatoria = new System.Windows.Forms.Label();
+            this.lbFechaConvocatoria = new System.Windows.Forms.Label();
+            this.lbNumeroTotalEnviados = new System.Windows.Forms.Label();
+            this.lbNumeroRespuestas = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnFiltrarResultados = new System.Windows.Forms.Button();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.idConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NúmeroDeRespuestas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroTotalEnviados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripciónConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbConsulta = new System.Windows.Forms.ComboBox();
+            this.btnGestionarConvocatoria = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // txtFiltro
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Consultar:";
+            this.txtFiltro.Location = new System.Drawing.Point(546, 13);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(575, 22);
+            this.txtFiltro.TabIndex = 60;
             // 
-            // btnGestionarConvocatoria
+            // btnBeca
             // 
-            this.btnGestionarConvocatoria.Location = new System.Drawing.Point(90, 118);
-            this.btnGestionarConvocatoria.Name = "btnGestionarConvocatoria";
-            this.btnGestionarConvocatoria.Size = new System.Drawing.Size(157, 51);
-            this.btnGestionarConvocatoria.TabIndex = 15;
-            this.btnGestionarConvocatoria.Text = "Gestionar Convocatoria";
-            this.btnGestionarConvocatoria.UseVisualStyleBackColor = true;
-            this.btnGestionarConvocatoria.Click += new System.EventHandler(this.btnGestionarConvocatoria_Click);
+            this.btnBeca.Location = new System.Drawing.Point(462, 400);
+            this.btnBeca.Name = "btnBeca";
+            this.btnBeca.Size = new System.Drawing.Size(35, 24);
+            this.btnBeca.TabIndex = 59;
+            this.btnBeca.Text = "...";
+            this.btnBeca.UseVisualStyleBackColor = true;
+            this.btnBeca.Click += new System.EventHandler(this.btnBeca_Click);
             // 
-            // cbConsulta
+            // txtDescripcionConvocatoria
             // 
-            this.cbConsulta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbConsulta.FormattingEnabled = true;
-            this.cbConsulta.Location = new System.Drawing.Point(135, 58);
-            this.cbConsulta.Name = "cbConsulta";
-            this.cbConsulta.Size = new System.Drawing.Size(156, 24);
-            this.cbConsulta.TabIndex = 16;
+            this.txtDescripcionConvocatoria.Location = new System.Drawing.Point(248, 355);
+            this.txtDescripcionConvocatoria.Name = "txtDescripcionConvocatoria";
+            this.txtDescripcionConvocatoria.Size = new System.Drawing.Size(249, 22);
+            this.txtDescripcionConvocatoria.TabIndex = 58;
             // 
-            // ContestóSolicitudFecha
+            // lbBeca
             // 
-            this.ContestóSolicitudFecha.HeaderText = "ContestóSolicitudFecha";
-            this.ContestóSolicitudFecha.Name = "ContestóSolicitudFecha";
+            this.lbBeca.AutoSize = true;
+            this.lbBeca.Location = new System.Drawing.Point(25, 403);
+            this.lbBeca.Name = "lbBeca";
+            this.lbBeca.Size = new System.Drawing.Size(44, 17);
+            this.lbBeca.TabIndex = 57;
+            this.lbBeca.Text = "Beca:";
             // 
-            // TipoBeca
+            // lbDescripciónConvocatoria
             // 
-            this.TipoBeca.HeaderText = "TipoBeca";
-            this.TipoBeca.Name = "TipoBeca";
+            this.lbDescripciónConvocatoria.AutoSize = true;
+            this.lbDescripciónConvocatoria.Location = new System.Drawing.Point(25, 360);
+            this.lbDescripciónConvocatoria.Name = "lbDescripciónConvocatoria";
+            this.lbDescripciónConvocatoria.Size = new System.Drawing.Size(193, 17);
+            this.lbDescripciónConvocatoria.TabIndex = 56;
+            this.lbDescripciónConvocatoria.Text = "Descripción de Convocatoria:";
             // 
-            // CantidadDeCréditos
+            // txtNombreConvocatoria
             // 
-            this.CantidadDeCréditos.HeaderText = "CantidadDeCréditos";
-            this.CantidadDeCréditos.Name = "CantidadDeCréditos";
+            this.txtNombreConvocatoria.Location = new System.Drawing.Point(248, 306);
+            this.txtNombreConvocatoria.Name = "txtNombreConvocatoria";
+            this.txtNombreConvocatoria.Size = new System.Drawing.Size(249, 22);
+            this.txtNombreConvocatoria.TabIndex = 55;
             // 
-            // DatosPersonales
+            // btnEliminar
             // 
-            this.DatosPersonales.HeaderText = "DatosPersonales";
-            this.DatosPersonales.Name = "DatosPersonales";
+            this.btnEliminar.Location = new System.Drawing.Point(1074, 433);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(116, 33);
+            this.btnEliminar.TabIndex = 54;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(670, 433);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(116, 33);
+            this.btnAgregar.TabIndex = 53;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(164, 460);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(116, 33);
+            this.btnAceptar.TabIndex = 52;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // cbBeca
+            // 
+            this.cbBeca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBeca.FormattingEnabled = true;
+            this.cbBeca.Location = new System.Drawing.Point(248, 400);
+            this.cbBeca.Name = "cbBeca";
+            this.cbBeca.Size = new System.Drawing.Size(195, 24);
+            this.cbBeca.TabIndex = 51;
+            // 
+            // txtNumeroEnviados
+            // 
+            this.txtNumeroEnviados.Location = new System.Drawing.Point(248, 208);
+            this.txtNumeroEnviados.Name = "txtNumeroEnviados";
+            this.txtNumeroEnviados.Size = new System.Drawing.Size(249, 22);
+            this.txtNumeroEnviados.TabIndex = 50;
+            // 
+            // txtNumeroRespuestas
+            // 
+            this.txtNumeroRespuestas.Location = new System.Drawing.Point(248, 159);
+            this.txtNumeroRespuestas.Name = "txtNumeroRespuestas";
+            this.txtNumeroRespuestas.Size = new System.Drawing.Size(249, 22);
+            this.txtNumeroRespuestas.TabIndex = 49;
+            // 
+            // txtFechaConvocatoria
+            // 
+            this.txtFechaConvocatoria.Location = new System.Drawing.Point(248, 257);
+            this.txtFechaConvocatoria.Name = "txtFechaConvocatoria";
+            this.txtFechaConvocatoria.Size = new System.Drawing.Size(249, 22);
+            this.txtFechaConvocatoria.TabIndex = 48;
+            // 
+            // lbNombreConvocatoria
+            // 
+            this.lbNombreConvocatoria.AutoSize = true;
+            this.lbNombreConvocatoria.Location = new System.Drawing.Point(25, 311);
+            this.lbNombreConvocatoria.Name = "lbNombreConvocatoria";
+            this.lbNombreConvocatoria.Size = new System.Drawing.Size(169, 17);
+            this.lbNombreConvocatoria.TabIndex = 47;
+            this.lbNombreConvocatoria.Text = "Nombre de Convocatoria:";
+            // 
+            // lbFechaConvocatoria
+            // 
+            this.lbFechaConvocatoria.AutoSize = true;
+            this.lbFechaConvocatoria.Location = new System.Drawing.Point(25, 262);
+            this.lbFechaConvocatoria.Name = "lbFechaConvocatoria";
+            this.lbFechaConvocatoria.Size = new System.Drawing.Size(158, 17);
+            this.lbFechaConvocatoria.TabIndex = 46;
+            this.lbFechaConvocatoria.Text = "Fecha de Convocatoria:";
+            // 
+            // lbNumeroTotalEnviados
+            // 
+            this.lbNumeroTotalEnviados.AutoSize = true;
+            this.lbNumeroTotalEnviados.Location = new System.Drawing.Point(25, 213);
+            this.lbNumeroTotalEnviados.Name = "lbNumeroTotalEnviados";
+            this.lbNumeroTotalEnviados.Size = new System.Drawing.Size(180, 17);
+            this.lbNumeroTotalEnviados.TabIndex = 45;
+            this.lbNumeroTotalEnviados.Text = "Número Total de Enviados:";
+            // 
+            // lbNumeroRespuestas
+            // 
+            this.lbNumeroRespuestas.AutoSize = true;
+            this.lbNumeroRespuestas.Location = new System.Drawing.Point(25, 159);
+            this.lbNumeroRespuestas.Name = "lbNumeroRespuestas";
+            this.lbNumeroRespuestas.Size = new System.Drawing.Size(157, 17);
+            this.lbNumeroRespuestas.TabIndex = 44;
+            this.lbNumeroRespuestas.Text = "Número de Respuestas";
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(867, 433);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(116, 33);
+            this.btnModificar.TabIndex = 43;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnFiltrarResultados
+            // 
+            this.btnFiltrarResultados.Location = new System.Drawing.Point(1154, 8);
+            this.btnFiltrarResultados.Name = "btnFiltrarResultados";
+            this.btnFiltrarResultados.Size = new System.Drawing.Size(139, 33);
+            this.btnFiltrarResultados.TabIndex = 42;
+            this.btnFiltrarResultados.Text = "Filtrar Resultados";
+            this.btnFiltrarResultados.UseVisualStyleBackColor = true;
             // 
             // dgvDatos
             // 
             this.dgvDatos.AllowUserToOrderColumns = true;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DatosPersonales,
-            this.CantidadDeCréditos,
-            this.TipoBeca,
-            this.ContestóSolicitudFecha});
-            this.dgvDatos.Location = new System.Drawing.Point(557, 97);
+            this.idConvocatoria,
+            this.NúmeroDeRespuestas,
+            this.NumeroTotalEnviados,
+            this.FechaConvocatoria,
+            this.NombreConvocatoria,
+            this.DescripciónConvocatoria,
+            this.Beca});
+            this.dgvDatos.Location = new System.Drawing.Point(546, 56);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(454, 354);
-            this.dgvDatos.TabIndex = 18;
+            this.dgvDatos.Size = new System.Drawing.Size(747, 354);
+            this.dgvDatos.TabIndex = 41;
             // 
-            // btnFiltrarResultados
+            // idConvocatoria
             // 
-            this.btnFiltrarResultados.Location = new System.Drawing.Point(557, 49);
-            this.btnFiltrarResultados.Name = "btnFiltrarResultados";
-            this.btnFiltrarResultados.Size = new System.Drawing.Size(139, 33);
-            this.btnFiltrarResultados.TabIndex = 19;
-            this.btnFiltrarResultados.Text = "Filtrar Resultados";
-            this.btnFiltrarResultados.UseVisualStyleBackColor = true;
-            this.btnFiltrarResultados.Click += new System.EventHandler(this.btnFiltrarResultados_Click);
+            this.idConvocatoria.HeaderText = "idConvocatoria";
+            this.idConvocatoria.Name = "idConvocatoria";
             // 
-            // btnModificar
+            // NúmeroDeRespuestas
             // 
-            this.btnModificar.Location = new System.Drawing.Point(895, 49);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(116, 33);
-            this.btnModificar.TabIndex = 20;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.NúmeroDeRespuestas.HeaderText = "NúmeroDeRespuestas";
+            this.NúmeroDeRespuestas.Name = "NúmeroDeRespuestas";
             // 
-            // lbDatosPersonales
+            // NumeroTotalEnviados
             // 
-            this.lbDatosPersonales.AutoSize = true;
-            this.lbDatosPersonales.Location = new System.Drawing.Point(36, 243);
-            this.lbDatosPersonales.Name = "lbDatosPersonales";
-            this.lbDatosPersonales.Size = new System.Drawing.Size(124, 17);
-            this.lbDatosPersonales.TabIndex = 21;
-            this.lbDatosPersonales.Text = "Datos Personales:";
+            this.NumeroTotalEnviados.HeaderText = "NumeroTotalEnviados";
+            this.NumeroTotalEnviados.Name = "NumeroTotalEnviados";
             // 
-            // lbCantidadCreditos
+            // FechaConvocatoria
             // 
-            this.lbCantidadCreditos.AutoSize = true;
-            this.lbCantidadCreditos.Location = new System.Drawing.Point(36, 297);
-            this.lbCantidadCreditos.Name = "lbCantidadCreditos";
-            this.lbCantidadCreditos.Size = new System.Drawing.Size(144, 17);
-            this.lbCantidadCreditos.TabIndex = 22;
-            this.lbCantidadCreditos.Text = "Cantidad de Créditos:";
+            this.FechaConvocatoria.HeaderText = "FechaConvocatoria";
+            this.FechaConvocatoria.Name = "FechaConvocatoria";
             // 
-            // lbTipoBeca
+            // NombreConvocatoria
             // 
-            this.lbTipoBeca.AutoSize = true;
-            this.lbTipoBeca.Location = new System.Drawing.Point(36, 346);
-            this.lbTipoBeca.Name = "lbTipoBeca";
-            this.lbTipoBeca.Size = new System.Drawing.Size(96, 17);
-            this.lbTipoBeca.TabIndex = 23;
-            this.lbTipoBeca.Text = "Tipo de Beca:";
+            this.NombreConvocatoria.HeaderText = "NombreConvocatoria";
+            this.NombreConvocatoria.Name = "NombreConvocatoria";
             // 
-            // lbSolicitud
+            // DescripciónConvocatoria
             // 
-            this.lbSolicitud.AutoSize = true;
-            this.lbSolicitud.Location = new System.Drawing.Point(36, 395);
-            this.lbSolicitud.Name = "lbSolicitud";
-            this.lbSolicitud.Size = new System.Drawing.Size(211, 17);
-            this.lbSolicitud.TabIndex = 24;
-            this.lbSolicitud.Text = "¿Contestó Solicitud a la Fecha?:";
+            this.DescripciónConvocatoria.HeaderText = "DescripciónConvocatoria";
+            this.DescripciónConvocatoria.Name = "DescripciónConvocatoria";
             // 
-            // txtTipoBeca
+            // Beca
             // 
-            this.txtTipoBeca.Location = new System.Drawing.Point(259, 341);
-            this.txtTipoBeca.Name = "txtTipoBeca";
-            this.txtTipoBeca.Size = new System.Drawing.Size(249, 22);
-            this.txtTipoBeca.TabIndex = 25;
+            this.Beca.HeaderText = "Beca";
+            this.Beca.Name = "Beca";
             // 
-            // txtDatosPersonales
+            // label1
             // 
-            this.txtDatosPersonales.Location = new System.Drawing.Point(259, 243);
-            this.txtDatosPersonales.Name = "txtDatosPersonales";
-            this.txtDatosPersonales.Size = new System.Drawing.Size(249, 22);
-            this.txtDatosPersonales.TabIndex = 26;
-            this.txtDatosPersonales.TextChanged += new System.EventHandler(this.txtDatosPersonales_TextChanged);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Consultar:";
             // 
-            // txtCantidadCreditos
+            // cbConsulta
             // 
-            this.txtCantidadCreditos.Location = new System.Drawing.Point(259, 292);
-            this.txtCantidadCreditos.Name = "txtCantidadCreditos";
-            this.txtCantidadCreditos.Size = new System.Drawing.Size(249, 22);
-            this.txtCantidadCreditos.TabIndex = 27;
+            this.cbConsulta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbConsulta.FormattingEnabled = true;
+            this.cbConsulta.Location = new System.Drawing.Point(124, 17);
+            this.cbConsulta.Name = "cbConsulta";
+            this.cbConsulta.Size = new System.Drawing.Size(156, 24);
+            this.cbConsulta.TabIndex = 39;
             // 
-            // cbSolicitud
+            // btnGestionarConvocatoria
             // 
-            this.cbSolicitud.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSolicitud.FormattingEnabled = true;
-            this.cbSolicitud.Location = new System.Drawing.Point(352, 388);
-            this.cbSolicitud.Name = "cbSolicitud";
-            this.cbSolicitud.Size = new System.Drawing.Size(54, 24);
-            this.cbSolicitud.TabIndex = 28;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(206, 429);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(116, 33);
-            this.btnAceptar.TabIndex = 29;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnGestionarConvocatoria.Location = new System.Drawing.Point(79, 77);
+            this.btnGestionarConvocatoria.Name = "btnGestionarConvocatoria";
+            this.btnGestionarConvocatoria.Size = new System.Drawing.Size(157, 51);
+            this.btnGestionarConvocatoria.TabIndex = 38;
+            this.btnGestionarConvocatoria.Text = "Gestionar Convocatoria";
+            this.btnGestionarConvocatoria.UseVisualStyleBackColor = true;
+            this.btnGestionarConvocatoria.Click += new System.EventHandler(this.btnGestionarConvocatoria_Click);
             // 
             // CoordinadorComunicaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 519);
+            this.ClientSize = new System.Drawing.Size(1308, 508);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.btnBeca);
+            this.Controls.Add(this.txtDescripcionConvocatoria);
+            this.Controls.Add(this.lbBeca);
+            this.Controls.Add(this.lbDescripciónConvocatoria);
+            this.Controls.Add(this.txtNombreConvocatoria);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.cbSolicitud);
-            this.Controls.Add(this.txtCantidadCreditos);
-            this.Controls.Add(this.txtDatosPersonales);
-            this.Controls.Add(this.txtTipoBeca);
-            this.Controls.Add(this.lbSolicitud);
-            this.Controls.Add(this.lbTipoBeca);
-            this.Controls.Add(this.lbCantidadCreditos);
-            this.Controls.Add(this.lbDatosPersonales);
+            this.Controls.Add(this.cbBeca);
+            this.Controls.Add(this.txtNumeroEnviados);
+            this.Controls.Add(this.txtNumeroRespuestas);
+            this.Controls.Add(this.txtFechaConvocatoria);
+            this.Controls.Add(this.lbNombreConvocatoria);
+            this.Controls.Add(this.lbFechaConvocatoria);
+            this.Controls.Add(this.lbNumeroTotalEnviados);
+            this.Controls.Add(this.lbNumeroRespuestas);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnFiltrarResultados);
             this.Controls.Add(this.dgvDatos);
@@ -231,7 +334,7 @@
             this.Controls.Add(this.cbConsulta);
             this.Controls.Add(this.btnGestionarConvocatoria);
             this.Name = "CoordinadorComunicaciones";
-            this.Text = "Coordinador Comunicaciones";
+            this.Text = "CoordinadorComunicaciones";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -240,24 +343,35 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnGestionarConvocatoria;
-        private System.Windows.Forms.ComboBox cbConsulta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ContestóSolicitudFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoBeca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDeCréditos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DatosPersonales;
-        private System.Windows.Forms.DataGridView dgvDatos;
-        private System.Windows.Forms.Button btnFiltrarResultados;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Label lbDatosPersonales;
-        private System.Windows.Forms.Label lbCantidadCreditos;
-        private System.Windows.Forms.Label lbTipoBeca;
-        private System.Windows.Forms.Label lbSolicitud;
-        private System.Windows.Forms.TextBox txtTipoBeca;
-        private System.Windows.Forms.TextBox txtDatosPersonales;
-        private System.Windows.Forms.TextBox txtCantidadCreditos;
-        private System.Windows.Forms.ComboBox cbSolicitud;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button btnBeca;
+        private System.Windows.Forms.TextBox txtDescripcionConvocatoria;
+        private System.Windows.Forms.Label lbBeca;
+        private System.Windows.Forms.Label lbDescripciónConvocatoria;
+        private System.Windows.Forms.TextBox txtNombreConvocatoria;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.ComboBox cbBeca;
+        private System.Windows.Forms.TextBox txtNumeroEnviados;
+        private System.Windows.Forms.TextBox txtNumeroRespuestas;
+        private System.Windows.Forms.TextBox txtFechaConvocatoria;
+        private System.Windows.Forms.Label lbNombreConvocatoria;
+        private System.Windows.Forms.Label lbFechaConvocatoria;
+        private System.Windows.Forms.Label lbNumeroTotalEnviados;
+        private System.Windows.Forms.Label lbNumeroRespuestas;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnFiltrarResultados;
+        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idConvocatoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NúmeroDeRespuestas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroTotalEnviados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaConvocatoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreConvocatoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripciónConvocatoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Beca;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbConsulta;
+        private System.Windows.Forms.Button btnGestionarConvocatoria;
     }
 }

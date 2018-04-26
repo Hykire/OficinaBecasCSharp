@@ -45,6 +45,7 @@
     <Compile Include="Beca.cs" />
     <Compile Include="Becado.cs" />
     <Compile Include="Cita.cs" />
+    <Compile Include="Convocatoria.cs" />
     <Compile Include="CoordinadorAdministrativo.cs" />
     <Compile Include="CoordinadorTutoria.cs" />
     <Compile Include="Documento.cs" />
