@@ -49,13 +49,13 @@
             this.txtBFechaGC = new System.Windows.Forms.TextBox();
             this.LNombBecaGB = new System.Windows.Forms.Label();
             this.LSelFechaGC = new System.Windows.Forms.Label();
-            this.gbMenu = new System.Windows.Forms.GroupBox();
             this.btnMNGestBecas = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.PGestBecas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDocumentosGB)).BeginInit();
             this.GBDescripBecaGB.SuspendLayout();
             this.GBDetalleBecaGB.SuspendLayout();
-            this.gbMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PGestBecas
@@ -73,7 +73,7 @@
             this.PGestBecas.Controls.Add(this.LTituloGC);
             this.PGestBecas.Controls.Add(this.GBDetalleBecaGB);
             this.PGestBecas.Controls.Add(this.LSelFechaGC);
-            this.PGestBecas.Location = new System.Drawing.Point(255, 78);
+            this.PGestBecas.Location = new System.Drawing.Point(252, 52);
             this.PGestBecas.Name = "PGestBecas";
             this.PGestBecas.Size = new System.Drawing.Size(522, 345);
             this.PGestBecas.TabIndex = 25;
@@ -259,35 +259,31 @@
             this.LSelFechaGC.TabIndex = 1;
             this.LSelFechaGC.Text = "Seleccionar una beca:";
             // 
-            // gbMenu
-            // 
-            this.gbMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.gbMenu.Controls.Add(this.btnMNGestBecas);
-            this.gbMenu.Location = new System.Drawing.Point(30, 78);
-            this.gbMenu.Name = "gbMenu";
-            this.gbMenu.Size = new System.Drawing.Size(204, 342);
-            this.gbMenu.TabIndex = 24;
-            this.gbMenu.TabStop = false;
-            this.gbMenu.Text = "MENU";
-            // 
             // btnMNGestBecas
             // 
-            this.btnMNGestBecas.Location = new System.Drawing.Point(7, 48);
+            this.btnMNGestBecas.Location = new System.Drawing.Point(34, 125);
             this.btnMNGestBecas.Name = "btnMNGestBecas";
-            this.btnMNGestBecas.Size = new System.Drawing.Size(191, 24);
+            this.btnMNGestBecas.Size = new System.Drawing.Size(111, 24);
             this.btnMNGestBecas.TabIndex = 0;
             this.btnMNGestBecas.Text = "Gestionar Becas";
             this.btnMNGestBecas.UseVisualStyleBackColor = true;
             this.btnMNGestBecas.Click += new System.EventHandler(this.btnMNGestBecas_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnMNGestBecas);
+            this.panel1.Location = new System.Drawing.Point(34, 92);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(182, 278);
+            this.panel1.TabIndex = 27;
+            // 
             // GestionarBecas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 441);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.PGestBecas);
-            this.Controls.Add(this.gbMenu);
             this.IsMdiContainer = true;
             this.Name = "GestionarBecas";
             this.Text = "Gestionar Becas";
@@ -298,7 +294,7 @@
             this.GBDescripBecaGB.PerformLayout();
             this.GBDetalleBecaGB.ResumeLayout(false);
             this.GBDetalleBecaGB.PerformLayout();
-            this.gbMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -326,7 +322,7 @@
         private System.Windows.Forms.TextBox txtBFechaGC;
         private System.Windows.Forms.Label LNombBecaGB;
         private System.Windows.Forms.Label LSelFechaGC;
-        private System.Windows.Forms.GroupBox gbMenu;
         private System.Windows.Forms.Button btnMNGestBecas;
+        private System.Windows.Forms.Panel panel1;
     }
 }

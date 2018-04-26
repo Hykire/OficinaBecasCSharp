@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gbMenu = new System.Windows.Forms.GroupBox();
             this.btnMNBesBecariosXtutor = new System.Windows.Forms.Button();
             this.btnMNGesCitas = new System.Windows.Forms.Button();
             this.btnMNGesTutores = new System.Windows.Forms.Button();
@@ -102,7 +101,7 @@
             this.LFechaGC = new System.Windows.Forms.Label();
             this.LSelFechaGC = new System.Windows.Forms.Label();
             this.DTPSelDiaGC = new System.Windows.Forms.DateTimePicker();
-            this.gbMenu.SuspendLayout();
+            this.gbMenu = new System.Windows.Forms.Panel();
             this.panelTutor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTutores)).BeginInit();
             this.panelBecariosXTutor.SuspendLayout();
@@ -113,28 +112,14 @@
             this.PGestCitas.SuspendLayout();
             this.GBObservGC.SuspendLayout();
             this.GBDetalleCitaGC.SuspendLayout();
+            this.gbMenu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gbMenu
-            // 
-            this.gbMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.gbMenu.Controls.Add(this.btnMNBesBecariosXtutor);
-            this.gbMenu.Controls.Add(this.btnMNGesCitas);
-            this.gbMenu.Controls.Add(this.btnMNGesTutores);
-            this.gbMenu.Controls.Add(this.btnMNConsBecas);
-            this.gbMenu.Location = new System.Drawing.Point(30, 78);
-            this.gbMenu.Name = "gbMenu";
-            this.gbMenu.Size = new System.Drawing.Size(204, 342);
-            this.gbMenu.TabIndex = 4;
-            this.gbMenu.TabStop = false;
-            this.gbMenu.Text = "MENU";
             // 
             // btnMNBesBecariosXtutor
             // 
-            this.btnMNBesBecariosXtutor.Location = new System.Drawing.Point(6, 238);
+            this.btnMNBesBecariosXtutor.Location = new System.Drawing.Point(15, 27);
             this.btnMNBesBecariosXtutor.Name = "btnMNBesBecariosXtutor";
-            this.btnMNBesBecariosXtutor.Size = new System.Drawing.Size(191, 23);
+            this.btnMNBesBecariosXtutor.Size = new System.Drawing.Size(152, 23);
             this.btnMNBesBecariosXtutor.TabIndex = 3;
             this.btnMNBesBecariosXtutor.Text = "Gestionar Becarios por Tutor";
             this.btnMNBesBecariosXtutor.UseVisualStyleBackColor = true;
@@ -142,9 +127,9 @@
             // 
             // btnMNGesCitas
             // 
-            this.btnMNGesCitas.Location = new System.Drawing.Point(6, 175);
+            this.btnMNGesCitas.Location = new System.Drawing.Point(15, 165);
             this.btnMNGesCitas.Name = "btnMNGesCitas";
-            this.btnMNGesCitas.Size = new System.Drawing.Size(191, 23);
+            this.btnMNGesCitas.Size = new System.Drawing.Size(152, 23);
             this.btnMNGesCitas.TabIndex = 2;
             this.btnMNGesCitas.Text = "Gestionar Citas";
             this.btnMNGesCitas.UseVisualStyleBackColor = true;
@@ -152,9 +137,9 @@
             // 
             // btnMNGesTutores
             // 
-            this.btnMNGesTutores.Location = new System.Drawing.Point(6, 110);
+            this.btnMNGesTutores.Location = new System.Drawing.Point(15, 97);
             this.btnMNGesTutores.Name = "btnMNGesTutores";
-            this.btnMNGesTutores.Size = new System.Drawing.Size(191, 23);
+            this.btnMNGesTutores.Size = new System.Drawing.Size(152, 23);
             this.btnMNGesTutores.TabIndex = 1;
             this.btnMNGesTutores.Text = "Gestionar Tutores";
             this.btnMNGesTutores.UseVisualStyleBackColor = true;
@@ -162,9 +147,9 @@
             // 
             // btnMNConsBecas
             // 
-            this.btnMNConsBecas.Location = new System.Drawing.Point(7, 48);
+            this.btnMNConsBecas.Location = new System.Drawing.Point(15, 230);
             this.btnMNConsBecas.Name = "btnMNConsBecas";
-            this.btnMNConsBecas.Size = new System.Drawing.Size(191, 24);
+            this.btnMNConsBecas.Size = new System.Drawing.Size(152, 24);
             this.btnMNConsBecas.TabIndex = 0;
             this.btnMNConsBecas.Text = "Consultar Becas";
             this.btnMNConsBecas.UseVisualStyleBackColor = true;
@@ -182,9 +167,9 @@
             this.panelTutor.Controls.Add(this.btnEliminarTutor);
             this.panelTutor.Controls.Add(this.btnEditarTutor);
             this.panelTutor.Controls.Add(this.btnNuevoTutor);
-            this.panelTutor.Location = new System.Drawing.Point(255, 78);
+            this.panelTutor.Location = new System.Drawing.Point(252, 52);
             this.panelTutor.Name = "panelTutor";
-            this.panelTutor.Size = new System.Drawing.Size(522, 342);
+            this.panelTutor.Size = new System.Drawing.Size(522, 345);
             this.panelTutor.TabIndex = 3;
             // 
             // LGestTutBXT
@@ -291,7 +276,7 @@
             this.panelBecariosXTutor.Controls.Add(this.groupBox1);
             this.panelBecariosXTutor.Controls.Add(this.DGVBXT);
             this.panelBecariosXTutor.Controls.Add(this.btnBXTAnadir);
-            this.panelBecariosXTutor.Location = new System.Drawing.Point(255, 78);
+            this.panelBecariosXTutor.Location = new System.Drawing.Point(252, 52);
             this.panelBecariosXTutor.Name = "panelBecariosXTutor";
             this.panelBecariosXTutor.Size = new System.Drawing.Size(522, 345);
             this.panelBecariosXTutor.TabIndex = 5;
@@ -460,7 +445,7 @@
             this.panelConsultarBecaT.Controls.Add(this.btnBuscarBecaCBT);
             this.panelConsultarBecaT.Controls.Add(this.DGVConsBecaT);
             this.panelConsultarBecaT.Controls.Add(this.txtCodBecCBT);
-            this.panelConsultarBecaT.Location = new System.Drawing.Point(255, 78);
+            this.panelConsultarBecaT.Location = new System.Drawing.Point(252, 52);
             this.panelConsultarBecaT.Name = "panelConsultarBecaT";
             this.panelConsultarBecaT.Size = new System.Drawing.Size(522, 345);
             this.panelConsultarBecaT.TabIndex = 14;
@@ -584,7 +569,7 @@
             this.PGestCitas.Controls.Add(this.GBDetalleCitaGC);
             this.PGestCitas.Controls.Add(this.LSelFechaGC);
             this.PGestCitas.Controls.Add(this.DTPSelDiaGC);
-            this.PGestCitas.Location = new System.Drawing.Point(255, 78);
+            this.PGestCitas.Location = new System.Drawing.Point(252, 52);
             this.PGestCitas.Name = "PGestCitas";
             this.PGestCitas.Size = new System.Drawing.Size(522, 345);
             this.PGestCitas.TabIndex = 16;
@@ -734,14 +719,14 @@
             // 
             // txtBHoraGC
             // 
-            this.txtBHoraGC.Location = new System.Drawing.Point(82, 54);
+            this.txtBHoraGC.Location = new System.Drawing.Point(159, 56);
             this.txtBHoraGC.Name = "txtBHoraGC";
             this.txtBHoraGC.Size = new System.Drawing.Size(100, 20);
             this.txtBHoraGC.TabIndex = 8;
             // 
             // txtBFechaGC
             // 
-            this.txtBFechaGC.Location = new System.Drawing.Point(82, 25);
+            this.txtBFechaGC.Location = new System.Drawing.Point(105, 28);
             this.txtBFechaGC.Name = "txtBFechaGC";
             this.txtBFechaGC.Size = new System.Drawing.Size(154, 20);
             this.txtBFechaGC.TabIndex = 7;
@@ -807,21 +792,31 @@
             this.DTPSelDiaGC.Size = new System.Drawing.Size(200, 20);
             this.DTPSelDiaGC.TabIndex = 0;
             // 
+            // gbMenu
+            // 
+            this.gbMenu.Controls.Add(this.btnMNBesBecariosXtutor);
+            this.gbMenu.Controls.Add(this.btnMNConsBecas);
+            this.gbMenu.Controls.Add(this.btnMNGesCitas);
+            this.gbMenu.Controls.Add(this.btnMNGesTutores);
+            this.gbMenu.Location = new System.Drawing.Point(34, 92);
+            this.gbMenu.Name = "gbMenu";
+            this.gbMenu.Size = new System.Drawing.Size(182, 278);
+            this.gbMenu.TabIndex = 18;
+            // 
             // GestionarTutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 441);
+            this.Controls.Add(this.gbMenu);
             this.Controls.Add(this.PGestCitas);
             this.Controls.Add(this.panelConsultarBecaT);
-            this.Controls.Add(this.gbMenu);
             this.Controls.Add(this.panelBecariosXTutor);
             this.Controls.Add(this.panelTutor);
             this.IsMdiContainer = true;
             this.Name = "GestionarTutores";
             this.Text = "GestionarTutores";
             this.Load += new System.EventHandler(this.GestionarTutores_Load);
-            this.gbMenu.ResumeLayout(false);
             this.panelTutor.ResumeLayout(false);
             this.panelTutor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTutores)).EndInit();
@@ -839,14 +834,13 @@
             this.GBObservGC.PerformLayout();
             this.GBDetalleCitaGC.ResumeLayout(false);
             this.GBDetalleCitaGC.PerformLayout();
+            this.gbMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox gbMenu;
         private System.Windows.Forms.Button btnMNGesTutores;
         private System.Windows.Forms.Button btnMNConsBecas;
         private System.Windows.Forms.Button btnMNGesCitas;
@@ -920,5 +914,6 @@
         private System.Windows.Forms.Label LFechaGC;
         private System.Windows.Forms.Label LSelFechaGC;
         private System.Windows.Forms.DateTimePicker DTPSelDiaGC;
+        private System.Windows.Forms.Panel gbMenu;
     }
 }
