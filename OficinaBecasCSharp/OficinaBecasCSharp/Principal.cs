@@ -19,5 +19,12 @@ namespace Vista {
         {
 
         }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e) {
+            AdministracionSistema ventanaAdminSist = new AdministracionSistema();
+            if (ventanaAdminSist.ShowDialog() == DialogResult.OK) {
+
+            }
+        }
     }
 }

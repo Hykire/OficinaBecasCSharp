@@ -17,5 +17,9 @@ namespace Vista
             InitializeComponent();
         }
 
+        private void buttonSignIt_Click(object sender, EventArgs e) {
+            Principal ventanaPrincipal = new Principal();
+            ventanaPrincipal.Show();
+        }
     }
 }

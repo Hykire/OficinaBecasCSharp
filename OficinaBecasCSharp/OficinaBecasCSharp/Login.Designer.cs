@@ -50,9 +50,10 @@
             this.welcometext.AutoSize = true;
             this.welcometext.Font = new System.Drawing.Font("Tw Cen MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcometext.ForeColor = System.Drawing.Color.White;
-            this.welcometext.Location = new System.Drawing.Point(53, 108);
+            this.welcometext.Location = new System.Drawing.Point(71, 133);
+            this.welcometext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.welcometext.Name = "welcometext";
-            this.welcometext.Size = new System.Drawing.Size(267, 28);
+            this.welcometext.Size = new System.Drawing.Size(329, 35);
             this.welcometext.TabIndex = 1;
             this.welcometext.Text = "WELCOME BACK, IVETTE!";
             // 
@@ -63,13 +64,15 @@
             this.buttonSignIt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSignIt.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSignIt.ForeColor = System.Drawing.Color.White;
-            this.buttonSignIt.Location = new System.Drawing.Point(26, 355);
+            this.buttonSignIt.Location = new System.Drawing.Point(35, 437);
+            this.buttonSignIt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSignIt.Name = "buttonSignIt";
-            this.buttonSignIt.Size = new System.Drawing.Size(321, 57);
+            this.buttonSignIt.Size = new System.Drawing.Size(428, 70);
             this.buttonSignIt.TabIndex = 6;
             this.buttonSignIt.TabStop = false;
             this.buttonSignIt.Text = "SIGN IT";
             this.buttonSignIt.UseVisualStyleBackColor = false;
+            this.buttonSignIt.Click += new System.EventHandler(this.buttonSignIt_Click);
             // 
             // bunifuCheckbox1
             // 
@@ -78,7 +81,8 @@
             this.bunifuCheckbox1.Checked = true;
             this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(26, 307);
+            this.bunifuCheckbox1.Location = new System.Drawing.Point(35, 378);
+            this.bunifuCheckbox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.bunifuCheckbox1.Name = "bunifuCheckbox1";
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 8;
@@ -88,9 +92,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(209)))), ((int)(((byte)(220)))));
-            this.label2.Location = new System.Drawing.Point(74, 309);
+            this.label2.Location = new System.Drawing.Point(99, 380);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 20);
+            this.label2.Size = new System.Drawing.Size(145, 22);
             this.label2.TabIndex = 9;
             this.label2.Text = "Remember me";
             // 
@@ -106,10 +111,10 @@
             this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(81)))), ((int)(((byte)(97)))));
             this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.White;
             this.bunifuMaterialTextbox1.LineThickness = 2;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(70, 180);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(93, 222);
+            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(277, 39);
+            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(369, 48);
             this.bunifuMaterialTextbox1.TabIndex = 10;
             this.bunifuMaterialTextbox1.Text = "ivette@gmail.com";
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -126,10 +131,10 @@
             this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(81)))), ((int)(((byte)(97)))));
             this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.White;
             this.bunifuMaterialTextbox2.LineThickness = 2;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(70, 244);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(93, 300);
+            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(277, 39);
+            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(369, 48);
             this.bunifuMaterialTextbox2.TabIndex = 11;
             this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -137,27 +142,30 @@
             // 
             this.ovalPictureBox1.BackColor = System.Drawing.Color.DarkGray;
             this.ovalPictureBox1.Image = global::Vista.Properties.Resources.ts;
-            this.ovalPictureBox1.Location = new System.Drawing.Point(143, 13);
+            this.ovalPictureBox1.Location = new System.Drawing.Point(191, 16);
+            this.ovalPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.ovalPictureBox1.Size = new System.Drawing.Size(113, 105);
             this.ovalPictureBox1.TabIndex = 12;
             this.ovalPictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Vista.Properties.Resources.lock11;
-            this.pictureBox2.Location = new System.Drawing.Point(26, 252);
+            this.pictureBox2.Location = new System.Drawing.Point(35, 310);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 31);
+            this.pictureBox2.Size = new System.Drawing.Size(43, 38);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Vista.Properties.Resources.lock1;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 188);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 231);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 31);
+            this.pictureBox1.Size = new System.Drawing.Size(43, 38);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -165,9 +173,10 @@
             // 
             this.panel1.BackgroundImage = global::Vista.Properties.Resources.Captura;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 478);
+            this.panel1.Location = new System.Drawing.Point(0, 588);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(380, 159);
+            this.panel1.Size = new System.Drawing.Size(507, 196);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -176,19 +185,20 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(74, 125);
+            this.label1.Location = new System.Drawing.Point(99, 154);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 17);
+            this.label1.Size = new System.Drawing.Size(296, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "I\'m not Ivette! Get me out of here!";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(374, 636);
+            this.ClientSize = new System.Drawing.Size(499, 783);
             this.Controls.Add(this.ovalPictureBox1);
             this.Controls.Add(this.bunifuMaterialTextbox2);
             this.Controls.Add(this.bunifuMaterialTextbox1);
@@ -199,6 +209,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.welcometext);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Login";
             this.Text = "Login";
