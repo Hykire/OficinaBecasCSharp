@@ -102,6 +102,9 @@
             this.LSelFechaGC = new System.Windows.Forms.Label();
             this.DTPSelDiaGC = new System.Windows.Forms.DateTimePicker();
             this.gbMenu = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LBXA = new System.Windows.Forms.Label();
+            this.btnBuscarBecadoGBXT = new System.Windows.Forms.Button();
             this.panelTutor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTutores)).BeginInit();
             this.panelBecariosXTutor.SuspendLayout();
@@ -268,11 +271,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBecariosXTutor.AutoSize = true;
+            this.panelBecariosXTutor.Controls.Add(this.btnBuscarBecadoGBXT);
+            this.panelBecariosXTutor.Controls.Add(this.LBXA);
+            this.panelBecariosXTutor.Controls.Add(this.textBox1);
             this.panelBecariosXTutor.Controls.Add(this.LGestBecXTutBXT);
             this.panelBecariosXTutor.Controls.Add(this.LNotaTXB);
             this.panelBecariosXTutor.Controls.Add(this.btnModificarTXB);
-            this.panelBecariosXTutor.Controls.Add(this.LSelecTutor);
-            this.panelBecariosXTutor.Controls.Add(this.CBTutorGBXT);
             this.panelBecariosXTutor.Controls.Add(this.groupBox1);
             this.panelBecariosXTutor.Controls.Add(this.DGVBXT);
             this.panelBecariosXTutor.Controls.Add(this.btnBXTAnadir);
@@ -314,7 +318,7 @@
             // LSelecTutor
             // 
             this.LSelecTutor.AutoSize = true;
-            this.LSelecTutor.Location = new System.Drawing.Point(21, 80);
+            this.LSelecTutor.Location = new System.Drawing.Point(7, 28);
             this.LSelecTutor.Name = "LSelecTutor";
             this.LSelecTutor.Size = new System.Drawing.Size(91, 13);
             this.LSelecTutor.TabIndex = 7;
@@ -328,7 +332,7 @@
             "Tutor 1",
             "Tutor 2",
             "Tutor 3"});
-            this.CBTutorGBXT.Location = new System.Drawing.Point(21, 99);
+            this.CBTutorGBXT.Location = new System.Drawing.Point(12, 56);
             this.CBTutorGBXT.Name = "CBTutorGBXT";
             this.CBTutorGBXT.Size = new System.Drawing.Size(200, 21);
             this.CBTutorGBXT.TabIndex = 6;
@@ -341,23 +345,27 @@
             this.groupBox1.Controls.Add(this.LNombTutor);
             this.groupBox1.Controls.Add(this.LCodTutor);
             this.groupBox1.Controls.Add(this.btnBXTVer);
-            this.groupBox1.Location = new System.Drawing.Point(21, 155);
+            this.groupBox1.Controls.Add(this.LSelecTutor);
+            this.groupBox1.Controls.Add(this.CBTutorGBXT);
+            this.groupBox1.Location = new System.Drawing.Point(21, 111);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(228, 116);
+            this.groupBox1.Size = new System.Drawing.Size(236, 213);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tutor";
+            this.groupBox1.Text = "Buscar por Tutor:";
             // 
             // TxtNombTutorBXT
             // 
-            this.TxtNombTutorBXT.Location = new System.Drawing.Point(59, 52);
+            this.TxtNombTutorBXT.Enabled = false;
+            this.TxtNombTutorBXT.Location = new System.Drawing.Point(65, 140);
             this.TxtNombTutorBXT.Name = "TxtNombTutorBXT";
             this.TxtNombTutorBXT.Size = new System.Drawing.Size(163, 20);
             this.TxtNombTutorBXT.TabIndex = 5;
             // 
             // TxtCodTutorBXT
             // 
-            this.TxtCodTutorBXT.Location = new System.Drawing.Point(59, 30);
+            this.TxtCodTutorBXT.Enabled = false;
+            this.TxtCodTutorBXT.Location = new System.Drawing.Point(65, 103);
             this.TxtCodTutorBXT.Name = "TxtCodTutorBXT";
             this.TxtCodTutorBXT.Size = new System.Drawing.Size(100, 20);
             this.TxtCodTutorBXT.TabIndex = 4;
@@ -366,7 +374,7 @@
             // LNombTutor
             // 
             this.LNombTutor.AutoSize = true;
-            this.LNombTutor.Location = new System.Drawing.Point(9, 55);
+            this.LNombTutor.Location = new System.Drawing.Point(8, 143);
             this.LNombTutor.Name = "LNombTutor";
             this.LNombTutor.Size = new System.Drawing.Size(47, 13);
             this.LNombTutor.TabIndex = 3;
@@ -375,7 +383,7 @@
             // LCodTutor
             // 
             this.LCodTutor.AutoSize = true;
-            this.LCodTutor.Location = new System.Drawing.Point(9, 30);
+            this.LCodTutor.Location = new System.Drawing.Point(12, 104);
             this.LCodTutor.Name = "LCodTutor";
             this.LCodTutor.Size = new System.Drawing.Size(43, 13);
             this.LCodTutor.TabIndex = 2;
@@ -384,7 +392,7 @@
             // 
             // btnBXTVer
             // 
-            this.btnBXTVer.Location = new System.Drawing.Point(125, 93);
+            this.btnBXTVer.Location = new System.Drawing.Point(123, 184);
             this.btnBXTVer.Name = "btnBXTVer";
             this.btnBXTVer.Size = new System.Drawing.Size(103, 23);
             this.btnBXTVer.TabIndex = 1;
@@ -495,7 +503,7 @@
             // 
             // btnBuscarBecaCBT
             // 
-            this.btnBuscarBecaCBT.Location = new System.Drawing.Point(367, 54);
+            this.btnBuscarBecaCBT.Location = new System.Drawing.Point(394, 55);
             this.btnBuscarBecaCBT.Name = "btnBuscarBecaCBT";
             this.btnBuscarBecaCBT.Size = new System.Drawing.Size(92, 23);
             this.btnBuscarBecaCBT.TabIndex = 2;
@@ -516,9 +524,9 @@
             this.sexoBecario,
             this.correoBecario,
             this.BecarioActivo});
-            this.DGVConsBecaT.Location = new System.Drawing.Point(189, 99);
+            this.DGVConsBecaT.Location = new System.Drawing.Point(169, 99);
             this.DGVConsBecaT.Name = "DGVConsBecaT";
-            this.DGVConsBecaT.Size = new System.Drawing.Size(300, 210);
+            this.DGVConsBecaT.Size = new System.Drawing.Size(320, 210);
             this.DGVConsBecaT.TabIndex = 3;
             // 
             // NombreBecario
@@ -555,11 +563,12 @@
             // 
             this.txtCodBecCBT.Location = new System.Drawing.Point(60, 57);
             this.txtCodBecCBT.Name = "txtCodBecCBT";
-            this.txtCodBecCBT.Size = new System.Drawing.Size(251, 20);
+            this.txtCodBecCBT.Size = new System.Drawing.Size(320, 20);
             this.txtCodBecCBT.TabIndex = 1;
             // 
             // PGestCitas
             // 
+            this.PGestCitas.AutoSize = true;
             this.PGestCitas.Controls.Add(this.GBObservGC);
             this.PGestCitas.Controls.Add(this.BEliminarCitaGC);
             this.PGestCitas.Controls.Add(this.BEditarCitaGC);
@@ -803,20 +812,45 @@
             this.gbMenu.Size = new System.Drawing.Size(182, 278);
             this.gbMenu.TabIndex = 18;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(128, 56);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(303, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // LBXA
+            // 
+            this.LBXA.AutoSize = true;
+            this.LBXA.Location = new System.Drawing.Point(24, 61);
+            this.LBXA.Name = "LBXA";
+            this.LBXA.Size = new System.Drawing.Size(98, 13);
+            this.LBXA.TabIndex = 12;
+            this.LBXA.Text = "Buscar por alumno:";
+            // 
+            // btnBuscarBecadoGBXT
+            // 
+            this.btnBuscarBecadoGBXT.Location = new System.Drawing.Point(438, 56);
+            this.btnBuscarBecadoGBXT.Name = "btnBuscarBecadoGBXT";
+            this.btnBuscarBecadoGBXT.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarBecadoGBXT.TabIndex = 13;
+            this.btnBuscarBecadoGBXT.Text = "Buscar";
+            this.btnBuscarBecadoGBXT.UseVisualStyleBackColor = true;
+            // 
             // GestionarTutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 441);
             this.Controls.Add(this.gbMenu);
-            this.Controls.Add(this.PGestCitas);
-            this.Controls.Add(this.panelConsultarBecaT);
             this.Controls.Add(this.panelBecariosXTutor);
             this.Controls.Add(this.panelTutor);
-            this.IsMdiContainer = true;
+            this.Controls.Add(this.PGestCitas);
+            this.Controls.Add(this.panelConsultarBecaT);
             this.Name = "GestionarTutores";
             this.Text = "GestionarTutores";
             this.Load += new System.EventHandler(this.GestionarTutores_Load);
+            this.Resize += new System.EventHandler(this.GestionarTutores_Resize);
             this.panelTutor.ResumeLayout(false);
             this.panelTutor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTutores)).EndInit();
@@ -915,5 +949,8 @@
         private System.Windows.Forms.Label LSelFechaGC;
         private System.Windows.Forms.DateTimePicker DTPSelDiaGC;
         private System.Windows.Forms.Panel gbMenu;
+        private System.Windows.Forms.Button btnBuscarBecadoGBXT;
+        private System.Windows.Forms.Label LBXA;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

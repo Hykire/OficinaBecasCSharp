@@ -54,5 +54,10 @@ namespace Vista
         {
             PGestBecas.Visible = true;
         }
+
+        private void btnBuscarBecaGB_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

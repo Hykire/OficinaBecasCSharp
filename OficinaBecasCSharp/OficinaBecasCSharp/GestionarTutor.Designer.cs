@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class ConsultarBecas
+    partial class GestionarTutor
     {
         /// <summary>
         /// Required designer variable.
@@ -84,9 +84,9 @@
             // 
             // btnConsultarEmails
             // 
-            this.btnConsultarEmails.Location = new System.Drawing.Point(14, 393);
+            this.btnConsultarEmails.Location = new System.Drawing.Point(12, 169);
             this.btnConsultarEmails.Name = "btnConsultarEmails";
-            this.btnConsultarEmails.Size = new System.Drawing.Size(104, 23);
+            this.btnConsultarEmails.Size = new System.Drawing.Size(142, 23);
             this.btnConsultarEmails.TabIndex = 2;
             this.btnConsultarEmails.Text = "Consultar Emails";
             this.btnConsultarEmails.UseVisualStyleBackColor = true;
@@ -94,9 +94,9 @@
             // 
             // btnConsultarBecario
             // 
-            this.btnConsultarBecario.Location = new System.Drawing.Point(14, 245);
+            this.btnConsultarBecario.Location = new System.Drawing.Point(12, 102);
             this.btnConsultarBecario.Name = "btnConsultarBecario";
-            this.btnConsultarBecario.Size = new System.Drawing.Size(104, 23);
+            this.btnConsultarBecario.Size = new System.Drawing.Size(142, 23);
             this.btnConsultarBecario.TabIndex = 1;
             this.btnConsultarBecario.Text = "Consultar Becario";
             this.btnConsultarBecario.UseVisualStyleBackColor = true;
@@ -104,9 +104,9 @@
             // 
             // btnConsultarBecas
             // 
-            this.btnConsultarBecas.Location = new System.Drawing.Point(14, 93);
+            this.btnConsultarBecas.Location = new System.Drawing.Point(12, 42);
             this.btnConsultarBecas.Name = "btnConsultarBecas";
-            this.btnConsultarBecas.Size = new System.Drawing.Size(104, 23);
+            this.btnConsultarBecas.Size = new System.Drawing.Size(142, 23);
             this.btnConsultarBecas.TabIndex = 0;
             this.btnConsultarBecas.Text = "Consultar Becas";
             this.btnConsultarBecas.UseVisualStyleBackColor = true;
@@ -121,9 +121,9 @@
             this.panelConsultarBecas.Controls.Add(this.textBox1);
             this.panelConsultarBecas.Controls.Add(this.btnBecasExternas);
             this.panelConsultarBecas.Controls.Add(this.btnBecasPUCP);
-            this.panelConsultarBecas.Location = new System.Drawing.Point(166, 97);
+            this.panelConsultarBecas.Location = new System.Drawing.Point(241, 86);
             this.panelConsultarBecas.Name = "panelConsultarBecas";
-            this.panelConsultarBecas.Size = new System.Drawing.Size(679, 487);
+            this.panelConsultarBecas.Size = new System.Drawing.Size(623, 378);
             this.panelConsultarBecas.TabIndex = 8;
             // 
             // label1
@@ -168,7 +168,7 @@
             this.EspecialidadBeca});
             this.dgvBecas.Location = new System.Drawing.Point(139, 103);
             this.dgvBecas.Name = "dgvBecas";
-            this.dgvBecas.Size = new System.Drawing.Size(474, 352);
+            this.dgvBecas.Size = new System.Drawing.Size(469, 260);
             this.dgvBecas.TabIndex = 3;
             // 
             // NombreBecas
@@ -230,9 +230,9 @@
             this.panelConsultarEmails.Controls.Add(this.button1);
             this.panelConsultarEmails.Controls.Add(this.dgvConsultarEmails);
             this.panelConsultarEmails.Controls.Add(this.textBox2);
-            this.panelConsultarEmails.Location = new System.Drawing.Point(166, 97);
+            this.panelConsultarEmails.Location = new System.Drawing.Point(241, 86);
             this.panelConsultarEmails.Name = "panelConsultarEmails";
-            this.panelConsultarEmails.Size = new System.Drawing.Size(679, 487);
+            this.panelConsultarEmails.Size = new System.Drawing.Size(623, 378);
             this.panelConsultarEmails.TabIndex = 13;
             // 
             // groupBox1
@@ -241,10 +241,10 @@
             this.groupBox1.Controls.Add(this.cbEspecialidad);
             this.groupBox1.Controls.Add(this.lblSexo);
             this.groupBox1.Controls.Add(this.lblEspecialidad);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(23, 103);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(15, 103);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(148, 296);
+            this.groupBox1.Size = new System.Drawing.Size(156, 187);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -252,7 +252,7 @@
             // cbSexo
             // 
             this.cbSexo.FormattingEnabled = true;
-            this.cbSexo.Location = new System.Drawing.Point(6, 49);
+            this.cbSexo.Location = new System.Drawing.Point(16, 53);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(121, 24);
             this.cbSexo.TabIndex = 16;
@@ -260,7 +260,7 @@
             // cbEspecialidad
             // 
             this.cbEspecialidad.FormattingEnabled = true;
-            this.cbEspecialidad.Location = new System.Drawing.Point(6, 104);
+            this.cbEspecialidad.Location = new System.Drawing.Point(16, 108);
             this.cbEspecialidad.Name = "cbEspecialidad";
             this.cbEspecialidad.Size = new System.Drawing.Size(121, 24);
             this.cbEspecialidad.TabIndex = 14;
@@ -269,7 +269,7 @@
             // 
             this.lblSexo.AutoSize = true;
             this.lblSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(5, 33);
+            this.lblSexo.Location = new System.Drawing.Point(15, 37);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(31, 13);
             this.lblSexo.TabIndex = 9;
@@ -279,7 +279,7 @@
             // 
             this.lblEspecialidad.AutoSize = true;
             this.lblEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspecialidad.Location = new System.Drawing.Point(6, 88);
+            this.lblEspecialidad.Location = new System.Drawing.Point(16, 92);
             this.lblEspecialidad.Name = "lblEspecialidad";
             this.lblEspecialidad.Size = new System.Drawing.Size(67, 13);
             this.lblEspecialidad.TabIndex = 15;
@@ -324,7 +324,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(583, 61);
+            this.button1.Location = new System.Drawing.Point(527, 64);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -343,7 +343,7 @@
             this.emailConsultarEmails});
             this.dgvConsultarEmails.Location = new System.Drawing.Point(184, 103);
             this.dgvConsultarEmails.Name = "dgvConsultarEmails";
-            this.dgvConsultarEmails.Size = new System.Drawing.Size(474, 296);
+            this.dgvConsultarEmails.Size = new System.Drawing.Size(418, 187);
             this.dgvConsultarEmails.TabIndex = 3;
             // 
             // nombreConsultarEmails
@@ -375,9 +375,9 @@
             this.panelConsultarBecario.Controls.Add(this.btnBuscarBecario);
             this.panelConsultarBecario.Controls.Add(this.dgvBecarios);
             this.panelConsultarBecario.Controls.Add(this.txtCodBecario);
-            this.panelConsultarBecario.Location = new System.Drawing.Point(166, 97);
+            this.panelConsultarBecario.Location = new System.Drawing.Point(241, 86);
             this.panelConsultarBecario.Name = "panelConsultarBecario";
-            this.panelConsultarBecario.Size = new System.Drawing.Size(679, 487);
+            this.panelConsultarBecario.Size = new System.Drawing.Size(623, 378);
             this.panelConsultarBecario.TabIndex = 12;
             // 
             // lvlBecario
@@ -423,7 +423,7 @@
             this.BecarioActivo});
             this.dgvBecarios.Location = new System.Drawing.Point(142, 93);
             this.dgvBecarios.Name = "dgvBecarios";
-            this.dgvBecarios.Size = new System.Drawing.Size(474, 352);
+            this.dgvBecarios.Size = new System.Drawing.Size(418, 243);
             this.dgvBecarios.TabIndex = 3;
             // 
             // NombreBecario
@@ -465,29 +465,25 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.Controls.Add(this.btnConsultarEmails);
             this.panel2.Controls.Add(this.btnConsultarBecas);
             this.panel2.Controls.Add(this.btnConsultarBecario);
-            this.panel2.Location = new System.Drawing.Point(22, 97);
+            this.panel2.Location = new System.Drawing.Point(38, 86);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(138, 639);
+            this.panel2.Size = new System.Drawing.Size(168, 330);
             this.panel2.TabIndex = 10;
             // 
-            // ConsultarBecas
+            // GestionarTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(894, 494);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panelConsultarBecas);
             this.Controls.Add(this.panelConsultarEmails);
             this.Controls.Add(this.panelConsultarBecario);
-            this.IsMdiContainer = true;
-            this.Name = "ConsultarBecas";
-            this.Text = "ConsultarBecas";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Controls.Add(this.panelConsultarBecas);
+            this.Name = "GestionarTutor";
+            this.Text = "Gestionar Tutor";
             this.Load += new System.EventHandler(this.ConsultarBecas_Load);
             this.panelConsultarBecas.ResumeLayout(false);
             this.panelConsultarBecas.PerformLayout();

@@ -183,5 +183,11 @@ namespace Vista
             EditarCita frmAgergar = new EditarCita();
             frmAgergar.ShowDialog();
         }
+
+        private void GestionarTutores_Resize(object sender, EventArgs e)
+        {
+            //PGestCitas.Height = this.Width - 100;
+
+        }
     }
 }

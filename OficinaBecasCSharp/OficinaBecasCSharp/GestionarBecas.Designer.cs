@@ -194,6 +194,7 @@
             this.btnBuscarBecaGB.TabIndex = 4;
             this.btnBuscarBecaGB.Text = "Buscar Beca";
             this.btnBuscarBecaGB.UseVisualStyleBackColor = true;
+            this.btnBuscarBecaGB.Click += new System.EventHandler(this.btnBuscarBecaGB_Click);
             // 
             // LTituloGC
             // 

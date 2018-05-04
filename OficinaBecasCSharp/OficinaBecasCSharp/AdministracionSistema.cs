@@ -14,21 +14,30 @@ namespace Vista {
             InitializeComponent();
             panelGestBecarios.Hide();
             panelGestUsuarios.Hide();
-        }
+            PGestBecas.Hide();
+
+            txtBFechaGC.Enabled = false;
+            txtBDescBecaGB.Enabled = false;
+            txtNombBecaGB.Enabled = false;
+
+        }                  
 
         private void button1_Click(object sender, EventArgs e) {
             panelGestBecarios.Hide();
             panelGestUsuarios.Show();
+            PGestBecas.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e) {
             panelGestBecarios.Show();
             panelGestUsuarios.Hide();
+            PGestBecas.Hide();
         }
         
         private void button4_Click(object sender, EventArgs e) {
             panelGestBecarios.Hide();
             panelGestUsuarios.Hide();
+            PGestBecas.Show();
         }
 
         private void button8_Click(object sender, EventArgs e) {
@@ -64,9 +73,41 @@ namespace Vista {
         }
 
         private void button4_Click_1(object sender, EventArgs e) {
-            GestionarBecas ventanaGestionarBecas = new GestionarBecas();
-            if (ventanaGestionarBecas.ShowDialog() == DialogResult.OK) {
 
+        }
+
+        private void LGestBecXTutBXT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelGestBecarios_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BAgregarBecaGB_Click(object sender, EventArgs e)
+        {
+            AgregarBecaGB frmAgregBecaGB = new AgregarBecaGB();
+            frmAgregBecaGB.ShowDialog();
+        }
+
+        private void BEditarCitaGC_Click(object sender, EventArgs e)
+        {
+            //if campos... debe seleccionar beca!(después)
+            EditarBecaGB frmEditBecaGB = new EditarBecaGB();
+            frmEditBecaGB.ShowDialog();
+        }
+
+        private void BEliminarCitaGC_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNombBecaGB.Text))
+            {
+                MessageBox.Show("Debe seleccionar una beca", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("¿Desea eliminar la beca seleccionada?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
         }
     }

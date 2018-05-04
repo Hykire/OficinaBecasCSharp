@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class ConsultarBecas : Form
+    public partial class GestionarTutor : Form
     {
-        public ConsultarBecas()
+        public GestionarTutor()
         {
             InitializeComponent();
             panelConsultarEmails.Visible = false;

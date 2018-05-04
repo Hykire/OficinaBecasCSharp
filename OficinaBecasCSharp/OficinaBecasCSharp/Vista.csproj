@@ -128,11 +128,11 @@
     <Compile Include="BuscarTutorNT.Designer.cs">
       <DependentUpon>BuscarTutorNT.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarBecas.cs">
+    <Compile Include="GestionarTutor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarBecas.Designer.cs">
-      <DependentUpon>ConsultarBecas.cs</DependentUpon>
+    <Compile Include="GestionarTutor.Designer.cs">
+      <DependentUpon>GestionarTutor.cs</DependentUpon>
     </Compile>
     <Compile Include="CoordinadorComunicaciones.cs">
       <SubType>Form</SubType>
@@ -146,11 +146,11 @@
     <Compile Include="DatosUsuario.Designer.cs">
       <DependentUpon>DatosUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editar Tutor.cs">
+    <Compile Include="EditarTutor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editar Tutor.Designer.cs">
-      <DependentUpon>Editar Tutor.cs</DependentUpon>
+    <Compile Include="EditarTutor.Designer.cs">
+      <DependentUpon>EditarTutor.cs</DependentUpon>
     </Compile>
     <Compile Include="EditarBecaGB.cs">
       <SubType>Form</SubType>
@@ -268,8 +268,8 @@
     <EmbeddedResource Include="BuscarTutorNT.resx">
       <DependentUpon>BuscarTutorNT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarBecas.resx">
-      <DependentUpon>ConsultarBecas.cs</DependentUpon>
+    <EmbeddedResource Include="GestionarTutor.resx">
+      <DependentUpon>GestionarTutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CoordinadorComunicaciones.resx">
       <DependentUpon>CoordinadorComunicaciones.cs</DependentUpon>
@@ -277,8 +277,8 @@
     <EmbeddedResource Include="DatosUsuario.resx">
       <DependentUpon>DatosUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editar Tutor.resx">
-      <DependentUpon>Editar Tutor.cs</DependentUpon>
+    <EmbeddedResource Include="EditarTutor.resx">
+      <DependentUpon>EditarTutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarBecaGB.resx">
       <DependentUpon>EditarBecaGB.cs</DependentUpon>
