@@ -23,26 +23,9 @@ namespace Vista {
         }                  
 
         private void button1_Click(object sender, EventArgs e) {
-            panelGestBecarios.Hide();
-            panelGestUsuarios.Show();
-            PGestBecas.Hide();
-        }
-
-        private void button2_Click(object sender, EventArgs e) {
-            panelGestBecarios.Show();
-            panelGestUsuarios.Hide();
-            PGestBecas.Hide();
-        }
-        
-        private void button4_Click(object sender, EventArgs e) {
-            panelGestBecarios.Hide();
-            panelGestUsuarios.Hide();
-            PGestBecas.Show();
-        }
-
-        private void button8_Click(object sender, EventArgs e) {
 
         }
+
 
         private void btnNuevoBec_Click(object sender, EventArgs e) {
             AdministracionNuevoBecario ventanaNuevoBecario = new AdministracionNuevoBecario();
@@ -70,10 +53,6 @@ namespace Vista {
             if (ventanaModificarUsuario.ShowDialog() == DialogResult.OK) {
 
             }
-        }
-
-        private void button4_Click_1(object sender, EventArgs e) {
-
         }
 
         private void LGestBecXTutBXT_Click(object sender, EventArgs e)
@@ -109,6 +88,27 @@ namespace Vista {
             {
                 MessageBox.Show("¿Desea eliminar la beca seleccionada?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
+        }
+
+        private void GU_button_Click(object sender, EventArgs e)
+        {
+            panelGestBecarios.Hide();
+            panelGestUsuarios.Show();
+            PGestBecas.Hide();
+        }
+
+        private void GB_button_Click(object sender, EventArgs e)
+        {
+            panelGestBecarios.Show();
+            panelGestUsuarios.Hide();
+            PGestBecas.Hide();
+        }
+
+        private void GBeca_button_Click(object sender, EventArgs e)
+        {
+            panelGestBecarios.Hide();
+            panelGestUsuarios.Hide();
+            PGestBecas.Show();
         }
     }
 }

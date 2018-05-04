@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnMNBesBecariosXtutor = new System.Windows.Forms.Button();
-            this.btnMNGesCitas = new System.Windows.Forms.Button();
-            this.btnMNGesTutores = new System.Windows.Forms.Button();
-            this.btnMNConsBecas = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionarTutores));
             this.panelTutor = new System.Windows.Forms.Panel();
             this.LGestTutBXT = new System.Windows.Forms.Label();
             this.DGVTutores = new System.Windows.Forms.DataGridView();
@@ -45,17 +42,20 @@
             this.btnEditarTutor = new System.Windows.Forms.Button();
             this.btnNuevoTutor = new System.Windows.Forms.Button();
             this.panelBecariosXTutor = new System.Windows.Forms.Panel();
+            this.btnBuscarBecadoGBXT = new System.Windows.Forms.Button();
+            this.LBXA = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.LGestBecXTutBXT = new System.Windows.Forms.Label();
             this.LNotaTXB = new System.Windows.Forms.Label();
             this.btnModificarTXB = new System.Windows.Forms.Button();
-            this.LSelecTutor = new System.Windows.Forms.Label();
-            this.CBTutorGBXT = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TxtNombTutorBXT = new System.Windows.Forms.TextBox();
             this.TxtCodTutorBXT = new System.Windows.Forms.TextBox();
             this.LNombTutor = new System.Windows.Forms.Label();
             this.LCodTutor = new System.Windows.Forms.Label();
             this.btnBXTVer = new System.Windows.Forms.Button();
+            this.LSelecTutor = new System.Windows.Forms.Label();
+            this.CBTutorGBXT = new System.Windows.Forms.ComboBox();
             this.DGVBXT = new System.Windows.Forms.DataGridView();
             this.C1BXT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C2BXT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,10 +101,12 @@
             this.LFechaGC = new System.Windows.Forms.Label();
             this.LSelFechaGC = new System.Windows.Forms.Label();
             this.DTPSelDiaGC = new System.Windows.Forms.DateTimePicker();
-            this.gbMenu = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.LBXA = new System.Windows.Forms.Label();
-            this.btnBuscarBecadoGBXT = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.GBT_button = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.CB_button = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.GC_button = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.GT_button = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelTutor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTutores)).BeginInit();
             this.panelBecariosXTutor.SuspendLayout();
@@ -115,54 +117,13 @@
             this.PGestCitas.SuspendLayout();
             this.GBObservGC.SuspendLayout();
             this.GBDetalleCitaGC.SuspendLayout();
-            this.gbMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnMNBesBecariosXtutor
-            // 
-            this.btnMNBesBecariosXtutor.Location = new System.Drawing.Point(15, 27);
-            this.btnMNBesBecariosXtutor.Name = "btnMNBesBecariosXtutor";
-            this.btnMNBesBecariosXtutor.Size = new System.Drawing.Size(152, 23);
-            this.btnMNBesBecariosXtutor.TabIndex = 3;
-            this.btnMNBesBecariosXtutor.Text = "Gestionar Becarios por Tutor";
-            this.btnMNBesBecariosXtutor.UseVisualStyleBackColor = true;
-            this.btnMNBesBecariosXtutor.Click += new System.EventHandler(this.btnMNBesBecariosXtutor_Click);
-            // 
-            // btnMNGesCitas
-            // 
-            this.btnMNGesCitas.Location = new System.Drawing.Point(15, 165);
-            this.btnMNGesCitas.Name = "btnMNGesCitas";
-            this.btnMNGesCitas.Size = new System.Drawing.Size(152, 23);
-            this.btnMNGesCitas.TabIndex = 2;
-            this.btnMNGesCitas.Text = "Gestionar Citas";
-            this.btnMNGesCitas.UseVisualStyleBackColor = true;
-            this.btnMNGesCitas.Click += new System.EventHandler(this.btnMNGesCitas_Click);
-            // 
-            // btnMNGesTutores
-            // 
-            this.btnMNGesTutores.Location = new System.Drawing.Point(15, 97);
-            this.btnMNGesTutores.Name = "btnMNGesTutores";
-            this.btnMNGesTutores.Size = new System.Drawing.Size(152, 23);
-            this.btnMNGesTutores.TabIndex = 1;
-            this.btnMNGesTutores.Text = "Gestionar Tutores";
-            this.btnMNGesTutores.UseVisualStyleBackColor = true;
-            this.btnMNGesTutores.Click += new System.EventHandler(this.btnMNGesTutores_Click);
-            // 
-            // btnMNConsBecas
-            // 
-            this.btnMNConsBecas.Location = new System.Drawing.Point(15, 230);
-            this.btnMNConsBecas.Name = "btnMNConsBecas";
-            this.btnMNConsBecas.Size = new System.Drawing.Size(152, 24);
-            this.btnMNConsBecas.TabIndex = 0;
-            this.btnMNConsBecas.Text = "Consultar Becas";
-            this.btnMNConsBecas.UseVisualStyleBackColor = true;
-            this.btnMNConsBecas.Click += new System.EventHandler(this.btnMNConsBecas_Click);
             // 
             // panelTutor
             // 
-            this.panelTutor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelTutor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelTutor.AutoSize = true;
             this.panelTutor.Controls.Add(this.LGestTutBXT);
             this.panelTutor.Controls.Add(this.DGVTutores);
@@ -170,7 +131,7 @@
             this.panelTutor.Controls.Add(this.btnEliminarTutor);
             this.panelTutor.Controls.Add(this.btnEditarTutor);
             this.panelTutor.Controls.Add(this.btnNuevoTutor);
-            this.panelTutor.Location = new System.Drawing.Point(252, 52);
+            this.panelTutor.Location = new System.Drawing.Point(47, 54);
             this.panelTutor.Name = "panelTutor";
             this.panelTutor.Size = new System.Drawing.Size(522, 345);
             this.panelTutor.TabIndex = 3;
@@ -233,7 +194,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Si se desea Editar, solo \r\ndebe seleccionar UN Tutor";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnEliminarTutor
             // 
@@ -267,9 +227,7 @@
             // 
             // panelBecariosXTutor
             // 
-            this.panelBecariosXTutor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelBecariosXTutor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelBecariosXTutor.AutoSize = true;
             this.panelBecariosXTutor.Controls.Add(this.btnBuscarBecadoGBXT);
             this.panelBecariosXTutor.Controls.Add(this.LBXA);
@@ -280,10 +238,35 @@
             this.panelBecariosXTutor.Controls.Add(this.groupBox1);
             this.panelBecariosXTutor.Controls.Add(this.DGVBXT);
             this.panelBecariosXTutor.Controls.Add(this.btnBXTAnadir);
-            this.panelBecariosXTutor.Location = new System.Drawing.Point(252, 52);
+            this.panelBecariosXTutor.Location = new System.Drawing.Point(47, 54);
             this.panelBecariosXTutor.Name = "panelBecariosXTutor";
             this.panelBecariosXTutor.Size = new System.Drawing.Size(522, 345);
             this.panelBecariosXTutor.TabIndex = 5;
+            // 
+            // btnBuscarBecadoGBXT
+            // 
+            this.btnBuscarBecadoGBXT.Location = new System.Drawing.Point(438, 56);
+            this.btnBuscarBecadoGBXT.Name = "btnBuscarBecadoGBXT";
+            this.btnBuscarBecadoGBXT.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarBecadoGBXT.TabIndex = 13;
+            this.btnBuscarBecadoGBXT.Text = "Buscar";
+            this.btnBuscarBecadoGBXT.UseVisualStyleBackColor = true;
+            // 
+            // LBXA
+            // 
+            this.LBXA.AutoSize = true;
+            this.LBXA.Location = new System.Drawing.Point(24, 61);
+            this.LBXA.Name = "LBXA";
+            this.LBXA.Size = new System.Drawing.Size(98, 13);
+            this.LBXA.TabIndex = 12;
+            this.LBXA.Text = "Buscar por alumno:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(128, 56);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(303, 20);
+            this.textBox1.TabIndex = 11;
             // 
             // LGestBecXTutBXT
             // 
@@ -314,29 +297,6 @@
             this.btnModificarTXB.Text = "Modificar";
             this.btnModificarTXB.UseVisualStyleBackColor = true;
             this.btnModificarTXB.Click += new System.EventHandler(this.btnModificarTXB_Click);
-            // 
-            // LSelecTutor
-            // 
-            this.LSelecTutor.AutoSize = true;
-            this.LSelecTutor.Location = new System.Drawing.Point(7, 28);
-            this.LSelecTutor.Name = "LSelecTutor";
-            this.LSelecTutor.Size = new System.Drawing.Size(91, 13);
-            this.LSelecTutor.TabIndex = 7;
-            this.LSelecTutor.Text = "Seleccionar Tutor";
-            // 
-            // CBTutorGBXT
-            // 
-            this.CBTutorGBXT.FormattingEnabled = true;
-            this.CBTutorGBXT.Items.AddRange(new object[] {
-            "Seleccionar",
-            "Tutor 1",
-            "Tutor 2",
-            "Tutor 3"});
-            this.CBTutorGBXT.Location = new System.Drawing.Point(12, 56);
-            this.CBTutorGBXT.Name = "CBTutorGBXT";
-            this.CBTutorGBXT.Size = new System.Drawing.Size(200, 21);
-            this.CBTutorGBXT.TabIndex = 6;
-            this.CBTutorGBXT.SelectedIndexChanged += new System.EventHandler(this.CBTutorGBXT_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -388,7 +348,6 @@
             this.LCodTutor.Size = new System.Drawing.Size(43, 13);
             this.LCodTutor.TabIndex = 2;
             this.LCodTutor.Text = "Código:";
-            this.LCodTutor.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnBXTVer
             // 
@@ -398,7 +357,29 @@
             this.btnBXTVer.TabIndex = 1;
             this.btnBXTVer.Text = "Ver Becarios";
             this.btnBXTVer.UseVisualStyleBackColor = true;
-            this.btnBXTVer.Click += new System.EventHandler(this.btnBXTVer_Click);
+            // 
+            // LSelecTutor
+            // 
+            this.LSelecTutor.AutoSize = true;
+            this.LSelecTutor.Location = new System.Drawing.Point(7, 28);
+            this.LSelecTutor.Name = "LSelecTutor";
+            this.LSelecTutor.Size = new System.Drawing.Size(91, 13);
+            this.LSelecTutor.TabIndex = 7;
+            this.LSelecTutor.Text = "Seleccionar Tutor";
+            // 
+            // CBTutorGBXT
+            // 
+            this.CBTutorGBXT.FormattingEnabled = true;
+            this.CBTutorGBXT.Items.AddRange(new object[] {
+            "Seleccionar",
+            "Tutor 1",
+            "Tutor 2",
+            "Tutor 3"});
+            this.CBTutorGBXT.Location = new System.Drawing.Point(12, 56);
+            this.CBTutorGBXT.Name = "CBTutorGBXT";
+            this.CBTutorGBXT.Size = new System.Drawing.Size(200, 21);
+            this.CBTutorGBXT.TabIndex = 6;
+            this.CBTutorGBXT.SelectedIndexChanged += new System.EventHandler(this.CBTutorGBXT_SelectedIndexChanged);
             // 
             // DGVBXT
             // 
@@ -412,7 +393,6 @@
             this.DGVBXT.Name = "DGVBXT";
             this.DGVBXT.Size = new System.Drawing.Size(238, 150);
             this.DGVBXT.TabIndex = 4;
-            this.DGVBXT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // C1BXT
             // 
@@ -446,6 +426,7 @@
             // 
             // panelConsultarBecaT
             // 
+            this.panelConsultarBecaT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelConsultarBecaT.Controls.Add(this.btnBecasExternasCBT);
             this.panelConsultarBecaT.Controls.Add(this.btnBecasPUCPCBT);
             this.panelConsultarBecaT.Controls.Add(this.LabelCBT);
@@ -453,11 +434,10 @@
             this.panelConsultarBecaT.Controls.Add(this.btnBuscarBecaCBT);
             this.panelConsultarBecaT.Controls.Add(this.DGVConsBecaT);
             this.panelConsultarBecaT.Controls.Add(this.txtCodBecCBT);
-            this.panelConsultarBecaT.Location = new System.Drawing.Point(252, 52);
+            this.panelConsultarBecaT.Location = new System.Drawing.Point(47, 54);
             this.panelConsultarBecaT.Name = "panelConsultarBecaT";
             this.panelConsultarBecaT.Size = new System.Drawing.Size(522, 345);
             this.panelConsultarBecaT.TabIndex = 14;
-            this.panelConsultarBecaT.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConsultarBecaT_Paint);
             // 
             // btnBecasExternasCBT
             // 
@@ -490,7 +470,6 @@
             this.LabelCBT.Size = new System.Drawing.Size(132, 20);
             this.LabelCBT.TabIndex = 18;
             this.LabelCBT.Text = "Consultar Beca";
-            this.LabelCBT.Click += new System.EventHandler(this.lvlBecario_Click);
             // 
             // LNombBecaCBT
             // 
@@ -568,6 +547,7 @@
             // 
             // PGestCitas
             // 
+            this.PGestCitas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PGestCitas.AutoSize = true;
             this.PGestCitas.Controls.Add(this.GBObservGC);
             this.PGestCitas.Controls.Add(this.BEliminarCitaGC);
@@ -578,7 +558,7 @@
             this.PGestCitas.Controls.Add(this.GBDetalleCitaGC);
             this.PGestCitas.Controls.Add(this.LSelFechaGC);
             this.PGestCitas.Controls.Add(this.DTPSelDiaGC);
-            this.PGestCitas.Location = new System.Drawing.Point(252, 52);
+            this.PGestCitas.Location = new System.Drawing.Point(47, 54);
             this.PGestCitas.Name = "PGestCitas";
             this.PGestCitas.Size = new System.Drawing.Size(522, 345);
             this.PGestCitas.TabIndex = 16;
@@ -801,56 +781,181 @@
             this.DTPSelDiaGC.Size = new System.Drawing.Size(200, 20);
             this.DTPSelDiaGC.TabIndex = 0;
             // 
-            // gbMenu
+            // panel1
             // 
-            this.gbMenu.Controls.Add(this.btnMNBesBecariosXtutor);
-            this.gbMenu.Controls.Add(this.btnMNConsBecas);
-            this.gbMenu.Controls.Add(this.btnMNGesCitas);
-            this.gbMenu.Controls.Add(this.btnMNGesTutores);
-            this.gbMenu.Location = new System.Drawing.Point(34, 92);
-            this.gbMenu.Name = "gbMenu";
-            this.gbMenu.Size = new System.Drawing.Size(182, 278);
-            this.gbMenu.TabIndex = 18;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.GBT_button);
+            this.panel1.Controls.Add(this.CB_button);
+            this.panel1.Controls.Add(this.GC_button);
+            this.panel1.Controls.Add(this.GT_button);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 441);
+            this.panel1.TabIndex = 19;
             // 
-            // textBox1
+            // GBT_button
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(303, 20);
-            this.textBox1.TabIndex = 11;
+            this.GBT_button.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.GBT_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GBT_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GBT_button.BorderRadius = 0;
+            this.GBT_button.ButtonText = "Gestionar Becarios";
+            this.GBT_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GBT_button.DisabledColor = System.Drawing.Color.Gray;
+            this.GBT_button.Iconcolor = System.Drawing.Color.Transparent;
+            this.GBT_button.Iconimage = ((System.Drawing.Image)(resources.GetObject("GBT_button.Iconimage")));
+            this.GBT_button.Iconimage_right = null;
+            this.GBT_button.Iconimage_right_Selected = null;
+            this.GBT_button.Iconimage_Selected = null;
+            this.GBT_button.IconMarginLeft = 0;
+            this.GBT_button.IconMarginRight = 0;
+            this.GBT_button.IconRightVisible = true;
+            this.GBT_button.IconRightZoom = 0D;
+            this.GBT_button.IconVisible = true;
+            this.GBT_button.IconZoom = 90D;
+            this.GBT_button.IsTab = true;
+            this.GBT_button.Location = new System.Drawing.Point(0, 113);
+            this.GBT_button.Name = "GBT_button";
+            this.GBT_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GBT_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.GBT_button.OnHoverTextColor = System.Drawing.Color.White;
+            this.GBT_button.selected = false;
+            this.GBT_button.Size = new System.Drawing.Size(241, 48);
+            this.GBT_button.TabIndex = 24;
+            this.GBT_button.Text = "Gestionar Becarios";
+            this.GBT_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GBT_button.Textcolor = System.Drawing.Color.White;
+            this.GBT_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GBT_button.Click += new System.EventHandler(this.GBT_button_Click);
             // 
-            // LBXA
+            // CB_button
             // 
-            this.LBXA.AutoSize = true;
-            this.LBXA.Location = new System.Drawing.Point(24, 61);
-            this.LBXA.Name = "LBXA";
-            this.LBXA.Size = new System.Drawing.Size(98, 13);
-            this.LBXA.TabIndex = 12;
-            this.LBXA.Text = "Buscar por alumno:";
+            this.CB_button.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.CB_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.CB_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CB_button.BorderRadius = 0;
+            this.CB_button.ButtonText = "Consultar Becas";
+            this.CB_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CB_button.DisabledColor = System.Drawing.Color.Gray;
+            this.CB_button.Iconcolor = System.Drawing.Color.Transparent;
+            this.CB_button.Iconimage = ((System.Drawing.Image)(resources.GetObject("CB_button.Iconimage")));
+            this.CB_button.Iconimage_right = null;
+            this.CB_button.Iconimage_right_Selected = null;
+            this.CB_button.Iconimage_Selected = null;
+            this.CB_button.IconMarginLeft = 0;
+            this.CB_button.IconMarginRight = 0;
+            this.CB_button.IconRightVisible = true;
+            this.CB_button.IconRightZoom = 0D;
+            this.CB_button.IconVisible = true;
+            this.CB_button.IconZoom = 90D;
+            this.CB_button.IsTab = true;
+            this.CB_button.Location = new System.Drawing.Point(0, 293);
+            this.CB_button.Name = "CB_button";
+            this.CB_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.CB_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.CB_button.OnHoverTextColor = System.Drawing.Color.White;
+            this.CB_button.selected = false;
+            this.CB_button.Size = new System.Drawing.Size(241, 48);
+            this.CB_button.TabIndex = 23;
+            this.CB_button.Text = "Consultar Becas";
+            this.CB_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CB_button.Textcolor = System.Drawing.Color.White;
+            this.CB_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CB_button.Click += new System.EventHandler(this.CB_button_Click);
             // 
-            // btnBuscarBecadoGBXT
+            // GC_button
             // 
-            this.btnBuscarBecadoGBXT.Location = new System.Drawing.Point(438, 56);
-            this.btnBuscarBecadoGBXT.Name = "btnBuscarBecadoGBXT";
-            this.btnBuscarBecadoGBXT.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarBecadoGBXT.TabIndex = 13;
-            this.btnBuscarBecadoGBXT.Text = "Buscar";
-            this.btnBuscarBecadoGBXT.UseVisualStyleBackColor = true;
+            this.GC_button.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.GC_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GC_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GC_button.BorderRadius = 0;
+            this.GC_button.ButtonText = "Gestionar Citas";
+            this.GC_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GC_button.DisabledColor = System.Drawing.Color.Gray;
+            this.GC_button.Iconcolor = System.Drawing.Color.Transparent;
+            this.GC_button.Iconimage = ((System.Drawing.Image)(resources.GetObject("GC_button.Iconimage")));
+            this.GC_button.Iconimage_right = null;
+            this.GC_button.Iconimage_right_Selected = null;
+            this.GC_button.Iconimage_Selected = null;
+            this.GC_button.IconMarginLeft = 0;
+            this.GC_button.IconMarginRight = 0;
+            this.GC_button.IconRightVisible = true;
+            this.GC_button.IconRightZoom = 0D;
+            this.GC_button.IconVisible = true;
+            this.GC_button.IconZoom = 90D;
+            this.GC_button.IsTab = true;
+            this.GC_button.Location = new System.Drawing.Point(0, 233);
+            this.GC_button.Name = "GC_button";
+            this.GC_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GC_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.GC_button.OnHoverTextColor = System.Drawing.Color.White;
+            this.GC_button.selected = false;
+            this.GC_button.Size = new System.Drawing.Size(241, 48);
+            this.GC_button.TabIndex = 22;
+            this.GC_button.Text = "Gestionar Citas";
+            this.GC_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GC_button.Textcolor = System.Drawing.Color.White;
+            this.GC_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GC_button.Click += new System.EventHandler(this.GC_button_Click);
+            // 
+            // GT_button
+            // 
+            this.GT_button.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.GT_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GT_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GT_button.BorderRadius = 0;
+            this.GT_button.ButtonText = "Gestionar Tutores";
+            this.GT_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GT_button.DisabledColor = System.Drawing.Color.Gray;
+            this.GT_button.Iconcolor = System.Drawing.Color.Transparent;
+            this.GT_button.Iconimage = ((System.Drawing.Image)(resources.GetObject("GT_button.Iconimage")));
+            this.GT_button.Iconimage_right = null;
+            this.GT_button.Iconimage_right_Selected = null;
+            this.GT_button.Iconimage_Selected = null;
+            this.GT_button.IconMarginLeft = 0;
+            this.GT_button.IconMarginRight = 0;
+            this.GT_button.IconRightVisible = true;
+            this.GT_button.IconRightZoom = 0D;
+            this.GT_button.IconVisible = true;
+            this.GT_button.IconZoom = 90D;
+            this.GT_button.IsTab = true;
+            this.GT_button.Location = new System.Drawing.Point(0, 173);
+            this.GT_button.Name = "GT_button";
+            this.GT_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GT_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.GT_button.OnHoverTextColor = System.Drawing.Color.White;
+            this.GT_button.selected = false;
+            this.GT_button.Size = new System.Drawing.Size(241, 48);
+            this.GT_button.TabIndex = 21;
+            this.GT_button.Text = "Gestionar Tutores";
+            this.GT_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GT_button.Textcolor = System.Drawing.Color.White;
+            this.GT_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GT_button.Click += new System.EventHandler(this.GT_button_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.PGestCitas);
+            this.panel2.Controls.Add(this.panelBecariosXTutor);
+            this.panel2.Controls.Add(this.panelConsultarBecaT);
+            this.panel2.Controls.Add(this.panelTutor);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(604, 441);
+            this.panel2.TabIndex = 20;
             // 
             // GestionarTutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 441);
-            this.Controls.Add(this.gbMenu);
-            this.Controls.Add(this.panelBecariosXTutor);
-            this.Controls.Add(this.panelTutor);
-            this.Controls.Add(this.PGestCitas);
-            this.Controls.Add(this.panelConsultarBecaT);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "GestionarTutores";
             this.Text = "GestionarTutores";
             this.Load += new System.EventHandler(this.GestionarTutores_Load);
-            this.Resize += new System.EventHandler(this.GestionarTutores_Resize);
             this.panelTutor.ResumeLayout(false);
             this.panelTutor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTutores)).EndInit();
@@ -868,17 +973,14 @@
             this.GBObservGC.PerformLayout();
             this.GBDetalleCitaGC.ResumeLayout(false);
             this.GBDetalleCitaGC.PerformLayout();
-            this.gbMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnMNGesTutores;
-        private System.Windows.Forms.Button btnMNConsBecas;
-        private System.Windows.Forms.Button btnMNGesCitas;
-        private System.Windows.Forms.Button btnMNBesBecariosXtutor;
         private System.Windows.Forms.Panel panelTutor;
         private System.Windows.Forms.DataGridView DGVTutores;
         private System.Windows.Forms.DataGridViewTextBoxColumn C1Tutor;
@@ -948,9 +1050,14 @@
         private System.Windows.Forms.Label LFechaGC;
         private System.Windows.Forms.Label LSelFechaGC;
         private System.Windows.Forms.DateTimePicker DTPSelDiaGC;
-        private System.Windows.Forms.Panel gbMenu;
         private System.Windows.Forms.Button btnBuscarBecadoGBXT;
         private System.Windows.Forms.Label LBXA;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuFlatButton CB_button;
+        private Bunifu.Framework.UI.BunifuFlatButton GC_button;
+        private Bunifu.Framework.UI.BunifuFlatButton GT_button;
+        private Bunifu.Framework.UI.BunifuFlatButton GBT_button;
+        private System.Windows.Forms.Panel panel2;
     }
 }

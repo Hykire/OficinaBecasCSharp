@@ -42,65 +42,6 @@ namespace Vista
             txtFiltro.Visible = false;
         }
 
-        private void btnGestionarConvocatoria_Click(object sender, EventArgs e)
-        {
-            if (cbConsulta.Text == "Ciclo Actual")
-            {
-                txtNumeroEnviados.Visible = true;
-                txtNumeroRespuestas.Visible = true;
-                txtFechaConvocatoria.Visible = true;
-                cbBeca.Visible = true;
-                btnModificar.Visible = true;
-                btnAceptar.Visible = true;
-                lbNumeroTotalEnviados.Visible = true;
-                lbNumeroRespuestas.Visible = true;
-                lbNombreConvocatoria.Visible = true;
-                lbFechaConvocatoria.Visible = true;
-                txtNumeroEnviados.Enabled = false;
-                txtNumeroRespuestas.Enabled = false;
-                txtFechaConvocatoria.Enabled = false;
-                cbBeca.Enabled = false;
-                btnAceptar.Enabled = false;
-                dgvDatos.Visible = true;
-                btnFiltrarResultados.Visible = true;
-                txtNombreConvocatoria.Visible = true;
-                txtDescripcionConvocatoria.Visible = true;
-                txtNombreConvocatoria.Enabled = false;
-                txtDescripcionConvocatoria.Enabled = false;
-                lbNombreConvocatoria.Visible = true;
-                lbDescripciónConvocatoria.Visible = true;
-                btnAgregar.Visible = true;
-                btnEliminar.Visible = true;
-                lbBeca.Visible = true;
-                btnBeca.Visible = true;
-                btnBeca.Enabled = false;
-                txtFiltro.Visible = true;
-            }
-            if (cbConsulta.Text == "Ciclos Anteriores")
-            {
-                txtNumeroEnviados.Visible = false;
-                txtNumeroRespuestas.Visible = false;
-                txtFechaConvocatoria.Visible = false;
-                cbBeca.Visible = false;
-                btnModificar.Visible = false;
-                btnAceptar.Visible = false;
-                lbNumeroTotalEnviados.Visible = false;
-                lbNumeroRespuestas.Visible = false;
-                lbNombreConvocatoria.Visible = false;
-                lbFechaConvocatoria.Visible = false;
-                dgvDatos.Visible = true;
-                btnFiltrarResultados.Visible = true;
-                txtNombreConvocatoria.Visible = false;
-                txtDescripcionConvocatoria.Visible = false;
-                lbNombreConvocatoria.Visible = false;
-                lbDescripciónConvocatoria.Visible = false;
-                btnAgregar.Visible = false;
-                btnEliminar.Visible = false;
-                lbBeca.Visible = false;
-                btnBeca.Visible = false;
-                txtFiltro.Visible = true;
-            }
-        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -163,6 +104,66 @@ namespace Vista
         {
             BuscarBeca beca = new BuscarBeca();
             beca.Visible = true;
+        }
+
+        private void GC_button_Click(object sender, EventArgs e)
+        {
+            if (cbConsulta.Text == "Ciclo Actual")
+            {
+                txtNumeroEnviados.Visible = true;
+                txtNumeroRespuestas.Visible = true;
+                txtFechaConvocatoria.Visible = true;
+                cbBeca.Visible = true;
+                btnModificar.Visible = true;
+                btnAceptar.Visible = true;
+                lbNumeroTotalEnviados.Visible = true;
+                lbNumeroRespuestas.Visible = true;
+                lbNombreConvocatoria.Visible = true;
+                lbFechaConvocatoria.Visible = true;
+                txtNumeroEnviados.Enabled = false;
+                txtNumeroRespuestas.Enabled = false;
+                txtFechaConvocatoria.Enabled = false;
+                cbBeca.Enabled = false;
+                btnAceptar.Enabled = false;
+                dgvDatos.Visible = true;
+                btnFiltrarResultados.Visible = true;
+                txtNombreConvocatoria.Visible = true;
+                txtDescripcionConvocatoria.Visible = true;
+                txtNombreConvocatoria.Enabled = false;
+                txtDescripcionConvocatoria.Enabled = false;
+                lbNombreConvocatoria.Visible = true;
+                lbDescripciónConvocatoria.Visible = true;
+                btnAgregar.Visible = true;
+                btnEliminar.Visible = true;
+                lbBeca.Visible = true;
+                btnBeca.Visible = true;
+                btnBeca.Enabled = false;
+                txtFiltro.Visible = true;
+            }
+            if (cbConsulta.Text == "Ciclos Anteriores")
+            {
+                txtNumeroEnviados.Visible = false;
+                txtNumeroRespuestas.Visible = false;
+                txtFechaConvocatoria.Visible = false;
+                cbBeca.Visible = false;
+                btnModificar.Visible = false;
+                btnAceptar.Visible = false;
+                lbNumeroTotalEnviados.Visible = false;
+                lbNumeroRespuestas.Visible = false;
+                lbNombreConvocatoria.Visible = false;
+                lbFechaConvocatoria.Visible = false;
+                dgvDatos.Visible = true;
+                btnFiltrarResultados.Visible = true;
+                txtNombreConvocatoria.Visible = false;
+                txtDescripcionConvocatoria.Visible = false;
+                lbNombreConvocatoria.Visible = false;
+                lbDescripciónConvocatoria.Visible = false;
+                btnAgregar.Visible = false;
+                btnEliminar.Visible = false;
+                lbBeca.Visible = false;
+                btnBeca.Visible = false;
+                txtFiltro.Visible = true;
+            }
         }
     }
 }

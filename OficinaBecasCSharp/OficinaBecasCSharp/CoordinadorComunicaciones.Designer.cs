@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoordinadorComunicaciones));
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnBeca = new System.Windows.Forms.Button();
             this.txtDescripcionConvocatoria = new System.Windows.Forms.TextBox();
@@ -57,22 +58,28 @@
             this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.cbConsulta = new System.Windows.Forms.ComboBox();
-            this.btnGestionarConvocatoria = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.GC_button = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelCC = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panelCC.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(410, 11);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFiltro.Location = new System.Drawing.Point(471, 260);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(432, 20);
             this.txtFiltro.TabIndex = 60;
             // 
             // btnBeca
             // 
-            this.btnBeca.Location = new System.Drawing.Point(346, 325);
-            this.btnBeca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBeca.Location = new System.Drawing.Point(340, 284);
+            this.btnBeca.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeca.Name = "btnBeca";
             this.btnBeca.Size = new System.Drawing.Size(26, 20);
             this.btnBeca.TabIndex = 59;
@@ -82,8 +89,8 @@
             // 
             // txtDescripcionConvocatoria
             // 
-            this.txtDescripcionConvocatoria.Location = new System.Drawing.Point(186, 288);
-            this.txtDescripcionConvocatoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcionConvocatoria.Location = new System.Drawing.Point(180, 247);
+            this.txtDescripcionConvocatoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcionConvocatoria.Name = "txtDescripcionConvocatoria";
             this.txtDescripcionConvocatoria.Size = new System.Drawing.Size(188, 20);
             this.txtDescripcionConvocatoria.TabIndex = 58;
@@ -91,7 +98,7 @@
             // lbBeca
             // 
             this.lbBeca.AutoSize = true;
-            this.lbBeca.Location = new System.Drawing.Point(19, 327);
+            this.lbBeca.Location = new System.Drawing.Point(13, 286);
             this.lbBeca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBeca.Name = "lbBeca";
             this.lbBeca.Size = new System.Drawing.Size(35, 13);
@@ -101,7 +108,7 @@
             // lbDescripciónConvocatoria
             // 
             this.lbDescripciónConvocatoria.AutoSize = true;
-            this.lbDescripciónConvocatoria.Location = new System.Drawing.Point(19, 292);
+            this.lbDescripciónConvocatoria.Location = new System.Drawing.Point(13, 251);
             this.lbDescripciónConvocatoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDescripciónConvocatoria.Name = "lbDescripciónConvocatoria";
             this.lbDescripciónConvocatoria.Size = new System.Drawing.Size(147, 13);
@@ -110,16 +117,16 @@
             // 
             // txtNombreConvocatoria
             // 
-            this.txtNombreConvocatoria.Location = new System.Drawing.Point(186, 249);
-            this.txtNombreConvocatoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreConvocatoria.Location = new System.Drawing.Point(180, 208);
+            this.txtNombreConvocatoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreConvocatoria.Name = "txtNombreConvocatoria";
             this.txtNombreConvocatoria.Size = new System.Drawing.Size(188, 20);
             this.txtNombreConvocatoria.TabIndex = 55;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(806, 352);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Location = new System.Drawing.Point(800, 311);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(87, 27);
             this.btnEliminar.TabIndex = 54;
@@ -128,8 +135,8 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(502, 352);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Location = new System.Drawing.Point(496, 311);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 27);
             this.btnAgregar.TabIndex = 53;
@@ -139,8 +146,8 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(123, 374);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptar.Location = new System.Drawing.Point(117, 333);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(87, 27);
             this.btnAceptar.TabIndex = 52;
@@ -152,32 +159,32 @@
             // 
             this.cbBeca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBeca.FormattingEnabled = true;
-            this.cbBeca.Location = new System.Drawing.Point(186, 325);
-            this.cbBeca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbBeca.Location = new System.Drawing.Point(180, 284);
+            this.cbBeca.Margin = new System.Windows.Forms.Padding(2);
             this.cbBeca.Name = "cbBeca";
             this.cbBeca.Size = new System.Drawing.Size(147, 21);
             this.cbBeca.TabIndex = 51;
             // 
             // txtNumeroEnviados
             // 
-            this.txtNumeroEnviados.Location = new System.Drawing.Point(186, 169);
-            this.txtNumeroEnviados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumeroEnviados.Location = new System.Drawing.Point(180, 128);
+            this.txtNumeroEnviados.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumeroEnviados.Name = "txtNumeroEnviados";
             this.txtNumeroEnviados.Size = new System.Drawing.Size(188, 20);
             this.txtNumeroEnviados.TabIndex = 50;
             // 
             // txtNumeroRespuestas
             // 
-            this.txtNumeroRespuestas.Location = new System.Drawing.Point(186, 129);
-            this.txtNumeroRespuestas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumeroRespuestas.Location = new System.Drawing.Point(180, 88);
+            this.txtNumeroRespuestas.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumeroRespuestas.Name = "txtNumeroRespuestas";
             this.txtNumeroRespuestas.Size = new System.Drawing.Size(188, 20);
             this.txtNumeroRespuestas.TabIndex = 49;
             // 
             // txtFechaConvocatoria
             // 
-            this.txtFechaConvocatoria.Location = new System.Drawing.Point(186, 209);
-            this.txtFechaConvocatoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFechaConvocatoria.Location = new System.Drawing.Point(180, 168);
+            this.txtFechaConvocatoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtFechaConvocatoria.Name = "txtFechaConvocatoria";
             this.txtFechaConvocatoria.Size = new System.Drawing.Size(188, 20);
             this.txtFechaConvocatoria.TabIndex = 48;
@@ -185,7 +192,7 @@
             // lbNombreConvocatoria
             // 
             this.lbNombreConvocatoria.AutoSize = true;
-            this.lbNombreConvocatoria.Location = new System.Drawing.Point(19, 253);
+            this.lbNombreConvocatoria.Location = new System.Drawing.Point(13, 212);
             this.lbNombreConvocatoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNombreConvocatoria.Name = "lbNombreConvocatoria";
             this.lbNombreConvocatoria.Size = new System.Drawing.Size(128, 13);
@@ -195,7 +202,7 @@
             // lbFechaConvocatoria
             // 
             this.lbFechaConvocatoria.AutoSize = true;
-            this.lbFechaConvocatoria.Location = new System.Drawing.Point(19, 213);
+            this.lbFechaConvocatoria.Location = new System.Drawing.Point(13, 172);
             this.lbFechaConvocatoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFechaConvocatoria.Name = "lbFechaConvocatoria";
             this.lbFechaConvocatoria.Size = new System.Drawing.Size(121, 13);
@@ -205,7 +212,7 @@
             // lbNumeroTotalEnviados
             // 
             this.lbNumeroTotalEnviados.AutoSize = true;
-            this.lbNumeroTotalEnviados.Location = new System.Drawing.Point(19, 173);
+            this.lbNumeroTotalEnviados.Location = new System.Drawing.Point(13, 132);
             this.lbNumeroTotalEnviados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNumeroTotalEnviados.Name = "lbNumeroTotalEnviados";
             this.lbNumeroTotalEnviados.Size = new System.Drawing.Size(136, 13);
@@ -215,7 +222,7 @@
             // lbNumeroRespuestas
             // 
             this.lbNumeroRespuestas.AutoSize = true;
-            this.lbNumeroRespuestas.Location = new System.Drawing.Point(19, 129);
+            this.lbNumeroRespuestas.Location = new System.Drawing.Point(13, 88);
             this.lbNumeroRespuestas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNumeroRespuestas.Name = "lbNumeroRespuestas";
             this.lbNumeroRespuestas.Size = new System.Drawing.Size(118, 13);
@@ -224,8 +231,8 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(650, 352);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Location = new System.Drawing.Point(644, 311);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(87, 27);
             this.btnModificar.TabIndex = 43;
@@ -235,8 +242,8 @@
             // 
             // btnFiltrarResultados
             // 
-            this.btnFiltrarResultados.Location = new System.Drawing.Point(866, 6);
-            this.btnFiltrarResultados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFiltrarResultados.Location = new System.Drawing.Point(927, 255);
+            this.btnFiltrarResultados.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltrarResultados.Name = "btnFiltrarResultados";
             this.btnFiltrarResultados.Size = new System.Drawing.Size(104, 27);
             this.btnFiltrarResultados.TabIndex = 42;
@@ -255,8 +262,8 @@
             this.NombreConvocatoria,
             this.DescripciónConvocatoria,
             this.Beca});
-            this.dgvDatos.Location = new System.Drawing.Point(410, 46);
-            this.dgvDatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDatos.Location = new System.Drawing.Point(404, 5);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowTemplate.Height = 24;
             this.dgvDatos.Size = new System.Drawing.Size(560, 288);
@@ -300,7 +307,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 20);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(32, 121);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
@@ -311,57 +319,114 @@
             // 
             this.cbConsulta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConsulta.FormattingEnabled = true;
-            this.cbConsulta.Location = new System.Drawing.Point(93, 14);
-            this.cbConsulta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbConsulta.Location = new System.Drawing.Point(35, 145);
+            this.cbConsulta.Margin = new System.Windows.Forms.Padding(2);
             this.cbConsulta.Name = "cbConsulta";
             this.cbConsulta.Size = new System.Drawing.Size(118, 21);
             this.cbConsulta.TabIndex = 39;
             // 
-            // btnGestionarConvocatoria
+            // panel1
             // 
-            this.btnGestionarConvocatoria.Location = new System.Drawing.Point(59, 63);
-            this.btnGestionarConvocatoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnGestionarConvocatoria.Name = "btnGestionarConvocatoria";
-            this.btnGestionarConvocatoria.Size = new System.Drawing.Size(118, 41);
-            this.btnGestionarConvocatoria.TabIndex = 38;
-            this.btnGestionarConvocatoria.Text = "Gestionar Convocatoria";
-            this.btnGestionarConvocatoria.UseVisualStyleBackColor = true;
-            this.btnGestionarConvocatoria.Click += new System.EventHandler(this.btnGestionarConvocatoria_Click);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.GC_button);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtFiltro);
+            this.panel1.Controls.Add(this.cbConsulta);
+            this.panel1.Controls.Add(this.btnFiltrarResultados);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 441);
+            this.panel1.TabIndex = 61;
+            // 
+            // GC_button
+            // 
+            this.GC_button.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.GC_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GC_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GC_button.BorderRadius = 0;
+            this.GC_button.ButtonText = "Gestionar        Convocatoria";
+            this.GC_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GC_button.DisabledColor = System.Drawing.Color.Gray;
+            this.GC_button.Iconcolor = System.Drawing.Color.Transparent;
+            this.GC_button.Iconimage = ((System.Drawing.Image)(resources.GetObject("GC_button.Iconimage")));
+            this.GC_button.Iconimage_right = null;
+            this.GC_button.Iconimage_right_Selected = null;
+            this.GC_button.Iconimage_Selected = null;
+            this.GC_button.IconMarginLeft = 0;
+            this.GC_button.IconMarginRight = 0;
+            this.GC_button.IconRightVisible = true;
+            this.GC_button.IconRightZoom = 0D;
+            this.GC_button.IconVisible = true;
+            this.GC_button.IconZoom = 90D;
+            this.GC_button.IsTab = false;
+            this.GC_button.Location = new System.Drawing.Point(0, 186);
+            this.GC_button.Name = "GC_button";
+            this.GC_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GC_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.GC_button.OnHoverTextColor = System.Drawing.Color.White;
+            this.GC_button.selected = false;
+            this.GC_button.Size = new System.Drawing.Size(200, 48);
+            this.GC_button.TabIndex = 41;
+            this.GC_button.Text = "Gestionar        Convocatoria";
+            this.GC_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GC_button.Textcolor = System.Drawing.Color.White;
+            this.GC_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GC_button.Click += new System.EventHandler(this.GC_button_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
+            this.panel2.Controls.Add(this.panelCC);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1057, 441);
+            this.panel2.TabIndex = 62;
+            // 
+            // panelCC
+            // 
+            this.panelCC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCC.Controls.Add(this.lbNumeroRespuestas);
+            this.panelCC.Controls.Add(this.cbBeca);
+            this.panelCC.Controls.Add(this.txtNumeroRespuestas);
+            this.panelCC.Controls.Add(this.txtNumeroEnviados);
+            this.panelCC.Controls.Add(this.btnAceptar);
+            this.panelCC.Controls.Add(this.txtFechaConvocatoria);
+            this.panelCC.Controls.Add(this.btnAgregar);
+            this.panelCC.Controls.Add(this.btnBeca);
+            this.panelCC.Controls.Add(this.lbNombreConvocatoria);
+            this.panelCC.Controls.Add(this.dgvDatos);
+            this.panelCC.Controls.Add(this.btnEliminar);
+            this.panelCC.Controls.Add(this.txtDescripcionConvocatoria);
+            this.panelCC.Controls.Add(this.lbFechaConvocatoria);
+            this.panelCC.Controls.Add(this.txtNombreConvocatoria);
+            this.panelCC.Controls.Add(this.lbBeca);
+            this.panelCC.Controls.Add(this.lbNumeroTotalEnviados);
+            this.panelCC.Controls.Add(this.btnModificar);
+            this.panelCC.Controls.Add(this.lbDescripciónConvocatoria);
+            this.panelCC.Location = new System.Drawing.Point(46, 35);
+            this.panelCC.Name = "panelCC";
+            this.panelCC.Size = new System.Drawing.Size(990, 370);
+            this.panelCC.TabIndex = 0;
             // 
             // CoordinadorComunicaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 413);
-            this.Controls.Add(this.lbNumeroRespuestas);
-            this.Controls.Add(this.txtNumeroRespuestas);
-            this.Controls.Add(this.txtFiltro);
-            this.Controls.Add(this.btnBeca);
-            this.Controls.Add(this.txtDescripcionConvocatoria);
-            this.Controls.Add(this.lbBeca);
-            this.Controls.Add(this.lbDescripciónConvocatoria);
-            this.Controls.Add(this.txtNombreConvocatoria);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.cbBeca);
-            this.Controls.Add(this.txtNumeroEnviados);
-            this.Controls.Add(this.txtFechaConvocatoria);
-            this.Controls.Add(this.lbNombreConvocatoria);
-            this.Controls.Add(this.lbFechaConvocatoria);
-            this.Controls.Add(this.lbNumeroTotalEnviados);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnFiltrarResultados);
-            this.Controls.Add(this.dgvDatos);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbConsulta);
-            this.Controls.Add(this.btnGestionarConvocatoria);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(1257, 441);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CoordinadorComunicaciones";
             this.Text = "CoordinadorComunicaciones";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panelCC.ResumeLayout(false);
+            this.panelCC.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -396,6 +461,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Beca;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbConsulta;
-        private System.Windows.Forms.Button btnGestionarConvocatoria;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuFlatButton GC_button;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelCC;
     }
 }

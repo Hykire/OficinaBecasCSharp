@@ -23,10 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionSistema));
             this.panelGestUsuarios = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnElimUsu = new System.Windows.Forms.Button();
@@ -66,7 +63,11 @@
             this.txtBFechaGC = new System.Windows.Forms.TextBox();
             this.LNombBecaGB = new System.Windows.Forms.Label();
             this.LSelFechaGC = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.GBeca_button = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.GB_button = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.GU_button = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelGestUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelGestBecarios.SuspendLayout();
@@ -75,54 +76,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVDocumentosGB)).BeginInit();
             this.GBDescripBecaGB.SuspendLayout();
             this.GBDetalleBecaGB.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(34, 92);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(182, 278);
-            this.panel1.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(25, 213);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 19);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Gestionar Becas";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(25, 135);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 19);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Gestionar Becarios";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(25, 52);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 19);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Gestionar Usuarios";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelGestUsuarios
             // 
+            this.panelGestUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelGestUsuarios.Controls.Add(this.label3);
             this.panelGestUsuarios.Controls.Add(this.btnElimUsu);
             this.panelGestUsuarios.Controls.Add(this.btnModifUsu);
@@ -131,7 +91,7 @@
             this.panelGestUsuarios.Controls.Add(this.textBox1);
             this.panelGestUsuarios.Controls.Add(this.label1);
             this.panelGestUsuarios.Controls.Add(this.dataGridView1);
-            this.panelGestUsuarios.Location = new System.Drawing.Point(252, 52);
+            this.panelGestUsuarios.Location = new System.Drawing.Point(43, 49);
             this.panelGestUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.panelGestUsuarios.Name = "panelGestUsuarios";
             this.panelGestUsuarios.Size = new System.Drawing.Size(523, 345);
@@ -141,7 +101,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 12);
+            this.label3.Location = new System.Drawing.Point(12, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(164, 20);
             this.label3.TabIndex = 12;
@@ -200,12 +160,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 47);
+            this.label1.Location = new System.Drawing.Point(31, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Busqueda";
+            this.label1.Text = "Búsqueda";
             // 
             // dataGridView1
             // 
@@ -219,6 +179,7 @@
             // 
             // panelGestBecarios
             // 
+            this.panelGestBecarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelGestBecarios.Controls.Add(this.LGestBecXTutBXT);
             this.panelGestBecarios.Controls.Add(this.btnElimBec);
             this.panelGestBecarios.Controls.Add(this.btnModifBec);
@@ -227,7 +188,7 @@
             this.panelGestBecarios.Controls.Add(this.textBox2);
             this.panelGestBecarios.Controls.Add(this.label2);
             this.panelGestBecarios.Controls.Add(this.dataGridView2);
-            this.panelGestBecarios.Location = new System.Drawing.Point(251, 52);
+            this.panelGestBecarios.Location = new System.Drawing.Point(41, 49);
             this.panelGestBecarios.Margin = new System.Windows.Forms.Padding(2);
             this.panelGestBecarios.Name = "panelGestBecarios";
             this.panelGestBecarios.Size = new System.Drawing.Size(523, 345);
@@ -317,6 +278,7 @@
             // 
             // PGestBecas
             // 
+            this.PGestBecas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PGestBecas.Controls.Add(this.btnDescargarGB);
             this.PGestBecas.Controls.Add(this.DGVDocumentosGB);
             this.PGestBecas.Controls.Add(this.chbxInactivasGB);
@@ -330,7 +292,7 @@
             this.PGestBecas.Controls.Add(this.LTituloGC);
             this.PGestBecas.Controls.Add(this.GBDetalleBecaGB);
             this.PGestBecas.Controls.Add(this.LSelFechaGC);
-            this.PGestBecas.Location = new System.Drawing.Point(251, 52);
+            this.PGestBecas.Location = new System.Drawing.Point(43, 49);
             this.PGestBecas.Name = "PGestBecas";
             this.PGestBecas.Size = new System.Drawing.Size(524, 345);
             this.PGestBecas.TabIndex = 26;
@@ -515,16 +477,142 @@
             this.LSelFechaGC.TabIndex = 1;
             this.LSelFechaGC.Text = "Seleccionar una beca:";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.GBeca_button);
+            this.panel1.Controls.Add(this.GB_button);
+            this.panel1.Controls.Add(this.GU_button);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 441);
+            this.panel1.TabIndex = 27;
+            // 
+            // GBeca_button
+            // 
+            this.GBeca_button.Activecolor = System.Drawing.Color.SeaGreen;
+            this.GBeca_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GBeca_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GBeca_button.BorderRadius = 0;
+            this.GBeca_button.ButtonText = "Gestionar Becas";
+            this.GBeca_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GBeca_button.DisabledColor = System.Drawing.Color.Gray;
+            this.GBeca_button.Iconcolor = System.Drawing.Color.Transparent;
+            this.GBeca_button.Iconimage = ((System.Drawing.Image)(resources.GetObject("GBeca_button.Iconimage")));
+            this.GBeca_button.Iconimage_right = null;
+            this.GBeca_button.Iconimage_right_Selected = null;
+            this.GBeca_button.Iconimage_Selected = null;
+            this.GBeca_button.IconMarginLeft = 0;
+            this.GBeca_button.IconMarginRight = 0;
+            this.GBeca_button.IconRightVisible = true;
+            this.GBeca_button.IconRightZoom = 0D;
+            this.GBeca_button.IconVisible = true;
+            this.GBeca_button.IconZoom = 90D;
+            this.GBeca_button.IsTab = true;
+            this.GBeca_button.Location = new System.Drawing.Point(0, 259);
+            this.GBeca_button.Name = "GBeca_button";
+            this.GBeca_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GBeca_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.GBeca_button.OnHoverTextColor = System.Drawing.Color.White;
+            this.GBeca_button.selected = false;
+            this.GBeca_button.Size = new System.Drawing.Size(241, 48);
+            this.GBeca_button.TabIndex = 2;
+            this.GBeca_button.Text = "Gestionar Becas";
+            this.GBeca_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GBeca_button.Textcolor = System.Drawing.Color.White;
+            this.GBeca_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GBeca_button.Click += new System.EventHandler(this.GBeca_button_Click);
+            // 
+            // GB_button
+            // 
+            this.GB_button.Activecolor = System.Drawing.Color.SeaGreen;
+            this.GB_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GB_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GB_button.BorderRadius = 0;
+            this.GB_button.ButtonText = "Gestionar Becarios";
+            this.GB_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GB_button.DisabledColor = System.Drawing.Color.Gray;
+            this.GB_button.Iconcolor = System.Drawing.Color.Transparent;
+            this.GB_button.Iconimage = ((System.Drawing.Image)(resources.GetObject("GB_button.Iconimage")));
+            this.GB_button.Iconimage_right = null;
+            this.GB_button.Iconimage_right_Selected = null;
+            this.GB_button.Iconimage_Selected = null;
+            this.GB_button.IconMarginLeft = 0;
+            this.GB_button.IconMarginRight = 0;
+            this.GB_button.IconRightVisible = true;
+            this.GB_button.IconRightZoom = 0D;
+            this.GB_button.IconVisible = true;
+            this.GB_button.IconZoom = 90D;
+            this.GB_button.IsTab = true;
+            this.GB_button.Location = new System.Drawing.Point(0, 189);
+            this.GB_button.Name = "GB_button";
+            this.GB_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GB_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.GB_button.OnHoverTextColor = System.Drawing.Color.White;
+            this.GB_button.selected = false;
+            this.GB_button.Size = new System.Drawing.Size(241, 48);
+            this.GB_button.TabIndex = 1;
+            this.GB_button.Text = "Gestionar Becarios";
+            this.GB_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GB_button.Textcolor = System.Drawing.Color.White;
+            this.GB_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GB_button.Click += new System.EventHandler(this.GB_button_Click);
+            // 
+            // GU_button
+            // 
+            this.GU_button.Activecolor = System.Drawing.Color.SeaGreen;
+            this.GU_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GU_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GU_button.BorderRadius = 0;
+            this.GU_button.ButtonText = "Gestionar Usuarios";
+            this.GU_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GU_button.DisabledColor = System.Drawing.Color.Gray;
+            this.GU_button.Iconcolor = System.Drawing.Color.Transparent;
+            this.GU_button.Iconimage = ((System.Drawing.Image)(resources.GetObject("GU_button.Iconimage")));
+            this.GU_button.Iconimage_right = null;
+            this.GU_button.Iconimage_right_Selected = null;
+            this.GU_button.Iconimage_Selected = null;
+            this.GU_button.IconMarginLeft = 0;
+            this.GU_button.IconMarginRight = 0;
+            this.GU_button.IconRightVisible = true;
+            this.GU_button.IconRightZoom = 0D;
+            this.GU_button.IconVisible = true;
+            this.GU_button.IconZoom = 90D;
+            this.GU_button.IsTab = true;
+            this.GU_button.Location = new System.Drawing.Point(0, 123);
+            this.GU_button.Name = "GU_button";
+            this.GU_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GU_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.GU_button.OnHoverTextColor = System.Drawing.Color.White;
+            this.GU_button.selected = false;
+            this.GU_button.Size = new System.Drawing.Size(241, 48);
+            this.GU_button.TabIndex = 0;
+            this.GU_button.Text = "Gestionar Usuarios";
+            this.GU_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GU_button.Textcolor = System.Drawing.Color.White;
+            this.GU_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GU_button.Click += new System.EventHandler(this.GU_button_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panelGestUsuarios);
+            this.panel2.Controls.Add(this.PGestBecas);
+            this.panel2.Controls.Add(this.panelGestBecarios);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(604, 441);
+            this.panel2.TabIndex = 28;
+            // 
             // AdministracionSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(804, 441);
-            this.Controls.Add(this.PGestBecas);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelGestUsuarios);
-            this.Controls.Add(this.panelGestBecarios);
             this.Location = new System.Drawing.Point(0, 159);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -532,7 +620,6 @@
             this.Name = "AdministracionSistema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AdministracionSistema";
-            this.panel1.ResumeLayout(false);
             this.panelGestUsuarios.ResumeLayout(false);
             this.panelGestUsuarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -546,15 +633,13 @@
             this.GBDescripBecaGB.PerformLayout();
             this.GBDetalleBecaGB.ResumeLayout(false);
             this.GBDetalleBecaGB.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelGestUsuarios;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnElimUsu;
@@ -571,7 +656,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label LGestBecXTutBXT;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel PGestBecas;
@@ -595,5 +679,10 @@
         private System.Windows.Forms.TextBox txtBFechaGC;
         private System.Windows.Forms.Label LNombBecaGB;
         private System.Windows.Forms.Label LSelFechaGC;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuFlatButton GU_button;
+        private Bunifu.Framework.UI.BunifuFlatButton GBeca_button;
+        private Bunifu.Framework.UI.BunifuFlatButton GB_button;
     }
 }

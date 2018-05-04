@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnConsultarEmails = new System.Windows.Forms.Button();
-            this.btnConsultarBecario = new System.Windows.Forms.Button();
-            this.btnConsultarBecas = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionarTutor));
             this.panelConsultarBecas = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNombreBeca = new System.Windows.Forms.Label();
@@ -71,6 +69,10 @@
             this.correoBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BecarioActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCodBecario = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.CB_button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelConsultarBecas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecas)).BeginInit();
@@ -79,41 +81,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarEmails)).BeginInit();
             this.panelConsultarBecario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnConsultarEmails
-            // 
-            this.btnConsultarEmails.Location = new System.Drawing.Point(12, 169);
-            this.btnConsultarEmails.Name = "btnConsultarEmails";
-            this.btnConsultarEmails.Size = new System.Drawing.Size(142, 23);
-            this.btnConsultarEmails.TabIndex = 2;
-            this.btnConsultarEmails.Text = "Consultar Emails";
-            this.btnConsultarEmails.UseVisualStyleBackColor = true;
-            this.btnConsultarEmails.Click += new System.EventHandler(this.btnConsultarEmails_Click);
-            // 
-            // btnConsultarBecario
-            // 
-            this.btnConsultarBecario.Location = new System.Drawing.Point(12, 102);
-            this.btnConsultarBecario.Name = "btnConsultarBecario";
-            this.btnConsultarBecario.Size = new System.Drawing.Size(142, 23);
-            this.btnConsultarBecario.TabIndex = 1;
-            this.btnConsultarBecario.Text = "Consultar Becario";
-            this.btnConsultarBecario.UseVisualStyleBackColor = true;
-            this.btnConsultarBecario.Click += new System.EventHandler(this.btnConsultarBecario_Click);
-            // 
-            // btnConsultarBecas
-            // 
-            this.btnConsultarBecas.Location = new System.Drawing.Point(12, 42);
-            this.btnConsultarBecas.Name = "btnConsultarBecas";
-            this.btnConsultarBecas.Size = new System.Drawing.Size(142, 23);
-            this.btnConsultarBecas.TabIndex = 0;
-            this.btnConsultarBecas.Text = "Consultar Becas";
-            this.btnConsultarBecas.UseVisualStyleBackColor = true;
-            this.btnConsultarBecas.Click += new System.EventHandler(this.btnConsultarBecas_Click);
-            // 
             // panelConsultarBecas
             // 
+            this.panelConsultarBecas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelConsultarBecas.Controls.Add(this.label1);
             this.panelConsultarBecas.Controls.Add(this.lblNombreBeca);
             this.panelConsultarBecas.Controls.Add(this.btnBuscarBecas);
@@ -121,7 +95,7 @@
             this.panelConsultarBecas.Controls.Add(this.textBox1);
             this.panelConsultarBecas.Controls.Add(this.btnBecasExternas);
             this.panelConsultarBecas.Controls.Add(this.btnBecasPUCP);
-            this.panelConsultarBecas.Location = new System.Drawing.Point(241, 86);
+            this.panelConsultarBecas.Location = new System.Drawing.Point(6, 38);
             this.panelConsultarBecas.Name = "panelConsultarBecas";
             this.panelConsultarBecas.Size = new System.Drawing.Size(623, 378);
             this.panelConsultarBecas.TabIndex = 8;
@@ -222,6 +196,7 @@
             // 
             // panelConsultarEmails
             // 
+            this.panelConsultarEmails.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelConsultarEmails.Controls.Add(this.groupBox1);
             this.panelConsultarEmails.Controls.Add(this.btnDescargarEmails);
             this.panelConsultarEmails.Controls.Add(this.lblEmails);
@@ -230,7 +205,7 @@
             this.panelConsultarEmails.Controls.Add(this.button1);
             this.panelConsultarEmails.Controls.Add(this.dgvConsultarEmails);
             this.panelConsultarEmails.Controls.Add(this.textBox2);
-            this.panelConsultarEmails.Location = new System.Drawing.Point(241, 86);
+            this.panelConsultarEmails.Location = new System.Drawing.Point(6, 38);
             this.panelConsultarEmails.Name = "panelConsultarEmails";
             this.panelConsultarEmails.Size = new System.Drawing.Size(623, 378);
             this.panelConsultarEmails.TabIndex = 13;
@@ -370,12 +345,13 @@
             // 
             // panelConsultarBecario
             // 
+            this.panelConsultarBecario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelConsultarBecario.Controls.Add(this.lvlBecario);
             this.panelConsultarBecario.Controls.Add(this.lblCodBecario);
             this.panelConsultarBecario.Controls.Add(this.btnBuscarBecario);
             this.panelConsultarBecario.Controls.Add(this.dgvBecarios);
             this.panelConsultarBecario.Controls.Add(this.txtCodBecario);
-            this.panelConsultarBecario.Location = new System.Drawing.Point(241, 86);
+            this.panelConsultarBecario.Location = new System.Drawing.Point(6, 38);
             this.panelConsultarBecario.Name = "panelConsultarBecario";
             this.panelConsultarBecario.Size = new System.Drawing.Size(623, 378);
             this.panelConsultarBecario.TabIndex = 12;
@@ -463,28 +439,143 @@
             this.txtCodBecario.Size = new System.Drawing.Size(251, 20);
             this.txtCodBecario.TabIndex = 1;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.bunifuFlatButton2);
+            this.panel1.Controls.Add(this.bunifuFlatButton1);
+            this.panel1.Controls.Add(this.CB_button);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 441);
+            this.panel1.TabIndex = 14;
+            // 
+            // bunifuFlatButton2
+            // 
+            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton2.BorderRadius = 0;
+            this.bunifuFlatButton2.ButtonText = "Consultar Correos";
+            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
+            this.bunifuFlatButton2.Iconimage_right = null;
+            this.bunifuFlatButton2.Iconimage_right_Selected = null;
+            this.bunifuFlatButton2.Iconimage_Selected = null;
+            this.bunifuFlatButton2.IconMarginLeft = 0;
+            this.bunifuFlatButton2.IconMarginRight = 0;
+            this.bunifuFlatButton2.IconRightVisible = true;
+            this.bunifuFlatButton2.IconRightZoom = 0D;
+            this.bunifuFlatButton2.IconVisible = true;
+            this.bunifuFlatButton2.IconZoom = 90D;
+            this.bunifuFlatButton2.IsTab = true;
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 241);
+            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
+            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.selected = false;
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(241, 48);
+            this.bunifuFlatButton2.TabIndex = 2;
+            this.bunifuFlatButton2.Text = "Consultar Correos";
+            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "Consultar Becario";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 90D;
+            this.bunifuFlatButton1.IsTab = true;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 181);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(241, 48);
+            this.bunifuFlatButton1.TabIndex = 1;
+            this.bunifuFlatButton1.Text = "Consultar Becario";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            // 
+            // CB_button
+            // 
+            this.CB_button.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.CB_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.CB_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CB_button.BorderRadius = 0;
+            this.CB_button.ButtonText = "Consultar Becas";
+            this.CB_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CB_button.DisabledColor = System.Drawing.Color.Gray;
+            this.CB_button.Iconcolor = System.Drawing.Color.Transparent;
+            this.CB_button.Iconimage = ((System.Drawing.Image)(resources.GetObject("CB_button.Iconimage")));
+            this.CB_button.Iconimage_right = null;
+            this.CB_button.Iconimage_right_Selected = null;
+            this.CB_button.Iconimage_Selected = null;
+            this.CB_button.IconMarginLeft = 0;
+            this.CB_button.IconMarginRight = 0;
+            this.CB_button.IconRightVisible = true;
+            this.CB_button.IconRightZoom = 0D;
+            this.CB_button.IconVisible = true;
+            this.CB_button.IconZoom = 90D;
+            this.CB_button.IsTab = true;
+            this.CB_button.Location = new System.Drawing.Point(0, 121);
+            this.CB_button.Name = "CB_button";
+            this.CB_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.CB_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.CB_button.OnHoverTextColor = System.Drawing.Color.White;
+            this.CB_button.selected = false;
+            this.CB_button.Size = new System.Drawing.Size(241, 48);
+            this.CB_button.TabIndex = 0;
+            this.CB_button.Text = "Consultar Becas";
+            this.CB_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CB_button.Textcolor = System.Drawing.Color.White;
+            this.CB_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CB_button.Click += new System.EventHandler(this.CB_button_Click);
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnConsultarEmails);
-            this.panel2.Controls.Add(this.btnConsultarBecas);
-            this.panel2.Controls.Add(this.btnConsultarBecario);
-            this.panel2.Location = new System.Drawing.Point(38, 86);
+            this.panel2.Controls.Add(this.panelConsultarBecario);
+            this.panel2.Controls.Add(this.panelConsultarEmails);
+            this.panel2.Controls.Add(this.panelConsultarBecas);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(168, 330);
-            this.panel2.TabIndex = 10;
+            this.panel2.Size = new System.Drawing.Size(604, 441);
+            this.panel2.TabIndex = 15;
             // 
             // GestionarTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 494);
+            this.ClientSize = new System.Drawing.Size(804, 441);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panelConsultarEmails);
-            this.Controls.Add(this.panelConsultarBecario);
-            this.Controls.Add(this.panelConsultarBecas);
+            this.Controls.Add(this.panel1);
             this.Name = "GestionarTutor";
             this.Text = "Gestionar Tutor";
-            this.Load += new System.EventHandler(this.ConsultarBecas_Load);
             this.panelConsultarBecas.ResumeLayout(false);
             this.panelConsultarBecas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecas)).EndInit();
@@ -496,15 +587,13 @@
             this.panelConsultarBecario.ResumeLayout(false);
             this.panelConsultarBecario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnConsultarEmails;
-        private System.Windows.Forms.Button btnConsultarBecario;
-        private System.Windows.Forms.Button btnConsultarBecas;
         private System.Windows.Forms.Panel panelConsultarBecas;
         private System.Windows.Forms.DataGridView dgvBecas;
         private System.Windows.Forms.DataGridViewTextBoxColumn EntidadFinancieraBecas;
@@ -512,7 +601,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EspecialidadBeca;
         private System.Windows.Forms.Button btnBuscarBecas;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblNombreBeca;
         private System.Windows.Forms.Button btnBecasExternas;
         private System.Windows.Forms.Button btnBecasPUCP;
@@ -546,5 +634,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn correoBecario;
         private System.Windows.Forms.DataGridViewTextBoxColumn BecarioActivo;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton CB_button;
+        private System.Windows.Forms.Panel panel2;
     }
 }

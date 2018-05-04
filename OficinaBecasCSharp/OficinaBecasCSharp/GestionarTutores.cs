@@ -19,7 +19,6 @@ namespace Vista
             panelBecariosXTutor.Visible = false;
             panelTutor.Visible = false;
             PGestCitas.Visible = false;
-            gbMenu.Show();
 
             CBTutorGBXT.SelectedIndex = 0;
             TxtCodTutorBXT.Enabled = false;
@@ -44,64 +43,12 @@ namespace Vista
             frmET.ShowDialog();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMNConsBecas_Click(object sender, EventArgs e)
-        {
-            panelConsultarBecaT.Visible = true;
-            panelBecariosXTutor.Visible = false;
-            panelTutor.Visible = false;
-            PGestCitas.Visible = false;
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnBXTAnadir_Click(object sender, EventArgs e)
         {
             AgregarBecarioATutor frmABTXB = new AgregarBecarioATutor();
             frmABTXB.ShowDialog();
         }
 
-        private void btnMNGesTutores_Click(object sender, EventArgs e)
-        {
-            panelConsultarBecaT.Visible = false;
-            panelBecariosXTutor.Visible = false;
-            panelTutor.Visible = true;
-            PGestCitas.Visible = false;
-
-        }
-
-        private void btnMNBesBecariosXtutor_Click(object sender, EventArgs e)
-        {
-            PGestCitas.Visible = false;
-            panelConsultarBecaT.Visible = false;
-            panelBecariosXTutor.Visible = true;
-            panelTutor.Visible = false;
-
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBXTVer_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnNuevoTutor_Click(object sender, EventArgs e)
         {
@@ -136,10 +83,6 @@ namespace Vista
             frmTXB.ShowDialog();
         }
 
-        private void lvlBecario_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnBuscarBeca_Click(object sender, EventArgs e)
         {
@@ -147,10 +90,6 @@ namespace Vista
             frmBuscarBecaT.Show();
         }
 
-        private void panelConsultarBecaT_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnMNGesCitas_Click(object sender, EventArgs e)
         {
@@ -184,10 +123,36 @@ namespace Vista
             frmAgergar.ShowDialog();
         }
 
-        private void GestionarTutores_Resize(object sender, EventArgs e)
+        private void GBT_button_Click(object sender, EventArgs e)
         {
-            //PGestCitas.Height = this.Width - 100;
+            PGestCitas.Visible = false;
+            panelConsultarBecaT.Visible = false;
+            panelBecariosXTutor.Visible = true;
+            panelTutor.Visible = false;
+        }
 
+        private void GT_button_Click(object sender, EventArgs e)
+        {
+            panelConsultarBecaT.Visible = false;
+            panelBecariosXTutor.Visible = false;
+            panelTutor.Visible = true;
+            PGestCitas.Visible = false;
+        }
+
+        private void GC_button_Click(object sender, EventArgs e)
+        {
+            PGestCitas.Visible = true;
+            panelConsultarBecaT.Visible = false;
+            panelBecariosXTutor.Visible = false;
+            panelTutor.Visible = false;
+        }
+
+        private void CB_button_Click(object sender, EventArgs e)
+        {
+            panelConsultarBecaT.Visible = true;
+            panelBecariosXTutor.Visible = false;
+            panelTutor.Visible = false;
+            PGestCitas.Visible = false;
         }
     }
 }

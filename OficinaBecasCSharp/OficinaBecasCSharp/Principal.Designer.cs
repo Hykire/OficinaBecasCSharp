@@ -30,15 +30,13 @@
             this.buttonCT = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.panel_Principal = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.panel1.Controls.Add(this.buttonAC);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -46,9 +44,10 @@
             this.panel1.Controls.Add(this.buttonCT);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.buttonAdmin);
-            this.panel1.Location = new System.Drawing.Point(0, -2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1642, 167);
+            this.panel1.Size = new System.Drawing.Size(1234, 167);
             this.panel1.TabIndex = 8;
             // 
             // buttonAC
@@ -72,7 +71,7 @@
             this.buttonAC.IconVisible = false;
             this.buttonAC.IconZoom = 90D;
             this.buttonAC.IsTab = false;
-            this.buttonAC.Location = new System.Drawing.Point(1052, 27);
+            this.buttonAC.Location = new System.Drawing.Point(880, 27);
             this.buttonAC.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAC.Name = "buttonAC";
             this.buttonAC.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
@@ -84,7 +83,7 @@
             this.buttonAC.Text = "Asistente de Comunicaciones";
             this.buttonAC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonAC.Textcolor = System.Drawing.Color.White;
-            this.buttonAC.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAC.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAC.Click += new System.EventHandler(this.bunifuFlatButton4_Click);
             // 
             // pictureBox1
@@ -92,17 +91,18 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::Vista.Properties.Resources.logoOficinaBecas3;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(97, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 42);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(147, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(129, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // buttonTutor
             // 
             this.buttonTutor.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(148)))), ((int)(((byte)(17)))));
-            this.buttonTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(148)))), ((int)(((byte)(17)))));
+            this.buttonTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(168)))), ((int)(((byte)(40)))));
             this.buttonTutor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonTutor.BorderRadius = 5;
             this.buttonTutor.ButtonText = "Tutor";
@@ -120,7 +120,7 @@
             this.buttonTutor.IconVisible = false;
             this.buttonTutor.IconZoom = 90D;
             this.buttonTutor.IsTab = false;
-            this.buttonTutor.Location = new System.Drawing.Point(867, 27);
+            this.buttonTutor.Location = new System.Drawing.Point(695, 27);
             this.buttonTutor.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTutor.Name = "buttonTutor";
             this.buttonTutor.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(148)))), ((int)(((byte)(17)))));
@@ -132,7 +132,7 @@
             this.buttonTutor.Text = "Tutor";
             this.buttonTutor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonTutor.Textcolor = System.Drawing.Color.White;
-            this.buttonTutor.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTutor.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTutor.Click += new System.EventHandler(this.buttonTutor_Click);
             // 
             // buttonCT
@@ -156,7 +156,7 @@
             this.buttonCT.IconVisible = false;
             this.buttonCT.IconZoom = 90D;
             this.buttonCT.IsTab = false;
-            this.buttonCT.Location = new System.Drawing.Point(681, 27);
+            this.buttonCT.Location = new System.Drawing.Point(509, 27);
             this.buttonCT.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCT.Name = "buttonCT";
             this.buttonCT.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
@@ -168,7 +168,7 @@
             this.buttonCT.Text = "Coordinador de Tutor";
             this.buttonCT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonCT.Textcolor = System.Drawing.Color.White;
-            this.buttonCT.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCT.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCT.Click += new System.EventHandler(this.buttonCT_Click);
             // 
             // panel4
@@ -200,7 +200,7 @@
             this.buttonAdmin.IconVisible = false;
             this.buttonAdmin.IconZoom = 90D;
             this.buttonAdmin.IsTab = false;
-            this.buttonAdmin.Location = new System.Drawing.Point(493, 27);
+            this.buttonAdmin.Location = new System.Drawing.Point(321, 27);
             this.buttonAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdmin.Name = "buttonAdmin";
             this.buttonAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -212,36 +212,32 @@
             this.buttonAdmin.Text = "Administrador";
             this.buttonAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonAdmin.Textcolor = System.Drawing.Color.White;
-            this.buttonAdmin.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdmin.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdmin.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
-            // panelPrincipal
+            // panel_Principal
             // 
-            this.panelPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(221)))), ((int)(((byte)(227)))));
-            this.panelPrincipal.Location = new System.Drawing.Point(0, 161);
-            this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(1642, 715);
-            this.panelPrincipal.TabIndex = 10;
-            this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panel_Principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
+            this.panel_Principal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Principal.Location = new System.Drawing.Point(0, 167);
+            this.panel_Principal.Name = "panel_Principal";
+            this.panel_Principal.Size = new System.Drawing.Size(1234, 544);
+            this.panel_Principal.TabIndex = 12;
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1642, 873);
+            this.ClientSize = new System.Drawing.Size(1234, 711);
+            this.Controls.Add(this.panel_Principal);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelPrincipal);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Gestion de Becas";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Principal_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -256,6 +252,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton buttonTutor;
         private Bunifu.Framework.UI.BunifuFlatButton buttonCT;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panelPrincipal;
+        private System.Windows.Forms.Panel panel_Principal;
     }
 }
