@@ -52,11 +52,11 @@
             this.welcometext.AutoSize = true;
             this.welcometext.Font = new System.Drawing.Font("Tw Cen MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcometext.ForeColor = System.Drawing.Color.White;
-            this.welcometext.Location = new System.Drawing.Point(53, 118);
+            this.welcometext.Location = new System.Drawing.Point(81, 118);
             this.welcometext.Name = "welcometext";
-            this.welcometext.Size = new System.Drawing.Size(267, 28);
+            this.welcometext.Size = new System.Drawing.Size(228, 28);
             this.welcometext.TabIndex = 1;
-            this.welcometext.Text = "WELCOME BACK, IVETTE!";
+            this.welcometext.Text = "BIENVENIDA, IVETTE!";
             // 
             // buttonSignIt
             // 
@@ -70,7 +70,7 @@
             this.buttonSignIt.Size = new System.Drawing.Size(321, 57);
             this.buttonSignIt.TabIndex = 6;
             this.buttonSignIt.TabStop = false;
-            this.buttonSignIt.Text = "SIGN IT";
+            this.buttonSignIt.Text = "INGRESAR";
             this.buttonSignIt.UseVisualStyleBackColor = false;
             this.buttonSignIt.Click += new System.EventHandler(this.buttonSignIt_Click);
             // 
@@ -82,7 +82,7 @@
             this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
             this.bunifuCheckbox1.Location = new System.Drawing.Point(33, 309);
-            this.bunifuCheckbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuCheckbox1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuCheckbox1.Name = "bunifuCheckbox1";
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 8;
@@ -94,9 +94,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(209)))), ((int)(((byte)(220)))));
             this.label2.Location = new System.Drawing.Point(71, 309);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 20);
+            this.label2.Size = new System.Drawing.Size(105, 20);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Remember me";
+            this.label2.Text = "Recuerdame";
             // 
             // bunifuMaterialTextbox1
             // 

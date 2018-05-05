@@ -165,5 +165,6 @@ namespace Vista
                 txtFiltro.Visible = true;
             }
         }
+        
     }
 }

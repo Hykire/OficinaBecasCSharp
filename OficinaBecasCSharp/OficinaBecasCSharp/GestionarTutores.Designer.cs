@@ -32,11 +32,6 @@
             this.panelTutor = new System.Windows.Forms.Panel();
             this.LGestTutBXT = new System.Windows.Forms.Label();
             this.DGVTutores = new System.Windows.Forms.DataGridView();
-            this.C1Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C2Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C3Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C4Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C5Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEliminarTutor = new System.Windows.Forms.Button();
             this.btnEditarTutor = new System.Windows.Forms.Button();
@@ -107,6 +102,16 @@
             this.GC_button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.GT_button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.C1Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C2Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C3Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Profesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C4Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C5Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GReporte = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelTutor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTutores)).BeginInit();
             this.panelBecariosXTutor.SuspendLayout();
@@ -151,39 +156,18 @@
             this.DGVTutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVTutores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.C1Tutor,
+            this.DNI,
+            this.Correo,
             this.C2Tutor,
             this.C3Tutor,
+            this.Profesion,
+            this.Telefono,
             this.C4Tutor,
             this.C5Tutor});
             this.DGVTutores.Location = new System.Drawing.Point(27, 133);
             this.DGVTutores.Name = "DGVTutores";
             this.DGVTutores.Size = new System.Drawing.Size(459, 150);
             this.DGVTutores.TabIndex = 4;
-            // 
-            // C1Tutor
-            // 
-            this.C1Tutor.HeaderText = "Codigo";
-            this.C1Tutor.Name = "C1Tutor";
-            // 
-            // C2Tutor
-            // 
-            this.C2Tutor.HeaderText = "Nombre";
-            this.C2Tutor.Name = "C2Tutor";
-            // 
-            // C3Tutor
-            // 
-            this.C3Tutor.HeaderText = "Apellidos";
-            this.C3Tutor.Name = "C3Tutor";
-            // 
-            // C4Tutor
-            // 
-            this.C4Tutor.HeaderText = "Fecha Inicio";
-            this.C4Tutor.Name = "C4Tutor";
-            // 
-            // C5Tutor
-            // 
-            this.C5Tutor.HeaderText = "N° Becarios";
-            this.C5Tutor.Name = "C5Tutor";
             // 
             // label1
             // 
@@ -207,21 +191,21 @@
             // 
             // btnEditarTutor
             // 
-            this.btnEditarTutor.Location = new System.Drawing.Point(139, 75);
+            this.btnEditarTutor.Location = new System.Drawing.Point(117, 75);
             this.btnEditarTutor.Name = "btnEditarTutor";
-            this.btnEditarTutor.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarTutor.Size = new System.Drawing.Size(98, 23);
             this.btnEditarTutor.TabIndex = 1;
-            this.btnEditarTutor.Text = "Editar";
+            this.btnEditarTutor.Text = "Modificar Tutor";
             this.btnEditarTutor.UseVisualStyleBackColor = true;
             this.btnEditarTutor.Click += new System.EventHandler(this.btnEditarTutor_Click);
             // 
             // btnNuevoTutor
             // 
-            this.btnNuevoTutor.Location = new System.Drawing.Point(57, 75);
+            this.btnNuevoTutor.Location = new System.Drawing.Point(36, 76);
             this.btnNuevoTutor.Name = "btnNuevoTutor";
             this.btnNuevoTutor.Size = new System.Drawing.Size(75, 23);
             this.btnNuevoTutor.TabIndex = 0;
-            this.btnNuevoTutor.Text = "Nuevo";
+            this.btnNuevoTutor.Text = "Nuevo Tutor";
             this.btnNuevoTutor.UseVisualStyleBackColor = true;
             this.btnNuevoTutor.Click += new System.EventHandler(this.btnNuevoTutor_Click);
             // 
@@ -784,6 +768,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.GReporte);
             this.panel1.Controls.Add(this.GBT_button);
             this.panel1.Controls.Add(this.CB_button);
             this.panel1.Controls.Add(this.GC_button);
@@ -815,7 +800,7 @@
             this.GBT_button.IconVisible = true;
             this.GBT_button.IconZoom = 90D;
             this.GBT_button.IsTab = true;
-            this.GBT_button.Location = new System.Drawing.Point(0, 113);
+            this.GBT_button.Location = new System.Drawing.Point(0, 84);
             this.GBT_button.Name = "GBT_button";
             this.GBT_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.GBT_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
@@ -850,7 +835,7 @@
             this.CB_button.IconVisible = true;
             this.CB_button.IconZoom = 90D;
             this.CB_button.IsTab = true;
-            this.CB_button.Location = new System.Drawing.Point(0, 293);
+            this.CB_button.Location = new System.Drawing.Point(0, 297);
             this.CB_button.Name = "CB_button";
             this.CB_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.CB_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
@@ -885,7 +870,7 @@
             this.GC_button.IconVisible = true;
             this.GC_button.IconZoom = 90D;
             this.GC_button.IsTab = true;
-            this.GC_button.Location = new System.Drawing.Point(0, 233);
+            this.GC_button.Location = new System.Drawing.Point(0, 193);
             this.GC_button.Name = "GC_button";
             this.GC_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.GC_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
@@ -920,7 +905,7 @@
             this.GT_button.IconVisible = true;
             this.GT_button.IconZoom = 90D;
             this.GT_button.IsTab = true;
-            this.GT_button.Location = new System.Drawing.Point(0, 173);
+            this.GT_button.Location = new System.Drawing.Point(0, 140);
             this.GT_button.Name = "GT_button";
             this.GT_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.GT_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
@@ -936,15 +921,94 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.PGestCitas);
             this.panel2.Controls.Add(this.panelBecariosXTutor);
             this.panel2.Controls.Add(this.panelConsultarBecaT);
             this.panel2.Controls.Add(this.panelTutor);
+            this.panel2.Controls.Add(this.PGestCitas);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(604, 441);
             this.panel2.TabIndex = 20;
+            // 
+            // C1Tutor
+            // 
+            this.C1Tutor.HeaderText = "Codigo";
+            this.C1Tutor.Name = "C1Tutor";
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            // 
+            // C2Tutor
+            // 
+            this.C2Tutor.HeaderText = "Nombre";
+            this.C2Tutor.Name = "C2Tutor";
+            // 
+            // C3Tutor
+            // 
+            this.C3Tutor.HeaderText = "Apellidos";
+            this.C3Tutor.Name = "C3Tutor";
+            // 
+            // Profesion
+            // 
+            this.Profesion.HeaderText = "Profesion";
+            this.Profesion.Name = "Profesion";
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            // 
+            // C4Tutor
+            // 
+            this.C4Tutor.HeaderText = "Fecha Inicio";
+            this.C4Tutor.Name = "C4Tutor";
+            // 
+            // C5Tutor
+            // 
+            this.C5Tutor.HeaderText = "N° Becarios";
+            this.C5Tutor.Name = "C5Tutor";
+            // 
+            // GReporte
+            // 
+            this.GReporte.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.GReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GReporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GReporte.BorderRadius = 0;
+            this.GReporte.ButtonText = "Generar Reporte";
+            this.GReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GReporte.DisabledColor = System.Drawing.Color.Gray;
+            this.GReporte.Iconcolor = System.Drawing.Color.Transparent;
+            this.GReporte.Iconimage = ((System.Drawing.Image)(resources.GetObject("GReporte.Iconimage")));
+            this.GReporte.Iconimage_right = null;
+            this.GReporte.Iconimage_right_Selected = null;
+            this.GReporte.Iconimage_Selected = null;
+            this.GReporte.IconMarginLeft = 0;
+            this.GReporte.IconMarginRight = 0;
+            this.GReporte.IconRightVisible = true;
+            this.GReporte.IconRightZoom = 0D;
+            this.GReporte.IconVisible = true;
+            this.GReporte.IconZoom = 90D;
+            this.GReporte.IsTab = true;
+            this.GReporte.Location = new System.Drawing.Point(0, 247);
+            this.GReporte.Name = "GReporte";
+            this.GReporte.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.GReporte.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.GReporte.OnHoverTextColor = System.Drawing.Color.White;
+            this.GReporte.selected = false;
+            this.GReporte.Size = new System.Drawing.Size(241, 48);
+            this.GReporte.TabIndex = 25;
+            this.GReporte.Text = "Generar Reporte";
+            this.GReporte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GReporte.Textcolor = System.Drawing.Color.White;
+            this.GReporte.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // GestionarTutores
             // 
@@ -983,11 +1047,6 @@
         #endregion
         private System.Windows.Forms.Panel panelTutor;
         private System.Windows.Forms.DataGridView DGVTutores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C1Tutor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C2Tutor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C3Tutor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C4Tutor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C5Tutor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEliminarTutor;
         private System.Windows.Forms.Button btnEditarTutor;
@@ -1059,5 +1118,15 @@
         private Bunifu.Framework.UI.BunifuFlatButton GT_button;
         private Bunifu.Framework.UI.BunifuFlatButton GBT_button;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C1Tutor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C2Tutor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C3Tutor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Profesion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C4Tutor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C5Tutor;
+        private Bunifu.Framework.UI.BunifuFlatButton GReporte;
     }
 }

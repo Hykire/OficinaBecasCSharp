@@ -275,9 +275,9 @@
             this.lblEmails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmails.Location = new System.Drawing.Point(27, 18);
             this.lblEmails.Name = "lblEmails";
-            this.lblEmails.Size = new System.Drawing.Size(144, 20);
+            this.lblEmails.Size = new System.Drawing.Size(253, 20);
             this.lblEmails.TabIndex = 17;
-            this.lblEmails.Text = "Consultar Emails";
+            this.lblEmails.Text = "Consultar correos electrónicos";
             // 
             // lblCiclo
             // 
@@ -558,9 +558,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panelConsultarBecas);
             this.panel2.Controls.Add(this.panelConsultarBecario);
             this.panel2.Controls.Add(this.panelConsultarEmails);
-            this.panel2.Controls.Add(this.panelConsultarBecas);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";

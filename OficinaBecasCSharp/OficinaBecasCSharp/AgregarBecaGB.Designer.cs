@@ -136,9 +136,9 @@
             this.LFechaUltConvocEBGB.AutoSize = true;
             this.LFechaUltConvocEBGB.Location = new System.Drawing.Point(21, 62);
             this.LFechaUltConvocEBGB.Name = "LFechaUltConvocEBGB";
-            this.LFechaUltConvocEBGB.Size = new System.Drawing.Size(105, 13);
+            this.LFechaUltConvocEBGB.Size = new System.Drawing.Size(78, 13);
             this.LFechaUltConvocEBGB.TabIndex = 15;
-            this.LFechaUltConvocEBGB.Text = "Última Convocatoria:";
+            this.LFechaUltConvocEBGB.Text = "Vigente desde:";
             // 
             // txtBFechaEBGC
             // 

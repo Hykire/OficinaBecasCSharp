@@ -110,5 +110,11 @@ namespace Vista {
             panelGestUsuarios.Hide();
             PGestBecas.Show();
         }
+
+        private void btnBuscarBecaGB_Click(object sender, EventArgs e)
+        {
+            BuscarBeca frmBB = new BuscarBeca();
+            frmBB.ShowDialog();
+        }
     }
 }

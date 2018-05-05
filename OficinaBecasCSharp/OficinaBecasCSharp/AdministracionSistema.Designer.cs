@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelGestBecarios = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Filtrar = new System.Windows.Forms.Label();
             this.LGestBecXTutBXT = new System.Windows.Forms.Label();
             this.btnElimBec = new System.Windows.Forms.Button();
             this.btnModifBec = new System.Windows.Forms.Button();
@@ -64,6 +66,7 @@
             this.LNombBecaGB = new System.Windows.Forms.Label();
             this.LSelFechaGC = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.GBeca_button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.GB_button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.GU_button = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -180,6 +183,8 @@
             // panelGestBecarios
             // 
             this.panelGestBecarios.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelGestBecarios.Controls.Add(this.button1);
+            this.panelGestBecarios.Controls.Add(this.Filtrar);
             this.panelGestBecarios.Controls.Add(this.LGestBecXTutBXT);
             this.panelGestBecarios.Controls.Add(this.btnElimBec);
             this.panelGestBecarios.Controls.Add(this.btnModifBec);
@@ -194,6 +199,24 @@
             this.panelGestBecarios.Size = new System.Drawing.Size(523, 345);
             this.panelGestBecarios.TabIndex = 7;
             this.panelGestBecarios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGestBecarios_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(36, 98);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Consultar por grupo";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // Filtrar
+            // 
+            this.Filtrar.AutoSize = true;
+            this.Filtrar.Location = new System.Drawing.Point(33, 79);
+            this.Filtrar.Name = "Filtrar";
+            this.Filtrar.Size = new System.Drawing.Size(91, 13);
+            this.Filtrar.TabIndex = 12;
+            this.Filtrar.Text = "Filtrar Resultados:";
             // 
             // LGestBecXTutBXT
             // 
@@ -412,6 +435,7 @@
             this.btnBuscarBecaGB.TabIndex = 4;
             this.btnBuscarBecaGB.Text = "Buscar Beca";
             this.btnBuscarBecaGB.UseVisualStyleBackColor = true;
+            this.btnBuscarBecaGB.Click += new System.EventHandler(this.btnBuscarBecaGB_Click);
             // 
             // LTituloGC
             // 
@@ -448,9 +472,9 @@
             this.LFechaUltConvocGB.AutoSize = true;
             this.LFechaUltConvocGB.Location = new System.Drawing.Point(21, 62);
             this.LFechaUltConvocGB.Name = "LFechaUltConvocGB";
-            this.LFechaUltConvocGB.Size = new System.Drawing.Size(105, 13);
+            this.LFechaUltConvocGB.Size = new System.Drawing.Size(78, 13);
             this.LFechaUltConvocGB.TabIndex = 15;
-            this.LFechaUltConvocGB.Text = "Última Convocatoria:";
+            this.LFechaUltConvocGB.Text = "Vigente desde:";
             // 
             // txtBFechaGC
             // 
@@ -480,6 +504,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.bunifuFlatButton1);
             this.panel1.Controls.Add(this.GBeca_button);
             this.panel1.Controls.Add(this.GB_button);
             this.panel1.Controls.Add(this.GU_button);
@@ -488,6 +513,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 441);
             this.panel1.TabIndex = 27;
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.SeaGreen;
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "Renovar Becas";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 90D;
+            this.bunifuFlatButton1.IsTab = true;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 320);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(241, 48);
+            this.bunifuFlatButton1.TabIndex = 3;
+            this.bunifuFlatButton1.Text = "Renovar Becas";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // GBeca_button
             // 
@@ -596,9 +655,9 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panelGestUsuarios);
             this.panel2.Controls.Add(this.PGestBecas);
             this.panel2.Controls.Add(this.panelGestBecarios);
+            this.panel2.Controls.Add(this.panelGestUsuarios);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
@@ -684,5 +743,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton GU_button;
         private Bunifu.Framework.UI.BunifuFlatButton GBeca_button;
         private Bunifu.Framework.UI.BunifuFlatButton GB_button;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label Filtrar;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
     }
 }
