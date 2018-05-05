@@ -826,7 +826,7 @@
             this.GBT_button.Text = "Gestionar Becarios";
             this.GBT_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GBT_button.Textcolor = System.Drawing.Color.White;
-            this.GBT_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GBT_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GBT_button.Click += new System.EventHandler(this.GBT_button_Click);
             // 
             // CB_button
@@ -861,7 +861,7 @@
             this.CB_button.Text = "Consultar Becas";
             this.CB_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CB_button.Textcolor = System.Drawing.Color.White;
-            this.CB_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CB_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CB_button.Click += new System.EventHandler(this.CB_button_Click);
             // 
             // GC_button
@@ -896,7 +896,7 @@
             this.GC_button.Text = "Gestionar Citas";
             this.GC_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GC_button.Textcolor = System.Drawing.Color.White;
-            this.GC_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GC_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GC_button.Click += new System.EventHandler(this.GC_button_Click);
             // 
             // GT_button
@@ -931,7 +931,7 @@
             this.GT_button.Text = "Gestionar Tutores";
             this.GT_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GT_button.Textcolor = System.Drawing.Color.White;
-            this.GT_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GT_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GT_button.Click += new System.EventHandler(this.GT_button_Click);
             // 
             // panel2

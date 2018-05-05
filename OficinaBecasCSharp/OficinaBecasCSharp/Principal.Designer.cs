@@ -55,7 +55,7 @@
             this.buttonAC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.buttonAC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.buttonAC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAC.BorderRadius = 5;
+            this.buttonAC.BorderRadius = 0;
             this.buttonAC.ButtonText = "Asistente de Comunicaciones";
             this.buttonAC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAC.DisabledColor = System.Drawing.Color.Gray;
@@ -71,14 +71,14 @@
             this.buttonAC.IconVisible = false;
             this.buttonAC.IconZoom = 90D;
             this.buttonAC.IsTab = false;
-            this.buttonAC.Location = new System.Drawing.Point(880, 27);
+            this.buttonAC.Location = new System.Drawing.Point(798, 0);
             this.buttonAC.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAC.Name = "buttonAC";
             this.buttonAC.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.buttonAC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonAC.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAC.selected = false;
-            this.buttonAC.Size = new System.Drawing.Size(160, 110);
+            this.buttonAC.Size = new System.Drawing.Size(160, 80);
             this.buttonAC.TabIndex = 14;
             this.buttonAC.Text = "Asistente de Comunicaciones";
             this.buttonAC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -102,9 +102,9 @@
             // buttonTutor
             // 
             this.buttonTutor.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(148)))), ((int)(((byte)(17)))));
-            this.buttonTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(168)))), ((int)(((byte)(40)))));
+            this.buttonTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(148)))), ((int)(((byte)(17)))));
             this.buttonTutor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonTutor.BorderRadius = 5;
+            this.buttonTutor.BorderRadius = 0;
             this.buttonTutor.ButtonText = "Tutor";
             this.buttonTutor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonTutor.DisabledColor = System.Drawing.Color.Gray;
@@ -120,14 +120,14 @@
             this.buttonTutor.IconVisible = false;
             this.buttonTutor.IconZoom = 90D;
             this.buttonTutor.IsTab = false;
-            this.buttonTutor.Location = new System.Drawing.Point(695, 27);
+            this.buttonTutor.Location = new System.Drawing.Point(639, 0);
             this.buttonTutor.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTutor.Name = "buttonTutor";
             this.buttonTutor.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(148)))), ((int)(((byte)(17)))));
             this.buttonTutor.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonTutor.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonTutor.selected = false;
-            this.buttonTutor.Size = new System.Drawing.Size(160, 110);
+            this.buttonTutor.Size = new System.Drawing.Size(160, 80);
             this.buttonTutor.TabIndex = 13;
             this.buttonTutor.Text = "Tutor";
             this.buttonTutor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -140,7 +140,7 @@
             this.buttonCT.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.buttonCT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.buttonCT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonCT.BorderRadius = 5;
+            this.buttonCT.BorderRadius = 0;
             this.buttonCT.ButtonText = "Coordinador de Tutor";
             this.buttonCT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCT.DisabledColor = System.Drawing.Color.Gray;
@@ -156,14 +156,14 @@
             this.buttonCT.IconVisible = false;
             this.buttonCT.IconZoom = 90D;
             this.buttonCT.IsTab = false;
-            this.buttonCT.Location = new System.Drawing.Point(509, 27);
+            this.buttonCT.Location = new System.Drawing.Point(480, 0);
             this.buttonCT.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCT.Name = "buttonCT";
             this.buttonCT.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.buttonCT.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonCT.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonCT.selected = false;
-            this.buttonCT.Size = new System.Drawing.Size(160, 110);
+            this.buttonCT.Size = new System.Drawing.Size(160, 80);
             this.buttonCT.TabIndex = 12;
             this.buttonCT.Text = "Coordinador de Tutor";
             this.buttonCT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,7 +184,7 @@
             this.buttonAdmin.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.buttonAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.buttonAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAdmin.BorderRadius = 5;
+            this.buttonAdmin.BorderRadius = 0;
             this.buttonAdmin.ButtonText = "Administrador";
             this.buttonAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAdmin.DisabledColor = System.Drawing.Color.Gray;
@@ -200,14 +200,14 @@
             this.buttonAdmin.IconVisible = false;
             this.buttonAdmin.IconZoom = 90D;
             this.buttonAdmin.IsTab = false;
-            this.buttonAdmin.Location = new System.Drawing.Point(321, 27);
+            this.buttonAdmin.Location = new System.Drawing.Point(321, 0);
             this.buttonAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdmin.Name = "buttonAdmin";
             this.buttonAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.buttonAdmin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonAdmin.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAdmin.selected = false;
-            this.buttonAdmin.Size = new System.Drawing.Size(160, 110);
+            this.buttonAdmin.Size = new System.Drawing.Size(160, 80);
             this.buttonAdmin.TabIndex = 11;
             this.buttonAdmin.Text = "Administrador";
             this.buttonAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -234,7 +234,6 @@
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximizeBox = false;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Gestion de Becas";

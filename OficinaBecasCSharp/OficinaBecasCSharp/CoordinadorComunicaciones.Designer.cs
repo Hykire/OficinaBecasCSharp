@@ -307,22 +307,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(32, 121);
+            this.label1.Location = new System.Drawing.Point(32, 118);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(76, 18);
             this.label1.TabIndex = 40;
             this.label1.Text = "Consultar:";
             // 
             // cbConsulta
             // 
             this.cbConsulta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbConsulta.FormattingEnabled = true;
             this.cbConsulta.Location = new System.Drawing.Point(35, 145);
             this.cbConsulta.Margin = new System.Windows.Forms.Padding(2);
             this.cbConsulta.Name = "cbConsulta";
-            this.cbConsulta.Size = new System.Drawing.Size(118, 21);
+            this.cbConsulta.Size = new System.Drawing.Size(118, 26);
             this.cbConsulta.TabIndex = 39;
             // 
             // panel1
@@ -371,7 +373,7 @@
             this.GC_button.Text = "Gestionar        Convocatoria";
             this.GC_button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GC_button.Textcolor = System.Drawing.Color.White;
-            this.GC_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GC_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GC_button.Click += new System.EventHandler(this.GC_button_Click);
             // 
             // panel2
