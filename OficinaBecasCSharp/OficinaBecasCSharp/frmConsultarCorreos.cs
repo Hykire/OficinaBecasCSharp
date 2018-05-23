@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vista {
-    public partial class AdministradorNuevoUsuario : Form {
-        public AdministradorNuevoUsuario() {
+namespace Vista
+{
+    public partial class frmConsultarCorreos : Form
+    {
+        public frmConsultarCorreos()
+        {
             InitializeComponent();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e) {
-            this.Close();
         }
     }
 }

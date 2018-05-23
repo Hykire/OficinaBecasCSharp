@@ -15,9 +15,7 @@ namespace Vista
         public GestionarTutor()
         {
             InitializeComponent();
-            panelConsultarEmails.Visible = false;
-            panelConsultarBecas.Visible = false;
-            panelConsultarBecario.Visible = false;
+
             panel2.Show();
         }
 
@@ -28,7 +26,7 @@ namespace Vista
             BuscarBeca frmBuscarBeca = new BuscarBeca();
             frmBuscarBeca.Show();
         }
-
+        /*
         private void CB_button_Click(object sender, EventArgs e)
         {
             panelConsultarEmails.Visible = false;
@@ -48,6 +46,6 @@ namespace Vista
             panelConsultarEmails.Visible = true;
             panelConsultarBecario.Visible = false;
             panelConsultarBecas.Visible = false;
-        }
+        }*/
     }
 }

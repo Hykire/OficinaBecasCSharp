@@ -19,8 +19,8 @@ namespace Vista {
         {
             if (this.panel_Principal.Controls.Count > 0)
                 this.panel_Principal.Controls.RemoveAt(0);
-            CoordinadorComunicaciones form = Application.OpenForms.OfType<CoordinadorComunicaciones>().FirstOrDefault();
-            CoordinadorComunicaciones ventanaCC = form ?? new CoordinadorComunicaciones();
+            AdministrarAsistComunicaciones form = Application.OpenForms.OfType<AdministrarAsistComunicaciones>().FirstOrDefault();
+            AdministrarAsistComunicaciones ventanaCC = form ?? new AdministrarAsistComunicaciones();
             ventanaCC.TopLevel = false;
             ventanaCC.FormBorderStyle = FormBorderStyle.None;
             ventanaCC.Dock = DockStyle.Fill;
@@ -47,22 +47,22 @@ namespace Vista {
         {
             if (this.panel_Principal.Controls.Count > 0)
                 this.panel_Principal.Controls.RemoveAt(0);
-            GestionarTutores form = Application.OpenForms.OfType<GestionarTutores>().FirstOrDefault();
-            GestionarTutores gestionarTutores = form ?? new GestionarTutores();
-            gestionarTutores.TopLevel = false;
-            gestionarTutores.FormBorderStyle = FormBorderStyle.None;
-            gestionarTutores.Dock = DockStyle.Fill;
-            this.panel_Principal.Controls.Add(gestionarTutores);
-            this.panel_Principal.Tag = gestionarTutores;
-            gestionarTutores.Show();
+            AdministracionCoordTutores form = Application.OpenForms.OfType<AdministracionCoordTutores>().FirstOrDefault();
+            AdministracionCoordTutores ventanagestionarTutores = form ?? new AdministracionCoordTutores();
+            ventanagestionarTutores.TopLevel = false;
+            ventanagestionarTutores.FormBorderStyle = FormBorderStyle.None;
+            ventanagestionarTutores.Dock = DockStyle.Fill;
+            this.panel_Principal.Controls.Add(ventanagestionarTutores);
+            this.panel_Principal.Tag = ventanagestionarTutores;
+            ventanagestionarTutores.Show();
         }
 
         private void buttonTutor_Click(object sender, EventArgs e)
         {
             if (this.panel_Principal.Controls.Count > 0)
                 this.panel_Principal.Controls.RemoveAt(0);
-            GestionarTutor form = Application.OpenForms.OfType<GestionarTutor>().FirstOrDefault();
-            GestionarTutor gestionarTutor = form ?? new GestionarTutor();
+            AdministrarTareaTutor form = Application.OpenForms.OfType<AdministrarTareaTutor>().FirstOrDefault();
+            AdministrarTareaTutor gestionarTutor = form ?? new AdministrarTareaTutor();
             gestionarTutor.TopLevel = false;
             gestionarTutor.FormBorderStyle = FormBorderStyle.None;
             gestionarTutor.Dock = DockStyle.Fill;

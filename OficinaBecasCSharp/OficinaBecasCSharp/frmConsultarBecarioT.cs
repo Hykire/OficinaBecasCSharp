@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vista {
-    public partial class AdministracionModificarBecario : Form {
-        public AdministracionModificarBecario() {
+namespace Vista
+{
+    public partial class frmConsultarBecarioT : Form
+    {
+        public frmConsultarBecarioT()
+        {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e) {
-            this.Close();
         }
     }
 }

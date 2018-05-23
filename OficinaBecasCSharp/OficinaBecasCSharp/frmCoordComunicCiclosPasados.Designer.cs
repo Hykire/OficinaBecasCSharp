@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class CoordinadorComunicaciones
+    partial class frmCoordComunicCiclosPasados
     {
         /// <summary>
         /// Required designer variable.
@@ -54,7 +54,7 @@
             this.lbNumeroTotalEnviados = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.lbDescripciónConvocatoria = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelCC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +62,7 @@
             // panelCC
             // 
             this.panelCC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelCC.Controls.Add(this.btnCancelar);
+            this.panelCC.Controls.Add(this.label1);
             this.panelCC.Controls.Add(this.lbNumeroRespuestas);
             this.panelCC.Controls.Add(this.cbBeca);
             this.panelCC.Controls.Add(this.txtNumeroRespuestas);
@@ -84,7 +84,7 @@
             this.panelCC.Location = new System.Drawing.Point(23, 2);
             this.panelCC.Name = "panelCC";
             this.panelCC.Size = new System.Drawing.Size(777, 449);
-            this.panelCC.TabIndex = 1;
+            this.panelCC.TabIndex = 2;
             // 
             // lbNumeroRespuestas
             // 
@@ -131,7 +131,6 @@
             this.btnAceptar.TabIndex = 52;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
             // 
             // txtFechaConvocatoria
             // 
@@ -150,7 +149,6 @@
             this.btnAgregar.TabIndex = 53;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // btnBeca
             // 
@@ -291,7 +289,6 @@
             this.btnModificar.TabIndex = 43;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // lbDescripciónConvocatoria
             // 
@@ -303,27 +300,25 @@
             this.lbDescripciónConvocatoria.TabIndex = 56;
             this.lbDescripciónConvocatoria.Text = "Descripción de Convocatoria:";
             // 
-            // btnCancelar
+            // label1
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(212, 337);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(82, 27);
-            this.btnCancelar.TabIndex = 60;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(25, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 20);
+            this.label1.TabIndex = 60;
+            this.label1.Text = "Convocatoria";
             // 
-            // CoordinadorComunicaciones
+            // frmCoordComunicCiclosPasados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelCC);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "CoordinadorComunicaciones";
-            this.Text = "CoordinadorComunicaciones";
-            this.Load += new System.EventHandler(this.CoordinadorComunicaciones_Load);
+            this.Name = "frmCoordComunicCiclosPasados";
+            this.Text = "frmCoordComunicCiclosPasados";
+            this.Load += new System.EventHandler(this.frmCoordComunicCiclosPasados_Load);
             this.panelCC.ResumeLayout(false);
             this.panelCC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
@@ -359,6 +354,6 @@
         private System.Windows.Forms.Label lbNumeroTotalEnviados;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label lbDescripciónConvocatoria;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label1;
     }
 }

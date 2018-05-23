@@ -6,34 +6,17 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Especialidad
+    public class Especialidad
     {
-        private int id_esp;
-        private string nomb_esp;
+        private int _id_especialidad;
+        private string _nombre;
+        private Facultad _facultad;
 
-        public int _id_esp
-        {
-            set
-            {
-                id_esp = value;
-            }
-            get
-            {
-                return id_esp;
-            }
-        }
+        public override string ToString() { return _nombre; }
 
-        public string _nomb_esp
-        {
-            set
-            {
-                nomb_esp = value;
-            }
-            get
-            {
-                return nomb_esp;
-            }
-        }
+        public int Id_especialidad { get => _id_especialidad; set => _id_especialidad = value; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
+        public Facultad Facultad { get => _facultad; set => _facultad = value; }
     }
 
 }

@@ -15,10 +15,7 @@ namespace Vista
         public GestionarTutores()
         {
             InitializeComponent();
-            panelConsultarBecaT.Visible = false;
-            panelBecariosXTutor.Visible = false;
-            panelTutor.Visible = false;
-            PGestCitas.Visible = false;
+            
 
             CBTutorGBXT.SelectedIndex = 0;
             TxtCodTutorBXT.Enabled = false;
@@ -26,15 +23,7 @@ namespace Vista
             btnBXTVer.Enabled = false;
             DGVBXT.AutoGenerateColumns = false;
 
-            //panel citas
-            txtBFechaGC.Enabled = false;
-            txtBHoraGC.Enabled = false;
-            txtCodTutorGC.Enabled = false;
-            txtBTutorGC.Enabled = false;
-            txtCodBecGC.Enabled = false;
-            txtBBecarioGC.Enabled = false;
-            txtBLugarGC.Enabled = false;
-            txtBObsGC.Enabled = false;
+            
         }
 
         private void btnEditarTutor_Click(object sender, EventArgs e)
@@ -90,7 +79,13 @@ namespace Vista
             frmBuscarBecaT.Show();
         }
 
+        private void btnBXTAnadir_Click_1(object sender, EventArgs e)
+        {
+            AgregarBecarioATutor frmABTXB = new AgregarBecarioATutor();
+            frmABTXB.ShowDialog();
+        }
 
+        /*
         private void btnMNGesCitas_Click(object sender, EventArgs e)
         {
             PGestCitas.Visible = true;
@@ -98,30 +93,8 @@ namespace Vista
             panelBecariosXTutor.Visible = false;
             panelTutor.Visible = false;
         }
-
-        private void BAgregarCitaGC_Click(object sender, EventArgs e)
-        {
-            AgregarCita frmAgergar = new AgregarCita();
-            frmAgergar.ShowDialog();
-        }
-
-        private void BEliminarCitaGC_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtBFechaGC.Text))
-            {
-                MessageBox.Show("Debe seleccionar una cita", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                MessageBox.Show("¿Desea eliminar la cita seleccionada?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void BEditarCitaGC_Click(object sender, EventArgs e)
-        {
-            EditarCita frmAgergar = new EditarCita();
-            frmAgergar.ShowDialog();
-        }
+       
+        
 
         private void GBT_button_Click(object sender, EventArgs e)
         {
@@ -153,6 +126,6 @@ namespace Vista
             panelBecariosXTutor.Visible = false;
             panelTutor.Visible = false;
             PGestCitas.Visible = false;
-        }
+        }*/
     }
 }

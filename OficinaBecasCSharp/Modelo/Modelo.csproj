@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,9 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrador.cs" />
+    <Compile Include="Alumno.cs" />
     <Compile Include="AsistenteComunicaciones.cs" />
     <Compile Include="Beca.cs" />
-    <Compile Include="Becado.cs" />
     <Compile Include="Cita.cs" />
     <Compile Include="Convocatoria.cs" />
     <Compile Include="CoordinadorAdministrativo.cs" />

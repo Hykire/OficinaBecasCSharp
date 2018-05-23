@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class BuscarBecarioT
+    partial class frmBuscarBecarioT
     {
         /// <summary>
         /// Required designer variable.
@@ -44,10 +44,10 @@
             this.C1BecarioT,
             this.C2BecarioT,
             this.C3BecarioT});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 18);
+            this.dataGridView1.Location = new System.Drawing.Point(31, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(498, 124);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.TabIndex = 8;
             // 
             // C1BecarioT
             // 
@@ -68,34 +68,34 @@
             // 
             // btnCancelarBBACGC
             // 
-            this.btnCancelarBBACGC.Location = new System.Drawing.Point(438, 162);
+            this.btnCancelarBBACGC.Location = new System.Drawing.Point(454, 174);
             this.btnCancelarBBACGC.Name = "btnCancelarBBACGC";
             this.btnCancelarBBACGC.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarBBACGC.TabIndex = 4;
+            this.btnCancelarBBACGC.TabIndex = 7;
             this.btnCancelarBBACGC.Text = "Cancelar";
             this.btnCancelarBBACGC.UseVisualStyleBackColor = true;
             this.btnCancelarBBACGC.Click += new System.EventHandler(this.btnCancelarBBACGC_Click);
             // 
             // btnAceptarBBACGC
             // 
-            this.btnAceptarBBACGC.Location = new System.Drawing.Point(357, 162);
+            this.btnAceptarBBACGC.Location = new System.Drawing.Point(373, 174);
             this.btnAceptarBBACGC.Name = "btnAceptarBBACGC";
             this.btnAceptarBBACGC.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptarBBACGC.TabIndex = 3;
+            this.btnAceptarBBACGC.TabIndex = 6;
             this.btnAceptarBBACGC.Text = "Aceptar";
             this.btnAceptarBBACGC.UseVisualStyleBackColor = true;
             this.btnAceptarBBACGC.Click += new System.EventHandler(this.btnAceptarBBACGC_Click);
             // 
-            // BuscarBecarioT
+            // frmBuscarBecarioT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 202);
+            this.ClientSize = new System.Drawing.Size(546, 211);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCancelarBBACGC);
             this.Controls.Add(this.btnAceptarBBACGC);
-            this.Name = "BuscarBecarioT";
-            this.Text = "BuscarBecarioT";
+            this.Name = "frmBuscarBecarioT";
+            this.Text = "Buscar Becario";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

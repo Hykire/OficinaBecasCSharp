@@ -53,7 +53,6 @@
             this.boton_buscarB.TabIndex = 4;
             this.boton_buscarB.Text = "Buscar Becario";
             this.boton_buscarB.UseVisualStyleBackColor = true;
-            this.boton_buscarB.Click += new System.EventHandler(this.boton_buscarB_Click);
             // 
             // boton_agregarC
             // 

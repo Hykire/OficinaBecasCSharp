@@ -10,22 +10,23 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class BuscarBecarioT : Form
+    public partial class frmConsultarBecaTutor : Form
     {
-        public BuscarBecarioT()
+        public frmConsultarBecaTutor()
         {
             InitializeComponent();
+            
         }
 
-        private void btnAceptarBBACGC_Click(object sender, EventArgs e)
+        private void frmConsultarBecaTutor_Load(object sender, EventArgs e)
         {
-            this.Dispose();
 
         }
 
-        private void btnCancelarBBACGC_Click(object sender, EventArgs e)
+        private void btnBuscarBecaCBT_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            BuscarBeca frmBuscarBecaT = new BuscarBeca();
+            frmBuscarBecaT.Show();
         }
     }
 }

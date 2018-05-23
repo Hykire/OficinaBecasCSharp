@@ -10,18 +10,21 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class FormTutor : Form
+    public partial class frmBuscarBecarioT : Form
     {
-        public FormTutor()
+        public frmBuscarBecarioT()
         {
             InitializeComponent();
         }
 
-
-        private void boton_agregarC_Click(object sender, EventArgs e)
+        private void btnAceptarBBACGC_Click(object sender, EventArgs e)
         {
-            AgregarCita agre_c = new AgregarCita();
-            if (agre_c.ShowDialog() == DialogResult.OK) { }
+            this.Dispose();
+        }
+
+        private void btnCancelarBBACGC_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

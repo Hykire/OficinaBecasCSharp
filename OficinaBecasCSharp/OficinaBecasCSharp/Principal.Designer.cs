@@ -47,7 +47,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1234, 167);
+            this.panel1.Size = new System.Drawing.Size(1057, 81);
             this.panel1.TabIndex = 8;
             // 
             // buttonAC
@@ -71,19 +71,19 @@
             this.buttonAC.IconVisible = false;
             this.buttonAC.IconZoom = 90D;
             this.buttonAC.IsTab = false;
-            this.buttonAC.Location = new System.Drawing.Point(798, 0);
+            this.buttonAC.Location = new System.Drawing.Point(677, 0);
             this.buttonAC.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAC.Name = "buttonAC";
             this.buttonAC.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.buttonAC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonAC.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAC.selected = false;
-            this.buttonAC.Size = new System.Drawing.Size(160, 80);
+            this.buttonAC.Size = new System.Drawing.Size(160, 53);
             this.buttonAC.TabIndex = 14;
             this.buttonAC.Text = "Asistente de Comunicaciones";
             this.buttonAC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonAC.Textcolor = System.Drawing.Color.White;
-            this.buttonAC.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAC.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.buttonAC.Click += new System.EventHandler(this.bunifuFlatButton4_Click);
             // 
             // pictureBox1
@@ -91,10 +91,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::Vista.Properties.Resources.logoOficinaBecas3;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 42);
+            this.pictureBox1.Location = new System.Drawing.Point(45, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(103, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -120,19 +120,19 @@
             this.buttonTutor.IconVisible = false;
             this.buttonTutor.IconZoom = 90D;
             this.buttonTutor.IsTab = false;
-            this.buttonTutor.Location = new System.Drawing.Point(639, 0);
+            this.buttonTutor.Location = new System.Drawing.Point(518, 0);
             this.buttonTutor.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTutor.Name = "buttonTutor";
             this.buttonTutor.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(148)))), ((int)(((byte)(17)))));
             this.buttonTutor.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonTutor.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonTutor.selected = false;
-            this.buttonTutor.Size = new System.Drawing.Size(160, 80);
+            this.buttonTutor.Size = new System.Drawing.Size(160, 53);
             this.buttonTutor.TabIndex = 13;
             this.buttonTutor.Text = "Tutor";
             this.buttonTutor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonTutor.Textcolor = System.Drawing.Color.White;
-            this.buttonTutor.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTutor.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.buttonTutor.Click += new System.EventHandler(this.buttonTutor_Click);
             // 
             // buttonCT
@@ -156,19 +156,19 @@
             this.buttonCT.IconVisible = false;
             this.buttonCT.IconZoom = 90D;
             this.buttonCT.IsTab = false;
-            this.buttonCT.Location = new System.Drawing.Point(480, 0);
+            this.buttonCT.Location = new System.Drawing.Point(359, 0);
             this.buttonCT.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCT.Name = "buttonCT";
             this.buttonCT.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.buttonCT.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonCT.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonCT.selected = false;
-            this.buttonCT.Size = new System.Drawing.Size(160, 80);
+            this.buttonCT.Size = new System.Drawing.Size(160, 53);
             this.buttonCT.TabIndex = 12;
             this.buttonCT.Text = "Coordinador de Tutor";
             this.buttonCT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonCT.Textcolor = System.Drawing.Color.White;
-            this.buttonCT.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCT.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.buttonCT.Click += new System.EventHandler(this.buttonCT_Click);
             // 
             // panel4
@@ -200,28 +200,28 @@
             this.buttonAdmin.IconVisible = false;
             this.buttonAdmin.IconZoom = 90D;
             this.buttonAdmin.IsTab = false;
-            this.buttonAdmin.Location = new System.Drawing.Point(321, 0);
+            this.buttonAdmin.Location = new System.Drawing.Point(200, 0);
             this.buttonAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdmin.Name = "buttonAdmin";
             this.buttonAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.buttonAdmin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonAdmin.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAdmin.selected = false;
-            this.buttonAdmin.Size = new System.Drawing.Size(160, 80);
+            this.buttonAdmin.Size = new System.Drawing.Size(160, 53);
             this.buttonAdmin.TabIndex = 11;
             this.buttonAdmin.Text = "Administrador";
             this.buttonAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonAdmin.Textcolor = System.Drawing.Color.White;
-            this.buttonAdmin.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdmin.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdmin.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // panel_Principal
             // 
             this.panel_Principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.panel_Principal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Principal.Location = new System.Drawing.Point(0, 167);
+            this.panel_Principal.Location = new System.Drawing.Point(0, 81);
             this.panel_Principal.Name = "panel_Principal";
-            this.panel_Principal.Size = new System.Drawing.Size(1234, 544);
+            this.panel_Principal.Size = new System.Drawing.Size(1057, 705);
             this.panel_Principal.TabIndex = 12;
             // 
             // Principal
@@ -229,11 +229,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1234, 711);
+            this.ClientSize = new System.Drawing.Size(1057, 786);
             this.Controls.Add(this.panel_Principal);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Gestion de Becas";

@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo {
-    class Facultad {
-        private int idFacultad; //Puede ser un string
-        private string nombre;
-        private char pabellon;
+namespace Modelo
+{
+    public class Facultad {
+        private int _id_facultad;
+        private string _nombre;
+        private char _pabellon;
 
-        public int IdFacultad { get => idFacultad; set => idFacultad = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public char Pabellon { get => pabellon; set => pabellon = value; }
+        public override string ToString() { return _nombre; }
+
+        public int Id_facultad { get => _id_facultad; set => _id_facultad = value; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
+        public char Pabellon { get => _pabellon; set => _pabellon = value; }
     }
 }

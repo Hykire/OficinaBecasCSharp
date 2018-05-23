@@ -6,183 +6,37 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Persona
+    public class Persona
     {
-        private int idPersona;
-        private string nombre;
-        private string apellidos;
-        private string direccion;
-        private int dni;
-        private int codigoPUCP;
-        private string correo;
-        private string profesion;
-        private string especialidad;
-        private long telfMovil;
-        private long telfCasa;
-        private TipoUsuario tipoUsuario;
-        private Usuario usuarioP;
+        private int _id_persona;
+        private int _codigoPUCP;
+        private string _nombres;
+        private string _apellidos;
+        private char _sexo;
+        private int _dni;
+        private int _edad;
+        private string _fecha_nacimiento;
+        private string _correoPUCP;
+        private string _correoAlternativo;
+        private string _telfMovil;
+        private string _telfFijo;
+        
+        //private TipoUsuario tipoUsuario;
+        //private Usuario usuarioP;
 
-        public Persona()
-        {
+        public Persona() { }
 
-        }
-
-        public int _idPersona
-        {
-            set
-            {
-                idPersona = value;
-            }
-            get
-            {
-                return idPersona;
-            }
-        }
-
-        public string _nombre
-        {
-            set
-            {
-                nombre = value;
-            }
-            get
-            {
-                return nombre;
-            }
-        }
-
-        public string _apellidos
-        {
-            set
-            {
-                apellidos = value;
-            }
-            get
-            {
-                return apellidos;
-            }
-        }
-
-        public string _direccion
-        {
-            set
-            {
-                direccion = value;
-            }
-            get
-            {
-                return direccion;
-            }
-        }
-
-        public int _dni
-        {
-            set
-            {
-                dni = value;
-            }
-            get
-            {
-                return dni;
-            }
-        }
-
-        public int _codigoPUCP
-        {
-            set
-            {
-                codigoPUCP = value;
-            }
-            get
-            {
-                return codigoPUCP;
-            }
-        }
-
-        public string _correo
-        {
-            set
-            {
-                correo = value;
-            }
-            get
-            {
-                return correo;
-            }
-        }
-
-        public string _profesion
-        {
-            set
-            {
-                profesion = value;
-            }
-            get
-            {
-                return profesion;
-            }
-        }
-
-        public string _especialidad
-        {
-            set
-            {
-                especialidad = value;
-            }
-            get
-            {
-                return especialidad;
-            }
-        }
-
-        public long _telfMovil
-        {
-            set
-            {
-                telfMovil = value;
-            }
-            get
-            {
-                return telfMovil;
-            }
-        }
-
-        public long _telfCasa
-        {
-            set
-            {
-                telfCasa = value;
-            }
-            get
-            {
-                return telfCasa;
-            }
-        }
-
-        public TipoUsuario _tipoUsuario
-        {
-            set
-            {
-                tipoUsuario = value;
-            }
-            get
-            {
-                return tipoUsuario;
-            }
-        }
-
-        public Usuario _usuarioP
-        {
-            set
-            {
-                usuarioP = value;
-            }
-            get
-            {
-                return usuarioP;
-            }
-        }
-
-
+        public int Id_persona { get => _id_persona; set => _id_persona = value; }
+        public int CodigoPUCP { get => _codigoPUCP; set => _codigoPUCP = value; }
+        public string Nombres { get => _nombres; set => _nombres = value; }
+        public string Apellidos { get => _apellidos; set => _apellidos = value; }
+        public char Sexo { get => _sexo; set => _sexo = value; }
+        public int Dni { get => _dni; set => _dni = value; }
+        public int Edad { get => _edad; set => _edad = value; }
+        public string Fecha_nacimiento { get => _fecha_nacimiento; set => _fecha_nacimiento = value; }
+        public string CorreoPUCP { get => _correoPUCP; set => _correoPUCP = value; }
+        public string CorreoAlternativo { get => _correoAlternativo; set => _correoAlternativo = value; }
+        public string TelfMovil{ get => _telfMovil; set => _telfMovil = value; }
+        public string TelfFijo { get => _telfFijo; set => _telfFijo = value; }
     }
 }

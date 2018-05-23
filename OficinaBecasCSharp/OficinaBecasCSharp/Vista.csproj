@@ -50,23 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministracionModificarBecario.cs">
+    <Compile Include="AdministracionCoordTutores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministracionModificarBecario.Designer.cs">
-      <DependentUpon>AdministracionModificarBecario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdministracionModificarUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdministracionModificarUsuario.Designer.cs">
-      <DependentUpon>AdministracionModificarUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdministracionNuevoBecario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdministracionNuevoBecario.Designer.cs">
-      <DependentUpon>AdministracionNuevoBecario.cs</DependentUpon>
+    <Compile Include="AdministracionCoordTutores.Designer.cs">
+      <DependentUpon>AdministracionCoordTutores.cs</DependentUpon>
     </Compile>
     <Compile Include="AdministracionSistema.cs">
       <SubType>Form</SubType>
@@ -74,11 +62,17 @@
     <Compile Include="AdministracionSistema.Designer.cs">
       <DependentUpon>AdministracionSistema.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdministradorNuevoUsuario.cs">
+    <Compile Include="AdministrarAsistComunicaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministradorNuevoUsuario.Designer.cs">
-      <DependentUpon>AdministradorNuevoUsuario.cs</DependentUpon>
+    <Compile Include="AdministrarAsistComunicaciones.Designer.cs">
+      <DependentUpon>AdministrarAsistComunicaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrarTareaTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministrarTareaTutor.Designer.cs">
+      <DependentUpon>AdministrarTareaTutor.cs</DependentUpon>
     </Compile>
     <Compile Include="AgregarBecaGB.cs">
       <SubType>Form</SubType>
@@ -116,17 +110,77 @@
     <Compile Include="BuscarBecarioABTXB.Designer.cs">
       <DependentUpon>BuscarBecarioABTXB.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarBecarioT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BuscarBecarioT.Designer.cs">
-      <DependentUpon>BuscarBecarioT.cs</DependentUpon>
-    </Compile>
     <Compile Include="BuscarTutorNT.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BuscarTutorNT.Designer.cs">
       <DependentUpon>BuscarTutorNT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumno.Designer.cs">
+      <DependentUpon>frmAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnoxBeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnoxBeca.Designer.cs">
+      <DependentUpon>frmAlumnoxBeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarAlumno.Designer.cs">
+      <DependentUpon>frmBuscarAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarBecarioT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarBecarioT.Designer.cs">
+      <DependentUpon>frmBuscarBecarioT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarBecarioT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultarBecarioT.Designer.cs">
+      <DependentUpon>frmConsultarBecarioT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarBecaTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultarBecaTutor.Designer.cs">
+      <DependentUpon>frmConsultarBecaTutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarCorreos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultarCorreos.Designer.cs">
+      <DependentUpon>frmConsultarCorreos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCoordComunicCiclosPasados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCoordComunicCiclosPasados.Designer.cs">
+      <DependentUpon>frmCoordComunicCiclosPasados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarCitasTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarCitasTutor.Designer.cs">
+      <DependentUpon>frmGestionarCitasTutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarTutoresTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarTutoresTutor.Designer.cs">
+      <DependentUpon>frmGestionarTutoresTutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistoriaAcademica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistoriaAcademica.Designer.cs">
+      <DependentUpon>frmHistoriaAcademica.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionarTutor.cs">
       <SubType>Form</SubType>
@@ -169,12 +223,6 @@
     </Compile>
     <Compile Include="EditarDoc.Designer.cs">
       <DependentUpon>EditarDoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTutor.cs">
       <SubType>Form</SubType>
@@ -229,20 +277,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AdministracionModificarBecario.resx">
-      <DependentUpon>AdministracionModificarBecario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdministracionModificarUsuario.resx">
-      <DependentUpon>AdministracionModificarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdministracionNuevoBecario.resx">
-      <DependentUpon>AdministracionNuevoBecario.cs</DependentUpon>
+    <EmbeddedResource Include="AdministracionCoordTutores.resx">
+      <DependentUpon>AdministracionCoordTutores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdministracionSistema.resx">
       <DependentUpon>AdministracionSistema.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdministradorNuevoUsuario.resx">
-      <DependentUpon>AdministradorNuevoUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="AdministrarAsistComunicaciones.resx">
+      <DependentUpon>AdministrarAsistComunicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministrarTareaTutor.resx">
+      <DependentUpon>AdministrarTareaTutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarBecaGB.resx">
       <DependentUpon>AgregarBecaGB.cs</DependentUpon>
@@ -262,11 +307,41 @@
     <EmbeddedResource Include="BuscarBecarioABTXB.resx">
       <DependentUpon>BuscarBecarioABTXB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarBecarioT.resx">
-      <DependentUpon>BuscarBecarioT.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BuscarTutorNT.resx">
       <DependentUpon>BuscarTutorNT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumno.resx">
+      <DependentUpon>frmAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnoxBeca.resx">
+      <DependentUpon>frmAlumnoxBeca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarAlumno.resx">
+      <DependentUpon>frmBuscarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarBecarioT.resx">
+      <DependentUpon>frmBuscarBecarioT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultarBecarioT.resx">
+      <DependentUpon>frmConsultarBecarioT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultarBecaTutor.resx">
+      <DependentUpon>frmConsultarBecaTutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultarCorreos.resx">
+      <DependentUpon>frmConsultarCorreos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCoordComunicCiclosPasados.resx">
+      <DependentUpon>frmCoordComunicCiclosPasados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarCitasTutor.resx">
+      <DependentUpon>frmGestionarCitasTutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarTutoresTutor.resx">
+      <DependentUpon>frmGestionarTutoresTutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistoriaAcademica.resx">
+      <DependentUpon>frmHistoriaAcademica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarTutor.resx">
       <DependentUpon>GestionarTutor.cs</DependentUpon>
@@ -350,6 +425,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lock11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controlador\Controlador.csproj">
+      <Project>{BB136A70-F638-447C-94FB-40AB4A9E413C}</Project>
+      <Name>Controlador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{ACD3FBC4-7477-4CB6-88C8-179DBE31CDFD}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

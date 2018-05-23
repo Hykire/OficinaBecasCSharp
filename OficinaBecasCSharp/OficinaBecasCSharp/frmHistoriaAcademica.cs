@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vista {
-    public partial class AdministracionModificarUsuario : Form {
-        public AdministracionModificarUsuario() {
+namespace Vista
+{
+    public partial class frmHistoriaAcademica : Form
+    {
+        public frmHistoriaAcademica()
+        {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e) {
-            this.Close();
         }
     }
 }

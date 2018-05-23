@@ -30,7 +30,7 @@ namespace Vista
         private void btnBuscarBecarioACGC_Click(object sender, EventArgs e)
         {
             //enlazarlo con modal de busqueda de becarios:
-            BuscarBecarioT frmBBCT = new BuscarBecarioT();
+            frmBuscarBecarioT frmBBCT = new frmBuscarBecarioT();
             frmBBCT.ShowDialog();
         }
     }
