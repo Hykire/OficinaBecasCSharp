@@ -33,12 +33,12 @@ namespace Vista
                 this.panel2.Tag = ventana;
                 ventana.Show();
             }
-            if (cbConsulta.Text == "Ciclos Anteriores")
+            else if (cbConsulta.Text == "Ciclos Anteriores")
             {
                 if (this.panel2.Controls.Count > 0)
                     this.panel2.Controls.RemoveAt(0);
-                frmCoordComunicCiclosPasados form = Application.OpenForms.OfType<frmCoordComunicCiclosPasados>().FirstOrDefault();
-                frmCoordComunicCiclosPasados ventana = form ?? new frmCoordComunicCiclosPasados();
+                frmBuscarConvocatoria form = Application.OpenForms.OfType<frmBuscarConvocatoria>().FirstOrDefault();
+                frmBuscarConvocatoria ventana = form ?? new frmBuscarConvocatoria();
                 ventana.TopLevel = false;
                 ventana.FormBorderStyle = FormBorderStyle.None;
                 ventana.Dock = DockStyle.Fill;
@@ -46,6 +46,7 @@ namespace Vista
                 this.panel2.Tag = ventana;
                 ventana.Show();
             }
+            else MessageBox.Show("Debe seleccionar una opción", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void AdministrarAsistComunicaciones_Load(object sender, EventArgs e)
         {

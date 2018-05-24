@@ -36,5 +36,31 @@ namespace AccesoDatos
             con.Close();
             return lista;
         }
+
+        public BindingList<Beca> listarBecas()
+        {
+            BindingList<Beca> becas = new BindingList<Beca>();
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "LISTAR_BECAS";
+            comando.Connection = con;
+            con.Open();
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Beca beca = new Beca();
+                beca.Id_beca = reader.GetInt32("id_beca");
+                beca.Nombre_beca = reader.GetString("nombre_beca");
+                beca.Descripcion = reader.GetString("descrip_beca");
+                beca.FechaConvocatoria = reader.GetDateTime("fechaConvocatoria");
+                beca.Financiador = reader.GetString("Financiador");
+
+                becas.Add(beca);
+            }
+            con.Close();
+            return becas;
+        }
     }
 }

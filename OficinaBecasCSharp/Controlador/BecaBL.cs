@@ -22,5 +22,10 @@ namespace Controlador
             BindingList<Beca> ltsOrdenada = new BindingList<Beca>(lista.OrderBy(x => x.Nombre_beca).ToList());
             return ltsOrdenada;
         }
+
+        public BindingList<Beca> listarBecas()
+        {
+            return accesoDatos.listarBecas();
+        }
     }
 }

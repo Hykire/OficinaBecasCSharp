@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controlador;
+using Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,95 +14,57 @@ namespace Vista
 {
     public partial class CoordinadorComunicaciones : Form
     {
+        private ConvocatoriaBL convocatoriaBL;
+        private AsistenteComunicaciones asistente;
+        private Beca beca;
         public CoordinadorComunicaciones()
         {
             InitializeComponent();
-
-            btnCancelar.Enabled = false;
-            txtNumeroEnviados.Visible = true;
-            txtNumeroRespuestas.Visible = true;
-            txtFechaConvocatoria.Visible = true;
-            cbBeca.Visible = true;
-            btnModificar.Visible = true;
-            btnAceptar.Visible = true;
-            lbNumeroTotalEnviados.Visible = true;
-            lbNumeroRespuestas.Visible = true;
-            lbNombreConvocatoria.Visible = true;
-            lbFechaConvocatoria.Visible = true;
-            txtNumeroEnviados.Enabled = false;
-            txtNumeroRespuestas.Enabled = false;
-            txtFechaConvocatoria.Enabled = false;
-            cbBeca.Enabled = false;
-            btnAceptar.Enabled = false;
-            dgvDatos.Visible = true;
-           // btnFiltrarResultados.Visible = true;
-            txtNombreConvocatoria.Visible = true;
-            txtDescripcionConvocatoria.Visible = true;
+            convocatoriaBL = new ConvocatoriaBL();
+            asistente = new AsistenteComunicaciones();
+            asistente.Nombres = "Remus";
+            asistente.Apellidos = "Lupin";
+            asistente.IdAsistente = 1;
+            BindingList<string> ciclos = new BindingList<string>();
+            ciclos.Add("2018-1");
+            ciclos.Add("2018-2");
+            ciclos.Add("2019-1");
+            ciclos.Add("2019-2");
+            cbCicloConvocatoria.DataSource = ciclos;
+            txtIdConvocatoria.Enabled = false;
             txtNombreConvocatoria.Enabled = false;
             txtDescripcionConvocatoria.Enabled = false;
-            lbNombreConvocatoria.Visible = true;
-            lbDescripciónConvocatoria.Visible = true;
-            btnAgregar.Visible = true;
-            btnEliminar.Visible = true;
-            lbBeca.Visible = true;
-            btnBeca.Visible = true;
+            dtFechaCreacion.Enabled = false;
+            dtFechaInicio.Enabled = false;
+            dtFechaFin.Enabled = false;
+            txtCantidadRespuestas.Enabled = false;
+            txtCantidadPersonasPrevistas.Enabled = false;
+            txtCantidadPersonasCovocadas.Enabled = false;
+            txtCreadorConvocatoria.Enabled = false;
+            cbCicloConvocatoria.Enabled = false;
+            txtBecaAsociada.Enabled = false;
+            btnGuardar.Enabled = false;
+            btnCancelar.Enabled = false;
             btnBeca.Enabled = false;
-            //txtFiltro.Visible = true;
-
-            cbBeca.Items.Add("Beca 1");
-            cbBeca.Items.Add("Beca 2");
-            /*
-            txtNumeroEnviados.Visible = false;
-            txtNumeroRespuestas.Visible = false;
-            txtFechaConvocatoria.Visible = false;
-            cbBeca.Visible = false;
-            //btnFiltrarResultados.Visible = false;
-            btnModificar.Visible = false;
-            btnAceptar.Visible = false;
-            dgvDatos.Visible = false;
-            lbNumeroTotalEnviados.Visible = false;
-            lbNumeroRespuestas.Visible = false;
-            lbNombreConvocatoria.Visible = false;
-            lbFechaConvocatoria.Visible = false;
-            txtNombreConvocatoria.Visible = false;
-            txtDescripcionConvocatoria.Visible = false;
-            lbNombreConvocatoria.Visible = false;
-            lbDescripciónConvocatoria.Visible = false;
-            btnAgregar.Visible = false;
-            btnEliminar.Visible = false;
-            lbBeca.Visible = false;
-            btnBeca.Visible = false;*/
-           // txtFiltro.Visible = false;
+            btnNuevo.Enabled = true;
+            btnBuscar.Enabled = true;
+            EstadoInicial();
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        public void EstadoInicial()
         {
-            txtNumeroEnviados.Enabled = true;
-            txtNumeroRespuestas.Enabled = true;
-            txtFechaConvocatoria.Enabled = true;
-            txtNombreConvocatoria.Enabled = true;
-            txtDescripcionConvocatoria.Enabled = true;
-            cbBeca.Enabled = true;
-            btnAceptar.Enabled = true;
-            btnModificar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnAgregar.Enabled = false;
-            btnBeca.Enabled = true;
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            txtNumeroEnviados.Enabled = true;
-            txtNumeroRespuestas.Enabled = true;
-            txtFechaConvocatoria.Enabled = true;
-            txtNombreConvocatoria.Enabled = true;
-            txtDescripcionConvocatoria.Enabled = true;
-            cbBeca.Enabled = true;
-            btnAceptar.Enabled = true;
-            btnModificar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnAgregar.Enabled = false;
-            btnBeca.Enabled = true;
+            txtIdConvocatoria.Text = null;
+            txtNombreConvocatoria.Text = null;
+            txtDescripcionConvocatoria.Text = null;
+            dtFechaCreacion.Text = null;
+            dtFechaInicio.Text = null;
+            dtFechaFin.Text = null;
+            txtCantidadRespuestas.Text = null;
+            txtCantidadPersonasPrevistas.Text = null;
+            txtCantidadPersonasCovocadas.Text = null;
+            txtCreadorConvocatoria.Text = null;
+            cbCicloConvocatoria.Text = null;
+            txtBecaAsociada.Text = null;
         }
 
         private void btnBeca_Click(object sender, EventArgs e)
@@ -116,77 +80,146 @@ namespace Vista
 
         }
 
-        private void btnAgregar_Click_1(object sender, EventArgs e)
+        private void lbNumeroRespuestas_Click(object sender, EventArgs e)
         {
-            txtNumeroEnviados.Enabled = true;
-            txtNumeroRespuestas.Enabled = true;
-            txtFechaConvocatoria.Enabled = true;
-            txtNombreConvocatoria.Enabled = true;
-            txtDescripcionConvocatoria.Enabled = true;
-            cbBeca.Enabled = true;
-            btnAceptar.Enabled = true;
-            btnModificar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnAgregar.Enabled = false;
-            btnBeca.Enabled = true;
-            btnCancelar.Enabled = true;
+
         }
 
-        private void btnModificar_Click_1(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-            txtNumeroEnviados.Enabled = true;
-            txtNumeroRespuestas.Enabled = true;
-            txtFechaConvocatoria.Enabled = true;
-            txtNombreConvocatoria.Enabled = true;
-            txtDescripcionConvocatoria.Enabled = true;
-            cbBeca.Enabled = true;
-            btnAceptar.Enabled = true;
-            btnModificar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnAgregar.Enabled = false;
-            btnBeca.Enabled = true;
-            btnCancelar.Enabled = true;
+
         }
 
-        private void btnAceptar_Click_1(object sender, EventArgs e)
+        private void txtNombreConvocatoria_TextChanged(object sender, EventArgs e)
         {
-            if (txtNumeroEnviados.Text == "" || txtNumeroRespuestas.Text == "" || txtFechaConvocatoria.Text == "" || cbBeca.Text == "")
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            frmBuscarConvocatoria convocatoria = new frmBuscarConvocatoria();
+            convocatoria.Owner = this;
+            if(convocatoria.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Falta completar información", "Información Incompleta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                txtIdConvocatoria.Text = convocatoria.ConvocatoriaSeleccionada.IdConvocatoria.ToString();
+                txtNombreConvocatoria.Text = convocatoria.ConvocatoriaSeleccionada.NombreConvocatoria;
+                txtDescripcionConvocatoria.Text = convocatoria.ConvocatoriaSeleccionada.DescripcionConvocatoria;
+                dtFechaCreacion.Text = convocatoria.ConvocatoriaSeleccionada.FechaCreacion.ToString();
+                dtFechaInicio.Text = convocatoria.ConvocatoriaSeleccionada.FechaInicio.ToString();
+                dtFechaFin.Text = convocatoria.ConvocatoriaSeleccionada.FechaFin.ToString();
+                txtCantidadRespuestas.Text = convocatoria.ConvocatoriaSeleccionada.CantidadRespuestas.ToString();
+                txtCantidadPersonasPrevistas.Text = convocatoria.ConvocatoriaSeleccionada.CantidadPersonasPrevistas.ToString();
+                txtCantidadPersonasCovocadas.Text = convocatoria.ConvocatoriaSeleccionada.CantidadPersonasConvocadas.ToString();
+                txtCreadorConvocatoria.Text = convocatoria.ConvocatoriaSeleccionada.NombreCreadorConvocatoria;
+                cbCicloConvocatoria.Text = convocatoria.ConvocatoriaSeleccionada.CicloConvocatoria;
+                txtBecaAsociada.Text = convocatoria.ConvocatoriaSeleccionada.NombreBeca;
             }
-            MessageBox.Show("La información ha sido agregada con éxito", "Información Actualizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            txtNumeroEnviados.Text = null;
-            txtNumeroRespuestas.Text = null;
-            txtFechaConvocatoria.Text = null;
-            txtNombreConvocatoria.Text = null;
-            txtDescripcionConvocatoria.Text = null;
-            cbBeca.Text = null;
-            txtNumeroEnviados.Enabled = false;
-            txtNumeroRespuestas.Enabled = false;
-            txtFechaConvocatoria.Enabled = false;
-            txtNombreConvocatoria.Enabled = false;
-            txtDescripcionConvocatoria.Enabled = false;
-            btnBeca.Enabled = false;
-            cbBeca.Enabled = false;
-            btnAceptar.Enabled = false;
-            btnModificar.Enabled = true;
-            btnAgregar.Enabled = true;
-            btnEliminar.Enabled = true;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            EstadoInicial();
+            txtNombreConvocatoria.Enabled = true;
+            txtDescripcionConvocatoria.Enabled = true;
+            dtFechaInicio.Enabled = true;
+            dtFechaFin.Enabled = true;
+            txtCantidadRespuestas.Enabled = true;
+            txtCantidadPersonasPrevistas.Enabled = true;
+            txtCantidadPersonasCovocadas.Enabled = true;
+            cbCicloConvocatoria.Enabled = true;
+            btnGuardar.Enabled = true;
+            btnCancelar.Enabled = true;
+            btnNuevo.Enabled = false;
+            btnBuscar.Enabled = false;
+            btnBeca.Enabled = true;
+            txtCreadorConvocatoria.Text = asistente.Nombres + " " + asistente.Apellidos;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            btnAceptar.Enabled = false;
-            btnAgregar.Enabled = true;
-            btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
-            txtNumeroEnviados.Enabled = false;
-            txtNumeroRespuestas.Enabled = false;
-            txtFechaConvocatoria.Enabled = false;
+            txtIdConvocatoria.Enabled = false;
             txtNombreConvocatoria.Enabled = false;
             txtDescripcionConvocatoria.Enabled = false;
+            dtFechaCreacion.Enabled = false;
+            dtFechaInicio.Enabled = false;
+            dtFechaFin.Enabled = false;
+            txtCantidadRespuestas.Enabled = false;
+            txtCantidadPersonasPrevistas.Enabled = false;
+            txtCantidadPersonasCovocadas.Enabled = false;
+            txtCreadorConvocatoria.Enabled = false;
+            cbCicloConvocatoria.Enabled = false;
+            txtBecaAsociada.Enabled = false;
+            btnGuardar.Enabled = false;
             btnCancelar.Enabled = false;
+            btnNuevo.Enabled = true;
+            btnBuscar.Enabled = true;
+            btnBeca.Enabled = false;
+            EstadoInicial();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if(txtNombreConvocatoria.Text == "" || txtDescripcionConvocatoria.Text == "" || txtCantidadPersonasPrevistas.Text == "" || txtCantidadPersonasCovocadas.Text == "" || txtCantidadRespuestas.Text == "" || cbCicloConvocatoria.Text == "" || txtBecaAsociada.Text == "")
+            {
+                MessageBox.Show("No se ha ingresado información en todos los campos", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            Convocatoria convocatoria = new Convocatoria();
+            convocatoria.NombreConvocatoria = txtNombreConvocatoria.Text;
+            convocatoria.DescripcionConvocatoria = txtDescripcionConvocatoria.Text;
+            convocatoria.FechaInicio = DateTime.Parse(dtFechaInicio.Text);
+            convocatoria.FechaFin = DateTime.Parse(dtFechaFin.Text);
+            convocatoria.FechaCreacion = DateTime.Parse(dtFechaCreacion.Text);
+            convocatoria.CantidadPersonasPrevistas = Int32.Parse(txtCantidadPersonasPrevistas.Text);
+            convocatoria.CantidadPersonasConvocadas = Int32.Parse(txtCantidadPersonasCovocadas.Text);
+            convocatoria.CantidadRespuestas = Int32.Parse(txtCantidadRespuestas.Text);
+            convocatoria.CicloConvocatoria = cbCicloConvocatoria.Text;
+            convocatoria.CreadorConvocatoria = asistente;
+            convocatoria.BecaAsociada = beca;
+
+            txtIdConvocatoria.Text = convocatoriaBL.agregarConvocatoria(convocatoria).ToString();
+
+            MessageBox.Show("Se ha agregado el registro de manera exitosa", "Registro Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            txtIdConvocatoria.Enabled = false;
+            txtNombreConvocatoria.Enabled = false;
+            txtDescripcionConvocatoria.Enabled = false;
+            dtFechaCreacion.Enabled = false;
+            dtFechaInicio.Enabled = false;
+            dtFechaFin.Enabled = false;
+            txtCantidadRespuestas.Enabled = false;
+            txtCantidadPersonasPrevistas.Enabled = false;
+            txtCantidadPersonasCovocadas.Enabled = false;
+            txtCreadorConvocatoria.Enabled = false;
+            cbCicloConvocatoria.Enabled = false;
+            txtBecaAsociada.Enabled = false;
+            btnGuardar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnBeca.Enabled = false;
+            btnNuevo.Enabled = true;
+            btnBuscar.Enabled = true;
+            EstadoInicial();
+        }
+
+        private void btnBeca_Click_1(object sender, EventArgs e)
+        {
+            BuscarBeca buscarBeca = new BuscarBeca();
+            buscarBeca.Owner = this;
+            if(buscarBeca.ShowDialog() == DialogResult.OK)
+            {
+                txtBecaAsociada.Text = buscarBeca.BecaSeleccionada.Nombre_beca;
+                beca = buscarBeca.BecaSeleccionada;
+            }
         }
     }
 }
