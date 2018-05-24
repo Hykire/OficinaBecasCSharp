@@ -37,7 +37,7 @@ namespace Controlador
             accesoDatos.Buscar_enTPersona(lista);
 
             BindingList<Alumno> listaB = new BindingList<Alumno>();
-            
+
             if (codigoB != "") //si se ingreso un codigo
             {
                 bool esNumero = int.TryParse(codigoB, out int codigo);
@@ -90,14 +90,14 @@ namespace Controlador
                 {
                     foreach (Alumno a in lista)
                     {
-                        if (a.Nombres.Contains(nombreB) == true) { listaB.Add(a);}
+                        if (a.Nombres.Contains(nombreB) == true) { listaB.Add(a); }
                     }
                 }
                 if (nombreB == "" && apellidoB != "")
                 {
                     foreach (Alumno a in lista)
                     {
-                        if (a.Apellidos.Contains(apellidoB) == true) { listaB.Add(a);}
+                        if (a.Apellidos.Contains(apellidoB) == true) { listaB.Add(a); }
                     }
                 }
                 if (nombreB == "" && apellidoB == "")

@@ -45,9 +45,9 @@ namespace AccesoDatos
             //
             MySqlCommand comando = new MySqlCommand();
             comando.CommandText = "INSERT INTO _F_PERSONA(CODIGO_PUCP,NOMBRES,APELLIDOS,SEXO,DNI,EDAD," +
-                "FECHA_NACIMIENTO,CORREO_PUCP,CORREO_ALTERNATIVO,TELF_MOVIL,TELF_FIJO) VALUES" + 
+                "FECHA_NACIMIENTO,CORREO_PUCP,CORREO_ALTERNATIVO,TELF_MOVIL,TELF_FIJO) VALUES" +
                 "(" + a.CodigoPUCP + ",'" + a.Nombres + "','" + a.Apellidos + "','" + a.Sexo + "'," +
-                a.Dni + "," + a.Edad + ",'" + a.Fecha_nacimiento + "','" + a.CorreoPUCP + "','" + 
+                a.Dni + "," + a.Edad + ",'" + a.Fecha_nacimiento + "','" + a.CorreoPUCP + "','" +
                 a.CorreoAlternativo + "','" + a.TelfMovil + "','" + a.TelfFijo + "');";
             comando.Connection = con;
             comando.ExecuteNonQuery();
@@ -66,7 +66,7 @@ namespace AccesoDatos
             comando.CommandText = "INSERT INTO _F_ALUMNO(ID_ALUMNO,CICLO_INGRESO,ID_ESPECIALIDAD,TIPO_GRUPO," +
                 "DISTRITO_NACIMIENTO,PROVINCIA_NACIMIENTO,DEPARTAMENTO_NACIMIENTO,PAIS_NACIMIENTO,DIRECCION," +
                 "DISTRITO_ACTUAL,PROVINCIA_ACTUAL,DEPARTAMENTO_ACTUAL) VALUES" +
-                "(" + id_alumno + " ,'" +a.Ciclo_ingreso + "'," + id_especialidad + ",'" + a.Tipo_grupo + "','" +
+                "(" + id_alumno + " ,'" + a.Ciclo_ingreso + "'," + id_especialidad + ",'" + a.Tipo_grupo + "','" +
                 a.Distrito_nacimiento + "','" + a.Provincia_nacimiento + "','" + a.Departamento_nacimiento + "','" + a.Pais_nacimiento + "','" +
                 a.Direccion + "','" + a.Distrito_actual + "','" + a.Provincia_actual + "','" + a.Departamento_actual + "');";
             System.Console.WriteLine(comando.CommandText);
@@ -95,10 +95,10 @@ namespace AccesoDatos
             //segundo update
             MySqlCommand comando_2 = new MySqlCommand();
             comando_2.CommandText = "UPDATE _F_ALUMNO SET CICLO_INGRESO='" + a.Ciclo_ingreso + "',ID_ESPECIALIDAD=" + id_especialidad +
-                ",TIPO_GRUPO='" + a.Tipo_grupo + "',DISTRITO_NACIMIENTO='" + a.Distrito_nacimiento + "',PROVINCIA_NACIMIENTO='" + a.Provincia_nacimiento + 
+                ",TIPO_GRUPO='" + a.Tipo_grupo + "',DISTRITO_NACIMIENTO='" + a.Distrito_nacimiento + "',PROVINCIA_NACIMIENTO='" + a.Provincia_nacimiento +
                 "',DEPARTAMENTO_NACIMIENTO='" + a.Departamento_nacimiento +
                 "',PAIS_NACIMIENTO='" + a.Pais_nacimiento + "',DIRECCION='" + a.Direccion + "',DISTRITO_ACTUAL='" +
-                a.Distrito_actual + "',PROVINCIA_ACTUAL='" + a.Provincia_actual + "',DEPARTAMENTO_ACTUAL='" + a.Departamento_actual + 
+                a.Distrito_actual + "',PROVINCIA_ACTUAL='" + a.Provincia_actual + "',DEPARTAMENTO_ACTUAL='" + a.Departamento_actual +
                 "' WHERE ID_ALUMNO=" + a.Id_persona + ";";
             comando_2.Connection = con;
             comando_2.ExecuteNonQuery();
@@ -137,9 +137,9 @@ namespace AccesoDatos
 
                 Especialidad e = new Especialidad();
                 e.Id_especialidad = rs.GetInt32("ID_ESPECIALIDAD");
-                foreach(Especialidad x in mylts_Especialidad)
+                foreach (Especialidad x in mylts_Especialidad)
                 {
-                    if(e.Id_especialidad == x.Id_especialidad)
+                    if (e.Id_especialidad == x.Id_especialidad)
                     {
                         e.Nombre = x.Nombre;
                         break;
@@ -167,7 +167,7 @@ namespace AccesoDatos
             while (rs.Read())
             {
                 int id = rs.GetInt32("ID_PERSONA");
-                foreach(Alumno a in lista)
+                foreach (Alumno a in lista)
                 {
                     if (a.Id_persona == id)
                     {

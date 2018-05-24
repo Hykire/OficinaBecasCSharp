@@ -29,7 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlumnoxBeca));
+            this.toolStrip_historiaacademica = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label_ciclo = new System.Windows.Forms.Label();
             this.gbox_datosGenerales = new System.Windows.Forms.GroupBox();
+            this.tbox_id_alumnoxbeca = new System.Windows.Forms.TextBox();
+            this.tbox_id_alumno = new System.Windows.Forms.TextBox();
             this.cbox_beca = new System.Windows.Forms.ComboBox();
             this.tbox_nivelcreditos = new System.Windows.Forms.TextBox();
             this.label_nivelcreditos = new System.Windows.Forms.Label();
@@ -55,8 +66,29 @@
             this.label_renovacion = new System.Windows.Forms.Label();
             this.label_suspencion = new System.Windows.Forms.Label();
             this.label_ampliacion = new System.Windows.Forms.Label();
+            this.gbox_intercambio = new System.Windows.Forms.GroupBox();
+            this.cbox_intercambio = new System.Windows.Forms.ComboBox();
+            this.label_intercambio = new System.Windows.Forms.Label();
+            this.cbox_adelantobono = new System.Windows.Forms.ComboBox();
+            this.dt_periodointercambiofin = new System.Windows.Forms.DateTimePicker();
+            this.dt_periodointercambioini = new System.Windows.Forms.DateTimePicker();
+            this.cbox_tipointercambio = new System.Windows.Forms.ComboBox();
+            this.label_adelantobono = new System.Windows.Forms.Label();
+            this.label_tipointercambio = new System.Windows.Forms.Label();
+            this.label_periodointercambio = new System.Windows.Forms.Label();
             this.cbox_ciclo = new System.Windows.Forms.ComboBox();
-            this.label_ciclo = new System.Windows.Forms.Label();
+            this.gbox_redencionbonos = new System.Windows.Forms.GroupBox();
+            this.cbox_sansion = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dt_sansionfin = new System.Windows.Forms.DateTimePicker();
+            this.dt_sansionini = new System.Windows.Forms.DateTimePicker();
+            this.cbox_bonoalojamiento = new System.Windows.Forms.ComboBox();
+            this.cbox_bonomateriales = new System.Windows.Forms.ComboBox();
+            this.label_periodosansion = new System.Windows.Forms.Label();
+            this.tbox_tiposansion = new System.Windows.Forms.TextBox();
+            this.label_bonomateriales = new System.Windows.Forms.Label();
+            this.label_bonoalojamiento = new System.Windows.Forms.Label();
+            this.label_tiposansion = new System.Windows.Forms.Label();
             this.gbox_cobertura = new System.Windows.Forms.GroupBox();
             this.tbox_nregularesRC = new System.Windows.Forms.TextBox();
             this.label_nregularesRC = new System.Windows.Forms.Label();
@@ -70,45 +102,110 @@
             this.label_nutilizados = new System.Windows.Forms.Label();
             this.tbox_cubiertos = new System.Windows.Forms.TextBox();
             this.label_ncubiertos = new System.Windows.Forms.Label();
-            this.gbox_redencionbonos = new System.Windows.Forms.GroupBox();
-            this.dt_sansionfin = new System.Windows.Forms.DateTimePicker();
-            this.dt_sansionini = new System.Windows.Forms.DateTimePicker();
-            this.cbox_bonoalojamiento = new System.Windows.Forms.ComboBox();
-            this.cbox_bonomateriales = new System.Windows.Forms.ComboBox();
-            this.label_periodosansion = new System.Windows.Forms.Label();
-            this.tbox_sansion = new System.Windows.Forms.TextBox();
-            this.label_bonomateriales = new System.Windows.Forms.Label();
-            this.label_bonoalojamiento = new System.Windows.Forms.Label();
-            this.label_sansion = new System.Windows.Forms.Label();
-            this.gbox_intercambio = new System.Windows.Forms.GroupBox();
-            this.cbox_adelantobono = new System.Windows.Forms.ComboBox();
-            this.dt_periodointercambiofin = new System.Windows.Forms.DateTimePicker();
-            this.dt_periodointercambioini = new System.Windows.Forms.DateTimePicker();
-            this.cbox_tipo = new System.Windows.Forms.ComboBox();
-            this.label_adelantobono = new System.Windows.Forms.Label();
-            this.label_tipo = new System.Windows.Forms.Label();
-            this.label_periodointercambio = new System.Windows.Forms.Label();
-            this.btnBuscarCiclo = new System.Windows.Forms.Button();
-            this.toolStrip_historiaacademica = new System.Windows.Forms.ToolStrip();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.tbox_ciclo = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.gbox_datosGenerales.SuspendLayout();
-            this.gbox_solicitudesConsejo.SuspendLayout();
-            this.gbox_cobertura.SuspendLayout();
-            this.gbox_redencionbonos.SuspendLayout();
-            this.gbox_intercambio.SuspendLayout();
             this.toolStrip_historiaacademica.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.gbox_datosGenerales.SuspendLayout();
+            this.gbox_solicitudesConsejo.SuspendLayout();
+            this.gbox_intercambio.SuspendLayout();
+            this.gbox_redencionbonos.SuspendLayout();
+            this.gbox_cobertura.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // toolStrip_historiaacademica
+            // 
+            this.toolStrip_historiaacademica.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnNuevo,
+            this.btnGuardar,
+            this.btnEditar,
+            this.toolStripSeparator1,
+            this.btnBuscar,
+            this.btnCancelar});
+            this.toolStrip_historiaacademica.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip_historiaacademica.Name = "toolStrip_historiaacademica";
+            this.toolStrip_historiaacademica.Size = new System.Drawing.Size(855, 25);
+            this.toolStrip_historiaacademica.TabIndex = 69;
+            this.toolStrip_historiaacademica.Text = "toolStrip2";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(62, 22);
+            this.btnNuevo.Text = "&Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(69, 22);
+            this.btnGuardar.Text = "&Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(57, 22);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(108, 22);
+            this.btnBuscar.Text = "Buscar Alumno";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(73, 22);
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label_ciclo);
+            this.panel1.Controls.Add(this.gbox_datosGenerales);
+            this.panel1.Controls.Add(this.gbox_solicitudesConsejo);
+            this.panel1.Controls.Add(this.gbox_intercambio);
+            this.panel1.Controls.Add(this.cbox_ciclo);
+            this.panel1.Controls.Add(this.gbox_redencionbonos);
+            this.panel1.Controls.Add(this.gbox_cobertura);
+            this.panel1.Controls.Add(this.tbox_ciclo);
+            this.panel1.Location = new System.Drawing.Point(21, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(807, 674);
+            this.panel1.TabIndex = 72;
+            // 
+            // label_ciclo
+            // 
+            this.label_ciclo.AutoSize = true;
+            this.label_ciclo.Location = new System.Drawing.Point(25, 32);
+            this.label_ciclo.Name = "label_ciclo";
+            this.label_ciclo.Size = new System.Drawing.Size(33, 13);
+            this.label_ciclo.TabIndex = 12;
+            this.label_ciclo.Text = "Ciclo:";
             // 
             // gbox_datosGenerales
             // 
+            this.gbox_datosGenerales.Controls.Add(this.tbox_id_alumnoxbeca);
+            this.gbox_datosGenerales.Controls.Add(this.tbox_id_alumno);
             this.gbox_datosGenerales.Controls.Add(this.cbox_beca);
             this.gbox_datosGenerales.Controls.Add(this.tbox_nivelcreditos);
             this.gbox_datosGenerales.Controls.Add(this.label_nivelcreditos);
@@ -121,12 +218,28 @@
             this.gbox_datosGenerales.Controls.Add(this.label_codigo);
             this.gbox_datosGenerales.Controls.Add(this.label_nombre);
             this.gbox_datosGenerales.Controls.Add(this.label_apellidos);
-            this.gbox_datosGenerales.Location = new System.Drawing.Point(24, 65);
+            this.gbox_datosGenerales.Location = new System.Drawing.Point(28, 65);
             this.gbox_datosGenerales.Name = "gbox_datosGenerales";
             this.gbox_datosGenerales.Size = new System.Drawing.Size(367, 224);
             this.gbox_datosGenerales.TabIndex = 9;
             this.gbox_datosGenerales.TabStop = false;
             this.gbox_datosGenerales.Text = "Datos Generales";
+            // 
+            // tbox_id_alumnoxbeca
+            // 
+            this.tbox_id_alumnoxbeca.Location = new System.Drawing.Point(24, 132);
+            this.tbox_id_alumnoxbeca.Name = "tbox_id_alumnoxbeca";
+            this.tbox_id_alumnoxbeca.Size = new System.Drawing.Size(100, 20);
+            this.tbox_id_alumnoxbeca.TabIndex = 25;
+            this.tbox_id_alumnoxbeca.Visible = false;
+            // 
+            // tbox_id_alumno
+            // 
+            this.tbox_id_alumno.Location = new System.Drawing.Point(242, 27);
+            this.tbox_id_alumno.Name = "tbox_id_alumno";
+            this.tbox_id_alumno.Size = new System.Drawing.Size(100, 20);
+            this.tbox_id_alumno.TabIndex = 24;
+            this.tbox_id_alumno.Visible = false;
             // 
             // cbox_beca
             // 
@@ -367,22 +480,245 @@
             this.label_ampliacion.TabIndex = 56;
             this.label_ampliacion.Text = "Solicitud de Ampliación de Cobertura:";
             // 
+            // gbox_intercambio
+            // 
+            this.gbox_intercambio.Controls.Add(this.cbox_intercambio);
+            this.gbox_intercambio.Controls.Add(this.label_intercambio);
+            this.gbox_intercambio.Controls.Add(this.cbox_adelantobono);
+            this.gbox_intercambio.Controls.Add(this.dt_periodointercambiofin);
+            this.gbox_intercambio.Controls.Add(this.dt_periodointercambioini);
+            this.gbox_intercambio.Controls.Add(this.cbox_tipointercambio);
+            this.gbox_intercambio.Controls.Add(this.label_adelantobono);
+            this.gbox_intercambio.Controls.Add(this.label_tipointercambio);
+            this.gbox_intercambio.Controls.Add(this.label_periodointercambio);
+            this.gbox_intercambio.Location = new System.Drawing.Point(213, 517);
+            this.gbox_intercambio.Name = "gbox_intercambio";
+            this.gbox_intercambio.Size = new System.Drawing.Size(367, 172);
+            this.gbox_intercambio.TabIndex = 66;
+            this.gbox_intercambio.TabStop = false;
+            this.gbox_intercambio.Text = "Intercambio Estudiantil:";
+            // 
+            // cbox_intercambio
+            // 
+            this.cbox_intercambio.FormattingEnabled = true;
+            this.cbox_intercambio.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.cbox_intercambio.Location = new System.Drawing.Point(242, 25);
+            this.cbox_intercambio.Name = "cbox_intercambio";
+            this.cbox_intercambio.Size = new System.Drawing.Size(100, 21);
+            this.cbox_intercambio.TabIndex = 65;
+            this.cbox_intercambio.SelectedIndexChanged += new System.EventHandler(this.cbox_intercambio_SelectedIndexChanged);
+            // 
+            // label_intercambio
+            // 
+            this.label_intercambio.AutoSize = true;
+            this.label_intercambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_intercambio.Location = new System.Drawing.Point(21, 28);
+            this.label_intercambio.Name = "label_intercambio";
+            this.label_intercambio.Size = new System.Drawing.Size(74, 13);
+            this.label_intercambio.TabIndex = 66;
+            this.label_intercambio.Text = "¿Intercambio?";
+            // 
+            // cbox_adelantobono
+            // 
+            this.cbox_adelantobono.FormattingEnabled = true;
+            this.cbox_adelantobono.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.cbox_adelantobono.Location = new System.Drawing.Point(242, 131);
+            this.cbox_adelantobono.Name = "cbox_adelantobono";
+            this.cbox_adelantobono.Size = new System.Drawing.Size(100, 21);
+            this.cbox_adelantobono.TabIndex = 65;
+            // 
+            // dt_periodointercambiofin
+            // 
+            this.dt_periodointercambiofin.Location = new System.Drawing.Point(142, 105);
+            this.dt_periodointercambiofin.Name = "dt_periodointercambiofin";
+            this.dt_periodointercambiofin.Size = new System.Drawing.Size(200, 20);
+            this.dt_periodointercambiofin.TabIndex = 63;
+            // 
+            // dt_periodointercambioini
+            // 
+            this.dt_periodointercambioini.Location = new System.Drawing.Point(142, 79);
+            this.dt_periodointercambioini.Name = "dt_periodointercambioini";
+            this.dt_periodointercambioini.Size = new System.Drawing.Size(200, 20);
+            this.dt_periodointercambioini.TabIndex = 62;
+            // 
+            // cbox_tipointercambio
+            // 
+            this.cbox_tipointercambio.FormattingEnabled = true;
+            this.cbox_tipointercambio.Items.AddRange(new object[] {
+            "Compensado",
+            "Regular"});
+            this.cbox_tipointercambio.Location = new System.Drawing.Point(242, 52);
+            this.cbox_tipointercambio.Name = "cbox_tipointercambio";
+            this.cbox_tipointercambio.Size = new System.Drawing.Size(100, 21);
+            this.cbox_tipointercambio.TabIndex = 60;
+            // 
+            // label_adelantobono
+            // 
+            this.label_adelantobono.AutoSize = true;
+            this.label_adelantobono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_adelantobono.Location = new System.Drawing.Point(21, 134);
+            this.label_adelantobono.Name = "label_adelantobono";
+            this.label_adelantobono.Size = new System.Drawing.Size(158, 13);
+            this.label_adelantobono.TabIndex = 58;
+            this.label_adelantobono.Text = "Solicitud de Adelanto de Bonos:";
+            // 
+            // label_tipointercambio
+            // 
+            this.label_tipointercambio.AutoSize = true;
+            this.label_tipointercambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_tipointercambio.Location = new System.Drawing.Point(21, 55);
+            this.label_tipointercambio.Name = "label_tipointercambio";
+            this.label_tipointercambio.Size = new System.Drawing.Size(31, 13);
+            this.label_tipointercambio.TabIndex = 52;
+            this.label_tipointercambio.Text = "Tipo:";
+            // 
+            // label_periodointercambio
+            // 
+            this.label_periodointercambio.AutoSize = true;
+            this.label_periodointercambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_periodointercambio.Location = new System.Drawing.Point(21, 85);
+            this.label_periodointercambio.Name = "label_periodointercambio";
+            this.label_periodointercambio.Size = new System.Drawing.Size(48, 13);
+            this.label_periodointercambio.TabIndex = 54;
+            this.label_periodointercambio.Text = "Período:";
+            // 
             // cbox_ciclo
             // 
             this.cbox_ciclo.FormattingEnabled = true;
-            this.cbox_ciclo.Location = new System.Drawing.Point(75, 29);
+            this.cbox_ciclo.Location = new System.Drawing.Point(139, 29);
             this.cbox_ciclo.Name = "cbox_ciclo";
             this.cbox_ciclo.Size = new System.Drawing.Size(57, 21);
             this.cbox_ciclo.TabIndex = 13;
+            this.cbox_ciclo.SelectedIndexChanged += new System.EventHandler(this.cbox_ciclo_SelectedIndexChanged);
             // 
-            // label_ciclo
+            // gbox_redencionbonos
             // 
-            this.label_ciclo.AutoSize = true;
-            this.label_ciclo.Location = new System.Drawing.Point(25, 32);
-            this.label_ciclo.Name = "label_ciclo";
-            this.label_ciclo.Size = new System.Drawing.Size(33, 13);
-            this.label_ciclo.TabIndex = 12;
-            this.label_ciclo.Text = "Ciclo:";
+            this.gbox_redencionbonos.Controls.Add(this.cbox_sansion);
+            this.gbox_redencionbonos.Controls.Add(this.label1);
+            this.gbox_redencionbonos.Controls.Add(this.dt_sansionfin);
+            this.gbox_redencionbonos.Controls.Add(this.dt_sansionini);
+            this.gbox_redencionbonos.Controls.Add(this.cbox_bonoalojamiento);
+            this.gbox_redencionbonos.Controls.Add(this.cbox_bonomateriales);
+            this.gbox_redencionbonos.Controls.Add(this.label_periodosansion);
+            this.gbox_redencionbonos.Controls.Add(this.tbox_tiposansion);
+            this.gbox_redencionbonos.Controls.Add(this.label_bonomateriales);
+            this.gbox_redencionbonos.Controls.Add(this.label_bonoalojamiento);
+            this.gbox_redencionbonos.Controls.Add(this.label_tiposansion);
+            this.gbox_redencionbonos.Location = new System.Drawing.Point(415, 302);
+            this.gbox_redencionbonos.Name = "gbox_redencionbonos";
+            this.gbox_redencionbonos.Size = new System.Drawing.Size(367, 200);
+            this.gbox_redencionbonos.TabIndex = 65;
+            this.gbox_redencionbonos.TabStop = false;
+            this.gbox_redencionbonos.Text = "Redención de Bonos";
+            // 
+            // cbox_sansion
+            // 
+            this.cbox_sansion.FormattingEnabled = true;
+            this.cbox_sansion.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.cbox_sansion.Location = new System.Drawing.Point(242, 81);
+            this.cbox_sansion.Name = "cbox_sansion";
+            this.cbox_sansion.Size = new System.Drawing.Size(100, 21);
+            this.cbox_sansion.TabIndex = 67;
+            this.cbox_sansion.SelectedIndexChanged += new System.EventHandler(this.cbox_sansion_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.Location = new System.Drawing.Point(21, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "¿Sansión?";
+            // 
+            // dt_sansionfin
+            // 
+            this.dt_sansionfin.Location = new System.Drawing.Point(142, 160);
+            this.dt_sansionfin.Name = "dt_sansionfin";
+            this.dt_sansionfin.Size = new System.Drawing.Size(200, 20);
+            this.dt_sansionfin.TabIndex = 63;
+            // 
+            // dt_sansionini
+            // 
+            this.dt_sansionini.Location = new System.Drawing.Point(142, 134);
+            this.dt_sansionini.Name = "dt_sansionini";
+            this.dt_sansionini.Size = new System.Drawing.Size(200, 20);
+            this.dt_sansionini.TabIndex = 62;
+            // 
+            // cbox_bonoalojamiento
+            // 
+            this.cbox_bonoalojamiento.FormattingEnabled = true;
+            this.cbox_bonoalojamiento.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.cbox_bonoalojamiento.Location = new System.Drawing.Point(242, 54);
+            this.cbox_bonoalojamiento.Name = "cbox_bonoalojamiento";
+            this.cbox_bonoalojamiento.Size = new System.Drawing.Size(100, 21);
+            this.cbox_bonoalojamiento.TabIndex = 61;
+            // 
+            // cbox_bonomateriales
+            // 
+            this.cbox_bonomateriales.FormattingEnabled = true;
+            this.cbox_bonomateriales.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.cbox_bonomateriales.Location = new System.Drawing.Point(242, 27);
+            this.cbox_bonomateriales.Name = "cbox_bonomateriales";
+            this.cbox_bonomateriales.Size = new System.Drawing.Size(100, 21);
+            this.cbox_bonomateriales.TabIndex = 60;
+            // 
+            // label_periodosansion
+            // 
+            this.label_periodosansion.AutoSize = true;
+            this.label_periodosansion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_periodosansion.Location = new System.Drawing.Point(21, 140);
+            this.label_periodosansion.Name = "label_periodosansion";
+            this.label_periodosansion.Size = new System.Drawing.Size(104, 13);
+            this.label_periodosansion.TabIndex = 58;
+            this.label_periodosansion.Text = "Período de Sansión:";
+            // 
+            // tbox_tiposansion
+            // 
+            this.tbox_tiposansion.Location = new System.Drawing.Point(142, 108);
+            this.tbox_tiposansion.Name = "tbox_tiposansion";
+            this.tbox_tiposansion.Size = new System.Drawing.Size(200, 20);
+            this.tbox_tiposansion.TabIndex = 55;
+            // 
+            // label_bonomateriales
+            // 
+            this.label_bonomateriales.AutoSize = true;
+            this.label_bonomateriales.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_bonomateriales.Location = new System.Drawing.Point(21, 30);
+            this.label_bonomateriales.Name = "label_bonomateriales";
+            this.label_bonomateriales.Size = new System.Drawing.Size(171, 13);
+            this.label_bonomateriales.TabIndex = 52;
+            this.label_bonomateriales.Text = "Redención de Bono de Materiales:";
+            // 
+            // label_bonoalojamiento
+            // 
+            this.label_bonoalojamiento.AutoSize = true;
+            this.label_bonoalojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_bonoalojamiento.Location = new System.Drawing.Point(21, 57);
+            this.label_bonoalojamiento.Name = "label_bonoalojamiento";
+            this.label_bonoalojamiento.Size = new System.Drawing.Size(177, 13);
+            this.label_bonoalojamiento.TabIndex = 54;
+            this.label_bonoalojamiento.Text = "Redención de Bono de Alojamiento:";
+            // 
+            // label_tiposansion
+            // 
+            this.label_tiposansion.AutoSize = true;
+            this.label_tiposansion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_tiposansion.Location = new System.Drawing.Point(21, 111);
+            this.label_tiposansion.Name = "label_tiposansion";
+            this.label_tiposansion.Size = new System.Drawing.Size(31, 13);
+            this.label_tiposansion.TabIndex = 56;
+            this.label_tiposansion.Text = "Tipo:";
             // 
             // gbox_cobertura
             // 
@@ -507,264 +843,6 @@
             this.label_ncubiertos.TabIndex = 36;
             this.label_ncubiertos.Text = "Nro. de Créditos Cubiertos por la Beca:";
             // 
-            // gbox_redencionbonos
-            // 
-            this.gbox_redencionbonos.Controls.Add(this.dt_sansionfin);
-            this.gbox_redencionbonos.Controls.Add(this.dt_sansionini);
-            this.gbox_redencionbonos.Controls.Add(this.cbox_bonoalojamiento);
-            this.gbox_redencionbonos.Controls.Add(this.cbox_bonomateriales);
-            this.gbox_redencionbonos.Controls.Add(this.label_periodosansion);
-            this.gbox_redencionbonos.Controls.Add(this.tbox_sansion);
-            this.gbox_redencionbonos.Controls.Add(this.label_bonomateriales);
-            this.gbox_redencionbonos.Controls.Add(this.label_bonoalojamiento);
-            this.gbox_redencionbonos.Controls.Add(this.label_sansion);
-            this.gbox_redencionbonos.Location = new System.Drawing.Point(415, 302);
-            this.gbox_redencionbonos.Name = "gbox_redencionbonos";
-            this.gbox_redencionbonos.Size = new System.Drawing.Size(367, 174);
-            this.gbox_redencionbonos.TabIndex = 65;
-            this.gbox_redencionbonos.TabStop = false;
-            this.gbox_redencionbonos.Text = "Redención de Bonos";
-            // 
-            // dt_sansionfin
-            // 
-            this.dt_sansionfin.Location = new System.Drawing.Point(142, 133);
-            this.dt_sansionfin.Name = "dt_sansionfin";
-            this.dt_sansionfin.Size = new System.Drawing.Size(200, 20);
-            this.dt_sansionfin.TabIndex = 63;
-            // 
-            // dt_sansionini
-            // 
-            this.dt_sansionini.Location = new System.Drawing.Point(142, 107);
-            this.dt_sansionini.Name = "dt_sansionini";
-            this.dt_sansionini.Size = new System.Drawing.Size(200, 20);
-            this.dt_sansionini.TabIndex = 62;
-            // 
-            // cbox_bonoalojamiento
-            // 
-            this.cbox_bonoalojamiento.FormattingEnabled = true;
-            this.cbox_bonoalojamiento.Items.AddRange(new object[] {
-            "Sí",
-            "No"});
-            this.cbox_bonoalojamiento.Location = new System.Drawing.Point(242, 54);
-            this.cbox_bonoalojamiento.Name = "cbox_bonoalojamiento";
-            this.cbox_bonoalojamiento.Size = new System.Drawing.Size(100, 21);
-            this.cbox_bonoalojamiento.TabIndex = 61;
-            // 
-            // cbox_bonomateriales
-            // 
-            this.cbox_bonomateriales.FormattingEnabled = true;
-            this.cbox_bonomateriales.Items.AddRange(new object[] {
-            "Sí",
-            "No"});
-            this.cbox_bonomateriales.Location = new System.Drawing.Point(242, 27);
-            this.cbox_bonomateriales.Name = "cbox_bonomateriales";
-            this.cbox_bonomateriales.Size = new System.Drawing.Size(100, 21);
-            this.cbox_bonomateriales.TabIndex = 60;
-            // 
-            // label_periodosansion
-            // 
-            this.label_periodosansion.AutoSize = true;
-            this.label_periodosansion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_periodosansion.Location = new System.Drawing.Point(21, 110);
-            this.label_periodosansion.Name = "label_periodosansion";
-            this.label_periodosansion.Size = new System.Drawing.Size(104, 13);
-            this.label_periodosansion.TabIndex = 58;
-            this.label_periodosansion.Text = "Período de Sansión:";
-            // 
-            // tbox_sansion
-            // 
-            this.tbox_sansion.Location = new System.Drawing.Point(142, 81);
-            this.tbox_sansion.Name = "tbox_sansion";
-            this.tbox_sansion.Size = new System.Drawing.Size(200, 20);
-            this.tbox_sansion.TabIndex = 55;
-            // 
-            // label_bonomateriales
-            // 
-            this.label_bonomateriales.AutoSize = true;
-            this.label_bonomateriales.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_bonomateriales.Location = new System.Drawing.Point(21, 30);
-            this.label_bonomateriales.Name = "label_bonomateriales";
-            this.label_bonomateriales.Size = new System.Drawing.Size(171, 13);
-            this.label_bonomateriales.TabIndex = 52;
-            this.label_bonomateriales.Text = "Redención de Bono de Materiales:";
-            // 
-            // label_bonoalojamiento
-            // 
-            this.label_bonoalojamiento.AutoSize = true;
-            this.label_bonoalojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_bonoalojamiento.Location = new System.Drawing.Point(21, 57);
-            this.label_bonoalojamiento.Name = "label_bonoalojamiento";
-            this.label_bonoalojamiento.Size = new System.Drawing.Size(177, 13);
-            this.label_bonoalojamiento.TabIndex = 54;
-            this.label_bonoalojamiento.Text = "Redención de Bono de Alojamiento:";
-            // 
-            // label_sansion
-            // 
-            this.label_sansion.AutoSize = true;
-            this.label_sansion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_sansion.Location = new System.Drawing.Point(21, 84);
-            this.label_sansion.Name = "label_sansion";
-            this.label_sansion.Size = new System.Drawing.Size(48, 13);
-            this.label_sansion.TabIndex = 56;
-            this.label_sansion.Text = "Sansión:";
-            // 
-            // gbox_intercambio
-            // 
-            this.gbox_intercambio.Controls.Add(this.cbox_adelantobono);
-            this.gbox_intercambio.Controls.Add(this.dt_periodointercambiofin);
-            this.gbox_intercambio.Controls.Add(this.dt_periodointercambioini);
-            this.gbox_intercambio.Controls.Add(this.cbox_tipo);
-            this.gbox_intercambio.Controls.Add(this.label_adelantobono);
-            this.gbox_intercambio.Controls.Add(this.label_tipo);
-            this.gbox_intercambio.Controls.Add(this.label_periodointercambio);
-            this.gbox_intercambio.Location = new System.Drawing.Point(415, 493);
-            this.gbox_intercambio.Name = "gbox_intercambio";
-            this.gbox_intercambio.Size = new System.Drawing.Size(367, 150);
-            this.gbox_intercambio.TabIndex = 66;
-            this.gbox_intercambio.TabStop = false;
-            this.gbox_intercambio.Text = "Intercambio Estudiantil:";
-            // 
-            // cbox_adelantobono
-            // 
-            this.cbox_adelantobono.FormattingEnabled = true;
-            this.cbox_adelantobono.Items.AddRange(new object[] {
-            "Sí",
-            "No"});
-            this.cbox_adelantobono.Location = new System.Drawing.Point(242, 106);
-            this.cbox_adelantobono.Name = "cbox_adelantobono";
-            this.cbox_adelantobono.Size = new System.Drawing.Size(100, 21);
-            this.cbox_adelantobono.TabIndex = 65;
-            // 
-            // dt_periodointercambiofin
-            // 
-            this.dt_periodointercambiofin.Location = new System.Drawing.Point(142, 80);
-            this.dt_periodointercambiofin.Name = "dt_periodointercambiofin";
-            this.dt_periodointercambiofin.Size = new System.Drawing.Size(200, 20);
-            this.dt_periodointercambiofin.TabIndex = 63;
-            // 
-            // dt_periodointercambioini
-            // 
-            this.dt_periodointercambioini.Location = new System.Drawing.Point(142, 54);
-            this.dt_periodointercambioini.Name = "dt_periodointercambioini";
-            this.dt_periodointercambioini.Size = new System.Drawing.Size(200, 20);
-            this.dt_periodointercambioini.TabIndex = 62;
-            // 
-            // cbox_tipo
-            // 
-            this.cbox_tipo.FormattingEnabled = true;
-            this.cbox_tipo.Items.AddRange(new object[] {
-            "Compensado",
-            "Regular"});
-            this.cbox_tipo.Location = new System.Drawing.Point(242, 27);
-            this.cbox_tipo.Name = "cbox_tipo";
-            this.cbox_tipo.Size = new System.Drawing.Size(100, 21);
-            this.cbox_tipo.TabIndex = 60;
-            // 
-            // label_adelantobono
-            // 
-            this.label_adelantobono.AutoSize = true;
-            this.label_adelantobono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_adelantobono.Location = new System.Drawing.Point(21, 109);
-            this.label_adelantobono.Name = "label_adelantobono";
-            this.label_adelantobono.Size = new System.Drawing.Size(158, 13);
-            this.label_adelantobono.TabIndex = 58;
-            this.label_adelantobono.Text = "Solicitud de Adelanto de Bonos:";
-            // 
-            // label_tipo
-            // 
-            this.label_tipo.AutoSize = true;
-            this.label_tipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_tipo.Location = new System.Drawing.Point(21, 30);
-            this.label_tipo.Name = "label_tipo";
-            this.label_tipo.Size = new System.Drawing.Size(31, 13);
-            this.label_tipo.TabIndex = 52;
-            this.label_tipo.Text = "Tipo:";
-            // 
-            // label_periodointercambio
-            // 
-            this.label_periodointercambio.AutoSize = true;
-            this.label_periodointercambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_periodointercambio.Location = new System.Drawing.Point(21, 57);
-            this.label_periodointercambio.Name = "label_periodointercambio";
-            this.label_periodointercambio.Size = new System.Drawing.Size(48, 13);
-            this.label_periodointercambio.TabIndex = 54;
-            this.label_periodointercambio.Text = "Período:";
-            // 
-            // btnBuscarCiclo
-            // 
-            this.btnBuscarCiclo.Location = new System.Drawing.Point(154, 27);
-            this.btnBuscarCiclo.Name = "btnBuscarCiclo";
-            this.btnBuscarCiclo.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarCiclo.TabIndex = 68;
-            this.btnBuscarCiclo.Text = "Buscar Ciclo";
-            this.btnBuscarCiclo.UseVisualStyleBackColor = true;
-            this.btnBuscarCiclo.Click += new System.EventHandler(this.btnBuscarCiclo_Click);
-            // 
-            // toolStrip_historiaacademica
-            // 
-            this.toolStrip_historiaacademica.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNuevo,
-            this.btnGuardar,
-            this.btnEditar,
-            this.toolStripSeparator1,
-            this.btnBuscar,
-            this.btnCancelar});
-            this.toolStrip_historiaacademica.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip_historiaacademica.Name = "toolStrip_historiaacademica";
-            this.toolStrip_historiaacademica.Size = new System.Drawing.Size(855, 25);
-            this.toolStrip_historiaacademica.TabIndex = 69;
-            this.toolStrip_historiaacademica.Text = "toolStrip2";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(62, 22);
-            this.btnNuevo.Text = "&Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(69, 22);
-            this.btnGuardar.Text = "&Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(57, 22);
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(108, 22);
-            this.btnBuscar.Text = "Buscar Alumno";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(73, 22);
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // tbox_ciclo
             // 
             this.tbox_ciclo.Location = new System.Drawing.Point(75, 29);
@@ -772,54 +850,48 @@
             this.tbox_ciclo.Size = new System.Drawing.Size(58, 20);
             this.tbox_ciclo.TabIndex = 70;
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.tbox_ciclo);
-            this.panel1.Controls.Add(this.label_ciclo);
-            this.panel1.Controls.Add(this.gbox_datosGenerales);
-            this.panel1.Controls.Add(this.btnBuscarCiclo);
-            this.panel1.Controls.Add(this.gbox_solicitudesConsejo);
-            this.panel1.Controls.Add(this.gbox_intercambio);
-            this.panel1.Controls.Add(this.cbox_ciclo);
-            this.panel1.Controls.Add(this.gbox_redencionbonos);
-            this.panel1.Controls.Add(this.gbox_cobertura);
-            this.panel1.Location = new System.Drawing.Point(24, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(807, 659);
-            this.panel1.TabIndex = 71;
-            // 
             // frmAlumnoxBeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 702);
-            this.Controls.Add(this.toolStrip_historiaacademica);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.toolStrip_historiaacademica);
             this.Name = "frmAlumnoxBeca";
             this.Text = "frmAlumnoxBeca";
-            this.gbox_datosGenerales.ResumeLayout(false);
-            this.gbox_datosGenerales.PerformLayout();
-            this.gbox_solicitudesConsejo.ResumeLayout(false);
-            this.gbox_solicitudesConsejo.PerformLayout();
-            this.gbox_cobertura.ResumeLayout(false);
-            this.gbox_cobertura.PerformLayout();
-            this.gbox_redencionbonos.ResumeLayout(false);
-            this.gbox_redencionbonos.PerformLayout();
-            this.gbox_intercambio.ResumeLayout(false);
-            this.gbox_intercambio.PerformLayout();
             this.toolStrip_historiaacademica.ResumeLayout(false);
             this.toolStrip_historiaacademica.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.gbox_datosGenerales.ResumeLayout(false);
+            this.gbox_datosGenerales.PerformLayout();
+            this.gbox_solicitudesConsejo.ResumeLayout(false);
+            this.gbox_solicitudesConsejo.PerformLayout();
+            this.gbox_intercambio.ResumeLayout(false);
+            this.gbox_intercambio.PerformLayout();
+            this.gbox_redencionbonos.ResumeLayout(false);
+            this.gbox_redencionbonos.PerformLayout();
+            this.gbox_cobertura.ResumeLayout(false);
+            this.gbox_cobertura.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.ToolStrip toolStrip_historiaacademica;
+        private System.Windows.Forms.ToolStripButton btnNuevo;
+        private System.Windows.Forms.ToolStripButton btnGuardar;
+        private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnBuscar;
+        private System.Windows.Forms.ToolStripButton btnCancelar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label_ciclo;
         private System.Windows.Forms.GroupBox gbox_datosGenerales;
+        private System.Windows.Forms.TextBox tbox_id_alumnoxbeca;
+        private System.Windows.Forms.TextBox tbox_id_alumno;
+        private System.Windows.Forms.ComboBox cbox_beca;
         private System.Windows.Forms.TextBox tbox_nivelcreditos;
         private System.Windows.Forms.Label label_nivelcreditos;
         private System.Windows.Forms.TextBox tbox_escalapago;
@@ -831,22 +903,42 @@
         private System.Windows.Forms.Label label_codigo;
         private System.Windows.Forms.Label label_nombre;
         private System.Windows.Forms.Label label_apellidos;
-        private System.Windows.Forms.ComboBox cbox_beca;
         private System.Windows.Forms.GroupBox gbox_solicitudesConsejo;
+        private System.Windows.Forms.TextBox tbox_ncarta;
+        private System.Windows.Forms.Label label_ncarta;
+        private System.Windows.Forms.RichTextBox rtbox_respuesta;
+        private System.Windows.Forms.Label label_respuesta;
+        private System.Windows.Forms.ComboBox cbox_ampliacion;
+        private System.Windows.Forms.ComboBox cbox_renovacion;
         private System.Windows.Forms.TextBox tbox_ciclosolicitado;
         private System.Windows.Forms.Label label_ciclosolicitado;
         private System.Windows.Forms.TextBox tbox_suspencion;
         private System.Windows.Forms.Label label_renovacion;
         private System.Windows.Forms.Label label_suspencion;
         private System.Windows.Forms.Label label_ampliacion;
-        private System.Windows.Forms.ComboBox cbox_renovacion;
-        private System.Windows.Forms.Label label_respuesta;
-        private System.Windows.Forms.ComboBox cbox_ampliacion;
-        private System.Windows.Forms.RichTextBox rtbox_respuesta;
-        private System.Windows.Forms.TextBox tbox_ncarta;
-        private System.Windows.Forms.Label label_ncarta;
+        private System.Windows.Forms.GroupBox gbox_intercambio;
+        private System.Windows.Forms.ComboBox cbox_intercambio;
+        private System.Windows.Forms.Label label_intercambio;
+        private System.Windows.Forms.ComboBox cbox_adelantobono;
+        private System.Windows.Forms.DateTimePicker dt_periodointercambiofin;
+        private System.Windows.Forms.DateTimePicker dt_periodointercambioini;
+        private System.Windows.Forms.ComboBox cbox_tipointercambio;
+        private System.Windows.Forms.Label label_adelantobono;
+        private System.Windows.Forms.Label label_tipointercambio;
+        private System.Windows.Forms.Label label_periodointercambio;
         private System.Windows.Forms.ComboBox cbox_ciclo;
-        private System.Windows.Forms.Label label_ciclo;
+        private System.Windows.Forms.GroupBox gbox_redencionbonos;
+        private System.Windows.Forms.ComboBox cbox_sansion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dt_sansionfin;
+        private System.Windows.Forms.DateTimePicker dt_sansionini;
+        private System.Windows.Forms.ComboBox cbox_bonoalojamiento;
+        private System.Windows.Forms.ComboBox cbox_bonomateriales;
+        private System.Windows.Forms.Label label_periodosansion;
+        private System.Windows.Forms.TextBox tbox_tiposansion;
+        private System.Windows.Forms.Label label_bonomateriales;
+        private System.Windows.Forms.Label label_bonoalojamiento;
+        private System.Windows.Forms.Label label_tiposansion;
         private System.Windows.Forms.GroupBox gbox_cobertura;
         private System.Windows.Forms.TextBox tbox_nregularesRC;
         private System.Windows.Forms.Label label_nregularesRC;
@@ -860,33 +952,6 @@
         private System.Windows.Forms.Label label_nutilizados;
         private System.Windows.Forms.TextBox tbox_cubiertos;
         private System.Windows.Forms.Label label_ncubiertos;
-        private System.Windows.Forms.GroupBox gbox_redencionbonos;
-        private System.Windows.Forms.ComboBox cbox_bonoalojamiento;
-        private System.Windows.Forms.ComboBox cbox_bonomateriales;
-        private System.Windows.Forms.Label label_periodosansion;
-        private System.Windows.Forms.TextBox tbox_sansion;
-        private System.Windows.Forms.Label label_bonomateriales;
-        private System.Windows.Forms.Label label_bonoalojamiento;
-        private System.Windows.Forms.Label label_sansion;
-        private System.Windows.Forms.DateTimePicker dt_sansionfin;
-        private System.Windows.Forms.DateTimePicker dt_sansionini;
-        private System.Windows.Forms.GroupBox gbox_intercambio;
-        private System.Windows.Forms.ComboBox cbox_adelantobono;
-        private System.Windows.Forms.DateTimePicker dt_periodointercambiofin;
-        private System.Windows.Forms.DateTimePicker dt_periodointercambioini;
-        private System.Windows.Forms.ComboBox cbox_tipo;
-        private System.Windows.Forms.Label label_adelantobono;
-        private System.Windows.Forms.Label label_tipo;
-        private System.Windows.Forms.Label label_periodointercambio;
-        private System.Windows.Forms.Button btnBuscarCiclo;
-        private System.Windows.Forms.ToolStrip toolStrip_historiaacademica;
-        private System.Windows.Forms.ToolStripButton btnNuevo;
-        private System.Windows.Forms.ToolStripButton btnGuardar;
-        private System.Windows.Forms.ToolStripButton btnEditar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton btnBuscar;
-        private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.TextBox tbox_ciclo;
-        private System.Windows.Forms.Panel panel1;
     }
 }

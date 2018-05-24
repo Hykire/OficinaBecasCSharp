@@ -22,7 +22,7 @@ namespace Controlador
         {
             BindingList<Especialidad> lista = accesoDatos.lstEspecialidad();
             accesoDatos.agregarFacultad(lista);
-
+            //Se ordena la lista, para que los combo box salgan ordenados 
             BindingList<Especialidad> ltsOrdenada = new BindingList<Especialidad>(lista.OrderBy(x => x.Nombre).ToList());
             return ltsOrdenada;
         }

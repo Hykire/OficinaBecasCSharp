@@ -42,7 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlumnoBL.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Alumno_x_BecaBL.cs" />
+    <Compile Include="BecaBL.cs" />
     <Compile Include="EspecialidadBL.cs" />
     <Compile Include="PersonaBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

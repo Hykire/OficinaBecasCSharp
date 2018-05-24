@@ -56,7 +56,7 @@ namespace AccesoDatos
             while (rs.Read())
             {
                 int id_facultad = rs.GetInt32("ID_FACULTAD");
-                foreach(Especialidad e in lista)
+                foreach (Especialidad e in lista)
                 {
                     if (id_facultad == e.Facultad.Id_facultad)
                     {

@@ -75,7 +75,7 @@ namespace Vista
                     cbox_departamento.Enabled = false;
                     cbox_departamentoN.Enabled = false;
                     cbox_especialidad.Enabled = false;
-                    
+
                     break;
 
                 case Estado.Habilitado:
@@ -163,7 +163,7 @@ namespace Vista
             btn_historiaacademica.Enabled = false;
 
             Alumno a = new Alumno();
-            a.Id_persona = Int32.Parse(tbox_id.Text);
+            if (flag_elementoEditar == 1) { a.Id_persona = Int32.Parse(tbox_id.Text); }
             a.CodigoPUCP = Int32.Parse(tbox_codigo.Text);
             a.Nombres = tbox_nombres.Text;
             a.Apellidos = tbox_apellidos.Text;
@@ -272,7 +272,8 @@ namespace Vista
 
         private void cbox_especialidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbox_especialidad.SelectedIndex!=-1) {
+            if (cbox_especialidad.SelectedIndex != -1)
+            {
                 BindingList<Especialidad> lst = (BindingList<Especialidad>)cbox_especialidad.DataSource;
                 tbox_facultad.Text = lst[cbox_especialidad.SelectedIndex].Facultad.Nombre;
             }
