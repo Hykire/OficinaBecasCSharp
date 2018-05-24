@@ -12,6 +12,7 @@ namespace Modelo
         private string _ciclo_ingreso;
         private Especialidad _especialidad;
         private string _tipo_grupo;
+        private int id_tutor;
         
         private string _distrito_nacimiento;
         private string _provincia_nacimiento;
@@ -38,6 +39,6 @@ namespace Modelo
         public string Distrito_actual { get => _distrito_actual; set => _distrito_actual = value; }
         public string Provincia_actual { get => _provincia_actual; set => _provincia_actual = value; }
         public string Departamento_actual { get => _departamento_actual; set => _departamento_actual = value; }
-
+        public int Id_tutor { get => id_tutor; set => id_tutor = value; }
     }
 }

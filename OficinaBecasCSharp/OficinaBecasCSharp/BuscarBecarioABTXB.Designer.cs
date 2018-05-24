@@ -57,9 +57,12 @@
             this.btnBuscarABTXB.TabIndex = 8;
             this.btnBuscarABTXB.Text = "Buscar";
             this.btnBuscarABTXB.UseVisualStyleBackColor = true;
+            this.btnBuscarABTXB.Click += new System.EventHandler(this.btnBuscarABTXB_Click);
             // 
             // DGVBuscarBecarioABTXB
             // 
+            this.DGVBuscarBecarioABTXB.AllowUserToAddRows = false;
+            this.DGVBuscarBecarioABTXB.AllowUserToDeleteRows = false;
             this.DGVBuscarBecarioABTXB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVBuscarBecarioABTXB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.C1BuscarT,
@@ -67,23 +70,30 @@
             this.C3BuscarT});
             this.DGVBuscarBecarioABTXB.Location = new System.Drawing.Point(13, 74);
             this.DGVBuscarBecarioABTXB.Name = "DGVBuscarBecarioABTXB";
+            this.DGVBuscarBecarioABTXB.ReadOnly = true;
             this.DGVBuscarBecarioABTXB.Size = new System.Drawing.Size(434, 122);
             this.DGVBuscarBecarioABTXB.TabIndex = 7;
             // 
             // C1BuscarT
             // 
+            this.C1BuscarT.DataPropertyName = "CodigoPUCP";
             this.C1BuscarT.HeaderText = "Codigo";
             this.C1BuscarT.Name = "C1BuscarT";
+            this.C1BuscarT.ReadOnly = true;
             // 
             // C2BuscarT
             // 
+            this.C2BuscarT.DataPropertyName = "Nombres";
             this.C2BuscarT.HeaderText = "Nombre";
             this.C2BuscarT.Name = "C2BuscarT";
+            this.C2BuscarT.ReadOnly = true;
             // 
             // C3BuscarT
             // 
+            this.C3BuscarT.DataPropertyName = "Apellidos";
             this.C3BuscarT.HeaderText = "Apellidos";
             this.C3BuscarT.Name = "C3BuscarT";
+            this.C3BuscarT.ReadOnly = true;
             this.C3BuscarT.Width = 200;
             // 
             // txtBuscarBecarioABTXB
@@ -115,6 +125,7 @@
             this.Controls.Add(this.btnAgregarABTXB);
             this.Name = "BuscarBecarioABTXB";
             this.Text = "Buscar Becario";
+            this.Load += new System.EventHandler(this.BuscarBecarioABTXB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVBuscarBecarioABTXB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -126,10 +137,10 @@
         private System.Windows.Forms.Button btnCancelarABTXB;
         private System.Windows.Forms.Button btnBuscarABTXB;
         private System.Windows.Forms.DataGridView DGVBuscarBecarioABTXB;
+        private System.Windows.Forms.TextBox txtBuscarBecarioABTXB;
+        private System.Windows.Forms.Button btnAgregarABTXB;
         private System.Windows.Forms.DataGridViewTextBoxColumn C1BuscarT;
         private System.Windows.Forms.DataGridViewTextBoxColumn C2BuscarT;
         private System.Windows.Forms.DataGridViewTextBoxColumn C3BuscarT;
-        private System.Windows.Forms.TextBox txtBuscarBecarioABTXB;
-        private System.Windows.Forms.Button btnAgregarABTXB;
     }
 }

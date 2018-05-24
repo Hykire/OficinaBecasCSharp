@@ -31,5 +31,10 @@ namespace Vista
         {
             this.Dispose();
         }
+
+        private void BuscarBeca_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

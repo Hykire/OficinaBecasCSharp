@@ -40,6 +40,7 @@
             this.LApeABTXB = new System.Windows.Forms.Label();
             this.LNombreABTXB = new System.Windows.Forms.Label();
             this.LCodigoABTXB = new System.Windows.Forms.Label();
+            this.TxtIdOcultoB = new System.Windows.Forms.TextBox();
             this.GBTutorABTXB.SuspendLayout();
             this.GBNuevoBecATutABTXB.SuspendLayout();
             this.SuspendLayout();
@@ -57,11 +58,6 @@
             // CBTutorABTXB
             // 
             this.CBTutorABTXB.FormattingEnabled = true;
-            this.CBTutorABTXB.Items.AddRange(new object[] {
-            "Tutor 1",
-            "Tutor 2",
-            "Tutor 3",
-            "Tutor 4"});
             this.CBTutorABTXB.Location = new System.Drawing.Point(65, 20);
             this.CBTutorABTXB.Name = "CBTutorABTXB";
             this.CBTutorABTXB.Size = new System.Drawing.Size(121, 21);
@@ -91,6 +87,7 @@
             // 
             // GBNuevoBecATutABTXB
             // 
+            this.GBNuevoBecATutABTXB.Controls.Add(this.TxtIdOcultoB);
             this.GBNuevoBecATutABTXB.Controls.Add(this.btnBuscarABTXB);
             this.GBNuevoBecATutABTXB.Controls.Add(this.txtApABTXB);
             this.GBNuevoBecATutABTXB.Controls.Add(this.txtNombABTXB);
@@ -126,7 +123,7 @@
             // 
             this.txtNombABTXB.Location = new System.Drawing.Point(65, 64);
             this.txtNombABTXB.Name = "txtNombABTXB";
-            this.txtNombABTXB.Size = new System.Drawing.Size(230, 20);
+            this.txtNombABTXB.Size = new System.Drawing.Size(191, 20);
             this.txtNombABTXB.TabIndex = 4;
             // 
             // txtCodABTXB
@@ -163,6 +160,14 @@
             this.LCodigoABTXB.TabIndex = 0;
             this.LCodigoABTXB.Text = "Codigo:";
             // 
+            // TxtIdOcultoB
+            // 
+            this.TxtIdOcultoB.Location = new System.Drawing.Point(263, 64);
+            this.TxtIdOcultoB.Name = "TxtIdOcultoB";
+            this.TxtIdOcultoB.Size = new System.Drawing.Size(32, 20);
+            this.TxtIdOcultoB.TabIndex = 7;
+            this.TxtIdOcultoB.Visible = false;
+            // 
             // AgregarBecarioATutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +179,7 @@
             this.Controls.Add(this.GBNuevoBecATutABTXB);
             this.Name = "AgregarBecarioATutor";
             this.Text = "Agregar Becario A Tutor";
+            this.Load += new System.EventHandler(this.AgregarBecarioATutor_Load);
             this.GBTutorABTXB.ResumeLayout(false);
             this.GBNuevoBecATutABTXB.ResumeLayout(false);
             this.GBNuevoBecATutABTXB.PerformLayout();
@@ -195,5 +201,6 @@
         private System.Windows.Forms.Label LApeABTXB;
         private System.Windows.Forms.Label LNombreABTXB;
         private System.Windows.Forms.Label LCodigoABTXB;
+        private System.Windows.Forms.TextBox TxtIdOcultoB;
     }
 }

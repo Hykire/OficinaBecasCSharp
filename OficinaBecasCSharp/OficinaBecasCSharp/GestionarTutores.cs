@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controlador;
+using Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +14,34 @@ namespace Vista
 {
     public partial class GestionarTutores : Form
     {
+        private PersonaBL logicaNegocioPersona;
+        private Persona tutorSelecc;
+        private Persona p;
+
+        public Persona TutorSelecc { get => tutorSelecc; set => tutorSelecc = value; }
+
         public GestionarTutores()
         {
             InitializeComponent();
+            BindingList<Persona> lsttutores = new BindingList<Persona>();
+            logicaNegocioPersona = new PersonaBL();
             
-
-            CBTutorGBXT.SelectedIndex = 0;
             TxtCodTutorBXT.Enabled = false;
             TxtNombTutorBXT.Enabled = false;
+            TxtApeTutor.Enabled = false;
             btnBXTVer.Enabled = false;
             DGVBXT.AutoGenerateColumns = false;
+            dgvListaTutores.AutoGenerateColumns = false;
+            dgvListaTutores.DataSource = logicaNegocioPersona.listarTutores();
 
+            //de segunda seccion
+            txtBAcod.Enabled = false;
+            txtBANomb.Enabled = false;
+            txtBAApe.Enabled = false;
+            txtBACodTutor.Enabled = false;
+            txtBANombTutor.Enabled = false;
+            txtBAApeTutor.Enabled = false;
+            txtCAIdOcullto.Enabled = false;
             
         }
 
@@ -85,47 +104,67 @@ namespace Vista
             frmABTXB.ShowDialog();
         }
 
-        /*
-        private void btnMNGesCitas_Click(object sender, EventArgs e)
+        private void btnBuscarBecadoGBXT_Click(object sender, EventArgs e)
         {
-            PGestCitas.Visible = true;
-            panelConsultarBecaT.Visible = false;
-            panelBecariosXTutor.Visible = false;
-            panelTutor.Visible = false;
-        }
-       
-        
-
-        private void GBT_button_Click(object sender, EventArgs e)
-        {
-            PGestCitas.Visible = false;
-            panelConsultarBecaT.Visible = false;
-            panelBecariosXTutor.Visible = true;
-            panelTutor.Visible = false;
-        }
-
-        private void GT_button_Click(object sender, EventArgs e)
-        {
-            panelConsultarBecaT.Visible = false;
-            panelBecariosXTutor.Visible = false;
-            panelTutor.Visible = true;
-            PGestCitas.Visible = false;
+            BuscarBecarioABTXB frmABTXB = new BuscarBecarioABTXB();
+            if (frmABTXB.ShowDialog() == DialogResult.OK)
+            {
+                BindingList<Persona> lista = new BindingList<Persona>();
+               p = (Persona)frmABTXB.PersonaSeleccionada;
+                int cod = p.Id_persona;
+                txtCAIdOcullto.Text = p.Id_persona.ToString();
+                txtBAcod.Text = p.CodigoPUCP.ToString();
+                txtBANomb.Text = p.Nombres;
+                txtBAApe.Text = p.Apellidos;
+                Persona per = new Persona();
+                lista = logicaNegocioPersona.listarTutorDeBecado(cod);
+                foreach (Persona en in lista){
+                    per.CodigoPUCP = en.CodigoPUCP;
+                    per.Nombres = en.Nombres;
+                    per.Apellidos = en.Apellidos;
+                }
+                txtBACodTutor.Text = per.CodigoPUCP.ToString();
+                txtBANombTutor.Text = per.Nombres;
+                txtBAApeTutor.Text = per.Apellidos;
+            }
         }
 
-        private void GC_button_Click(object sender, EventArgs e)
+        private void LBXA_Click(object sender, EventArgs e)
         {
-            PGestCitas.Visible = true;
-            panelConsultarBecaT.Visible = false;
-            panelBecariosXTutor.Visible = false;
-            panelTutor.Visible = false;
+
         }
 
-        private void CB_button_Click(object sender, EventArgs e)
+        private void dgvListaTutores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            panelConsultarBecaT.Visible = true;
-            panelBecariosXTutor.Visible = false;
-            panelTutor.Visible = false;
-            PGestCitas.Visible = false;
-        }*/
+           
+        }
+
+        private void dgvListaTutores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TutorSelecc = (Persona)dgvListaTutores.CurrentRow.DataBoundItem;
+            TxtCodTutorBXT.Text = TutorSelecc.CodigoPUCP.ToString();
+            TxtNombTutorBXT.Text = TutorSelecc.Nombres.ToString();
+            TxtApeTutor.Text = TutorSelecc.Apellidos.ToString();
+            TxtIDOculto.Text = TutorSelecc.Id_persona.ToString();
+            btnBXTVer.Enabled = true;
+        }
+
+        private void btnBXTVer_Click(object sender, EventArgs e)
+        {
+            String idTut = TxtIDOculto.Text;
+            //MessageBox.Show(idTut);
+            //DGVBXT.AutoGenerateColumns = false;
+            DGVBXT.DataSource = logicaNegocioPersona.listarBecadosXTutor(idTut);
+        }
+
+        private void btnCambiarTutorAlumno_Click(object sender, EventArgs e)
+        {
+            frmCambiarTutorABecario frmCambTut = new frmCambiarTutorABecario();
+            frmCambTut.txtCodCambiar.Text = txtBAcod.Text;
+            frmCambTut.txtNombCambiar.Text = txtBANomb.Text;
+            frmCambTut.txtApCambiar.Text = txtBAApe.Text;
+            frmCambTut.txtIdOcultoCambiar.Text = txtCAIdOcullto.Text;
+            frmCambTut.ShowDialog();
+        }
     }
 }

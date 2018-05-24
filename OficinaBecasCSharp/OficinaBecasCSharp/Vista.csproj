@@ -140,6 +140,18 @@
     <Compile Include="frmBuscarBecarioT.Designer.cs">
       <DependentUpon>frmBuscarBecarioT.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscarPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarPersona.Designer.cs">
+      <DependentUpon>frmBuscarPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCambiarTutorABecario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambiarTutorABecario.Designer.cs">
+      <DependentUpon>frmCambiarTutorABecario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultarBecarioT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +333,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarBecarioT.resx">
       <DependentUpon>frmBuscarBecarioT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarPersona.resx">
+      <DependentUpon>frmBuscarPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCambiarTutorABecario.resx">
+      <DependentUpon>frmCambiarTutorABecario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarBecarioT.resx">
       <DependentUpon>frmConsultarBecarioT.cs</DependentUpon>
