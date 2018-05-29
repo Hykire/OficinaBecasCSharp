@@ -60,6 +60,7 @@
     <Compile Include="Alumno_x_BecaDA.cs" />
     <Compile Include="BecaDA.cs" />
     <Compile Include="ConvocatoriaDA.cs" />
+    <Compile Include="CoordinadorAD.cs" />
     <Compile Include="EspecialidadDA.cs" />
     <Compile Include="PersonaAD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

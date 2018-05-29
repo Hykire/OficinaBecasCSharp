@@ -107,5 +107,10 @@ namespace Controlador
             }
             return listaB;
         }
+        public BindingList<Alumno> listarBecarios(String cod)
+        {
+            return accesoDatos.listarBecarios(cod);
+        }
+
     }
 }

@@ -21,5 +21,9 @@ namespace Controlador
         {
             return accesoDatosTutor.listarTutorDeBecado(idBec);
         }
+        public BindingList<Tutor> traerTutores()
+        {
+            return accesoDatosTutor.traerTutores();
+        }
     }
 }

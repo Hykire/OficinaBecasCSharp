@@ -17,12 +17,14 @@ namespace Vista
         private Tutor tutorSelecc;
         private PersonaBL logicaNegocioPersona;
         private Persona p;
+        private CoordinadorBL logicaNegocioCoordTutoria;
         public Tutor TutorSelecc { get => tutorSelecc; set => tutorSelecc = value; }
 
         public frmGestionarTutoresTutor()
         {
             InitializeComponent();
             logicaNegocioPersona = new PersonaBL();
+            logicaNegocioCoordTutoria = new CoordinadorBL();
             DGVTutores.AutoGenerateColumns = false;
             DGVTutores.DataSource = logicaNegocioPersona.listarTutores();
             txtIdOcultoGT.Enabled = false;
@@ -37,8 +39,8 @@ namespace Vista
             btnEditar.Enabled = false;
             btnCancelar.Enabled = false;
 
-            BindingList<Persona> lstTutores = new BindingList<Persona>();
-            lstTutores = logicaNegocioPersona.traerCoordinadores();
+            BindingList<CoordinadorTutoria> lstTutores = new BindingList<CoordinadorTutoria>();
+            lstTutores = logicaNegocioCoordTutoria.traerCoordinadores();
             cbxCoordinador.ValueMember = "Nombres";
             foreach (var en in lstTutores)
             {
@@ -83,14 +85,14 @@ namespace Vista
             txtIdOcultoGT.Text = TutorSelecc.Id_persona.ToString();
             txtDni.Text = TutorSelecc.Dni.ToString();
             txtTelf.Text = TutorSelecc.TelfMovil.ToString();
-            char est = TutorSelecc.EstadoT;
-            if(est == 'A')
+            string est = TutorSelecc.Estado;
+            if(est == "ACTIVO")
             {
-                txtEstado.Text = "Activo";
+                txtEstado.Text = "ACTIVO";
             }
             else
             {
-                txtEstado.Text = "Inactivo";
+                txtEstado.Text = "INACTIVO";
             }
         }
 
@@ -150,22 +152,22 @@ namespace Vista
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             CBEstadoNT.Enabled = false;
-            string idPer = txtIdOcultoGT.Text.ToString();//aqui esta el id del tutor
+            string idPer = txtIdOcultoGT.Text.ToString();
             //Tutor tut = new Tutor();
             //int estado = Convert.ToInt32(CBEstadoNT.SelectedItem);
-            char est;
+            string est;
             if(CBEstadoNT.SelectedItem.ToString() == "Activo")
             {
-                est = 'A';
+                est = "ACTIVO";
             }else
             {
-                est = 'I';
+                est = "INACTIVO";
             }
-            Persona per1 = new Persona();
-            per1 = (Persona)cbxCoordinador.SelectedItem;
-            string idcoord = per1.Id_persona.ToString(); //aqui esta el id del coordinador
+            CoordinadorTutoria per1 = new CoordinadorTutoria();
+            per1 = (CoordinadorTutoria)cbxCoordinador.SelectedItem;
+            string idcoord = per1.Id_coordinador.ToString(); //aqui esta el id del coordinador
             logicaNegocioPersona.insertarNuevoTutor(idPer, idcoord, est);
-
+            DGVTutores.Refresh();
         }
     }
 }

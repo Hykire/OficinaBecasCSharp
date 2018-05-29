@@ -14,20 +14,22 @@ namespace Vista
 {
     public partial class BuscarBecarioABTXB : Form
     {
-        private Persona personaSeleccionada;
+        private Alumno personaSeleccionada;
         private PersonaBL logicaNegocioPersona;
+        private AlumnoBL logicaNegocioAlumno;
 
-        public Persona PersonaSeleccionada { get => personaSeleccionada; set => personaSeleccionada = value; }
+        public Alumno PersonaSeleccionada { get => personaSeleccionada; set => personaSeleccionada = value; }
 
         public BuscarBecarioABTXB()
         {
             InitializeComponent();
             logicaNegocioPersona = new PersonaBL();
+            logicaNegocioAlumno = new AlumnoBL();
         }
 
         private void btnAgregarABTXB_Click(object sender, EventArgs e)
         {
-            PersonaSeleccionada = (Persona)DGVBuscarBecarioABTXB.CurrentRow.DataBoundItem;
+            PersonaSeleccionada = (Alumno)DGVBuscarBecarioABTXB.CurrentRow.DataBoundItem;
             this.DialogResult = DialogResult.OK;
             //this.Dispose();
         }
@@ -45,7 +47,7 @@ namespace Vista
             cod = txtBuscarBecarioABTXB.Text.ToString();
            // MessageBox.Show(cod);
             DGVBuscarBecarioABTXB.AutoGenerateColumns = false;
-            DGVBuscarBecarioABTXB.DataSource = logicaNegocioPersona.listarBecarios(cod);
+            DGVBuscarBecarioABTXB.DataSource = logicaNegocioAlumno.listarBecarios(cod);
 
            
         }

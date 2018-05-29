@@ -18,6 +18,7 @@ namespace Vista
         private TutorBL logicaNegocioTutor;
         private Persona tutorSelecc;
         private Persona p;
+        private Alumno al;
 
         public Persona TutorSelecc { get => tutorSelecc; set => tutorSelecc = value; }
 
@@ -104,6 +105,7 @@ namespace Vista
         {
             AgregarBecarioATutor frmABTXB = new AgregarBecarioATutor();
             frmABTXB.ShowDialog();
+            dgvListaTutores.Refresh();
         }
 
         private void btnBuscarBecadoGBXT_Click(object sender, EventArgs e)
@@ -112,12 +114,12 @@ namespace Vista
             if (frmABTXB.ShowDialog() == DialogResult.OK)
             {
                 BindingList<Tutor> lista = new BindingList<Tutor>();
-               p = (Persona)frmABTXB.PersonaSeleccionada;
-                int cod = p.Id_persona;
-                txtCAIdOcullto.Text = p.Id_persona.ToString();
-                txtBAcod.Text = p.CodigoPUCP.ToString();
-                txtBANomb.Text = p.Nombres;
-                txtBAApe.Text = p.Apellidos;
+                al = (Alumno)frmABTXB.PersonaSeleccionada;
+                int cod = al.Id_alumno;
+                txtCAIdOcullto.Text = al.Id_alumno.ToString();
+                txtBAcod.Text = al.CodigoPUCP.ToString();
+                txtBANomb.Text = al.Nombres;
+                txtBAApe.Text = al.Apellidos;
                 Tutor per = new Tutor();
                 lista = logicaNegocioTutor.listarTutorDeBecado(cod);
                 foreach (Tutor en in lista){

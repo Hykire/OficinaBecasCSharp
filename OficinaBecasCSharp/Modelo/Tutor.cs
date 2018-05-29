@@ -12,7 +12,7 @@ namespace Modelo
         private List<Cita> lstCitas;
         private int idTutor;
 
-        private char estadoT; //añadido
+       /// private char estadoT; //añadido
         private int idCoord;
         public Tutor()
         {
@@ -23,7 +23,7 @@ namespace Modelo
         //public List<Becado> LstBecados { get => lstBecados; set => lstBecados = value; }
        // public List<Cita> LstCitas { get => lstCitas; set => lstCitas = value; }
         public int IdTutor { get => idTutor; set => idTutor = value; }
-        public char EstadoT { get => estadoT; set => estadoT = value; }
+       // public char EstadoT { get => estadoT; set => estadoT = value; }
         public int IdCoord { get => idCoord; set => idCoord = value; }
     }
 }

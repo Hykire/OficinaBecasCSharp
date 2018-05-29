@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class CoordinadorTutoria : Persona
+    public class CoordinadorTutoria : Persona
     {
         private List<Tutor> tutores;
-        
+        private int id_coordinador;
         public CoordinadorTutoria()
         {
             tutores = new List<Tutor>();
@@ -27,5 +27,6 @@ namespace Modelo
             }
         }
 
+        public int Id_coordinador { get => id_coordinador; set => id_coordinador = value; }
     }
 }

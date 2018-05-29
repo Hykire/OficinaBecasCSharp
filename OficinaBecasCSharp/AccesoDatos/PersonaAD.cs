@@ -76,79 +76,11 @@ namespace AccesoDatos
             con.Close();
             return lista;
         }
+       
 
-        public BindingList<Persona> listarBecarios(String cod)
-        {//cambiar por ALUMNO
-            BindingList<Persona> lista = new BindingList<Persona>();
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                "user=inf282g6;database=inf282g6;" +
-                "port=3306;password=Nk2ewy;SslMode=none;" +
-                "";
-            MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            MySqlCommand comando = new MySqlCommand();
-            if(cod.Length == 0)
-            {
-                comando.CommandText = "SELECT P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.CORREO_PUCP, B.ID_BECADO FROM PERSONA P INNER JOIN BECADO B WHERE P.ID_PERSONA = B.ID_PERSONA";
-                comando.Connection = con;
-                
-            }
-            else
-            {
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.CommandText = "Y_BUSCAR_BECARIO";
-
-                comando.Connection = con;
-                comando.Parameters.AddWithValue("codBec", cod);
-                
-            }
-            MySqlDataReader reader = comando.ExecuteReader();
-            while (reader.Read())
-            {
-                //P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.CORREO_PUCP, B.ID_BECADO FROM PERSONA P
-                Persona per = new Persona();
-                per.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
-                per.Nombres = reader.GetString("NOMBRES");
-                per.Apellidos = reader.GetString("APELLIDOS");
-                //es id becario 
-                per.Id_persona = reader.GetInt32("ID_BECADO");
-                lista.Add(per);
-            }
-            con.Close();
-            return lista;
-        }
-        public BindingList<Persona> traerTutores()
+        public void enlazarBecario(Tutor pe,int idbec,string ciclo)
         {
-            BindingList<Persona> lista = new BindingList<Persona>();
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                "user=inf282g6;database=inf282g6;" +
-                "port=3306;password=Nk2ewy;SslMode=none;" +
-                "";
-            MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            MySqlCommand comando = new MySqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "Y_LISTAR_TUTORES";
-
-            comando.Connection = con;
-
-            MySqlDataReader reader = comando.ExecuteReader();
-            while (reader.Read())
-            {
-                Persona per = new Persona();
-                per.Id_persona = reader.GetInt32("ID_PERSONA");
-                //per.CodigoPUCP = reader.GetInt32("codigoPUCP");
-                per.Nombres = reader.GetString("NOMBRES");
-                // per.Apellidos = reader.GetString("ape_pa") + " " + reader.GetString("ape_ma");
-                lista.Add(per);
-            }
-            con.Close();
-            return lista;
-        }
-
-        public void enlazarBecario(Alumno pe)
-        {
-            BindingList<Persona> lista = new BindingList<Persona>();
+           // BindingList<Persona> lista = new BindingList<Persona>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
                 "user=inf282g6;database=inf282g6;" +
                 "port=3306;password=Nk2ewy;SslMode=none;" +
@@ -160,16 +92,17 @@ namespace AccesoDatos
             comando.CommandText = "Y_ENLAZAR_BECARIO_TUTOR";
             //SET ID_TUTOR = idTut WHERE ID_BECADO = idBecario
             comando.Connection = con;
-            comando.Parameters.AddWithValue("idBecario", pe.Id_persona);
-            comando.Parameters.AddWithValue("idTut", pe.Id_tutor);
+            comando.Parameters.AddWithValue("idBecario", idbec);
+            comando.Parameters.AddWithValue("idTut", pe.IdTutor);
+            comando.Parameters.AddWithValue("ciclo", ciclo);
             //eroooooor en c#
             comando.ExecuteNonQuery();
             con.Close();
         }
 
-        public void enlazarBecario2(Alumno pe)
+        public void enlazarBecario2(Alumno pe,string idAlum)
         {
-            BindingList<Persona> lista = new BindingList<Persona>();
+            //BindingList<Persona> lista = new BindingList<Persona>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
                 "user=inf282g6;database=inf282g6;" +
                 "port=3306;password=Nk2ewy;SslMode=none;" +
@@ -181,7 +114,7 @@ namespace AccesoDatos
             comando.CommandText = "Y_ENLAZAR_BECARIO_TUTOR2";
             //SET ID_TUTOR = idTut WHERE ID_BECADO = idBecario
             comando.Connection = con;
-            comando.Parameters.AddWithValue("idBecario", pe.Id_persona);
+            comando.Parameters.AddWithValue("idBecario", idAlum);
             comando.Parameters.AddWithValue("idTut", pe.Id_tutor);
             
             comando.ExecuteNonQuery();
@@ -223,37 +156,9 @@ namespace AccesoDatos
             return lista;
         }
 
-        public BindingList<Persona> traerCoordinadores()
-        {
-            BindingList<Persona> lista = new BindingList<Persona>();
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                "user=inf282g6;database=inf282g6;" +
-                "port=3306;password=Nk2ewy;SslMode=none;" +
-                "";
-            MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            MySqlCommand comando = new MySqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "Y_SELECCIONAR_COORDINADORES";
-
-            comando.Connection = con;
-
-            MySqlDataReader reader = comando.ExecuteReader();
-            while (reader.Read())
-            {//P.NOMBRES, P.APELLIDOS, P.ID_PERSONA from PERSONA P
-                Persona per = new Persona();
-                per.Id_persona = reader.GetInt32("ID_PERSONA");
-                // per.CodigoPUCP = reader.GetInt32("codigoPUCP");
-                per.Nombres = reader.GetString("NOMBRES");
-                per.Apellidos = reader.GetString("APELLIDOS");
-                lista.Add(per);
-            }
-            con.Close();
-            return lista;
-        }
 
 
-        public void insertarNuevoTutor(String idPer, String idcoord, char est)
+        public void insertarNuevoTutor(String idPer, String idcoord, string est)
         {
             BindingList<Persona> lista = new BindingList<Persona>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +

@@ -8,8 +8,11 @@ namespace Modelo
 {
     class CoordinadorAdministrativo:Persona
     {
+       
         public CoordinadorAdministrativo() { }
 
-        public void gestionarBeca(Beca beca) { }
+
+
+        //public void gestionarBeca(Beca beca) { }
     }
 }

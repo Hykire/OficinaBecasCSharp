@@ -28,23 +28,16 @@ namespace Controlador
             return accesoDatosPersona.listarBecadosXTutor(idTut);
         }
 
-        public BindingList<Persona> listarBecarios(String cod)
+        
+        
+        public void enlazarBecario(Tutor pe,int idbec,string ciclo)
         {
-            return accesoDatosPersona.listarBecarios(cod);
-        }
-        public BindingList<Persona> traerTutores()
-        {
-            return accesoDatosPersona.traerTutores();
+            accesoDatosPersona.enlazarBecario(pe, idbec,ciclo);
         }
 
-        public void enlazarBecario(Alumno pe)
+        public void enlazarBecario2(Alumno pe, string idAlum)
         {
-            accesoDatosPersona.enlazarBecario(pe);
-        }
-
-        public void enlazarBecario2(Alumno pe)
-        {
-            accesoDatosPersona.enlazarBecario2(pe);
+            accesoDatosPersona.enlazarBecario2(pe, idAlum);
         }
 
         
@@ -53,12 +46,9 @@ namespace Controlador
         {
             return accesoDatosPersona.listarPersonas(cod);
         }
-        public BindingList<Persona> traerCoordinadores()
-        {
-            return accesoDatosPersona.traerCoordinadores();
-        }
 
-        public void insertarNuevoTutor(String idPer, String idcoord, char est)
+
+        public void insertarNuevoTutor(String idPer, String idcoord, string est)
         {
             accesoDatosPersona.insertarNuevoTutor(idPer, idcoord, est);
         }

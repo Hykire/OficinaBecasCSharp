@@ -53,8 +53,8 @@ namespace AccesoDatos
                 Beca beca = new Beca();
                 beca.Id_beca = reader.GetInt32("id_beca");
                 beca.Nombre_beca = reader.GetString("nombre_beca");
-                beca.Descripcion = reader.GetString("descripcion");
-                //beca.FechaConvocatoria = reader.GetDateTime("fechaConvocatoria");
+                beca.Descripcion = reader.GetString("descrip_beca");
+                beca.FechaConvocatoria = reader.GetDateTime("fechaConvocatoria");
                 beca.Financiador = reader.GetString("Financiador");
 
                 becas.Add(beca);

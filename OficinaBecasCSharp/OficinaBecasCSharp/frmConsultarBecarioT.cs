@@ -1,5 +1,4 @@
-﻿using Controlador;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,22 +12,9 @@ namespace Vista
 {
     public partial class frmConsultarBecarioT : Form
     {
-        private PersonaBL logicaNegocioPersona;
         public frmConsultarBecarioT()
         {
             InitializeComponent();
-            logicaNegocioPersona = new PersonaBL();
-            //txtCodBecario = null;
-        }
-
-        private void btnBuscarBecario_Click(object sender, EventArgs e)
-        {
-            String cod;
-
-            cod = txtCodBecario.Text.ToString();
-            // MessageBox.Show(cod);
-            dgvBecarios.AutoGenerateColumns = false;
-            dgvBecarios.DataSource = logicaNegocioPersona.listarBecarios(cod);
         }
     }
 }

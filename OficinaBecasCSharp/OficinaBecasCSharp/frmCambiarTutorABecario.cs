@@ -15,6 +15,7 @@ namespace Vista
     public partial class frmCambiarTutorABecario : Form
     {
         PersonaBL logicaNegocioPer;
+        TutorBL logicaNegocioTutor;
         public frmCambiarTutorABecario()
         {
             InitializeComponent();
@@ -24,8 +25,9 @@ namespace Vista
             txtIdOcultoCambiar.Enabled = false;
             //llenar combobox
             logicaNegocioPer = new PersonaBL();
-            BindingList<Persona> lstTutores = new BindingList<Persona>();
-            lstTutores = logicaNegocioPer.traerTutores();
+            logicaNegocioTutor = new TutorBL();
+            BindingList<Tutor> lstTutores = new BindingList<Tutor>();
+            lstTutores = logicaNegocioTutor.traerTutores();
             cbxTutorCambiar.ValueMember = "Nombres";
             foreach (var e in lstTutores)
             {
@@ -46,15 +48,15 @@ namespace Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Persona persona = new Persona();
+            Tutor persona = new Tutor();
             String idAlum = txtIdOcultoCambiar.Text;
-            persona = (Persona) cbxTutorCambiar.SelectedItem;
+            persona = (Tutor) cbxTutorCambiar.SelectedItem;
             
             Alumno pe = new Alumno();
-            pe.Id_tutor = persona.Id_persona;
-            pe.Id_persona = Convert.ToInt32(idAlum);
+            pe.Id_tutor = persona.IdTutor;
+            //pe.Id_persona = Convert.ToInt32(idAlum);
 
-            logicaNegocioPer.enlazarBecario2(pe);
+            logicaNegocioPer.enlazarBecario2(pe,idAlum);
             this.Dispose();
         }
     }

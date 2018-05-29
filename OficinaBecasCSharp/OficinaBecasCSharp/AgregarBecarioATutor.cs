@@ -15,7 +15,9 @@ namespace Vista
     public partial class AgregarBecarioATutor : Form
     {
         Persona p;
+        Alumno per;
         PersonaBL logicaNegocioPer;
+        TutorBL logicaNegocioTutor;
         public AgregarBecarioATutor()
         {
             InitializeComponent();
@@ -25,9 +27,9 @@ namespace Vista
             txtApABTXB.Enabled = false;
             btnAceptarABTXB.Enabled = false;
             logicaNegocioPer = new PersonaBL();
-
-            BindingList<Persona> lstTutores = new BindingList<Persona>();
-            lstTutores = logicaNegocioPer.traerTutores();
+            logicaNegocioTutor = new TutorBL();
+            BindingList<Tutor> lstTutores = new BindingList<Tutor>();
+            lstTutores = logicaNegocioTutor.traerTutores();
             CBTutorABTXB.ValueMember = "Nombres";
             foreach(var e in lstTutores)
             {
@@ -47,25 +49,25 @@ namespace Vista
             BuscarBecarioABTXB frmABTXB = new BuscarBecarioABTXB();
             if (frmABTXB.ShowDialog() == DialogResult.OK)
             {
-                p = (Persona)frmABTXB.PersonaSeleccionada;
-                txtCodABTXB.Text = p.CodigoPUCP.ToString();
-                txtNombABTXB.Text = p.Nombres;
-                txtApABTXB.Text = p.Apellidos;
-                TxtIdOcultoB.Text = p.Id_persona.ToString();
+                per = (Alumno)frmABTXB.PersonaSeleccionada;
+                txtCodABTXB.Text = per.CodigoPUCP.ToString();
+                txtNombABTXB.Text = per.Nombres;
+                txtApABTXB.Text = per.Apellidos;
+                TxtIdOcultoB.Text = per.Id_alumno.ToString();
             }
             //frmABTXB.ShowDialog();
         }
 
         private void btnAceptarABTXB_Click(object sender, EventArgs e)
         {
-            Alumno pe = new Alumno();
-            Persona persona = new Persona();
+           
+            Tutor persona = new Tutor();
             String id = TxtIdOcultoB.Text;
-            persona = (Persona) CBTutorABTXB.SelectedItem;
-            pe.Id_tutor = persona.Id_persona;
-            pe.Id_persona = Convert.ToInt32(id);
-           // pe.Id_tutor = Convert.ToInt32(idTut);
-            logicaNegocioPer.enlazarBecario(pe);
+            persona = (Tutor) CBTutorABTXB.SelectedItem;
+            int idbec = Convert.ToInt32(TxtIdOcultoB.Text);
+            string ciclo = cbxCiclo.SelectedItem.ToString();
+            MessageBox.Show(idbec.ToString());
+            logicaNegocioPer.enlazarBecario(persona,idbec, ciclo);
             this.Dispose();
 
         }

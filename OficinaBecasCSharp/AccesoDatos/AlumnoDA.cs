@@ -187,5 +187,36 @@ namespace AccesoDatos
             }
             con.Close();
         }
+        //Y:
+        public BindingList<Alumno> listarBecarios(String cod)
+        {
+            BindingList<Alumno> lista = new BindingList<Alumno>();
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                "user=inf282g6;database=inf282g6;" +
+                "port=3306;password=Nk2ewy;SslMode=none;" +
+                "";
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "Y_BUSCAR_BECARIO";
+
+            comando.Connection = con;
+            comando.Parameters.AddWithValue("codBec", cod);
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                //P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.CORREO_PUCP, B.ID_BECADO FROM PERSONA P
+                Alumno per = new Alumno();
+                per.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
+                per.Nombres = reader.GetString("NOMBRES");
+                per.Apellidos = reader.GetString("APELLIDOS");
+                //es id becario 
+                per.Id_alumno = reader.GetInt32("ID_BECADO");
+                lista.Add(per);
+            }
+            con.Close();
+            return lista;
+        }
     }
 }

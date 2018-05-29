@@ -9,6 +9,7 @@ namespace Modelo
 {
     public class Alumno:Persona
     {
+        private int id_alumno;
         private string _ciclo_ingreso;
         private Especialidad _especialidad;
         private string _tipo_grupo;
@@ -40,5 +41,6 @@ namespace Modelo
         public string Provincia_actual { get => _provincia_actual; set => _provincia_actual = value; }
         public string Departamento_actual { get => _departamento_actual; set => _departamento_actual = value; }
         public int Id_tutor { get => id_tutor; set => id_tutor = value; }
+        public int Id_alumno { get => id_alumno; set => id_alumno = value; }
     }
 }

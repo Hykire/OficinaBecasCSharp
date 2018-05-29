@@ -22,7 +22,7 @@ namespace AccesoDatos
             con.Open();
             //
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandText = "SELECT * FROM _F_ESPECIALIDAD";
+            comando.CommandText = "SELECT * FROM ESPECIALIDAD";
             comando.Connection = con;
             MySqlDataReader rs = comando.ExecuteReader();
             while (rs.Read())

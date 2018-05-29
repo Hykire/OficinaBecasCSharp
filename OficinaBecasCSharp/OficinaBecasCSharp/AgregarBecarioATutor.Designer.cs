@@ -33,6 +33,7 @@
             this.btnCancelarABTXB = new System.Windows.Forms.Button();
             this.btnAceptarABTXB = new System.Windows.Forms.Button();
             this.GBNuevoBecATutABTXB = new System.Windows.Forms.GroupBox();
+            this.TxtIdOcultoB = new System.Windows.Forms.TextBox();
             this.btnBuscarABTXB = new System.Windows.Forms.Button();
             this.txtApABTXB = new System.Windows.Forms.TextBox();
             this.txtNombABTXB = new System.Windows.Forms.TextBox();
@@ -40,9 +41,11 @@
             this.LApeABTXB = new System.Windows.Forms.Label();
             this.LNombreABTXB = new System.Windows.Forms.Label();
             this.LCodigoABTXB = new System.Windows.Forms.Label();
-            this.TxtIdOcultoB = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbxCiclo = new System.Windows.Forms.ComboBox();
             this.GBTutorABTXB.SuspendLayout();
             this.GBNuevoBecATutABTXB.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GBTutorABTXB
@@ -66,7 +69,7 @@
             // 
             // btnCancelarABTXB
             // 
-            this.btnCancelarABTXB.Location = new System.Drawing.Point(248, 253);
+            this.btnCancelarABTXB.Location = new System.Drawing.Point(252, 319);
             this.btnCancelarABTXB.Name = "btnCancelarABTXB";
             this.btnCancelarABTXB.Size = new System.Drawing.Size(75, 23);
             this.btnCancelarABTXB.TabIndex = 7;
@@ -76,7 +79,7 @@
             // 
             // btnAceptarABTXB
             // 
-            this.btnAceptarABTXB.Location = new System.Drawing.Point(167, 253);
+            this.btnAceptarABTXB.Location = new System.Drawing.Point(171, 318);
             this.btnAceptarABTXB.Name = "btnAceptarABTXB";
             this.btnAceptarABTXB.Size = new System.Drawing.Size(75, 23);
             this.btnAceptarABTXB.TabIndex = 6;
@@ -101,6 +104,13 @@
             this.GBNuevoBecATutABTXB.TabIndex = 5;
             this.GBNuevoBecATutABTXB.TabStop = false;
             this.GBNuevoBecATutABTXB.Text = "Datos Principales";
+            // 
+            // TxtIdOcultoB
+            // 
+            this.TxtIdOcultoB.Location = new System.Drawing.Point(263, 64);
+            this.TxtIdOcultoB.Name = "TxtIdOcultoB";
+            this.TxtIdOcultoB.Size = new System.Drawing.Size(32, 20);
+            this.TxtIdOcultoB.TabIndex = 7;
             // 
             // btnBuscarABTXB
             // 
@@ -160,19 +170,34 @@
             this.LCodigoABTXB.TabIndex = 0;
             this.LCodigoABTXB.Text = "Codigo:";
             // 
-            // TxtIdOcultoB
+            // groupBox1
             // 
-            this.TxtIdOcultoB.Location = new System.Drawing.Point(263, 64);
-            this.TxtIdOcultoB.Name = "TxtIdOcultoB";
-            this.TxtIdOcultoB.Size = new System.Drawing.Size(32, 20);
-            this.TxtIdOcultoB.TabIndex = 7;
-            this.TxtIdOcultoB.Visible = false;
+            this.groupBox1.Controls.Add(this.cbxCiclo);
+            this.groupBox1.Location = new System.Drawing.Point(22, 254);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(301, 58);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ciclo";
+            // 
+            // cbxCiclo
+            // 
+            this.cbxCiclo.FormattingEnabled = true;
+            this.cbxCiclo.Items.AddRange(new object[] {
+            "2017-2",
+            "2018-1",
+            "2018-2"});
+            this.cbxCiclo.Location = new System.Drawing.Point(65, 20);
+            this.cbxCiclo.Name = "cbxCiclo";
+            this.cbxCiclo.Size = new System.Drawing.Size(121, 21);
+            this.cbxCiclo.TabIndex = 0;
             // 
             // AgregarBecarioATutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 304);
+            this.ClientSize = new System.Drawing.Size(342, 353);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GBTutorABTXB);
             this.Controls.Add(this.btnCancelarABTXB);
             this.Controls.Add(this.btnAceptarABTXB);
@@ -183,6 +208,7 @@
             this.GBTutorABTXB.ResumeLayout(false);
             this.GBNuevoBecATutABTXB.ResumeLayout(false);
             this.GBNuevoBecATutABTXB.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -202,5 +228,7 @@
         private System.Windows.Forms.Label LNombreABTXB;
         private System.Windows.Forms.Label LCodigoABTXB;
         private System.Windows.Forms.TextBox TxtIdOcultoB;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cbxCiclo;
     }
 }

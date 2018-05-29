@@ -41,10 +41,6 @@
             this.LCodTutor = new System.Windows.Forms.Label();
             this.btnBXTVer = new System.Windows.Forms.Button();
             this.DGVBXT = new System.Windows.Forms.DataGridView();
-            this.C1BXT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C2BXT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C3BXT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C4BXT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBXTAnadir = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -58,6 +54,7 @@
             this.LBXA = new System.Windows.Forms.Label();
             this.btnBuscarBecadoGBXT = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtIdTutorOculto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCambiarTutorAlumno = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,14 +63,17 @@
             this.txtBACodTutor = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvListaTutores = new System.Windows.Forms.DataGridView();
-            this.LGestBecXTutBXT = new System.Windows.Forms.Label();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtIdTutorOculto = new System.Windows.Forms.TextBox();
+            this.LGestBecXTutBXT = new System.Windows.Forms.Label();
+            this.C1BXT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C2BXT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C3BXT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C4BXT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelBecariosXTutor.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -222,34 +222,6 @@
             this.DGVBXT.Size = new System.Drawing.Size(426, 150);
             this.DGVBXT.TabIndex = 4;
             // 
-            // C1BXT
-            // 
-            this.C1BXT.DataPropertyName = "CodigoPUCP";
-            this.C1BXT.HeaderText = "Codigo";
-            this.C1BXT.Name = "C1BXT";
-            this.C1BXT.ReadOnly = true;
-            // 
-            // C2BXT
-            // 
-            this.C2BXT.DataPropertyName = "Nombres";
-            this.C2BXT.HeaderText = "Nombre";
-            this.C2BXT.Name = "C2BXT";
-            this.C2BXT.ReadOnly = true;
-            // 
-            // C3BXT
-            // 
-            this.C3BXT.DataPropertyName = "Apellidos";
-            this.C3BXT.HeaderText = "Apellidos";
-            this.C3BXT.Name = "C3BXT";
-            this.C3BXT.ReadOnly = true;
-            // 
-            // C4BXT
-            // 
-            this.C4BXT.DataPropertyName = "CorreoPUCP";
-            this.C4BXT.HeaderText = "Correo Electronico";
-            this.C4BXT.Name = "C4BXT";
-            this.C4BXT.ReadOnly = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -381,6 +353,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tutor del Alumno";
             // 
+            // txtIdTutorOculto
+            // 
+            this.txtIdTutorOculto.Location = new System.Drawing.Point(196, 26);
+            this.txtIdTutorOculto.Name = "txtIdTutorOculto";
+            this.txtIdTutorOculto.Size = new System.Drawing.Size(41, 20);
+            this.txtIdTutorOculto.TabIndex = 20;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -459,16 +438,6 @@
             this.dgvListaTutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaTutores_CellClick);
             this.dgvListaTutores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaTutores_CellContentClick);
             // 
-            // LGestBecXTutBXT
-            // 
-            this.LGestBecXTutBXT.AutoSize = true;
-            this.LGestBecXTutBXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LGestBecXTutBXT.Location = new System.Drawing.Point(10, 9);
-            this.LGestBecXTutBXT.Name = "LGestBecXTutBXT";
-            this.LGestBecXTutBXT.Size = new System.Drawing.Size(241, 20);
-            this.LGestBecXTutBXT.TabIndex = 10;
-            this.LGestBecXTutBXT.Text = "Gestionar Becarios por Tutor";
-            // 
             // Codigo
             // 
             this.Codigo.DataPropertyName = "CodigoPUCP";
@@ -516,12 +485,43 @@
             this.Apellidos.ReadOnly = true;
             this.Apellidos.Width = 300;
             // 
-            // txtIdTutorOculto
+            // LGestBecXTutBXT
             // 
-            this.txtIdTutorOculto.Location = new System.Drawing.Point(196, 26);
-            this.txtIdTutorOculto.Name = "txtIdTutorOculto";
-            this.txtIdTutorOculto.Size = new System.Drawing.Size(41, 20);
-            this.txtIdTutorOculto.TabIndex = 20;
+            this.LGestBecXTutBXT.AutoSize = true;
+            this.LGestBecXTutBXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LGestBecXTutBXT.Location = new System.Drawing.Point(10, 9);
+            this.LGestBecXTutBXT.Name = "LGestBecXTutBXT";
+            this.LGestBecXTutBXT.Size = new System.Drawing.Size(241, 20);
+            this.LGestBecXTutBXT.TabIndex = 10;
+            this.LGestBecXTutBXT.Text = "Gestionar Becarios por Tutor";
+            // 
+            // C1BXT
+            // 
+            this.C1BXT.DataPropertyName = "CodigoPUCP";
+            this.C1BXT.HeaderText = "Codigo";
+            this.C1BXT.Name = "C1BXT";
+            this.C1BXT.ReadOnly = true;
+            // 
+            // C2BXT
+            // 
+            this.C2BXT.DataPropertyName = "Nombres";
+            this.C2BXT.HeaderText = "Nombre";
+            this.C2BXT.Name = "C2BXT";
+            this.C2BXT.ReadOnly = true;
+            // 
+            // C3BXT
+            // 
+            this.C3BXT.DataPropertyName = "Apellidos";
+            this.C3BXT.HeaderText = "Apellidos";
+            this.C3BXT.Name = "C3BXT";
+            this.C3BXT.ReadOnly = true;
+            // 
+            // C4BXT
+            // 
+            this.C4BXT.DataPropertyName = "CorreoPUCP";
+            this.C4BXT.HeaderText = "Correo Electronico";
+            this.C4BXT.Name = "C4BXT";
+            this.C4BXT.ReadOnly = true;
             // 
             // GestionarTutores
             // 
@@ -586,10 +586,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox TxtIDOculto;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C1BXT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C2BXT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C3BXT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C4BXT;
         private System.Windows.Forms.TextBox txtCAIdOcullto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
@@ -598,5 +594,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private System.Windows.Forms.TextBox txtIdTutorOculto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C1BXT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C2BXT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C3BXT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C4BXT;
     }
 }
