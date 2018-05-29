@@ -42,10 +42,12 @@ namespace Controlador
             accesoDatosPersona.enlazarBecario(pe);
         }
 
-        public BindingList<Persona> listarTutorDeBecado(int idBec)
+        public void enlazarBecario2(Alumno pe)
         {
-            return accesoDatosPersona.listarTutorDeBecado(idBec);
+            accesoDatosPersona.enlazarBecario2(pe);
         }
+
+        
 
         public BindingList<Persona> listarPersonas(String cod)
         {

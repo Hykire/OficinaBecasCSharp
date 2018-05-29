@@ -23,23 +23,24 @@ namespace AccesoDatos
             con.Open();
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "LISTAR_TUTORES";
+            comando.CommandText = "Y_LISTAR_TUTORES";
 
             comando.Connection = con;
 
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
+                // P.ID_PERSONA, P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.TELF_MOVIL, P.CORREO_PUCP, P.DNI FROM PERSONA P INNER JOIN
                 Tutor per = new Tutor();
-                per.Id_persona = reader.GetInt32("id_Persona");
-                per.CodigoPUCP = reader.GetInt32("codigoPUCP");
-                per.Nombres = reader.GetString("nombre");
-                per.Apellidos = reader.GetString("ape_pa") + " " + reader.GetString("ape_ma");
-                per.TelfMovil = reader.GetInt32("telefono").ToString();
-                per.Profesion = reader.GetString("profesion");
-                per.Dni = reader.GetInt32("Dni");
-                per.CorreoPUCP = reader.GetString("correo");
-                per.EstadoT = reader.GetChar("EstadoT");
+                per.Id_persona = reader.GetInt32("ID_TUTOR");
+                per.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
+                per.Nombres = reader.GetString("NOMBRES");
+                per.Apellidos = reader.GetString("APELLIDOS");
+                per.TelfMovil = reader.GetInt32("TELF_MOVIL").ToString();
+                //per.Profesion = reader.GetString("profesion");
+                per.Dni = reader.GetInt32("DNI");
+                per.CorreoPUCP = reader.GetString("CORREO_PUCP");
+                per.Estado = reader.GetString("ESTADO");
                 lista.Add(per);
             }
             con.Close();
@@ -57,18 +58,19 @@ namespace AccesoDatos
             con.Open();
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "LISTAR_BECADOS_TUTOR";
+            comando.CommandText = "Y_LISTAR_BECADOS_TUTOR";
 
             comando.Connection = con;
             comando.Parameters.AddWithValue("paramTutor", idTut);
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
+                //P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.CORREO_PUCP FROM PERSONA P
                 Persona per = new Persona();
-                per.CodigoPUCP = reader.GetInt32("codigoPUCP");
-                per.Nombres = reader.GetString("nombre");
-                per.Apellidos = reader.GetString("ape_pa") + " " + reader.GetString("ape_ma");
-                per.CorreoPUCP = reader.GetString("correo");
+                per.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
+                per.Nombres = reader.GetString("NOMBRES");
+                per.Apellidos = reader.GetString("APELLIDOS");
+                per.CorreoPUCP = reader.GetString("CORREO_PUCP");
                 lista.Add(per);
             }
             con.Close();
@@ -76,7 +78,7 @@ namespace AccesoDatos
         }
 
         public BindingList<Persona> listarBecarios(String cod)
-        {
+        {//cambiar por ALUMNO
             BindingList<Persona> lista = new BindingList<Persona>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
                 "user=inf282g6;database=inf282g6;" +
@@ -93,12 +95,13 @@ namespace AccesoDatos
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
+                //P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.CORREO_PUCP, B.ID_BECADO FROM PERSONA P
                 Persona per = new Persona();
-                per.CodigoPUCP = reader.GetInt32("codigoPUCP");
-                per.Nombres = reader.GetString("nombre");
-                per.Apellidos = reader.GetString("ape_pa") + " " + reader.GetString("ape_ma");
+                per.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
+                per.Nombres = reader.GetString("NOMBRES");
+                per.Apellidos = reader.GetString("APELLIDOS");
                 //es id becario 
-                per.Id_persona = reader.GetInt32("id_Becado");
+                per.Id_persona = reader.GetInt32("ID_BECADO");
                 lista.Add(per);
             }
             con.Close();
@@ -115,7 +118,7 @@ namespace AccesoDatos
             con.Open();
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "LISTAR_TUTORES";
+            comando.CommandText = "Y_LISTAR_TUTORES";
 
             comando.Connection = con;
 
@@ -123,10 +126,10 @@ namespace AccesoDatos
             while (reader.Read())
             {
                 Persona per = new Persona();
-                per.Id_persona = reader.GetInt32("id_Persona");
-               // per.CodigoPUCP = reader.GetInt32("codigoPUCP");
-                per.Nombres = reader.GetString("nombre");
-               // per.Apellidos = reader.GetString("ape_pa") + " " + reader.GetString("ape_ma");
+                per.Id_persona = reader.GetInt32("ID_PERSONA");
+                //per.CodigoPUCP = reader.GetInt32("codigoPUCP");
+                per.Nombres = reader.GetString("NOMBRES");
+                // per.Apellidos = reader.GetString("ape_pa") + " " + reader.GetString("ape_ma");
                 lista.Add(per);
             }
             con.Close();
@@ -144,17 +147,17 @@ namespace AccesoDatos
             con.Open();
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "ENLAZAR_BECARIO_TUTOR";
-
+            comando.CommandText = "Y_ENLAZAR_BECARIO_TUTOR";
+            //SET ID_TUTOR = idTut WHERE ID_BECADO = idBecario
             comando.Connection = con;
             comando.Parameters.AddWithValue("idBecario", pe.Id_persona);
             comando.Parameters.AddWithValue("idTut", pe.Id_tutor);
-
+            //eroooooor en c#
             comando.ExecuteNonQuery();
             con.Close();
         }
 
-        public BindingList<Persona> listarTutorDeBecado(int idBec)
+        public void enlazarBecario2(Alumno pe)
         {
             BindingList<Persona> lista = new BindingList<Persona>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
@@ -165,25 +168,17 @@ namespace AccesoDatos
             con.Open();
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "LISTAR_TUTOR_DE_BECADO";
-
+            comando.CommandText = "Y_ENLAZAR_BECARIO_TUTOR2";
+            //SET ID_TUTOR = idTut WHERE ID_BECADO = idBecario
             comando.Connection = con;
-            comando.Parameters.AddWithValue("paramBecado", idBec);
-            MySqlDataReader reader = comando.ExecuteReader();
-            Persona per;
-            per = new Persona();
-            while (reader.Read())
-            {
-                per.CodigoPUCP = reader.GetInt32("codigoPUCP");
-                per.Nombres = reader.GetString("nombre");
-                per.Apellidos = reader.GetString("ape_pa") + " " + reader.GetString("ape_ma");
-                lista.Add(per);
-               
-            }
-             //MessageBox.Show(per.CodigoPUCP.ToString());
-            con.Close();
-            return lista;
+            comando.Parameters.AddWithValue("idBecario", pe.Id_persona);
+            comando.Parameters.AddWithValue("idTut", pe.Id_tutor);
+            
+            comando.ExecuteNonQuery();
+            con.Close(); //update desde workb sii
         }
+
+        
         public BindingList<Persona> listarPersonas(String cod)
         {
             BindingList<Persona> lista = new BindingList<Persona>();
@@ -195,22 +190,22 @@ namespace AccesoDatos
             con.Open();
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "LISTAR_PERSONAS";
+            comando.CommandText = "Y_LISTAR_PERSONAS";
 
             comando.Connection = con;
             comando.Parameters.AddWithValue("param", cod);
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
-            {
+            { 
                 Persona per = new Persona();
-                per.Id_persona = reader.GetInt32("id_Persona");
-                per.CodigoPUCP = reader.GetInt32("codigoPUCP");
-                per.Nombres = reader.GetString("nombre");
-                per.Apellidos = reader.GetString("ape_pa") + " " + reader.GetString("ape_ma");
-                per.TelfMovil = reader.GetInt32("telefono").ToString();
-                per.Profesion = reader.GetString("profesion");
-                per.Dni = reader.GetInt32("Dni");
-                per.CorreoPUCP = reader.GetString("correo");
+                per.Id_persona = reader.GetInt32("ID_PERSONA");
+                per.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
+                per.Nombres = reader.GetString("NOMBRES");
+                per.Apellidos = reader.GetString("APELLIDOS");
+                per.TelfMovil = reader.GetInt32("TELF_MOVIL").ToString();
+                //per.Profesion = reader.GetString("profesion");
+                per.Dni = reader.GetInt32("DNI");
+                per.CorreoPUCP = reader.GetString("CORREO_PUCP");
                 
                 lista.Add(per);
             }
@@ -229,18 +224,18 @@ namespace AccesoDatos
             con.Open();
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "SELECCIONAR_COORDINADORES";
+            comando.CommandText = "Y_SELECCIONAR_COORDINADORES";
 
             comando.Connection = con;
 
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
-            {
+            {//P.NOMBRES, P.APELLIDOS, P.ID_PERSONA from PERSONA P
                 Persona per = new Persona();
-                per.Id_persona = reader.GetInt32("id_Persona");
+                per.Id_persona = reader.GetInt32("ID_PERSONA");
                 // per.CodigoPUCP = reader.GetInt32("codigoPUCP");
-                per.Nombres = reader.GetString("nombre");
-                per.Apellidos = reader.GetString("ape_pa");
+                per.Nombres = reader.GetString("NOMBRES");
+                per.Apellidos = reader.GetString("APELLIDOS");
                 lista.Add(per);
             }
             con.Close();
@@ -259,7 +254,7 @@ namespace AccesoDatos
             con.Open();
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "INSERTAR_NUEVO_TUTOR";
+            comando.CommandText = "Y_INSERTAR_NUEVO_TUTOR";
 
             comando.Connection = con;
             comando.Parameters.AddWithValue("idPer", idPer);

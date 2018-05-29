@@ -72,8 +72,8 @@
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Profesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtIdTutorOculto = new System.Windows.Forms.TextBox();
             this.panelBecariosXTutor.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -304,7 +304,6 @@
             this.txtCAIdOcullto.Name = "txtCAIdOcullto";
             this.txtCAIdOcullto.Size = new System.Drawing.Size(41, 20);
             this.txtCAIdOcullto.TabIndex = 18;
-            this.txtCAIdOcullto.Visible = false;
             // 
             // label2
             // 
@@ -367,6 +366,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtIdTutorOculto);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.btnCambiarTutorAlumno);
             this.groupBox3.Controls.Add(this.label3);
@@ -450,7 +450,6 @@
             this.Correo,
             this.Nombres,
             this.Telefono,
-            this.Profesion,
             this.Apellidos});
             this.dgvListaTutores.Location = new System.Drawing.Point(33, 43);
             this.dgvListaTutores.Name = "dgvListaTutores";
@@ -509,14 +508,6 @@
             this.Telefono.ReadOnly = true;
             this.Telefono.Visible = false;
             // 
-            // Profesion
-            // 
-            this.Profesion.DataPropertyName = "Profesion";
-            this.Profesion.HeaderText = "Profesion";
-            this.Profesion.Name = "Profesion";
-            this.Profesion.ReadOnly = true;
-            this.Profesion.Visible = false;
-            // 
             // Apellidos
             // 
             this.Apellidos.DataPropertyName = "Apellidos";
@@ -524,6 +515,13 @@
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.ReadOnly = true;
             this.Apellidos.Width = 300;
+            // 
+            // txtIdTutorOculto
+            // 
+            this.txtIdTutorOculto.Location = new System.Drawing.Point(196, 26);
+            this.txtIdTutorOculto.Name = "txtIdTutorOculto";
+            this.txtIdTutorOculto.Size = new System.Drawing.Size(41, 20);
+            this.txtIdTutorOculto.TabIndex = 20;
             // 
             // GestionarTutores
             // 
@@ -598,7 +596,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Profesion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
+        private System.Windows.Forms.TextBox txtIdTutorOculto;
     }
 }

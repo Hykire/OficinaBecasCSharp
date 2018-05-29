@@ -20,6 +20,7 @@ namespace Modelo
         private string _correoAlternativo;
         private string _telfMovil;
         private string _telfFijo;
+        private string _estado;
 
         private string _profesion; //lo uso en gestionar profes
         
@@ -41,5 +42,6 @@ namespace Modelo
         public string TelfMovil{ get => _telfMovil; set => _telfMovil = value; }
         public string TelfFijo { get => _telfFijo; set => _telfFijo = value; }
         public string Profesion { get => _profesion; set => _profesion = value; }//lo uso en gestionar profes
+        public string Estado { get => _estado; set => _estado = value; }
     }
 }

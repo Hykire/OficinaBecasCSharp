@@ -54,7 +54,7 @@ namespace Vista
             pe.Id_tutor = persona.Id_persona;
             pe.Id_persona = Convert.ToInt32(idAlum);
 
-            logicaNegocioPer.enlazarBecario(pe);
+            logicaNegocioPer.enlazarBecario2(pe);
             this.Dispose();
         }
     }

@@ -15,6 +15,7 @@ namespace Vista
     public partial class GestionarTutores : Form
     {
         private PersonaBL logicaNegocioPersona;
+        private TutorBL logicaNegocioTutor;
         private Persona tutorSelecc;
         private Persona p;
 
@@ -25,7 +26,8 @@ namespace Vista
             InitializeComponent();
             BindingList<Persona> lsttutores = new BindingList<Persona>();
             logicaNegocioPersona = new PersonaBL();
-            
+            logicaNegocioTutor = new TutorBL();
+
             TxtCodTutorBXT.Enabled = false;
             TxtNombTutorBXT.Enabled = false;
             TxtApeTutor.Enabled = false;
@@ -109,23 +111,25 @@ namespace Vista
             BuscarBecarioABTXB frmABTXB = new BuscarBecarioABTXB();
             if (frmABTXB.ShowDialog() == DialogResult.OK)
             {
-                BindingList<Persona> lista = new BindingList<Persona>();
+                BindingList<Tutor> lista = new BindingList<Tutor>();
                p = (Persona)frmABTXB.PersonaSeleccionada;
                 int cod = p.Id_persona;
                 txtCAIdOcullto.Text = p.Id_persona.ToString();
                 txtBAcod.Text = p.CodigoPUCP.ToString();
                 txtBANomb.Text = p.Nombres;
                 txtBAApe.Text = p.Apellidos;
-                Persona per = new Persona();
-                lista = logicaNegocioPersona.listarTutorDeBecado(cod);
-                foreach (Persona en in lista){
+                Tutor per = new Tutor();
+                lista = logicaNegocioTutor.listarTutorDeBecado(cod);
+                foreach (Tutor en in lista){
                     per.CodigoPUCP = en.CodigoPUCP;
                     per.Nombres = en.Nombres;
                     per.Apellidos = en.Apellidos;
+                    per.IdTutor = en.IdTutor;
                 }
                 txtBACodTutor.Text = per.CodigoPUCP.ToString();
                 txtBANombTutor.Text = per.Nombres;
                 txtBAApeTutor.Text = per.Apellidos;
+                txtIdTutorOculto.Text = per.IdTutor.ToString();
             }
         }
 
