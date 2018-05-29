@@ -36,6 +36,7 @@ namespace Vista
         {
             becaSeleccionada = (Beca)dgvBuscarBecas.CurrentRow.DataBoundItem;
             this.DialogResult = DialogResult.OK;
+            this.Dispose();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

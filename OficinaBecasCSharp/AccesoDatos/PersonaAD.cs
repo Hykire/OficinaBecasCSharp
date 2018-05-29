@@ -87,11 +87,21 @@ namespace AccesoDatos
             MySqlConnection con = new MySqlConnection(cadena);
             con.Open();
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "BUSCAR_BECARIO";
+            if(cod.Length == 0)
+            {
+                comando.CommandText = "SELECT P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.CORREO_PUCP, B.ID_BECADO FROM PERSONA P INNER JOIN BECADO B WHERE P.ID_PERSONA = B.ID_PERSONA";
+                comando.Connection = con;
+                
+            }
+            else
+            {
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "Y_BUSCAR_BECARIO";
 
-            comando.Connection = con;
-            comando.Parameters.AddWithValue("codBec", cod);
+                comando.Connection = con;
+                comando.Parameters.AddWithValue("codBec", cod);
+                
+            }
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {

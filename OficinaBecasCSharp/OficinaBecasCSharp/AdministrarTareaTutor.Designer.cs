@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministrarTareaTutor));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnConsultarCorreos = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnConsultarBecario = new Bunifu.Framework.UI.BunifuFlatButton();
             this.CB_button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -40,8 +40,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.bunifuFlatButton2);
-            this.panel1.Controls.Add(this.bunifuFlatButton1);
+            this.panel1.Controls.Add(this.btnConsultarCorreos);
+            this.panel1.Controls.Add(this.btnConsultarBecario);
             this.panel1.Controls.Add(this.CB_button);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -49,75 +49,75 @@
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 15;
             // 
-            // bunifuFlatButton2
+            // btnConsultarCorreos
             // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.ButtonText = "Consultar Correos";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 90D;
-            this.bunifuFlatButton2.IsTab = true;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 241);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(241, 48);
-            this.bunifuFlatButton2.TabIndex = 2;
-            this.bunifuFlatButton2.Text = "Consultar Correos";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            this.btnConsultarCorreos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnConsultarCorreos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnConsultarCorreos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsultarCorreos.BorderRadius = 0;
+            this.btnConsultarCorreos.ButtonText = "Consultar Correos";
+            this.btnConsultarCorreos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultarCorreos.DisabledColor = System.Drawing.Color.Gray;
+            this.btnConsultarCorreos.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnConsultarCorreos.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnConsultarCorreos.Iconimage")));
+            this.btnConsultarCorreos.Iconimage_right = null;
+            this.btnConsultarCorreos.Iconimage_right_Selected = null;
+            this.btnConsultarCorreos.Iconimage_Selected = null;
+            this.btnConsultarCorreos.IconMarginLeft = 0;
+            this.btnConsultarCorreos.IconMarginRight = 0;
+            this.btnConsultarCorreos.IconRightVisible = true;
+            this.btnConsultarCorreos.IconRightZoom = 0D;
+            this.btnConsultarCorreos.IconVisible = true;
+            this.btnConsultarCorreos.IconZoom = 90D;
+            this.btnConsultarCorreos.IsTab = true;
+            this.btnConsultarCorreos.Location = new System.Drawing.Point(0, 241);
+            this.btnConsultarCorreos.Name = "btnConsultarCorreos";
+            this.btnConsultarCorreos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnConsultarCorreos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.btnConsultarCorreos.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnConsultarCorreos.selected = false;
+            this.btnConsultarCorreos.Size = new System.Drawing.Size(241, 48);
+            this.btnConsultarCorreos.TabIndex = 2;
+            this.btnConsultarCorreos.Text = "Consultar Correos";
+            this.btnConsultarCorreos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultarCorreos.Textcolor = System.Drawing.Color.White;
+            this.btnConsultarCorreos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarCorreos.Click += new System.EventHandler(this.btnConsultarCorreos_Click);
             // 
-            // bunifuFlatButton1
+            // btnConsultarBecario
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "Consultar Becario";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 90D;
-            this.bunifuFlatButton1.IsTab = true;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 181);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(241, 48);
-            this.bunifuFlatButton1.TabIndex = 1;
-            this.bunifuFlatButton1.Text = "Consultar Becario";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            this.btnConsultarBecario.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnConsultarBecario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnConsultarBecario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsultarBecario.BorderRadius = 0;
+            this.btnConsultarBecario.ButtonText = "Consultar Becario";
+            this.btnConsultarBecario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultarBecario.DisabledColor = System.Drawing.Color.Gray;
+            this.btnConsultarBecario.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnConsultarBecario.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnConsultarBecario.Iconimage")));
+            this.btnConsultarBecario.Iconimage_right = null;
+            this.btnConsultarBecario.Iconimage_right_Selected = null;
+            this.btnConsultarBecario.Iconimage_Selected = null;
+            this.btnConsultarBecario.IconMarginLeft = 0;
+            this.btnConsultarBecario.IconMarginRight = 0;
+            this.btnConsultarBecario.IconRightVisible = true;
+            this.btnConsultarBecario.IconRightZoom = 0D;
+            this.btnConsultarBecario.IconVisible = true;
+            this.btnConsultarBecario.IconZoom = 90D;
+            this.btnConsultarBecario.IsTab = true;
+            this.btnConsultarBecario.Location = new System.Drawing.Point(0, 181);
+            this.btnConsultarBecario.Name = "btnConsultarBecario";
+            this.btnConsultarBecario.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnConsultarBecario.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.btnConsultarBecario.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnConsultarBecario.selected = false;
+            this.btnConsultarBecario.Size = new System.Drawing.Size(241, 48);
+            this.btnConsultarBecario.TabIndex = 1;
+            this.btnConsultarBecario.Text = "Consultar Becario";
+            this.btnConsultarBecario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultarBecario.Textcolor = System.Drawing.Color.White;
+            this.btnConsultarBecario.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarBecario.Click += new System.EventHandler(this.btnConsultarBecario_Click);
             // 
             // CB_button
             // 
@@ -181,8 +181,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnConsultarCorreos;
+        private Bunifu.Framework.UI.BunifuFlatButton btnConsultarBecario;
         private Bunifu.Framework.UI.BunifuFlatButton CB_button;
         private System.Windows.Forms.Panel panel2;
     }
