@@ -44,7 +44,7 @@ namespace AccesoDatos
             MySqlConnection con = new MySqlConnection(cadena);
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "LISTAR_BECAS";
+            comando.CommandText = "A_LISTAR_BECAS";
             comando.Connection = con;
             con.Open();
             MySqlDataReader reader = comando.ExecuteReader();

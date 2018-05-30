@@ -66,7 +66,7 @@
             this.panelCC.Controls.Add(this.lbNumeroTotalEnviados);
             this.panelCC.Controls.Add(this.lbDescripciónConvocatoria);
             this.panelCC.Location = new System.Drawing.Point(31, 2);
-            this.panelCC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelCC.Margin = new System.Windows.Forms.Padding(4);
             this.panelCC.Name = "panelCC";
             this.panelCC.Size = new System.Drawing.Size(1036, 553);
             this.panelCC.TabIndex = 2;
@@ -127,6 +127,7 @@
             this.btnAceptar.TabIndex = 52;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtFechaConvocatoria
             // 
@@ -213,7 +214,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panelCC);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCoordComunicCiclosPasados";
             this.Text = "frmCoordComunicCiclosPasados";
             this.Load += new System.EventHandler(this.frmCoordComunicCiclosPasados_Load);

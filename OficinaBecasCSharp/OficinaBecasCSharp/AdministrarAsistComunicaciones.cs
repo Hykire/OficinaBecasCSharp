@@ -38,7 +38,7 @@ namespace Vista
                 if (this.panel2.Controls.Count > 0)
                     this.panel2.Controls.RemoveAt(0);
                 frmBuscarConvocatoria form = Application.OpenForms.OfType<frmBuscarConvocatoria>().FirstOrDefault();
-                frmBuscarConvocatoria ventana = form ?? new frmBuscarConvocatoria();
+                frmBuscarConvocatoria ventana = form ?? new frmBuscarConvocatoria("2018-1",false);
                 ventana.TopLevel = false;
                 ventana.FormBorderStyle = FormBorderStyle.None;
                 ventana.Dock = DockStyle.Fill;

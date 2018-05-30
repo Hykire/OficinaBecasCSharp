@@ -16,9 +16,9 @@ namespace Controlador
         {
             convocatoriaDA = new ConvocatoriaDA();
         }
-        public BindingList<Convocatoria> listarConvocatorias()
+        public BindingList<Convocatoria> listarConvocatoriasActuales(string ciclo)
         {
-            return convocatoriaDA.listarConvocatorias();
+            return convocatoriaDA.listarConvocatoriasActuales(ciclo);
         }
 
         public int agregarConvocatoria(Convocatoria convocatoria)
@@ -31,9 +31,19 @@ namespace Controlador
             return convocatoriaDA.listarFiltroNombre(nombre);
         }
 
-        public BindingList<Convocatoria> listarFiltroCiclo(string ciclo)
+        public BindingList<Convocatoria> listarConvocatoriasAnteriores(string ciclo)
         {
-            return convocatoriaDA.listarFiltroCiclo(ciclo);
+            return convocatoriaDA.listarConvocatoriasAnteriores(ciclo);
+        }
+
+        public void actualizarConvocatoria(Convocatoria convocatoria)
+        {
+            convocatoriaDA.actualizarConvocatoria(convocatoria);
+        }
+
+        public void eliminarConvocatoria(Convocatoria convocatoria)
+        {
+            convocatoriaDA.eliminarConvocatoria(convocatoria);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Vista
     {
         public frmCoordComunicCiclosPasados()
         {
-            frmBuscarConvocatoria buscarConvocatoria = new frmBuscarConvocatoria();
+            frmBuscarConvocatoria buscarConvocatoria = new frmBuscarConvocatoria("2018-1",false);
             buscarConvocatoria.Visible = true;
         }
 
@@ -24,6 +24,11 @@ namespace Vista
         }
 
         private void panelCC_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
 
         }

@@ -14,9 +14,10 @@ namespace Modelo
         private DateTime fechaInicio;
         private DateTime fechaFin;
         private DateTime fechaCreacion;
-        private int cantidadPersonasPrevistas;
-        private int cantidadPersonasConvocadas;
-        private int cantidadRespuestas;
+        private int cantidadCandidatosPrevistos;
+        private int cantidadTotalCandidatos;
+        private int cantidadPostulantes;
+        private int cantidadSeleccionados;
         private string cicloConvocatoria;
         private Beca becaAsociada;
         private AsistenteComunicaciones creadorConvocatoria;
@@ -27,13 +28,14 @@ namespace Modelo
         public DateTime FechaInicio { get => fechaInicio; set => fechaInicio = value; }
         public DateTime FechaFin { get => fechaFin; set => fechaFin = value; }
         public DateTime FechaCreacion { get => fechaCreacion; set => fechaCreacion = value; }
-        public int CantidadPersonasPrevistas { get => cantidadPersonasPrevistas; set => cantidadPersonasPrevistas = value; }
-        public int CantidadPersonasConvocadas { get => cantidadPersonasConvocadas; set => cantidadPersonasConvocadas = value; }
-        public int CantidadRespuestas { get => cantidadRespuestas; set => cantidadRespuestas = value; }
         public string CicloConvocatoria { get => cicloConvocatoria; set => cicloConvocatoria = value; }
         public Beca BecaAsociada { get => becaAsociada; set => becaAsociada = value; }
         public AsistenteComunicaciones CreadorConvocatoria { get => creadorConvocatoria; set => creadorConvocatoria = value; }
         public string NombreBeca { get => becaAsociada.Nombre_beca; }
         public string NombreCreadorConvocatoria { get => creadorConvocatoria.Nombres + " " + creadorConvocatoria.Apellidos; }
+        public int CantidadCandidatosPrevistos { get => cantidadCandidatosPrevistos; set => cantidadCandidatosPrevistos = value; }
+        public int CantidadTotalCandidatos { get => cantidadTotalCandidatos; set => cantidadTotalCandidatos = value; }
+        public int CantidadPostulantes { get => cantidadPostulantes; set => cantidadPostulantes = value; }
+        public int CantidadSeleccionados { get => cantidadSeleccionados; set => cantidadSeleccionados = value; }
     }
 }

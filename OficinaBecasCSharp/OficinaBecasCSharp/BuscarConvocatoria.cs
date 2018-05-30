@@ -17,14 +17,23 @@ namespace Vista
         private ConvocatoriaBL convocatoriaBL;
         private BindingList<Convocatoria> convocatorias;
         private Convocatoria convocatoriaSeleccionada;
+        private string ciclo;
 
         public Convocatoria ConvocatoriaSeleccionada { get => convocatoriaSeleccionada; set => convocatoriaSeleccionada = value; }
 
-        public frmBuscarConvocatoria()
+        public frmBuscarConvocatoria(string ciclo, bool esCicloActual)
         {
             InitializeComponent();
+            this.ciclo = ciclo;
             convocatoriaBL = new ConvocatoriaBL();
-            convocatorias = convocatoriaBL.listarConvocatorias();
+            if (esCicloActual) convocatorias = convocatoriaBL.listarConvocatoriasActuales(ciclo);
+            else
+            {
+                btnSeleccionar.Visible = false;
+                btnEliminar.Visible = false;
+                convocatorias = convocatoriaBL.listarConvocatoriasAnteriores(ciclo);
+            }
+
             dgvConvocatoria.AutoGenerateColumns = false;
             dgvConvocatoria.DataSource = convocatorias;
         }
@@ -58,8 +67,10 @@ namespace Vista
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("Está apunto de eliminar un registro de la base de datos. ¿Está seguro que desea realizarlo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK) {
-                int indice = dgvConvocatoria.CurrentRow.Index;
-                convocatorias.RemoveAt(indice);
+                Convocatoria convocatoria = (Convocatoria)dgvConvocatoria.CurrentRow.DataBoundItem;
+                convocatoriaBL.eliminarConvocatoria(convocatoria);
+                convocatorias = convocatoriaBL.listarConvocatoriasActuales(ciclo);
+                dgvConvocatoria.DataSource = convocatorias;
                 MessageBox.Show("El registro ha sido eliminado", "Registro Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
