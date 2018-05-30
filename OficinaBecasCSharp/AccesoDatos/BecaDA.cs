@@ -51,11 +51,11 @@ namespace AccesoDatos
             while (reader.Read())
             {
                 Beca beca = new Beca();
-                beca.Id_beca = reader.GetInt32("id_beca");
-                beca.Nombre_beca = reader.GetString("nombre_beca");
-                beca.Descripcion = reader.GetString("descrip_beca");
-                beca.FechaConvocatoria = reader.GetDateTime("fechaConvocatoria");
-                beca.Financiador = reader.GetString("Financiador");
+                beca.Id_beca = reader.GetInt32("ID_BECA");
+                beca.Nombre_beca = reader.GetString("NOMBRE_BECA");
+                beca.Descripcion = reader.GetString("DESCRIPCION");
+                //beca.FechaConvocatoria = reader.GetDateTime("fechaConvocatoria");
+                beca.Financiador = reader.GetString("FINANCIADOR");
 
                 becas.Add(beca);
             }

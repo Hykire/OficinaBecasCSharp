@@ -33,13 +33,13 @@
             this.lblCodBecario = new System.Windows.Forms.Label();
             this.btnBuscarBecario = new System.Windows.Forms.Button();
             this.dgvBecarios = new System.Windows.Forms.DataGridView();
+            this.txtCodBecario = new System.Windows.Forms.TextBox();
             this.NombreBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidosBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codPUCPBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sexoBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correoBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BecarioActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCodBecario = new System.Windows.Forms.TextBox();
             this.panelConsultarBecario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).BeginInit();
             this.SuspendLayout();
@@ -84,9 +84,12 @@
             this.btnBuscarBecario.TabIndex = 2;
             this.btnBuscarBecario.Text = "Buscar";
             this.btnBuscarBecario.UseVisualStyleBackColor = true;
+            this.btnBuscarBecario.Click += new System.EventHandler(this.btnBuscarBecario_Click);
             // 
             // dgvBecarios
             // 
+            this.dgvBecarios.AllowUserToAddRows = false;
+            this.dgvBecarios.AllowUserToDeleteRows = false;
             this.dgvBecarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -100,38 +103,9 @@
             this.BecarioActivo});
             this.dgvBecarios.Location = new System.Drawing.Point(142, 93);
             this.dgvBecarios.Name = "dgvBecarios";
+            this.dgvBecarios.ReadOnly = true;
             this.dgvBecarios.Size = new System.Drawing.Size(594, 315);
             this.dgvBecarios.TabIndex = 3;
-            // 
-            // NombreBecario
-            // 
-            this.NombreBecario.HeaderText = "Nombres";
-            this.NombreBecario.Name = "NombreBecario";
-            // 
-            // ApellidosBecario
-            // 
-            this.ApellidosBecario.HeaderText = "Apellidos";
-            this.ApellidosBecario.Name = "ApellidosBecario";
-            // 
-            // codPUCPBecario
-            // 
-            this.codPUCPBecario.HeaderText = "Código PUCP";
-            this.codPUCPBecario.Name = "codPUCPBecario";
-            // 
-            // sexoBecario
-            // 
-            this.sexoBecario.HeaderText = "Sexo";
-            this.sexoBecario.Name = "sexoBecario";
-            // 
-            // correoBecario
-            // 
-            this.correoBecario.HeaderText = "Correo Electrónico";
-            this.correoBecario.Name = "correoBecario";
-            // 
-            // BecarioActivo
-            // 
-            this.BecarioActivo.HeaderText = "Activo";
-            this.BecarioActivo.Name = "BecarioActivo";
             // 
             // txtCodBecario
             // 
@@ -139,6 +113,48 @@
             this.txtCodBecario.Name = "txtCodBecario";
             this.txtCodBecario.Size = new System.Drawing.Size(341, 20);
             this.txtCodBecario.TabIndex = 1;
+            // 
+            // NombreBecario
+            // 
+            this.NombreBecario.DataPropertyName = "Nombres";
+            this.NombreBecario.HeaderText = "Nombres";
+            this.NombreBecario.Name = "NombreBecario";
+            this.NombreBecario.ReadOnly = true;
+            // 
+            // ApellidosBecario
+            // 
+            this.ApellidosBecario.DataPropertyName = "Apellidos";
+            this.ApellidosBecario.HeaderText = "Apellidos";
+            this.ApellidosBecario.Name = "ApellidosBecario";
+            this.ApellidosBecario.ReadOnly = true;
+            // 
+            // codPUCPBecario
+            // 
+            this.codPUCPBecario.DataPropertyName = "CodigoPUCP";
+            this.codPUCPBecario.HeaderText = "Código PUCP";
+            this.codPUCPBecario.Name = "codPUCPBecario";
+            this.codPUCPBecario.ReadOnly = true;
+            // 
+            // sexoBecario
+            // 
+            this.sexoBecario.DataPropertyName = "Sexo";
+            this.sexoBecario.HeaderText = "Sexo";
+            this.sexoBecario.Name = "sexoBecario";
+            this.sexoBecario.ReadOnly = true;
+            // 
+            // correoBecario
+            // 
+            this.correoBecario.DataPropertyName = "CorreoPUCP";
+            this.correoBecario.HeaderText = "Correo Electrónico";
+            this.correoBecario.Name = "correoBecario";
+            this.correoBecario.ReadOnly = true;
+            // 
+            // BecarioActivo
+            // 
+            this.BecarioActivo.DataPropertyName = "Estado";
+            this.BecarioActivo.HeaderText = "Activo";
+            this.BecarioActivo.Name = "BecarioActivo";
+            this.BecarioActivo.ReadOnly = true;
             // 
             // frmConsultarBecarioT
             // 
@@ -162,12 +178,12 @@
         private System.Windows.Forms.Label lblCodBecario;
         private System.Windows.Forms.Button btnBuscarBecario;
         private System.Windows.Forms.DataGridView dgvBecarios;
+        private System.Windows.Forms.TextBox txtCodBecario;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreBecario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidosBecario;
         private System.Windows.Forms.DataGridViewTextBoxColumn codPUCPBecario;
         private System.Windows.Forms.DataGridViewTextBoxColumn sexoBecario;
         private System.Windows.Forms.DataGridViewTextBoxColumn correoBecario;
         private System.Windows.Forms.DataGridViewTextBoxColumn BecarioActivo;
-        private System.Windows.Forms.TextBox txtCodBecario;
     }
 }

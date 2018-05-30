@@ -21,8 +21,8 @@ namespace Vista
         {
             if (this.panel2.Controls.Count > 0)
                 this.panel2.Controls.RemoveAt(0);
-            GestionarTutor form = Application.OpenForms.OfType<GestionarTutor>().FirstOrDefault();
-            GestionarTutor ventana = form ?? new GestionarTutor();
+            frmConsultarBecaTutor form = Application.OpenForms.OfType<frmConsultarBecaTutor>().FirstOrDefault();
+            frmConsultarBecaTutor ventana = form ?? new frmConsultarBecaTutor();
             ventana.TopLevel = false;
             ventana.FormBorderStyle = FormBorderStyle.None;
             ventana.Dock = DockStyle.Fill;
@@ -31,7 +31,7 @@ namespace Vista
             ventana.Show();
         }
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private void btnConsultarBecario_Click(object sender, EventArgs e)
         {
             if (this.panel2.Controls.Count > 0)
                 this.panel2.Controls.RemoveAt(0);
@@ -45,7 +45,7 @@ namespace Vista
             ventana.Show();
         }
 
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        private void btnConsultarCorreos_Click(object sender, EventArgs e)
         {
             if (this.panel2.Controls.Count > 0)
                 this.panel2.Controls.RemoveAt(0);
@@ -58,5 +58,6 @@ namespace Vista
             this.panel2.Tag = ventana;
             ventana.Show();
         }
+
     }
 }

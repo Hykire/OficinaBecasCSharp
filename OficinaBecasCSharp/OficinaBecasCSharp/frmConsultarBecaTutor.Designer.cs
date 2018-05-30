@@ -35,13 +35,11 @@
             this.LNombBecaCBT = new System.Windows.Forms.Label();
             this.btnBuscarBecaCBT = new System.Windows.Forms.Button();
             this.DGVConsBecaT = new System.Windows.Forms.DataGridView();
-            this.NombreBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidosBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codPUCPBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexoBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correoBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BecarioActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCodBecCBT = new System.Windows.Forms.TextBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Financiador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelConsultarBecaT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVConsBecaT)).BeginInit();
             this.SuspendLayout();
@@ -114,51 +112,22 @@
             // 
             // DGVConsBecaT
             // 
+            this.DGVConsBecaT.AllowUserToAddRows = false;
+            this.DGVConsBecaT.AllowUserToDeleteRows = false;
             this.DGVConsBecaT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVConsBecaT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVConsBecaT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NombreBecario,
-            this.ApellidosBecario,
-            this.codPUCPBecario,
-            this.sexoBecario,
-            this.correoBecario,
-            this.BecarioActivo});
+            this.Id,
+            this.Descripcion,
+            this.Nombre,
+            this.Financiador});
             this.DGVConsBecaT.Location = new System.Drawing.Point(169, 99);
             this.DGVConsBecaT.Name = "DGVConsBecaT";
+            this.DGVConsBecaT.ReadOnly = true;
             this.DGVConsBecaT.Size = new System.Drawing.Size(599, 319);
             this.DGVConsBecaT.TabIndex = 3;
-            // 
-            // NombreBecario
-            // 
-            this.NombreBecario.HeaderText = "Nombres";
-            this.NombreBecario.Name = "NombreBecario";
-            // 
-            // ApellidosBecario
-            // 
-            this.ApellidosBecario.HeaderText = "Apellidos";
-            this.ApellidosBecario.Name = "ApellidosBecario";
-            // 
-            // codPUCPBecario
-            // 
-            this.codPUCPBecario.HeaderText = "Código PUCP";
-            this.codPUCPBecario.Name = "codPUCPBecario";
-            // 
-            // sexoBecario
-            // 
-            this.sexoBecario.HeaderText = "Sexo";
-            this.sexoBecario.Name = "sexoBecario";
-            // 
-            // correoBecario
-            // 
-            this.correoBecario.HeaderText = "Correo Electrónico";
-            this.correoBecario.Name = "correoBecario";
-            // 
-            // BecarioActivo
-            // 
-            this.BecarioActivo.HeaderText = "Activo";
-            this.BecarioActivo.Name = "BecarioActivo";
             // 
             // txtCodBecCBT
             // 
@@ -166,6 +135,34 @@
             this.txtCodBecCBT.Name = "txtCodBecCBT";
             this.txtCodBecCBT.Size = new System.Drawing.Size(320, 20);
             this.txtCodBecCBT.TabIndex = 1;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id_beca";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre_beca";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Financiador
+            // 
+            this.Financiador.DataPropertyName = "Financiador";
+            this.Financiador.HeaderText = "Financiador";
+            this.Financiador.Name = "Financiador";
+            this.Financiador.ReadOnly = true;
             // 
             // frmConsultarBecaTutor
             // 
@@ -192,12 +189,10 @@
         private System.Windows.Forms.Label LNombBecaCBT;
         private System.Windows.Forms.Button btnBuscarBecaCBT;
         private System.Windows.Forms.DataGridView DGVConsBecaT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreBecario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidosBecario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codPUCPBecario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexoBecario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correoBecario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BecarioActivo;
         private System.Windows.Forms.TextBox txtCodBecCBT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Financiador;
     }
 }

@@ -80,7 +80,7 @@ namespace Vista
 
         private void BBuscarCitaGC_Click(object sender, EventArgs e)
         {
-
+            //DTPSelDiaGC.Sel
         }
     }
 }
