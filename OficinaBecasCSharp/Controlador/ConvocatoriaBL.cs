@@ -58,5 +58,10 @@ namespace Controlador
         {
             return convocatoriaDA.ciclosAnteriores(ciclo, ciclo2);
         }
+
+        public BindingList<Convocatoria> filtroNombreCiclo(string nombre, string ciclo)
+        {
+            return convocatoriaDA.filtroNombreCiclo(nombre, ciclo);
+        }
     }
 }

@@ -48,6 +48,7 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.cbFiltroCiclo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvocatoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,9 +200,9 @@
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(350, 70);
+            this.btnFiltrar.Location = new System.Drawing.Point(322, 70);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(191, 36);
+            this.btnFiltrar.Size = new System.Drawing.Size(90, 36);
             this.btnFiltrar.TabIndex = 5;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -225,11 +226,22 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Filtro por Ciclo:";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(451, 70);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(90, 36);
+            this.btnLimpiar.TabIndex = 8;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frmBuscarConvocatoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 525);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbFiltroCiclo);
             this.Controls.Add(this.btnFiltrar);
@@ -269,5 +281,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCreadorConvocatoria;
         private System.Windows.Forms.ComboBox cbFiltroCiclo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

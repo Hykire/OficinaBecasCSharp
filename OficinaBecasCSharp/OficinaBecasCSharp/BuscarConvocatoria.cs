@@ -31,7 +31,7 @@ namespace Vista
             if (esCicloActual)
             {
                 convocatorias = convocatoriaBL.listarConvocatoriasActuales(ciclos[0],ciclos[1]);
-                cbFiltroCiclo.Enabled = false;
+                cbFiltroCiclo.DataSource = ciclos;
             }
             else
             {
@@ -41,6 +41,7 @@ namespace Vista
                 cbFiltroCiclo.DataSource = convocatoriaBL.ciclosAnteriores(ciclos[0], ciclos[1]);
             }
 
+            cbFiltroCiclo.Text = null;
             dgvConvocatoria.AutoGenerateColumns = false;
             dgvConvocatoria.DataSource = convocatorias;
         }
@@ -65,13 +66,27 @@ namespace Vista
         {
             if (esCicloActual == true)
             {
-                if (txtFiltroNombre.Text == "")
+                if (txtFiltroNombre.Text == "" && cbFiltroCiclo.Text == "")
                 {
-                    MessageBox.Show("Debe ingresar un nombre a buscar", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Debe ingresar un nombre o un ciclo a buscar", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                convocatorias = convocatoriaBL.listarFiltroNombreActual(txtFiltroNombre.Text, ciclos[0], ciclos[1]);
-                dgvConvocatoria.DataSource = convocatorias;
+                else if (txtFiltroNombre.Text == "")
+                {
+                    convocatorias = convocatoriaBL.filtroConvocatorias(cbFiltroCiclo.Text);
+                    dgvConvocatoria.DataSource = convocatorias;
+                }
+                else if (cbFiltroCiclo.Text == "")
+                {
+                    convocatorias = convocatoriaBL.listarFiltroNombreActual(txtFiltroNombre.Text, ciclos[0], ciclos[1]);
+                    dgvConvocatoria.DataSource = convocatorias;
+                }
+
+                else
+                {
+                    convocatorias = convocatoriaBL.filtroNombreCiclo(txtFiltroNombre.Text, cbFiltroCiclo.Text);
+                    dgvConvocatoria.DataSource = convocatorias;
+                }
             }
             else
             {
@@ -85,9 +100,15 @@ namespace Vista
                     convocatorias = convocatoriaBL.filtroConvocatorias(cbFiltroCiclo.Text);
                     dgvConvocatoria.DataSource = convocatorias;
                 }
-                else
+                else if (cbFiltroCiclo.Text == "")
                 {
                     convocatorias = convocatoriaBL.listarFiltroNombreAnterior(txtFiltroNombre.Text, ciclos[0], ciclos[1]);
+                    dgvConvocatoria.DataSource = convocatorias;
+                }
+
+                else
+                {
+                    convocatorias = convocatoriaBL.filtroNombreCiclo(txtFiltroNombre.Text, cbFiltroCiclo.Text);
                     dgvConvocatoria.DataSource = convocatorias;
                 }
             }
@@ -102,6 +123,21 @@ namespace Vista
                 dgvConvocatoria.DataSource = convocatorias;
                 MessageBox.Show("El registro ha sido eliminado", "Registro Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            txtFiltroNombre.Text = null;
+            cbFiltroCiclo.Text = null;
+            if (esCicloActual)
+            {
+                convocatorias = convocatoriaBL.listarConvocatoriasActuales(ciclos[0], ciclos[1]);
+            }
+            else
+            {
+                convocatorias = convocatoriaBL.listarConvocatoriasAnteriores(ciclos[0], ciclos[1]);
+            }
+            dgvConvocatoria.DataSource = convocatorias;
         }
     }
 }

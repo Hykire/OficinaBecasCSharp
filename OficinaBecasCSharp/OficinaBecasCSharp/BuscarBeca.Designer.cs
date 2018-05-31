@@ -40,6 +40,8 @@
             // 
             // dgvBuscarBecas
             // 
+            this.dgvBuscarBecas.AllowUserToAddRows = false;
+            this.dgvBuscarBecas.AllowUserToDeleteRows = false;
             this.dgvBuscarBecas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -49,17 +51,20 @@
             this.Descripcion,
             this.FechaConvocatoria,
             this.Financiador});
-            this.dgvBuscarBecas.Location = new System.Drawing.Point(12, 43);
+            this.dgvBuscarBecas.Location = new System.Drawing.Point(16, 53);
+            this.dgvBuscarBecas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBuscarBecas.Name = "dgvBuscarBecas";
-            this.dgvBuscarBecas.Size = new System.Drawing.Size(762, 328);
+            this.dgvBuscarBecas.ReadOnly = true;
+            this.dgvBuscarBecas.Size = new System.Drawing.Size(1016, 404);
             this.dgvBuscarBecas.TabIndex = 4;
             this.dgvBuscarBecas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarBecas_CellContentClick);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(660, 400);
+            this.btnCancelar.Location = new System.Drawing.Point(880, 492);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(133, 28);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -67,9 +72,10 @@
             // 
             // btnAñadir
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(482, 400);
+            this.btnAñadir.Location = new System.Drawing.Point(643, 492);
+            this.btnAñadir.Margin = new System.Windows.Forms.Padding(4);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(102, 23);
+            this.btnAñadir.Size = new System.Drawing.Size(136, 28);
             this.btnAñadir.TabIndex = 6;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
@@ -80,34 +86,43 @@
             this.Nombre_beca.DataPropertyName = "Nombre_beca";
             this.Nombre_beca.HeaderText = "Nombre de Becas";
             this.Nombre_beca.Name = "Nombre_beca";
+            this.Nombre_beca.ReadOnly = true;
+            this.Nombre_beca.Width = 200;
             // 
             // Descripcion
             // 
             this.Descripcion.DataPropertyName = "Descripcion";
             this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 200;
             // 
             // FechaConvocatoria
             // 
             this.FechaConvocatoria.DataPropertyName = "FechaConvocatoria";
             this.FechaConvocatoria.HeaderText = "Fecha de Convocatoria";
             this.FechaConvocatoria.Name = "FechaConvocatoria";
+            this.FechaConvocatoria.ReadOnly = true;
             this.FechaConvocatoria.Visible = false;
+            this.FechaConvocatoria.Width = 200;
             // 
             // Financiador
             // 
             this.Financiador.DataPropertyName = "Financiador";
             this.Financiador.HeaderText = "Financiador";
             this.Financiador.Name = "Financiador";
+            this.Financiador.ReadOnly = true;
+            this.Financiador.Width = 200;
             // 
             // BuscarBeca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dgvBuscarBecas);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BuscarBeca";
             this.Text = "BuscarBeca";
             this.Load += new System.EventHandler(this.BuscarBeca_Load);
