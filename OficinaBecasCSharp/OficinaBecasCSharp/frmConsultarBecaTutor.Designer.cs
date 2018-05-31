@@ -29,17 +29,25 @@
         private void InitializeComponent()
         {
             this.panelConsultarBecaT = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDescripcionSelec = new System.Windows.Forms.TextBox();
+            this.txtFinanciadorSelec = new System.Windows.Forms.TextBox();
+            this.txtFechaConvocatoriaSelec = new System.Windows.Forms.TextBox();
+            this.txtNombreBecaSelec = new System.Windows.Forms.TextBox();
             this.btnBecasExternasCBT = new System.Windows.Forms.Button();
             this.btnBecasPUCPCBT = new System.Windows.Forms.Button();
             this.LabelCBT = new System.Windows.Forms.Label();
             this.LNombBecaCBT = new System.Windows.Forms.Label();
             this.btnBuscarBecaCBT = new System.Windows.Forms.Button();
             this.DGVConsBecaT = new System.Windows.Forms.DataGridView();
-            this.txtCodBecCBT = new System.Windows.Forms.TextBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Financiador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCodBecCBT = new System.Windows.Forms.TextBox();
             this.panelConsultarBecaT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVConsBecaT)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +55,14 @@
             // panelConsultarBecaT
             // 
             this.panelConsultarBecaT.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelConsultarBecaT.Controls.Add(this.label5);
+            this.panelConsultarBecaT.Controls.Add(this.label4);
+            this.panelConsultarBecaT.Controls.Add(this.label3);
+            this.panelConsultarBecaT.Controls.Add(this.label2);
+            this.panelConsultarBecaT.Controls.Add(this.txtDescripcionSelec);
+            this.panelConsultarBecaT.Controls.Add(this.txtFinanciadorSelec);
+            this.panelConsultarBecaT.Controls.Add(this.txtFechaConvocatoriaSelec);
+            this.panelConsultarBecaT.Controls.Add(this.txtNombreBecaSelec);
             this.panelConsultarBecaT.Controls.Add(this.btnBecasExternasCBT);
             this.panelConsultarBecaT.Controls.Add(this.btnBecasPUCPCBT);
             this.panelConsultarBecaT.Controls.Add(this.LabelCBT);
@@ -54,10 +70,80 @@
             this.panelConsultarBecaT.Controls.Add(this.btnBuscarBecaCBT);
             this.panelConsultarBecaT.Controls.Add(this.DGVConsBecaT);
             this.panelConsultarBecaT.Controls.Add(this.txtCodBecCBT);
-            this.panelConsultarBecaT.Location = new System.Drawing.Point(-1, -2);
+            this.panelConsultarBecaT.Location = new System.Drawing.Point(12, 12);
             this.panelConsultarBecaT.Name = "panelConsultarBecaT";
-            this.panelConsultarBecaT.Size = new System.Drawing.Size(801, 454);
+            this.panelConsultarBecaT.Size = new System.Drawing.Size(904, 603);
             this.panelConsultarBecaT.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(265, 486);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Descripcion";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 486);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 13);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Fecha de convocatoria";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(265, 383);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Financiador";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(43, 383);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Nombre de Beca";
+            // 
+            // txtDescripcionSelec
+            // 
+            this.txtDescripcionSelec.Enabled = false;
+            this.txtDescripcionSelec.Location = new System.Drawing.Point(268, 524);
+            this.txtDescripcionSelec.Multiline = true;
+            this.txtDescripcionSelec.Name = "txtDescripcionSelec";
+            this.txtDescripcionSelec.Size = new System.Drawing.Size(259, 45);
+            this.txtDescripcionSelec.TabIndex = 31;
+            // 
+            // txtFinanciadorSelec
+            // 
+            this.txtFinanciadorSelec.Enabled = false;
+            this.txtFinanciadorSelec.Location = new System.Drawing.Point(268, 422);
+            this.txtFinanciadorSelec.Multiline = true;
+            this.txtFinanciadorSelec.Name = "txtFinanciadorSelec";
+            this.txtFinanciadorSelec.Size = new System.Drawing.Size(259, 42);
+            this.txtFinanciadorSelec.TabIndex = 30;
+            // 
+            // txtFechaConvocatoriaSelec
+            // 
+            this.txtFechaConvocatoriaSelec.Enabled = false;
+            this.txtFechaConvocatoriaSelec.Location = new System.Drawing.Point(46, 524);
+            this.txtFechaConvocatoriaSelec.Name = "txtFechaConvocatoriaSelec";
+            this.txtFechaConvocatoriaSelec.Size = new System.Drawing.Size(157, 20);
+            this.txtFechaConvocatoriaSelec.TabIndex = 29;
+            // 
+            // txtNombreBecaSelec
+            // 
+            this.txtNombreBecaSelec.Enabled = false;
+            this.txtNombreBecaSelec.Location = new System.Drawing.Point(46, 422);
+            this.txtNombreBecaSelec.Name = "txtNombreBecaSelec";
+            this.txtNombreBecaSelec.Size = new System.Drawing.Size(157, 20);
+            this.txtNombreBecaSelec.TabIndex = 28;
             // 
             // btnBecasExternasCBT
             // 
@@ -102,7 +188,7 @@
             // 
             // btnBuscarBecaCBT
             // 
-            this.btnBuscarBecaCBT.Location = new System.Drawing.Point(676, 55);
+            this.btnBuscarBecaCBT.Location = new System.Drawing.Point(713, 55);
             this.btnBuscarBecaCBT.Name = "btnBuscarBecaCBT";
             this.btnBuscarBecaCBT.Size = new System.Drawing.Size(92, 23);
             this.btnBuscarBecaCBT.TabIndex = 2;
@@ -126,15 +212,9 @@
             this.DGVConsBecaT.Location = new System.Drawing.Point(169, 99);
             this.DGVConsBecaT.Name = "DGVConsBecaT";
             this.DGVConsBecaT.ReadOnly = true;
-            this.DGVConsBecaT.Size = new System.Drawing.Size(599, 319);
+            this.DGVConsBecaT.Size = new System.Drawing.Size(636, 220);
             this.DGVConsBecaT.TabIndex = 3;
-            // 
-            // txtCodBecCBT
-            // 
-            this.txtCodBecCBT.Location = new System.Drawing.Point(169, 58);
-            this.txtCodBecCBT.Name = "txtCodBecCBT";
-            this.txtCodBecCBT.Size = new System.Drawing.Size(320, 20);
-            this.txtCodBecCBT.TabIndex = 1;
+            this.DGVConsBecaT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVConsBecaT_CellClick);
             // 
             // Id
             // 
@@ -164,11 +244,18 @@
             this.Financiador.Name = "Financiador";
             this.Financiador.ReadOnly = true;
             // 
+            // txtCodBecCBT
+            // 
+            this.txtCodBecCBT.Location = new System.Drawing.Point(169, 58);
+            this.txtCodBecCBT.Name = "txtCodBecCBT";
+            this.txtCodBecCBT.Size = new System.Drawing.Size(320, 20);
+            this.txtCodBecCBT.TabIndex = 1;
+            // 
             // frmConsultarBecaTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(928, 627);
             this.Controls.Add(this.panelConsultarBecaT);
             this.Name = "frmConsultarBecaTutor";
             this.Text = "frmConsultarBecaTutor";
@@ -194,5 +281,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Financiador;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtDescripcionSelec;
+        private System.Windows.Forms.TextBox txtFinanciadorSelec;
+        private System.Windows.Forms.TextBox txtFechaConvocatoriaSelec;
+        private System.Windows.Forms.TextBox txtNombreBecaSelec;
     }
 }

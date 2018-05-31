@@ -26,26 +26,31 @@ namespace Vista
             BuscarBeca frmBuscarBeca = new BuscarBeca();
             frmBuscarBeca.Show();
         }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         /*
-        private void CB_button_Click(object sender, EventArgs e)
-        {
-            panelConsultarEmails.Visible = false;
-            panelConsultarBecario.Visible = false;
-            panelConsultarBecas.Visible = true;
-        }
+private void CB_button_Click(object sender, EventArgs e)
+{
+   panelConsultarEmails.Visible = false;
+   panelConsultarBecario.Visible = false;
+   panelConsultarBecas.Visible = true;
+}
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
-        {
-            panelConsultarEmails.Visible = false;
-            panelConsultarBecario.Visible = true;
-            panelConsultarBecas.Visible = false;
-        }
+private void bunifuFlatButton1_Click(object sender, EventArgs e)
+{
+   panelConsultarEmails.Visible = false;
+   panelConsultarBecario.Visible = true;
+   panelConsultarBecas.Visible = false;
+}
 
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            panelConsultarEmails.Visible = true;
-            panelConsultarBecario.Visible = false;
-            panelConsultarBecas.Visible = false;
-        }*/
+private void bunifuFlatButton2_Click(object sender, EventArgs e)
+{
+   panelConsultarEmails.Visible = true;
+   panelConsultarBecario.Visible = false;
+   panelConsultarBecas.Visible = false;
+}*/
     }
 }

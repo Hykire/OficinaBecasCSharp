@@ -27,5 +27,9 @@ namespace Controlador
         {
             return accesoDatos.listarBecas();
         }
+        public BindingList<Beca> listarBecaSolicitada(string name)
+        {
+            return accesoDatos.listarBecaSolicitada(name);
+        }
     }
 }

@@ -223,6 +223,7 @@ namespace AccesoDatos
                 per.Apellidos = reader.GetString("APELLIDOS");
                 //es id becario 
                 per.Id_alumno = reader.GetInt32("ID_BECADO");
+                per.CorreoPUCP = reader.GetString("CORREO_PUCP");
                 lista.Add(per);
             }
             con.Close();
