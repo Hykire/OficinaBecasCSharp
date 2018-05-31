@@ -24,11 +24,11 @@ namespace AccesoDatos
             comando.CommandText = "Y_INSERTAR_CITA";
 
             comando.Connection = con;
-            comando.Parameters.AddWithValue("idPer", cita.Fecha);
-            comando.Parameters.AddWithValue("idCoord", cita.Lugar);
-            comando.Parameters.AddWithValue("estado", cita.Observacion);
-            comando.Parameters.AddWithValue("idCoord", idBec);
-            comando.Parameters.AddWithValue("estado", idTut);
+            comando.Parameters.AddWithValue("fecha", cita.Fecha);
+            comando.Parameters.AddWithValue("lugar", cita.Lugar);
+            comando.Parameters.AddWithValue("obs", cita.Observacion);
+            comando.Parameters.AddWithValue("idBec", idBec);
+            comando.Parameters.AddWithValue("idTut", idTut);
 
             comando.ExecuteNonQuery();
             con.Close();
@@ -39,14 +39,14 @@ namespace AccesoDatos
             BindingList<Cita> lista = new BindingList<Cita>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
                 "user=inf282g6;database=inf282g6;" +
-                "port=3306;password=Nk2ewy;SslMode=none;" +
+                "port=3306;password=Nk2ewy;SslMode=none;Convert Zero DateTime=True;" +
                 "";
             MySqlConnection con = new MySqlConnection(cadena);
             con.Open();
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = "Y_BUSCAR_CITA";
-
+            //Convert Zero DateTime=True;
             comando.Connection = con;
             comando.Parameters.AddWithValue("fecha", fecha);
             comando.Connection = con;
@@ -56,7 +56,7 @@ namespace AccesoDatos
             {
                 // P.ID_PERSONA, P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.TELF_MOVIL, P.CORREO_PUCP, P.DNI FROM PERSONA P INNER JOIN
                 Cita cita = new Cita();
-                cita.Fecha = reader.GetDateTime("FECHA").ToString();
+                cita.Fecha = reader.GetDateTime("FECHA");
                 cita.Lugar = reader.GetString("LUGAR");
                 cita.Observacion = reader.GetString("OBSERVACION");
                 lista.Add(cita);

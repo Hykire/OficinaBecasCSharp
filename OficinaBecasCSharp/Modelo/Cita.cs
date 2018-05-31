@@ -9,7 +9,7 @@ namespace Modelo
     public class Cita
     {
         private int idCita;
-        private string fecha;
+        private DateTime fecha;
        // private string hora;
         private string observacion;
         private string lugar;
@@ -20,7 +20,7 @@ namespace Modelo
         }
 
         public int IdCita { get => idCita; set => idCita = value; }
-        public string Fecha { get => fecha; set => fecha = value; }
+        public DateTime Fecha { get => fecha; set => fecha = value; }
         public string Observacion { get => observacion; set => observacion = value; }
         public string Lugar { get => lugar; set => lugar = value; }
        // public string Hora { get => hora; set => hora = value; }

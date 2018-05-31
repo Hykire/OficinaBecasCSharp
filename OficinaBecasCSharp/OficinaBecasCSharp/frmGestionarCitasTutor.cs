@@ -94,13 +94,13 @@ namespace Vista
 
             BindingList<Cita> lista = new BindingList<Cita>();
            // MessageBox.Show(DTPSelDiaGC.Text);
-            /*lista = logicaNegocioCita.buscarcita(DTPSelDiaGC.Text.ToString());
+            lista = logicaNegocioCita.buscarcita(DTPSelDiaGC.Text.ToString());
            foreach(Cita c in lista)
             {
-                txtBFechaGC.Text = c.Fecha;
+                txtBFechaGC.Text = c.Fecha.ToString();
                 txtBLugarGC.Text = c.Lugar;
                 txtBObsGC.Text = c.Observacion;
-            }*/
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -131,7 +131,7 @@ namespace Vista
 
             DTPSelDiaGC.Enabled = false;
             BBuscarCitaGC.Enabled = false;
-
+            DTPSelDiaGC.Enabled = true;
             txtBFechaGC.Enabled = true;
             //txtBHoraGC.Enabled = true;
             txtBLugarGC.Enabled = true;
@@ -208,13 +208,13 @@ namespace Vista
             string fecha = txtBFechaGC.Text.ToString();
             int idTut = Convert.ToInt32(txtIdtutOculto.Text.ToString());
             int idBec = Convert.ToInt32(txtIdBecOculto.Text.ToString());
-
+            DTPSelDiaGC.Enabled = false;
             Cita cita = new Cita();
-            cita.Fecha = txtBFechaGC.Text;
+            cita.Fecha = DateTime.Parse(DTPSelDiaGC.Text);
             cita.Lugar = txtBLugarGC.Text;
             cita.Observacion = txtBObsGC.Text;
 
-            //logicaNegocioCita.agregarCita(cita, idBec, idTut);
+            logicaNegocioCita.agregarCita(cita, idBec, idTut);
            
         }
     }

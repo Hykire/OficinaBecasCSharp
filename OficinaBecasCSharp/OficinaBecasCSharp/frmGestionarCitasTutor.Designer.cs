@@ -31,12 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarCitasTutor));
             this.PGestCitas = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtIdtutOculto = new System.Windows.Forms.TextBox();
             this.btnBuscarTutor = new System.Windows.Forms.Button();
             this.txtBTutorGC = new System.Windows.Forms.TextBox();
             this.txtCodTutorGC = new System.Windows.Forms.TextBox();
             this.LTuutorGC = new System.Windows.Forms.Label();
             this.LCodTutorGC = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIdBecOculto = new System.Windows.Forms.TextBox();
             this.btnBuscarBecario = new System.Windows.Forms.Button();
             this.txtBBecarioGC = new System.Windows.Forms.TextBox();
             this.txtCodBecGC = new System.Windows.Forms.TextBox();
@@ -49,20 +51,18 @@
             this.GBDetalleCitaGC = new System.Windows.Forms.GroupBox();
             this.txtidCitaOculto = new System.Windows.Forms.TextBox();
             this.txtBLugarGC = new System.Windows.Forms.TextBox();
-            this.txtBFechaGC = new System.Windows.Forms.TextBox();
             this.LLugarGC = new System.Windows.Forms.Label();
             this.LFechaGC = new System.Windows.Forms.Label();
             this.LSelFechaGC = new System.Windows.Forms.Label();
             this.DTPSelDiaGC = new System.Windows.Forms.DateTimePicker();
             this.toolStrip_GestionarTutores = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.txtIdtutOculto = new System.Windows.Forms.TextBox();
-            this.txtIdBecOculto = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.txtBFechaGC = new System.Windows.Forms.TextBox();
             this.PGestCitas.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -102,6 +102,13 @@
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Tutor";
+            // 
+            // txtIdtutOculto
+            // 
+            this.txtIdtutOculto.Location = new System.Drawing.Point(295, 30);
+            this.txtIdtutOculto.Name = "txtIdtutOculto";
+            this.txtIdtutOculto.Size = new System.Drawing.Size(49, 20);
+            this.txtIdtutOculto.TabIndex = 19;
             // 
             // btnBuscarTutor
             // 
@@ -159,6 +166,13 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Becario";
+            // 
+            // txtIdBecOculto
+            // 
+            this.txtIdBecOculto.Location = new System.Drawing.Point(299, 29);
+            this.txtIdBecOculto.Name = "txtIdBecOculto";
+            this.txtIdBecOculto.Size = new System.Drawing.Size(49, 20);
+            this.txtIdBecOculto.TabIndex = 20;
             // 
             // btnBuscarBecario
             // 
@@ -268,13 +282,6 @@
             this.txtBLugarGC.Size = new System.Drawing.Size(225, 20);
             this.txtBLugarGC.TabIndex = 11;
             // 
-            // txtBFechaGC
-            // 
-            this.txtBFechaGC.Location = new System.Drawing.Point(89, 31);
-            this.txtBFechaGC.Name = "txtBFechaGC";
-            this.txtBFechaGC.Size = new System.Drawing.Size(154, 20);
-            this.txtBFechaGC.TabIndex = 7;
-            // 
             // LLugarGC
             // 
             this.LLugarGC.AutoSize = true;
@@ -304,7 +311,6 @@
             // 
             // DTPSelDiaGC
             // 
-            this.DTPSelDiaGC.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPSelDiaGC.Location = new System.Drawing.Point(144, 76);
             this.DTPSelDiaGC.Name = "DTPSelDiaGC";
             this.DTPSelDiaGC.Size = new System.Drawing.Size(200, 20);
@@ -324,25 +330,6 @@
             this.toolStrip_GestionarTutores.Size = new System.Drawing.Size(800, 25);
             this.toolStrip_GestionarTutores.TabIndex = 18;
             this.toolStrip_GestionarTutores.Text = "toolStrip2";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // txtIdtutOculto
-            // 
-            this.txtIdtutOculto.Location = new System.Drawing.Point(295, 30);
-            this.txtIdtutOculto.Name = "txtIdtutOculto";
-            this.txtIdtutOculto.Size = new System.Drawing.Size(49, 20);
-            this.txtIdtutOculto.TabIndex = 19;
-            // 
-            // txtIdBecOculto
-            // 
-            this.txtIdBecOculto.Location = new System.Drawing.Point(299, 29);
-            this.txtIdBecOculto.Name = "txtIdBecOculto";
-            this.txtIdBecOculto.Size = new System.Drawing.Size(49, 20);
-            this.txtIdBecOculto.TabIndex = 20;
             // 
             // btnNuevo
             // 
@@ -370,6 +357,11 @@
             this.btnEditar.Size = new System.Drawing.Size(57, 22);
             this.btnEditar.Text = "Editar";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
@@ -387,6 +379,13 @@
             this.btnEliminar.Size = new System.Drawing.Size(70, 22);
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txtBFechaGC
+            // 
+            this.txtBFechaGC.Location = new System.Drawing.Point(89, 31);
+            this.txtBFechaGC.Name = "txtBFechaGC";
+            this.txtBFechaGC.Size = new System.Drawing.Size(154, 20);
+            this.txtBFechaGC.TabIndex = 7;
             // 
             // frmGestionarCitasTutor
             // 
@@ -430,7 +429,6 @@
         private System.Windows.Forms.Label LCodTutorGC;
         private System.Windows.Forms.TextBox txtBBecarioGC;
         private System.Windows.Forms.TextBox txtBTutorGC;
-        private System.Windows.Forms.TextBox txtBFechaGC;
         private System.Windows.Forms.Label LLugarGC;
         private System.Windows.Forms.Label LBecarioGC;
         private System.Windows.Forms.Label LTuutorGC;
@@ -451,5 +449,6 @@
         private System.Windows.Forms.Button btnBuscarBecario;
         private System.Windows.Forms.TextBox txtIdtutOculto;
         private System.Windows.Forms.TextBox txtIdBecOculto;
+        private System.Windows.Forms.TextBox txtBFechaGC;
     }
 }
