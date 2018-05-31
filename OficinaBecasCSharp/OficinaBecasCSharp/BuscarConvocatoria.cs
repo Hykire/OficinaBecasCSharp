@@ -17,21 +17,28 @@ namespace Vista
         private ConvocatoriaBL convocatoriaBL;
         private BindingList<Convocatoria> convocatorias;
         private Convocatoria convocatoriaSeleccionada;
-        private string ciclo;
+        private BindingList<string> ciclos;
+        private bool esCicloActual;
 
         public Convocatoria ConvocatoriaSeleccionada { get => convocatoriaSeleccionada; set => convocatoriaSeleccionada = value; }
 
-        public frmBuscarConvocatoria(string ciclo, bool esCicloActual)
+        public frmBuscarConvocatoria(BindingList<string> ciclos, bool esCicloActual)
         {
             InitializeComponent();
-            this.ciclo = ciclo;
+            this.ciclos = ciclos;
+            this.esCicloActual = esCicloActual;
             convocatoriaBL = new ConvocatoriaBL();
-            if (esCicloActual) convocatorias = convocatoriaBL.listarConvocatoriasActuales(ciclo);
+            if (esCicloActual)
+            {
+                convocatorias = convocatoriaBL.listarConvocatoriasActuales(ciclos[0],ciclos[1]);
+                cbFiltroCiclo.Enabled = false;
+            }
             else
             {
                 btnSeleccionar.Visible = false;
                 btnEliminar.Visible = false;
-                convocatorias = convocatoriaBL.listarConvocatoriasAnteriores(ciclo);
+                convocatorias = convocatoriaBL.listarConvocatoriasAnteriores(ciclos[0], ciclos[1]);
+                cbFiltroCiclo.DataSource = convocatoriaBL.ciclosAnteriores(ciclos[0], ciclos[1]);
             }
 
             dgvConvocatoria.AutoGenerateColumns = false;
@@ -56,12 +63,34 @@ namespace Vista
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if(txtFiltroNombre.Text == "")
+            if (esCicloActual == true)
             {
-                MessageBox.Show("Debe ingresar un nombre a buscar", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                if (txtFiltroNombre.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un nombre a buscar", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                convocatorias = convocatoriaBL.listarFiltroNombreActual(txtFiltroNombre.Text, ciclos[0], ciclos[1]);
+                dgvConvocatoria.DataSource = convocatorias;
             }
-            convocatorias = convocatoriaBL.listarFiltroNombre(txtFiltroNombre.Text);
+            else
+            {
+                if (txtFiltroNombre.Text == "" && cbFiltroCiclo.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un nombre o un ciclo a buscar", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else if (txtFiltroNombre.Text == "")
+                {
+                    convocatorias = convocatoriaBL.filtroConvocatorias(cbFiltroCiclo.Text);
+                    dgvConvocatoria.DataSource = convocatorias;
+                }
+                else
+                {
+                    convocatorias = convocatoriaBL.listarFiltroNombreAnterior(txtFiltroNombre.Text, ciclos[0], ciclos[1]);
+                    dgvConvocatoria.DataSource = convocatorias;
+                }
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -69,7 +98,7 @@ namespace Vista
             if(MessageBox.Show("Está apunto de eliminar un registro de la base de datos. ¿Está seguro que desea realizarlo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK) {
                 Convocatoria convocatoria = (Convocatoria)dgvConvocatoria.CurrentRow.DataBoundItem;
                 convocatoriaBL.eliminarConvocatoria(convocatoria);
-                convocatorias = convocatoriaBL.listarConvocatoriasActuales(ciclo);
+                convocatorias = convocatoriaBL.listarConvocatoriasActuales(ciclos[0], ciclos[1]);
                 dgvConvocatoria.DataSource = convocatorias;
                 MessageBox.Show("El registro ha sido eliminado", "Registro Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

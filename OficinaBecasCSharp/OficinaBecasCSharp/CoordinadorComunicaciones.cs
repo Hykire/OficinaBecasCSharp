@@ -26,12 +26,7 @@ namespace Vista
             asistente.Nombres = "Ariana";
             asistente.Apellidos = "Grande";
             asistente.IdAsistente = 1;
-            BindingList<string> ciclos = new BindingList<string>();
-            ciclos.Add("2018-1");
-            ciclos.Add("2018-2");
-            ciclos.Add("2019-1");
-            ciclos.Add("2019-2");
-            cbCicloConvocatoria.DataSource = ciclos;
+            cbCicloConvocatoria.DataSource = agregarCiclos(DateTime.Today);
             txtIdConvocatoria.Enabled = false;
             txtNombreConvocatoria.Enabled = false;
             txtDescripcionConvocatoria.Enabled = false;
@@ -52,6 +47,22 @@ namespace Vista
             btnBuscar.Enabled = true;
             btnActualizar.Enabled = false;
             EstadoInicial();
+        }
+
+        public BindingList<string> agregarCiclos(DateTime fecha)
+        {
+            BindingList<string> ciclos = new BindingList<string>();
+            if (fecha.Month < 7)
+            {
+                ciclos.Add(fecha.Year.ToString() + "-" + "1");
+                ciclos.Add(fecha.Year.ToString() + "-" + "2");
+            }
+            else
+            {
+                ciclos.Add(fecha.Year.ToString() + "-" + "2");
+                ciclos.Add((fecha.Year + 1).ToString() + "-" + "1");
+            }
+            return ciclos;
         }
 
         public void EstadoInicial()
@@ -112,7 +123,7 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frmBuscarConvocatoria convocatoria = new frmBuscarConvocatoria("2018-1",true);
+            frmBuscarConvocatoria convocatoria = new frmBuscarConvocatoria(agregarCiclos(DateTime.Today),true);
             convocatoria.Owner = this;
             actualizar = false;
             if(convocatoria.ShowDialog() == DialogResult.OK)

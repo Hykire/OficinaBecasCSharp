@@ -16,9 +16,9 @@ namespace Controlador
         {
             convocatoriaDA = new ConvocatoriaDA();
         }
-        public BindingList<Convocatoria> listarConvocatoriasActuales(string ciclo)
+        public BindingList<Convocatoria> listarConvocatoriasActuales(string ciclo, string ciclo2)
         {
-            return convocatoriaDA.listarConvocatoriasActuales(ciclo);
+            return convocatoriaDA.listarConvocatoriasActuales(ciclo, ciclo2);
         }
 
         public int agregarConvocatoria(Convocatoria convocatoria)
@@ -26,14 +26,22 @@ namespace Controlador
             return convocatoriaDA.agregarConvocatoria(convocatoria);
         }
  
-        public BindingList<Convocatoria> listarFiltroNombre(string nombre)
+        public BindingList<Convocatoria> listarFiltroNombreAnterior(string nombre, string ciclo, string ciclo2)
         {
-            return convocatoriaDA.listarFiltroNombre(nombre);
+            return convocatoriaDA.listarFiltroNombreAnterior(nombre,ciclo, ciclo2);
+        }
+        public BindingList<Convocatoria> listarFiltroNombreActual(string nombre, string ciclo, string ciclo2)
+        {
+            return convocatoriaDA.listarFiltroNombreActual(nombre,ciclo, ciclo2);
         }
 
-        public BindingList<Convocatoria> listarConvocatoriasAnteriores(string ciclo)
+        public BindingList<Convocatoria> filtroConvocatorias(string ciclo)
         {
-            return convocatoriaDA.listarConvocatoriasAnteriores(ciclo);
+            return convocatoriaDA.filtroConvocatorias(ciclo);
+        }
+        public BindingList<Convocatoria> listarConvocatoriasAnteriores(string ciclo, string ciclo2)
+        {
+            return convocatoriaDA.listarConvocatoriasAnteriores(ciclo, ciclo2);
         }
 
         public void actualizarConvocatoria(Convocatoria convocatoria)
@@ -44,6 +52,11 @@ namespace Controlador
         public void eliminarConvocatoria(Convocatoria convocatoria)
         {
             convocatoriaDA.eliminarConvocatoria(convocatoria);
+        }
+
+        public BindingList<string> ciclosAnteriores(string ciclo, string ciclo2)
+        {
+            return convocatoriaDA.ciclosAnteriores(ciclo, ciclo2);
         }
     }
 }

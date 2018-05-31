@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvConvocatoria = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFiltroNombre = new System.Windows.Forms.TextBox();
-            this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnFiltrar = new System.Windows.Forms.Button();
             this.NombreConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescripcionConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +41,13 @@
             this.CicloConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreBeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCreadorConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtFiltroNombre = new System.Windows.Forms.TextBox();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.cbFiltroCiclo = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvocatoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,59 +69,12 @@
             this.CicloConvocatoria,
             this.NombreBeca,
             this.NombreCreadorConvocatoria});
-            this.dgvConvocatoria.Location = new System.Drawing.Point(16, 69);
+            this.dgvConvocatoria.Location = new System.Drawing.Point(16, 125);
             this.dgvConvocatoria.Name = "dgvConvocatoria";
             this.dgvConvocatoria.ReadOnly = true;
             this.dgvConvocatoria.RowTemplate.Height = 24;
-            this.dgvConvocatoria.Size = new System.Drawing.Size(1167, 365);
+            this.dgvConvocatoria.Size = new System.Drawing.Size(1167, 388);
             this.dgvConvocatoria.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Filtro por Nombre:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txtFiltroNombre
-            // 
-            this.txtFiltroNombre.Location = new System.Drawing.Point(154, 26);
-            this.txtFiltroNombre.Name = "txtFiltroNombre";
-            this.txtFiltroNombre.Size = new System.Drawing.Size(285, 22);
-            this.txtFiltroNombre.TabIndex = 2;
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(742, 19);
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(191, 36);
-            this.btnSeleccionar.TabIndex = 3;
-            this.btnSeleccionar.Text = "Seleccionar";
-            this.btnSeleccionar.UseVisualStyleBackColor = true;
-            this.btnSeleccionar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(992, 19);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(191, 36);
-            this.btnEliminar.TabIndex = 4;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Location = new System.Drawing.Point(493, 19);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(191, 36);
-            this.btnFiltrar.TabIndex = 5;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // NombreConvocatoria
             // 
@@ -205,11 +160,78 @@
             this.NombreCreadorConvocatoria.Name = "NombreCreadorConvocatoria";
             this.NombreCreadorConvocatoria.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Filtro por Nombre:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtFiltroNombre
+            // 
+            this.txtFiltroNombre.Location = new System.Drawing.Point(154, 26);
+            this.txtFiltroNombre.Name = "txtFiltroNombre";
+            this.txtFiltroNombre.Size = new System.Drawing.Size(387, 22);
+            this.txtFiltroNombre.TabIndex = 2;
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Location = new System.Drawing.Point(592, 19);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(191, 36);
+            this.btnSeleccionar.TabIndex = 3;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(819, 17);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(191, 36);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(350, 70);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(191, 36);
+            this.btnFiltrar.TabIndex = 5;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // cbFiltroCiclo
+            // 
+            this.cbFiltroCiclo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFiltroCiclo.FormattingEnabled = true;
+            this.cbFiltroCiclo.Location = new System.Drawing.Point(154, 77);
+            this.cbFiltroCiclo.Name = "cbFiltroCiclo";
+            this.cbFiltroCiclo.Size = new System.Drawing.Size(121, 24);
+            this.cbFiltroCiclo.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Filtro por Ciclo:";
+            // 
             // frmBuscarConvocatoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 450);
+            this.ClientSize = new System.Drawing.Size(1220, 525);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbFiltroCiclo);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnSeleccionar);
@@ -245,5 +267,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CicloConvocatoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreBeca;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCreadorConvocatoria;
+        private System.Windows.Forms.ComboBox cbFiltroCiclo;
+        private System.Windows.Forms.Label label2;
     }
 }

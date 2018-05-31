@@ -38,7 +38,7 @@ namespace Vista
                 if (this.panel2.Controls.Count > 0)
                     this.panel2.Controls.RemoveAt(0);
                 frmBuscarConvocatoria form = Application.OpenForms.OfType<frmBuscarConvocatoria>().FirstOrDefault();
-                frmBuscarConvocatoria ventana = form ?? new frmBuscarConvocatoria("2018-1",false);
+                frmBuscarConvocatoria ventana = form ?? new frmBuscarConvocatoria(agregarCiclos(DateTime.Today),false);
                 ventana.TopLevel = false;
                 ventana.FormBorderStyle = FormBorderStyle.None;
                 ventana.Dock = DockStyle.Fill;
@@ -47,6 +47,21 @@ namespace Vista
                 ventana.Show();
             }
             else MessageBox.Show("Debe seleccionar una opción", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        public BindingList<string> agregarCiclos(DateTime fecha)
+        {
+            BindingList<string> ciclos = new BindingList<string>();
+            if (fecha.Month < 7)
+            {
+                ciclos.Add(fecha.Year.ToString() + "-" + "1");
+                ciclos.Add(fecha.Year.ToString() + "-" + "2");
+            }
+            else
+            {
+                ciclos.Add(fecha.Year.ToString() + "-" + "2");
+                ciclos.Add((fecha.Year + 1).ToString() + "-" + "1");
+            }
+            return ciclos;
         }
         private void AdministrarAsistComunicaciones_Load(object sender, EventArgs e)
         {
