@@ -23,9 +23,11 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionSistema));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.GestionarBecasxAlumno = new System.Windows.Forms.Button();
-            this.btnGestionarAlumnos = new System.Windows.Forms.Button();
+            this.btn_fake = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_becados_x_Becas = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_gestionarBecados = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -33,33 +35,119 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.GestionarBecasxAlumno);
-            this.panel1.Controls.Add(this.btnGestionarAlumnos);
+            this.panel1.Controls.Add(this.btn_fake);
+            this.panel1.Controls.Add(this.btn_becados_x_Becas);
+            this.panel1.Controls.Add(this.btn_gestionarBecados);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 441);
             this.panel1.TabIndex = 27;
             // 
-            // GestionarBecasxAlumno
+            // btn_fake
             // 
-            this.GestionarBecasxAlumno.Location = new System.Drawing.Point(26, 198);
-            this.GestionarBecasxAlumno.Name = "GestionarBecasxAlumno";
-            this.GestionarBecasxAlumno.Size = new System.Drawing.Size(149, 23);
-            this.GestionarBecasxAlumno.TabIndex = 5;
-            this.GestionarBecasxAlumno.Text = "Gestionar Becas por Alumno";
-            this.GestionarBecasxAlumno.UseVisualStyleBackColor = true;
-            this.GestionarBecasxAlumno.Click += new System.EventHandler(this.GestionarBecasxAlumno_Click);
+            this.btn_fake.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_fake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_fake.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_fake.BorderRadius = 0;
+            this.btn_fake.ButtonText = "fake :v";
+            this.btn_fake.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_fake.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_fake.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_fake.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_fake.Iconimage")));
+            this.btn_fake.Iconimage_right = null;
+            this.btn_fake.Iconimage_right_Selected = null;
+            this.btn_fake.Iconimage_Selected = null;
+            this.btn_fake.IconMarginLeft = 0;
+            this.btn_fake.IconMarginRight = 0;
+            this.btn_fake.IconRightVisible = true;
+            this.btn_fake.IconRightZoom = 0D;
+            this.btn_fake.IconVisible = true;
+            this.btn_fake.IconZoom = 90D;
+            this.btn_fake.IsTab = false;
+            this.btn_fake.Location = new System.Drawing.Point(0, 0);
+            this.btn_fake.Name = "btn_fake";
+            this.btn_fake.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_fake.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_fake.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_fake.selected = false;
+            this.btn_fake.Size = new System.Drawing.Size(200, 48);
+            this.btn_fake.TabIndex = 8;
+            this.btn_fake.Text = "fake :v";
+            this.btn_fake.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_fake.Textcolor = System.Drawing.Color.White;
+            this.btn_fake.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fake.Visible = false;
             // 
-            // btnGestionarAlumnos
+            // btn_becados_x_Becas
             // 
-            this.btnGestionarAlumnos.Location = new System.Drawing.Point(26, 158);
-            this.btnGestionarAlumnos.Name = "btnGestionarAlumnos";
-            this.btnGestionarAlumnos.Size = new System.Drawing.Size(149, 23);
-            this.btnGestionarAlumnos.TabIndex = 4;
-            this.btnGestionarAlumnos.Text = "Gestionar Alumnos";
-            this.btnGestionarAlumnos.UseVisualStyleBackColor = true;
-            this.btnGestionarAlumnos.Click += new System.EventHandler(this.btnGestionarAlumnos_Click);
+            this.btn_becados_x_Becas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_becados_x_Becas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btn_becados_x_Becas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_becados_x_Becas.BorderRadius = 0;
+            this.btn_becados_x_Becas.ButtonText = "Gestionar Becas";
+            this.btn_becados_x_Becas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_becados_x_Becas.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_becados_x_Becas.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_becados_x_Becas.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_becados_x_Becas.Iconimage")));
+            this.btn_becados_x_Becas.Iconimage_right = null;
+            this.btn_becados_x_Becas.Iconimage_right_Selected = null;
+            this.btn_becados_x_Becas.Iconimage_Selected = null;
+            this.btn_becados_x_Becas.IconMarginLeft = 0;
+            this.btn_becados_x_Becas.IconMarginRight = 0;
+            this.btn_becados_x_Becas.IconRightVisible = true;
+            this.btn_becados_x_Becas.IconRightZoom = 0D;
+            this.btn_becados_x_Becas.IconVisible = true;
+            this.btn_becados_x_Becas.IconZoom = 90D;
+            this.btn_becados_x_Becas.IsTab = true;
+            this.btn_becados_x_Becas.Location = new System.Drawing.Point(0, 108);
+            this.btn_becados_x_Becas.Name = "btn_becados_x_Becas";
+            this.btn_becados_x_Becas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btn_becados_x_Becas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.btn_becados_x_Becas.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_becados_x_Becas.selected = false;
+            this.btn_becados_x_Becas.Size = new System.Drawing.Size(200, 48);
+            this.btn_becados_x_Becas.TabIndex = 7;
+            this.btn_becados_x_Becas.Text = "Gestionar Becas";
+            this.btn_becados_x_Becas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_becados_x_Becas.Textcolor = System.Drawing.Color.White;
+            this.btn_becados_x_Becas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_becados_x_Becas.Click += new System.EventHandler(this.btn_becados_x_Becas_Click);
+            // 
+            // btn_gestionarBecados
+            // 
+            this.btn_gestionarBecados.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_gestionarBecados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btn_gestionarBecados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_gestionarBecados.BorderRadius = 0;
+            this.btn_gestionarBecados.ButtonText = "Gestionar Becados";
+            this.btn_gestionarBecados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_gestionarBecados.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_gestionarBecados.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_gestionarBecados.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_gestionarBecados.Iconimage")));
+            this.btn_gestionarBecados.Iconimage_right = null;
+            this.btn_gestionarBecados.Iconimage_right_Selected = null;
+            this.btn_gestionarBecados.Iconimage_Selected = null;
+            this.btn_gestionarBecados.IconMarginLeft = 0;
+            this.btn_gestionarBecados.IconMarginRight = 0;
+            this.btn_gestionarBecados.IconRightVisible = true;
+            this.btn_gestionarBecados.IconRightZoom = 0D;
+            this.btn_gestionarBecados.IconVisible = true;
+            this.btn_gestionarBecados.IconZoom = 90D;
+            this.btn_gestionarBecados.IsTab = true;
+            this.btn_gestionarBecados.Location = new System.Drawing.Point(0, 54);
+            this.btn_gestionarBecados.Name = "btn_gestionarBecados";
+            this.btn_gestionarBecados.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btn_gestionarBecados.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.btn_gestionarBecados.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_gestionarBecados.selected = false;
+            this.btn_gestionarBecados.Size = new System.Drawing.Size(200, 48);
+            this.btn_gestionarBecados.TabIndex = 6;
+            this.btn_gestionarBecados.Text = "Gestionar Becados";
+            this.btn_gestionarBecados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_gestionarBecados.Textcolor = System.Drawing.Color.White;
+            this.btn_gestionarBecados.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_gestionarBecados.Click += new System.EventHandler(this.btn_gestionarBecados_Click);
             // 
             // panel2
             // 
@@ -95,7 +183,8 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnGestionarAlumnos;
-        private System.Windows.Forms.Button GestionarBecasxAlumno;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_gestionarBecados;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_becados_x_Becas;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_fake;
     }
 }

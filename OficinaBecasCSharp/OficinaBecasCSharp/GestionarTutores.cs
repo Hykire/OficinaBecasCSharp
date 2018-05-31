@@ -18,7 +18,7 @@ namespace Vista
         private TutorBL logicaNegocioTutor;
         private Persona tutorSelecc;
         private Persona p;
-        private Alumno al;
+        private Becado al;
 
         public Persona TutorSelecc { get => tutorSelecc; set => tutorSelecc = value; }
 
@@ -114,9 +114,9 @@ namespace Vista
             if (frmABTXB.ShowDialog() == DialogResult.OK)
             {
                 BindingList<Tutor> lista = new BindingList<Tutor>();
-                al = (Alumno)frmABTXB.PersonaSeleccionada;
-                int cod = al.Id_alumno;
-                txtCAIdOcullto.Text = al.Id_alumno.ToString();
+                al = (Becado)frmABTXB.PersonaSeleccionada;
+                int cod = al.Id_becado;
+                txtCAIdOcullto.Text = al.Id_becado.ToString();
                 txtBAcod.Text = al.CodigoPUCP.ToString();
                 txtBANomb.Text = al.Nombres;
                 txtBAApe.Text = al.Apellidos;

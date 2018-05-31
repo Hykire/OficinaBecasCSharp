@@ -15,7 +15,7 @@ namespace Modelo
         private char _sexo;
         private int _dni;
         private int _edad;
-        private string _fecha_nacimiento;
+        private DateTime _fecha_nacimiento;
         private string _correoPUCP;
         private string _correoAlternativo;
         private string _telfMovil;
@@ -23,7 +23,7 @@ namespace Modelo
         private string _estado;
 
         private string _profesion; //lo uso en gestionar profes
-        
+
         //private TipoUsuario tipoUsuario;
         //private Usuario usuarioP;
 
@@ -36,10 +36,10 @@ namespace Modelo
         public char Sexo { get => _sexo; set => _sexo = value; }
         public int Dni { get => _dni; set => _dni = value; }
         public int Edad { get => _edad; set => _edad = value; }
-        public string Fecha_nacimiento { get => _fecha_nacimiento; set => _fecha_nacimiento = value; }
+        public DateTime Fecha_nacimiento { get => _fecha_nacimiento; set => _fecha_nacimiento = value; }
         public string CorreoPUCP { get => _correoPUCP; set => _correoPUCP = value; }
         public string CorreoAlternativo { get => _correoAlternativo; set => _correoAlternativo = value; }
-        public string TelfMovil{ get => _telfMovil; set => _telfMovil = value; }
+        public string TelfMovil { get => _telfMovil; set => _telfMovil = value; }
         public string TelfFijo { get => _telfFijo; set => _telfFijo = value; }
         public string Profesion { get => _profesion; set => _profesion = value; }//lo uso en gestionar profes
         public string Estado { get => _estado; set => _estado = value; }

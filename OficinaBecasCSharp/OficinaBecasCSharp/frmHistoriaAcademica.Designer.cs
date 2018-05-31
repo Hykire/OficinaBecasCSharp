@@ -33,46 +33,10 @@
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.cbox_ciclo = new System.Windows.Forms.ComboBox();
-            this.label_ciclo = new System.Windows.Forms.Label();
-            this.gbox_datosCiclo = new System.Windows.Forms.GroupBox();
-            this.cbox_etapa = new System.Windows.Forms.ComboBox();
-            this.label_nciclos = new System.Windows.Forms.Label();
-            this.tbox_creditosrestantes = new System.Windows.Forms.TextBox();
-            this.tbox_nciclos = new System.Windows.Forms.TextBox();
-            this.label_creditosrestantes = new System.Windows.Forms.Label();
-            this.label_ordenmerito = new System.Windows.Forms.Label();
-            this.tbox_ordenmerito = new System.Windows.Forms.TextBox();
-            this.label_etapa = new System.Windows.Forms.Label();
-            this.cbox_especialidad = new System.Windows.Forms.ComboBox();
-            this.cbox_facultad = new System.Windows.Forms.ComboBox();
-            this.label_craest = new System.Windows.Forms.Label();
-            this.tbox_craest = new System.Windows.Forms.TextBox();
-            this.tbox_ultimociclo = new System.Windows.Forms.TextBox();
-            this.label_especialidad = new System.Windows.Forms.Label();
-            this.label_facultad = new System.Windows.Forms.Label();
-            this.label_ultimociclo = new System.Windows.Forms.Label();
-            this.gbox_datoshistoricos = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbox_id_historia_academica = new System.Windows.Forms.TextBox();
+            this.cbox_ciclo_nuevo2 = new System.Windows.Forms.ComboBox();
+            this.cbox_ciclo_nuevo1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbox_ncreditos4 = new System.Windows.Forms.TextBox();
             this.label_ncreditos4 = new System.Windows.Forms.Label();
@@ -90,10 +54,52 @@
             this.label_ncreditosSR = new System.Windows.Forms.Label();
             this.label_ncursosR = new System.Windows.Forms.Label();
             this.tbox_ncursosR = new System.Windows.Forms.TextBox();
+            this.gbox_datoshistoricos = new System.Windows.Forms.GroupBox();
+            this.tbox_ncre_rh = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbox_cah_con = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbox_cah_exo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbox_cah_exi = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbox_cr = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbox_cac = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbox_cur = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbox_cdh = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbox_tcac = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbox_cahn = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gbox_datosCiclo = new System.Windows.Forms.GroupBox();
+            this.tbox_facultad = new System.Windows.Forms.TextBox();
+            this.cbox_ultimociclo2 = new System.Windows.Forms.ComboBox();
+            this.cbox_etapa = new System.Windows.Forms.ComboBox();
+            this.cbox_ultimociclo1 = new System.Windows.Forms.ComboBox();
+            this.label_nciclos = new System.Windows.Forms.Label();
+            this.tbox_creditosrestantes = new System.Windows.Forms.TextBox();
+            this.tbox_nciclos = new System.Windows.Forms.TextBox();
+            this.label_creditosrestantes = new System.Windows.Forms.Label();
+            this.label_ordenmerito = new System.Windows.Forms.Label();
+            this.tbox_ordenmerito = new System.Windows.Forms.TextBox();
+            this.label_etapa = new System.Windows.Forms.Label();
+            this.cbox_especialidad = new System.Windows.Forms.ComboBox();
+            this.label_craest = new System.Windows.Forms.Label();
+            this.tbox_craest = new System.Windows.Forms.TextBox();
+            this.label_especialidad = new System.Windows.Forms.Label();
+            this.label_facultad = new System.Windows.Forms.Label();
+            this.label_ultimociclo = new System.Windows.Forms.Label();
+            this.cbox_ciclo = new System.Windows.Forms.ComboBox();
+            this.label_ciclo = new System.Windows.Forms.Label();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStrip_historiaacademica.SuspendLayout();
-            this.gbox_datosCiclo.SuspendLayout();
-            this.gbox_datoshistoricos.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.gbox_datoshistoricos.SuspendLayout();
+            this.gbox_datosCiclo.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip_historiaacademica
@@ -101,6 +107,7 @@
             this.toolStrip_historiaacademica.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevo,
             this.btnGuardar,
+            this.btnEditar,
             this.btnCancelar});
             this.toolStrip_historiaacademica.Location = new System.Drawing.Point(0, 0);
             this.toolStrip_historiaacademica.Name = "toolStrip_historiaacademica";
@@ -115,6 +122,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(62, 22);
             this.btnNuevo.Text = "&Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
             // 
@@ -123,6 +131,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(69, 22);
             this.btnGuardar.Text = "&Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -131,394 +140,53 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(73, 22);
             this.btnCancelar.Text = "Cancelar";
-            // 
-            // cbox_ciclo
-            // 
-            this.cbox_ciclo.FormattingEnabled = true;
-            this.cbox_ciclo.Location = new System.Drawing.Point(74, 41);
-            this.cbox_ciclo.Name = "cbox_ciclo";
-            this.cbox_ciclo.Size = new System.Drawing.Size(57, 21);
-            this.cbox_ciclo.TabIndex = 4;
-            // 
-            // label_ciclo
-            // 
-            this.label_ciclo.AutoSize = true;
-            this.label_ciclo.Location = new System.Drawing.Point(24, 44);
-            this.label_ciclo.Name = "label_ciclo";
-            this.label_ciclo.Size = new System.Drawing.Size(33, 13);
-            this.label_ciclo.TabIndex = 3;
-            this.label_ciclo.Text = "Ciclo:";
-            // 
-            // gbox_datosCiclo
-            // 
-            this.gbox_datosCiclo.Controls.Add(this.cbox_etapa);
-            this.gbox_datosCiclo.Controls.Add(this.label_nciclos);
-            this.gbox_datosCiclo.Controls.Add(this.tbox_creditosrestantes);
-            this.gbox_datosCiclo.Controls.Add(this.tbox_nciclos);
-            this.gbox_datosCiclo.Controls.Add(this.label_creditosrestantes);
-            this.gbox_datosCiclo.Controls.Add(this.label_ordenmerito);
-            this.gbox_datosCiclo.Controls.Add(this.tbox_ordenmerito);
-            this.gbox_datosCiclo.Controls.Add(this.label_etapa);
-            this.gbox_datosCiclo.Controls.Add(this.cbox_especialidad);
-            this.gbox_datosCiclo.Controls.Add(this.cbox_facultad);
-            this.gbox_datosCiclo.Controls.Add(this.label_craest);
-            this.gbox_datosCiclo.Controls.Add(this.tbox_craest);
-            this.gbox_datosCiclo.Controls.Add(this.tbox_ultimociclo);
-            this.gbox_datosCiclo.Controls.Add(this.label_especialidad);
-            this.gbox_datosCiclo.Controls.Add(this.label_facultad);
-            this.gbox_datosCiclo.Controls.Add(this.label_ultimociclo);
-            this.gbox_datosCiclo.Location = new System.Drawing.Point(27, 88);
-            this.gbox_datosCiclo.Name = "gbox_datosCiclo";
-            this.gbox_datosCiclo.Size = new System.Drawing.Size(386, 252);
-            this.gbox_datosCiclo.TabIndex = 12;
-            this.gbox_datosCiclo.TabStop = false;
-            this.gbox_datosCiclo.Text = "Datos Generales del Ciclo";
-            // 
-            // cbox_etapa
-            // 
-            this.cbox_etapa.FormattingEnabled = true;
-            this.cbox_etapa.Items.AddRange(new object[] {
-            "Facultad",
-            "Fromación General"});
-            this.cbox_etapa.Location = new System.Drawing.Point(160, 184);
-            this.cbox_etapa.Name = "cbox_etapa";
-            this.cbox_etapa.Size = new System.Drawing.Size(200, 21);
-            this.cbox_etapa.Sorted = true;
-            this.cbox_etapa.TabIndex = 36;
-            // 
-            // label_nciclos
-            // 
-            this.label_nciclos.AutoSize = true;
-            this.label_nciclos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_nciclos.Location = new System.Drawing.Point(21, 161);
-            this.label_nciclos.Name = "label_nciclos";
-            this.label_nciclos.Size = new System.Drawing.Size(137, 13);
-            this.label_nciclos.TabIndex = 34;
-            this.label_nciclos.Text = "Nro. de ciclos matriculados:";
-            // 
-            // tbox_creditosrestantes
-            // 
-            this.tbox_creditosrestantes.Location = new System.Drawing.Point(260, 210);
-            this.tbox_creditosrestantes.Name = "tbox_creditosrestantes";
-            this.tbox_creditosrestantes.Size = new System.Drawing.Size(100, 20);
-            this.tbox_creditosrestantes.TabIndex = 39;
-            // 
-            // tbox_nciclos
-            // 
-            this.tbox_nciclos.Location = new System.Drawing.Point(160, 158);
-            this.tbox_nciclos.Name = "tbox_nciclos";
-            this.tbox_nciclos.Size = new System.Drawing.Size(100, 20);
-            this.tbox_nciclos.TabIndex = 35;
-            // 
-            // label_creditosrestantes
-            // 
-            this.label_creditosrestantes.AutoSize = true;
-            this.label_creditosrestantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_creditosrestantes.Location = new System.Drawing.Point(21, 213);
-            this.label_creditosrestantes.Name = "label_creditosrestantes";
-            this.label_creditosrestantes.Size = new System.Drawing.Size(171, 13);
-            this.label_creditosrestantes.TabIndex = 38;
-            this.label_creditosrestantes.Text = "Créditos Restantes Para el Egreso:";
-            // 
-            // label_ordenmerito
-            // 
-            this.label_ordenmerito.AutoSize = true;
-            this.label_ordenmerito.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_ordenmerito.Location = new System.Drawing.Point(21, 135);
-            this.label_ordenmerito.Name = "label_ordenmerito";
-            this.label_ordenmerito.Size = new System.Drawing.Size(112, 13);
-            this.label_ordenmerito.TabIndex = 32;
-            this.label_ordenmerito.Text = "Orden de Mérito en %:";
-            // 
-            // tbox_ordenmerito
-            // 
-            this.tbox_ordenmerito.Location = new System.Drawing.Point(160, 132);
-            this.tbox_ordenmerito.Name = "tbox_ordenmerito";
-            this.tbox_ordenmerito.Size = new System.Drawing.Size(100, 20);
-            this.tbox_ordenmerito.TabIndex = 33;
-            // 
-            // label_etapa
-            // 
-            this.label_etapa.AutoSize = true;
-            this.label_etapa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_etapa.Location = new System.Drawing.Point(21, 187);
-            this.label_etapa.Name = "label_etapa";
-            this.label_etapa.Size = new System.Drawing.Size(38, 13);
-            this.label_etapa.TabIndex = 37;
-            this.label_etapa.Text = "Etapa:";
-            // 
-            // cbox_especialidad
-            // 
-            this.cbox_especialidad.FormattingEnabled = true;
-            this.cbox_especialidad.Location = new System.Drawing.Point(160, 79);
-            this.cbox_especialidad.Name = "cbox_especialidad";
-            this.cbox_especialidad.Size = new System.Drawing.Size(200, 21);
-            this.cbox_especialidad.Sorted = true;
-            this.cbox_especialidad.TabIndex = 31;
-            // 
-            // cbox_facultad
-            // 
-            this.cbox_facultad.FormattingEnabled = true;
-            this.cbox_facultad.Items.AddRange(new object[] {
-            "Ciencias e Ingeniería",
-            "Ciencias Sociales"});
-            this.cbox_facultad.Location = new System.Drawing.Point(160, 52);
-            this.cbox_facultad.Name = "cbox_facultad";
-            this.cbox_facultad.Size = new System.Drawing.Size(200, 21);
-            this.cbox_facultad.Sorted = true;
-            this.cbox_facultad.TabIndex = 22;
-            // 
-            // label_craest
-            // 
-            this.label_craest.AutoSize = true;
-            this.label_craest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_craest.Location = new System.Drawing.Point(21, 109);
-            this.label_craest.Name = "label_craest";
-            this.label_craest.Size = new System.Drawing.Size(40, 13);
-            this.label_craest.TabIndex = 29;
-            this.label_craest.Text = "Craest:";
-            // 
-            // tbox_craest
-            // 
-            this.tbox_craest.Location = new System.Drawing.Point(160, 106);
-            this.tbox_craest.Name = "tbox_craest";
-            this.tbox_craest.Size = new System.Drawing.Size(100, 20);
-            this.tbox_craest.TabIndex = 30;
-            // 
-            // tbox_ultimociclo
-            // 
-            this.tbox_ultimociclo.Location = new System.Drawing.Point(160, 26);
-            this.tbox_ultimociclo.Name = "tbox_ultimociclo";
-            this.tbox_ultimociclo.Size = new System.Drawing.Size(100, 20);
-            this.tbox_ultimociclo.TabIndex = 25;
-            // 
-            // label_especialidad
-            // 
-            this.label_especialidad.AutoSize = true;
-            this.label_especialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_especialidad.Location = new System.Drawing.Point(21, 81);
-            this.label_especialidad.Name = "label_especialidad";
-            this.label_especialidad.Size = new System.Drawing.Size(70, 13);
-            this.label_especialidad.TabIndex = 26;
-            this.label_especialidad.Text = "Especialidad:";
-            // 
-            // label_facultad
-            // 
-            this.label_facultad.AutoSize = true;
-            this.label_facultad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_facultad.Location = new System.Drawing.Point(21, 55);
-            this.label_facultad.Name = "label_facultad";
-            this.label_facultad.Size = new System.Drawing.Size(51, 13);
-            this.label_facultad.TabIndex = 24;
-            this.label_facultad.Text = "Facultad:";
-            // 
-            // label_ultimociclo
-            // 
-            this.label_ultimociclo.AutoSize = true;
-            this.label_ultimociclo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_ultimociclo.Location = new System.Drawing.Point(21, 29);
-            this.label_ultimociclo.Name = "label_ultimociclo";
-            this.label_ultimociclo.Size = new System.Drawing.Size(121, 13);
-            this.label_ultimociclo.TabIndex = 23;
-            this.label_ultimociclo.Text = "Ultimo ciclo matriculado:";
-            // 
-            // gbox_datoshistoricos
-            // 
-            this.gbox_datoshistoricos.Controls.Add(this.textBox9);
-            this.gbox_datoshistoricos.Controls.Add(this.label9);
-            this.gbox_datoshistoricos.Controls.Add(this.textBox10);
-            this.gbox_datoshistoricos.Controls.Add(this.label10);
-            this.gbox_datoshistoricos.Controls.Add(this.textBox5);
-            this.gbox_datoshistoricos.Controls.Add(this.label5);
-            this.gbox_datoshistoricos.Controls.Add(this.textBox6);
-            this.gbox_datoshistoricos.Controls.Add(this.label6);
-            this.gbox_datoshistoricos.Controls.Add(this.textBox7);
-            this.gbox_datoshistoricos.Controls.Add(this.label7);
-            this.gbox_datoshistoricos.Controls.Add(this.textBox8);
-            this.gbox_datoshistoricos.Controls.Add(this.label8);
-            this.gbox_datoshistoricos.Controls.Add(this.textBox4);
-            this.gbox_datoshistoricos.Controls.Add(this.label4);
-            this.gbox_datoshistoricos.Controls.Add(this.textBox3);
-            this.gbox_datoshistoricos.Controls.Add(this.label3);
-            this.gbox_datoshistoricos.Controls.Add(this.textBox2);
-            this.gbox_datoshistoricos.Controls.Add(this.label2);
-            this.gbox_datoshistoricos.Controls.Add(this.textBox1);
-            this.gbox_datoshistoricos.Controls.Add(this.label1);
-            this.gbox_datoshistoricos.Location = new System.Drawing.Point(438, 88);
-            this.gbox_datoshistoricos.Name = "gbox_datoshistoricos";
-            this.gbox_datoshistoricos.Size = new System.Drawing.Size(386, 298);
-            this.gbox_datoshistoricos.TabIndex = 13;
-            this.gbox_datoshistoricos.TabStop = false;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(238, 261);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 55;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(21, 264);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(183, 13);
-            this.label9.TabIndex = 54;
-            this.label9.Text = "Nro. de Créditos Retirados Históricos:";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(238, 235);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 53;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label10.Location = new System.Drawing.Point(21, 238);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(218, 13);
-            this.label10.TabIndex = 52;
-            this.label10.Text = "Créditos Aprobados Históricos Convalidados:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(238, 209);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 51;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.Location = new System.Drawing.Point(21, 212);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(210, 13);
-            this.label5.TabIndex = 50;
-            this.label5.Text = "Créditos Aprobados Históricos Exonerados:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(238, 183);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 49;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(21, 186);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(195, 13);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Créditos Aprobados Históricos Eximidos:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(238, 157);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 47;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label7.Location = new System.Drawing.Point(21, 160);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 13);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "Créditos Reconocidos:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(238, 131);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 45;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label8.Location = new System.Drawing.Point(21, 134);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 13);
-            this.label8.TabIndex = 44;
-            this.label8.Text = "Créditos Aprobados Consorcio:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(238, 105);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 43;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(21, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 13);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Créditos Usados para Reconocer";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(238, 79);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 41;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(21, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 13);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Créditos Desaprobados Histórico:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(238, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 39;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(21, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 13);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Total de Créditos Aprobados Convalidados:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(238, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 37;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(21, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 13);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Créditos Aprobados Historicos Normal:";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(533, 37);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(112, 13);
+            this.label11.TabIndex = 87;
+            this.label11.Text = "id Historia Academica:";
+            // 
+            // tbox_id_historia_academica
+            // 
+            this.tbox_id_historia_academica.Location = new System.Drawing.Point(664, 34);
+            this.tbox_id_historia_academica.Name = "tbox_id_historia_academica";
+            this.tbox_id_historia_academica.Size = new System.Drawing.Size(100, 20);
+            this.tbox_id_historia_academica.TabIndex = 86;
+            // 
+            // cbox_ciclo_nuevo2
+            // 
+            this.cbox_ciclo_nuevo2.FormattingEnabled = true;
+            this.cbox_ciclo_nuevo2.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
+            this.cbox_ciclo_nuevo2.Location = new System.Drawing.Point(128, 34);
+            this.cbox_ciclo_nuevo2.Name = "cbox_ciclo_nuevo2";
+            this.cbox_ciclo_nuevo2.Size = new System.Drawing.Size(34, 21);
+            this.cbox_ciclo_nuevo2.TabIndex = 85;
+            // 
+            // cbox_ciclo_nuevo1
+            // 
+            this.cbox_ciclo_nuevo1.FormattingEnabled = true;
+            this.cbox_ciclo_nuevo1.Items.AddRange(new object[] {
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018"});
+            this.cbox_ciclo_nuevo1.Location = new System.Drawing.Point(62, 34);
+            this.cbox_ciclo_nuevo1.Name = "cbox_ciclo_nuevo1";
+            this.cbox_ciclo_nuevo1.Size = new System.Drawing.Size(60, 21);
+            this.cbox_ciclo_nuevo1.TabIndex = 84;
             // 
             // groupBox1
             // 
@@ -538,10 +206,10 @@
             this.groupBox1.Controls.Add(this.label_ncreditosSR);
             this.groupBox1.Controls.Add(this.label_ncursosR);
             this.groupBox1.Controls.Add(this.tbox_ncursosR);
-            this.groupBox1.Location = new System.Drawing.Point(27, 358);
+            this.groupBox1.Location = new System.Drawing.Point(15, 351);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(386, 250);
-            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
             // 
             // tbox_ncreditos4
@@ -680,27 +348,451 @@
             this.tbox_ncursosR.Size = new System.Drawing.Size(100, 20);
             this.tbox_ncursosR.TabIndex = 47;
             // 
+            // gbox_datoshistoricos
+            // 
+            this.gbox_datoshistoricos.Controls.Add(this.tbox_ncre_rh);
+            this.gbox_datoshistoricos.Controls.Add(this.label9);
+            this.gbox_datoshistoricos.Controls.Add(this.tbox_cah_con);
+            this.gbox_datoshistoricos.Controls.Add(this.label10);
+            this.gbox_datoshistoricos.Controls.Add(this.tbox_cah_exo);
+            this.gbox_datoshistoricos.Controls.Add(this.label5);
+            this.gbox_datoshistoricos.Controls.Add(this.tbox_cah_exi);
+            this.gbox_datoshistoricos.Controls.Add(this.label6);
+            this.gbox_datoshistoricos.Controls.Add(this.tbox_cr);
+            this.gbox_datoshistoricos.Controls.Add(this.label7);
+            this.gbox_datoshistoricos.Controls.Add(this.tbox_cac);
+            this.gbox_datoshistoricos.Controls.Add(this.label8);
+            this.gbox_datoshistoricos.Controls.Add(this.tbox_cur);
+            this.gbox_datoshistoricos.Controls.Add(this.label4);
+            this.gbox_datoshistoricos.Controls.Add(this.tbox_cdh);
+            this.gbox_datoshistoricos.Controls.Add(this.label3);
+            this.gbox_datoshistoricos.Controls.Add(this.tbox_tcac);
+            this.gbox_datoshistoricos.Controls.Add(this.label2);
+            this.gbox_datoshistoricos.Controls.Add(this.tbox_cahn);
+            this.gbox_datoshistoricos.Controls.Add(this.label1);
+            this.gbox_datoshistoricos.Location = new System.Drawing.Point(426, 81);
+            this.gbox_datoshistoricos.Name = "gbox_datoshistoricos";
+            this.gbox_datoshistoricos.Size = new System.Drawing.Size(386, 298);
+            this.gbox_datoshistoricos.TabIndex = 82;
+            this.gbox_datoshistoricos.TabStop = false;
+            // 
+            // tbox_ncre_rh
+            // 
+            this.tbox_ncre_rh.Location = new System.Drawing.Point(238, 261);
+            this.tbox_ncre_rh.Name = "tbox_ncre_rh";
+            this.tbox_ncre_rh.Size = new System.Drawing.Size(100, 20);
+            this.tbox_ncre_rh.TabIndex = 55;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label9.Location = new System.Drawing.Point(21, 264);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(183, 13);
+            this.label9.TabIndex = 54;
+            this.label9.Text = "Nro. de Créditos Retirados Históricos:";
+            // 
+            // tbox_cah_con
+            // 
+            this.tbox_cah_con.Location = new System.Drawing.Point(238, 235);
+            this.tbox_cah_con.Name = "tbox_cah_con";
+            this.tbox_cah_con.Size = new System.Drawing.Size(100, 20);
+            this.tbox_cah_con.TabIndex = 53;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label10.Location = new System.Drawing.Point(21, 238);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(218, 13);
+            this.label10.TabIndex = 52;
+            this.label10.Text = "Créditos Aprobados Históricos Convalidados:";
+            // 
+            // tbox_cah_exo
+            // 
+            this.tbox_cah_exo.Location = new System.Drawing.Point(238, 209);
+            this.tbox_cah_exo.Name = "tbox_cah_exo";
+            this.tbox_cah_exo.Size = new System.Drawing.Size(100, 20);
+            this.tbox_cah_exo.TabIndex = 51;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label5.Location = new System.Drawing.Point(21, 212);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(210, 13);
+            this.label5.TabIndex = 50;
+            this.label5.Text = "Créditos Aprobados Históricos Exonerados:";
+            // 
+            // tbox_cah_exi
+            // 
+            this.tbox_cah_exi.Location = new System.Drawing.Point(238, 183);
+            this.tbox_cah_exi.Name = "tbox_cah_exi";
+            this.tbox_cah_exi.Size = new System.Drawing.Size(100, 20);
+            this.tbox_cah_exi.TabIndex = 49;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label6.Location = new System.Drawing.Point(21, 186);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(195, 13);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Créditos Aprobados Históricos Eximidos:";
+            // 
+            // tbox_cr
+            // 
+            this.tbox_cr.Location = new System.Drawing.Point(238, 157);
+            this.tbox_cr.Name = "tbox_cr";
+            this.tbox_cr.Size = new System.Drawing.Size(100, 20);
+            this.tbox_cr.TabIndex = 47;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label7.Location = new System.Drawing.Point(21, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 13);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "Créditos Reconocidos:";
+            // 
+            // tbox_cac
+            // 
+            this.tbox_cac.Location = new System.Drawing.Point(238, 131);
+            this.tbox_cac.Name = "tbox_cac";
+            this.tbox_cac.Size = new System.Drawing.Size(100, 20);
+            this.tbox_cac.TabIndex = 45;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label8.Location = new System.Drawing.Point(21, 134);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(152, 13);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Créditos Aprobados Consorcio:";
+            // 
+            // tbox_cur
+            // 
+            this.tbox_cur.Location = new System.Drawing.Point(238, 105);
+            this.tbox_cur.Name = "tbox_cur";
+            this.tbox_cur.Size = new System.Drawing.Size(100, 20);
+            this.tbox_cur.TabIndex = 43;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(21, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(164, 13);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Créditos Usados para Reconocer";
+            // 
+            // tbox_cdh
+            // 
+            this.tbox_cdh.Location = new System.Drawing.Point(238, 79);
+            this.tbox_cdh.Name = "tbox_cdh";
+            this.tbox_cdh.Size = new System.Drawing.Size(100, 20);
+            this.tbox_cdh.TabIndex = 41;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(21, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(164, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Créditos Desaprobados Histórico:";
+            // 
+            // tbox_tcac
+            // 
+            this.tbox_tcac.Location = new System.Drawing.Point(238, 53);
+            this.tbox_tcac.Name = "tbox_tcac";
+            this.tbox_tcac.Size = new System.Drawing.Size(100, 20);
+            this.tbox_tcac.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(21, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(211, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Total de Créditos Aprobados Convalidados:";
+            // 
+            // tbox_cahn
+            // 
+            this.tbox_cahn.Location = new System.Drawing.Point(238, 27);
+            this.tbox_cahn.Name = "tbox_cahn";
+            this.tbox_cahn.Size = new System.Drawing.Size(100, 20);
+            this.tbox_cahn.TabIndex = 37;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.Location = new System.Drawing.Point(21, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 13);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Créditos Aprobados Historicos Normal:";
+            // 
+            // gbox_datosCiclo
+            // 
+            this.gbox_datosCiclo.Controls.Add(this.tbox_facultad);
+            this.gbox_datosCiclo.Controls.Add(this.cbox_ultimociclo2);
+            this.gbox_datosCiclo.Controls.Add(this.cbox_etapa);
+            this.gbox_datosCiclo.Controls.Add(this.cbox_ultimociclo1);
+            this.gbox_datosCiclo.Controls.Add(this.label_nciclos);
+            this.gbox_datosCiclo.Controls.Add(this.tbox_creditosrestantes);
+            this.gbox_datosCiclo.Controls.Add(this.tbox_nciclos);
+            this.gbox_datosCiclo.Controls.Add(this.label_creditosrestantes);
+            this.gbox_datosCiclo.Controls.Add(this.label_ordenmerito);
+            this.gbox_datosCiclo.Controls.Add(this.tbox_ordenmerito);
+            this.gbox_datosCiclo.Controls.Add(this.label_etapa);
+            this.gbox_datosCiclo.Controls.Add(this.cbox_especialidad);
+            this.gbox_datosCiclo.Controls.Add(this.label_craest);
+            this.gbox_datosCiclo.Controls.Add(this.tbox_craest);
+            this.gbox_datosCiclo.Controls.Add(this.label_especialidad);
+            this.gbox_datosCiclo.Controls.Add(this.label_facultad);
+            this.gbox_datosCiclo.Controls.Add(this.label_ultimociclo);
+            this.gbox_datosCiclo.Location = new System.Drawing.Point(15, 81);
+            this.gbox_datosCiclo.Name = "gbox_datosCiclo";
+            this.gbox_datosCiclo.Size = new System.Drawing.Size(386, 252);
+            this.gbox_datosCiclo.TabIndex = 81;
+            this.gbox_datosCiclo.TabStop = false;
+            this.gbox_datosCiclo.Text = "Datos Generales del Ciclo";
+            // 
+            // tbox_facultad
+            // 
+            this.tbox_facultad.Location = new System.Drawing.Point(160, 80);
+            this.tbox_facultad.Name = "tbox_facultad";
+            this.tbox_facultad.Size = new System.Drawing.Size(200, 20);
+            this.tbox_facultad.TabIndex = 77;
+            // 
+            // cbox_ultimociclo2
+            // 
+            this.cbox_ultimociclo2.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
+            this.cbox_ultimociclo2.FormattingEnabled = true;
+            this.cbox_ultimociclo2.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
+            this.cbox_ultimociclo2.Location = new System.Drawing.Point(224, 26);
+            this.cbox_ultimociclo2.Name = "cbox_ultimociclo2";
+            this.cbox_ultimociclo2.Size = new System.Drawing.Size(34, 21);
+            this.cbox_ultimociclo2.TabIndex = 76;
+            // 
+            // cbox_etapa
+            // 
+            this.cbox_etapa.FormattingEnabled = true;
+            this.cbox_etapa.Items.AddRange(new object[] {
+            "Facultad",
+            "Fromación General"});
+            this.cbox_etapa.Location = new System.Drawing.Point(160, 184);
+            this.cbox_etapa.Name = "cbox_etapa";
+            this.cbox_etapa.Size = new System.Drawing.Size(200, 21);
+            this.cbox_etapa.Sorted = true;
+            this.cbox_etapa.TabIndex = 36;
+            // 
+            // cbox_ultimociclo1
+            // 
+            this.cbox_ultimociclo1.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
+            this.cbox_ultimociclo1.FormattingEnabled = true;
+            this.cbox_ultimociclo1.Items.AddRange(new object[] {
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018"});
+            this.cbox_ultimociclo1.Location = new System.Drawing.Point(158, 26);
+            this.cbox_ultimociclo1.Name = "cbox_ultimociclo1";
+            this.cbox_ultimociclo1.Size = new System.Drawing.Size(60, 21);
+            this.cbox_ultimociclo1.TabIndex = 75;
+            // 
+            // label_nciclos
+            // 
+            this.label_nciclos.AutoSize = true;
+            this.label_nciclos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_nciclos.Location = new System.Drawing.Point(21, 161);
+            this.label_nciclos.Name = "label_nciclos";
+            this.label_nciclos.Size = new System.Drawing.Size(137, 13);
+            this.label_nciclos.TabIndex = 34;
+            this.label_nciclos.Text = "Nro. de ciclos matriculados:";
+            // 
+            // tbox_creditosrestantes
+            // 
+            this.tbox_creditosrestantes.Location = new System.Drawing.Point(260, 210);
+            this.tbox_creditosrestantes.Name = "tbox_creditosrestantes";
+            this.tbox_creditosrestantes.Size = new System.Drawing.Size(100, 20);
+            this.tbox_creditosrestantes.TabIndex = 39;
+            // 
+            // tbox_nciclos
+            // 
+            this.tbox_nciclos.Location = new System.Drawing.Point(160, 158);
+            this.tbox_nciclos.Name = "tbox_nciclos";
+            this.tbox_nciclos.Size = new System.Drawing.Size(100, 20);
+            this.tbox_nciclos.TabIndex = 35;
+            // 
+            // label_creditosrestantes
+            // 
+            this.label_creditosrestantes.AutoSize = true;
+            this.label_creditosrestantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_creditosrestantes.Location = new System.Drawing.Point(21, 213);
+            this.label_creditosrestantes.Name = "label_creditosrestantes";
+            this.label_creditosrestantes.Size = new System.Drawing.Size(171, 13);
+            this.label_creditosrestantes.TabIndex = 38;
+            this.label_creditosrestantes.Text = "Créditos Restantes Para el Egreso:";
+            // 
+            // label_ordenmerito
+            // 
+            this.label_ordenmerito.AutoSize = true;
+            this.label_ordenmerito.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_ordenmerito.Location = new System.Drawing.Point(21, 135);
+            this.label_ordenmerito.Name = "label_ordenmerito";
+            this.label_ordenmerito.Size = new System.Drawing.Size(112, 13);
+            this.label_ordenmerito.TabIndex = 32;
+            this.label_ordenmerito.Text = "Orden de Mérito en %:";
+            // 
+            // tbox_ordenmerito
+            // 
+            this.tbox_ordenmerito.Location = new System.Drawing.Point(160, 132);
+            this.tbox_ordenmerito.Name = "tbox_ordenmerito";
+            this.tbox_ordenmerito.Size = new System.Drawing.Size(100, 20);
+            this.tbox_ordenmerito.TabIndex = 33;
+            // 
+            // label_etapa
+            // 
+            this.label_etapa.AutoSize = true;
+            this.label_etapa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_etapa.Location = new System.Drawing.Point(21, 187);
+            this.label_etapa.Name = "label_etapa";
+            this.label_etapa.Size = new System.Drawing.Size(38, 13);
+            this.label_etapa.TabIndex = 37;
+            this.label_etapa.Text = "Etapa:";
+            // 
+            // cbox_especialidad
+            // 
+            this.cbox_especialidad.FormattingEnabled = true;
+            this.cbox_especialidad.Location = new System.Drawing.Point(160, 53);
+            this.cbox_especialidad.Name = "cbox_especialidad";
+            this.cbox_especialidad.Size = new System.Drawing.Size(200, 21);
+            this.cbox_especialidad.Sorted = true;
+            this.cbox_especialidad.TabIndex = 31;
+            this.cbox_especialidad.SelectedIndexChanged += new System.EventHandler(this.cbox_especialidad_SelectedIndexChanged);
+            // 
+            // label_craest
+            // 
+            this.label_craest.AutoSize = true;
+            this.label_craest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_craest.Location = new System.Drawing.Point(21, 109);
+            this.label_craest.Name = "label_craest";
+            this.label_craest.Size = new System.Drawing.Size(40, 13);
+            this.label_craest.TabIndex = 29;
+            this.label_craest.Text = "Craest:";
+            // 
+            // tbox_craest
+            // 
+            this.tbox_craest.Location = new System.Drawing.Point(160, 106);
+            this.tbox_craest.Name = "tbox_craest";
+            this.tbox_craest.Size = new System.Drawing.Size(100, 20);
+            this.tbox_craest.TabIndex = 30;
+            // 
+            // label_especialidad
+            // 
+            this.label_especialidad.AutoSize = true;
+            this.label_especialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_especialidad.Location = new System.Drawing.Point(21, 56);
+            this.label_especialidad.Name = "label_especialidad";
+            this.label_especialidad.Size = new System.Drawing.Size(70, 13);
+            this.label_especialidad.TabIndex = 26;
+            this.label_especialidad.Text = "Especialidad:";
+            // 
+            // label_facultad
+            // 
+            this.label_facultad.AutoSize = true;
+            this.label_facultad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_facultad.Location = new System.Drawing.Point(21, 82);
+            this.label_facultad.Name = "label_facultad";
+            this.label_facultad.Size = new System.Drawing.Size(51, 13);
+            this.label_facultad.TabIndex = 24;
+            this.label_facultad.Text = "Facultad:";
+            // 
+            // label_ultimociclo
+            // 
+            this.label_ultimociclo.AutoSize = true;
+            this.label_ultimociclo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_ultimociclo.Location = new System.Drawing.Point(21, 29);
+            this.label_ultimociclo.Name = "label_ultimociclo";
+            this.label_ultimociclo.Size = new System.Drawing.Size(121, 13);
+            this.label_ultimociclo.TabIndex = 23;
+            this.label_ultimociclo.Text = "Ultimo ciclo matriculado:";
+            // 
+            // cbox_ciclo
+            // 
+            this.cbox_ciclo.FormattingEnabled = true;
+            this.cbox_ciclo.Location = new System.Drawing.Point(62, 34);
+            this.cbox_ciclo.Name = "cbox_ciclo";
+            this.cbox_ciclo.Size = new System.Drawing.Size(57, 21);
+            this.cbox_ciclo.TabIndex = 80;
+            this.cbox_ciclo.SelectedIndexChanged += new System.EventHandler(this.cbox_ciclo_SelectedIndexChanged);
+            // 
+            // label_ciclo
+            // 
+            this.label_ciclo.AutoSize = true;
+            this.label_ciclo.Location = new System.Drawing.Point(12, 37);
+            this.label_ciclo.Name = "label_ciclo";
+            this.label_ciclo.Size = new System.Drawing.Size(33, 13);
+            this.label_ciclo.TabIndex = 79;
+            this.label_ciclo.Text = "Ciclo:";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(57, 22);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // frmHistoriaAcademica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 635);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.tbox_id_historia_academica);
+            this.Controls.Add(this.cbox_ciclo_nuevo2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbox_datoshistoricos);
             this.Controls.Add(this.gbox_datosCiclo);
             this.Controls.Add(this.cbox_ciclo);
             this.Controls.Add(this.label_ciclo);
             this.Controls.Add(this.toolStrip_historiaacademica);
+            this.Controls.Add(this.cbox_ciclo_nuevo1);
             this.Name = "frmHistoriaAcademica";
             this.Text = "frmHistoriaAcademica";
             this.toolStrip_historiaacademica.ResumeLayout(false);
             this.toolStrip_historiaacademica.PerformLayout();
-            this.gbox_datosCiclo.ResumeLayout(false);
-            this.gbox_datosCiclo.PerformLayout();
-            this.gbox_datoshistoricos.ResumeLayout(false);
-            this.gbox_datoshistoricos.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gbox_datoshistoricos.ResumeLayout(false);
+            this.gbox_datoshistoricos.PerformLayout();
+            this.gbox_datosCiclo.ResumeLayout(false);
+            this.gbox_datosCiclo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -712,30 +804,11 @@
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnCancelar;
-        private System.Windows.Forms.ComboBox cbox_ciclo;
-        private System.Windows.Forms.Label label_ciclo;
-        private System.Windows.Forms.GroupBox gbox_datosCiclo;
-        private System.Windows.Forms.Label label_ordenmerito;
-        private System.Windows.Forms.TextBox tbox_ordenmerito;
-        private System.Windows.Forms.ComboBox cbox_especialidad;
-        private System.Windows.Forms.ComboBox cbox_facultad;
-        private System.Windows.Forms.Label label_craest;
-        private System.Windows.Forms.TextBox tbox_craest;
-        private System.Windows.Forms.TextBox tbox_ultimociclo;
-        private System.Windows.Forms.Label label_especialidad;
-        private System.Windows.Forms.Label label_facultad;
-        private System.Windows.Forms.Label label_ultimociclo;
-        private System.Windows.Forms.Label label_nciclos;
-        private System.Windows.Forms.TextBox tbox_nciclos;
-        private System.Windows.Forms.GroupBox gbox_datoshistoricos;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tbox_id_historia_academica;
+        private System.Windows.Forms.ComboBox cbox_ciclo_nuevo2;
+        private System.Windows.Forms.ComboBox cbox_ciclo_nuevo1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbox_ncreditos4;
         private System.Windows.Forms.Label label_ncreditos4;
@@ -753,21 +826,46 @@
         private System.Windows.Forms.Label label_ncreditosSR;
         private System.Windows.Forms.Label label_ncursosR;
         private System.Windows.Forms.TextBox tbox_ncursosR;
-        private System.Windows.Forms.ComboBox cbox_etapa;
-        private System.Windows.Forms.TextBox tbox_creditosrestantes;
-        private System.Windows.Forms.Label label_creditosrestantes;
-        private System.Windows.Forms.Label label_etapa;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.GroupBox gbox_datoshistoricos;
+        private System.Windows.Forms.TextBox tbox_ncre_rh;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbox_cah_con;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbox_cah_exo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbox_cah_exi;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbox_cr;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tbox_cac;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbox_cur;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbox_cdh;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbox_tcac;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbox_cahn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox gbox_datosCiclo;
+        private System.Windows.Forms.TextBox tbox_facultad;
+        private System.Windows.Forms.ComboBox cbox_ultimociclo2;
+        private System.Windows.Forms.ComboBox cbox_etapa;
+        private System.Windows.Forms.ComboBox cbox_ultimociclo1;
+        private System.Windows.Forms.Label label_nciclos;
+        private System.Windows.Forms.TextBox tbox_creditosrestantes;
+        private System.Windows.Forms.TextBox tbox_nciclos;
+        private System.Windows.Forms.Label label_creditosrestantes;
+        private System.Windows.Forms.Label label_ordenmerito;
+        private System.Windows.Forms.TextBox tbox_ordenmerito;
+        private System.Windows.Forms.Label label_etapa;
+        private System.Windows.Forms.ComboBox cbox_especialidad;
+        private System.Windows.Forms.Label label_craest;
+        private System.Windows.Forms.TextBox tbox_craest;
+        private System.Windows.Forms.Label label_especialidad;
+        private System.Windows.Forms.Label label_facultad;
+        private System.Windows.Forms.Label label_ultimociclo;
+        private System.Windows.Forms.ComboBox cbox_ciclo;
+        private System.Windows.Forms.Label label_ciclo;
     }
 }

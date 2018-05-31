@@ -14,29 +14,22 @@ namespace Controlador
     {
         private AlumnoDA accesoDatos;
 
-        public AlumnoBL()
+        public AlumnoBL() { accesoDatos = new AlumnoDA(); }
+
+        public int registrarAlumno(Becado a)
         {
-            accesoDatos = new AlumnoDA();
+            int idx = accesoDatos.registrar_enPersona(a); //registra en la tabla personas;
+            int idx_becado = accesoDatos.registrar_enBecado(a, idx); //registra en la tabla becadp
+            return idx_becado;
         }
 
-        public void RegistrarAlumno(Alumno a, int id_especialidad)
-        {
-            //la primera parte es el registro en la tabla personas y la segunda en la tabla alumno
-            accesoDatos.Registrar_enPersonas(a);
-            int idx = accesoDatos.ObtenerMaxId();
-            accesoDatos.Registrar_enAlumno(a, id_especialidad, idx);
-        }
-        public void ActualizarAlumno(Alumno a, int id_especialidad)
-        {
-            accesoDatos.Actualizar_enTAlumnoTPersona(a, id_especialidad);
-        }
-        public BindingList<Alumno> BuscarAlumno(string codigoB, string nombreB, string apellidoB)
-        {
+        public void actualizarAlumno(Becado a) { accesoDatos.actualizar_enBecado(a); }
 
-            BindingList<Alumno> lista = accesoDatos.Buscar_enTAlumno();
-            accesoDatos.Buscar_enTPersona(lista);
-
-            BindingList<Alumno> listaB = new BindingList<Alumno>();
+        public BindingList<Becado> buscarAlumno(string codigoB, string nombreB, string apellidoB)
+        {
+            BindingList<Becado> lista = accesoDatos.buscar_enBecado(); //lista todos los becados
+            accesoDatos.buscar_enPersona(lista); //actualiza a la lista de becados con sus datos de persona
+            BindingList<Becado> listaB = new BindingList<Becado>(); //listaB tendrá los becados de acuerdo a los parametros de busqueda
 
             if (codigoB != "") //si se ingreso un codigo
             {
@@ -45,28 +38,28 @@ namespace Controlador
                 {
                     if (nombreB != "" && apellidoB != "")
                     {
-                        foreach (Alumno a in lista)
+                        foreach (Becado a in lista)
                         {
                             if (a.CodigoPUCP == codigo && a.Nombres.Contains(nombreB) == true && a.Apellidos.Contains(apellidoB) == true) { listaB.Add(a); break; }
                         }
                     }
                     if (nombreB != "" && apellidoB == "")
                     {
-                        foreach (Alumno a in lista)
+                        foreach (Becado a in lista)
                         {
                             if (a.CodigoPUCP == codigo && a.Nombres.Contains(nombreB) == true) { listaB.Add(a); break; }
                         }
                     }
                     if (nombreB == "" && apellidoB != "")
                     {
-                        foreach (Alumno a in lista)
+                        foreach (Becado a in lista)
                         {
                             if (a.CodigoPUCP == codigo && a.Apellidos.Contains(apellidoB) == true) { listaB.Add(a); break; }
                         }
                     }
                     if (nombreB == "" && apellidoB == "")
                     {
-                        foreach (Alumno a in lista)
+                        foreach (Becado a in lista)
                         {
                             if (a.CodigoPUCP == codigo) { listaB.Add(a); break; }
                         }
@@ -81,21 +74,21 @@ namespace Controlador
             {
                 if (nombreB != "" && apellidoB != "")
                 {
-                    foreach (Alumno a in lista)
+                    foreach (Becado a in lista)
                     {
                         if (a.Nombres.Contains(nombreB) == true && a.Apellidos.Contains(apellidoB) == true) { listaB.Add(a); }
                     }
                 }
                 if (nombreB != "" && apellidoB == "")
                 {
-                    foreach (Alumno a in lista)
+                    foreach (Becado a in lista)
                     {
                         if (a.Nombres.Contains(nombreB) == true) { listaB.Add(a); }
                     }
                 }
                 if (nombreB == "" && apellidoB != "")
                 {
-                    foreach (Alumno a in lista)
+                    foreach (Becado a in lista)
                     {
                         if (a.Apellidos.Contains(apellidoB) == true) { listaB.Add(a); }
                     }
@@ -107,7 +100,8 @@ namespace Controlador
             }
             return listaB;
         }
-        public BindingList<Alumno> listarBecarios(String cod)
+
+        public BindingList<Becado> listarBecarios(String cod)
         {
             return accesoDatos.listarBecarios(cod);
         }

@@ -100,7 +100,7 @@ namespace AccesoDatos
             con.Close();
         }
 
-        public void enlazarBecario2(Alumno pe,string idAlum)
+        public void enlazarBecario2(Becado pe,string idAlum)
         {
             //BindingList<Persona> lista = new BindingList<Persona>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +

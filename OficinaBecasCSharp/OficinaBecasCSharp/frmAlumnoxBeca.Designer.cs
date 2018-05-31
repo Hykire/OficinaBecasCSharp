@@ -37,14 +37,18 @@
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbox_ciclo_nuevo2 = new System.Windows.Forms.ComboBox();
+            this.cbox_ciclo_nuevo1 = new System.Windows.Forms.ComboBox();
             this.label_ciclo = new System.Windows.Forms.Label();
             this.gbox_datosGenerales = new System.Windows.Forms.GroupBox();
-            this.tbox_id_alumnoxbeca = new System.Windows.Forms.TextBox();
-            this.tbox_id_alumno = new System.Windows.Forms.TextBox();
+            this.cbox_nivelcreditos = new System.Windows.Forms.ComboBox();
+            this.cbox_tipoescala = new System.Windows.Forms.ComboBox();
+            this.cbox_escalapago2 = new System.Windows.Forms.ComboBox();
+            this.cbox_escalapago1 = new System.Windows.Forms.ComboBox();
+            this.tbox_id_becadoxbeca = new System.Windows.Forms.TextBox();
+            this.tbox_id_becado = new System.Windows.Forms.TextBox();
             this.cbox_beca = new System.Windows.Forms.ComboBox();
-            this.tbox_nivelcreditos = new System.Windows.Forms.TextBox();
             this.label_nivelcreditos = new System.Windows.Forms.Label();
-            this.tbox_escalapago = new System.Windows.Forms.TextBox();
             this.label_escalapago = new System.Windows.Forms.Label();
             this.label_beca = new System.Windows.Forms.Label();
             this.tbox_apellidos = new System.Windows.Forms.TextBox();
@@ -54,15 +58,16 @@
             this.label_nombre = new System.Windows.Forms.Label();
             this.label_apellidos = new System.Windows.Forms.Label();
             this.gbox_solicitudesConsejo = new System.Windows.Forms.GroupBox();
+            this.cbox_cicloS2 = new System.Windows.Forms.ComboBox();
+            this.cbox_suspencion = new System.Windows.Forms.ComboBox();
+            this.cbox_cicloS1 = new System.Windows.Forms.ComboBox();
             this.tbox_ncarta = new System.Windows.Forms.TextBox();
             this.label_ncarta = new System.Windows.Forms.Label();
             this.rtbox_respuesta = new System.Windows.Forms.RichTextBox();
             this.label_respuesta = new System.Windows.Forms.Label();
             this.cbox_ampliacion = new System.Windows.Forms.ComboBox();
             this.cbox_renovacion = new System.Windows.Forms.ComboBox();
-            this.tbox_ciclosolicitado = new System.Windows.Forms.TextBox();
             this.label_ciclosolicitado = new System.Windows.Forms.Label();
-            this.tbox_suspencion = new System.Windows.Forms.TextBox();
             this.label_renovacion = new System.Windows.Forms.Label();
             this.label_suspencion = new System.Windows.Forms.Label();
             this.label_ampliacion = new System.Windows.Forms.Label();
@@ -102,7 +107,6 @@
             this.label_nutilizados = new System.Windows.Forms.Label();
             this.tbox_cubiertos = new System.Windows.Forms.TextBox();
             this.label_ncubiertos = new System.Windows.Forms.Label();
-            this.tbox_ciclo = new System.Windows.Forms.TextBox();
             this.toolStrip_historiaacademica.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gbox_datosGenerales.SuspendLayout();
@@ -180,6 +184,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cbox_ciclo_nuevo2);
+            this.panel1.Controls.Add(this.cbox_ciclo_nuevo1);
             this.panel1.Controls.Add(this.label_ciclo);
             this.panel1.Controls.Add(this.gbox_datosGenerales);
             this.panel1.Controls.Add(this.gbox_solicitudesConsejo);
@@ -187,29 +193,60 @@
             this.panel1.Controls.Add(this.cbox_ciclo);
             this.panel1.Controls.Add(this.gbox_redencionbonos);
             this.panel1.Controls.Add(this.gbox_cobertura);
-            this.panel1.Controls.Add(this.tbox_ciclo);
             this.panel1.Location = new System.Drawing.Point(21, 28);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(807, 674);
             this.panel1.TabIndex = 72;
             // 
+            // cbox_ciclo_nuevo2
+            // 
+            this.cbox_ciclo_nuevo2.FormattingEnabled = true;
+            this.cbox_ciclo_nuevo2.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
+            this.cbox_ciclo_nuevo2.Location = new System.Drawing.Point(128, 30);
+            this.cbox_ciclo_nuevo2.Name = "cbox_ciclo_nuevo2";
+            this.cbox_ciclo_nuevo2.Size = new System.Drawing.Size(34, 21);
+            this.cbox_ciclo_nuevo2.TabIndex = 81;
+            // 
+            // cbox_ciclo_nuevo1
+            // 
+            this.cbox_ciclo_nuevo1.FormattingEnabled = true;
+            this.cbox_ciclo_nuevo1.Items.AddRange(new object[] {
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018"});
+            this.cbox_ciclo_nuevo1.Location = new System.Drawing.Point(62, 30);
+            this.cbox_ciclo_nuevo1.Name = "cbox_ciclo_nuevo1";
+            this.cbox_ciclo_nuevo1.Size = new System.Drawing.Size(60, 21);
+            this.cbox_ciclo_nuevo1.TabIndex = 80;
+            // 
             // label_ciclo
             // 
             this.label_ciclo.AutoSize = true;
-            this.label_ciclo.Location = new System.Drawing.Point(25, 32);
+            this.label_ciclo.Location = new System.Drawing.Point(23, 33);
             this.label_ciclo.Name = "label_ciclo";
             this.label_ciclo.Size = new System.Drawing.Size(33, 13);
-            this.label_ciclo.TabIndex = 12;
+            this.label_ciclo.TabIndex = 75;
             this.label_ciclo.Text = "Ciclo:";
             // 
             // gbox_datosGenerales
             // 
-            this.gbox_datosGenerales.Controls.Add(this.tbox_id_alumnoxbeca);
-            this.gbox_datosGenerales.Controls.Add(this.tbox_id_alumno);
+            this.gbox_datosGenerales.Controls.Add(this.cbox_nivelcreditos);
+            this.gbox_datosGenerales.Controls.Add(this.cbox_tipoescala);
+            this.gbox_datosGenerales.Controls.Add(this.cbox_escalapago2);
+            this.gbox_datosGenerales.Controls.Add(this.cbox_escalapago1);
+            this.gbox_datosGenerales.Controls.Add(this.tbox_id_becadoxbeca);
+            this.gbox_datosGenerales.Controls.Add(this.tbox_id_becado);
             this.gbox_datosGenerales.Controls.Add(this.cbox_beca);
-            this.gbox_datosGenerales.Controls.Add(this.tbox_nivelcreditos);
             this.gbox_datosGenerales.Controls.Add(this.label_nivelcreditos);
-            this.gbox_datosGenerales.Controls.Add(this.tbox_escalapago);
             this.gbox_datosGenerales.Controls.Add(this.label_escalapago);
             this.gbox_datosGenerales.Controls.Add(this.label_beca);
             this.gbox_datosGenerales.Controls.Add(this.tbox_apellidos);
@@ -218,28 +255,91 @@
             this.gbox_datosGenerales.Controls.Add(this.label_codigo);
             this.gbox_datosGenerales.Controls.Add(this.label_nombre);
             this.gbox_datosGenerales.Controls.Add(this.label_apellidos);
-            this.gbox_datosGenerales.Location = new System.Drawing.Point(28, 65);
+            this.gbox_datosGenerales.Location = new System.Drawing.Point(26, 66);
             this.gbox_datosGenerales.Name = "gbox_datosGenerales";
             this.gbox_datosGenerales.Size = new System.Drawing.Size(367, 224);
-            this.gbox_datosGenerales.TabIndex = 9;
+            this.gbox_datosGenerales.TabIndex = 73;
             this.gbox_datosGenerales.TabStop = false;
             this.gbox_datosGenerales.Text = "Datos Generales";
             // 
-            // tbox_id_alumnoxbeca
+            // cbox_nivelcreditos
             // 
-            this.tbox_id_alumnoxbeca.Location = new System.Drawing.Point(24, 132);
-            this.tbox_id_alumnoxbeca.Name = "tbox_id_alumnoxbeca";
-            this.tbox_id_alumnoxbeca.Size = new System.Drawing.Size(100, 20);
-            this.tbox_id_alumnoxbeca.TabIndex = 25;
-            this.tbox_id_alumnoxbeca.Visible = false;
+            this.cbox_nivelcreditos.FormattingEnabled = true;
+            this.cbox_nivelcreditos.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbox_nivelcreditos.Location = new System.Drawing.Point(285, 184);
+            this.cbox_nivelcreditos.Name = "cbox_nivelcreditos";
+            this.cbox_nivelcreditos.Size = new System.Drawing.Size(57, 21);
+            this.cbox_nivelcreditos.TabIndex = 75;
             // 
-            // tbox_id_alumno
+            // cbox_tipoescala
             // 
-            this.tbox_id_alumno.Location = new System.Drawing.Point(242, 27);
-            this.tbox_id_alumno.Name = "tbox_id_alumno";
-            this.tbox_id_alumno.Size = new System.Drawing.Size(100, 20);
-            this.tbox_id_alumno.TabIndex = 24;
-            this.tbox_id_alumno.Visible = false;
+            this.cbox_tipoescala.FormattingEnabled = true;
+            this.cbox_tipoescala.Items.AddRange(new object[] {
+            "ANTIGUA",
+            "ACTUAL"});
+            this.cbox_tipoescala.Location = new System.Drawing.Point(179, 157);
+            this.cbox_tipoescala.Name = "cbox_tipoescala";
+            this.cbox_tipoescala.Size = new System.Drawing.Size(100, 21);
+            this.cbox_tipoescala.TabIndex = 67;
+            this.cbox_tipoescala.SelectedIndexChanged += new System.EventHandler(this.cbox_tipoescala_SelectedIndexChanged);
+            // 
+            // cbox_escalapago2
+            // 
+            this.cbox_escalapago2.FormattingEnabled = true;
+            this.cbox_escalapago2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"});
+            this.cbox_escalapago2.Location = new System.Drawing.Point(285, 157);
+            this.cbox_escalapago2.Name = "cbox_escalapago2";
+            this.cbox_escalapago2.Size = new System.Drawing.Size(57, 21);
+            this.cbox_escalapago2.TabIndex = 74;
+            // 
+            // cbox_escalapago1
+            // 
+            this.cbox_escalapago1.FormattingEnabled = true;
+            this.cbox_escalapago1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cbox_escalapago1.Location = new System.Drawing.Point(285, 157);
+            this.cbox_escalapago1.Name = "cbox_escalapago1";
+            this.cbox_escalapago1.Size = new System.Drawing.Size(57, 21);
+            this.cbox_escalapago1.TabIndex = 73;
+            // 
+            // tbox_id_becadoxbeca
+            // 
+            this.tbox_id_becadoxbeca.Location = new System.Drawing.Point(24, 132);
+            this.tbox_id_becadoxbeca.Name = "tbox_id_becadoxbeca";
+            this.tbox_id_becadoxbeca.Size = new System.Drawing.Size(100, 20);
+            this.tbox_id_becadoxbeca.TabIndex = 25;
+            // 
+            // tbox_id_becado
+            // 
+            this.tbox_id_becado.Location = new System.Drawing.Point(242, 27);
+            this.tbox_id_becado.Name = "tbox_id_becado";
+            this.tbox_id_becado.Size = new System.Drawing.Size(100, 20);
+            this.tbox_id_becado.TabIndex = 24;
             // 
             // cbox_beca
             // 
@@ -253,13 +353,6 @@
             this.cbox_beca.Sorted = true;
             this.cbox_beca.TabIndex = 23;
             // 
-            // tbox_nivelcreditos
-            // 
-            this.tbox_nivelcreditos.Location = new System.Drawing.Point(223, 184);
-            this.tbox_nivelcreditos.Name = "tbox_nivelcreditos";
-            this.tbox_nivelcreditos.Size = new System.Drawing.Size(119, 20);
-            this.tbox_nivelcreditos.TabIndex = 12;
-            // 
             // label_nivelcreditos
             // 
             this.label_nivelcreditos.AutoSize = true;
@@ -269,13 +362,6 @@
             this.label_nivelcreditos.Size = new System.Drawing.Size(109, 13);
             this.label_nivelcreditos.TabIndex = 11;
             this.label_nivelcreditos.Text = "Nivel Según Créditos:";
-            // 
-            // tbox_escalapago
-            // 
-            this.tbox_escalapago.Location = new System.Drawing.Point(223, 158);
-            this.tbox_escalapago.Name = "tbox_escalapago";
-            this.tbox_escalapago.Size = new System.Drawing.Size(119, 20);
-            this.tbox_escalapago.TabIndex = 10;
             // 
             // label_escalapago
             // 
@@ -350,24 +436,66 @@
             // 
             // gbox_solicitudesConsejo
             // 
+            this.gbox_solicitudesConsejo.Controls.Add(this.cbox_cicloS2);
+            this.gbox_solicitudesConsejo.Controls.Add(this.cbox_suspencion);
+            this.gbox_solicitudesConsejo.Controls.Add(this.cbox_cicloS1);
             this.gbox_solicitudesConsejo.Controls.Add(this.tbox_ncarta);
             this.gbox_solicitudesConsejo.Controls.Add(this.label_ncarta);
             this.gbox_solicitudesConsejo.Controls.Add(this.rtbox_respuesta);
             this.gbox_solicitudesConsejo.Controls.Add(this.label_respuesta);
             this.gbox_solicitudesConsejo.Controls.Add(this.cbox_ampliacion);
             this.gbox_solicitudesConsejo.Controls.Add(this.cbox_renovacion);
-            this.gbox_solicitudesConsejo.Controls.Add(this.tbox_ciclosolicitado);
             this.gbox_solicitudesConsejo.Controls.Add(this.label_ciclosolicitado);
-            this.gbox_solicitudesConsejo.Controls.Add(this.tbox_suspencion);
             this.gbox_solicitudesConsejo.Controls.Add(this.label_renovacion);
             this.gbox_solicitudesConsejo.Controls.Add(this.label_suspencion);
             this.gbox_solicitudesConsejo.Controls.Add(this.label_ampliacion);
-            this.gbox_solicitudesConsejo.Location = new System.Drawing.Point(415, 15);
+            this.gbox_solicitudesConsejo.Location = new System.Drawing.Point(413, 16);
             this.gbox_solicitudesConsejo.Name = "gbox_solicitudesConsejo";
             this.gbox_solicitudesConsejo.Size = new System.Drawing.Size(367, 274);
-            this.gbox_solicitudesConsejo.TabIndex = 10;
+            this.gbox_solicitudesConsejo.TabIndex = 74;
             this.gbox_solicitudesConsejo.TabStop = false;
             this.gbox_solicitudesConsejo.Text = "Solicitudes al Consejo Directivo del Sistema de Becas y Crédito Educativo";
+            // 
+            // cbox_cicloS2
+            // 
+            this.cbox_cicloS2.FormattingEnabled = true;
+            this.cbox_cicloS2.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
+            this.cbox_cicloS2.Location = new System.Drawing.Point(308, 121);
+            this.cbox_cicloS2.Name = "cbox_cicloS2";
+            this.cbox_cicloS2.Size = new System.Drawing.Size(34, 21);
+            this.cbox_cicloS2.TabIndex = 74;
+            // 
+            // cbox_suspencion
+            // 
+            this.cbox_suspencion.FormattingEnabled = true;
+            this.cbox_suspencion.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.cbox_suspencion.Location = new System.Drawing.Point(242, 68);
+            this.cbox_suspencion.Name = "cbox_suspencion";
+            this.cbox_suspencion.Size = new System.Drawing.Size(100, 21);
+            this.cbox_suspencion.TabIndex = 65;
+            // 
+            // cbox_cicloS1
+            // 
+            this.cbox_cicloS1.FormattingEnabled = true;
+            this.cbox_cicloS1.Items.AddRange(new object[] {
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018"});
+            this.cbox_cicloS1.Location = new System.Drawing.Point(242, 121);
+            this.cbox_cicloS1.Name = "cbox_cicloS1";
+            this.cbox_cicloS1.Size = new System.Drawing.Size(60, 21);
+            this.cbox_cicloS1.TabIndex = 73;
             // 
             // tbox_ncarta
             // 
@@ -426,13 +554,6 @@
             this.cbox_renovacion.Size = new System.Drawing.Size(100, 21);
             this.cbox_renovacion.TabIndex = 60;
             // 
-            // tbox_ciclosolicitado
-            // 
-            this.tbox_ciclosolicitado.Location = new System.Drawing.Point(242, 121);
-            this.tbox_ciclosolicitado.Name = "tbox_ciclosolicitado";
-            this.tbox_ciclosolicitado.Size = new System.Drawing.Size(100, 20);
-            this.tbox_ciclosolicitado.TabIndex = 59;
-            // 
             // label_ciclosolicitado
             // 
             this.label_ciclosolicitado.AutoSize = true;
@@ -442,13 +563,6 @@
             this.label_ciclosolicitado.Size = new System.Drawing.Size(82, 13);
             this.label_ciclosolicitado.TabIndex = 58;
             this.label_ciclosolicitado.Text = "Ciclo Solicitado:";
-            // 
-            // tbox_suspencion
-            // 
-            this.tbox_suspencion.Location = new System.Drawing.Point(242, 68);
-            this.tbox_suspencion.Name = "tbox_suspencion";
-            this.tbox_suspencion.Size = new System.Drawing.Size(100, 20);
-            this.tbox_suspencion.TabIndex = 55;
             // 
             // label_renovacion
             // 
@@ -491,10 +605,10 @@
             this.gbox_intercambio.Controls.Add(this.label_adelantobono);
             this.gbox_intercambio.Controls.Add(this.label_tipointercambio);
             this.gbox_intercambio.Controls.Add(this.label_periodointercambio);
-            this.gbox_intercambio.Location = new System.Drawing.Point(213, 517);
+            this.gbox_intercambio.Location = new System.Drawing.Point(211, 518);
             this.gbox_intercambio.Name = "gbox_intercambio";
             this.gbox_intercambio.Size = new System.Drawing.Size(367, 172);
-            this.gbox_intercambio.TabIndex = 66;
+            this.gbox_intercambio.TabIndex = 79;
             this.gbox_intercambio.TabStop = false;
             this.gbox_intercambio.Text = "Intercambio Estudiantil:";
             // 
@@ -589,10 +703,10 @@
             // cbox_ciclo
             // 
             this.cbox_ciclo.FormattingEnabled = true;
-            this.cbox_ciclo.Location = new System.Drawing.Point(139, 29);
+            this.cbox_ciclo.Location = new System.Drawing.Point(62, 30);
             this.cbox_ciclo.Name = "cbox_ciclo";
             this.cbox_ciclo.Size = new System.Drawing.Size(57, 21);
-            this.cbox_ciclo.TabIndex = 13;
+            this.cbox_ciclo.TabIndex = 76;
             this.cbox_ciclo.SelectedIndexChanged += new System.EventHandler(this.cbox_ciclo_SelectedIndexChanged);
             // 
             // gbox_redencionbonos
@@ -608,10 +722,10 @@
             this.gbox_redencionbonos.Controls.Add(this.label_bonomateriales);
             this.gbox_redencionbonos.Controls.Add(this.label_bonoalojamiento);
             this.gbox_redencionbonos.Controls.Add(this.label_tiposansion);
-            this.gbox_redencionbonos.Location = new System.Drawing.Point(415, 302);
+            this.gbox_redencionbonos.Location = new System.Drawing.Point(413, 303);
             this.gbox_redencionbonos.Name = "gbox_redencionbonos";
             this.gbox_redencionbonos.Size = new System.Drawing.Size(367, 200);
-            this.gbox_redencionbonos.TabIndex = 65;
+            this.gbox_redencionbonos.TabIndex = 78;
             this.gbox_redencionbonos.TabStop = false;
             this.gbox_redencionbonos.Text = "Redención de Bonos";
             // 
@@ -734,10 +848,10 @@
             this.gbox_cobertura.Controls.Add(this.label_nutilizados);
             this.gbox_cobertura.Controls.Add(this.tbox_cubiertos);
             this.gbox_cobertura.Controls.Add(this.label_ncubiertos);
-            this.gbox_cobertura.Location = new System.Drawing.Point(24, 303);
+            this.gbox_cobertura.Location = new System.Drawing.Point(22, 304);
             this.gbox_cobertura.Name = "gbox_cobertura";
             this.gbox_cobertura.Size = new System.Drawing.Size(367, 199);
-            this.gbox_cobertura.TabIndex = 14;
+            this.gbox_cobertura.TabIndex = 77;
             this.gbox_cobertura.TabStop = false;
             this.gbox_cobertura.Text = "Cobertura Total del Programa";
             // 
@@ -843,13 +957,6 @@
             this.label_ncubiertos.TabIndex = 36;
             this.label_ncubiertos.Text = "Nro. de Créditos Cubiertos por la Beca:";
             // 
-            // tbox_ciclo
-            // 
-            this.tbox_ciclo.Location = new System.Drawing.Point(75, 29);
-            this.tbox_ciclo.Name = "tbox_ciclo";
-            this.tbox_ciclo.Size = new System.Drawing.Size(58, 20);
-            this.tbox_ciclo.TabIndex = 70;
-            // 
             // frmAlumnoxBeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -887,14 +994,18 @@
         private System.Windows.Forms.ToolStripButton btnBuscar;
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cbox_ciclo_nuevo2;
+        private System.Windows.Forms.ComboBox cbox_ciclo_nuevo1;
         private System.Windows.Forms.Label label_ciclo;
         private System.Windows.Forms.GroupBox gbox_datosGenerales;
-        private System.Windows.Forms.TextBox tbox_id_alumnoxbeca;
-        private System.Windows.Forms.TextBox tbox_id_alumno;
+        private System.Windows.Forms.ComboBox cbox_nivelcreditos;
+        private System.Windows.Forms.ComboBox cbox_tipoescala;
+        private System.Windows.Forms.ComboBox cbox_escalapago2;
+        private System.Windows.Forms.ComboBox cbox_escalapago1;
+        private System.Windows.Forms.TextBox tbox_id_becadoxbeca;
+        private System.Windows.Forms.TextBox tbox_id_becado;
         private System.Windows.Forms.ComboBox cbox_beca;
-        private System.Windows.Forms.TextBox tbox_nivelcreditos;
         private System.Windows.Forms.Label label_nivelcreditos;
-        private System.Windows.Forms.TextBox tbox_escalapago;
         private System.Windows.Forms.Label label_escalapago;
         private System.Windows.Forms.Label label_beca;
         private System.Windows.Forms.TextBox tbox_apellidos;
@@ -904,15 +1015,16 @@
         private System.Windows.Forms.Label label_nombre;
         private System.Windows.Forms.Label label_apellidos;
         private System.Windows.Forms.GroupBox gbox_solicitudesConsejo;
+        private System.Windows.Forms.ComboBox cbox_cicloS2;
+        private System.Windows.Forms.ComboBox cbox_suspencion;
+        private System.Windows.Forms.ComboBox cbox_cicloS1;
         private System.Windows.Forms.TextBox tbox_ncarta;
         private System.Windows.Forms.Label label_ncarta;
         private System.Windows.Forms.RichTextBox rtbox_respuesta;
         private System.Windows.Forms.Label label_respuesta;
         private System.Windows.Forms.ComboBox cbox_ampliacion;
         private System.Windows.Forms.ComboBox cbox_renovacion;
-        private System.Windows.Forms.TextBox tbox_ciclosolicitado;
         private System.Windows.Forms.Label label_ciclosolicitado;
-        private System.Windows.Forms.TextBox tbox_suspencion;
         private System.Windows.Forms.Label label_renovacion;
         private System.Windows.Forms.Label label_suspencion;
         private System.Windows.Forms.Label label_ampliacion;
@@ -952,6 +1064,5 @@
         private System.Windows.Forms.Label label_nutilizados;
         private System.Windows.Forms.TextBox tbox_cubiertos;
         private System.Windows.Forms.Label label_ncubiertos;
-        private System.Windows.Forms.TextBox tbox_ciclo;
     }
 }

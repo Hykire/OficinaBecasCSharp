@@ -11,34 +11,93 @@ namespace AccesoDatos
 {
     public class Alumno_x_BecaDA
     {
-        public void Registrar_enAlumno_x_Beca(Alumno_x_Beca axb, int id_alumno)
+        public void Registrar_enAlumno_x_Beca(Alumno_x_Beca axb)
         {
-            //coneccion a BD
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                            "user=inf282g6;database=inf282g6;" +
-                            "port=3306;password=Nk2ewy;SslMode=none;" + "";
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
             MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            //
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandText = "INSERT INTO _F_ALUMNO_x_BECA(ID_ALUMNO,ID_BECA,CICLO,ESCALA_PAGO,NIVEL_CREDITOS,NCREDITOS_CUBIERTOS," +
-                "NCREDITOS_UTILIZADOS,NCREDITOS_RESTANTES,NSEMESTRES_REGULAR,NSEMESTRES_VERANO,NSEMESTRES_RESTANTES,RENOVACION," +
-                "SUSPENCION,AMPLIACION,CICLO_SOLICITADO,RESPUESTA,NCARTA,REDENCION_MATERIALES," +
-                "REDENCION_ALOJAMIENTO, SANSION_TIPO, SANSION_INI, SANSION_FIN, INTERCAMBIO_TIPO," +
-                "INTERCAMBIO_INI,INTERCAMBIO_FIN,ADELANTO, INTERCAMBIO, SANSION) VALUES" +
-                "(" + id_alumno + "," + axb.Id_beca + ",'" + axb.Ciclo + "'," + axb.Escala_pago + ",'" + axb.Nivel_creditos + "'," +
-                axb.Ncreditos_cubiertos + "," + axb.Ncreditos_utilizados + "," + axb.Ncreditos_restantes + "," +
-                axb.Nsemestres_regular + "," + axb.Nsemestres_verano + "," + axb.Nsemestres_restantes + "," +
-                axb.Renovacion + ",'" + axb.Suspencion + "'," + axb.Ampliacion + ",'" + axb.Ciclo_solicitado + "','" +
-                axb.Respuesta + "','" + axb.Ncarta + "'," + axb.Redencion_materiales + "," + axb.Redencion_alojamiento + ",'" +
-                axb.Sansion_tipo + "','" + axb.Sansion_ini + "','" + axb.Sansion_fin + "','" + axb.Intercambio_tipo + "','" +
-                axb.Intercambio_ini + "','" + axb.Intercambio_fin + "'," + axb.Adelanto + "," + axb.Intercambio + "," + axb.Sansion + ");";
-            System.Console.WriteLine(comando.CommandText);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.CommandText = "F_INSERTAR_BECADO_X_BECA";
+            comando.Parameters.Add("_id_becado", MySqlDbType.Int32).Value = axb.Id_becado;
+            comando.Parameters.Add("_id_beca", MySqlDbType.Int32).Value = axb.Id_beca;
+            comando.Parameters.Add("_ciclo", MySqlDbType.VarChar).Value = axb.Ciclo;
+            comando.Parameters.Add("_tipo_escala_pago", MySqlDbType.VarChar).Value = axb.Tipo_escala_pago;
+            comando.Parameters.Add("_escala_pago", MySqlDbType.Int32).Value = axb.Escala_pago;
+            comando.Parameters.Add("_nivel_creditos", MySqlDbType.Int32).Value = axb.Nivel_creditos;
+            comando.Parameters.Add("_ncreditos_cubiertos", MySqlDbType.Double).Value = axb.Ncreditos_cubiertos;
+            comando.Parameters.Add("_ncreditos_utilizados", MySqlDbType.Double).Value = axb.Ncreditos_utilizados;
+            comando.Parameters.Add("_ncreditos_restantes", MySqlDbType.Double).Value = axb.Ncreditos_restantes;
+            comando.Parameters.Add("_nsemestres_regular", MySqlDbType.Int32).Value = axb.Nsemestres_regular;
+            comando.Parameters.Add("_nsemestres_verano", MySqlDbType.Int32).Value = axb.Nsemestres_verano;
+            comando.Parameters.Add("_nsemestres_restantes", MySqlDbType.Int32).Value = axb.Nsemestres_restantes;
+            comando.Parameters.Add("_renovacion", MySqlDbType.Int32).Value = axb.Renovacion;
+            comando.Parameters.Add("_suspencion", MySqlDbType.Int32).Value = axb.Suspencion;
+            comando.Parameters.Add("_ampliacion", MySqlDbType.Int32).Value = axb.Ampliacion;
+            comando.Parameters.Add("_ciclo_solicitado", MySqlDbType.VarChar).Value = axb.Ciclo_solicitado;
+            comando.Parameters.Add("_respuesta", MySqlDbType.VarChar).Value = axb.Respuesta;
+            comando.Parameters.Add("_ncarta", MySqlDbType.VarChar).Value = axb.Ncarta;
+            comando.Parameters.Add("_redencion_materiales", MySqlDbType.Int32).Value = axb.Redencion_materiales;
+            comando.Parameters.Add("_redencion_alojamiento", MySqlDbType.Int32).Value = axb.Redencion_alojamiento;
+            comando.Parameters.Add("_sansion", MySqlDbType.Int32).Value = axb.Sansion;
+            comando.Parameters.Add("_sansion_tipo", MySqlDbType.VarChar).Value = axb.Sansion_tipo;
+            comando.Parameters.Add("_sansion_ini", MySqlDbType.Date).Value = axb.Sansion_ini;
+            comando.Parameters.Add("_sansion_fin", MySqlDbType.Date).Value = axb.Sansion_fin;
+            comando.Parameters.Add("_intercambio", MySqlDbType.Int32).Value = axb.Intercambio;
+            comando.Parameters.Add("_intercambio_tipo", MySqlDbType.VarChar).Value = axb.Intercambio_tipo;
+            comando.Parameters.Add("_intercambio_ini", MySqlDbType.Date).Value = axb.Intercambio_ini;
+            comando.Parameters.Add("_intercambio_fin", MySqlDbType.Date).Value = axb.Intercambio_fin;
+            comando.Parameters.Add("_adelanto", MySqlDbType.Int32).Value = axb.Adelanto;
+
             comando.Connection = con;
+            con.Open();
             comando.ExecuteNonQuery();
             con.Close();
         }
-        public BindingList<Alumno_x_Beca> Buscar_BecasxAlumno(int id_alumno)
+        public void actualizarAlumno_x_Beca(Alumno_x_Beca axb)
+        {
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.CommandText = "F_ACTUALIZAR_BECADO_X_BECA";
+            comando.Parameters.Add("_id_becado_x_beca", MySqlDbType.Int32).Value = axb.Id_becado_x_beca;
+            comando.Parameters.Add("_id_beca", MySqlDbType.Int32).Value = axb.Id_beca;
+            comando.Parameters.Add("_ciclo", MySqlDbType.VarChar).Value = axb.Ciclo;
+            comando.Parameters.Add("_tipo_escala_pago", MySqlDbType.VarChar).Value = axb.Tipo_escala_pago;
+            comando.Parameters.Add("_escala_pago", MySqlDbType.Int32).Value = axb.Escala_pago;
+            comando.Parameters.Add("_nivel_creditos", MySqlDbType.Int32).Value = axb.Nivel_creditos;
+            comando.Parameters.Add("_ncreditos_cubiertos", MySqlDbType.Double).Value = axb.Ncreditos_cubiertos;
+            comando.Parameters.Add("_ncreditos_utilizados", MySqlDbType.Double).Value = axb.Ncreditos_utilizados;
+            comando.Parameters.Add("_ncreditos_restantes", MySqlDbType.Double).Value = axb.Ncreditos_restantes;
+            comando.Parameters.Add("_nsemestres_regular", MySqlDbType.Int32).Value = axb.Nsemestres_regular;
+            comando.Parameters.Add("_nsemestres_verano", MySqlDbType.Int32).Value = axb.Nsemestres_verano;
+            comando.Parameters.Add("_nsemestres_restantes", MySqlDbType.Int32).Value = axb.Nsemestres_restantes;
+            comando.Parameters.Add("_renovacion", MySqlDbType.Int32).Value = axb.Renovacion;
+            comando.Parameters.Add("_suspencion", MySqlDbType.Int32).Value = axb.Suspencion;
+            comando.Parameters.Add("_ampliacion", MySqlDbType.Int32).Value = axb.Ampliacion;
+            comando.Parameters.Add("_ciclo_solicitado", MySqlDbType.VarChar).Value = axb.Ciclo_solicitado;
+            comando.Parameters.Add("_respuesta", MySqlDbType.VarChar).Value = axb.Respuesta;
+            comando.Parameters.Add("_ncarta", MySqlDbType.VarChar).Value = axb.Ncarta;
+            comando.Parameters.Add("_redencion_materiales", MySqlDbType.Int32).Value = axb.Redencion_materiales;
+            comando.Parameters.Add("_redencion_alojamiento", MySqlDbType.Int32).Value = axb.Redencion_alojamiento;
+            comando.Parameters.Add("_sansion", MySqlDbType.Int32).Value = axb.Sansion;
+            comando.Parameters.Add("_sansion_tipo", MySqlDbType.VarChar).Value = axb.Sansion_tipo;
+            comando.Parameters.Add("_sansion_ini", MySqlDbType.Date).Value = axb.Sansion_ini;
+            comando.Parameters.Add("_sansion_fin", MySqlDbType.Date).Value = axb.Sansion_fin;
+            comando.Parameters.Add("_intercambio", MySqlDbType.Int32).Value = axb.Intercambio;
+            comando.Parameters.Add("_intercambio_tipo", MySqlDbType.VarChar).Value = axb.Intercambio_tipo;
+            comando.Parameters.Add("_intercambio_ini", MySqlDbType.Date).Value = axb.Intercambio_ini;
+            comando.Parameters.Add("_intercambio_fin", MySqlDbType.Date).Value = axb.Intercambio_fin;
+            comando.Parameters.Add("_adelanto", MySqlDbType.Int32).Value = axb.Adelanto;
+
+            comando.Connection = con;
+            con.Open();
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
+        public BindingList<Alumno_x_Beca> Buscar_BecasxAlumno(int id_becadoBUSCAR)
         {
             BindingList<Alumno_x_Beca> lista = new BindingList<Alumno_x_Beca>();
             //coneccion a BD
@@ -49,45 +108,46 @@ namespace AccesoDatos
             con.Open();
             //
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandText = "SELECT * FROM _F_ALUMNO_x_BECA";
+            comando.CommandText = "SELECT * FROM BECADO_X_BECA";
             comando.Connection = con;
             MySqlDataReader rs = comando.ExecuteReader();
 
             while (rs.Read())
             {
-                int id_alumnno_axb = rs.GetInt32("ID_ALUMNO");
-                if (id_alumnno_axb == id_alumno)
+                int id_becado = rs.GetInt32("ID_BECADO");
+                if (id_becado == id_becadoBUSCAR)
                 {
                     Alumno_x_Beca axb = new Alumno_x_Beca();
-
-                    axb.Id_alumno_x_beca = rs.GetInt32("ID_ALUMNO_X_BECA");
+                    axb.Id_becado = id_becado;
+                    axb.Id_becado_x_beca = rs.GetInt32("ID_BECADO_X_BECA");
                     axb.Id_beca = rs.GetInt32("ID_BECA");
                     axb.Ciclo = rs.GetString("CICLO");
-                    axb.Escala_pago = Int32.Parse(rs.GetString("ESCALA_PAGO"));
-                    axb.Nivel_creditos = rs.GetString("NIVEL_CREDITOS");
-                    axb.Ncreditos_cubiertos = Double.Parse(rs.GetString("NCREDITOS_CUBIERTOS"));
-                    axb.Ncreditos_restantes = Double.Parse(rs.GetString("NCREDITOS_RESTANTES"));
-                    axb.Ncreditos_utilizados = Double.Parse(rs.GetString("NCREDITOS_UTILIZADOS"));
-                    axb.Nsemestres_regular = Int32.Parse(rs.GetString("NSEMESTRES_REGULAR"));
-                    axb.Nsemestres_verano = Int32.Parse(rs.GetString("NSEMESTRES_VERANO"));
-                    axb.Nsemestres_restantes = Int32.Parse(rs.GetString("NSEMESTRES_RESTANTES"));
-                    axb.Renovacion = Int32.Parse(rs.GetString("RENOVACION"));
-                    axb.Suspencion = rs.GetString("SUSPENCION");
-                    axb.Ampliacion = Int32.Parse(rs.GetString("AMPLIACION"));
+                    axb.Tipo_escala_pago = rs.GetString("TIPO_ESCALA_PAGO");
+                    axb.Escala_pago = rs.GetInt32("ESCALA_PAGO");
+                    axb.Nivel_creditos = rs.GetInt32("NIVEL_CREDITOS");
+                    axb.Ncreditos_cubiertos = rs.GetDouble("NCREDITOS_CUBIERTOS");
+                    axb.Ncreditos_restantes = rs.GetDouble("NCREDITOS_RESTANTES");
+                    axb.Ncreditos_utilizados = rs.GetDouble("NCREDITOS_UTILIZADOS");
+                    axb.Nsemestres_regular = rs.GetInt32("NSEMESTRES_REGULAR");
+                    axb.Nsemestres_verano = rs.GetInt32("NSEMESTRES_VERANO");
+                    axb.Nsemestres_restantes = rs.GetInt32("NSEMESTRES_RESTANTES");
+                    axb.Renovacion = rs.GetInt32("RENOVACION");
+                    axb.Suspencion = rs.GetInt32("SUSPENCION");
+                    axb.Ampliacion = rs.GetInt32("AMPLIACION");
                     axb.Ciclo_solicitado = rs.GetString("CICLO_SOLICITADO");
                     axb.Respuesta = rs.GetString("RESPUESTA");
                     axb.Ncarta = rs.GetString("NCARTA");
-                    axb.Redencion_materiales = Int32.Parse(rs.GetString("REDENCION_MATERIALES"));
-                    axb.Redencion_alojamiento = Int32.Parse(rs.GetString("REDENCION_ALOJAMIENTO"));
-                    axb.Sansion = Int32.Parse(rs.GetString("SANSION"));
+                    axb.Redencion_materiales = rs.GetInt32("REDENCION_MATERIALES");
+                    axb.Redencion_alojamiento = rs.GetInt32("REDENCION_ALOJAMIENTO");
+                    axb.Sansion = rs.GetInt32("SANSION");
                     axb.Sansion_tipo = rs.GetString("SANSION_TIPO");
-                    axb.Sansion_ini = rs.GetString("SANSION_INI");
-                    axb.Sansion_fin = rs.GetString("SANSION_FIN");
-                    axb.Intercambio = Int32.Parse(rs.GetString("INTERCAMBIO"));
-                    axb.Intercambio_ini = rs.GetString("INTERCAMBIO_INI");
-                    axb.Intercambio_fin = rs.GetString("INTERCAMBIO_FIN");
+                    axb.Sansion_ini = rs.GetDateTime("SANSION_INI");
+                    axb.Sansion_fin = rs.GetDateTime("SANSION_FIN");
+                    axb.Intercambio = rs.GetInt32("INTERCAMBIO");
+                    axb.Intercambio_ini = rs.GetDateTime("INTERCAMBIO_INI");
+                    axb.Intercambio_fin = rs.GetDateTime("INTERCAMBIO_FIN");
                     axb.Intercambio_tipo = rs.GetString("INTERCAMBIO_TIPO");
-                    axb.Adelanto = Int32.Parse(rs.GetString("ADELANTO"));
+                    axb.Adelanto = rs.GetInt32("ADELANTO");
 
                     lista.Add(axb);
                 }

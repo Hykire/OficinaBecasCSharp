@@ -15,12 +15,12 @@ namespace Vista
     public partial class frmConsultarBecarioT : Form
     {
         private AlumnoBL logicaNegocioPersona;
-        private Alumno alumnoSeleccionado;
+        private Becado alumnoSeleccionado;
         public frmConsultarBecarioT()
         {
             InitializeComponent();
             logicaNegocioPersona = new AlumnoBL();
-            alumnoSeleccionado = new Alumno();
+            alumnoSeleccionado = new Becado();
         }
 
         private void btnBuscarBecario_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace Vista
 
         private void dgvBecarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            alumnoSeleccionado = (Alumno)dgvBecarios.CurrentRow.DataBoundItem;
+            alumnoSeleccionado = (Becado)dgvBecarios.CurrentRow.DataBoundItem;
             txtApellidos.Text = alumnoSeleccionado.Apellidos.ToString();
             //txtFechaConvocatoriaSelec.Text = becaSeleccionada.FechaConvocatoria.ToString();
             txtCodigo.Text = alumnoSeleccionado.CodigoPUCP.ToString();;

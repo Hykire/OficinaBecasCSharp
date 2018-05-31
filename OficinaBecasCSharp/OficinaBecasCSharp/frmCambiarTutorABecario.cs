@@ -52,7 +52,7 @@ namespace Vista
             String idAlum = txtIdOcultoCambiar.Text;
             persona = (Tutor) cbxTutorCambiar.SelectedItem;
             
-            Alumno pe = new Alumno();
+            Becado pe = new Becado();
             pe.Id_tutor = persona.IdTutor;
             //pe.Id_persona = Convert.ToInt32(idAlum);
 

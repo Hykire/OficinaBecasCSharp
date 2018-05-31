@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,9 @@ namespace Vista
             btnEditar.Enabled = false;
             btnBuscar.Enabled = true;
             cbox_ciclo.Visible = false;
-            tbox_ciclo.Visible = true;
+            cbox_ciclo_nuevo1.Visible = true;
+            cbox_ciclo_nuevo2.Visible = true;
+
             //btn_historiaacademica.Enabled = false;
 
             estadoComponentes(Estado.Deshabilitado);
@@ -50,20 +53,17 @@ namespace Vista
             {
                 case Estado.Deshabilitado:
                     tbox_apellidos.Enabled = false;
-                    tbox_ciclo.Enabled = false;
-                    tbox_ciclosolicitado.Enabled = false;
                     tbox_codigo.Enabled = false;
                     tbox_cubiertos.Enabled = false;
-                    tbox_escalapago.Enabled = false;
+                    cbox_escalapago1.Enabled = false;
+                    cbox_escalapago2.Enabled = false;
                     tbox_ncarta.Enabled = false;
-                    tbox_nivelcreditos.Enabled = false;
                     tbox_nombres.Enabled = false;
                     tbox_nregularC.Enabled = false;
                     tbox_nregularesRC.Enabled = false;
                     tbox_nveranoC.Enabled = false;
                     tbox_restantes.Enabled = false;
                     tbox_tiposansion.Enabled = false;
-                    tbox_suspencion.Enabled = false;
                     tbox_utilizados.Enabled = false;
 
                     cbox_adelantobono.Enabled = false;
@@ -73,9 +73,16 @@ namespace Vista
                     cbox_bonomateriales.Enabled = false;
                     cbox_ciclo.Enabled = false;
                     cbox_renovacion.Enabled = false;
+                    cbox_suspencion.Enabled = false;
                     cbox_tipointercambio.Enabled = false;
                     cbox_intercambio.Enabled = false;
                     cbox_sansion.Enabled = false;
+                    cbox_ciclo_nuevo1.Enabled = false;
+                    cbox_ciclo_nuevo2.Enabled = false;
+                    cbox_tipoescala.Enabled = false;
+                    cbox_nivelcreditos.Enabled = false;
+                    cbox_cicloS1.Enabled = false;
+                    cbox_cicloS2.Enabled = false;
 
                     rtbox_respuesta.Enabled = false;
 
@@ -87,20 +94,16 @@ namespace Vista
                     break;
 
                 case Estado.Habilitado:
-                    tbox_ciclo.Enabled = true;
-                    tbox_ciclosolicitado.Enabled = true;
                     tbox_cubiertos.Enabled = true;
-                    tbox_escalapago.Enabled = true;
+                    cbox_escalapago1.Enabled = true;
+                    cbox_escalapago2.Enabled = true;
                     tbox_ncarta.Enabled = true;
-                    tbox_nivelcreditos.Enabled = true;
                     tbox_nregularC.Enabled = true;
                     tbox_nregularesRC.Enabled = true;
                     tbox_nveranoC.Enabled = true;
                     tbox_restantes.Enabled = true;
                     tbox_tiposansion.Enabled = true;
-                    tbox_suspencion.Enabled = true;
                     tbox_utilizados.Enabled = true;
-
                     cbox_adelantobono.Enabled = true;
                     cbox_ampliacion.Enabled = true;
                     cbox_beca.Enabled = true;
@@ -108,9 +111,16 @@ namespace Vista
                     cbox_bonomateriales.Enabled = true;
                     cbox_ciclo.Enabled = true;
                     cbox_renovacion.Enabled = true;
+                    cbox_suspencion.Enabled = true;
                     cbox_tipointercambio.Enabled = true;
                     cbox_intercambio.Enabled = true;
                     cbox_sansion.Enabled = true;
+                    cbox_ciclo_nuevo1.Enabled = true;
+                    cbox_ciclo_nuevo2.Enabled = true;
+                    cbox_tipoescala.Enabled = true;
+                    cbox_nivelcreditos.Enabled = true;
+                    cbox_cicloS1.Enabled = true;
+                    cbox_cicloS2.Enabled = true;
 
                     rtbox_respuesta.Enabled = true;
 
@@ -128,18 +138,13 @@ namespace Vista
 
         public void limpiarComponentes()
         {
-            tbox_ciclo.Text = "";
-            tbox_ciclosolicitado.Text = "";
             tbox_cubiertos.Text = "";
-            tbox_escalapago.Text = "";
             tbox_ncarta.Text = "";
-            tbox_nivelcreditos.Text = "";
             tbox_nregularC.Text = "";
             tbox_nregularesRC.Text = "";
             tbox_nveranoC.Text = "";
             tbox_restantes.Text = "";
             tbox_tiposansion.Text = "";
-            tbox_suspencion.Text = "";
             tbox_utilizados.Text = "";
 
             cbox_adelantobono.SelectedIndex = -1;
@@ -152,6 +157,16 @@ namespace Vista
             cbox_tipointercambio.SelectedIndex = -1;
             cbox_sansion.SelectedIndex = -1;
             cbox_intercambio.SelectedIndex = -1;
+            cbox_ciclo_nuevo1.SelectedIndex = -1;
+            cbox_ciclo_nuevo2.SelectedIndex = -1;
+            cbox_suspencion.SelectedIndex = -1;
+            cbox_escalapago1.SelectedIndex = -1;
+            cbox_escalapago2.SelectedIndex = -1;
+            cbox_tipoescala.SelectedIndex = -1;
+            cbox_cicloS1.SelectedIndex = -1;
+            cbox_cicloS2.SelectedIndex = -1;
+            cbox_nivelcreditos.Text = "";
+
             rtbox_respuesta.Text = "";
         }
 
@@ -164,29 +179,32 @@ namespace Vista
                 btnGuardar.Enabled = false;
                 btnEditar.Enabled = true;
                 btnBuscar.Enabled = false;
-                //btn_historiaacademica.Enabled = true;
 
                 cbox_ciclo.Visible = true;
-                tbox_ciclo.Visible = false;
+                cbox_ciclo_nuevo1.Visible = false;
+                cbox_ciclo_nuevo2.Visible = false;
 
                 cbox_ciclo.Enabled = true;
                 tbox_nombres.Text = formBAlumno.AlumnoSeleccionado.Nombres;
                 tbox_apellidos.Text = formBAlumno.AlumnoSeleccionado.Apellidos;
                 tbox_codigo.Text = formBAlumno.AlumnoSeleccionado.CodigoPUCP.ToString();
-                tbox_id_alumno.Text = formBAlumno.AlumnoSeleccionado.Id_persona.ToString();
-                //flag_elementoNuevo = 1;
+                tbox_id_becado.Text = formBAlumno.AlumnoSeleccionado.Id_becado.ToString();
 
                 //se listará los ciclos
-                BindingList<Alumno_x_Beca> listaCiclo = logicaNegoAB.BuscarBecaxAlumno(formBAlumno.AlumnoSeleccionado.Id_persona);
+                BindingList<Alumno_x_Beca> listaCiclo = logicaNegoAB.BuscarBecaxAlumno(formBAlumno.AlumnoSeleccionado.Id_becado);
                 cbox_ciclo.DataSource = listaCiclo;
                 cbox_ciclo.Sorted = false;
+
+                //se limpia
+                limpiarComponentes();
             }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             cbox_ciclo.Visible = false;
-            tbox_ciclo.Visible = true;
+            cbox_ciclo_nuevo1.Visible = true;
+            cbox_ciclo_nuevo2.Visible = true;
 
             btnNuevo.Enabled = false;
             btnGuardar.Enabled = true;
@@ -207,26 +225,31 @@ namespace Vista
             //btn_historiaacademica.Enabled = false;
             estadoComponentes(Estado.Deshabilitado);
 
-            int id_alumno = Int32.Parse(tbox_id_alumno.Text);
-            int id_axb;
-            if (flag_elementoEditar == 1) { id_axb = Int32.Parse(tbox_id_alumnoxbeca.Text); }
+
 
             Alumno_x_Beca axb = new Alumno_x_Beca();
-            //vemos lo de la beca
+
+            if (flag_elementoEditar == 1)
+            {
+                axb.Id_becado_x_beca = Int32.Parse(tbox_id_becadoxbeca.Text);
+            }
+            axb.Id_becado = Int32.Parse(tbox_id_becado.Text);
             axb.Id_beca = ((Beca)cbox_beca.SelectedItem).Id_beca;
-            axb.Ciclo = tbox_ciclo.Text;
-            axb.Escala_pago = Int32.Parse(tbox_escalapago.Text);
-            axb.Nivel_creditos = tbox_nivelcreditos.Text;
-            axb.Ncreditos_cubiertos = Double.Parse(tbox_cubiertos.Text);
-            axb.Ncreditos_utilizados = Double.Parse(tbox_utilizados.Text);
-            axb.Ncreditos_restantes = Double.Parse(tbox_restantes.Text);
+            axb.Ciclo = cbox_ciclo_nuevo1.Text + "-" + cbox_ciclo_nuevo2.Text;
+            axb.Tipo_escala_pago = cbox_tipoescala.Text;
+            if (cbox_tipoescala.Text == "ANTIGUA") axb.Escala_pago = Int32.Parse(cbox_escalapago1.Text);
+            else if (cbox_tipoescala.Text == "ACTUAL") axb.Escala_pago = Int32.Parse(cbox_escalapago2.Text);
+            axb.Nivel_creditos = Int32.Parse(cbox_nivelcreditos.Text);
+            axb.Ncreditos_cubiertos = Double.Parse(tbox_cubiertos.Text, CultureInfo.InvariantCulture);
+            axb.Ncreditos_utilizados = Double.Parse(tbox_utilizados.Text, CultureInfo.InvariantCulture);
+            axb.Ncreditos_restantes = Double.Parse(tbox_restantes.Text, CultureInfo.InvariantCulture);
             axb.Nsemestres_regular = Int32.Parse(tbox_nregularC.Text);
             axb.Nsemestres_verano = Int32.Parse(tbox_nveranoC.Text);
             axb.Nsemestres_restantes = Int32.Parse(tbox_nregularesRC.Text);
             if (cbox_renovacion.Text == "Sí") axb.Renovacion = 1; else axb.Renovacion = 0;
-            axb.Suspencion = tbox_suspencion.Text;
+            if (cbox_suspencion.Text == "Sí") axb.Suspencion = 1; else axb.Suspencion = 0;
             if (cbox_ampliacion.Text == "Sí") axb.Ampliacion = 1; else axb.Ampliacion = 0;
-            axb.Ciclo_solicitado = tbox_ciclosolicitado.Text;
+            axb.Ciclo_solicitado = cbox_cicloS1.Text + "-" + cbox_cicloS2.Text;
             axb.Respuesta = rtbox_respuesta.Text;
             axb.Ncarta = tbox_ncarta.Text;
 
@@ -234,25 +257,25 @@ namespace Vista
             if (cbox_bonoalojamiento.Text == "Sí") axb.Redencion_alojamiento = 1; else axb.Redencion_alojamiento = 0;
             if (cbox_sansion.Text == "Sí") axb.Sansion = 1; else axb.Sansion = 0;
             axb.Sansion_tipo = tbox_tiposansion.Text;
-            axb.Sansion_ini = dt_sansionini.Value.ToString("dd-MM-yyyy");
-            axb.Sansion_fin = dt_sansionfin.Value.ToString("dd-MM-yyyy");
+            axb.Sansion_ini = DateTime.Parse(dt_sansionini.Text);
+            axb.Sansion_fin = DateTime.Parse(dt_sansionfin.Text);
 
             if (cbox_intercambio.Text == "Sí") axb.Intercambio = 1; else axb.Intercambio = 0;
             axb.Intercambio_tipo = cbox_tipointercambio.Text;
-            axb.Intercambio_ini = dt_periodointercambioini.Value.ToString("dd-MM-yyyy");
-            axb.Intercambio_fin = dt_sansionfin.Value.ToString("dd-MM-yyyy");
+            axb.Intercambio_ini = DateTime.Parse(dt_periodointercambioini.Text);
+            axb.Intercambio_fin = DateTime.Parse(dt_sansionfin.Text);
             if (cbox_adelantobono.Text == "Sí") axb.Adelanto = 1; else axb.Adelanto = 0;
 
             if (flag_elementoNuevo == 1)
             {
                 flag_elementoNuevo = 0;
-                logicaNegoAB.RegistrarBecaxAlumno(axb, id_alumno);
+                logicaNegoAB.RegistrarBecaxAlumno(axb);
                 MessageBox.Show("Se ha registrado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             if (flag_elementoEditar == 1)
             {
                 flag_elementoEditar = 0;
-                //logicaNegoAB.ActualizarBecaxAlumno(axb, id_alumno, id_beca, id_axb);
+                logicaNegoAB.ActualizarBecaxAlumno(axb);
                 MessageBox.Show("Se ha registrado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -265,9 +288,13 @@ namespace Vista
             btnBuscar.Enabled = false;
             //btn_historiaacademica.Enabled = true;
 
+            cbox_ciclo_nuevo1.Visible = true;
+            cbox_ciclo_nuevo2.Visible = true;
             cbox_ciclo.Visible = false;
-            tbox_ciclo.Visible = true;
-            tbox_ciclo.Text = cbox_ciclo.Text;
+            cbox_ciclo_nuevo1.Text = cbox_ciclo.Text.Substring(0, 4);
+            cbox_ciclo_nuevo2.Text = cbox_ciclo.Text.Substring(5, 1);
+            //tbox_ciclo.Visible = true;
+            //tbox_ciclo.Text = cbox_ciclo.Text;
             estadoComponentes(Estado.Habilitado);
             flag_elementoEditar = 1;
         }
@@ -280,8 +307,8 @@ namespace Vista
             btnBuscar.Enabled = true;
 
             cbox_ciclo.Visible = false;
-            tbox_ciclo.Visible = true;
-            //btn_historiaacademica.Enabled = false;
+            cbox_ciclo_nuevo1.Visible = true;
+            cbox_ciclo_nuevo2.Visible = true;
 
             estadoComponentes(Estado.Deshabilitado);
             //se limpia
@@ -289,6 +316,9 @@ namespace Vista
             tbox_codigo.Text = "";
             tbox_nombres.Text = "";
             tbox_apellidos.Text = "";
+
+            flag_elementoEditar = 0;
+            flag_elementoNuevo = 0;
         }
 
         private void cbox_ciclo_SelectedIndexChanged(object sender, EventArgs e)
@@ -307,19 +337,33 @@ namespace Vista
                     }
                 }
                 //
-                tbox_escalapago.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Escala_pago.ToString();
-                tbox_nivelcreditos.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Nivel_creditos;
-                tbox_cubiertos.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_cubiertos.ToString();
-                tbox_restantes.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_restantes.ToString();
-                tbox_utilizados.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_utilizados.ToString();
+                if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Tipo_escala_pago == "ANTIGUA")
+                {
+                    cbox_tipoescala.Text = "ANTIGUA";
+                    cbox_escalapago1.Visible = true;
+                    cbox_escalapago2.Visible = false;
+                    cbox_escalapago1.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Escala_pago.ToString();
+                }
+                else if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Tipo_escala_pago == "ACTUAL")
+                {
+                    cbox_tipoescala.Text = "ACTUAL";
+                    cbox_escalapago1.Visible = false;
+                    cbox_escalapago2.Visible = true;
+                    cbox_escalapago2.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Escala_pago.ToString();
+                }
+                cbox_nivelcreditos.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Nivel_creditos.ToString();
+                tbox_cubiertos.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_cubiertos.ToString(CultureInfo.InvariantCulture);
+                tbox_restantes.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_restantes.ToString(CultureInfo.InvariantCulture);
+                tbox_utilizados.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_utilizados.ToString(CultureInfo.InvariantCulture);
                 tbox_nregularC.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Nsemestres_regular.ToString();
                 tbox_nveranoC.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Nsemestres_verano.ToString();
                 tbox_nregularesRC.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Nsemestres_restantes.ToString();
 
                 if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Renovacion == 1) cbox_renovacion.Text = "Sí"; else cbox_renovacion.Text = "No";
                 if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ampliacion == 1) cbox_ampliacion.Text = "Sí"; else cbox_ampliacion.Text = "No";
-                tbox_suspencion.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Suspencion;
-                tbox_ciclosolicitado.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado;
+                if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Suspencion == 1) cbox_suspencion.Text = "Sí"; else cbox_suspencion.Text = "No";
+                cbox_cicloS1.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado.Substring(0, 4);
+                cbox_cicloS2.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado.Substring(5, 1);
                 tbox_ncarta.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ncarta;
                 rtbox_respuesta.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Respuesta;
 
@@ -329,8 +373,8 @@ namespace Vista
                 {
                     cbox_sansion.Text = "Sí";
                     tbox_tiposansion.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Sansion_tipo;
-                    dt_sansionini.Value = DateTime.Parse(((Alumno_x_Beca)cbox_ciclo.SelectedItem).Sansion_ini);
-                    dt_sansionfin.Value = DateTime.Parse(((Alumno_x_Beca)cbox_ciclo.SelectedItem).Sansion_fin);
+                    dt_sansionini.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Sansion_ini.ToString();
+                    dt_sansionfin.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Sansion_fin.ToString();
                     dt_sansionini.Visible = true;
                     dt_sansionfin.Visible = true;
                 }
@@ -346,8 +390,8 @@ namespace Vista
                     cbox_intercambio.Text = "Sí";
                     cbox_tipointercambio.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Intercambio_tipo;
                     if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Adelanto == 1) cbox_adelantobono.Text = "Sí"; else cbox_adelantobono.Text = "No";
-                    dt_periodointercambioini.Value = DateTime.Parse(((Alumno_x_Beca)cbox_ciclo.SelectedItem).Intercambio_ini);
-                    dt_periodointercambiofin.Value = DateTime.Parse(((Alumno_x_Beca)cbox_ciclo.SelectedItem).Intercambio_fin);
+                    dt_periodointercambioini.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Intercambio_ini.ToString();
+                    dt_periodointercambiofin.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Intercambio_fin.ToString();
                     dt_periodointercambioini.Visible = true;
                     dt_periodointercambiofin.Visible = true;
                 }
@@ -366,7 +410,7 @@ namespace Vista
                 dt_periodointercambiofin.Enabled = false;
                 dt_sansionini.Enabled = false;
                 dt_sansionfin.Enabled = false;
-                tbox_id_alumnoxbeca.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Id_alumno_x_beca.ToString();
+                tbox_id_becadoxbeca.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Id_becado_x_beca.ToString();
             }
         }
 
@@ -403,6 +447,20 @@ namespace Vista
                 dt_periodointercambioini.Enabled = true;
                 dt_periodointercambiofin.Enabled = true;
                 cbox_adelantobono.Enabled = true;
+            }
+        }
+
+        private void cbox_tipoescala_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbox_tipoescala.Text == "ANTIGUA")
+            {
+                cbox_escalapago1.Visible = true;
+                cbox_escalapago2.Visible = false;
+            }
+            else
+            {
+                cbox_escalapago1.Visible = false;
+                cbox_escalapago2.Visible = true;
             }
         }
     }

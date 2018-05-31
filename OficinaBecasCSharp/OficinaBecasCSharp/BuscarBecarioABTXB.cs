@@ -14,11 +14,11 @@ namespace Vista
 {
     public partial class BuscarBecarioABTXB : Form
     {
-        private Alumno personaSeleccionada;
+        private Becado personaSeleccionada;
         private PersonaBL logicaNegocioPersona;
         private AlumnoBL logicaNegocioAlumno;
 
-        public Alumno PersonaSeleccionada { get => personaSeleccionada; set => personaSeleccionada = value; }
+        public Becado PersonaSeleccionada { get => personaSeleccionada; set => personaSeleccionada = value; }
 
         public BuscarBecarioABTXB()
         {
@@ -29,7 +29,7 @@ namespace Vista
 
         private void btnAgregarABTXB_Click(object sender, EventArgs e)
         {
-            PersonaSeleccionada = (Alumno)DGVBuscarBecarioABTXB.CurrentRow.DataBoundItem;
+            PersonaSeleccionada = (Becado)DGVBuscarBecarioABTXB.CurrentRow.DataBoundItem;
             this.DialogResult = DialogResult.OK;
             //this.Dispose();
         }

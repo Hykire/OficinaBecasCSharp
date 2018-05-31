@@ -16,15 +16,20 @@ namespace Controlador
         {
             accesoDatos = new Alumno_x_BecaDA();
         }
-        public void RegistrarBecaxAlumno(Alumno_x_Beca axb, int id_alumno)
+        public void RegistrarBecaxAlumno(Alumno_x_Beca axb)
         {
-            accesoDatos.Registrar_enAlumno_x_Beca(axb, id_alumno);
+            accesoDatos.Registrar_enAlumno_x_Beca(axb);
         }
         public BindingList<Alumno_x_Beca> BuscarBecaxAlumno(int id_alumno)
         {
             BindingList<Alumno_x_Beca> lista = accesoDatos.Buscar_BecasxAlumno(id_alumno);
             BindingList<Alumno_x_Beca> ltsOrdenada = new BindingList<Alumno_x_Beca>(lista.OrderBy(x => x.Ciclo).ToList());
             return ltsOrdenada;
+
+        }
+        public void ActualizarBecaxAlumno(Alumno_x_Beca axb)
+        {
+            accesoDatos.actualizarAlumno_x_Beca(axb);
         }
     }
 }

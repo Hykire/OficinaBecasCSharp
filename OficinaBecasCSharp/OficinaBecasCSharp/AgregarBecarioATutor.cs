@@ -15,7 +15,7 @@ namespace Vista
     public partial class AgregarBecarioATutor : Form
     {
         Persona p;
-        Alumno per;
+        Becado per;
         PersonaBL logicaNegocioPer;
         TutorBL logicaNegocioTutor;
         public AgregarBecarioATutor()
@@ -49,11 +49,11 @@ namespace Vista
             BuscarBecarioABTXB frmABTXB = new BuscarBecarioABTXB();
             if (frmABTXB.ShowDialog() == DialogResult.OK)
             {
-                per = (Alumno)frmABTXB.PersonaSeleccionada;
+                per = (Becado)frmABTXB.PersonaSeleccionada;
                 txtCodABTXB.Text = per.CodigoPUCP.ToString();
                 txtNombABTXB.Text = per.Nombres;
                 txtApABTXB.Text = per.Apellidos;
-                TxtIdOcultoB.Text = per.Id_alumno.ToString();
+                TxtIdOcultoB.Text = per.Id_becado.ToString();
             }
             //frmABTXB.ShowDialog();
         }

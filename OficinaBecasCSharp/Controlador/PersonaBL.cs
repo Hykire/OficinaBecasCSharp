@@ -35,7 +35,7 @@ namespace Controlador
             accesoDatosPersona.enlazarBecario(pe, idbec,ciclo);
         }
 
-        public void enlazarBecario2(Alumno pe, string idAlum)
+        public void enlazarBecario2(Becado pe, string idAlum)
         {
             accesoDatosPersona.enlazarBecario2(pe, idAlum);
         }

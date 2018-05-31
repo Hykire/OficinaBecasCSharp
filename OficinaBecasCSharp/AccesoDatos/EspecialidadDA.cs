@@ -14,16 +14,13 @@ namespace AccesoDatos
         public BindingList<Especialidad> lstEspecialidad()
         {
             BindingList<Especialidad> lista = new BindingList<Especialidad>();
-            //coneccion a BD
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                            "user=inf282g6;database=inf282g6;" +
-                            "port=3306;password=Nk2ewy;SslMode=none;" + "";
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
             MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            //
             MySqlCommand comando = new MySqlCommand();
             comando.CommandText = "SELECT * FROM ESPECIALIDAD";
             comando.Connection = con;
+
+            con.Open();
             MySqlDataReader rs = comando.ExecuteReader();
             while (rs.Read())
             {
@@ -42,16 +39,13 @@ namespace AccesoDatos
         }
         public void agregarFacultad(BindingList<Especialidad> lista)
         {
-            //coneccion a BD
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                            "user=inf282g6;database=inf282g6;" +
-                            "port=3306;password=Nk2ewy;SslMode=none;" + "";
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
             MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            //
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandText = "SELECT * FROM _F_FACULTAD";
+            comando.CommandText = "SELECT * FROM FACULTAD";
             comando.Connection = con;
+
+            con.Open();
             MySqlDataReader rs = comando.ExecuteReader();
             while (rs.Read())
             {

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class Alumno:Persona
+    public class Becado : Persona
     {
-        private int id_alumno;
+        private int _id_becado;
+        private int _especialidad;
+        private int _facultad;
         private string _ciclo_ingreso;
-        private Especialidad _especialidad;
         private string _tipo_grupo;
-        private int id_tutor;
-        
+
         private string _distrito_nacimiento;
         private string _provincia_nacimiento;
         private string _departamento_nacimiento;
@@ -25,10 +25,13 @@ namespace Modelo
         private string _provincia_actual;
         private string _departamento_actual;
 
+        private int _id_tutor;
         //private BindingList<HistoriaAcademica> _historia_academica;
 
+        public int Id_becado { get => _id_becado; set => _id_becado = value; }
         public string Ciclo_ingreso { get => _ciclo_ingreso; set => _ciclo_ingreso = value; }
-        public Especialidad Especialidad { get => _especialidad; set => _especialidad = value; }
+        public int Facultad { get => _facultad; set => _facultad = value; }
+        public int Especialidad { get => _especialidad; set => _especialidad = value; }
         public string Tipo_grupo { get => _tipo_grupo; set => _tipo_grupo = value; }
 
         public string Distrito_nacimiento { get => _distrito_nacimiento; set => _distrito_nacimiento = value; }
@@ -40,7 +43,6 @@ namespace Modelo
         public string Distrito_actual { get => _distrito_actual; set => _distrito_actual = value; }
         public string Provincia_actual { get => _provincia_actual; set => _provincia_actual = value; }
         public string Departamento_actual { get => _departamento_actual; set => _departamento_actual = value; }
-        public int Id_tutor { get => id_tutor; set => id_tutor = value; }
-        public int Id_alumno { get => id_alumno; set => id_alumno = value; }
+        public int Id_tutor { get => _id_tutor; set => _id_tutor = value; }
     }
 }

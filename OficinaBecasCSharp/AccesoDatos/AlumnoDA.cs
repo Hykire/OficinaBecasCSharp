@@ -11,119 +11,130 @@ namespace AccesoDatos
 {
     public class AlumnoDA
     {
-        private BindingList<Especialidad> mylts_Especialidad;
-        public AlumnoDA()
+        public int registrar_enPersona(Becado a)
         {
-            mylts_Especialidad = new BindingList<Especialidad>();
-            EspecialidadDA E_DA = new EspecialidadDA();
-            mylts_Especialidad = E_DA.lstEspecialidad();
-        }
-        public int ObtenerMaxId()
-        {
-            //coneccion a BD
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                            "user=inf282g6;database=inf282g6;" +
-                            "port=3306;password=Nk2ewy;SslMode=none;" + "";
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
             MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            //
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandText = "SELECT MAX(ID_PERSONA) AS ID_PERSONA FROM _F_PERSONA;";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.CommandText = "F_INSERTAR_PERSONA";
+            comando.Parameters.Add("_codigo_pucp", MySqlDbType.Int32).Value = a.CodigoPUCP;
+            comando.Parameters.Add("_nombres", MySqlDbType.VarChar).Value = a.Nombres;
+            comando.Parameters.Add("_apellidos", MySqlDbType.VarChar).Value = a.Apellidos;
+            comando.Parameters.Add("_sexo", MySqlDbType.VarChar).Value = a.Sexo;
+            comando.Parameters.Add("_dni", MySqlDbType.Int32).Value = a.Dni;
+            comando.Parameters.Add("_edad", MySqlDbType.Int32).Value = a.Edad;
+            comando.Parameters.Add("_fecha_nacimiento", MySqlDbType.Date).Value = a.Fecha_nacimiento;
+            comando.Parameters.Add("_correo_pucp", MySqlDbType.VarChar).Value = a.CorreoPUCP;
+            comando.Parameters.Add("_correo_alternativo", MySqlDbType.VarChar).Value = a.CorreoAlternativo;
+            comando.Parameters.Add("_telf_movil", MySqlDbType.VarChar).Value = a.TelfMovil;
+            comando.Parameters.Add("_telf_fijo", MySqlDbType.VarChar).Value = a.TelfFijo;
+            comando.Parameters.Add("_estado", MySqlDbType.VarChar).Value = a.Estado;
+            comando.Parameters.Add("_id", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
+
             comando.Connection = con;
-            int idx = (Int32)comando.ExecuteScalar();
+            con.Open();
+            comando.ExecuteNonQuery();
+            int id = Int32.Parse(comando.Parameters["_id"].Value.ToString());
             con.Close();
-            return idx;
+
+            return id;
         }
-        public void Registrar_enPersonas(Alumno a)
+
+        public int registrar_enBecado(Becado a, int id_persona)
         {
-            //coneccion a BD
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                            "user=inf282g6;database=inf282g6;" +
-                            "port=3306;password=Nk2ewy;SslMode=none;" + "";
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
             MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            //
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandText = "INSERT INTO _F_PERSONA(CODIGO_PUCP,NOMBRES,APELLIDOS,SEXO,DNI,EDAD," +
-                "FECHA_NACIMIENTO,CORREO_PUCP,CORREO_ALTERNATIVO,TELF_MOVIL,TELF_FIJO) VALUES" +
-                "(" + a.CodigoPUCP + ",'" + a.Nombres + "','" + a.Apellidos + "','" + a.Sexo + "'," +
-                a.Dni + "," + a.Edad + ",'" + a.Fecha_nacimiento + "','" + a.CorreoPUCP + "','" +
-                a.CorreoAlternativo + "','" + a.TelfMovil + "','" + a.TelfFijo + "');";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.CommandText = "F_INSERTAR_BECADO";
+            comando.Parameters.Add("_id_persona", MySqlDbType.Int32).Value = id_persona;
+            comando.Parameters.Add("_id_especialidad", MySqlDbType.Int32).Value = a.Especialidad;
+            comando.Parameters.Add("_id_facultad", MySqlDbType.Int32).Value = a.Facultad;
+            comando.Parameters.Add("_ciclo_ingreso", MySqlDbType.VarChar).Value = a.Ciclo_ingreso;
+            comando.Parameters.Add("_tipo_grupo", MySqlDbType.VarChar).Value = a.Tipo_grupo;
+            comando.Parameters.Add("_distrito_nacimiento", MySqlDbType.VarChar).Value = a.Distrito_nacimiento;
+            comando.Parameters.Add("_provincia_nacimiento", MySqlDbType.VarChar).Value = a.Provincia_nacimiento;
+            comando.Parameters.Add("_departamento_nacimiento", MySqlDbType.VarChar).Value = a.Departamento_nacimiento;
+            comando.Parameters.Add("_pais_nacimiento", MySqlDbType.VarChar).Value = a.Pais_nacimiento;
+            comando.Parameters.Add("_direccion", MySqlDbType.VarChar).Value = a.Direccion;
+            comando.Parameters.Add("_distrito_actual", MySqlDbType.VarChar).Value = a.Distrito_actual;
+            comando.Parameters.Add("_provincia_actual", MySqlDbType.VarChar).Value = a.Provincia_actual;
+            comando.Parameters.Add("_departamento_actual", MySqlDbType.VarChar).Value = a.Departamento_actual;
+            comando.Parameters.Add("_id", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
+
             comando.Connection = con;
+            con.Open();
+            comando.ExecuteNonQuery();
+            int id = Int32.Parse(comando.Parameters["_id"].Value.ToString());
+            con.Close();
+
+            return id;
+        }
+
+        public void actualizar_enBecado(Becado a)
+        {
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.CommandText = "F_ACTUALIZAR_BECADO";
+            comando.Parameters.Add("_id_becado", MySqlDbType.Int32).Value = a.Id_becado;
+            comando.Parameters.Add("_id_persona", MySqlDbType.Int32).Value = a.Id_persona;
+            comando.Parameters.Add("_id_especialidad", MySqlDbType.Int32).Value = a.Especialidad;
+            comando.Parameters.Add("_id_facultad", MySqlDbType.Int32).Value = a.Facultad;
+            comando.Parameters.Add("_ciclo_ingreso", MySqlDbType.VarChar).Value = a.Ciclo_ingreso;
+            comando.Parameters.Add("_tipo_grupo", MySqlDbType.VarChar).Value = a.Tipo_grupo;
+            comando.Parameters.Add("_distrito_nacimiento", MySqlDbType.VarChar).Value = a.Distrito_nacimiento;
+            comando.Parameters.Add("_provincia_nacimiento", MySqlDbType.VarChar).Value = a.Provincia_nacimiento;
+            comando.Parameters.Add("_departamento_nacimiento", MySqlDbType.VarChar).Value = a.Departamento_nacimiento;
+            comando.Parameters.Add("_pais_nacimiento", MySqlDbType.VarChar).Value = a.Pais_nacimiento;
+            comando.Parameters.Add("_direccion", MySqlDbType.VarChar).Value = a.Direccion;
+            comando.Parameters.Add("_distrito_actual", MySqlDbType.VarChar).Value = a.Distrito_actual;
+            comando.Parameters.Add("_provincia_actual", MySqlDbType.VarChar).Value = a.Provincia_actual;
+            comando.Parameters.Add("_departamento_actual", MySqlDbType.VarChar).Value = a.Departamento_actual;
+
+            comando.Parameters.Add("_codigo_pucp", MySqlDbType.Int32).Value = a.CodigoPUCP;
+            comando.Parameters.Add("_nombres", MySqlDbType.VarChar).Value = a.Nombres;
+            comando.Parameters.Add("_apellidos", MySqlDbType.VarChar).Value = a.Apellidos;
+            comando.Parameters.Add("_sexo", MySqlDbType.VarChar).Value = a.Sexo;
+            comando.Parameters.Add("_dni", MySqlDbType.Int32).Value = a.Dni;
+            comando.Parameters.Add("_edad", MySqlDbType.Int32).Value = a.Edad;
+            comando.Parameters.Add("_fecha_nacimiento", MySqlDbType.Date).Value = a.Fecha_nacimiento;
+            comando.Parameters.Add("_correo_pucp", MySqlDbType.VarChar).Value = a.CorreoPUCP;
+            comando.Parameters.Add("_correo_alternativo", MySqlDbType.VarChar).Value = a.CorreoAlternativo;
+            comando.Parameters.Add("_telf_movil", MySqlDbType.VarChar).Value = a.TelfMovil;
+            comando.Parameters.Add("_telf_fijo", MySqlDbType.VarChar).Value = a.TelfFijo;
+            comando.Parameters.Add("_estado", MySqlDbType.VarChar).Value = a.Estado;
+
+            comando.Connection = con;
+            con.Open();
             comando.ExecuteNonQuery();
             con.Close();
         }
-        public void Registrar_enAlumno(Alumno a, int id_especialidad, int id_alumno)
+
+        public BindingList<Becado> buscar_enBecado()
         {
-            //coneccion a BD
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                            "user=inf282g6;database=inf282g6;" +
-                            "port=3306;password=Nk2ewy;SslMode=none;" + "";
+            BindingList<Becado> lista = new BindingList<Becado>();
+
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
             MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            //
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandText = "INSERT INTO _F_ALUMNO(ID_ALUMNO,CICLO_INGRESO,ID_ESPECIALIDAD,TIPO_GRUPO," +
-                "DISTRITO_NACIMIENTO,PROVINCIA_NACIMIENTO,DEPARTAMENTO_NACIMIENTO,PAIS_NACIMIENTO,DIRECCION," +
-                "DISTRITO_ACTUAL,PROVINCIA_ACTUAL,DEPARTAMENTO_ACTUAL) VALUES" +
-                "(" + id_alumno + " ,'" + a.Ciclo_ingreso + "'," + id_especialidad + ",'" + a.Tipo_grupo + "','" +
-                a.Distrito_nacimiento + "','" + a.Provincia_nacimiento + "','" + a.Departamento_nacimiento + "','" + a.Pais_nacimiento + "','" +
-                a.Direccion + "','" + a.Distrito_actual + "','" + a.Provincia_actual + "','" + a.Departamento_actual + "');";
-            System.Console.WriteLine(comando.CommandText);
+            comando.CommandText = "SELECT * FROM BECADO";
             comando.Connection = con;
-            comando.ExecuteNonQuery();
-            con.Close();
-        }
 
-        public void Actualizar_enTAlumnoTPersona(Alumno a, int id_especialidad)
-        {
-            //coneccion a BD
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                            "user=inf282g6;database=inf282g6;" +
-                            "port=3306;password=Nk2ewy;SslMode=none;" + "";
-            MySqlConnection con = new MySqlConnection(cadena);
             con.Open();
-            //primer update
-            MySqlCommand comando_1 = new MySqlCommand();
-            comando_1.CommandText = "UPDATE _F_PERSONA SET CODIGO_PUCP=" + a.CodigoPUCP + ",NOMBRES='" + a.Nombres + "',APELLIDOS='" + a.Apellidos +
-                "',SEXO='" + a.Sexo + "',DNI=" + a.Dni + ",EDAD=" + a.Edad + ",FECHA_NACIMIENTO='" + a.Fecha_nacimiento +
-                "',CORREO_PUCP='" + a.CorreoPUCP + "',CORREO_ALTERNATIVO='" + a.CorreoAlternativo + "',TELF_MOVIL='" +
-                a.TelfMovil + "',TELF_FIJO='" + a.TelfFijo + "' WHERE ID_PERSONA=" + a.Id_persona + ";";
-            comando_1.Connection = con;
-            comando_1.ExecuteNonQuery();
-
-            //segundo update
-            MySqlCommand comando_2 = new MySqlCommand();
-            comando_2.CommandText = "UPDATE _F_ALUMNO SET CICLO_INGRESO='" + a.Ciclo_ingreso + "',ID_ESPECIALIDAD=" + id_especialidad +
-                ",TIPO_GRUPO='" + a.Tipo_grupo + "',DISTRITO_NACIMIENTO='" + a.Distrito_nacimiento + "',PROVINCIA_NACIMIENTO='" + a.Provincia_nacimiento +
-                "',DEPARTAMENTO_NACIMIENTO='" + a.Departamento_nacimiento +
-                "',PAIS_NACIMIENTO='" + a.Pais_nacimiento + "',DIRECCION='" + a.Direccion + "',DISTRITO_ACTUAL='" +
-                a.Distrito_actual + "',PROVINCIA_ACTUAL='" + a.Provincia_actual + "',DEPARTAMENTO_ACTUAL='" + a.Departamento_actual +
-                "' WHERE ID_ALUMNO=" + a.Id_persona + ";";
-            comando_2.Connection = con;
-            comando_2.ExecuteNonQuery();
-
-            con.Close();
-        }
-
-        public BindingList<Alumno> Buscar_enTAlumno()
-        {
-            BindingList<Alumno> lista = new BindingList<Alumno>();
-            //coneccion a BD
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                            "user=inf282g6;database=inf282g6;" +
-                            "port=3306;password=Nk2ewy;SslMode=none;" + "";
-            MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            //
-            MySqlCommand comando = new MySqlCommand();
-            comando.CommandText = "SELECT * FROM _F_ALUMNO";
-            comando.Connection = con;
             MySqlDataReader rs = comando.ExecuteReader();
             while (rs.Read())
             {
-                Alumno a = new Alumno();
-                a.Id_persona = rs.GetInt32("ID_ALUMNO");
+                Becado a = new Becado();
+                a.Id_becado = rs.GetInt32("ID_BECADO");
+                a.Id_persona = rs.GetInt32("ID_PERSONA");
+                a.Especialidad = rs.GetInt32("ID_ESPECIALIDAD_INGRESO");
+                a.Facultad = rs.GetInt32("ID_FACULTAD_INGRESO");
                 a.Ciclo_ingreso = rs.GetString("CICLO_INGRESO");
                 a.Tipo_grupo = rs.GetString("TIPO_GRUPO");
                 a.Distrito_nacimiento = rs.GetString("DISTRITO_NACIMIENTO");
@@ -134,40 +145,26 @@ namespace AccesoDatos
                 a.Distrito_actual = rs.GetString("DISTRITO_ACTUAL");
                 a.Provincia_actual = rs.GetString("PROVINCIA_ACTUAL");
                 a.Departamento_actual = rs.GetString("DEPARTAMENTO_ACTUAL");
-
-                Especialidad e = new Especialidad();
-                e.Id_especialidad = rs.GetInt32("ID_ESPECIALIDAD");
-                foreach (Especialidad x in mylts_Especialidad)
-                {
-                    if (e.Id_especialidad == x.Id_especialidad)
-                    {
-                        e.Nombre = x.Nombre;
-                        break;
-                    }
-                }
-                a.Especialidad = e;
                 lista.Add(a);
             }
             con.Close();
             return lista;
         }
-        public void Buscar_enTPersona(BindingList<Alumno> lista)
+
+        public void buscar_enPersona(BindingList<Becado> lista)
         {
-            //coneccion a BD
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                            "user=inf282g6;database=inf282g6;" +
-                            "port=3306;password=Nk2ewy;SslMode=none;" + "";
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
             MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            //
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandText = "SELECT * FROM _F_PERSONA";
+            comando.CommandText = "SELECT * FROM PERSONA";
             comando.Connection = con;
+
+            con.Open();
             MySqlDataReader rs = comando.ExecuteReader();
             while (rs.Read())
             {
                 int id = rs.GetInt32("ID_PERSONA");
-                foreach (Alumno a in lista)
+                foreach (Becado a in lista)
                 {
                     if (a.Id_persona == id)
                     {
@@ -176,21 +173,27 @@ namespace AccesoDatos
                         a.Apellidos = rs.GetString("APELLIDOS");
                         a.Sexo = rs.GetChar("SEXO");
                         a.Dni = rs.GetInt32("DNI");
-                        a.Fecha_nacimiento = rs.GetString("FECHA_NACIMIENTO");
+                        a.Fecha_nacimiento = rs.GetDateTime("FECHA_NACIMIENTO");
                         a.CorreoPUCP = rs.GetString("CORREO_PUCP");
                         a.CorreoAlternativo = rs.GetString("CORREO_ALTERNATIVO");
                         a.TelfMovil = rs.GetString("TELF_MOVIL");
                         a.TelfFijo = rs.GetString("TELF_FIJO");
+                        a.Estado = rs.GetString("ESTADO");
                         break;
                     }
                 }
             }
             con.Close();
         }
-        //Y:
-        public BindingList<Alumno> listarBecarios(String cod)
+
+
+
+
+
+
+        public BindingList<Becado> listarBecarios(String cod)
         {
-            BindingList<Alumno> lista = new BindingList<Alumno>();
+            BindingList<Becado> lista = new BindingList<Becado>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
                 "user=inf282g6;database=inf282g6;" +
                 "port=3306;password=Nk2ewy;SslMode=none;" +
@@ -217,12 +220,12 @@ namespace AccesoDatos
             while (reader.Read())
             {
                 //P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.CORREO_PUCP, B.ID_BECADO FROM PERSONA P
-                Alumno per = new Alumno();
+                Becado per = new Becado();
                 per.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
                 per.Nombres = reader.GetString("NOMBRES");
                 per.Apellidos = reader.GetString("APELLIDOS");
                 //es id becario 
-                per.Id_alumno = reader.GetInt32("ID_BECADO");
+                per.Id_becado = reader.GetInt32("ID_BECADO");
                 per.CorreoPUCP = reader.GetString("CORREO_PUCP");
                 lista.Add(per);
             }

@@ -15,12 +15,12 @@ namespace Vista
     public partial class frmBuscarAlumno : Form
     {
         private AlumnoBL logicaNegoAlumno;
-        private Alumno _alumnoSeleccionado;
+        private Becado _alumnoSeleccionado;
 
         public frmBuscarAlumno()
         {
             logicaNegoAlumno = new AlumnoBL();
-            _alumnoSeleccionado = new Alumno();
+            _alumnoSeleccionado = new Becado();
 
             InitializeComponent();
             dvg_alumnos.AutoGenerateColumns = false;
@@ -28,7 +28,7 @@ namespace Vista
 
         private void btn_seleccionar_Click(object sender, EventArgs e)
         {
-            _alumnoSeleccionado = ((Alumno) dvg_alumnos.CurrentRow.DataBoundItem);
+            _alumnoSeleccionado = ((Becado) dvg_alumnos.CurrentRow.DataBoundItem);
             this.DialogResult = DialogResult.OK;
         }
 
@@ -38,9 +38,9 @@ namespace Vista
             string nombreB = tbox_nombres.Text;
             string apellidoB = tbox_apellidos.Text;
 
-            dvg_alumnos.DataSource = logicaNegoAlumno.BuscarAlumno(codigoB, nombreB, apellidoB);
+            dvg_alumnos.DataSource = logicaNegoAlumno.buscarAlumno(codigoB, nombreB, apellidoB);
         }
 
-        public Alumno AlumnoSeleccionado { get => _alumnoSeleccionado; set => _alumnoSeleccionado = value; }
+        public Becado AlumnoSeleccionado { get => _alumnoSeleccionado; set => _alumnoSeleccionado = value; }
     }
 }
