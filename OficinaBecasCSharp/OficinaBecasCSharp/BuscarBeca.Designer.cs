@@ -49,19 +49,17 @@
             this.Descripcion,
             this.FechaConvocatoria,
             this.Financiador});
-            this.dgvBuscarBecas.Location = new System.Drawing.Point(16, 53);
-            this.dgvBuscarBecas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvBuscarBecas.Location = new System.Drawing.Point(12, 43);
             this.dgvBuscarBecas.Name = "dgvBuscarBecas";
-            this.dgvBuscarBecas.Size = new System.Drawing.Size(1016, 404);
+            this.dgvBuscarBecas.Size = new System.Drawing.Size(762, 328);
             this.dgvBuscarBecas.TabIndex = 4;
             this.dgvBuscarBecas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarBecas_CellContentClick);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(880, 492);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(660, 400);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(133, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 23);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -69,10 +67,9 @@
             // 
             // btnAñadir
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(643, 492);
-            this.btnAñadir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAñadir.Location = new System.Drawing.Point(482, 400);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(136, 28);
+            this.btnAñadir.Size = new System.Drawing.Size(102, 23);
             this.btnAñadir.TabIndex = 6;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
@@ -95,6 +92,7 @@
             this.FechaConvocatoria.DataPropertyName = "FechaConvocatoria";
             this.FechaConvocatoria.HeaderText = "Fecha de Convocatoria";
             this.FechaConvocatoria.Name = "FechaConvocatoria";
+            this.FechaConvocatoria.Visible = false;
             // 
             // Financiador
             // 
@@ -104,13 +102,12 @@
             // 
             // BuscarBeca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dgvBuscarBecas);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BuscarBeca";
             this.Text = "BuscarBeca";
             this.Load += new System.EventHandler(this.BuscarBeca_Load);

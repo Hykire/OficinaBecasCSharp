@@ -186,11 +186,6 @@ namespace AccesoDatos
             con.Close();
         }
 
-
-
-
-
-
         public BindingList<Becado> listarBecarios(String cod)
         {
             BindingList<Becado> lista = new BindingList<Becado>();

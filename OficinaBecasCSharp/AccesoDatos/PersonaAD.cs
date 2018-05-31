@@ -133,11 +133,22 @@ namespace AccesoDatos
             MySqlConnection con = new MySqlConnection(cadena);
             con.Open();
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "Y_LISTAR_PERSONAS";
+            if (cod.Length == 0)
+            {
+                comando.CommandText = "SELECT * FROM PERSONA";
+                comando.Connection = con;
 
-            comando.Connection = con;
-            comando.Parameters.AddWithValue("param", cod);
+            }
+            else
+            {
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "Y_LISTAR_PERSONAS";
+
+                comando.Connection = con;
+                comando.Parameters.AddWithValue("param", cod);
+
+            }
+
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             { 
@@ -146,7 +157,7 @@ namespace AccesoDatos
                 per.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
                 per.Nombres = reader.GetString("NOMBRES");
                 per.Apellidos = reader.GetString("APELLIDOS");
-                per.TelfMovil = reader.GetInt32("TELF_MOVIL").ToString();
+                per.TelfMovil = reader.GetString("TELF_MOVIL");
                 //per.Profesion = reader.GetString("profesion");
                 per.Dni = reader.GetInt32("DNI");
                 per.CorreoPUCP = reader.GetString("CORREO_PUCP");
