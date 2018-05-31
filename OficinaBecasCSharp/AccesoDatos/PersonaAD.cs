@@ -32,6 +32,7 @@ namespace AccesoDatos
             {
                 // P.ID_PERSONA, P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.TELF_MOVIL, P.CORREO_PUCP, P.DNI FROM PERSONA P INNER JOIN
                 Tutor per = new Tutor();
+                per.Id_persona = reader.GetInt32("ID_PERSONA");
                 per.Id_persona = reader.GetInt32("ID_TUTOR");
                 per.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
                 per.Nombres = reader.GetString("NOMBRES");

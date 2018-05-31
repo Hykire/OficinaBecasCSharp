@@ -12,6 +12,7 @@ namespace Controlador
     public class TutorBL
     {
         private TutorAD accesoDatosTutor;
+        
         public TutorBL()
         {
             accesoDatosTutor = new TutorAD();
@@ -24,6 +25,14 @@ namespace Controlador
         public BindingList<Tutor> traerTutores()
         {
             return accesoDatosTutor.traerTutores();
+        }
+        public void eliminarTutor(int idPer)
+        {
+            accesoDatosTutor.eliminarTutor(idPer);
+        }
+        public BindingList<Tutor> traerTutoresCod(string codTut)
+        {
+            return accesoDatosTutor.traerTutoresCod(codTut);
         }
     }
 }

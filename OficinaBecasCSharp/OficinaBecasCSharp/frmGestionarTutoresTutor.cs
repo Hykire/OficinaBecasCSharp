@@ -16,6 +16,7 @@ namespace Vista
     {
         private Tutor tutorSelecc;
         private PersonaBL logicaNegocioPersona;
+        private TutorBL logicaNegocioTutor;
         private Persona p;
         private CoordinadorBL logicaNegocioCoordTutoria;
         public Tutor TutorSelecc { get => tutorSelecc; set => tutorSelecc = value; }
@@ -24,6 +25,7 @@ namespace Vista
         {
             InitializeComponent();
             logicaNegocioPersona = new PersonaBL();
+            logicaNegocioTutor = new TutorBL();
             logicaNegocioCoordTutoria = new CoordinadorBL();
             DGVTutores.AutoGenerateColumns = false;
             DGVTutores.DataSource = logicaNegocioPersona.listarTutores();
@@ -82,11 +84,11 @@ namespace Vista
             txtCodGT.Text = TutorSelecc.CodigoPUCP.ToString();
             txtNombGT.Text = TutorSelecc.Nombres.ToString();
             txtApGt.Text = TutorSelecc.Apellidos.ToString();
-            txtIdOcultoGT.Text = TutorSelecc.Id_persona.ToString();
+            txtIdOcultoGT.Text = TutorSelecc.IdTutor.ToString();
             txtDni.Text = TutorSelecc.Dni.ToString();
             txtTelf.Text = TutorSelecc.TelfMovil.ToString();
             string est = TutorSelecc.Estado;
-            if(est == "ACTIVO")
+            if (est == "ACTIVO")
             {
                 txtEstado.Text = "ACTIVO";
             }
@@ -168,6 +170,24 @@ namespace Vista
             string idcoord = per1.Id_coordinador.ToString(); //aqui esta el id del coordinador
             logicaNegocioPersona.insertarNuevoTutor(idPer, idcoord, est);
             DGVTutores.Refresh();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (DGVTutores.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show("¿Desea eliminar el tutor seleccionado?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                {
+                    MessageBox.Show("holi");
+                    int idPersona = Convert.ToInt32(txtIdOcultoGT.Text);
+                    logicaNegocioTutor.eliminarTutor(idPersona);
+                    DGVTutores.Refresh();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un Tutor", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

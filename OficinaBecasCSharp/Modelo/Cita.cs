@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Cita
+    public class Cita
     {
         private int idCita;
-        private DateTime fecha;
-        private string descripcion;
+        private string fecha;
+       // private string hora;
+        private string observacion;
         private string lugar;
 
         public Cita()
@@ -19,8 +20,9 @@ namespace Modelo
         }
 
         public int IdCita { get => idCita; set => idCita = value; }
-        public DateTime Fecha { get => fecha; set => fecha = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public string Fecha { get => fecha; set => fecha = value; }
+        public string Observacion { get => observacion; set => observacion = value; }
         public string Lugar { get => lugar; set => lugar = value; }
+       // public string Hora { get => hora; set => hora = value; }
     }
 }

@@ -1,0 +1,28 @@
+﻿using AccesoDatos;
+using Modelo;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Controlador
+{
+    public class CitaBL
+    {
+        private CitaAD accesoDatosCita;
+        public CitaBL()
+        {
+            accesoDatosCita = new CitaAD();
+        }
+        public void agregarCita(Cita cita, int idBec, int idTut)
+        {
+            accesoDatosCita.agregarCita(cita, idBec, idTut);
+        }
+        public BindingList<Cita> buscarcita(string fecha)
+        {
+            return accesoDatosCita.buscarcita(fecha);
+        }
+    }
+}

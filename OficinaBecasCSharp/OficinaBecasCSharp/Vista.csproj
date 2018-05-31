@@ -152,6 +152,12 @@
     <Compile Include="frmBuscarPersona.Designer.cs">
       <DependentUpon>frmBuscarPersona.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscarTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarTutor.Designer.cs">
+      <DependentUpon>frmBuscarTutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCambiarTutorABecario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarPersona.resx">
       <DependentUpon>frmBuscarPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarTutor.resx">
+      <DependentUpon>frmBuscarTutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCambiarTutorABecario.resx">
       <DependentUpon>frmCambiarTutorABecario.cs</DependentUpon>

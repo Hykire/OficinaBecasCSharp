@@ -42,6 +42,7 @@
             this.cbxCoordinador = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.CBEstadoNT = new System.Windows.Forms.ComboBox();
             this.GBNuevoTutorNT = new System.Windows.Forms.GroupBox();
             this.btnBuscarNT = new System.Windows.Forms.Button();
             this.txtApGt = new System.Windows.Forms.TextBox();
@@ -52,13 +53,6 @@
             this.LCodigoTutNT = new System.Windows.Forms.Label();
             this.LGestTutBXT = new System.Windows.Forms.Label();
             this.DGVTutores = new System.Windows.Forms.DataGridView();
-            this.toolStrip_GestionarTutores = new System.Windows.Forms.ToolStrip();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.CBEstadoNT = new System.Windows.Forms.ComboBox();
             this.C1Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +60,13 @@
             this.C3Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip_GestionarTutores = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.panelTutor.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.GBEstadoNT.SuspendLayout();
@@ -122,6 +123,7 @@
             // 
             // txtIdOcultoGT
             // 
+            this.txtIdOcultoGT.Enabled = false;
             this.txtIdOcultoGT.Location = new System.Drawing.Point(203, 28);
             this.txtIdOcultoGT.Name = "txtIdOcultoGT";
             this.txtIdOcultoGT.Size = new System.Drawing.Size(63, 20);
@@ -197,6 +199,17 @@
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Estado:";
+            // 
+            // CBEstadoNT
+            // 
+            this.CBEstadoNT.FormattingEnabled = true;
+            this.CBEstadoNT.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.CBEstadoNT.Location = new System.Drawing.Point(58, 25);
+            this.CBEstadoNT.Name = "CBEstadoNT";
+            this.CBEstadoNT.Size = new System.Drawing.Size(99, 21);
+            this.CBEstadoNT.TabIndex = 0;
             // 
             // GBNuevoTutorNT
             // 
@@ -302,72 +315,6 @@
             this.DGVTutores.TabIndex = 4;
             this.DGVTutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVTutores_CellClick);
             // 
-            // toolStrip_GestionarTutores
-            // 
-            this.toolStrip_GestionarTutores.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNuevo,
-            this.btnGuardar,
-            this.btnEditar,
-            this.toolStripSeparator1,
-            this.btnCancelar});
-            this.toolStrip_GestionarTutores.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip_GestionarTutores.Name = "toolStrip_GestionarTutores";
-            this.toolStrip_GestionarTutores.Size = new System.Drawing.Size(826, 25);
-            this.toolStrip_GestionarTutores.TabIndex = 5;
-            this.toolStrip_GestionarTutores.Text = "toolStrip2";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(62, 22);
-            this.btnNuevo.Text = "&Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(69, 22);
-            this.btnGuardar.Text = "&Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(57, 22);
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(73, 22);
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // CBEstadoNT
-            // 
-            this.CBEstadoNT.FormattingEnabled = true;
-            this.CBEstadoNT.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.CBEstadoNT.Location = new System.Drawing.Point(58, 25);
-            this.CBEstadoNT.Name = "CBEstadoNT";
-            this.CBEstadoNT.Size = new System.Drawing.Size(99, 21);
-            this.CBEstadoNT.TabIndex = 0;
-            // 
             // C1Tutor
             // 
             this.C1Tutor.DataPropertyName = "CodigoPUCP";
@@ -417,6 +364,71 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             this.Estado.Visible = false;
+            // 
+            // toolStrip_GestionarTutores
+            // 
+            this.toolStrip_GestionarTutores.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnNuevo,
+            this.btnGuardar,
+            this.btnEditar,
+            this.toolStripSeparator1,
+            this.btnCancelar,
+            this.btnEliminar});
+            this.toolStrip_GestionarTutores.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip_GestionarTutores.Name = "toolStrip_GestionarTutores";
+            this.toolStrip_GestionarTutores.Size = new System.Drawing.Size(826, 25);
+            this.toolStrip_GestionarTutores.TabIndex = 5;
+            this.toolStrip_GestionarTutores.Text = "toolStrip2";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(62, 22);
+            this.btnNuevo.Text = "&Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(69, 22);
+            this.btnGuardar.Text = "&Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(57, 22);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(73, 22);
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(70, 22);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmGestionarTutoresTutor
             // 
@@ -483,5 +495,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn C3Tutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.ToolStripButton btnEliminar;
     }
 }
