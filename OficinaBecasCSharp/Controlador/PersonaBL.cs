@@ -18,18 +18,11 @@ namespace Controlador
             accesoDatosPersona = new PersonaAD();
         }
 
-        public BindingList<Persona> listarTutores()
-        {
-            return accesoDatosPersona.listarTutores();
-        }
-
         public BindingList<Persona> listarBecadosXTutor(String idTut)
         {
             return accesoDatosPersona.listarBecadosXTutor(idTut);
         }
 
-        
-        
         public void enlazarBecario(Tutor pe,int idbec,string ciclo)
         {
             accesoDatosPersona.enlazarBecario(pe, idbec,ciclo);
@@ -47,11 +40,6 @@ namespace Controlador
             return accesoDatosPersona.listarPersonas(cod);
         }
 
-
-        public void insertarNuevoTutor(String idPer, String idcoord, string est)
-        {
-            accesoDatosPersona.insertarNuevoTutor(idPer, idcoord, est);
-        }
 
     }
 }

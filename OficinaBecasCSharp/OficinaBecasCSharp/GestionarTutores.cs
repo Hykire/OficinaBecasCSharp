@@ -35,7 +35,7 @@ namespace Vista
             btnBXTVer.Enabled = false;
             DGVBXT.AutoGenerateColumns = false;
             dgvListaTutores.AutoGenerateColumns = false;
-            dgvListaTutores.DataSource = logicaNegocioPersona.listarTutores();
+            dgvListaTutores.DataSource = logicaNegocioTutor.listarTutores();
 
             //de segunda seccion
             txtBAcod.Enabled = false;
@@ -45,7 +45,7 @@ namespace Vista
             txtBANombTutor.Enabled = false;
             txtBAApeTutor.Enabled = false;
             txtCAIdOcullto.Enabled = false;
-            
+            dgvListaTutores.Refresh();
         }
 
         private void btnEditarTutor_Click(object sender, EventArgs e)

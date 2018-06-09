@@ -28,7 +28,7 @@ namespace Vista
             logicaNegocioTutor = new TutorBL();
             logicaNegocioCoordTutoria = new CoordinadorBL();
             DGVTutores.AutoGenerateColumns = false;
-            DGVTutores.DataSource = logicaNegocioPersona.listarTutores();
+            DGVTutores.DataSource = logicaNegocioTutor.listarTutores();
             txtIdOcultoGT.Enabled = false;
             txtCodGT.Enabled = false;
             txtNombGT.Enabled = false;
@@ -49,6 +49,7 @@ namespace Vista
                 cbxCoordinador.Items.Add(en);
             }
             cbxCoordinador.SelectedIndex = 0;
+            DGVTutores.Refresh();
         }
 
         private void frmGestionarTutoresTutor_Load(object sender, EventArgs e)
@@ -168,8 +169,9 @@ namespace Vista
             CoordinadorTutoria per1 = new CoordinadorTutoria();
             per1 = (CoordinadorTutoria)cbxCoordinador.SelectedItem;
             string idcoord = per1.Id_coordinador.ToString(); //aqui esta el id del coordinador
-            logicaNegocioPersona.insertarNuevoTutor(idPer, idcoord, est);
+            logicaNegocioTutor.insertarNuevoTutor(idPer, idcoord, est);
             DGVTutores.Refresh();
+            //DGVTutores.Update();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -178,7 +180,7 @@ namespace Vista
             {
                 if (MessageBox.Show("¿Desea eliminar el tutor seleccionado?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
                 {
-                    MessageBox.Show("holi");
+                    //MessageBox.Show("holi");
                     int idPersona = Convert.ToInt32(txtIdOcultoGT.Text);
                     logicaNegocioTutor.eliminarTutor(idPersona);
                     DGVTutores.Refresh();

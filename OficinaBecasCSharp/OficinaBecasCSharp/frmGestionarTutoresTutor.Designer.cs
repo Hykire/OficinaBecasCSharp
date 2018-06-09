@@ -53,13 +53,6 @@
             this.LCodigoTutNT = new System.Windows.Forms.Label();
             this.LGestTutBXT = new System.Windows.Forms.Label();
             this.DGVTutores = new System.Windows.Forms.DataGridView();
-            this.C1Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C2Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C3Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip_GestionarTutores = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
@@ -67,6 +60,14 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.C1Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C2Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C3Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTutor.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.GBEstadoNT.SuspendLayout();
@@ -302,6 +303,7 @@
             this.DGVTutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVTutores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.C1Tutor,
+            this.IdTutor,
             this.DNI,
             this.Correo,
             this.C2Tutor,
@@ -314,56 +316,6 @@
             this.DGVTutores.Size = new System.Drawing.Size(737, 186);
             this.DGVTutores.TabIndex = 4;
             this.DGVTutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVTutores_CellClick);
-            // 
-            // C1Tutor
-            // 
-            this.C1Tutor.DataPropertyName = "CodigoPUCP";
-            this.C1Tutor.HeaderText = "Codigo";
-            this.C1Tutor.Name = "C1Tutor";
-            this.C1Tutor.ReadOnly = true;
-            // 
-            // DNI
-            // 
-            this.DNI.DataPropertyName = "DNI";
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            // 
-            // Correo
-            // 
-            this.Correo.DataPropertyName = "CorreoPUCP";
-            this.Correo.HeaderText = "Correo";
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            // 
-            // C2Tutor
-            // 
-            this.C2Tutor.DataPropertyName = "Nombres";
-            this.C2Tutor.HeaderText = "Nombre";
-            this.C2Tutor.Name = "C2Tutor";
-            this.C2Tutor.ReadOnly = true;
-            // 
-            // C3Tutor
-            // 
-            this.C3Tutor.DataPropertyName = "Apellidos";
-            this.C3Tutor.HeaderText = "Apellidos";
-            this.C3Tutor.Name = "C3Tutor";
-            this.C3Tutor.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "TelfMovil";
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Visible = false;
             // 
             // toolStrip_GestionarTutores
             // 
@@ -430,6 +382,63 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // C1Tutor
+            // 
+            this.C1Tutor.DataPropertyName = "CodigoPUCP";
+            this.C1Tutor.HeaderText = "Codigo";
+            this.C1Tutor.Name = "C1Tutor";
+            this.C1Tutor.ReadOnly = true;
+            // 
+            // IdTutor
+            // 
+            this.IdTutor.DataPropertyName = "IdTutor";
+            this.IdTutor.HeaderText = "IdTutor";
+            this.IdTutor.Name = "IdTutor";
+            this.IdTutor.ReadOnly = true;
+            // 
+            // DNI
+            // 
+            this.DNI.DataPropertyName = "DNI";
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "CorreoPUCP";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // C2Tutor
+            // 
+            this.C2Tutor.DataPropertyName = "Nombres";
+            this.C2Tutor.HeaderText = "Nombre";
+            this.C2Tutor.Name = "C2Tutor";
+            this.C2Tutor.ReadOnly = true;
+            // 
+            // C3Tutor
+            // 
+            this.C3Tutor.DataPropertyName = "Apellidos";
+            this.C3Tutor.HeaderText = "Apellidos";
+            this.C3Tutor.Name = "C3Tutor";
+            this.C3Tutor.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "TelfMovil";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
+            // 
             // frmGestionarTutoresTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,13 +497,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CBEstadoNT;
+        private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn C1Tutor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdTutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn C2Tutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn C3Tutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.ToolStripButton btnEliminar;
     }
 }

@@ -34,5 +34,11 @@ namespace Controlador
         {
             return accesoDatosTutor.traerTutoresCod(codTut);
         }
+        public void insertarNuevoTutor(String idPer, String idcoord, string est) {
+            accesoDatosTutor.insertarNuevoTutor(idPer, idcoord, est);
+        }
+        public BindingList<Tutor> listarTutores() {
+            return accesoDatosTutor.listarTutores();
+        }
     }
 }
