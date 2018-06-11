@@ -16,7 +16,7 @@ namespace Vista
     {
         private Becado personaSeleccionada;
         private PersonaBL logicaNegocioPersona;
-        private AlumnoBL logicaNegocioAlumno;
+        private BecadoBL logicaNegocioAlumno;
 
         public Becado PersonaSeleccionada { get => personaSeleccionada; set => personaSeleccionada = value; }
 
@@ -24,7 +24,7 @@ namespace Vista
         {
             InitializeComponent();
             logicaNegocioPersona = new PersonaBL();
-            logicaNegocioAlumno = new AlumnoBL();
+            logicaNegocioAlumno = new BecadoBL();
         }
 
         private void btnAgregarABTXB_Click(object sender, EventArgs e)

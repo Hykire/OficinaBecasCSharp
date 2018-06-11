@@ -13,17 +13,17 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class frmAlumnoxBeca : Form
+    public partial class frmBecadoxBeca : Form
     {
         private int flag_elementoNuevo = 0;
         private int flag_elementoEditar = 0;
-        private Alumno_x_BecaBL logicaNegoAB;
+        private Becado_x_BecaBL logicaNegoAB;
 
         public enum Estado
         {
             Habilitado, Deshabilitado
         }
-        public frmAlumnoxBeca()
+        public frmBecadoxBeca()
         {
             InitializeComponent();
 
@@ -39,7 +39,7 @@ namespace Vista
 
             estadoComponentes(Estado.Deshabilitado);
             limpiarComponentes();
-            logicaNegoAB = new Alumno_x_BecaBL();
+            logicaNegoAB = new Becado_x_BecaBL();
 
             //cargamos el combo box de beca
             BecaBL logicaNegoBeca = new BecaBL();
@@ -172,7 +172,7 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frmBuscarAlumno formBAlumno = new frmBuscarAlumno();
+            frmBuscarBecario_F formBAlumno = new frmBuscarBecario_F();
             if (formBAlumno.ShowDialog() == DialogResult.OK)
             {
                 btnNuevo.Enabled = true;
@@ -191,7 +191,7 @@ namespace Vista
                 tbox_id_becado.Text = formBAlumno.AlumnoSeleccionado.Id_becado.ToString();
 
                 //se listará los ciclos
-                BindingList<Alumno_x_Beca> listaCiclo = logicaNegoAB.BuscarBecaxAlumno(formBAlumno.AlumnoSeleccionado.Id_becado);
+                BindingList<Becado_x_Beca> listaCiclo = logicaNegoAB.BuscarBecaxAlumno(formBAlumno.AlumnoSeleccionado.Id_becado);
                 cbox_ciclo.DataSource = listaCiclo;
                 cbox_ciclo.Sorted = false;
 
@@ -227,7 +227,7 @@ namespace Vista
 
 
 
-            Alumno_x_Beca axb = new Alumno_x_Beca();
+            Becado_x_Beca axb = new Becado_x_Beca();
 
             if (flag_elementoEditar == 1)
             {
@@ -331,67 +331,67 @@ namespace Vista
                 BindingList<Beca> listaB = logicaNegoBeca.listarBeca();
                 foreach (Beca b in listaB)
                 {
-                    if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Id_beca == b.Id_beca)
+                    if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Id_beca == b.Id_beca)
                     {
                         cbox_beca.Text = b.Nombre_beca;
                     }
                 }
                 //
-                if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Tipo_escala_pago == "ANTIGUA")
+                if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Tipo_escala_pago == "ANTIGUA")
                 {
                     cbox_tipoescala.Text = "ANTIGUA";
                     cbox_escalapago1.Visible = true;
                     cbox_escalapago2.Visible = false;
-                    cbox_escalapago1.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Escala_pago.ToString();
+                    cbox_escalapago1.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Escala_pago.ToString();
                 }
-                else if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Tipo_escala_pago == "ACTUAL")
+                else if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Tipo_escala_pago == "ACTUAL")
                 {
                     cbox_tipoescala.Text = "ACTUAL";
                     cbox_escalapago1.Visible = false;
                     cbox_escalapago2.Visible = true;
-                    cbox_escalapago2.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Escala_pago.ToString();
+                    cbox_escalapago2.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Escala_pago.ToString();
                 }
-                cbox_nivelcreditos.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Nivel_creditos.ToString();
-                tbox_cubiertos.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_cubiertos.ToString(CultureInfo.InvariantCulture);
-                tbox_restantes.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_restantes.ToString(CultureInfo.InvariantCulture);
-                tbox_utilizados.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_utilizados.ToString(CultureInfo.InvariantCulture);
-                tbox_nregularC.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Nsemestres_regular.ToString();
-                tbox_nveranoC.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Nsemestres_verano.ToString();
-                tbox_nregularesRC.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Nsemestres_restantes.ToString();
+                cbox_nivelcreditos.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Nivel_creditos.ToString();
+                tbox_cubiertos.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_cubiertos.ToString(CultureInfo.InvariantCulture);
+                tbox_restantes.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_restantes.ToString(CultureInfo.InvariantCulture);
+                tbox_utilizados.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Ncreditos_utilizados.ToString(CultureInfo.InvariantCulture);
+                tbox_nregularC.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Nsemestres_regular.ToString();
+                tbox_nveranoC.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Nsemestres_verano.ToString();
+                tbox_nregularesRC.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Nsemestres_restantes.ToString();
 
-                if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Renovacion == 1) cbox_renovacion.Text = "Sí"; else cbox_renovacion.Text = "No";
-                if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ampliacion == 1) cbox_ampliacion.Text = "Sí"; else cbox_ampliacion.Text = "No";
-                if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Suspencion == 1) cbox_suspencion.Text = "Sí"; else cbox_suspencion.Text = "No";
-                cbox_cicloS1.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado.Substring(0, 4);
-                cbox_cicloS2.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado.Substring(5, 1);
-                tbox_ncarta.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Ncarta;
-                rtbox_respuesta.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Respuesta;
+                if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Renovacion == 1) cbox_renovacion.Text = "Sí"; else cbox_renovacion.Text = "No";
+                if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Ampliacion == 1) cbox_ampliacion.Text = "Sí"; else cbox_ampliacion.Text = "No";
+                if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Suspencion == 1) cbox_suspencion.Text = "Sí"; else cbox_suspencion.Text = "No";
+                cbox_cicloS1.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado.Substring(0, 4);
+                cbox_cicloS2.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado.Substring(5, 1);
+                tbox_ncarta.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Ncarta;
+                rtbox_respuesta.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Respuesta;
 
-                if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Redencion_materiales == 1) cbox_bonomateriales.Text = "Sí"; else cbox_bonomateriales.Text = "No";
-                if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Redencion_alojamiento == 1) cbox_bonoalojamiento.Text = "Sí"; else cbox_bonoalojamiento.Text = "No";
-                if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Sansion == 1)
+                if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Redencion_materiales == 1) cbox_bonomateriales.Text = "Sí"; else cbox_bonomateriales.Text = "No";
+                if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Redencion_alojamiento == 1) cbox_bonoalojamiento.Text = "Sí"; else cbox_bonoalojamiento.Text = "No";
+                if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Sansion == 1)
                 {
                     cbox_sansion.Text = "Sí";
-                    tbox_tiposansion.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Sansion_tipo;
-                    dt_sansionini.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Sansion_ini.ToString();
-                    dt_sansionfin.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Sansion_fin.ToString();
+                    tbox_tiposansion.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Sansion_tipo;
+                    dt_sansionini.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Sansion_ini.ToString();
+                    dt_sansionfin.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Sansion_fin.ToString();
                     dt_sansionini.Visible = true;
                     dt_sansionfin.Visible = true;
                 }
                 else
                 {
                     cbox_sansion.Text = "No";
-                    tbox_tiposansion.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Sansion_tipo;
+                    tbox_tiposansion.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Sansion_tipo;
                     dt_sansionini.Visible = false;
                     dt_sansionfin.Visible = false;
                 }
-                if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Intercambio == 1)
+                if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Intercambio == 1)
                 {
                     cbox_intercambio.Text = "Sí";
-                    cbox_tipointercambio.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Intercambio_tipo;
-                    if (((Alumno_x_Beca)cbox_ciclo.SelectedItem).Adelanto == 1) cbox_adelantobono.Text = "Sí"; else cbox_adelantobono.Text = "No";
-                    dt_periodointercambioini.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Intercambio_ini.ToString();
-                    dt_periodointercambiofin.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Intercambio_fin.ToString();
+                    cbox_tipointercambio.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Intercambio_tipo;
+                    if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Adelanto == 1) cbox_adelantobono.Text = "Sí"; else cbox_adelantobono.Text = "No";
+                    dt_periodointercambioini.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Intercambio_ini.ToString();
+                    dt_periodointercambiofin.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Intercambio_fin.ToString();
                     dt_periodointercambioini.Visible = true;
                     dt_periodointercambiofin.Visible = true;
                 }
@@ -410,7 +410,7 @@ namespace Vista
                 dt_periodointercambiofin.Enabled = false;
                 dt_sansionini.Enabled = false;
                 dt_sansionfin.Enabled = false;
-                tbox_id_becadoxbeca.Text = ((Alumno_x_Beca)cbox_ciclo.SelectedItem).Id_becado_x_beca.ToString();
+                tbox_id_becadoxbeca.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Id_becado_x_beca.ToString();
             }
         }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AccesoDatos
 {
-    public class AlumnoDA
+    public class BecadoDA
     {
         public int registrar_enPersona(Becado a)
         {

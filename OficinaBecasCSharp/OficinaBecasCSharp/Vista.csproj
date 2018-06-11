@@ -128,23 +128,23 @@
     <Compile Include="BuscarTutorNT.Designer.cs">
       <DependentUpon>BuscarTutorNT.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumno.cs">
+    <Compile Include="frmBecado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumno.Designer.cs">
-      <DependentUpon>frmAlumno.cs</DependentUpon>
+    <Compile Include="frmBecado.Designer.cs">
+      <DependentUpon>frmBecado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnoxBeca.cs">
+    <Compile Include="frmBecadoxBeca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnoxBeca.Designer.cs">
-      <DependentUpon>frmAlumnoxBeca.cs</DependentUpon>
+    <Compile Include="frmBecadoxBeca.Designer.cs">
+      <DependentUpon>frmBecadoxBeca.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBuscarAlumno.cs">
+    <Compile Include="frmBuscarBecario_F.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBuscarAlumno.Designer.cs">
-      <DependentUpon>frmBuscarAlumno.cs</DependentUpon>
+    <Compile Include="frmBuscarBecario_F.Designer.cs">
+      <DependentUpon>frmBuscarBecario_F.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBuscarBecarioT.cs">
       <SubType>Form</SubType>
@@ -194,6 +194,12 @@
     <Compile Include="frmCoordComunicCiclosPasados.Designer.cs">
       <DependentUpon>frmCoordComunicCiclosPasados.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGestionarBecas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarBecas.Designer.cs">
+      <DependentUpon>frmGestionarBecas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionarCandidatos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +223,12 @@
     </Compile>
     <Compile Include="frmHistoriaAcademica.Designer.cs">
       <DependentUpon>frmHistoriaAcademica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersona.Designer.cs">
+      <DependentUpon>frmPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionarTutor.cs">
       <SubType>Form</SubType>
@@ -352,14 +364,14 @@
     <EmbeddedResource Include="BuscarTutorNT.resx">
       <DependentUpon>BuscarTutorNT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumno.resx">
-      <DependentUpon>frmAlumno.cs</DependentUpon>
+    <EmbeddedResource Include="frmBecado.resx">
+      <DependentUpon>frmBecado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnoxBeca.resx">
-      <DependentUpon>frmAlumnoxBeca.cs</DependentUpon>
+    <EmbeddedResource Include="frmBecadoxBeca.resx">
+      <DependentUpon>frmBecadoxBeca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBuscarAlumno.resx">
-      <DependentUpon>frmBuscarAlumno.cs</DependentUpon>
+    <EmbeddedResource Include="frmBuscarBecario_F.resx">
+      <DependentUpon>frmBuscarBecario_F.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarBecarioT.resx">
       <DependentUpon>frmBuscarBecarioT.cs</DependentUpon>
@@ -385,6 +397,9 @@
     <EmbeddedResource Include="frmCoordComunicCiclosPasados.resx">
       <DependentUpon>frmCoordComunicCiclosPasados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarBecas.resx">
+      <DependentUpon>frmGestionarBecas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarCandidatos.resx">
       <DependentUpon>frmGestionarCandidatos.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHistoriaAcademica.resx">
       <DependentUpon>frmHistoriaAcademica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersona.resx">
+      <DependentUpon>frmPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarTutor.resx">
       <DependentUpon>GestionarTutor.cs</DependentUpon>

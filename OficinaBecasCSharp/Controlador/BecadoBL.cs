@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Controlador
 {
-    public class AlumnoBL
+    public class BecadoBL
     {
-        private AlumnoDA accesoDatos;
+        private BecadoDA accesoDatos;
 
-        public AlumnoBL() { accesoDatos = new AlumnoDA(); }
+        public BecadoBL() { accesoDatos = new BecadoDA(); }
 
         public int registrarAlumno(Becado a)
         {

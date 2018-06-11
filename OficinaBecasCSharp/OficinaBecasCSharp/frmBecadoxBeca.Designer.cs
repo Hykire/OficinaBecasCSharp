@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class frmAlumnoxBeca
+    partial class frmBecadoxBeca
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlumnoxBeca));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBecadoxBeca));
             this.toolStrip_historiaacademica = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
@@ -127,7 +127,7 @@
             this.btnCancelar});
             this.toolStrip_historiaacademica.Location = new System.Drawing.Point(0, 0);
             this.toolStrip_historiaacademica.Name = "toolStrip_historiaacademica";
-            this.toolStrip_historiaacademica.Size = new System.Drawing.Size(855, 25);
+            this.toolStrip_historiaacademica.Size = new System.Drawing.Size(854, 25);
             this.toolStrip_historiaacademica.TabIndex = 69;
             this.toolStrip_historiaacademica.Text = "toolStrip2";
             // 
@@ -957,14 +957,14 @@
             this.label_ncubiertos.TabIndex = 36;
             this.label_ncubiertos.Text = "Nro. de Créditos Cubiertos por la Beca:";
             // 
-            // frmAlumnoxBeca
+            // frmBecadoxBeca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 702);
+            this.ClientSize = new System.Drawing.Size(854, 701);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip_historiaacademica);
-            this.Name = "frmAlumnoxBeca";
+            this.Name = "frmBecadoxBeca";
             this.Text = "frmAlumnoxBeca";
             this.toolStrip_historiaacademica.ResumeLayout(false);
             this.toolStrip_historiaacademica.PerformLayout();

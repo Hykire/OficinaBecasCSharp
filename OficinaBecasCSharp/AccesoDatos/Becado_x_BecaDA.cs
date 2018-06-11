@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace AccesoDatos
 {
-    public class Alumno_x_BecaDA
+    public class Becado_x_BecaDA
     {
-        public void Registrar_enAlumno_x_Beca(Alumno_x_Beca axb)
+        public void Registrar_enAlumno_x_Beca(Becado_x_Beca axb)
         {
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
             MySqlConnection con = new MySqlConnection(cadena);
@@ -54,7 +54,7 @@ namespace AccesoDatos
             comando.ExecuteNonQuery();
             con.Close();
         }
-        public void actualizarAlumno_x_Beca(Alumno_x_Beca axb)
+        public void actualizarAlumno_x_Beca(Becado_x_Beca axb)
         {
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
             MySqlConnection con = new MySqlConnection(cadena);
@@ -97,9 +97,9 @@ namespace AccesoDatos
             comando.ExecuteNonQuery();
             con.Close();
         }
-        public BindingList<Alumno_x_Beca> Buscar_BecasxAlumno(int id_becadoBUSCAR)
+        public BindingList<Becado_x_Beca> Buscar_BecasxAlumno(int id_becadoBUSCAR)
         {
-            BindingList<Alumno_x_Beca> lista = new BindingList<Alumno_x_Beca>();
+            BindingList<Becado_x_Beca> lista = new BindingList<Becado_x_Beca>();
             //coneccion a BD
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
                             "user=inf282g6;database=inf282g6;" +
@@ -117,7 +117,7 @@ namespace AccesoDatos
                 int id_becado = rs.GetInt32("ID_BECADO");
                 if (id_becado == id_becadoBUSCAR)
                 {
-                    Alumno_x_Beca axb = new Alumno_x_Beca();
+                    Becado_x_Beca axb = new Becado_x_Beca();
                     axb.Id_becado = id_becado;
                     axb.Id_becado_x_beca = rs.GetInt32("ID_BECADO_X_BECA");
                     axb.Id_beca = rs.GetInt32("ID_BECA");

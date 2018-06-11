@@ -14,7 +14,7 @@ namespace Vista
 {
     public partial class frmGestionarCitasTutor : Form
     {
-        private AlumnoBL logicaNegocioBecado;
+        private BecadoBL logicaNegocioBecado;
         private CitaBL logicaNegocioCita;
         private TutorBL logicaNegocioTutor;
         private Becado al;
@@ -22,7 +22,7 @@ namespace Vista
         public frmGestionarCitasTutor()
         {
             InitializeComponent();
-            logicaNegocioBecado = new AlumnoBL();
+            logicaNegocioBecado = new BecadoBL();
             logicaNegocioCita = new CitaBL();
             logicaNegocioTutor = new TutorBL();
 

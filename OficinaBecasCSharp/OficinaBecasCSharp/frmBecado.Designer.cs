@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class frmAlumno
+    partial class frmBecado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlumno));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBecado));
             this.panel_Alumno = new System.Windows.Forms.Panel();
             this.btn_historiaacademica = new System.Windows.Forms.Button();
             this.gbox_datosIngreso = new System.Windows.Forms.GroupBox();

@@ -56,8 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlumnoDA.cs" />
-    <Compile Include="Alumno_x_BecaDA.cs" />
+    <Compile Include="BecadoDA.cs" />
+    <Compile Include="Becado_x_BecaDA.cs" />
     <Compile Include="BecaDA.cs" />
     <Compile Include="CandidatoDA.cs" />
     <Compile Include="CitaAD.cs" />

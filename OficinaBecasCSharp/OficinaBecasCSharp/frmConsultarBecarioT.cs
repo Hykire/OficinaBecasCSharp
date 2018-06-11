@@ -14,12 +14,12 @@ namespace Vista
 {
     public partial class frmConsultarBecarioT : Form
     {
-        private AlumnoBL logicaNegocioPersona;
+        private BecadoBL logicaNegocioPersona;
         private Becado alumnoSeleccionado;
         public frmConsultarBecarioT()
         {
             InitializeComponent();
-            logicaNegocioPersona = new AlumnoBL();
+            logicaNegocioPersona = new BecadoBL();
             alumnoSeleccionado = new Becado();
         }
 

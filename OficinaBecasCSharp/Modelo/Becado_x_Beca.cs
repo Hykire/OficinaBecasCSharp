@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class Alumno_x_Beca
+    public class Becado_x_Beca
     {
         private int _id_becado_x_beca;
         private int _id_becado;

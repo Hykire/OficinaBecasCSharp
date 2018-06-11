@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Administrador.cs" />
     <Compile Include="Becado.cs" />
-    <Compile Include="Alumno_x_Beca.cs" />
+    <Compile Include="Becado_x_Beca.cs" />
     <Compile Include="AsistenteComunicaciones.cs" />
     <Compile Include="Beca.cs" />
     <Compile Include="Candidato.cs" />

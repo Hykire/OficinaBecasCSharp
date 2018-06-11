@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class frmAlumno : Form
+    public partial class frmBecado : Form
     {
         private int flag_elementoNuevo = 0;
         private int flag_elementoEditar = 0;
         private EspecialidadBL logicaNegoFacultad;
-        private AlumnoBL logicaNegoAlumno;
+        private BecadoBL logicaNegoAlumno;
         private int id_becado_ParaHistoriaAcademica;
 
         public enum Estado { Habilitado, Deshabilitado }
@@ -124,7 +124,7 @@ namespace Vista
             cbox_tipogrupo.Text = "";
         }
 
-        public frmAlumno()
+        public frmBecado()
         {
             InitializeComponent();
 
@@ -138,7 +138,7 @@ namespace Vista
             limpiarComponentes();
 
             //se inicializa la logica de negocio
-            logicaNegoAlumno = new AlumnoBL();
+            logicaNegoAlumno = new BecadoBL();
 
             //se bloquean los botones
             btnNuevo.Enabled = true; btnCancelar.Enabled = true; btnBuscar.Enabled = true;
@@ -226,7 +226,7 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frmBuscarAlumno formBAlumno = new frmBuscarAlumno();
+            frmBuscarBecario_F formBAlumno = new frmBuscarBecario_F();
             if (formBAlumno.ShowDialog() == DialogResult.OK)
             {
                 tbox_id_persona.Text = formBAlumno.AlumnoSeleccionado.Id_persona.ToString();

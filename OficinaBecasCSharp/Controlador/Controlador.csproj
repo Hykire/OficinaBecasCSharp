@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlumnoBL.cs" />
-    <Compile Include="Alumno_x_BecaBL.cs" />
+    <Compile Include="BecadoBL.cs" />
+    <Compile Include="Becado_x_BecaBL.cs" />
     <Compile Include="BecaBL.cs" />
     <Compile Include="CandidatoBL.cs" />
     <Compile Include="CitaBL.cs" />

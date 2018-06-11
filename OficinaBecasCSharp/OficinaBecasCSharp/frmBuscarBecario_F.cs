@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class frmBuscarAlumno : Form
+    public partial class frmBuscarBecario_F : Form
     {
-        private AlumnoBL logicaNegoAlumno;
+        private BecadoBL logicaNegoAlumno;
         private Becado _alumnoSeleccionado;
 
-        public frmBuscarAlumno()
+        public frmBuscarBecario_F()
         {
-            logicaNegoAlumno = new AlumnoBL();
+            logicaNegoAlumno = new BecadoBL();
             _alumnoSeleccionado = new Becado();
 
             InitializeComponent();

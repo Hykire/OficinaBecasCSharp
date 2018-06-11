@@ -18,8 +18,8 @@ namespace Vista {
         {
             if (this.panel2.Controls.Count > 0)
                 this.panel2.Controls.RemoveAt(0);
-            frmAlumno form = Application.OpenForms.OfType<frmAlumno>().FirstOrDefault();
-            frmAlumno ventana = form ?? new frmAlumno();
+            frmBecado form = Application.OpenForms.OfType<frmBecado>().FirstOrDefault();
+            frmBecado ventana = form ?? new frmBecado();
             ventana.TopLevel = false;
             ventana.FormBorderStyle = FormBorderStyle.None;
             ventana.Dock = DockStyle.Fill;
@@ -32,8 +32,8 @@ namespace Vista {
         {
             if (this.panel2.Controls.Count > 0)
                 this.panel2.Controls.RemoveAt(0);
-            frmAlumnoxBeca form = Application.OpenForms.OfType<frmAlumnoxBeca>().FirstOrDefault();
-            frmAlumnoxBeca ventana = form ?? new frmAlumnoxBeca();
+            frmBecadoxBeca form = Application.OpenForms.OfType<frmBecadoxBeca>().FirstOrDefault();
+            frmBecadoxBeca ventana = form ?? new frmBecadoxBeca();
             ventana.TopLevel = false;
             ventana.FormBorderStyle = FormBorderStyle.None;
             ventana.Dock = DockStyle.Fill;
@@ -51,8 +51,8 @@ namespace Vista {
         {
             if (this.panel2.Controls.Count > 0)
                 this.panel2.Controls.RemoveAt(0);
-            frmAlumno form = Application.OpenForms.OfType<frmAlumno>().FirstOrDefault();
-            frmAlumno ventana = form ?? new frmAlumno();
+            frmBecado form = Application.OpenForms.OfType<frmBecado>().FirstOrDefault();
+            frmBecado ventana = form ?? new frmBecado();
             ventana.TopLevel = false;
             ventana.FormBorderStyle = FormBorderStyle.None;
             ventana.Dock = DockStyle.Fill;
@@ -65,14 +65,19 @@ namespace Vista {
         {
             if (this.panel2.Controls.Count > 0)
                 this.panel2.Controls.RemoveAt(0);
-            frmAlumnoxBeca form = Application.OpenForms.OfType<frmAlumnoxBeca>().FirstOrDefault();
-            frmAlumnoxBeca ventana = form ?? new frmAlumnoxBeca();
+            frmBecadoxBeca form = Application.OpenForms.OfType<frmBecadoxBeca>().FirstOrDefault();
+            frmBecadoxBeca ventana = form ?? new frmBecadoxBeca();
             ventana.TopLevel = false;
             ventana.FormBorderStyle = FormBorderStyle.None;
             ventana.Dock = DockStyle.Fill;
             this.panel2.Controls.Add(ventana);
             this.panel2.Tag = ventana;
             ventana.Show();
+        }
+
+        private void btn_gestionarBecas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

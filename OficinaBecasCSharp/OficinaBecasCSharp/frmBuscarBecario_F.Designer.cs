@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class frmBuscarAlumno
+    partial class frmBuscarBecario_F
     {
         /// <summary>
         /// Required designer variable.
