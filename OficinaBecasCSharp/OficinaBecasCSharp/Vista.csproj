@@ -110,6 +110,12 @@
     <Compile Include="BuscarBecarioABTXB.Designer.cs">
       <DependentUpon>BuscarBecarioABTXB.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuscarCandidato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarCandidato.Designer.cs">
+      <DependentUpon>BuscarCandidato.cs</DependentUpon>
+    </Compile>
     <Compile Include="BuscarConvocatoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,12 @@
     </Compile>
     <Compile Include="frmCoordComunicCiclosPasados.Designer.cs">
       <DependentUpon>frmCoordComunicCiclosPasados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarCandidatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarCandidatos.Designer.cs">
+      <DependentUpon>frmGestionarCandidatos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionarCitasTutor.cs">
       <SubType>Form</SubType>
@@ -331,6 +343,9 @@
     <EmbeddedResource Include="BuscarBecarioABTXB.resx">
       <DependentUpon>BuscarBecarioABTXB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarCandidato.resx">
+      <DependentUpon>BuscarCandidato.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarConvocatoria.resx">
       <DependentUpon>BuscarConvocatoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCoordComunicCiclosPasados.resx">
       <DependentUpon>frmCoordComunicCiclosPasados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarCandidatos.resx">
+      <DependentUpon>frmGestionarCandidatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarCitasTutor.resx">
       <DependentUpon>frmGestionarCitasTutor.cs</DependentUpon>

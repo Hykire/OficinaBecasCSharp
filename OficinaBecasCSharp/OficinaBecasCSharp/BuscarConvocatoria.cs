@@ -40,6 +40,7 @@ namespace Vista
                 convocatorias = convocatoriaBL.listarConvocatoriasAnteriores(ciclos[0], ciclos[1]);
                 cbFiltroCiclo.DataSource = convocatoriaBL.ciclosAnteriores(ciclos[0], ciclos[1]);
             }
+            if (ciclos[0] == "" && ciclos[1] == "") btnSeleccionar.Visible = true;
 
             cbFiltroCiclo.Text = null;
             dgvConvocatoria.AutoGenerateColumns = false;

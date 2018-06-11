@@ -68,6 +68,18 @@ namespace Vista
 
         }
 
-
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            if (this.panel2.Controls.Count > 0)
+                this.panel2.Controls.RemoveAt(0);
+            frmGestionarCandidatos form = Application.OpenForms.OfType<frmGestionarCandidatos>().FirstOrDefault();
+            frmGestionarCandidatos ventana = form ?? new frmGestionarCandidatos();
+            ventana.TopLevel = false;
+            ventana.FormBorderStyle = FormBorderStyle.None;
+            ventana.Dock = DockStyle.Fill;
+            this.panel2.Controls.Add(ventana);
+            this.panel2.Tag = ventana;
+            ventana.Show();
+        }
     }
 }

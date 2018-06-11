@@ -122,9 +122,15 @@ namespace AccesoDatos
                 per.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
                 per.Nombres = reader.GetString("NOMBRES");
                 per.Apellidos = reader.GetString("APELLIDOS");
+                per.Sexo = reader.GetChar("SEXO");
+                per.Edad = reader.GetInt32("EDAD");
                 per.TelfMovil = reader.GetString("TELF_MOVIL");
                 //per.Profesion = reader.GetString("profesion");
                 per.Dni = reader.GetInt32("DNI");
+                per.Fecha_nacimiento = reader.GetDateTime("FECHA_NACIMIENTO");
+                per.CorreoAlternativo = reader.GetString("CORREO_ALTERNATIVO");
+                per.TelfFijo = reader.GetString("TELF_FIJO");
+                per.TelfMovil = reader.GetString("TELF_MOVIL");
                 per.CorreoPUCP = reader.GetString("CORREO_PUCP");
                 
                 lista.Add(per);
