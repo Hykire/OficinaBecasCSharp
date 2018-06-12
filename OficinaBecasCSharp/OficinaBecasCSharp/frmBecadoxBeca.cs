@@ -43,7 +43,7 @@ namespace Vista
 
             //cargamos el combo box de beca
             BecaBL logicaNegoBeca = new BecaBL();
-            cbox_beca.DataSource = logicaNegoBeca.listarBeca();
+            cbox_beca.DataSource = logicaNegoBeca.listar_Beca();
             cbox_beca.Sorted = false;
         }
 
@@ -328,7 +328,7 @@ namespace Vista
                 //
                 //cargamos el combo box de beca
                 BecaBL logicaNegoBeca = new BecaBL();
-                BindingList<Beca> listaB = logicaNegoBeca.listarBeca();
+                BindingList<Beca> listaB = logicaNegoBeca.listar_Beca();
                 foreach (Beca b in listaB)
                 {
                     if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Id_beca == b.Id_beca)

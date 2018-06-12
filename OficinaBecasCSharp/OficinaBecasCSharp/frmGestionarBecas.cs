@@ -18,10 +18,116 @@ namespace Vista
         private int flag_elementoEditar = 0;
         private BecaBL logicanegocioBeca;
 
+        public enum Estado { Habilitado, Deshabilitado }
+        public void estadoComponentes(Estado estado)
+        {
+            switch (estado)
+            {
+                case Estado.Deshabilitado:
+                    cbox_estado.Enabled = false;
+                    tbox_nombre.Enabled = false;
+                    tbox_financiador.Enabled = false;
+                    rtbox_descripcion.Enabled = false;
+
+                    check_1.Enabled = false; check_2.Enabled = false;
+                    check_3.Enabled = false; check_4.Enabled = false;
+                    check_5.Enabled = false; check_6.Enabled = false;
+                    check_7.Enabled = false; check_8.Enabled = false;
+                    check_9.Enabled = false; check_10.Enabled = false;
+                    check_11.Enabled = false; check_12.Enabled = false;
+                    check_13.Enabled = false; check_14.Enabled = false;
+                    check_15.Enabled = false; check_16.Enabled = false;
+                    check_17.Enabled = false; check_18.Enabled = false;
+                    check_19.Enabled = false; check_20.Enabled = false;
+                    check_21.Enabled = false; check_22.Enabled = false;
+                    check_23.Enabled = false; check_24.Enabled = false;
+                    check_25.Enabled = false; check_26.Enabled = false;
+                    check_27.Enabled = false; check_28.Enabled = false;
+                    check_29.Enabled = false; check_30.Enabled = false;
+                    check_31.Enabled = false; check_32.Enabled = false;
+                    check_33.Enabled = false; check_34.Enabled = false;
+                    check_35.Enabled = false; check_36.Enabled = false;
+                    check_37.Enabled = false; check_38.Enabled = false;
+                    check_39.Enabled = false; check_40.Enabled = false;
+                    check_41.Enabled = false; check_42.Enabled = false;
+                    check_43.Enabled = false; check_44.Enabled = false;
+                    check_45.Enabled = false; check_46.Enabled = false;
+                    check_47.Enabled = false; check_48.Enabled = false;
+                    break;
+                case Estado.Habilitado:
+                    cbox_estado.Enabled = true;
+                    tbox_nombre.Enabled = true;
+                    tbox_financiador.Enabled = true;
+                    rtbox_descripcion.Enabled = true;
+
+                    check_1.Enabled = true; check_2.Enabled = true;
+                    check_3.Enabled = true; check_4.Enabled = true;
+                    check_5.Enabled = true; check_6.Enabled = true;
+                    check_7.Enabled = true; check_8.Enabled = true;
+                    check_9.Enabled = true; check_10.Enabled = true;
+                    check_11.Enabled = true; check_12.Enabled = true;
+                    check_13.Enabled = true; check_14.Enabled = true;
+                    check_15.Enabled = true; check_16.Enabled = true;
+                    check_17.Enabled = true; check_18.Enabled = true;
+                    check_19.Enabled = true; check_20.Enabled = true;
+                    check_21.Enabled = true; check_22.Enabled = true;
+                    check_23.Enabled = true; check_24.Enabled = true;
+                    check_25.Enabled = true; check_26.Enabled = true;
+                    check_27.Enabled = true; check_28.Enabled = true;
+                    check_29.Enabled = true; check_30.Enabled = true;
+                    check_31.Enabled = true; check_32.Enabled = true;
+                    check_33.Enabled = true; check_34.Enabled = true;
+                    check_35.Enabled = true; check_36.Enabled = true;
+                    check_37.Enabled = true; check_38.Enabled = true;
+                    check_39.Enabled = true; check_40.Enabled = true;
+                    check_41.Enabled = true; check_42.Enabled = true;
+                    check_43.Enabled = true; check_44.Enabled = true;
+                    check_45.Enabled = true; check_46.Enabled = true;
+                    check_47.Enabled = true; check_48.Enabled = true;
+                    break;
+            }
+        }
+        public void limpiarComponentes()
+        {
+            cbox_estado.Text = "";
+            tbox_nombre.Text = "";
+            tbox_financiador.Text = "";
+            rtbox_descripcion.Text = "";
+
+            check_1.Checked = false; check_2.Checked = false;
+            check_3.Checked = false; check_4.Checked = false;
+            check_5.Checked = false; check_6.Checked = false;
+            check_7.Checked = false; check_8.Checked = false;
+            check_9.Checked = false; check_10.Checked = false;
+            check_11.Checked = false; check_12.Checked = false;
+            check_13.Checked = false; check_14.Checked = false;
+            check_15.Checked = false; check_16.Checked = false;
+            check_17.Checked = false; check_18.Checked = false;
+            check_19.Checked = false; check_20.Checked = false;
+            check_21.Checked = false; check_22.Checked = false;
+            check_23.Checked = false; check_24.Checked = false;
+            check_25.Checked = false; check_26.Checked = false;
+            check_27.Checked = false; check_28.Checked = false;
+            check_29.Checked = false; check_30.Checked = false;
+            check_31.Checked = false; check_32.Checked = false;
+            check_33.Checked = false; check_34.Checked = false;
+            check_35.Checked = false; check_36.Checked = false;
+            check_37.Checked = false; check_38.Checked = false;
+            check_39.Checked = false; check_40.Checked = false;
+            check_41.Checked = false; check_42.Checked = false;
+            check_43.Checked = false; check_44.Checked = false;
+            check_45.Checked = false; check_46.Checked = false;
+            check_47.Checked = false; check_48.Checked = false;
+        }
+
         public frmGestionarBecas()
         {
             InitializeComponent();
+
             logicanegocioBeca = new BecaBL();
+            estadoComponentes(Estado.Deshabilitado);
+            btnNuevo.Enabled = true; btnBuscar.Enabled = true; btnCancelar.Enabled = true;
+            btnGuardar.Enabled = false; btnEditar.Enabled = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -60,7 +166,8 @@ namespace Vista
             if (check_45.Checked == true) id_esp.Add(45); if (check_46.Checked == true) id_esp.Add(46);
             if (check_47.Checked == true) id_esp.Add(47); if (check_48.Checked == true) id_esp.Add(48);
 
-            if(flag_elementoNuevo == 1)
+            estadoComponentes(Estado.Deshabilitado);
+            if (flag_elementoNuevo == 1)
             {
                 flag_elementoNuevo = 0;
                 logicanegocioBeca.registrar_Beca(b, id_esp);
@@ -72,21 +179,41 @@ namespace Vista
                 logicanegocioBeca.modificar_Beca(b, id_esp);
                 MessageBox.Show("Se ha actualizado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            btnGuardar.Enabled = false;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            //habilita flag
             flag_elementoNuevo = 1;
+
+            //habilitamos botones
+            btnCancelar.Enabled = true; btnGuardar.Enabled = true;
+            btnNuevo.Enabled = false; btnEditar.Enabled = false; btnBuscar.Enabled = false;
+
+            //se habilitan los campos
+            estadoComponentes(Estado.Habilitado);
 
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            //habilita flag
             flag_elementoEditar = 1;
+
+            //habilitamos botones
+            btnCancelar.Enabled = true; btnGuardar.Enabled = true;
+            btnNuevo.Enabled = false; btnEditar.Enabled = false; btnBuscar.Enabled = false;
+
+            //se habilitan los campos
+            estadoComponentes(Estado.Habilitado);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            //habilitamos botones
+            btnEditar.Enabled = true;
+
             frmBuscarBeca_F formBAlumno = new frmBuscarBeca_F();
             if (formBAlumno.ShowDialog() == DialogResult.OK)
             {
@@ -96,7 +223,6 @@ namespace Vista
                 rtbox_descripcion.Text = formBAlumno.BecaSeleccionada.Descripcion;
                 cbox_estado.Text = formBAlumno.BecaSeleccionada.Estado;
 
-                //falta rellenar los check_box...
                 BindingList<int> lista_esp = logicanegocioBeca.obtener_especialidadesBeca(formBAlumno.BecaSeleccionada);
                 foreach(int i in lista_esp)
                 {
@@ -153,6 +279,21 @@ namespace Vista
                     }
                 }//fin del switch
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            //habilitamos botones
+            btnNuevo.Enabled = true; btnCancelar.Enabled = true; btnBuscar.Enabled = true;
+            btnGuardar.Enabled = false; btnEditar.Enabled = false;
+
+            //se deshabilita los campos
+            estadoComponentes(Estado.Deshabilitado);
+
+            //se limpia
+            limpiarComponentes();
+            flag_elementoEditar = 0;
+            flag_elementoNuevo = 0;
         }
     }
 }

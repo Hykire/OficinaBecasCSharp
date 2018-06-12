@@ -107,7 +107,7 @@ namespace AccesoDatos
             con.Close();
             return becas;
         }
-       
+        //---?
         public BindingList<Beca> listarBecaSolicitada(string name)
         {
             BindingList<Beca> becas = new BindingList<Beca>();

@@ -138,6 +138,71 @@ namespace AccesoDatos
             con.Close();
             return lista;
         }
-        
+
+        //hecho por Francisco, se usa en frmBuscarPersona_F
+        public BindingList<Persona> listar_Persona_F()
+        {
+            BindingList<Persona> lista = new BindingList<Persona>();
+
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandText = "SELECT * FROM PERSONA";
+            comando.Connection = con;
+
+            con.Open();
+            MySqlDataReader rs = comando.ExecuteReader();
+            while (rs.Read())
+            {
+                Persona p = new Persona();
+                p.Id_persona = rs.GetInt32("ID_PERSONA");
+                p.Id_usuario = rs.GetInt32("ID_USUARIO");
+                p.CodigoPUCP = rs.GetInt32("CODIGO_PUCP");
+                p.Nombres = rs.GetString("NOMBRES");
+                p.Apellidos = rs.GetString("APELLIDOS");
+                p.Sexo = rs.GetChar("SEXO");
+                p.Dni = rs.GetInt32("DNI");
+                p.Fecha_nacimiento = rs.GetDateTime("FECHA_NACIMIENTO");
+                p.CorreoPUCP = rs.GetString("CORREO_PUCP");
+                p.CorreoAlternativo = rs.GetString("CORREO_ALTERNATIVO");
+                p.TelfMovil = rs.GetString("TELF_MOVIL");
+                p.TelfFijo = rs.GetString("TELF_FIJO");
+                p.Estado = rs.GetString("ESTADO");
+                lista.Add(p);
+            }
+            con.Close();
+            return lista;
+        }
+        //hecho por Francisco
+        public void insertar_persona(Persona p, int id_usuario)
+        {
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.CommandText = "F_INSERTAR_PERSONA";
+            comando.Parameters.Add("_codigo_pucp", MySqlDbType.Int32).Value = p.CodigoPUCP;
+            comando.Parameters.Add("_nombres", MySqlDbType.VarChar).Value = p.Nombres;
+            comando.Parameters.Add("_apellidos", MySqlDbType.VarChar).Value = p.Apellidos;
+            comando.Parameters.Add("_sexo", MySqlDbType.VarChar).Value = p.Sexo;
+            comando.Parameters.Add("_dni", MySqlDbType.Int32).Value = p.Dni;
+            comando.Parameters.Add("_edad", MySqlDbType.Int32).Value = p.Edad;
+            comando.Parameters.Add("_fecha_nacimiento", MySqlDbType.Date).Value = p.Fecha_nacimiento;
+            comando.Parameters.Add("_correo_pucp", MySqlDbType.VarChar).Value = p.CorreoPUCP;
+            comando.Parameters.Add("_correo_alternativo", MySqlDbType.VarChar).Value = p.CorreoAlternativo;
+            comando.Parameters.Add("_telf_movil", MySqlDbType.VarChar).Value = p.TelfMovil;
+            comando.Parameters.Add("_telf_fijo", MySqlDbType.VarChar).Value = p.TelfFijo;
+            comando.Parameters.Add("_estado", MySqlDbType.VarChar).Value = p.Estado;
+            comando.Parameters.Add("_id_usuario", MySqlDbType.Int32).Value = id_usuario;
+
+            comando.Parameters.Add("_id", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
+
+            comando.Connection = con;
+            con.Open();
+            comando.ExecuteNonQuery();
+            int id = Int32.Parse(comando.Parameters["_id"].Value.ToString());
+            con.Close();            
+        }
     }
 }

@@ -31,6 +31,8 @@ namespace AccesoDatos
             comando.Parameters.Add("_telf_movil", MySqlDbType.VarChar).Value = a.TelfMovil;
             comando.Parameters.Add("_telf_fijo", MySqlDbType.VarChar).Value = a.TelfFijo;
             comando.Parameters.Add("_estado", MySqlDbType.VarChar).Value = a.Estado;
+            comando.Parameters.Add("_id_usuario", MySqlDbType.Int32).Value = 1;
+
             comando.Parameters.Add("_id", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
 
             comando.Connection = con;

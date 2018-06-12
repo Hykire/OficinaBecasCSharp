@@ -16,7 +16,7 @@ namespace Controlador
         public BecaBL() { accesoDatos = new BecaDA(); accesoDatos_BxE = new Beca_x_EspecialidadDA(); }
 
         //hecho por Francisco
-        public BindingList<Beca> listarBeca()
+        public BindingList<Beca> listar_Beca()
         {
             BindingList<Beca> lista = accesoDatos.listarBeca();
             BindingList<Beca> ltsOrdenada = new BindingList<Beca>(lista.OrderBy(x => x.Nombre_beca).ToList());

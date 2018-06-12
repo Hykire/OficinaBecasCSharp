@@ -24,7 +24,7 @@ namespace Vista
             _becaSeleccionada = new Beca();
             dgv_beca.AutoGenerateColumns = false;
             dgv_beca.AllowUserToAddRows = false; //quitar la ultima fila
-            dgv_beca.DataSource = logicanegocioBeca.listarBeca();
+            dgv_beca.DataSource = logicanegocioBeca.listar_Beca();
         }
 
         public Beca BecaSeleccionada { get => _becaSeleccionada; set => _becaSeleccionada = value; }

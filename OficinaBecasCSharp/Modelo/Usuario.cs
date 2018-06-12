@@ -6,40 +6,16 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class Usuario
+    public class Usuario
     {
-        private string usuario;
-        private string password;
+        private int _id_usuario;
+        private int _id_tipo_usuario;
+        private string _user;
+        private string _password;
 
-        public Usuario()
-        {
-
-        }
-
-        public string _usuario
-        {
-            set
-            {
-                usuario = value;
-            }
-            get
-            {
-                return usuario;
-            }
-        }
-
-        public string _password
-        {
-            set
-            {
-                password = value;
-            }
-            get
-            {
-                return password;
-            }
-        }
-
-
+        public int Id_usuario { get => _id_usuario; set => _id_usuario = value; }
+        public int Id_tipo_usuario { get => _id_tipo_usuario; set => _id_tipo_usuario = value; }
+        public string User { get => _user; set => _user = value; }
+        public string Password { get => _password; set => _password = value; }
     }
 }

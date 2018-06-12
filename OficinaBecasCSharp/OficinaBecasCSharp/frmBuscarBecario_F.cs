@@ -19,10 +19,11 @@ namespace Vista
 
         public frmBuscarBecario_F()
         {
+            InitializeComponent();
+
             logicaNegoAlumno = new BecadoBL();
             _alumnoSeleccionado = new Becado();
-
-            InitializeComponent();
+            dvg_alumnos.AllowUserToAddRows = false; //quitar la ultima fila
             dvg_alumnos.AutoGenerateColumns = false;
         }
 

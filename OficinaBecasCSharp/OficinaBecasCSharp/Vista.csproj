@@ -164,6 +164,12 @@
     <Compile Include="frmBuscarPersona.Designer.cs">
       <DependentUpon>frmBuscarPersona.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscarPersona_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarPersona_F.Designer.cs">
+      <DependentUpon>frmBuscarPersona_F.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBuscarTutor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,11 +236,11 @@
     <Compile Include="frmHistoriaAcademica.Designer.cs">
       <DependentUpon>frmHistoriaAcademica.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPersona.cs">
+    <Compile Include="frmGestionarPersona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPersona.Designer.cs">
-      <DependentUpon>frmPersona.cs</DependentUpon>
+    <Compile Include="frmGestionarPersona.Designer.cs">
+      <DependentUpon>frmGestionarPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionarTutor.cs">
       <SubType>Form</SubType>
@@ -388,6 +394,9 @@
     <EmbeddedResource Include="frmBuscarPersona.resx">
       <DependentUpon>frmBuscarPersona.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarPersona_F.resx">
+      <DependentUpon>frmBuscarPersona_F.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarTutor.resx">
       <DependentUpon>frmBuscarTutor.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,8 +430,8 @@
     <EmbeddedResource Include="frmHistoriaAcademica.resx">
       <DependentUpon>frmHistoriaAcademica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPersona.resx">
-      <DependentUpon>frmPersona.cs</DependentUpon>
+    <EmbeddedResource Include="frmGestionarPersona.resx">
+      <DependentUpon>frmGestionarPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarTutor.resx">
       <DependentUpon>GestionarTutor.cs</DependentUpon>

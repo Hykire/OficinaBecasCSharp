@@ -88,5 +88,19 @@ namespace Vista {
             this.panel2.Tag = ventana;
             ventana.Show();
         }
+
+        private void btn_gestionarPersona_Click(object sender, EventArgs e)
+        {
+            if (this.panel2.Controls.Count > 0)
+                this.panel2.Controls.RemoveAt(0);
+            frmGestionarPersona form = Application.OpenForms.OfType<frmGestionarPersona>().FirstOrDefault();
+            frmGestionarPersona ventana = form ?? new frmGestionarPersona();
+            ventana.TopLevel = false;
+            ventana.FormBorderStyle = FormBorderStyle.None;
+            ventana.Dock = DockStyle.Fill;
+            this.panel2.Controls.Add(ventana);
+            this.panel2.Tag = ventana;
+            ventana.Show();
+        }
     }
 }
