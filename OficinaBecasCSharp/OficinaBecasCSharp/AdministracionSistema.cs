@@ -77,7 +77,16 @@ namespace Vista {
 
         private void btn_gestionarBecas_Click(object sender, EventArgs e)
         {
-
+            if (this.panel2.Controls.Count > 0)
+                this.panel2.Controls.RemoveAt(0);
+            frmGestionarBecas form = Application.OpenForms.OfType<frmGestionarBecas>().FirstOrDefault();
+            frmGestionarBecas ventana = form ?? new frmGestionarBecas();
+            ventana.TopLevel = false;
+            ventana.FormBorderStyle = FormBorderStyle.None;
+            ventana.Dock = DockStyle.Fill;
+            this.panel2.Controls.Add(ventana);
+            this.panel2.Tag = ventana;
+            ventana.Show();
         }
     }
 }

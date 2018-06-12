@@ -140,6 +140,12 @@
     <Compile Include="frmBecadoxBeca.Designer.cs">
       <DependentUpon>frmBecadoxBeca.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscarBeca_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarBeca_F.Designer.cs">
+      <DependentUpon>frmBuscarBeca_F.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBuscarBecario_F.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarBecarioT.resx">
       <DependentUpon>frmBuscarBecarioT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarBeca_F.resx">
+      <DependentUpon>frmBuscarBeca_F.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarPersona.resx">
       <DependentUpon>frmBuscarPersona.cs</DependentUpon>

@@ -12,6 +12,8 @@ namespace Modelo
         private string _nombre_beca;
         private string _descripcion;
         private string financiador;
+        private string _estado;
+
         private DateTime fechaConvocatoria;
 
         public override string ToString() { return _nombre_beca; }
@@ -21,5 +23,6 @@ namespace Modelo
         public string Descripcion { get => _descripcion; set => _descripcion = value; }
         public string Financiador { get => financiador; set => financiador = value; }
         public DateTime FechaConvocatoria { get => fechaConvocatoria; set => fechaConvocatoria = value; }
+        public string Estado { get => _estado; set => _estado = value; }
     }
 }

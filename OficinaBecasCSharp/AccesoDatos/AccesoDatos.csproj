@@ -59,6 +59,7 @@
     <Compile Include="BecadoDA.cs" />
     <Compile Include="Becado_x_BecaDA.cs" />
     <Compile Include="BecaDA.cs" />
+    <Compile Include="Beca_x_EspecialidadDA.cs" />
     <Compile Include="CandidatoDA.cs" />
     <Compile Include="CitaAD.cs" />
     <Compile Include="ConvocatoriaDA.cs" />

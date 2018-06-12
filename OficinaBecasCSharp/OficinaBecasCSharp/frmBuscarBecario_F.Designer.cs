@@ -170,7 +170,7 @@
             this.btn_seleccionar.UseVisualStyleBackColor = true;
             this.btn_seleccionar.Click += new System.EventHandler(this.btn_seleccionar_Click);
             // 
-            // frmBuscarAlumno
+            // frmBuscarBecario_F
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,7 +178,7 @@
             this.Controls.Add(this.btn_seleccionar);
             this.Controls.Add(this.dvg_alumnos);
             this.Controls.Add(this.gbox_criterios);
-            this.Name = "frmBuscarAlumno";
+            this.Name = "frmBuscarBecario_F";
             this.Text = "frmBuscarAlumno";
             this.gbox_criterios.ResumeLayout(false);
             this.gbox_criterios.PerformLayout();
