@@ -173,15 +173,47 @@ namespace AccesoDatos
             MySqlConnection con = new MySqlConnection(cadena);
             con.Open();
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "Y_INSERTAR_NUEVO_TUTOR";
-
+            int idper = Convert.ToInt32(idPer);
+            comando.CommandText = "SELECT ID_TUTOR FROM TUTOR WHERE ID_TUTOR ='" + idper + "'";
             comando.Connection = con;
-            comando.Parameters.AddWithValue("idPer", idPer);
-            comando.Parameters.AddWithValue("idCoord", idcoord);
-            comando.Parameters.AddWithValue("estado", est);
-            comando.ExecuteNonQuery();
+            Object aux = comando.ExecuteScalar();
             con.Close();
+            if (!(aux == null))
+            {
+                //update
+                MySqlConnection con1 = new MySqlConnection(cadena);
+                con1.Open();
+                MySqlCommand comando1 = new MySqlCommand();
+                comando1.CommandType = System.Data.CommandType.StoredProcedure;
+                comando1.CommandText = "Y_ACTUALIZAR_TUTOR";
+
+                comando1.Connection = con1;
+                comando1.Parameters.AddWithValue("idPer", idPer);
+                comando1.Parameters.AddWithValue("idCoord", idcoord);
+                comando1.Parameters.AddWithValue("estado", est);
+                comando1.ExecuteNonQuery();
+                con1.Close();
+            }
+            else
+            {
+                //insert
+                MySqlConnection con2 = new MySqlConnection(cadena);
+                con2.Open();
+                MySqlCommand comando2 = new MySqlCommand();
+                comando2.CommandType = System.Data.CommandType.StoredProcedure;
+                comando2.CommandText = "Y_INSERTAR_NUEVO_TUTOR";
+
+                comando2.Connection = con2;
+                comando2.Parameters.AddWithValue("idPer", idPer);
+                comando2.Parameters.AddWithValue("idCoord", idcoord);
+                comando2.Parameters.AddWithValue("estado", est);
+                comando2.ExecuteNonQuery();
+                con2.Close();
+            }
+
+
+
+                
         }
 
         public BindingList<Tutor> listarTutores() {

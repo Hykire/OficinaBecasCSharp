@@ -31,5 +31,13 @@ namespace Controlador
         {
             accesoDatos.actualizarAlumno_x_Beca(axb);
         }
+
+        public BindingList<Becado_x_Beca> BuscarIdBecas(string idBec)
+        {
+            BindingList<Becado_x_Beca> lista = accesoDatos.BuscarIdBecas(idBec);
+            BindingList<Becado_x_Beca> ltsOrdenada = new BindingList<Becado_x_Beca>(lista.OrderBy(x => x.Ciclo).ToList());
+            return ltsOrdenada;
+
+        }
     }
 }

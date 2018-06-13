@@ -155,5 +155,37 @@ namespace AccesoDatos
             con.Close();
             return lista;
         }
+
+        public BindingList<Becado_x_Beca> BuscarIdBecas(string idBec)
+        {
+            BindingList<Becado_x_Beca> lista = new BindingList<Becado_x_Beca>();
+            //coneccion a BD
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                            "user=inf282g6;database=inf282g6;" +
+                            "port=3306;password=Nk2ewy;SslMode=none;" + "";
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+            //
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandText = "SELECT * FROM BECADO_X_BECA WHERE ID_BECADO ='" + Convert.ToInt32(idBec) + "'";
+            comando.Connection = con;
+            MySqlDataReader rs = comando.ExecuteReader();
+
+            while (rs.Read())
+            {
+                int id_becado = rs.GetInt32("ID_BECADO");
+                if (id_becado == Convert.ToInt32(idBec))
+                {
+                    Becado_x_Beca axb = new Becado_x_Beca();
+                    axb.Id_becado = id_becado;
+                    axb.Id_beca = rs.GetInt32("ID_BECA");
+                    axb.Ciclo = rs.GetString("CICLO");
+
+                    lista.Add(axb);
+                }
+            }
+            con.Close();
+            return lista;
+        }
     }
 }

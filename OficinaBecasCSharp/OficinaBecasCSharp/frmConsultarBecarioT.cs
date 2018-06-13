@@ -16,11 +16,14 @@ namespace Vista
     {
         private BecadoBL logicaNegocioPersona;
         private Becado alumnoSeleccionado;
+        private Becado_x_BecaBL logicaNegoAB;
+
         public frmConsultarBecarioT()
         {
             InitializeComponent();
             logicaNegocioPersona = new BecadoBL();
             alumnoSeleccionado = new Becado();
+            logicaNegoAB = new Becado_x_BecaBL();
         }
 
         private void btnBuscarBecario_Click(object sender, EventArgs e)
@@ -41,6 +44,24 @@ namespace Vista
             txtCodigo.Text = alumnoSeleccionado.CodigoPUCP.ToString();;
             txtCorreoPUCP.Text = alumnoSeleccionado.CorreoPUCP.ToString();
             txtNombreBecario.Text = alumnoSeleccionado.Nombres.ToString();
+        }
+
+        private void btnVerHistBecas_Click(object sender, EventArgs e)
+        {
+            string idBec = alumnoSeleccionado.Id_becado.ToString();
+            DGVCicloXBeca.AutoGenerateColumns = false;
+            DGVCicloXBeca.DataSource = logicaNegoAB.BuscarIdBecas(idBec);
+
+            //BecaBL logicaNegoBeca = new BecaBL();
+            //BindingList<Beca> listaB = logicaNegoBeca.listar_Beca();
+            //foreach (Beca b in listaB)
+            //{
+            //    if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Id_beca == b.Id_beca)
+            //    {
+            //        cbox_beca.Text = b.Nombre_beca;
+            //    }
+            //}
+
         }
     }
 }

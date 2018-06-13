@@ -38,7 +38,8 @@ namespace Vista
             txtEstado.Enabled = false;
             btnBuscarNT.Enabled = false;
             CBEstadoNT.Enabled = false;
-            btnEditar.Enabled = false;
+            cbxCoordinador.Enabled = false;
+            //btnEditar.Enabled = false;
             btnCancelar.Enabled = false;
 
             BindingList<CoordinadorTutoria> lstTutores = new BindingList<CoordinadorTutoria>();
@@ -76,6 +77,8 @@ namespace Vista
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            cbxCoordinador.Enabled = true;
+            CBEstadoNT.Enabled = true;
 
         }
 
@@ -123,6 +126,7 @@ namespace Vista
             cbxCoordinador.Enabled = false;
             btnCancelar.Enabled = false;
             btnEditar.Enabled = false;
+
 
             txtIdOcultoGT.Text = "";
             txtCodGT.Text = "";

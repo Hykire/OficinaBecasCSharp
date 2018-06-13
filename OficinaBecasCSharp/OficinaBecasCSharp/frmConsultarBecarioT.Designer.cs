@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panelConsultarBecario = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnVerHistBecas = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCorreoPUCP = new System.Windows.Forms.TextBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtCorreoPUCP = new System.Windows.Forms.TextBox();
             this.txtNombreBecario = new System.Windows.Forms.TextBox();
             this.lvlBecario = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblCodBecario = new System.Windows.Forms.Label();
             this.btnBuscarBecario = new System.Windows.Forms.Button();
             this.dgvBecarios = new System.Windows.Forms.DataGridView();
@@ -47,14 +47,21 @@
             this.sexoBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correoBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BecarioActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtCodBecario = new System.Windows.Forms.TextBox();
+            this.DGVCicloXBeca = new System.Windows.Forms.DataGridView();
+            this.Ciclo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelConsultarBecario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVCicloXBeca)).BeginInit();
             this.SuspendLayout();
             // 
             // panelConsultarBecario
             // 
             this.panelConsultarBecario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelConsultarBecario.Controls.Add(this.DGVCicloXBeca);
+            this.panelConsultarBecario.Controls.Add(this.btnVerHistBecas);
             this.panelConsultarBecario.Controls.Add(this.label2);
             this.panelConsultarBecario.Controls.Add(this.label4);
             this.panelConsultarBecario.Controls.Add(this.label5);
@@ -73,70 +80,63 @@
             this.panelConsultarBecario.Size = new System.Drawing.Size(701, 541);
             this.panelConsultarBecario.TabIndex = 13;
             // 
-            // label5
+            // btnVerHistBecas
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(320, 451);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Correo PUCP";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(320, 406);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Código";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 447);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Apellidos";
+            this.btnVerHistBecas.Location = new System.Drawing.Point(544, 343);
+            this.btnVerHistBecas.Name = "btnVerHistBecas";
+            this.btnVerHistBecas.Size = new System.Drawing.Size(134, 23);
+            this.btnVerHistBecas.TabIndex = 38;
+            this.btnVerHistBecas.Text = "Ver Historial de Becas";
+            this.btnVerHistBecas.UseVisualStyleBackColor = true;
+            this.btnVerHistBecas.Click += new System.EventHandler(this.btnVerHistBecas_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 406);
+            this.label2.Location = new System.Drawing.Point(23, 375);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 32;
-            this.label2.Text = "Nombres";
+            this.label2.Text = "Nombres:";
             // 
-            // txtCorreoPUCP
+            // label4
             // 
-            this.txtCorreoPUCP.Enabled = false;
-            this.txtCorreoPUCP.Location = new System.Drawing.Point(406, 448);
-            this.txtCorreoPUCP.Name = "txtCorreoPUCP";
-            this.txtCorreoPUCP.Size = new System.Drawing.Size(206, 20);
-            this.txtCorreoPUCP.TabIndex = 31;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 454);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Código:";
             // 
-            // txtApellidos
+            // label5
             // 
-            this.txtApellidos.Enabled = false;
-            this.txtApellidos.Location = new System.Drawing.Point(406, 403);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(115, 20);
-            this.txtApellidos.TabIndex = 30;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 494);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Correo PUCP:";
             // 
             // txtCodigo
             // 
             this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(85, 444);
+            this.txtCodigo.Location = new System.Drawing.Point(109, 447);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(193, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(112, 20);
             this.txtCodigo.TabIndex = 29;
+            // 
+            // txtCorreoPUCP
+            // 
+            this.txtCorreoPUCP.Enabled = false;
+            this.txtCorreoPUCP.Location = new System.Drawing.Point(109, 491);
+            this.txtCorreoPUCP.Name = "txtCorreoPUCP";
+            this.txtCorreoPUCP.Size = new System.Drawing.Size(206, 20);
+            this.txtCorreoPUCP.TabIndex = 31;
             // 
             // txtNombreBecario
             // 
             this.txtNombreBecario.Enabled = false;
-            this.txtNombreBecario.Location = new System.Drawing.Point(85, 399);
+            this.txtNombreBecario.Location = new System.Drawing.Point(109, 372);
             this.txtNombreBecario.Name = "txtNombreBecario";
             this.txtNombreBecario.Size = new System.Drawing.Size(193, 20);
             this.txtNombreBecario.TabIndex = 28;
@@ -150,6 +150,15 @@
             this.lvlBecario.Size = new System.Drawing.Size(152, 20);
             this.lvlBecario.TabIndex = 18;
             this.lvlBecario.Text = "Consultar Becario";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 416);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Apellidos:";
             // 
             // lblCodBecario
             // 
@@ -188,7 +197,7 @@
             this.dgvBecarios.Location = new System.Drawing.Point(23, 96);
             this.dgvBecarios.Name = "dgvBecarios";
             this.dgvBecarios.ReadOnly = true;
-            this.dgvBecarios.Size = new System.Drawing.Size(655, 269);
+            this.dgvBecarios.Size = new System.Drawing.Size(655, 218);
             this.dgvBecarios.TabIndex = 3;
             this.dgvBecarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBecarios_CellClick);
             // 
@@ -234,12 +243,49 @@
             this.BecarioActivo.Name = "BecarioActivo";
             this.BecarioActivo.ReadOnly = true;
             // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Enabled = false;
+            this.txtApellidos.Location = new System.Drawing.Point(109, 409);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(193, 20);
+            this.txtApellidos.TabIndex = 30;
+            // 
             // txtCodBecario
             // 
             this.txtCodBecario.Location = new System.Drawing.Point(23, 57);
             this.txtCodBecario.Name = "txtCodBecario";
             this.txtCodBecario.Size = new System.Drawing.Size(497, 20);
             this.txtCodBecario.TabIndex = 1;
+            // 
+            // DGVCicloXBeca
+            // 
+            this.DGVCicloXBeca.AllowUserToAddRows = false;
+            this.DGVCicloXBeca.AllowUserToDeleteRows = false;
+            this.DGVCicloXBeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVCicloXBeca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ciclo,
+            this.Beca});
+            this.DGVCicloXBeca.Location = new System.Drawing.Point(384, 372);
+            this.DGVCicloXBeca.Name = "DGVCicloXBeca";
+            this.DGVCicloXBeca.ReadOnly = true;
+            this.DGVCicloXBeca.Size = new System.Drawing.Size(294, 139);
+            this.DGVCicloXBeca.TabIndex = 39;
+            // 
+            // Ciclo
+            // 
+            this.Ciclo.DataPropertyName = "Ciclo";
+            this.Ciclo.HeaderText = "Ciclo";
+            this.Ciclo.Name = "Ciclo";
+            this.Ciclo.ReadOnly = true;
+            // 
+            // Beca
+            // 
+            this.Beca.DataPropertyName = "Id_beca";
+            this.Beca.HeaderText = "Beca";
+            this.Beca.Name = "Beca";
+            this.Beca.ReadOnly = true;
+            this.Beca.Width = 150;
             // 
             // frmConsultarBecarioT
             // 
@@ -252,6 +298,7 @@
             this.panelConsultarBecario.ResumeLayout(false);
             this.panelConsultarBecario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVCicloXBeca)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,5 +325,9 @@
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtNombreBecario;
+        private System.Windows.Forms.Button btnVerHistBecas;
+        private System.Windows.Forms.DataGridView DGVCicloXBeca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ciclo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Beca;
     }
 }
