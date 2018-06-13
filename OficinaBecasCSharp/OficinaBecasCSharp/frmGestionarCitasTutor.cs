@@ -53,8 +53,7 @@ namespace Vista
         private void BBuscarCitaGC_Click(object sender, EventArgs e)
         {
             txtBObsGC.Enabled = false;
-            txtBObsGC.Enabled = false;
-
+            
             BindingList<Cita> lista = new BindingList<Cita>();
             lista = logicaNegocioCita.buscarcita(DateTime.Parse(DTPSelDiaGC.Text));
             DGVCitas.DataSource = lista; 
@@ -262,6 +261,15 @@ namespace Vista
                 txtCodTutor2.Text = tut.CodigoPUCP.ToString();
                 txtBTutorGC2.Text = tut.Nombres + " " + tut.Apellidos;
             }
+        }
+
+        private void BBuscarCita2GC_Click(object sender, EventArgs e)
+        {
+            txtBObsGC.Enabled = false;
+
+            BindingList<Cita> lista = new BindingList<Cita>();
+            lista = logicaNegocioCita.buscarcitaPorTutor(txtIdtutOculto2.Text.ToString());
+            DGVCitas.DataSource = lista;
         }
     }
 }

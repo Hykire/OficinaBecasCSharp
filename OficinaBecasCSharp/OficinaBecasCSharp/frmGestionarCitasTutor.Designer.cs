@@ -120,6 +120,7 @@
             this.BBuscarCita2GC.TabIndex = 26;
             this.BBuscarCita2GC.Text = "Buscar Cita";
             this.BBuscarCita2GC.UseVisualStyleBackColor = true;
+            this.BBuscarCita2GC.Click += new System.EventHandler(this.BBuscarCita2GC_Click);
             // 
             // LSelFechaGC
             // 

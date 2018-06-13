@@ -102,5 +102,38 @@ namespace AccesoDatos
             return lista;
         }
 
+        public BindingList<Cita> buscarcitaPorTutor(string idTutor)
+        {
+            BindingList<Cita> lista = new BindingList<Cita>();
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                "user=inf282g6;database=inf282g6;" +
+                "port=3306;password=Nk2ewy;SslMode=none;" +
+                "";
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "Y_BUSCAR_CITA_POR_TUTOR";
+            comando.Connection = con;
+            int idtutor = Convert.ToInt32(idTutor);
+            comando.Parameters.AddWithValue("idtut", idtutor);
+            comando.Connection = con;
+
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Cita cita = new Cita();
+                cita.Fecha = reader.GetDateTime("FECHA");
+                cita.Hora = reader.GetString("HORA");
+                cita.Lugar = reader.GetString("LUGAR");
+                cita.Observacion = reader.GetString("OBSERVACION");
+                cita.IdTutor = reader.GetInt32("ID_TUTOR");
+                cita.IdBecado = reader.GetInt32("ID_BECADO");
+                cita.IdCita = reader.GetInt32("ID_CITA");
+                lista.Add(cita);
+            }
+            con.Close();
+            return lista;
+        }
     }
 }

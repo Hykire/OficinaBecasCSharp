@@ -24,5 +24,9 @@ namespace Controlador
         {
             return accesoDatosCita.buscarcita(fecha);
         }
+        public BindingList<Cita> buscarcitaPorTutor(string idtutor)
+        {
+            return accesoDatosCita.buscarcitaPorTutor(idtutor);
+        }
     }
 }
