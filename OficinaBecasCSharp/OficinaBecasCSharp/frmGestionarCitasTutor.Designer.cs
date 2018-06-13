@@ -61,7 +61,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtBLugarGC = new System.Windows.Forms.TextBox();
             this.txtHora = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtIdCitaOculto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -365,7 +365,7 @@
             // 
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txtIdCitaOculto);
             this.groupBox3.Controls.Add(this.txtHora);
             this.groupBox3.Controls.Add(this.txtBLugarGC);
             this.groupBox3.Location = new System.Drawing.Point(402, 355);
@@ -389,12 +389,12 @@
             this.txtHora.Size = new System.Drawing.Size(121, 20);
             this.txtHora.TabIndex = 1;
             // 
-            // textBox3
+            // txtIdCitaOculto
             // 
-            this.textBox3.Location = new System.Drawing.Point(266, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(60, 20);
-            this.textBox3.TabIndex = 2;
+            this.txtIdCitaOculto.Location = new System.Drawing.Point(266, 29);
+            this.txtIdCitaOculto.Name = "txtIdCitaOculto";
+            this.txtIdCitaOculto.Size = new System.Drawing.Size(60, 20);
+            this.txtIdCitaOculto.TabIndex = 2;
             // 
             // label1
             // 
@@ -513,7 +513,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtIdCitaOculto;
         private System.Windows.Forms.TextBox txtHora;
         private System.Windows.Forms.TextBox txtBLugarGC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;

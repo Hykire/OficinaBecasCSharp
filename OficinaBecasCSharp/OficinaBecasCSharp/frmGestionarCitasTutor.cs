@@ -42,6 +42,9 @@ namespace Vista
             txtIdBecOculto.Enabled = false;
             btnBuscarTutor.Enabled = false;
             btnBuscarBecario.Enabled = false;
+            txtIdCitaOculto.Enabled = false;
+            txtBLugarGC.Enabled = false;
+            txtHora.Enabled = false;
         }
         private void BAgregarCitaGC_Click(object sender, EventArgs e)
         {
@@ -123,6 +126,9 @@ namespace Vista
             txtCodTutorGC.Text = "";
             txtIdtutOculto.Text = "";
             txtIdBecOculto.Text = "";
+            txtIdCitaOculto.Text = "";
+            txtBLugarGC.Text = "";
+            txtHora.Text = "";
 
             DTPSelDiaGC.Enabled = false;
             BBuscarCitaGC.Enabled = false;
@@ -133,6 +139,8 @@ namespace Vista
             btnBuscarTutor.Enabled = true;
             btnBuscarBecario.Enabled = true;
 
+            txtBLugarGC.Enabled = true;
+            txtHora.Enabled = true;
             
         }
 
@@ -174,6 +182,9 @@ namespace Vista
             txtCodTutorGC.Text = "";
             txtIdtutOculto.Text = "";
             txtIdBecOculto.Text = "";
+            txtIdCitaOculto.Text = "";
+            txtBLugarGC.Text = "";
+            txtHora.Text = "";
 
              //txtBHoraGC.Enabled = false;
             txtCodTutorGC.Enabled = false;
@@ -185,6 +196,9 @@ namespace Vista
             txtIdBecOculto.Enabled = false;
             btnBuscarTutor.Enabled = false;
             btnBuscarBecario.Enabled = false;
+            txtIdCitaOculto.Enabled = false;
+            txtBLugarGC.Enabled = false;
+            txtHora.Enabled = false;
 
         }
 
@@ -224,6 +238,7 @@ namespace Vista
 
             txtBObsGC.Text = CitaSelect.Observacion;
             txtBLugarGC.Text = CitaSelect.Lugar;
+            txtIdCitaOculto.Text = CitaSelect.IdCita.ToString();
 
         }
 
@@ -247,6 +262,13 @@ namespace Vista
                 txtCodTutorGC.Text = tut.CodigoPUCP.ToString();
 
                 txtBObsGC.Text = CitaSelect.Observacion;
+
+                btnBuscarBecario.Enabled = true;
+                btnBuscarTutor.Enabled = true;
+                txtIdCitaOculto.Enabled = true;
+                txtBLugarGC.Enabled = true;
+                txtHora.Enabled = true;
+                txtBObsGC.Enabled = true;
             }
             else
             {
