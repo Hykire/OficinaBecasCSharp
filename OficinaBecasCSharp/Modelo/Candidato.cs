@@ -8,13 +8,14 @@ namespace Modelo
 {
     public class Candidato : Persona
     {
-        private bool estadoPostulacion;
-        private bool estadoSeleccion;
+        private int idCandidato;
+        private string estadoPostulacion;
+        private string estadoSeleccion;
 
-        public bool EstadoPostulacion { get => estadoPostulacion; set => estadoPostulacion = value; }
-        public bool EstadoSeleccion { get => estadoSeleccion; set => estadoSeleccion = value; }
-
-        public string Postulante { get => estadoPostulacion == true ? "Sí" : "No"; }
-        public string Seleccionado { get => estadoSeleccion == true ? "Sí" : "No"; }
+        public string Postulante { get => EstadoPostulacion == "POSTULÓ" ? "Sí" : "No"; }
+        public string Seleccionado { get => EstadoSeleccion == "SELECCIONADO" ? "Sí" : "No"; }
+        public int IdCandidato { get => idCandidato; set => idCandidato = value; }
+        public string EstadoPostulacion { get => estadoPostulacion; set => estadoPostulacion = value; }
+        public string EstadoSeleccion { get => estadoSeleccion; set => estadoSeleccion = value; }
     }
 }

@@ -16,9 +16,9 @@ namespace Controlador
         {
             candidatoDA = new CandidatoDA();
         }
-        public BindingList<Candidato> listarCandidatos()
+        public BindingList<Candidato> listarCandidatos(int idCandidato)
         {
-            return candidatoDA.listarCandidatos();
+            return candidatoDA.listarCandidatos(idCandidato);
         }
 
         public int insertarPersona(Persona persona)

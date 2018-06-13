@@ -14,15 +14,16 @@ namespace Vista
 {
     public partial class BuscarCandidato : Form
     {
+        private Convocatoria convocatoria;
         private CandidatoBL candidatoBL;
         private Candidato candidatoSeleccionado;
         private BindingList<Candidato> listaCandidatos;
-        public BuscarCandidato()
+        public BuscarCandidato(Convocatoria convocatoria)
         {
             InitializeComponent();
             candidatoBL = new CandidatoBL();
             dgvBuscarCandidato.AutoGenerateColumns = false;
-            dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatos();
+            dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatos(convocatoria.IdConvocatoria);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace Vista
             rbDNI.Checked = false;
             rbNombres.Checked = false;
 
-            dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatos();
+            dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatos(convocatoria.IdConvocatoria);
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)

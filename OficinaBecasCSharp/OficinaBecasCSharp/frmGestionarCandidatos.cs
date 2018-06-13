@@ -195,10 +195,10 @@ namespace Vista
             candidato.Dni = Int32.Parse(txtDNI.Text);
             candidato.Edad = Int32.Parse(txtEdad.Text);
             candidato.Estado = "ACTIVO";
-            if (chPostulo.Checked) candidato.EstadoPostulacion = true;
-            else candidato.EstadoPostulacion = false;
-            if (chFueSeleccionado.Checked) candidato.EstadoSeleccion = true;
-            else candidato.EstadoSeleccion = false;
+            if (chPostulo.Checked) candidato.EstadoPostulacion = "POSTULÓ";
+            else candidato.EstadoPostulacion = "NO POSTULÓ";
+            if (chFueSeleccionado.Checked) candidato.EstadoSeleccion = "SELECCIONADO";
+            else candidato.EstadoSeleccion = "NO SELECCIONADO";
             candidato.Fecha_nacimiento = DateTime.Parse(dtFechaNacimiento.Text);
             candidato.Nombres = txtNombres.Text;
             if (rbMasculino.Checked) candidato.Sexo = 'M';
@@ -237,7 +237,7 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            BuscarCandidato buscarCandidato = new BuscarCandidato();
+            BuscarCandidato buscarCandidato = new BuscarCandidato(convocatoria);
             if(buscarCandidato.ShowDialog() == DialogResult.OK)
             {
                 btnActualizar.Enabled = true;
