@@ -113,5 +113,8 @@ namespace Controlador
             return accesoDatos.buscarBecado(cod);
         }
 
+        public BindingList<Becado> listarBecadosPorCiclo(string ciclo) {
+            return accesoDatos.listarBecadosPorCiclo(ciclo);
+        }
     }
 }

@@ -263,5 +263,36 @@ namespace AccesoDatos
             return becado;
         }
 
+        public BindingList<Becado> listarBecadosPorCiclo(string ciclo) {
+            BindingList<Becado> lstBecados = new BindingList<Becado>();
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                "user=inf282g6;database=inf282g6;" +
+                "port=3306;password=Nk2ewy;SslMode=none;" +
+                "";
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+            MySqlCommand comando = new MySqlCommand();
+
+            comando.CommandText = "SELECT p.NOMBRES, p.APELLIDOS, p.CORREO_PUCP, p.CODIGO_PUCP, p.SEXO, e.NOMBRE_ESPECIALIDAD FROM BECADO b , PERSONA p, ESPECIALIDAD e " +
+                "where '" + ciclo + "'= CICLO_INGRESO and p.ID_PERSONA = b.ID_PERSONA and b.ID_ESPECIALIDAD_INGRESO = e.ID_ESPECIALIDAD;";
+            comando.Connection = con;
+
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read()) {
+                Becado becado = new Becado();
+                becado.Nombres = reader.GetString("NOMBRES");
+                becado.Apellidos = reader.GetString("APELLIDOS");
+                becado.CorreoPUCP = reader.GetString("CORREO_PUCP");
+                becado.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
+                becado.Sexo = reader.GetChar("SEXO");
+                becado.NombreEspecialidad= reader.GetString("NOMBRE_ESPECIALIDAD");
+
+                lstBecados.Add(becado);
+            }
+            con.Close();
+
+            return lstBecados;
+        }
+
     }
 }

@@ -28,7 +28,10 @@ namespace Modelo
         //private TipoUsuario tipoUsuario;
         //private Usuario usuarioP;
 
-        public Persona() { }
+        public Persona() {
+            _sexo = '\0';
+
+        }
 
         public int Id_persona { get => _id_persona; set => _id_persona = value; }
         public int CodigoPUCP { get => _codigoPUCP; set => _codigoPUCP = value; }

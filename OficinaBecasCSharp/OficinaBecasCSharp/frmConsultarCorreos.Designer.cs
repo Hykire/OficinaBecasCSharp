@@ -38,12 +38,16 @@
             this.lblEmails = new System.Windows.Forms.Label();
             this.lblCiclo = new System.Windows.Forms.Label();
             this.lblConsultarEmails = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscarCorreos = new System.Windows.Forms.Button();
             this.dgvConsultarEmails = new System.Windows.Forms.DataGridView();
+            this.txtCicloSolicitado = new System.Windows.Forms.TextBox();
             this.nombreConsultarEmails = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidosConsultarEmails = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailConsultarEmails = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.CodigoPUCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.panelConsultarEmails.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarEmails)).BeginInit();
@@ -57,22 +61,23 @@
             this.panelConsultarEmails.Controls.Add(this.lblEmails);
             this.panelConsultarEmails.Controls.Add(this.lblCiclo);
             this.panelConsultarEmails.Controls.Add(this.lblConsultarEmails);
-            this.panelConsultarEmails.Controls.Add(this.button1);
+            this.panelConsultarEmails.Controls.Add(this.btnBuscarCorreos);
             this.panelConsultarEmails.Controls.Add(this.dgvConsultarEmails);
-            this.panelConsultarEmails.Controls.Add(this.textBox2);
-            this.panelConsultarEmails.Location = new System.Drawing.Point(0, -1);
+            this.panelConsultarEmails.Controls.Add(this.txtCicloSolicitado);
+            this.panelConsultarEmails.Location = new System.Drawing.Point(12, 11);
             this.panelConsultarEmails.Name = "panelConsultarEmails";
-            this.panelConsultarEmails.Size = new System.Drawing.Size(799, 454);
+            this.panelConsultarEmails.Size = new System.Drawing.Size(787, 439);
             this.panelConsultarEmails.TabIndex = 14;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnFiltrar);
             this.groupBox1.Controls.Add(this.cbSexo);
             this.groupBox1.Controls.Add(this.cbEspecialidad);
             this.groupBox1.Controls.Add(this.lblSexo);
             this.groupBox1.Controls.Add(this.lblEspecialidad);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 103);
+            this.groupBox1.Location = new System.Drawing.Point(25, 81);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(156, 187);
             this.groupBox1.TabIndex = 19;
@@ -86,6 +91,7 @@
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(121, 24);
             this.cbSexo.TabIndex = 16;
+            this.cbSexo.SelectedIndexChanged += new System.EventHandler(this.cbSexo_SelectedIndexChanged);
             // 
             // cbEspecialidad
             // 
@@ -94,6 +100,7 @@
             this.cbEspecialidad.Name = "cbEspecialidad";
             this.cbEspecialidad.Size = new System.Drawing.Size(121, 24);
             this.cbEspecialidad.TabIndex = 14;
+            this.cbEspecialidad.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidad_SelectedIndexChanged);
             // 
             // lblSexo
             // 
@@ -117,9 +124,9 @@
             // 
             // btnDescargarEmails
             // 
-            this.btnDescargarEmails.Location = new System.Drawing.Point(625, 392);
+            this.btnDescargarEmails.Location = new System.Drawing.Point(635, 370);
             this.btnDescargarEmails.Name = "btnDescargarEmails";
-            this.btnDescargarEmails.Size = new System.Drawing.Size(153, 23);
+            this.btnDescargarEmails.Size = new System.Drawing.Size(141, 23);
             this.btnDescargarEmails.TabIndex = 18;
             this.btnDescargarEmails.Text = "Descargar Emails";
             this.btnDescargarEmails.UseVisualStyleBackColor = true;
@@ -128,7 +135,7 @@
             // 
             this.lblEmails.AutoSize = true;
             this.lblEmails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmails.Location = new System.Drawing.Point(27, 18);
+            this.lblEmails.Location = new System.Drawing.Point(12, 10);
             this.lblEmails.Name = "lblEmails";
             this.lblEmails.Size = new System.Drawing.Size(253, 20);
             this.lblEmails.TabIndex = 17;
@@ -137,7 +144,7 @@
             // lblCiclo
             // 
             this.lblCiclo.AutoSize = true;
-            this.lblCiclo.Location = new System.Drawing.Point(184, 71);
+            this.lblCiclo.Location = new System.Drawing.Point(194, 49);
             this.lblCiclo.Name = "lblCiclo";
             this.lblCiclo.Size = new System.Drawing.Size(33, 13);
             this.lblCiclo.TabIndex = 7;
@@ -146,23 +153,26 @@
             // lblConsultarEmails
             // 
             this.lblConsultarEmails.AutoSize = true;
-            this.lblConsultarEmails.Location = new System.Drawing.Point(638, 74);
+            this.lblConsultarEmails.Location = new System.Drawing.Point(648, 52);
             this.lblConsultarEmails.Name = "lblConsultarEmails";
-            this.lblConsultarEmails.Size = new System.Drawing.Size(86, 13);
+            this.lblConsultarEmails.Size = new System.Drawing.Size(83, 13);
             this.lblConsultarEmails.TabIndex = 6;
-            this.lblConsultarEmails.Text = "Ejemplo: 201801";
+            this.lblConsultarEmails.Text = "Ejemplo: 2018-1";
             // 
-            // button1
+            // btnBuscarCorreos
             // 
-            this.button1.Location = new System.Drawing.Point(527, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscarCorreos.Location = new System.Drawing.Point(537, 42);
+            this.btnBuscarCorreos.Name = "btnBuscarCorreos";
+            this.btnBuscarCorreos.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarCorreos.TabIndex = 2;
+            this.btnBuscarCorreos.Text = "Buscar";
+            this.btnBuscarCorreos.UseVisualStyleBackColor = true;
+            this.btnBuscarCorreos.Click += new System.EventHandler(this.btnBuscarCorreos_Click);
             // 
             // dgvConsultarEmails
             // 
+            this.dgvConsultarEmails.AllowUserToAddRows = false;
+            this.dgvConsultarEmails.AllowUserToDeleteRows = false;
             this.dgvConsultarEmails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -170,39 +180,80 @@
             this.dgvConsultarEmails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreConsultarEmails,
             this.apellidosConsultarEmails,
-            this.emailConsultarEmails});
-            this.dgvConsultarEmails.Location = new System.Drawing.Point(184, 103);
+            this.emailConsultarEmails,
+            this.CodigoPUCP,
+            this.Sex,
+            this.nombEspecialidad});
+            this.dgvConsultarEmails.Location = new System.Drawing.Point(194, 81);
             this.dgvConsultarEmails.Name = "dgvConsultarEmails";
-            this.dgvConsultarEmails.Size = new System.Drawing.Size(594, 263);
+            this.dgvConsultarEmails.ReadOnly = true;
+            this.dgvConsultarEmails.Size = new System.Drawing.Size(582, 248);
             this.dgvConsultarEmails.TabIndex = 3;
+            // 
+            // txtCicloSolicitado
+            // 
+            this.txtCicloSolicitado.Location = new System.Drawing.Point(246, 45);
+            this.txtCicloSolicitado.Name = "txtCicloSolicitado";
+            this.txtCicloSolicitado.Size = new System.Drawing.Size(251, 20);
+            this.txtCicloSolicitado.TabIndex = 1;
             // 
             // nombreConsultarEmails
             // 
+            this.nombreConsultarEmails.DataPropertyName = "Nombres";
             this.nombreConsultarEmails.HeaderText = "Nombres";
             this.nombreConsultarEmails.Name = "nombreConsultarEmails";
+            this.nombreConsultarEmails.ReadOnly = true;
             // 
             // apellidosConsultarEmails
             // 
+            this.apellidosConsultarEmails.DataPropertyName = "Apellidos";
             this.apellidosConsultarEmails.HeaderText = "Apellidos";
             this.apellidosConsultarEmails.Name = "apellidosConsultarEmails";
+            this.apellidosConsultarEmails.ReadOnly = true;
             // 
             // emailConsultarEmails
             // 
+            this.emailConsultarEmails.DataPropertyName = "CorreoPUCP";
             this.emailConsultarEmails.HeaderText = "Correo Electrónico";
             this.emailConsultarEmails.Name = "emailConsultarEmails";
+            this.emailConsultarEmails.ReadOnly = true;
             // 
-            // textBox2
+            // CodigoPUCP
             // 
-            this.textBox2.Location = new System.Drawing.Point(236, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(251, 20);
-            this.textBox2.TabIndex = 1;
+            this.CodigoPUCP.DataPropertyName = "CodigoPUCP";
+            this.CodigoPUCP.HeaderText = "Codigo PUCP";
+            this.CodigoPUCP.Name = "CodigoPUCP";
+            this.CodigoPUCP.ReadOnly = true;
+            // 
+            // Sex
+            // 
+            this.Sex.DataPropertyName = "Sexo";
+            this.Sex.HeaderText = "Sexo";
+            this.Sex.Name = "Sex";
+            this.Sex.ReadOnly = true;
+            // 
+            // nombEspecialidad
+            // 
+            this.nombEspecialidad.DataPropertyName = "NombreEspecialidad";
+            this.nombEspecialidad.HeaderText = "Especialidad";
+            this.nombEspecialidad.Name = "nombEspecialidad";
+            this.nombEspecialidad.ReadOnly = true;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(18, 156);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(119, 23);
+            this.btnFiltrar.TabIndex = 17;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // frmConsultarCorreos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 437);
             this.Controls.Add(this.panelConsultarEmails);
             this.Name = "frmConsultarCorreos";
             this.Text = "frmConsultarCorreos";
@@ -227,11 +278,15 @@
         private System.Windows.Forms.Label lblEmails;
         private System.Windows.Forms.Label lblCiclo;
         private System.Windows.Forms.Label lblConsultarEmails;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscarCorreos;
         private System.Windows.Forms.DataGridView dgvConsultarEmails;
+        private System.Windows.Forms.TextBox txtCicloSolicitado;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreConsultarEmails;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidosConsultarEmails;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailConsultarEmails;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPUCP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombEspecialidad;
+        private System.Windows.Forms.Button btnFiltrar;
     }
 }

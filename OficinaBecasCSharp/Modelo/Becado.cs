@@ -24,9 +24,12 @@ namespace Modelo
         private string _distrito_actual;
         private string _provincia_actual;
         private string _departamento_actual;
-
+        private string nombreEspecialidad;
         private int _id_tutor;
         //private BindingList<HistoriaAcademica> _historia_academica;
+        public Becado() {
+            nombreEspecialidad = "";
+        }
 
         public int Id_becado { get => _id_becado; set => _id_becado = value; }
         public string Ciclo_ingreso { get => _ciclo_ingreso; set => _ciclo_ingreso = value; }
@@ -44,5 +47,6 @@ namespace Modelo
         public string Provincia_actual { get => _provincia_actual; set => _provincia_actual = value; }
         public string Departamento_actual { get => _departamento_actual; set => _departamento_actual = value; }
         public int Id_tutor { get => _id_tutor; set => _id_tutor = value; }
+        public string NombreEspecialidad { get => nombreEspecialidad; set => nombreEspecialidad = value; }
     }
 }
