@@ -276,5 +276,18 @@ namespace Vista
 
             }
         }
+
+        private void btnBuscarTutor2_Click(object sender, EventArgs e)
+        {
+            frmBuscarTutor frmBT = new frmBuscarTutor();
+            if (frmBT.ShowDialog() == DialogResult.OK)
+            {
+                tut = (Tutor)frmBT.PersonaSeleccionada;
+                int cod = tut.IdTutor;
+                txtIdtutOculto2.Text = tut.IdTutor.ToString();
+                txtCodTutor2.Text = tut.CodigoPUCP.ToString();
+                txtBTutorGC2.Text = tut.Nombres + " " + tut.Apellidos;
+            }
+        }
     }
 }
