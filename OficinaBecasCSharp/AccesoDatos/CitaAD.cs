@@ -20,18 +20,52 @@ namespace AccesoDatos
             MySqlConnection con = new MySqlConnection(cadena);
             con.Open();
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "Y_INSERTAR_CITA";
-
+            int idcita = cita.IdCita;
+            comando.CommandText = "SELECT ID_BECADO FROM CITA WHERE ID_CITA ='" + idcita + "'";
             comando.Connection = con;
-            comando.Parameters.AddWithValue("fecha", cita.Fecha);
-            comando.Parameters.AddWithValue("lugar", cita.Lugar);
-            comando.Parameters.AddWithValue("obs", cita.Observacion);
-            comando.Parameters.AddWithValue("idBec", idBec);
-            comando.Parameters.AddWithValue("idTut", idTut);
-
-            comando.ExecuteNonQuery();
+            Object aux = comando.ExecuteScalar();
             con.Close();
+            if (!(aux==null))
+            {
+                //update
+                MySqlConnection con1 = new MySqlConnection(cadena);
+                con1.Open();
+                MySqlCommand comando1 = new MySqlCommand();
+                comando1.CommandType = System.Data.CommandType.StoredProcedure;
+                comando1.CommandText = "Y_ACTUALIZAR_CITA";
+
+                comando1.Connection = con1;
+                comando1.Parameters.AddWithValue("fecha", cita.Fecha);
+                comando1.Parameters.AddWithValue("hora", cita.Hora);
+                comando1.Parameters.AddWithValue("lugar", cita.Lugar);
+                comando1.Parameters.AddWithValue("obs", cita.Observacion);
+                comando1.Parameters.AddWithValue("idBec", idBec);
+                comando1.Parameters.AddWithValue("idTut", idTut);
+                comando1.Parameters.AddWithValue("idcita", cita.IdCita);
+
+                comando1.ExecuteNonQuery();
+                con1.Close();
+            }
+            else
+            {
+                //insert
+                MySqlConnection con2 = new MySqlConnection(cadena);
+                con2.Open();
+                MySqlCommand comando2 = new MySqlCommand();
+                comando2.CommandType = System.Data.CommandType.StoredProcedure;
+                comando2.CommandText = "Y_INSERTAR_CITA";
+
+                comando2.Connection = con2;
+                comando2.Parameters.AddWithValue("fecha", cita.Fecha);
+                comando2.Parameters.AddWithValue("hora", cita.Hora);
+                comando2.Parameters.AddWithValue("lugar", cita.Lugar);
+                comando2.Parameters.AddWithValue("obs", cita.Observacion);
+                comando2.Parameters.AddWithValue("idBec", idBec);
+                comando2.Parameters.AddWithValue("idTut", idTut);
+
+                comando2.ExecuteNonQuery();
+                con2.Close();
+            }
         }
 
         public BindingList<Cita> buscarcita(DateTime fecha)
@@ -56,6 +90,7 @@ namespace AccesoDatos
             {
                 Cita cita = new Cita();
                 cita.Fecha = reader.GetDateTime("FECHA");
+                cita.Hora = reader.GetString("HORA");
                 cita.Lugar = reader.GetString("LUGAR");
                 cita.Observacion = reader.GetString("OBSERVACION");
                 cita.IdTutor = reader.GetInt32("ID_TUTOR");
