@@ -58,27 +58,20 @@ namespace Vista
 
         }
 
-        private void btnNuevoTutor_Click(object sender, EventArgs e)
-        {
-            NuevoTutor frmNT = new NuevoTutor();
-            frmNT.ShowDialog();
-        }
-
-        private void btnEditarTutor_Click(object sender, EventArgs e)
-        {
-            EditarTutor frmET = new EditarTutor();
-            frmET.ShowDialog();
-        }
-
-        private void btnEliminarTutor_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("¿Desea eliminar de la lista el Tutor seleccionado?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-        }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            cbxCoordinador.Enabled = true;
-            CBEstadoNT.Enabled = true;
+
+            if (DGVTutores.SelectedRows.Count == 1)
+            {
+                cbxCoordinador.Enabled = true;
+                CBEstadoNT.Enabled = true;
+                btnCancelar.Enabled = true;
+                btnNuevo.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un Tutor", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
 
@@ -99,6 +92,15 @@ namespace Vista
             else
             {
                 txtEstado.Text = "INACTIVO";
+            }
+
+            if (txtEstado.Text == "ACTIVO")
+            {
+                CBEstadoNT.SelectedItem = "Activo";
+            }
+            else
+            {
+                CBEstadoNT.SelectedItem = "Inactivo";
             }
         }
 
@@ -125,8 +127,8 @@ namespace Vista
             CBEstadoNT.Enabled = false;
             cbxCoordinador.Enabled = false;
             btnCancelar.Enabled = false;
-            btnEditar.Enabled = false;
-
+            btnEditar.Enabled = true;
+            btnNuevo.Enabled = true;
 
             txtIdOcultoGT.Text = "";
             txtCodGT.Text = "";
@@ -159,7 +161,7 @@ namespace Vista
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             CBEstadoNT.Enabled = false;
-            string idPer = txtIdOcultoGT.Text.ToString();
+            string idPer = txtIdOcultoGT.Text.ToString(); // idpersona si es Nuevo, idTutor si es Select
             //Tutor tut = new Tutor();
             //int estado = Convert.ToInt32(CBEstadoNT.SelectedItem);
             string est;

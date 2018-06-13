@@ -260,12 +260,6 @@
     <Compile Include="DatosUsuario.Designer.cs">
       <DependentUpon>DatosUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarTutor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditarTutor.Designer.cs">
-      <DependentUpon>EditarTutor.cs</DependentUpon>
-    </Compile>
     <Compile Include="EditarBecaGB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -441,9 +435,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatosUsuario.resx">
       <DependentUpon>DatosUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditarTutor.resx">
-      <DependentUpon>EditarTutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarBecaGB.resx">
       <DependentUpon>EditarBecaGB.cs</DependentUpon>

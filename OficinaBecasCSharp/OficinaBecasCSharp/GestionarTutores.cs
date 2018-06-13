@@ -48,12 +48,6 @@ namespace Vista
             dgvListaTutores.Refresh();
         }
 
-        private void btnEditarTutor_Click(object sender, EventArgs e)
-        {
-            EditarTutor frmET = new EditarTutor();
-            frmET.ShowDialog();
-        }
-
         private void btnBXTAnadir_Click(object sender, EventArgs e)
         {
             AgregarBecarioATutor frmABTXB = new AgregarBecarioATutor();
