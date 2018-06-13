@@ -108,5 +108,10 @@ namespace Controlador
             return accesoDatos.listarBecarios(cod);
         }
 
+        public Becado buscarBecado(String cod)
+        {
+            return accesoDatos.buscarBecado(cod);
+        }
+
     }
 }

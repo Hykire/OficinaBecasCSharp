@@ -11,6 +11,7 @@ namespace AccesoDatos
 {
     public class BecadoDA
     {
+        Becado becado;
         public int registrar_enPersona(Becado a)
         {
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
@@ -229,5 +230,38 @@ namespace AccesoDatos
             con.Close();
             return lista;
         }
+
+        public Becado buscarBecado(String cod)
+        {
+            
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                "user=inf282g6;database=inf282g6;" +
+                "port=3306;password=Nk2ewy;SslMode=none;" +
+                "";
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+            MySqlCommand comando = new MySqlCommand();
+            
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "Y_BUSCAR_BECARIO_ID";
+
+                comando.Connection = con;
+                comando.Parameters.AddWithValue("codBec", Convert.ToInt32(cod));
+
+            
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                //SELECT P.NOMBRES, P.APELLIDOS, P.CODIGO_PUCP FROM PERSONA P INNER JOIN BECADO B
+                becado = new Becado();
+                becado.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
+                becado.Nombres = reader.GetString("NOMBRES");
+                becado.Apellidos = reader.GetString("APELLIDOS");
+                //es id becario 
+            }
+            con.Close();
+            return becado;
+        }
+
     }
 }

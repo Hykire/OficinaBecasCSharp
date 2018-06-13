@@ -19,23 +19,25 @@ namespace Vista
         private TutorBL logicaNegocioTutor;
         private Becado al;
         private Tutor tut;
+        private Cita citaSelect;
+
+        public Cita CitaSelect { get => citaSelect; set => citaSelect = value; }
+
         public frmGestionarCitasTutor()
         {
             InitializeComponent();
             logicaNegocioBecado = new BecadoBL();
             logicaNegocioCita = new CitaBL();
             logicaNegocioTutor = new TutorBL();
-
+            DGVCitas.AutoGenerateColumns = false;
             //panel citas
-            txtBFechaGC.Enabled = false;
+
             //txtBHoraGC.Enabled = false;
             txtCodTutorGC.Enabled = false;
             txtBTutorGC.Enabled = false;
             txtCodBecGC.Enabled = false;
             txtBBecarioGC.Enabled = false;
-            txtBLugarGC.Enabled = false;
             txtBObsGC.Enabled = false;
-            txtidCitaOculto.Enabled = false;
             txtIdtutOculto.Enabled = false;
             txtIdBecOculto.Enabled = false;
             btnBuscarTutor.Enabled = false;
@@ -46,16 +48,17 @@ namespace Vista
             AgregarCita frmAgergar = new AgregarCita();
             frmAgergar.ShowDialog();
         }
-
+    //borrar:
         private void BEliminarCitaGC_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtBFechaGC.Text))
+            if (DGVCitas.SelectedRows.Count == 1)
             {
-                MessageBox.Show("Debe seleccionar una cita", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("¿Desea eliminar la cita seleccionada?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("¿Desea eliminar la cita seleccionada?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar una cita", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
             }
         }
         //borrar:
@@ -89,52 +92,42 @@ namespace Vista
         private void BBuscarCitaGC_Click(object sender, EventArgs e)
         {
             txtBObsGC.Enabled = false;
-            txtBLugarGC.Enabled = false;
             txtBObsGC.Enabled = false;
 
             BindingList<Cita> lista = new BindingList<Cita>();
-           // MessageBox.Show(DTPSelDiaGC.Text);
-            lista = logicaNegocioCita.buscarcita(DTPSelDiaGC.Text.ToString());
-           foreach(Cita c in lista)
-            {
-                txtBFechaGC.Text = c.Fecha.ToString();
-                txtBLugarGC.Text = c.Lugar;
-                txtBObsGC.Text = c.Observacion;
-            }
+            // MessageBox.Show(DTPSelDiaGC.Text);
+            DGVCitas.DataSource = logicaNegocioCita.buscarcita(DateTime.Parse(DTPSelDiaGC.Text));
+            //modificar para que tmbn traiga horas
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtBFechaGC.Text))
+            if (DGVCitas.SelectedRows.Count == 1)
             {
-                MessageBox.Show("Debe seleccionar una cita", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("¿Desea eliminar la cita seleccionada?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("¿Desea eliminar la cita seleccionada?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar una cita", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             txtBBecarioGC.Text = "";
-            txtBFechaGC.Text = "";
             //txtBHoraGC.Text = "";
-            txtBLugarGC.Text = "";
             txtBObsGC.Text = "";
             txtBTutorGC.Text = "";
             txtCodBecGC.Text = "";
             txtCodTutorGC.Text = "";
-            txtidCitaOculto.Text = "";
             txtIdtutOculto.Text = "";
             txtIdBecOculto.Text = "";
 
             DTPSelDiaGC.Enabled = false;
             BBuscarCitaGC.Enabled = false;
             DTPSelDiaGC.Enabled = true;
-            txtBFechaGC.Enabled = true;
-            //txtBHoraGC.Enabled = true;
-            txtBLugarGC.Enabled = true;
+           //txtBHoraGC.Enabled = true;
             txtBObsGC.Enabled = true;
 
             btnBuscarTutor.Enabled = true;
@@ -174,26 +167,20 @@ namespace Vista
             DTPSelDiaGC.Enabled = true;
             BBuscarCitaGC.Enabled = true;
             txtBBecarioGC.Text = "";
-            txtBFechaGC.Text = "";
             //txtBHoraGC.Text = "";
-            txtBLugarGC.Text = "";
             txtBObsGC.Text = "";
             txtBTutorGC.Text = "";
             txtCodBecGC.Text = "";
             txtCodTutorGC.Text = "";
-            txtidCitaOculto.Text = "";
             txtIdtutOculto.Text = "";
             txtIdBecOculto.Text = "";
 
-            txtBFechaGC.Enabled = false;
-            //txtBHoraGC.Enabled = false;
+             //txtBHoraGC.Enabled = false;
             txtCodTutorGC.Enabled = false;
             txtBTutorGC.Enabled = false;
             txtCodBecGC.Enabled = false;
             txtBBecarioGC.Enabled = false;
-            txtBLugarGC.Enabled = false;
             txtBObsGC.Enabled = false;
-            txtidCitaOculto.Enabled = false;
             txtIdtutOculto.Enabled = false;
             txtIdBecOculto.Enabled = false;
             btnBuscarTutor.Enabled = false;
@@ -205,7 +192,7 @@ namespace Vista
         {
             string lugar = txtBLugarGC.Text.ToString();
             string obs = txtBObsGC.Text.ToString();
-            string fecha = txtBFechaGC.Text.ToString();
+            //string fecha = txtBFechaGC.Text.ToString();
             int idTut = Convert.ToInt32(txtIdtutOculto.Text.ToString());
             int idBec = Convert.ToInt32(txtIdBecOculto.Text.ToString());
             DTPSelDiaGC.Enabled = false;
@@ -213,9 +200,59 @@ namespace Vista
             cita.Fecha = DateTime.Parse(DTPSelDiaGC.Text);
             cita.Lugar = txtBLugarGC.Text;
             cita.Observacion = txtBObsGC.Text;
-
+            cita.Hora = txtHora.Text;
             logicaNegocioCita.agregarCita(cita, idBec, idTut);
-           
+            //falta modificar AD y workbench para que admita string hora
+        }
+
+        private void DGVCitas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CitaSelect = (Cita) DGVCitas.CurrentRow.DataBoundItem;
+            txtIdBecOculto.Text = CitaSelect.IdBecado.ToString();
+            string idBec= txtIdBecOculto.Text;
+            Becado bec = new Becado();
+            bec = logicaNegocioBecado.buscarBecado(idBec);
+            txtBBecarioGC.Text = bec.Nombres + " " + bec.Apellidos;
+            txtCodBecGC.Text = bec.CodigoPUCP.ToString();
+
+            txtIdtutOculto.Text = CitaSelect.IdTutor.ToString();
+            string idTut = txtIdtutOculto.Text;
+            Tutor tut = new Tutor();
+            tut = logicaNegocioTutor.buscarTutor(idTut);
+            txtBTutorGC.Text = tut.Nombres + " " + tut.Apellidos;
+            txtCodTutorGC.Text = tut.CodigoPUCP.ToString();
+
+            txtBObsGC.Text = CitaSelect.Observacion;
+            txtBLugarGC.Text = CitaSelect.Lugar;
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (DGVCitas.SelectedRows.Count == 1)
+            {
+                CitaSelect = (Cita)DGVCitas.CurrentRow.DataBoundItem;
+                txtIdBecOculto.Text = CitaSelect.IdBecado.ToString();
+                string idBec = txtIdBecOculto.Text;
+                Becado bec = new Becado();
+                bec = logicaNegocioBecado.buscarBecado(idBec);
+                txtBBecarioGC.Text = bec.Nombres + " " + bec.Apellidos;
+                txtCodBecGC.Text = bec.CodigoPUCP.ToString();
+
+                txtIdtutOculto.Text = CitaSelect.IdTutor.ToString();
+                string idTut = txtIdtutOculto.Text;
+                Tutor tut = new Tutor();
+                tut = logicaNegocioTutor.buscarTutor(idTut);
+                txtBTutorGC.Text = tut.Nombres + " " + tut.Apellidos;
+                txtCodTutorGC.Text = tut.CodigoPUCP.ToString();
+
+                txtBObsGC.Text = CitaSelect.Observacion;
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una cita", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
     }
 }

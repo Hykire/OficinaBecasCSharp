@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.panelConsultarBecario = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCorreoPUCP = new System.Windows.Forms.TextBox();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtNombreBecario = new System.Windows.Forms.TextBox();
             this.lvlBecario = new System.Windows.Forms.Label();
             this.lblCodBecario = new System.Windows.Forms.Label();
             this.btnBuscarBecario = new System.Windows.Forms.Button();
@@ -40,33 +48,98 @@
             this.correoBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BecarioActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCodBecario = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCorreoPUCP = new System.Windows.Forms.TextBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtNombreBecario = new System.Windows.Forms.TextBox();
             this.panelConsultarBecario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelConsultarBecario
             // 
             this.panelConsultarBecario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelConsultarBecario.Controls.Add(this.groupBox1);
+            this.panelConsultarBecario.Controls.Add(this.label2);
+            this.panelConsultarBecario.Controls.Add(this.label4);
+            this.panelConsultarBecario.Controls.Add(this.label5);
+            this.panelConsultarBecario.Controls.Add(this.txtCodigo);
+            this.panelConsultarBecario.Controls.Add(this.txtCorreoPUCP);
+            this.panelConsultarBecario.Controls.Add(this.txtNombreBecario);
             this.panelConsultarBecario.Controls.Add(this.lvlBecario);
+            this.panelConsultarBecario.Controls.Add(this.label3);
             this.panelConsultarBecario.Controls.Add(this.lblCodBecario);
             this.panelConsultarBecario.Controls.Add(this.btnBuscarBecario);
             this.panelConsultarBecario.Controls.Add(this.dgvBecarios);
+            this.panelConsultarBecario.Controls.Add(this.txtApellidos);
             this.panelConsultarBecario.Controls.Add(this.txtCodBecario);
             this.panelConsultarBecario.Location = new System.Drawing.Point(12, 12);
             this.panelConsultarBecario.Name = "panelConsultarBecario";
             this.panelConsultarBecario.Size = new System.Drawing.Size(701, 541);
             this.panelConsultarBecario.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(320, 451);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Correo PUCP";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(320, 406);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Código";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(20, 447);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Apellidos";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 406);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Nombres";
+            // 
+            // txtCorreoPUCP
+            // 
+            this.txtCorreoPUCP.Enabled = false;
+            this.txtCorreoPUCP.Location = new System.Drawing.Point(406, 448);
+            this.txtCorreoPUCP.Name = "txtCorreoPUCP";
+            this.txtCorreoPUCP.Size = new System.Drawing.Size(206, 20);
+            this.txtCorreoPUCP.TabIndex = 31;
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Enabled = false;
+            this.txtApellidos.Location = new System.Drawing.Point(406, 403);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(115, 20);
+            this.txtApellidos.TabIndex = 30;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Location = new System.Drawing.Point(85, 444);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(193, 20);
+            this.txtCodigo.TabIndex = 29;
+            // 
+            // txtNombreBecario
+            // 
+            this.txtNombreBecario.Enabled = false;
+            this.txtNombreBecario.Location = new System.Drawing.Point(85, 399);
+            this.txtNombreBecario.Name = "txtNombreBecario";
+            this.txtNombreBecario.Size = new System.Drawing.Size(193, 20);
+            this.txtNombreBecario.TabIndex = 28;
             // 
             // lvlBecario
             // 
@@ -81,7 +154,7 @@
             // lblCodBecario
             // 
             this.lblCodBecario.AutoSize = true;
-            this.lblCodBecario.Location = new System.Drawing.Point(33, 41);
+            this.lblCodBecario.Location = new System.Drawing.Point(20, 41);
             this.lblCodBecario.Name = "lblCodBecario";
             this.lblCodBecario.Size = new System.Drawing.Size(93, 13);
             this.lblCodBecario.TabIndex = 6;
@@ -89,9 +162,9 @@
             // 
             // btnBuscarBecario
             // 
-            this.btnBuscarBecario.Location = new System.Drawing.Point(550, 57);
+            this.btnBuscarBecario.Location = new System.Drawing.Point(566, 57);
             this.btnBuscarBecario.Name = "btnBuscarBecario";
-            this.btnBuscarBecario.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarBecario.Size = new System.Drawing.Size(112, 23);
             this.btnBuscarBecario.TabIndex = 2;
             this.btnBuscarBecario.Text = "Buscar";
             this.btnBuscarBecario.UseVisualStyleBackColor = true;
@@ -165,93 +238,8 @@
             // 
             this.txtCodBecario.Location = new System.Drawing.Point(23, 57);
             this.txtCodBecario.Name = "txtCodBecario";
-            this.txtCodBecario.Size = new System.Drawing.Size(341, 20);
+            this.txtCodBecario.Size = new System.Drawing.Size(497, 20);
             this.txtCodBecario.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCorreoPUCP);
-            this.groupBox1.Controls.Add(this.txtApellidos);
-            this.groupBox1.Controls.Add(this.txtCodigo);
-            this.groupBox1.Controls.Add(this.txtNombreBecario);
-            this.groupBox1.Location = new System.Drawing.Point(3, 371);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(622, 170);
-            this.groupBox1.TabIndex = 19;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Becario";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(228, 98);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Correo PUCP";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Código";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(228, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Apellidos";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Nombres";
-            // 
-            // txtCorreoPUCP
-            // 
-            this.txtCorreoPUCP.Enabled = false;
-            this.txtCorreoPUCP.Location = new System.Drawing.Point(231, 136);
-            this.txtCorreoPUCP.Name = "txtCorreoPUCP";
-            this.txtCorreoPUCP.Size = new System.Drawing.Size(234, 20);
-            this.txtCorreoPUCP.TabIndex = 31;
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.Enabled = false;
-            this.txtApellidos.Location = new System.Drawing.Point(231, 55);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(234, 20);
-            this.txtApellidos.TabIndex = 30;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(9, 136);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(157, 20);
-            this.txtCodigo.TabIndex = 29;
-            // 
-            // txtNombreBecario
-            // 
-            this.txtNombreBecario.Enabled = false;
-            this.txtNombreBecario.Location = new System.Drawing.Point(9, 55);
-            this.txtNombreBecario.Name = "txtNombreBecario";
-            this.txtNombreBecario.Size = new System.Drawing.Size(157, 20);
-            this.txtNombreBecario.TabIndex = 28;
             // 
             // frmConsultarBecarioT
             // 
@@ -264,8 +252,6 @@
             this.panelConsultarBecario.ResumeLayout(false);
             this.panelConsultarBecario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -284,7 +270,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sexoBecario;
         private System.Windows.Forms.DataGridViewTextBoxColumn correoBecario;
         private System.Windows.Forms.DataGridViewTextBoxColumn BecarioActivo;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

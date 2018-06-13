@@ -11,6 +11,7 @@ namespace AccesoDatos
 {
     public class TutorAD
     {
+        Tutor tutor;
         public BindingList<Tutor> listarTutorDeBecado(int idBec)
         {
             BindingList<Tutor> lista = new BindingList<Tutor>();
@@ -215,6 +216,38 @@ namespace AccesoDatos
             }
             con.Close();
             return lista;
+        }
+
+        public Tutor buscarTutor(String cod)
+        {
+            
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                "user=inf282g6;database=inf282g6;" +
+                "port=3306;password=Nk2ewy;SslMode=none;" +
+                "";
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+            MySqlCommand comando = new MySqlCommand();
+
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "Y_BUSCAR_TUTOR_ID";
+
+            comando.Connection = con;
+            comando.Parameters.AddWithValue("codTut", Convert.ToInt32(cod));
+
+
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                //SELECT P.NOMBRES, P.APELLIDOS, P.CODIGO_PUCP FROM PERSONA P INNER JOIN Tutor B
+                tutor = new Tutor();
+                tutor.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
+                tutor.Nombres = reader.GetString("NOMBRES");
+                tutor.Apellidos = reader.GetString("APELLIDOS");
+                
+            }
+            con.Close();
+            return tutor;
         }
     }
 }

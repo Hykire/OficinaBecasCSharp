@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarCitasTutor));
             this.PGestCitas = new System.Windows.Forms.Panel();
+            this.DGVCitas = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtIdtutOculto = new System.Windows.Forms.TextBox();
             this.btnBuscarTutor = new System.Windows.Forms.Button();
@@ -48,11 +49,6 @@
             this.txtBObsGC = new System.Windows.Forms.TextBox();
             this.BBuscarCitaGC = new System.Windows.Forms.Button();
             this.LTituloGC = new System.Windows.Forms.Label();
-            this.GBDetalleCitaGC = new System.Windows.Forms.GroupBox();
-            this.txtidCitaOculto = new System.Windows.Forms.TextBox();
-            this.txtBLugarGC = new System.Windows.Forms.TextBox();
-            this.LLugarGC = new System.Windows.Forms.Label();
-            this.LFechaGC = new System.Windows.Forms.Label();
             this.LSelFechaGC = new System.Windows.Forms.Label();
             this.DTPSelDiaGC = new System.Windows.Forms.DateTimePicker();
             this.toolStrip_GestionarTutores = new System.Windows.Forms.ToolStrip();
@@ -62,31 +58,61 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.txtBFechaGC = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtBLugarGC = new System.Windows.Forms.TextBox();
+            this.txtHora = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PGestCitas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVCitas)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.GBObservGC.SuspendLayout();
-            this.GBDetalleCitaGC.SuspendLayout();
             this.toolStrip_GestionarTutores.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // PGestCitas
             // 
             this.PGestCitas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PGestCitas.AutoSize = true;
+            this.PGestCitas.Controls.Add(this.groupBox3);
+            this.PGestCitas.Controls.Add(this.DGVCitas);
             this.PGestCitas.Controls.Add(this.groupBox2);
             this.PGestCitas.Controls.Add(this.groupBox1);
             this.PGestCitas.Controls.Add(this.GBObservGC);
             this.PGestCitas.Controls.Add(this.BBuscarCitaGC);
             this.PGestCitas.Controls.Add(this.LTituloGC);
-            this.PGestCitas.Controls.Add(this.GBDetalleCitaGC);
             this.PGestCitas.Controls.Add(this.LSelFechaGC);
             this.PGestCitas.Controls.Add(this.DTPSelDiaGC);
             this.PGestCitas.Location = new System.Drawing.Point(-1, -2);
             this.PGestCitas.Name = "PGestCitas";
-            this.PGestCitas.Size = new System.Drawing.Size(802, 452);
+            this.PGestCitas.Size = new System.Drawing.Size(802, 453);
             this.PGestCitas.TabIndex = 17;
+            // 
+            // DGVCitas
+            // 
+            this.DGVCitas.AllowUserToAddRows = false;
+            this.DGVCitas.AllowUserToDeleteRows = false;
+            this.DGVCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Fecha,
+            this.Tutor,
+            this.Alumno,
+            this.Hora,
+            this.Lugar});
+            this.DGVCitas.Location = new System.Drawing.Point(49, 117);
+            this.DGVCitas.Name = "DGVCitas";
+            this.DGVCitas.ReadOnly = true;
+            this.DGVCitas.Size = new System.Drawing.Size(708, 119);
+            this.DGVCitas.TabIndex = 11;
+            this.DGVCitas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCitas_CellClick);
             // 
             // groupBox2
             // 
@@ -96,7 +122,7 @@
             this.groupBox2.Controls.Add(this.txtCodTutorGC);
             this.groupBox2.Controls.Add(this.LTuutorGC);
             this.groupBox2.Controls.Add(this.LCodTutorGC);
-            this.groupBox2.Location = new System.Drawing.Point(30, 282);
+            this.groupBox2.Location = new System.Drawing.Point(19, 250);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(356, 98);
             this.groupBox2.TabIndex = 10;
@@ -122,7 +148,7 @@
             // 
             // txtBTutorGC
             // 
-            this.txtBTutorGC.Location = new System.Drawing.Point(89, 55);
+            this.txtBTutorGC.Location = new System.Drawing.Point(89, 57);
             this.txtBTutorGC.Name = "txtBTutorGC";
             this.txtBTutorGC.Size = new System.Drawing.Size(255, 20);
             this.txtBTutorGC.TabIndex = 9;
@@ -160,9 +186,9 @@
             this.groupBox1.Controls.Add(this.txtCodBecGC);
             this.groupBox1.Controls.Add(this.LBecarioGC);
             this.groupBox1.Controls.Add(this.LCódigoBecarioGC);
-            this.groupBox1.Location = new System.Drawing.Point(434, 145);
+            this.groupBox1.Location = new System.Drawing.Point(402, 250);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 103);
+            this.groupBox1.Size = new System.Drawing.Size(355, 98);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Becario";
@@ -219,24 +245,24 @@
             // GBObservGC
             // 
             this.GBObservGC.Controls.Add(this.txtBObsGC);
-            this.GBObservGC.Location = new System.Drawing.Point(434, 282);
+            this.GBObservGC.Location = new System.Drawing.Point(23, 354);
             this.GBObservGC.Name = "GBObservGC";
-            this.GBObservGC.Size = new System.Drawing.Size(355, 98);
+            this.GBObservGC.Size = new System.Drawing.Size(352, 96);
             this.GBObservGC.TabIndex = 8;
             this.GBObservGC.TabStop = false;
             this.GBObservGC.Text = "Observaciones";
             // 
             // txtBObsGC
             // 
-            this.txtBObsGC.Location = new System.Drawing.Point(6, 28);
+            this.txtBObsGC.Location = new System.Drawing.Point(6, 19);
             this.txtBObsGC.Multiline = true;
             this.txtBObsGC.Name = "txtBObsGC";
-            this.txtBObsGC.Size = new System.Drawing.Size(343, 61);
+            this.txtBObsGC.Size = new System.Drawing.Size(340, 71);
             this.txtBObsGC.TabIndex = 13;
             // 
             // BBuscarCitaGC
             // 
-            this.BBuscarCitaGC.Location = new System.Drawing.Point(357, 72);
+            this.BBuscarCitaGC.Location = new System.Drawing.Point(344, 76);
             this.BBuscarCitaGC.Name = "BBuscarCitaGC";
             this.BBuscarCitaGC.Size = new System.Drawing.Size(94, 23);
             this.BBuscarCitaGC.TabIndex = 4;
@@ -254,56 +280,10 @@
             this.LTituloGC.TabIndex = 2;
             this.LTituloGC.Text = "Gestionar Citas";
             // 
-            // GBDetalleCitaGC
-            // 
-            this.GBDetalleCitaGC.Controls.Add(this.txtidCitaOculto);
-            this.GBDetalleCitaGC.Controls.Add(this.txtBLugarGC);
-            this.GBDetalleCitaGC.Controls.Add(this.txtBFechaGC);
-            this.GBDetalleCitaGC.Controls.Add(this.LLugarGC);
-            this.GBDetalleCitaGC.Controls.Add(this.LFechaGC);
-            this.GBDetalleCitaGC.Location = new System.Drawing.Point(30, 145);
-            this.GBDetalleCitaGC.Name = "GBDetalleCitaGC";
-            this.GBDetalleCitaGC.Size = new System.Drawing.Size(356, 103);
-            this.GBDetalleCitaGC.TabIndex = 3;
-            this.GBDetalleCitaGC.TabStop = false;
-            this.GBDetalleCitaGC.Text = "Detalle de Cita";
-            // 
-            // txtidCitaOculto
-            // 
-            this.txtidCitaOculto.Location = new System.Drawing.Point(266, 29);
-            this.txtidCitaOculto.Name = "txtidCitaOculto";
-            this.txtidCitaOculto.Size = new System.Drawing.Size(49, 20);
-            this.txtidCitaOculto.TabIndex = 18;
-            // 
-            // txtBLugarGC
-            // 
-            this.txtBLugarGC.Location = new System.Drawing.Point(89, 63);
-            this.txtBLugarGC.Name = "txtBLugarGC";
-            this.txtBLugarGC.Size = new System.Drawing.Size(225, 20);
-            this.txtBLugarGC.TabIndex = 11;
-            // 
-            // LLugarGC
-            // 
-            this.LLugarGC.AutoSize = true;
-            this.LLugarGC.Location = new System.Drawing.Point(16, 66);
-            this.LLugarGC.Name = "LLugarGC";
-            this.LLugarGC.Size = new System.Drawing.Size(37, 13);
-            this.LLugarGC.TabIndex = 5;
-            this.LLugarGC.Text = "Lugar:";
-            // 
-            // LFechaGC
-            // 
-            this.LFechaGC.AutoSize = true;
-            this.LFechaGC.Location = new System.Drawing.Point(12, 34);
-            this.LFechaGC.Name = "LFechaGC";
-            this.LFechaGC.Size = new System.Drawing.Size(74, 13);
-            this.LFechaGC.TabIndex = 2;
-            this.LFechaGC.Text = "Fecha y Hora:";
-            // 
             // LSelFechaGC
             // 
             this.LSelFechaGC.AutoSize = true;
-            this.LSelFechaGC.Location = new System.Drawing.Point(27, 82);
+            this.LSelFechaGC.Location = new System.Drawing.Point(20, 82);
             this.LSelFechaGC.Name = "LSelFechaGC";
             this.LSelFechaGC.Size = new System.Drawing.Size(100, 13);
             this.LSelFechaGC.TabIndex = 1;
@@ -311,7 +291,7 @@
             // 
             // DTPSelDiaGC
             // 
-            this.DTPSelDiaGC.Location = new System.Drawing.Point(144, 76);
+            this.DTPSelDiaGC.Location = new System.Drawing.Point(126, 76);
             this.DTPSelDiaGC.Name = "DTPSelDiaGC";
             this.DTPSelDiaGC.Size = new System.Drawing.Size(200, 20);
             this.DTPSelDiaGC.TabIndex = 0;
@@ -356,6 +336,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(57, 22);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // toolStripSeparator1
             // 
@@ -380,12 +361,95 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // txtBFechaGC
+            // groupBox3
             // 
-            this.txtBFechaGC.Location = new System.Drawing.Point(89, 31);
-            this.txtBFechaGC.Name = "txtBFechaGC";
-            this.txtBFechaGC.Size = new System.Drawing.Size(154, 20);
-            this.txtBFechaGC.TabIndex = 7;
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txtHora);
+            this.groupBox3.Controls.Add(this.txtBLugarGC);
+            this.groupBox3.Location = new System.Drawing.Point(402, 355);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(355, 89);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Detalle";
+            // 
+            // txtBLugarGC
+            // 
+            this.txtBLugarGC.Location = new System.Drawing.Point(54, 29);
+            this.txtBLugarGC.Name = "txtBLugarGC";
+            this.txtBLugarGC.Size = new System.Drawing.Size(206, 20);
+            this.txtBLugarGC.TabIndex = 0;
+            // 
+            // txtHora
+            // 
+            this.txtHora.Location = new System.Drawing.Point(54, 56);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(121, 20);
+            this.txtHora.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(266, 29);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(60, 20);
+            this.textBox3.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Lugar:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Hora:";
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // Tutor
+            // 
+            this.Tutor.DataPropertyName = "IdTutor";
+            this.Tutor.HeaderText = "Tutor";
+            this.Tutor.Name = "Tutor";
+            this.Tutor.ReadOnly = true;
+            this.Tutor.Width = 150;
+            // 
+            // Alumno
+            // 
+            this.Alumno.DataPropertyName = "IdBecado";
+            this.Alumno.HeaderText = "Alumno";
+            this.Alumno.Name = "Alumno";
+            this.Alumno.ReadOnly = true;
+            this.Alumno.Width = 150;
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
+            // 
+            // Lugar
+            // 
+            this.Lugar.DataPropertyName = "Lugar";
+            this.Lugar.HeaderText = "Lugar";
+            this.Lugar.Name = "Lugar";
+            this.Lugar.ReadOnly = true;
+            this.Lugar.Width = 150;
             // 
             // frmGestionarCitasTutor
             // 
@@ -399,16 +463,17 @@
             this.Load += new System.EventHandler(this.frmGestionarCitasTutor_Load);
             this.PGestCitas.ResumeLayout(false);
             this.PGestCitas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVCitas)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.GBObservGC.ResumeLayout(false);
             this.GBObservGC.PerformLayout();
-            this.GBDetalleCitaGC.ResumeLayout(false);
-            this.GBDetalleCitaGC.PerformLayout();
             this.toolStrip_GestionarTutores.ResumeLayout(false);
             this.toolStrip_GestionarTutores.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,21 +486,16 @@
         private System.Windows.Forms.TextBox txtBObsGC;
         private System.Windows.Forms.Button BBuscarCitaGC;
         private System.Windows.Forms.Label LTituloGC;
-        private System.Windows.Forms.GroupBox GBDetalleCitaGC;
         private System.Windows.Forms.TextBox txtCodBecGC;
         private System.Windows.Forms.TextBox txtCodTutorGC;
         private System.Windows.Forms.Label LCódigoBecarioGC;
-        private System.Windows.Forms.TextBox txtBLugarGC;
         private System.Windows.Forms.Label LCodTutorGC;
         private System.Windows.Forms.TextBox txtBBecarioGC;
         private System.Windows.Forms.TextBox txtBTutorGC;
-        private System.Windows.Forms.Label LLugarGC;
         private System.Windows.Forms.Label LBecarioGC;
         private System.Windows.Forms.Label LTuutorGC;
-        private System.Windows.Forms.Label LFechaGC;
         private System.Windows.Forms.Label LSelFechaGC;
         private System.Windows.Forms.DateTimePicker DTPSelDiaGC;
-        private System.Windows.Forms.TextBox txtidCitaOculto;
         private System.Windows.Forms.ToolStrip toolStrip_GestionarTutores;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnGuardar;
@@ -449,6 +509,17 @@
         private System.Windows.Forms.Button btnBuscarBecario;
         private System.Windows.Forms.TextBox txtIdtutOculto;
         private System.Windows.Forms.TextBox txtIdBecOculto;
-        private System.Windows.Forms.TextBox txtBFechaGC;
+        private System.Windows.Forms.DataGridView DGVCitas;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtHora;
+        private System.Windows.Forms.TextBox txtBLugarGC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tutor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Alumno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lugar;
     }
 }

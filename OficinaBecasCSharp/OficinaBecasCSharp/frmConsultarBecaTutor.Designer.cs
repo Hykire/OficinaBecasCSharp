@@ -78,7 +78,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(265, 486);
+            this.label5.Location = new System.Drawing.Point(504, 362);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 35;
@@ -87,7 +87,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 486);
+            this.label4.Location = new System.Drawing.Point(166, 411);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 13);
             this.label4.TabIndex = 34;
@@ -96,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(265, 383);
+            this.label3.Location = new System.Drawing.Point(166, 475);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 33;
@@ -105,7 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 383);
+            this.label2.Location = new System.Drawing.Point(166, 365);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 32;
@@ -114,7 +114,7 @@
             // txtDescripcionSelec
             // 
             this.txtDescripcionSelec.Enabled = false;
-            this.txtDescripcionSelec.Location = new System.Drawing.Point(268, 524);
+            this.txtDescripcionSelec.Location = new System.Drawing.Point(507, 386);
             this.txtDescripcionSelec.Multiline = true;
             this.txtDescripcionSelec.Name = "txtDescripcionSelec";
             this.txtDescripcionSelec.Size = new System.Drawing.Size(259, 45);
@@ -123,7 +123,7 @@
             // txtFinanciadorSelec
             // 
             this.txtFinanciadorSelec.Enabled = false;
-            this.txtFinanciadorSelec.Location = new System.Drawing.Point(268, 422);
+            this.txtFinanciadorSelec.Location = new System.Drawing.Point(169, 507);
             this.txtFinanciadorSelec.Multiline = true;
             this.txtFinanciadorSelec.Name = "txtFinanciadorSelec";
             this.txtFinanciadorSelec.Size = new System.Drawing.Size(259, 42);
@@ -132,7 +132,7 @@
             // txtFechaConvocatoriaSelec
             // 
             this.txtFechaConvocatoriaSelec.Enabled = false;
-            this.txtFechaConvocatoriaSelec.Location = new System.Drawing.Point(46, 524);
+            this.txtFechaConvocatoriaSelec.Location = new System.Drawing.Point(289, 411);
             this.txtFechaConvocatoriaSelec.Name = "txtFechaConvocatoriaSelec";
             this.txtFechaConvocatoriaSelec.Size = new System.Drawing.Size(157, 20);
             this.txtFechaConvocatoriaSelec.TabIndex = 29;
@@ -140,7 +140,7 @@
             // txtNombreBecaSelec
             // 
             this.txtNombreBecaSelec.Enabled = false;
-            this.txtNombreBecaSelec.Location = new System.Drawing.Point(46, 422);
+            this.txtNombreBecaSelec.Location = new System.Drawing.Point(289, 362);
             this.txtNombreBecaSelec.Name = "txtNombreBecaSelec";
             this.txtNombreBecaSelec.Size = new System.Drawing.Size(157, 20);
             this.txtNombreBecaSelec.TabIndex = 28;
@@ -188,9 +188,9 @@
             // 
             // btnBuscarBecaCBT
             // 
-            this.btnBuscarBecaCBT.Location = new System.Drawing.Point(713, 55);
+            this.btnBuscarBecaCBT.Location = new System.Drawing.Point(672, 58);
             this.btnBuscarBecaCBT.Name = "btnBuscarBecaCBT";
-            this.btnBuscarBecaCBT.Size = new System.Drawing.Size(92, 23);
+            this.btnBuscarBecaCBT.Size = new System.Drawing.Size(133, 23);
             this.btnBuscarBecaCBT.TabIndex = 2;
             this.btnBuscarBecaCBT.Text = "Buscar";
             this.btnBuscarBecaCBT.UseVisualStyleBackColor = true;
@@ -248,7 +248,7 @@
             // 
             this.txtCodBecCBT.Location = new System.Drawing.Point(169, 58);
             this.txtCodBecCBT.Name = "txtCodBecCBT";
-            this.txtCodBecCBT.Size = new System.Drawing.Size(320, 20);
+            this.txtCodBecCBT.Size = new System.Drawing.Size(473, 20);
             this.txtCodBecCBT.TabIndex = 1;
             // 
             // frmConsultarBecaTutor

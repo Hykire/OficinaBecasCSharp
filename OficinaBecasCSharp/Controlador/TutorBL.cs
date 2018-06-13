@@ -40,5 +40,9 @@ namespace Controlador
         public BindingList<Tutor> listarTutores() {
             return accesoDatosTutor.listarTutores();
         }
+        public Tutor buscarTutor(String cod)
+        {
+            return accesoDatosTutor.buscarTutor(cod);
+        }
     }
 }

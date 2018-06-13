@@ -34,7 +34,7 @@ namespace AccesoDatos
             con.Close();
         }
 
-        public BindingList<Cita> buscarcita(string fecha)
+        public BindingList<Cita> buscarcita(DateTime fecha)
         {
             BindingList<Cita> lista = new BindingList<Cita>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
@@ -54,11 +54,13 @@ namespace AccesoDatos
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
-                // P.ID_PERSONA, P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.TELF_MOVIL, P.CORREO_PUCP, P.DNI FROM PERSONA P INNER JOIN
                 Cita cita = new Cita();
                 cita.Fecha = reader.GetDateTime("FECHA");
                 cita.Lugar = reader.GetString("LUGAR");
                 cita.Observacion = reader.GetString("OBSERVACION");
+                cita.IdTutor = reader.GetInt32("ID_TUTOR");
+                cita.IdBecado = reader.GetInt32("ID_BECADO");
+                cita.IdCita = reader.GetInt32("ID_CITA");
                 lista.Add(cita);
             }
             con.Close();

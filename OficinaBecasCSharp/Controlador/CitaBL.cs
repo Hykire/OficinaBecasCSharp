@@ -20,7 +20,7 @@ namespace Controlador
         {
             accesoDatosCita.agregarCita(cita, idBec, idTut);
         }
-        public BindingList<Cita> buscarcita(string fecha)
+        public BindingList<Cita> buscarcita(DateTime fecha)
         {
             return accesoDatosCita.buscarcita(fecha);
         }
