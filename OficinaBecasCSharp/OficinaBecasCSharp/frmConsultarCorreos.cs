@@ -31,7 +31,7 @@ namespace Vista
             cbSexo.Items.Add(bec);
 
             cbEspecialidad.Items.Add(bec);
-            btnDescargarEmails.Visible = false;
+            //btnDescargarEmails.Visible = false;
         }
 
         private void btnBuscarCorreos_Click(object sender, EventArgs e) {
@@ -147,6 +147,29 @@ namespace Vista
                 lstFiltos = lstAux;
                 dgvConsultarEmails.DataSource = lstFiltos;
             }
+        }
+
+        private void btnDescargarEmails_Click(object sender, EventArgs e)
+        {
+            string concat = "";
+            if (lstFiltos.Count == 0)
+            {
+                foreach (var i in lstBecados)
+                {
+                    
+                    concat = concat + i.CorreoPUCP + "\n";
+                    
+                }
+            }
+            else
+            {
+                foreach (var i in lstFiltos)
+                {
+                    concat += i.CorreoPUCP + "\n";
+                }
+            }
+            
+            txtCorreosObtenidos.Text = concat;
         }
     }
 }
