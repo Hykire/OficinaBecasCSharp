@@ -33,7 +33,8 @@ namespace Vista
             dgvBuscarCandidato.Columns[4].Visible = false;
             dgvBuscarCandidato.Columns[5].Visible = false;
             rbCodigoPUCP.Checked = true;
-
+            chPostulante.Visible = false;
+            chSeleccionado.Visible = false;
         }
         public BuscarCandidato(Convocatoria convocatoria)
         {
@@ -46,6 +47,8 @@ namespace Vista
             dgvBuscarCandidato.Columns[4].Visible = true;
             dgvBuscarCandidato.Columns[5].Visible = true;
             rbCodigoPUCP.Checked = true;
+            chPostulante.Visible = false;
+            chSeleccionado.Visible = false;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -60,7 +63,7 @@ namespace Vista
             rbCodigoPUCP.Checked = true;
 
 
-            if(!candidatoAnterior) dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatos(convocatoria.IdConvocatoria);
+            if (!candidatoAnterior) dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatos(convocatoria.IdConvocatoria);
             else dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatosAnteriores(convocatoria.IdConvocatoria);
         }
 
@@ -79,10 +82,10 @@ namespace Vista
             if (chSeleccionado.Checked) seleccionado = "SELECCIONADO";
             else seleccionado = "NO SELECCIONADO";
 
-            if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarApellidos(txtFiltro.Text, postulante, seleccionado,convocatoria.IdConvocatoria);
-            else if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarNombre(txtFiltro.Text, postulante, seleccionado,convocatoria.IdConvocatoria);
-            else if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarCodigoPUCP(Int32.Parse(txtFiltro.Text), postulante, seleccionado, convocatoria.IdConvocatoria);
-            else if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarDNI(Int32.Parse(txtFiltro.Text), postulante, seleccionado, convocatoria.IdConvocatoria);
+            if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarApellidos(txtFiltro.Text, postulante, seleccionado, convocatoria.IdConvocatoria);
+            else if (rbNombres.Checked) listaCandidatos = candidatoBL.filtrarNombre(txtFiltro.Text, postulante, seleccionado, convocatoria.IdConvocatoria);
+            else if (rbCodigoPUCP.Checked) listaCandidatos = candidatoBL.filtrarCodigoPUCP(Int32.Parse(txtFiltro.Text), postulante, seleccionado, convocatoria.IdConvocatoria);
+            else if (rbDNI.Checked) listaCandidatos = candidatoBL.filtrarDNI(Int32.Parse(txtFiltro.Text), postulante, seleccionado, convocatoria.IdConvocatoria);
 
             dgvBuscarCandidato.DataSource = listaCandidatos;
         }

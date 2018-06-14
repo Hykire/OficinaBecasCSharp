@@ -51,14 +51,14 @@ namespace Vista
         public BindingList<string> agregarCiclos(DateTime fecha)
         {
             BindingList<string> ciclos = new BindingList<string>();
-            if (fecha.Month < 7)
+            if (fecha.Month >= 7)
             {
-                ciclos.Add(fecha.Year.ToString() + "-" + "1");
-                ciclos.Add(fecha.Year.ToString() + "-" + "2");
+                ciclos.Add((fecha.Year + 1).ToString() + "-" + "1");
+                ciclos.Add((fecha.Year + 1).ToString() + "-" + "2");
             }
             else
             {
-                ciclos.Add(fecha.Year.ToString() + "-" + "2");
+                ciclos.Add((fecha.Year).ToString() + "-" + "2");
                 ciclos.Add((fecha.Year + 1).ToString() + "-" + "1");
             }
             return ciclos;

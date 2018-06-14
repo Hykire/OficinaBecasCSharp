@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoordinadorComunicaciones));
             this.panelCC = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCantidadSeleccionados = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.cbCicloConvocatoria = new System.Windows.Forms.ComboBox();
             this.txtCreadorConvocatoria = new System.Windows.Forms.TextBox();
             this.txtTotalCandidatos = new System.Windows.Forms.TextBox();
@@ -60,11 +62,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.txtCantidadSeleccionados = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.ToolStripButton();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.panelCC.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -118,9 +118,24 @@
             this.groupBox1.Text = "Datos Generales de la Convocatoria";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // txtCantidadSeleccionados
+            // 
+            this.txtCantidadSeleccionados.Location = new System.Drawing.Point(714, 293);
+            this.txtCantidadSeleccionados.Name = "txtCantidadSeleccionados";
+            this.txtCantidadSeleccionados.Size = new System.Drawing.Size(59, 22);
+            this.txtCantidadSeleccionados.TabIndex = 70;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(511, 296);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(184, 17);
+            this.label10.TabIndex = 71;
+            this.label10.Text = "Cantidad de Seleccionados:";
+            // 
             // cbCicloConvocatoria
             // 
-            this.cbCicloConvocatoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCicloConvocatoria.FormattingEnabled = true;
             this.cbCicloConvocatoria.Location = new System.Drawing.Point(224, 351);
             this.cbCicloConvocatoria.Name = "cbCicloConvocatoria";
@@ -172,6 +187,7 @@
             // dtFechaFin
             // 
             this.dtFechaFin.Location = new System.Drawing.Point(683, 84);
+            this.dtFechaFin.MinDate = new System.DateTime(2018, 6, 14, 0, 0, 0, 0);
             this.dtFechaFin.Name = "dtFechaFin";
             this.dtFechaFin.Size = new System.Drawing.Size(200, 22);
             this.dtFechaFin.TabIndex = 4;
@@ -179,6 +195,7 @@
             // dtFechaInicio
             // 
             this.dtFechaInicio.Location = new System.Drawing.Point(683, 36);
+            this.dtFechaInicio.MinDate = new System.DateTime(2018, 6, 14, 0, 0, 0, 0);
             this.dtFechaInicio.Name = "dtFechaInicio";
             this.dtFechaInicio.Size = new System.Drawing.Size(200, 22);
             this.dtFechaInicio.TabIndex = 2;
@@ -368,15 +385,6 @@
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 24);
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
@@ -386,22 +394,6 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtCantidadSeleccionados
-            // 
-            this.txtCantidadSeleccionados.Location = new System.Drawing.Point(714, 293);
-            this.txtCantidadSeleccionados.Name = "txtCantidadSeleccionados";
-            this.txtCantidadSeleccionados.Size = new System.Drawing.Size(59, 22);
-            this.txtCantidadSeleccionados.TabIndex = 70;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(511, 296);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(184, 17);
-            this.label10.TabIndex = 71;
-            this.label10.Text = "Cantidad de Seleccionados:";
-            // 
             // btnActualizar
             // 
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
@@ -410,6 +402,15 @@
             this.btnActualizar.Size = new System.Drawing.Size(99, 24);
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 24);
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // CoordinadorComunicaciones
             // 

@@ -18,6 +18,7 @@ namespace Vista
         private CandidatoBL candidatoBL;
         private Candidato candidato;
         private bool actualizar;
+        private bool buscar;
         public frmGestionarCandidatos()
         {
             candidatoBL = new CandidatoBL();
@@ -86,8 +87,8 @@ namespace Vista
             listaNula.Add("");
             listaNula.Add("");
             frmBuscarConvocatoria frmBuscarConvocatoria = new frmBuscarConvocatoria(listaNula, false);
-            
-            if(frmBuscarConvocatoria.ShowDialog() == DialogResult.OK)
+
+            if (frmBuscarConvocatoria.ShowDialog() == DialogResult.OK)
             {
                 convocatoria = frmBuscarConvocatoria.ConvocatoriaSeleccionada;
                 txtIdConvocatoria.Text = frmBuscarConvocatoria.ConvocatoriaSeleccionada.IdConvocatoria.ToString();
@@ -160,9 +161,12 @@ namespace Vista
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            BuscarCandidato buscarPersona = new BuscarCandidato(convocatoria,true);
-            if (buscarPersona.ShowDialog() == DialogResult.OK) {
+            BuscarCandidato buscarPersona = new BuscarCandidato(convocatoria, true);
+            if (buscarPersona.ShowDialog() == DialogResult.OK)
+            {
                 Candidato persona = buscarPersona.CandidatoSeleccionado;
+                this.candidato = persona;
+                buscar = true;
                 txtApellidos.Text = persona.Apellidos;
                 txtCodigoPUCP.Text = persona.CodigoPUCP.ToString();
                 txtCorreoAlternativo.Text = persona.CorreoAlternativo;
@@ -195,8 +199,37 @@ namespace Vista
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (txtApellidos.Text == "" || txtCodigoPUCP.Text == "" || txtCorreoPUCP.Text == "" || txtDNI.Text == "" || txtEdad.Text == "" || (!rbFemenino.Checked && !rbMasculino.Checked) || txtNombres.Text == "" || dtFechaNacimiento.Text == "" || txtTelefonoMovil.Text == "")
+            {
+                MessageBox.Show("Falta completar información", "Datos Incompletos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            int cantidad;
+            if (!Int32.TryParse(txtCodigoPUCP.Text, out cantidad))
+            {
+                MessageBox.Show("Debe ingresar un número en el campo Código PUCP", "Error en formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!Int32.TryParse(txtDNI.Text, out cantidad))
+            {
+                MessageBox.Show("Debe ingresar un número en el campo DNI", "Error en formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!Int32.TryParse(txtEdad.Text, out cantidad))
+            {
+                MessageBox.Show("Debe ingresar un número en el campo Edad", "Error en formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (chFueSeleccionado.Checked && !chPostulo.Checked)
+            {
+                MessageBox.Show("El candidato no puede haber sido seleccionado sin postular", "Inconsistencia en la Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
             Candidato candidato = new Candidato();
-            if (actualizar == true) candidato = this.candidato;
+            if (actualizar == true || buscar == true) candidato = this.candidato;
             candidato.Apellidos = txtApellidos.Text;
             candidato.CodigoPUCP = Int32.Parse(txtCodigoPUCP.Text);
             candidato.CorreoAlternativo = txtCorreoAlternativo.Text;
@@ -227,13 +260,13 @@ namespace Vista
                 else
                 {
                     candidato.Id_persona = Int32.Parse(txtIdCandidato.Text);
-                    candidatoBL.insertarCandidatoAntiguo(candidato,convocatoria.IdConvocatoria);
+                    candidatoBL.insertarCandidatoAntiguo(candidato, convocatoria.IdConvocatoria);
                 }
 
                 MessageBox.Show("El candidato se ha registrado con éxito", "Registro Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            if(actualizar == true)
+            if (actualizar == true)
             {
                 if (convocatoria.FechaFin < DateTime.Today)
                 {
@@ -279,8 +312,9 @@ namespace Vista
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             BuscarCandidato buscarCandidato = new BuscarCandidato(convocatoria);
-            if(buscarCandidato.ShowDialog() == DialogResult.OK)
+            if (buscarCandidato.ShowDialog() == DialogResult.OK)
             {
+                btnBuscarConvocatoria.Enabled = false;
                 Candidato persona = buscarCandidato.CandidatoSeleccionado;
                 candidato = buscarCandidato.CandidatoSeleccionado;
                 txtApellidos.Text = persona.Apellidos;
@@ -328,7 +362,8 @@ namespace Vista
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             actualizar = true;
-
+            btnBuscarConvocatoria.Enabled = false;
+            btnBuscarCandidato.Enabled = false;
             if (convocatoria.FechaFin < DateTime.Today)
             {
                 txtApellidos.Enabled = false;

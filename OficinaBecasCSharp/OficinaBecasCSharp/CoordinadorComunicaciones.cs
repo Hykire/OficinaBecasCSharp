@@ -23,8 +23,8 @@ namespace Vista
             InitializeComponent();
             convocatoriaBL = new ConvocatoriaBL();
             asistente = new AsistenteComunicaciones();
-            asistente.Nombres = "Ariana";
-            asistente.Apellidos = "Grande";
+            asistente.Nombres = "ADRIAN";
+            asistente.Apellidos = "LECAROS";
             asistente.IdAsistente = 1;
             cbCicloConvocatoria.DataSource = agregarCiclos(DateTime.Today);
             txtIdConvocatoria.Enabled = false;
@@ -52,14 +52,14 @@ namespace Vista
         public BindingList<string> agregarCiclos(DateTime fecha)
         {
             BindingList<string> ciclos = new BindingList<string>();
-            if (fecha.Month < 7)
+            if (fecha.Month >= 7)
             {
-                ciclos.Add(fecha.Year.ToString() + "-" + "1");
-                ciclos.Add(fecha.Year.ToString() + "-" + "2");
+                ciclos.Add((fecha.Year + 1).ToString() + "-" + "1");
+                ciclos.Add((fecha.Year + 1).ToString() + "-" + "2");
             }
             else
             {
-                ciclos.Add(fecha.Year.ToString() + "-" + "2");
+                ciclos.Add((fecha.Year).ToString() + "-" + "2");
                 ciclos.Add((fecha.Year + 1).ToString() + "-" + "1");
             }
             return ciclos;
@@ -81,6 +81,7 @@ namespace Vista
             cbCicloConvocatoria.Text = null;
             txtBecaAsociada.Text = null;
             actualizar = false;
+            cbCicloConvocatoria.Text = " - Seleccione - ";
         }
 
         private void btnBeca_Click(object sender, EventArgs e)
@@ -89,7 +90,7 @@ namespace Vista
             beca.Visible = true;
         }
 
-        
+
 
         private void CoordinadorComunicaciones_Load(object sender, EventArgs e)
         {
@@ -123,10 +124,10 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frmBuscarConvocatoria convocatoria = new frmBuscarConvocatoria(agregarCiclos(DateTime.Today),true);
+            frmBuscarConvocatoria convocatoria = new frmBuscarConvocatoria(agregarCiclos(DateTime.Today), true);
             convocatoria.Owner = this;
             actualizar = false;
-            if(convocatoria.ShowDialog() == DialogResult.OK)
+            if (convocatoria.ShowDialog() == DialogResult.OK)
             {
                 txtIdConvocatoria.Text = convocatoria.ConvocatoriaSeleccionada.IdConvocatoria.ToString();
                 txtNombreConvocatoria.Text = convocatoria.ConvocatoriaSeleccionada.NombreConvocatoria;
@@ -144,7 +145,7 @@ namespace Vista
                 beca = convocatoria.ConvocatoriaSeleccionada.BecaAsociada;
                 asistente = convocatoria.ConvocatoriaSeleccionada.CreadorConvocatoria;
             }
-            if(txtIdConvocatoria.Text == "")
+            if (txtIdConvocatoria.Text == "")
             {
                 MessageBox.Show("No se ha seleccionado registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtIdConvocatoria.Enabled = false;
@@ -226,11 +227,18 @@ namespace Vista
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(txtNombreConvocatoria.Text == "" || txtDescripcionConvocatoria.Text == "" || txtCantidadCandidatosPrevistos.Text == "" || txtCantidadPostulantes.Text == "" || txtTotalCandidatos.Text == "" || cbCicloConvocatoria.Text == "" || txtBecaAsociada.Text == "")
+            if (txtNombreConvocatoria.Text == "" || txtDescripcionConvocatoria.Text == "" || txtCantidadCandidatosPrevistos.Text == "" || txtCantidadPostulantes.Text == "" || txtTotalCandidatos.Text == "" || cbCicloConvocatoria.Text == "" || txtBecaAsociada.Text == "")
             {
-                MessageBox.Show("No se ha ingresado información en todos los campos", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se ha ingresado información en todos los campos", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            int cantidad;
+            if (!Int32.TryParse(txtCantidadCandidatosPrevistos.Text,out cantidad))
+            {
+                MessageBox.Show("Debe ingresar un número en el campo Candidatos Previstos", "Error en formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             Convocatoria convocatoria = new Convocatoria();
             convocatoria.NombreConvocatoria = txtNombreConvocatoria.Text;
             convocatoria.DescripcionConvocatoria = txtDescripcionConvocatoria.Text;
@@ -257,7 +265,7 @@ namespace Vista
                 txtIdConvocatoria.Text = convocatoriaBL.agregarConvocatoria(convocatoria).ToString();
                 MessageBox.Show("Se ha agregado el registro de manera exitosa", "Registro Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+
 
             txtIdConvocatoria.Enabled = false;
             txtNombreConvocatoria.Enabled = false;
@@ -284,7 +292,7 @@ namespace Vista
         {
             BuscarBeca buscarBeca = new BuscarBeca();
             buscarBeca.Owner = this;
-            if(buscarBeca.ShowDialog() == DialogResult.OK)
+            if (buscarBeca.ShowDialog() == DialogResult.OK)
             {
                 txtBecaAsociada.Text = buscarBeca.BecaSeleccionada.Nombre_beca;
                 beca = buscarBeca.BecaSeleccionada;
@@ -309,6 +317,11 @@ namespace Vista
             btnBeca.Enabled = true;
             btnActualizar.Enabled = false;
             actualizar = true;
+        }
+
+        private void cbCicloConvocatoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

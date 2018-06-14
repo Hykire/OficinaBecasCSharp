@@ -31,6 +31,7 @@ namespace Vista
             cbSexo.Items.Add(bec);
 
             cbEspecialidad.Items.Add(bec);
+            btnDescargarEmails.Visible = false;
         }
 
         private void btnBuscarCorreos_Click(object sender, EventArgs e) {
