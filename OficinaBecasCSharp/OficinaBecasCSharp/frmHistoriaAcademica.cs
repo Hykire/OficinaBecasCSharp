@@ -154,55 +154,64 @@ namespace Vista
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            HistoriaAcademica h = new HistoriaAcademica();
-            if (flag_elementoEditar == 1) { h.Id_historia_academica = Int32.Parse(tbox_id_historia_academica.Text); }
-
-            h.Id_becado = id_becado;
-            h.Ciclo = cbox_ciclo_nuevo1.Text + "-" + cbox_ciclo_nuevo2.Text;
-            h.Ultimo_ciclom = cbox_ultimociclo1.Text + "-" + cbox_ultimociclo2.Text;
-
-            h.Id_especialidad_actual = ((Especialidad)cbox_especialidad.SelectedItem).Id_especialidad;
-            h.Id_facultad_actual = ((Especialidad)cbox_especialidad.SelectedItem).Facultad.Id_facultad;
-
-            h.Craest = Double.Parse(tbox_craest.Text, CultureInfo.InvariantCulture);
-            h.Orden = Double.Parse(tbox_ordenmerito.Text, CultureInfo.InvariantCulture);
-            h.Ncm = Int32.Parse(tbox_nciclos.Text);
-            h.Etapa = cbox_etapa.Text;
-            h.Crpe = Double.Parse(tbox_creditosrestantes.Text, CultureInfo.InvariantCulture);
-            h.Ncur_msr = Int32.Parse(tbox_ncursosSR.Text);
-            h.Ncur_r = Int32.Parse(tbox_ncursosR.Text);
-            h.Ncre_msr = Double.Parse(tbox_creditosSR.Text, CultureInfo.InvariantCulture);
-            h.Ncre_mr = Double.Parse(tbox_creditosR.Text, CultureInfo.InvariantCulture);
-            h.Ncre_1 = Double.Parse(tbox_ncreditos1.Text, CultureInfo.InvariantCulture);
-            h.Ncre_2 = Double.Parse(tbox_ncreditos2.Text, CultureInfo.InvariantCulture);
-            h.Ncre_3 = Double.Parse(tbox_ncreditos3.Text, CultureInfo.InvariantCulture);
-            h.Ncre_4 = Double.Parse(tbox_ncreditos4.Text, CultureInfo.InvariantCulture);
-            h.Cahn = Double.Parse(tbox_cahn.Text, CultureInfo.InvariantCulture);
-            h.Tcac = Double.Parse(tbox_tcac.Text, CultureInfo.InvariantCulture);
-            h.Cdh = Double.Parse(tbox_cdh.Text, CultureInfo.InvariantCulture);
-            h.Cur = Double.Parse(tbox_cur.Text, CultureInfo.InvariantCulture);
-            h.Cac = Double.Parse(tbox_cac.Text, CultureInfo.InvariantCulture);
-            h.Cr = Double.Parse(tbox_cr.Text, CultureInfo.InvariantCulture);
-            h.Cah_exi = Double.Parse(tbox_cah_exi.Text, CultureInfo.InvariantCulture);
-            h.Cah_exo = Double.Parse(tbox_cah_exo.Text, CultureInfo.InvariantCulture);
-            h.Cah_con = Double.Parse(tbox_cah_con.Text, CultureInfo.InvariantCulture);
-            h.Ncre_rh = Double.Parse(tbox_ncre_rh.Text, CultureInfo.InvariantCulture);
-
-            estadoComponentes(Estado.Deshabilitado);
-            if (flag_elementoNuevo == 1)
+            if (validar())
             {
-                flag_elementoNuevo = 0;
-                logicaNegoHistoria.registrarHistoriaAcademica(h);
-                MessageBox.Show("Se ha registrado un nuevo alumno con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            if (flag_elementoEditar == 1)
-            {
-                flag_elementoEditar = 0;
-                logicaNegoHistoria.actualizarHistoriaAcademica(h);
-                MessageBox.Show("Se ha actualizado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                HistoriaAcademica h = new HistoriaAcademica();
+                if (flag_elementoEditar == 1) { h.Id_historia_academica = Int32.Parse(tbox_id_historia_academica.Text); }
 
-            btnGuardar.Enabled = false;
+                h.Id_becado = id_becado;
+                h.Ciclo = cbox_ciclo_nuevo1.Text + "-" + cbox_ciclo_nuevo2.Text;
+                h.Ultimo_ciclom = cbox_ultimociclo1.Text + "-" + cbox_ultimociclo2.Text;
+
+                h.Id_especialidad_actual = ((Especialidad)cbox_especialidad.SelectedItem).Id_especialidad;
+                h.Id_facultad_actual = ((Especialidad)cbox_especialidad.SelectedItem).Facultad.Id_facultad;
+
+                h.Craest = Double.Parse(tbox_craest.Text, CultureInfo.InvariantCulture);
+                h.Orden = Double.Parse(tbox_ordenmerito.Text, CultureInfo.InvariantCulture);
+                h.Ncm = Int32.Parse(tbox_nciclos.Text);
+                h.Etapa = cbox_etapa.Text;
+                h.Crpe = Double.Parse(tbox_creditosrestantes.Text, CultureInfo.InvariantCulture);
+                h.Ncur_msr = Int32.Parse(tbox_ncursosSR.Text);
+                h.Ncur_r = Int32.Parse(tbox_ncursosR.Text);
+                h.Ncre_msr = Double.Parse(tbox_creditosSR.Text, CultureInfo.InvariantCulture);
+                h.Ncre_mr = Double.Parse(tbox_creditosR.Text, CultureInfo.InvariantCulture);
+                h.Ncre_1 = Double.Parse(tbox_ncreditos1.Text, CultureInfo.InvariantCulture);
+                h.Ncre_2 = Double.Parse(tbox_ncreditos2.Text, CultureInfo.InvariantCulture);
+                h.Ncre_3 = Double.Parse(tbox_ncreditos3.Text, CultureInfo.InvariantCulture);
+                h.Ncre_4 = Double.Parse(tbox_ncreditos4.Text, CultureInfo.InvariantCulture);
+                h.Cahn = Double.Parse(tbox_cahn.Text, CultureInfo.InvariantCulture);
+                h.Tcac = Double.Parse(tbox_tcac.Text, CultureInfo.InvariantCulture);
+                h.Cdh = Double.Parse(tbox_cdh.Text, CultureInfo.InvariantCulture);
+                h.Cur = Double.Parse(tbox_cur.Text, CultureInfo.InvariantCulture);
+                h.Cac = Double.Parse(tbox_cac.Text, CultureInfo.InvariantCulture);
+                h.Cr = Double.Parse(tbox_cr.Text, CultureInfo.InvariantCulture);
+                h.Cah_exi = Double.Parse(tbox_cah_exi.Text, CultureInfo.InvariantCulture);
+                h.Cah_exo = Double.Parse(tbox_cah_exo.Text, CultureInfo.InvariantCulture);
+                h.Cah_con = Double.Parse(tbox_cah_con.Text, CultureInfo.InvariantCulture);
+                h.Ncre_rh = Double.Parse(tbox_ncre_rh.Text, CultureInfo.InvariantCulture);
+
+                estadoComponentes(Estado.Deshabilitado);
+                if (flag_elementoNuevo == 1)
+                {
+                    flag_elementoNuevo = 0;
+                    logicaNegoHistoria.registrarHistoriaAcademica(h);
+                    MessageBox.Show("Se ha registrado un nuevo alumno con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                if (flag_elementoEditar == 1)
+                {
+                    flag_elementoEditar = 0;
+                    logicaNegoHistoria.actualizarHistoriaAcademica(h);
+                    MessageBox.Show("Se ha actualizado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                //se listará los ciclos nuevamente con la informacion actualizada
+                logicaNegoHistoria = new HistoriaAcademicaBL();
+                BindingList<HistoriaAcademica> listaCiclo = logicaNegoHistoria.buscarHistoriaAcademica(id_becado);
+                cbox_ciclo.DataSource = listaCiclo;
+                cbox_ciclo.Sorted = false;
+
+                btnGuardar.Enabled = false;
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -314,6 +323,70 @@ namespace Vista
                 //habilitamos el boton de editar
                 btnEditar.Enabled = true;
             }
+        }
+
+        private bool validar()
+        {
+            BindingList<int> validacion = new BindingList<int>();
+            double r_a;
+
+            if (cbox_ciclo_nuevo1.Text == "") { validacion.Add(1); }
+            if (cbox_ciclo_nuevo2.Text == "") { validacion.Add(1); }
+            if (cbox_ultimociclo1.Text == "") { validacion.Add(2); }
+            if (cbox_ultimociclo2.Text == "") { validacion.Add(2); }
+            if (double.TryParse(tbox_craest.Text, NumberStyles.Any,CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(3); }
+            if (double.TryParse(tbox_ordenmerito.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(4); }
+            if (int.TryParse(tbox_nciclos.Text, out int result_3) == false) { validacion.Add(5); }
+            if (cbox_etapa.Text == "") { validacion.Add(6); }
+            if (double.TryParse(tbox_creditosrestantes.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(7); }
+            if (int.TryParse(tbox_ncursosSR.Text, out int result_5) == false) { validacion.Add(8); }
+            if (int.TryParse(tbox_ncursosR.Text, out int result_6) == false) { validacion.Add(9); }
+            if (double.TryParse(tbox_creditosSR.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(10); }
+            if (double.TryParse(tbox_creditosR.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(11); }
+            if (double.TryParse(tbox_ncreditos1.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(12); }
+            if (double.TryParse(tbox_ncreditos2.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(13); }
+            if (double.TryParse(tbox_ncreditos3.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(14); }
+            if (double.TryParse(tbox_ncreditos4.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(15); }
+            if (double.TryParse(tbox_cahn.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(16); }
+            if (double.TryParse(tbox_cac.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(17); }
+            if (double.TryParse(tbox_cdh.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(18); }
+            if (double.TryParse(tbox_cur.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(19); }
+            if (double.TryParse(tbox_cac.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(20); }
+            if (double.TryParse(tbox_cr.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(21); }
+            if (double.TryParse(tbox_cah_exi.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(22); }
+            if (double.TryParse(tbox_cah_exo.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(23); }
+            if (double.TryParse(tbox_cah_con.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(24); }
+            if (double.TryParse(tbox_ncre_rh.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(25); }
+
+            foreach (int i in validacion)
+            {
+                if (i == 1) { MessageBox.Show("Debe ingresar un ciclo valido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 2) { MessageBox.Show("Debe ingresar un último ciclo valido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 3) { MessageBox.Show("Debe ingresar un número de craest válido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 4) { MessageBox.Show("Debe ingresar un orden de merito válido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 5) { MessageBox.Show("Debe ingresar un numero de ciclos válido. Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 6) { MessageBox.Show("Debe ingresar una etapa.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 7) { MessageBox.Show("Debe ingresar un número de creditos restantes válido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 8)  { MessageBox.Show("Debe ingresar un numero válido en Nro de Cursos Matriculados sin Retirados. Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 9)  { MessageBox.Show("Debe ingresar un numero válido en Nro de Cursos Retirados. Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 10) { MessageBox.Show("Debe ingresar un numero válido en Nro de Créditos Matriculados sin Retirados.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 11) { MessageBox.Show("Debe ingresar un número válido en Nro de Créditos Matriculados Retirados.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 12) { MessageBox.Show("Debe ingresar un número válido en Nro de Créditos llevados por 1era vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 13) { MessageBox.Show("Debe ingresar un número válido en Nro de Créditos llevados por 2da vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 14) { MessageBox.Show("Debe ingresar un número válido en Nro de Créditos llevados por 3era vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 15) { MessageBox.Show("Debe ingresar un número válido en Nro de Créditos llevados por 4ta vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 16) { MessageBox.Show("Debe ingresar un número válido en Créditos Aprobados Historicos Normal.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 17) { MessageBox.Show("Debe ingresar un número válido en Total de Créditos Aprobados Convalidados.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 18) { MessageBox.Show("Debe ingresar un número válido en Créditos Desaprobados Histórico.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 19) { MessageBox.Show("Debe ingresar un número válido en Créditos usados para Reconocer.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 20) { MessageBox.Show("Debe ingresar un número válido en Créditos Aprobados Consorcio.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 21) { MessageBox.Show("Debe ingresar un número válido en Créditos Reconocidos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 22) { MessageBox.Show("Debe ingresar un número válido en Créditos Aprobados Históricos Eximidos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 23) { MessageBox.Show("Debe ingresar un número válido en Créditos Aprobados Históricos Exonerados.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 24) { MessageBox.Show("Debe ingresar un número válido en Créditos Aprobados Históricos Convalidados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 25) { MessageBox.Show("Debe ingresar un número válido en Nro. de Créditos Retirados Históricos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+            }
+            return true;
         }
     }
 }

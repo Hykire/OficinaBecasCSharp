@@ -95,6 +95,14 @@ namespace Vista
 
             logicanegocioPersona = new PersonaBL();
             logicanegocioUsuario = new UsuarioBL();
+
+            //se desabilitan los campos y se limpia
+            estadoComponentes(Estado.Deshabilitado);
+            limpiarComponentes();
+
+            //se bloquean los botones
+            btnNuevo.Enabled = true; btnCancelar.Enabled = true; btnBuscar.Enabled = true;
+            btnGuardar.Enabled = false; btnEditar.Enabled = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

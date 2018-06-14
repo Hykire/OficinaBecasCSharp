@@ -40,7 +40,7 @@ namespace Vista
                     tbox_fijo.Enabled = false;
                     tbox_movil.Enabled = false;
                     tbox_nombres.Enabled = false;
-                    tbox_paisN.Enabled = false;
+                    cbox_paisN.Enabled = false;
                     tbox_provincia.Enabled = false;
 
                     rbutton_femenino.Enabled = false;
@@ -73,7 +73,7 @@ namespace Vista
                     tbox_fijo.Enabled = true;
                     tbox_movil.Enabled = true;
                     tbox_nombres.Enabled = true;
-                    tbox_paisN.Enabled = true;
+                    cbox_paisN.Enabled = true;
                     tbox_provincia.Enabled = true;
 
                     rbutton_femenino.Enabled = true;
@@ -108,7 +108,7 @@ namespace Vista
             tbox_fijo.Text = "";
             tbox_movil.Text = "";
             tbox_nombres.Text = "";
-            tbox_paisN.Text = "";
+            cbox_paisN.SelectedIndex = -1;
             tbox_provincia.Text = "";
 
             rbutton_femenino.Checked = false;
@@ -190,7 +190,7 @@ namespace Vista
             a.Provincia_nacimiento = tbox_provinciaN.Text;
             a.Departamento_actual = cbox_departamento.Text;
             a.Departamento_nacimiento = cbox_departamentoN.Text;
-            a.Pais_nacimiento = tbox_paisN.Text;
+            a.Pais_nacimiento = cbox_paisN.Text;
             a.Fecha_nacimiento = DateTime.Parse(dt_fechanacimiento.Text);
             a.Estado = cbox_estado.Text;
 
@@ -249,7 +249,7 @@ namespace Vista
                 tbox_distritoN.Text = formBAlumno.AlumnoSeleccionado.Distrito_nacimiento;
                 tbox_provinciaN.Text = formBAlumno.AlumnoSeleccionado.Provincia_nacimiento;
                 cbox_departamentoN.Text = formBAlumno.AlumnoSeleccionado.Departamento_nacimiento;
-                tbox_paisN.Text = formBAlumno.AlumnoSeleccionado.Pais_nacimiento;
+                cbox_paisN.Text = formBAlumno.AlumnoSeleccionado.Pais_nacimiento;
                 cbox_tipogrupo.Text = formBAlumno.AlumnoSeleccionado.Tipo_grupo;
                 tbox_movil.Text = formBAlumno.AlumnoSeleccionado.TelfMovil;
                 tbox_fijo.Text = formBAlumno.AlumnoSeleccionado.TelfFijo;
@@ -314,6 +314,90 @@ namespace Vista
         private void dt_fechanacimiento_ValueChanged(object sender, EventArgs e)
         {
             tbox_edad.Text = calcular_edad().ToString();
+        }
+
+        private bool validar()
+        {
+            BindingList<int> validaciones = new BindingList<int>();
+            bool flag = false;
+
+            //validacion de codigo
+            if (tbox_codigo.Text == "") { validaciones.Add(1); }
+            else if (tbox_codigo.Text.Length != 8) { validaciones.Add(2); }
+            else if (int.TryParse(tbox_codigo.Text, out int result) == false) { validaciones.Add(3); }
+
+            //validacion de nombres
+            if (tbox_nombres.Text == "") { validaciones.Add(4); }
+            else if (tbox_nombres.Text.Any(char.IsDigit) == true) { validaciones.Add(5); }
+            if (tbox_apellidos.Text == "") { validaciones.Add(6); }
+            else if (tbox_apellidos.Text.Any(char.IsDigit) == true) { validaciones.Add(7); }
+            //validacion de genero
+            if (rbutton_femenino.Checked == false && rbutton_masculino.Checked == false) { validaciones.Add(8); }
+            //validacion de dni
+            if (tbox_dni.Text == "") { validaciones.Add(9); }
+            else if (tbox_dni.Text.Length != 8) { validaciones.Add(10); }
+            else if (int.TryParse(tbox_dni.Text, out int result_2) == false) { validaciones.Add(11); }
+            //validacion de edad
+            if (tbox_edad.Text == "") { validaciones.Add(12); }
+            //validad de correo pucp
+            if (tbox_correopucp.Text == "") { validaciones.Add(13); }
+            else if (tbox_correopucp.Text.Contains("@") == false) { validaciones.Add(14); }
+            //validacion de correo alternativo
+            if (tbox_correoalternativo.Text == "") { }
+            else if (tbox_correoalternativo.Text.Contains("@") == false) { validaciones.Add(15); }
+
+            //validacion de ciclo
+            if (cbox_ciclo1.Text == "") { validaciones.Add(16); }
+            if (cbox_ciclo2.Text == "") { validaciones.Add(17); }
+            // validacion de la especialidad
+            if (cbox_especialidad.Text == "") { validaciones.Add(18); }
+            // validacion del tipo de grupo
+            if (cbox_tipogrupo.Text == "") { validaciones.Add(19); }
+
+            foreach (int i in validaciones)
+            {
+                if (i == 1) { MessageBox.Show("Debe ingresar un codigo.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 2) { MessageBox.Show("El codigo ingresado no es de 8 dígitos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 3) { MessageBox.Show("El codigo ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+
+                if (i == 4) { MessageBox.Show("Debe ingresar por lo menos un nombre.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 5) { MessageBox.Show("Los nombres ingresados cuentan con caracteres numéricos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 6) { MessageBox.Show("Debe ingresar por lo menos un apellido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 7) { MessageBox.Show("Los apellidos ingresados cuentan con caracteres numéricos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+
+                if (i == 8) { MessageBox.Show("Debe seleccionar un genero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 9) { MessageBox.Show("Debe ingresar un dni.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 10) { MessageBox.Show("El dni ingresado no es de 8 dígitos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 11) { MessageBox.Show("El dni ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+
+                if (i == 12) { MessageBox.Show("Debe ingresar una fecha de nacimiento.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+
+                if (i == 13) { MessageBox.Show("Debe ingresar el correo pucp.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 14) { MessageBox.Show("El correo pucp ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 15) { MessageBox.Show("El correo alternativo ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+
+                if (i == 16) { MessageBox.Show("Debe ingresar un año de ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 17) { MessageBox.Show("Debe ingresar un semestre ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 18) { MessageBox.Show("Debe ingresar una especialidad de ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 19) { MessageBox.Show("Debe ingresar un tipo de grupo de ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                flag = true;
+            }
+            return true;
+        }
+        private void relleno()
+        {
+            if (tbox_fijo.Text == "") tbox_fijo.Text = "--";
+            if (tbox_movil.Text == "") tbox_movil.Text = "--";
+
+            if (tbox_direccion.Text == "") tbox_direccion.Text = "--";
+            if (cbox_departamento.Text == "") cbox_departamento.Text = "--";
+            if (cbox_distrito.Text == "") cbox_distrito.Text = "--";
+            if (tbox_provincia.Text == "") tbox_provincia.Text = "--";
+
+            if (cbox_paisN.Text == "") cbox_paisN.Text = "--";
+            if (cbox_departamentoN.Text == "") cbox_departamentoN.Text = "--";
+            if (tbox_distritoN.Text == "") tbox_distritoN.Text = "--";
+            if (tbox_provinciaN.Text == "") tbox_provinciaN.Text = "--";
         }
     }
 }

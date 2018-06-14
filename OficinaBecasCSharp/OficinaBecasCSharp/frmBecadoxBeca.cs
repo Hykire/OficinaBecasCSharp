@@ -214,6 +214,12 @@ namespace Vista
             estadoComponentes(Estado.Habilitado);
             limpiarComponentes();
             flag_elementoNuevo = 1;
+
+            //se vuelve a cargar las becas por si se agregaron mas en el proceso
+            //cargamos el combo box de beca
+            BecaBL logicaNegoBeca = new BecaBL();
+            cbox_beca.DataSource = logicaNegoBeca.listar_Beca();
+            cbox_beca.Sorted = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -462,6 +468,39 @@ namespace Vista
                 cbox_escalapago1.Visible = false;
                 cbox_escalapago2.Visible = true;
             }
+        }
+
+        private bool validar()
+        {
+            BindingList<int> validacion = new BindingList<int>();
+            double r_a;
+            int r_b;
+            if (cbox_ciclo_nuevo1.Text == "") { validacion.Add(1); }
+            if (cbox_ciclo_nuevo2.Text == "") { validacion.Add(1); }
+            if (cbox_escalapago1.Text == "") { validacion.Add(2); }
+            if (cbox_escalapago2.Text == "") { validacion.Add(3); }
+            if (cbox_nivelcreditos.Text == "") { validacion.Add(4); }
+            if (double.TryParse(tbox_cubiertos.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(5); }
+            if (double.TryParse(tbox_utilizados.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(6); }
+            if (double.TryParse(tbox_restantes.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(7); }
+            if (int.TryParse(tbox_nregularC.Text, out r_b) == false) { validacion.Add(8); }
+            if (int.TryParse(tbox_nveranoC.Text, out r_b) == false) { validacion.Add(9); }
+            if (int.TryParse(tbox_nregularesRC.Text, out r_b) == false) { validacion.Add(10); }
+
+            foreach(int i in validacion)
+            {
+                if (i == 1) { MessageBox.Show("Debe ingresar un ciclo valido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 2) { MessageBox.Show("Debe ingresar un tipo de escala.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 3) { MessageBox.Show("Debe ingresar un número de escala.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 4) { MessageBox.Show("Debe ingresar un nivel de créditos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 5) { MessageBox.Show("Debe ingresar un número válido en Nro. de Créditos Cubiertos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 6) { MessageBox.Show("Debe ingresar un número válido en Nro. de Créditos Utilizados.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 7) { MessageBox.Show("Debe ingresar un número válido en Nro. de Créditos Restantes.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 8) { MessageBox.Show("Debe ingresar un número válido en Nro. de Semestre Regular con Cobertura.  Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 9) { MessageBox.Show("Debe ingresar un número válido en Nro. de Semestre de Verano con Cobertura.  Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 10) { MessageBox.Show("Debe ingresar un número válido en Nro. de Semestres Regulares Restantes con Cobertura.  Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+            }
+            return true;
         }
     }
 }

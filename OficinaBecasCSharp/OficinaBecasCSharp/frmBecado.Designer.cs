@@ -42,8 +42,8 @@
             this.label_facultad = new System.Windows.Forms.Label();
             this.label_cicloI = new System.Windows.Forms.Label();
             this.gbox_datosNacimiento = new System.Windows.Forms.GroupBox();
+            this.cbox_paisN = new System.Windows.Forms.ComboBox();
             this.label_paisN = new System.Windows.Forms.Label();
-            this.tbox_paisN = new System.Windows.Forms.TextBox();
             this.cbox_departamentoN = new System.Windows.Forms.ComboBox();
             this.label_fechaNacimiento = new System.Windows.Forms.Label();
             this.dt_fechanacimiento = new System.Windows.Forms.DateTimePicker();
@@ -110,18 +110,18 @@
             this.panel_Alumno.Controls.Add(this.gbox_datosNacimiento);
             this.panel_Alumno.Controls.Add(this.gbox_datosLocalidad);
             this.panel_Alumno.Controls.Add(this.gbox_datosGenerales);
-            this.panel_Alumno.Location = new System.Drawing.Point(24, 28);
+            this.panel_Alumno.Location = new System.Drawing.Point(12, 28);
             this.panel_Alumno.Name = "panel_Alumno";
-            this.panel_Alumno.Size = new System.Drawing.Size(799, 525);
+            this.panel_Alumno.Size = new System.Drawing.Size(740, 525);
             this.panel_Alumno.TabIndex = 0;
             // 
             // btn_historiaacademica
             // 
-            this.btn_historiaacademica.Location = new System.Drawing.Point(582, 415);
+            this.btn_historiaacademica.Location = new System.Drawing.Point(621, 352);
             this.btn_historiaacademica.Name = "btn_historiaacademica";
             this.btn_historiaacademica.Size = new System.Drawing.Size(106, 23);
             this.btn_historiaacademica.TabIndex = 17;
-            this.btn_historiaacademica.Text = "Historia Academica";
+            this.btn_historiaacademica.Text = "Historia Académica";
             this.btn_historiaacademica.UseVisualStyleBackColor = true;
             this.btn_historiaacademica.Click += new System.EventHandler(this.btn_historiaacademica_Click);
             // 
@@ -136,9 +136,9 @@
             this.gbox_datosIngreso.Controls.Add(this.label_especialidad);
             this.gbox_datosIngreso.Controls.Add(this.label_facultad);
             this.gbox_datosIngreso.Controls.Add(this.label_cicloI);
-            this.gbox_datosIngreso.Location = new System.Drawing.Point(35, 360);
+            this.gbox_datosIngreso.Location = new System.Drawing.Point(20, 344);
             this.gbox_datosIngreso.Name = "gbox_datosIngreso";
-            this.gbox_datosIngreso.Size = new System.Drawing.Size(350, 147);
+            this.gbox_datosIngreso.Size = new System.Drawing.Size(340, 147);
             this.gbox_datosIngreso.TabIndex = 16;
             this.gbox_datosIngreso.TabStop = false;
             this.gbox_datosIngreso.Text = "Datos de Ingreso";
@@ -153,7 +153,7 @@
             "PRIMERA OPCIÓN",
             "TALENTO",
             "TERCIO SUPERIOR"});
-            this.cbox_tipogrupo.Location = new System.Drawing.Point(123, 107);
+            this.cbox_tipogrupo.Location = new System.Drawing.Point(120, 107);
             this.cbox_tipogrupo.Name = "cbox_tipogrupo";
             this.cbox_tipogrupo.Size = new System.Drawing.Size(200, 21);
             this.cbox_tipogrupo.Sorted = true;
@@ -166,7 +166,7 @@
             "0",
             "1",
             "2"});
-            this.cbox_ciclo2.Location = new System.Drawing.Point(201, 26);
+            this.cbox_ciclo2.Location = new System.Drawing.Point(198, 26);
             this.cbox_ciclo2.Name = "cbox_ciclo2";
             this.cbox_ciclo2.Size = new System.Drawing.Size(34, 21);
             this.cbox_ciclo2.TabIndex = 34;
@@ -184,14 +184,14 @@
             "2016",
             "2017",
             "2018"});
-            this.cbox_ciclo1.Location = new System.Drawing.Point(123, 26);
+            this.cbox_ciclo1.Location = new System.Drawing.Point(120, 26);
             this.cbox_ciclo1.Name = "cbox_ciclo1";
             this.cbox_ciclo1.Size = new System.Drawing.Size(60, 21);
             this.cbox_ciclo1.TabIndex = 33;
             // 
             // tbox_facultad
             // 
-            this.tbox_facultad.Location = new System.Drawing.Point(123, 81);
+            this.tbox_facultad.Location = new System.Drawing.Point(120, 81);
             this.tbox_facultad.Name = "tbox_facultad";
             this.tbox_facultad.Size = new System.Drawing.Size(200, 20);
             this.tbox_facultad.TabIndex = 32;
@@ -199,7 +199,7 @@
             // cbox_especialidad
             // 
             this.cbox_especialidad.FormattingEnabled = true;
-            this.cbox_especialidad.Location = new System.Drawing.Point(123, 52);
+            this.cbox_especialidad.Location = new System.Drawing.Point(120, 52);
             this.cbox_especialidad.Name = "cbox_especialidad";
             this.cbox_especialidad.Size = new System.Drawing.Size(200, 21);
             this.cbox_especialidad.Sorted = true;
@@ -210,7 +210,7 @@
             // 
             this.label_tipogrupo.AutoSize = true;
             this.label_tipogrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_tipogrupo.Location = new System.Drawing.Point(21, 109);
+            this.label_tipogrupo.Location = new System.Drawing.Point(18, 109);
             this.label_tipogrupo.Name = "label_tipogrupo";
             this.label_tipogrupo.Size = new System.Drawing.Size(76, 13);
             this.label_tipogrupo.TabIndex = 29;
@@ -220,7 +220,7 @@
             // 
             this.label_especialidad.AutoSize = true;
             this.label_especialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_especialidad.Location = new System.Drawing.Point(21, 55);
+            this.label_especialidad.Location = new System.Drawing.Point(18, 55);
             this.label_especialidad.Name = "label_especialidad";
             this.label_especialidad.Size = new System.Drawing.Size(70, 13);
             this.label_especialidad.TabIndex = 26;
@@ -230,7 +230,7 @@
             // 
             this.label_facultad.AutoSize = true;
             this.label_facultad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_facultad.Location = new System.Drawing.Point(22, 84);
+            this.label_facultad.Location = new System.Drawing.Point(19, 84);
             this.label_facultad.Name = "label_facultad";
             this.label_facultad.Size = new System.Drawing.Size(51, 13);
             this.label_facultad.TabIndex = 24;
@@ -240,7 +240,7 @@
             // 
             this.label_cicloI.AutoSize = true;
             this.label_cicloI.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_cicloI.Location = new System.Drawing.Point(21, 29);
+            this.label_cicloI.Location = new System.Drawing.Point(18, 29);
             this.label_cicloI.Name = "label_cicloI";
             this.label_cicloI.Size = new System.Drawing.Size(33, 13);
             this.label_cicloI.TabIndex = 23;
@@ -248,8 +248,8 @@
             // 
             // gbox_datosNacimiento
             // 
+            this.gbox_datosNacimiento.Controls.Add(this.cbox_paisN);
             this.gbox_datosNacimiento.Controls.Add(this.label_paisN);
-            this.gbox_datosNacimiento.Controls.Add(this.tbox_paisN);
             this.gbox_datosNacimiento.Controls.Add(this.cbox_departamentoN);
             this.gbox_datosNacimiento.Controls.Add(this.label_fechaNacimiento);
             this.gbox_datosNacimiento.Controls.Add(this.dt_fechanacimiento);
@@ -258,30 +258,228 @@
             this.gbox_datosNacimiento.Controls.Add(this.label_departamentoN);
             this.gbox_datosNacimiento.Controls.Add(this.tbox_distritoN);
             this.gbox_datosNacimiento.Controls.Add(this.label_distritoN);
-            this.gbox_datosNacimiento.Location = new System.Drawing.Point(412, 176);
+            this.gbox_datosNacimiento.Location = new System.Drawing.Point(379, 166);
             this.gbox_datosNacimiento.Name = "gbox_datosNacimiento";
-            this.gbox_datosNacimiento.Size = new System.Drawing.Size(350, 172);
+            this.gbox_datosNacimiento.Size = new System.Drawing.Size(340, 172);
             this.gbox_datosNacimiento.TabIndex = 15;
             this.gbox_datosNacimiento.TabStop = false;
             this.gbox_datosNacimiento.Text = "Datos de Nacimiento";
+            // 
+            // cbox_paisN
+            // 
+            this.cbox_paisN.FormattingEnabled = true;
+            this.cbox_paisN.Items.AddRange(new object[] {
+            "AFGANISTÁN",
+            "ALBANIA",
+            "ALEMANIA",
+            "ANDORRA",
+            "ANGOLA",
+            "ANTIGUA Y BARBUDA",
+            "ARABIA SAUDITA",
+            "ARGELIA",
+            "ARGENTINA",
+            "ARMENIA",
+            "AUSTRALIA",
+            "AUSTRIA",
+            "AZERBAIYÁN",
+            "BAHAMAS",
+            "BANGLADÉS",
+            "BARBADOS",
+            "BARÉIN",
+            "BÉLGICA",
+            "BELICE",
+            "BENÍN",
+            "BIELORRUSIA",
+            "BIRMANIA",
+            "BOLIVIA",
+            "BOSNIA-HERZEGOVINA",
+            "BOTSUANA",
+            "BRASIL",
+            "BRUNÉI",
+            "BULGARIA",
+            "BURKINA FASO",
+            "BURUNDI",
+            "BUTÁN",
+            "CABO VERDE",
+            "CAMBOYA",
+            "CAMERÚN",
+            "CANADÁ",
+            "CATAR",
+            "CHAD",
+            "CHILE",
+            "CHINA",
+            "CHIPRE",
+            "COLOMBIA",
+            "COMORAS",
+            "CONGO",
+            "COREA DEL NORTE",
+            "COREA DEL SUR",
+            "COSTA DE MARFIL",
+            "COSTA RICA",
+            "CROACIA",
+            "CUBA",
+            "DINAMARCA",
+            "DOMINICA",
+            "ECUADOR",
+            "EGIPTO",
+            "EL SALVADOR",
+            "EMIRATOS ÁRABES UNIDOS",
+            "ERITREA",
+            "ESLOVAQUIA",
+            "ESLOVENIA",
+            "ESPAÑA",
+            "ESTADOS UNIDOS",
+            "ESTONIA",
+            "ETIOPÍA",
+            "FILIPINAS",
+            "FINLANDIA",
+            "FIYI",
+            "FRANCIA",
+            "GABÓN",
+            "GAMBIA",
+            "GEORGIA",
+            "GHANA",
+            "GRANADA",
+            "GRECIA",
+            "GUATEMALA",
+            "GUINEA",
+            "GUINEA ECUATORIAL",
+            "GUINEA-BISÁU",
+            "GUYANA",
+            "HAITÍ",
+            "HONDURAS",
+            "HUNGRÍA",
+            "INDIA",
+            "INDONESIA",
+            "IRAK",
+            "IRÁN",
+            "IRLANDA",
+            "ISLANDIA",
+            "ISLAS MARSHALL",
+            "ISLAS SALOMÓN",
+            "ISRAEL",
+            "ITALIA",
+            "JAMAICA",
+            "JAPÓN",
+            "JORDANIA",
+            "KAZAJISTÁN",
+            "KENIA",
+            "KIRGUISTÁN",
+            "KIRIBATI",
+            "KOSOVO",
+            "KUWAIT",
+            "LAOS",
+            "LESOTO",
+            "LETONIA",
+            "LÍBANO",
+            "LIBERIA",
+            "LIBIA",
+            "LIECHTENSTEIN",
+            "LITUANIA",
+            "LUXEMBURGO",
+            "MACEDONIA",
+            "MADAGASCAR",
+            "MALASIA",
+            "MALAUI",
+            "MALDIVAS",
+            "MALÍ",
+            "MALTA",
+            "MARRUECOS",
+            "MAURICIO",
+            "MAURITANIA",
+            "MÉXICO",
+            "MICRONESIA",
+            "MOLDAVIA",
+            "MÓNACO",
+            "MONGOLIA",
+            "MONTENEGRO",
+            "MOZAMBIQUE",
+            "NAMIBIA",
+            "NAURU",
+            "NEPAL",
+            "NICARAGUA",
+            "NÍGER",
+            "NIGERIA",
+            "NORUEGA",
+            "NUEVA ZELANDA",
+            "OMÁN",
+            "PAÍSES BAJOS",
+            "PAKISTÁN",
+            "PALAOS",
+            "PALESTINA",
+            "PANAMÁ",
+            "PAPÚA NUEVA GUINEA",
+            "PARAGUAY",
+            "PERÚ",
+            "POLONIA",
+            "PORTUGAL",
+            "REINO UNIDO",
+            "REPÚBLICA CENTROAFRICANA",
+            "REPÚBLICA CHECA",
+            "REPÚBLICA DEMOCRÁTICA DEL CONGO",
+            "REPÚBLICA DOMINICANA",
+            "RUANDA",
+            "RUMANIA",
+            "RUSIA",
+            "SAMOA",
+            "SAN CRISTÓBAL Y NIEVES",
+            "SAN MARINO",
+            "SAN VICENTE Y LAS GRANADINAS",
+            "SANTA LUCÍA",
+            "SANTO TOMÉ Y PRÍNCIPE",
+            "SENEGAL",
+            "SERBIA",
+            "SEYCHELLES",
+            "SIERRA LEONA",
+            "SINGAPUR",
+            "SIRIA",
+            "SOMALIA",
+            "SRI LANKA",
+            "SUAZILANDIA",
+            "SUDÁFRICA",
+            "SUDÁN",
+            "SUDÁN DEL SUR",
+            "SUECIA",
+            "SUIZA",
+            "SURINAM",
+            "TAILANDIA",
+            "TAIWÁN",
+            "TANZANIA",
+            "TAYIKISTÁN",
+            "TIMOR ORIENTAL",
+            "TOGO",
+            "TONGA",
+            "TRINIDAD Y TOBAGO",
+            "TÚNEZ",
+            "TURKMENISTÁN",
+            "TURQUÍA",
+            "TUVALU",
+            "UCRANIA",
+            "UGANDA",
+            "URUGUAY",
+            "UZBEKISTÁN",
+            "VANUATU",
+            "VATICANO",
+            "VENEZUELA",
+            "VIETNAM",
+            "YEMEN",
+            "YIBUTI",
+            "ZAMBIA",
+            "ZIMBABUE"});
+            this.cbox_paisN.Location = new System.Drawing.Point(120, 51);
+            this.cbox_paisN.Name = "cbox_paisN";
+            this.cbox_paisN.Size = new System.Drawing.Size(200, 21);
+            this.cbox_paisN.TabIndex = 30;
             // 
             // label_paisN
             // 
             this.label_paisN.AutoSize = true;
             this.label_paisN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_paisN.Location = new System.Drawing.Point(21, 55);
+            this.label_paisN.Location = new System.Drawing.Point(18, 55);
             this.label_paisN.Name = "label_paisN";
             this.label_paisN.Size = new System.Drawing.Size(32, 13);
             this.label_paisN.TabIndex = 29;
             this.label_paisN.Text = "País:";
-            // 
-            // tbox_paisN
-            // 
-            this.tbox_paisN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbox_paisN.Location = new System.Drawing.Point(123, 52);
-            this.tbox_paisN.Name = "tbox_paisN";
-            this.tbox_paisN.Size = new System.Drawing.Size(200, 20);
-            this.tbox_paisN.TabIndex = 28;
             // 
             // cbox_departamentoN
             // 
@@ -313,7 +511,7 @@
             "TACNA",
             "TUMBES",
             "UCAYALI"});
-            this.cbox_departamentoN.Location = new System.Drawing.Point(123, 78);
+            this.cbox_departamentoN.Location = new System.Drawing.Point(120, 78);
             this.cbox_departamentoN.Name = "cbox_departamentoN";
             this.cbox_departamentoN.Size = new System.Drawing.Size(100, 21);
             this.cbox_departamentoN.TabIndex = 22;
@@ -322,7 +520,7 @@
             // 
             this.label_fechaNacimiento.AutoSize = true;
             this.label_fechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_fechaNacimiento.Location = new System.Drawing.Point(21, 32);
+            this.label_fechaNacimiento.Location = new System.Drawing.Point(18, 32);
             this.label_fechaNacimiento.Name = "label_fechaNacimiento";
             this.label_fechaNacimiento.Size = new System.Drawing.Size(96, 13);
             this.label_fechaNacimiento.TabIndex = 6;
@@ -330,7 +528,7 @@
             // 
             // dt_fechanacimiento
             // 
-            this.dt_fechanacimiento.Location = new System.Drawing.Point(123, 26);
+            this.dt_fechanacimiento.Location = new System.Drawing.Point(120, 26);
             this.dt_fechanacimiento.Name = "dt_fechanacimiento";
             this.dt_fechanacimiento.Size = new System.Drawing.Size(200, 20);
             this.dt_fechanacimiento.TabIndex = 11;
@@ -340,7 +538,7 @@
             // 
             this.label_provinciaN.AutoSize = true;
             this.label_provinciaN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_provinciaN.Location = new System.Drawing.Point(22, 134);
+            this.label_provinciaN.Location = new System.Drawing.Point(19, 134);
             this.label_provinciaN.Name = "label_provinciaN";
             this.label_provinciaN.Size = new System.Drawing.Size(54, 13);
             this.label_provinciaN.TabIndex = 24;
@@ -349,7 +547,7 @@
             // tbox_provinciaN
             // 
             this.tbox_provinciaN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbox_provinciaN.Location = new System.Drawing.Point(123, 131);
+            this.tbox_provinciaN.Location = new System.Drawing.Point(120, 131);
             this.tbox_provinciaN.Name = "tbox_provinciaN";
             this.tbox_provinciaN.Size = new System.Drawing.Size(200, 20);
             this.tbox_provinciaN.TabIndex = 25;
@@ -358,7 +556,7 @@
             // 
             this.label_departamentoN.AutoSize = true;
             this.label_departamentoN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_departamentoN.Location = new System.Drawing.Point(21, 81);
+            this.label_departamentoN.Location = new System.Drawing.Point(18, 81);
             this.label_departamentoN.Name = "label_departamentoN";
             this.label_departamentoN.Size = new System.Drawing.Size(77, 13);
             this.label_departamentoN.TabIndex = 27;
@@ -367,7 +565,7 @@
             // tbox_distritoN
             // 
             this.tbox_distritoN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbox_distritoN.Location = new System.Drawing.Point(123, 105);
+            this.tbox_distritoN.Location = new System.Drawing.Point(120, 105);
             this.tbox_distritoN.Name = "tbox_distritoN";
             this.tbox_distritoN.Size = new System.Drawing.Size(200, 20);
             this.tbox_distritoN.TabIndex = 22;
@@ -376,7 +574,7 @@
             // 
             this.label_distritoN.AutoSize = true;
             this.label_distritoN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_distritoN.Location = new System.Drawing.Point(22, 108);
+            this.label_distritoN.Location = new System.Drawing.Point(19, 108);
             this.label_distritoN.Name = "label_distritoN";
             this.label_distritoN.Size = new System.Drawing.Size(42, 13);
             this.label_distritoN.TabIndex = 23;
@@ -392,9 +590,9 @@
             this.gbox_datosLocalidad.Controls.Add(this.label_distrito);
             this.gbox_datosLocalidad.Controls.Add(this.tbox_direccion);
             this.gbox_datosLocalidad.Controls.Add(this.label_direccion);
-            this.gbox_datosLocalidad.Location = new System.Drawing.Point(412, 15);
+            this.gbox_datosLocalidad.Location = new System.Drawing.Point(379, 13);
             this.gbox_datosLocalidad.Name = "gbox_datosLocalidad";
-            this.gbox_datosLocalidad.Size = new System.Drawing.Size(350, 147);
+            this.gbox_datosLocalidad.Size = new System.Drawing.Size(340, 147);
             this.gbox_datosLocalidad.TabIndex = 14;
             this.gbox_datosLocalidad.TabStop = false;
             this.gbox_datosLocalidad.Text = "Datos Domicilio ";
@@ -435,7 +633,7 @@
             "SANTA ANITA",
             "VILLA EL SAVADOR",
             "VILLA MARÍA DEL TRIUNFO"});
-            this.cbox_distrito.Location = new System.Drawing.Point(123, 79);
+            this.cbox_distrito.Location = new System.Drawing.Point(120, 79);
             this.cbox_distrito.Name = "cbox_distrito";
             this.cbox_distrito.Size = new System.Drawing.Size(100, 21);
             this.cbox_distrito.TabIndex = 22;
@@ -445,32 +643,8 @@
             this.cbox_departamento.FormattingEnabled = true;
             this.cbox_departamento.Items.AddRange(new object[] {
             "--",
-            "AMAZONAS",
-            "ÁNCASH",
-            "APURÍMAC",
-            "AREQUIPA",
-            "AYACUCHO",
-            "CAJAMARCA",
-            "CALLAO",
-            "CUZCO",
-            "HUANCAVELICA",
-            "HUÁNUCO",
-            "ICA",
-            "JUNÍN",
-            "LA LIBERTAD",
-            "LAMBAYEQUE",
-            "LIMA",
-            "LORETO",
-            "MADRE DE DIOS",
-            "MOQUEGUA",
-            "PASCO",
-            "PIURA",
-            "PUNO",
-            "SAN MARTÍN",
-            "TACNA",
-            "TUMBES",
-            "UCAYALI"});
-            this.cbox_departamento.Location = new System.Drawing.Point(123, 53);
+            "LIMA"});
+            this.cbox_departamento.Location = new System.Drawing.Point(120, 53);
             this.cbox_departamento.Name = "cbox_departamento";
             this.cbox_departamento.Size = new System.Drawing.Size(100, 21);
             this.cbox_departamento.TabIndex = 10;
@@ -479,7 +653,7 @@
             // 
             this.label_departamento.AutoSize = true;
             this.label_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_departamento.Location = new System.Drawing.Point(21, 56);
+            this.label_departamento.Location = new System.Drawing.Point(18, 56);
             this.label_departamento.Name = "label_departamento";
             this.label_departamento.Size = new System.Drawing.Size(77, 13);
             this.label_departamento.TabIndex = 21;
@@ -489,7 +663,7 @@
             // 
             this.label_provincia.AutoSize = true;
             this.label_provincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_provincia.Location = new System.Drawing.Point(21, 111);
+            this.label_provincia.Location = new System.Drawing.Point(18, 111);
             this.label_provincia.Name = "label_provincia";
             this.label_provincia.Size = new System.Drawing.Size(54, 13);
             this.label_provincia.TabIndex = 20;
@@ -498,7 +672,7 @@
             // tbox_provincia
             // 
             this.tbox_provincia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbox_provincia.Location = new System.Drawing.Point(123, 108);
+            this.tbox_provincia.Location = new System.Drawing.Point(120, 108);
             this.tbox_provincia.Name = "tbox_provincia";
             this.tbox_provincia.Size = new System.Drawing.Size(200, 20);
             this.tbox_provincia.TabIndex = 18;
@@ -507,7 +681,7 @@
             // 
             this.label_distrito.AutoSize = true;
             this.label_distrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_distrito.Location = new System.Drawing.Point(21, 82);
+            this.label_distrito.Location = new System.Drawing.Point(18, 82);
             this.label_distrito.Name = "label_distrito";
             this.label_distrito.Size = new System.Drawing.Size(42, 13);
             this.label_distrito.TabIndex = 16;
@@ -516,7 +690,7 @@
             // tbox_direccion
             // 
             this.tbox_direccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbox_direccion.Location = new System.Drawing.Point(123, 27);
+            this.tbox_direccion.Location = new System.Drawing.Point(120, 27);
             this.tbox_direccion.Name = "tbox_direccion";
             this.tbox_direccion.Size = new System.Drawing.Size(200, 20);
             this.tbox_direccion.TabIndex = 15;
@@ -525,7 +699,7 @@
             // 
             this.label_direccion.AutoSize = true;
             this.label_direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_direccion.Location = new System.Drawing.Point(21, 30);
+            this.label_direccion.Location = new System.Drawing.Point(18, 30);
             this.label_direccion.Name = "label_direccion";
             this.label_direccion.Size = new System.Drawing.Size(55, 13);
             this.label_direccion.TabIndex = 15;
@@ -558,9 +732,9 @@
             this.gbox_datosGenerales.Controls.Add(this.label_codigo);
             this.gbox_datosGenerales.Controls.Add(this.label_nombre);
             this.gbox_datosGenerales.Controls.Add(this.label_apellidos);
-            this.gbox_datosGenerales.Location = new System.Drawing.Point(35, 15);
+            this.gbox_datosGenerales.Location = new System.Drawing.Point(20, 13);
             this.gbox_datosGenerales.Name = "gbox_datosGenerales";
-            this.gbox_datosGenerales.Size = new System.Drawing.Size(350, 333);
+            this.gbox_datosGenerales.Size = new System.Drawing.Size(340, 325);
             this.gbox_datosGenerales.TabIndex = 13;
             this.gbox_datosGenerales.TabStop = false;
             this.gbox_datosGenerales.Text = "Datos Generales";
@@ -569,7 +743,7 @@
             // 
             this.label_estado.AutoSize = true;
             this.label_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_estado.Location = new System.Drawing.Point(21, 288);
+            this.label_estado.Location = new System.Drawing.Point(18, 288);
             this.label_estado.Name = "label_estado";
             this.label_estado.Size = new System.Drawing.Size(43, 13);
             this.label_estado.TabIndex = 36;
@@ -581,7 +755,7 @@
             this.cbox_estado.Items.AddRange(new object[] {
             "ACTIVO",
             "INACTIVO"});
-            this.cbox_estado.Location = new System.Drawing.Point(123, 285);
+            this.cbox_estado.Location = new System.Drawing.Point(120, 285);
             this.cbox_estado.Name = "cbox_estado";
             this.cbox_estado.Size = new System.Drawing.Size(100, 21);
             this.cbox_estado.Sorted = true;
@@ -589,7 +763,7 @@
             // 
             // tbox_id_becado
             // 
-            this.tbox_id_becado.Location = new System.Drawing.Point(263, 27);
+            this.tbox_id_becado.Location = new System.Drawing.Point(260, 27);
             this.tbox_id_becado.Name = "tbox_id_becado";
             this.tbox_id_becado.Size = new System.Drawing.Size(28, 20);
             this.tbox_id_becado.TabIndex = 24;
@@ -597,7 +771,7 @@
             // 
             // tbox_id_persona
             // 
-            this.tbox_id_persona.Location = new System.Drawing.Point(229, 27);
+            this.tbox_id_persona.Location = new System.Drawing.Point(226, 27);
             this.tbox_id_persona.Name = "tbox_id_persona";
             this.tbox_id_persona.Size = new System.Drawing.Size(28, 20);
             this.tbox_id_persona.TabIndex = 23;
@@ -607,7 +781,7 @@
             // 
             this.label_fijo.AutoSize = true;
             this.label_fijo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_fijo.Location = new System.Drawing.Point(21, 262);
+            this.label_fijo.Location = new System.Drawing.Point(18, 262);
             this.label_fijo.Name = "label_fijo";
             this.label_fijo.Size = new System.Drawing.Size(71, 13);
             this.label_fijo.TabIndex = 22;
@@ -617,7 +791,7 @@
             // 
             this.label_movil.AutoSize = true;
             this.label_movil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_movil.Location = new System.Drawing.Point(21, 236);
+            this.label_movil.Location = new System.Drawing.Point(18, 236);
             this.label_movil.Name = "label_movil";
             this.label_movil.Size = new System.Drawing.Size(80, 13);
             this.label_movil.TabIndex = 21;
@@ -627,7 +801,7 @@
             // 
             this.label_correoAlternativo.AutoSize = true;
             this.label_correoAlternativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_correoAlternativo.Location = new System.Drawing.Point(21, 210);
+            this.label_correoAlternativo.Location = new System.Drawing.Point(18, 210);
             this.label_correoAlternativo.Name = "label_correoAlternativo";
             this.label_correoAlternativo.Size = new System.Drawing.Size(94, 13);
             this.label_correoAlternativo.TabIndex = 20;
@@ -635,28 +809,28 @@
             // 
             // tbox_fijo
             // 
-            this.tbox_fijo.Location = new System.Drawing.Point(123, 259);
+            this.tbox_fijo.Location = new System.Drawing.Point(120, 259);
             this.tbox_fijo.Name = "tbox_fijo";
             this.tbox_fijo.Size = new System.Drawing.Size(200, 20);
             this.tbox_fijo.TabIndex = 19;
             // 
             // tbox_movil
             // 
-            this.tbox_movil.Location = new System.Drawing.Point(123, 233);
+            this.tbox_movil.Location = new System.Drawing.Point(120, 233);
             this.tbox_movil.Name = "tbox_movil";
             this.tbox_movil.Size = new System.Drawing.Size(200, 20);
             this.tbox_movil.TabIndex = 18;
             // 
             // tbox_correoalternativo
             // 
-            this.tbox_correoalternativo.Location = new System.Drawing.Point(123, 207);
+            this.tbox_correoalternativo.Location = new System.Drawing.Point(120, 207);
             this.tbox_correoalternativo.Name = "tbox_correoalternativo";
             this.tbox_correoalternativo.Size = new System.Drawing.Size(200, 20);
             this.tbox_correoalternativo.TabIndex = 17;
             // 
             // tbox_correopucp
             // 
-            this.tbox_correopucp.Location = new System.Drawing.Point(123, 181);
+            this.tbox_correopucp.Location = new System.Drawing.Point(120, 181);
             this.tbox_correopucp.Name = "tbox_correopucp";
             this.tbox_correopucp.Size = new System.Drawing.Size(200, 20);
             this.tbox_correopucp.TabIndex = 16;
@@ -665,7 +839,7 @@
             // 
             this.label_correopucp.AutoSize = true;
             this.label_correopucp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_correopucp.Location = new System.Drawing.Point(21, 184);
+            this.label_correopucp.Location = new System.Drawing.Point(18, 184);
             this.label_correopucp.Name = "label_correopucp";
             this.label_correopucp.Size = new System.Drawing.Size(73, 13);
             this.label_correopucp.TabIndex = 15;
@@ -673,7 +847,7 @@
             // 
             // tbox_edad
             // 
-            this.tbox_edad.Location = new System.Drawing.Point(123, 155);
+            this.tbox_edad.Location = new System.Drawing.Point(120, 155);
             this.tbox_edad.Name = "tbox_edad";
             this.tbox_edad.Size = new System.Drawing.Size(50, 20);
             this.tbox_edad.TabIndex = 14;
@@ -682,7 +856,7 @@
             // 
             this.label_edad.AutoSize = true;
             this.label_edad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_edad.Location = new System.Drawing.Point(21, 158);
+            this.label_edad.Location = new System.Drawing.Point(18, 158);
             this.label_edad.Name = "label_edad";
             this.label_edad.Size = new System.Drawing.Size(35, 13);
             this.label_edad.TabIndex = 13;
@@ -690,7 +864,7 @@
             // 
             // tbox_dni
             // 
-            this.tbox_dni.Location = new System.Drawing.Point(123, 129);
+            this.tbox_dni.Location = new System.Drawing.Point(120, 129);
             this.tbox_dni.Name = "tbox_dni";
             this.tbox_dni.Size = new System.Drawing.Size(100, 20);
             this.tbox_dni.TabIndex = 12;
@@ -698,7 +872,7 @@
             // rbutton_masculino
             // 
             this.rbutton_masculino.AutoSize = true;
-            this.rbutton_masculino.Location = new System.Drawing.Point(123, 106);
+            this.rbutton_masculino.Location = new System.Drawing.Point(120, 106);
             this.rbutton_masculino.Name = "rbutton_masculino";
             this.rbutton_masculino.Size = new System.Drawing.Size(73, 17);
             this.rbutton_masculino.TabIndex = 10;
@@ -710,7 +884,7 @@
             // 
             this.label_dni.AutoSize = true;
             this.label_dni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_dni.Location = new System.Drawing.Point(21, 132);
+            this.label_dni.Location = new System.Drawing.Point(18, 132);
             this.label_dni.Name = "label_dni";
             this.label_dni.Size = new System.Drawing.Size(29, 13);
             this.label_dni.TabIndex = 5;
@@ -719,7 +893,7 @@
             // rbutton_femenino
             // 
             this.rbutton_femenino.AutoSize = true;
-            this.rbutton_femenino.Location = new System.Drawing.Point(227, 106);
+            this.rbutton_femenino.Location = new System.Drawing.Point(224, 106);
             this.rbutton_femenino.Name = "rbutton_femenino";
             this.rbutton_femenino.Size = new System.Drawing.Size(71, 17);
             this.rbutton_femenino.TabIndex = 9;
@@ -730,7 +904,7 @@
             // tbox_apellidos
             // 
             this.tbox_apellidos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbox_apellidos.Location = new System.Drawing.Point(123, 79);
+            this.tbox_apellidos.Location = new System.Drawing.Point(120, 79);
             this.tbox_apellidos.Name = "tbox_apellidos";
             this.tbox_apellidos.Size = new System.Drawing.Size(200, 20);
             this.tbox_apellidos.TabIndex = 4;
@@ -739,7 +913,7 @@
             // 
             this.label_sexo.AutoSize = true;
             this.label_sexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_sexo.Location = new System.Drawing.Point(21, 108);
+            this.label_sexo.Location = new System.Drawing.Point(18, 108);
             this.label_sexo.Name = "label_sexo";
             this.label_sexo.Size = new System.Drawing.Size(34, 13);
             this.label_sexo.TabIndex = 7;
@@ -748,14 +922,14 @@
             // tbox_nombres
             // 
             this.tbox_nombres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbox_nombres.Location = new System.Drawing.Point(123, 53);
+            this.tbox_nombres.Location = new System.Drawing.Point(120, 53);
             this.tbox_nombres.Name = "tbox_nombres";
             this.tbox_nombres.Size = new System.Drawing.Size(200, 20);
             this.tbox_nombres.TabIndex = 3;
             // 
             // tbox_codigo
             // 
-            this.tbox_codigo.Location = new System.Drawing.Point(123, 27);
+            this.tbox_codigo.Location = new System.Drawing.Point(120, 27);
             this.tbox_codigo.Name = "tbox_codigo";
             this.tbox_codigo.Size = new System.Drawing.Size(100, 20);
             this.tbox_codigo.TabIndex = 2;
@@ -764,7 +938,7 @@
             // 
             this.label_codigo.AutoSize = true;
             this.label_codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_codigo.Location = new System.Drawing.Point(21, 30);
+            this.label_codigo.Location = new System.Drawing.Point(18, 30);
             this.label_codigo.Name = "label_codigo";
             this.label_codigo.Size = new System.Drawing.Size(43, 13);
             this.label_codigo.TabIndex = 0;
@@ -774,7 +948,7 @@
             // 
             this.label_nombre.AutoSize = true;
             this.label_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_nombre.Location = new System.Drawing.Point(21, 56);
+            this.label_nombre.Location = new System.Drawing.Point(18, 56);
             this.label_nombre.Name = "label_nombre";
             this.label_nombre.Size = new System.Drawing.Size(52, 13);
             this.label_nombre.TabIndex = 1;
@@ -784,7 +958,7 @@
             // 
             this.label_apellidos.AutoSize = true;
             this.label_apellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_apellidos.Location = new System.Drawing.Point(21, 82);
+            this.label_apellidos.Location = new System.Drawing.Point(18, 82);
             this.label_apellidos.Name = "label_apellidos";
             this.label_apellidos.Size = new System.Drawing.Size(52, 13);
             this.label_apellidos.TabIndex = 2;
@@ -801,7 +975,7 @@
             this.btnCancelar});
             this.toolStrip_historiaacademica.Location = new System.Drawing.Point(0, 0);
             this.toolStrip_historiaacademica.Name = "toolStrip_historiaacademica";
-            this.toolStrip_historiaacademica.Size = new System.Drawing.Size(826, 25);
+            this.toolStrip_historiaacademica.Size = new System.Drawing.Size(764, 25);
             this.toolStrip_historiaacademica.TabIndex = 2;
             this.toolStrip_historiaacademica.Text = "toolStrip2";
             // 
@@ -842,8 +1016,8 @@
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(62, 22);
-            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Size = new System.Drawing.Size(104, 22);
+            this.btnBuscar.Text = "Buscar Becado";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnCancelar
@@ -851,19 +1025,19 @@
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(73, 22);
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(67, 22);
+            this.btnCancelar.Text = "Limpiar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // frmAlumno
+            // frmBecado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 568);
+            this.ClientSize = new System.Drawing.Size(764, 568);
             this.Controls.Add(this.toolStrip_historiaacademica);
             this.Controls.Add(this.panel_Alumno);
-            this.Name = "frmAlumno";
-            this.Text = "frmAlumno";
+            this.Name = "frmBecado";
+            this.Text = "frmBecado";
             this.panel_Alumno.ResumeLayout(false);
             this.gbox_datosIngreso.ResumeLayout(false);
             this.gbox_datosIngreso.PerformLayout();
@@ -903,7 +1077,6 @@
         private System.Windows.Forms.Label label_cicloI;
         private System.Windows.Forms.GroupBox gbox_datosNacimiento;
         private System.Windows.Forms.Label label_paisN;
-        private System.Windows.Forms.TextBox tbox_paisN;
         private System.Windows.Forms.ComboBox cbox_departamentoN;
         private System.Windows.Forms.Label label_fechaNacimiento;
         private System.Windows.Forms.DateTimePicker dt_fechanacimiento;
@@ -947,5 +1120,6 @@
         private System.Windows.Forms.Label label_codigo;
         private System.Windows.Forms.Label label_nombre;
         private System.Windows.Forms.Label label_apellidos;
+        private System.Windows.Forms.ComboBox cbox_paisN;
     }
 }
