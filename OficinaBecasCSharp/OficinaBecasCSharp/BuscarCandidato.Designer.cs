@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvBuscarCandidato = new System.Windows.Forms.DataGridView();
-            this.CodigoPUCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Postulante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seleccionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.chPostulante = new System.Windows.Forms.CheckBox();
             this.chSeleccionado = new System.Windows.Forms.CheckBox();
@@ -46,6 +40,12 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.CodigoPUCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoPostulacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoSeleccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarCandidato)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,56 +59,14 @@
             this.Nombres,
             this.Apellidos,
             this.DNI,
-            this.Postulante,
-            this.Seleccionado});
+            this.EstadoPostulacion,
+            this.EstadoSeleccion});
             this.dgvBuscarCandidato.Location = new System.Drawing.Point(25, 96);
             this.dgvBuscarCandidato.Name = "dgvBuscarCandidato";
             this.dgvBuscarCandidato.ReadOnly = true;
             this.dgvBuscarCandidato.RowTemplate.Height = 24;
             this.dgvBuscarCandidato.Size = new System.Drawing.Size(748, 370);
             this.dgvBuscarCandidato.TabIndex = 0;
-            // 
-            // CodigoPUCP
-            // 
-            this.CodigoPUCP.DataPropertyName = "CodigoPUCP";
-            this.CodigoPUCP.HeaderText = "Código PUCP";
-            this.CodigoPUCP.Name = "CodigoPUCP";
-            this.CodigoPUCP.ReadOnly = true;
-            // 
-            // Nombres
-            // 
-            this.Nombres.DataPropertyName = "Nombres";
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.DataPropertyName = "Apellidos";
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            // 
-            // DNI
-            // 
-            this.DNI.DataPropertyName = "DNI";
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            // 
-            // Postulante
-            // 
-            this.Postulante.DataPropertyName = "Postulante";
-            this.Postulante.HeaderText = "Postulante";
-            this.Postulante.Name = "Postulante";
-            this.Postulante.ReadOnly = true;
-            // 
-            // Seleccionado
-            // 
-            this.Seleccionado.DataPropertyName = "Seleccionado";
-            this.Seleccionado.HeaderText = "Seleccionado";
-            this.Seleccionado.Name = "Seleccionado";
-            this.Seleccionado.ReadOnly = true;
             // 
             // label1
             // 
@@ -220,6 +178,48 @@
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
+            // CodigoPUCP
+            // 
+            this.CodigoPUCP.DataPropertyName = "CodigoPUCP";
+            this.CodigoPUCP.HeaderText = "Código PUCP";
+            this.CodigoPUCP.Name = "CodigoPUCP";
+            this.CodigoPUCP.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.DataPropertyName = "Apellidos";
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            // 
+            // DNI
+            // 
+            this.DNI.DataPropertyName = "DNI";
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            // 
+            // EstadoPostulacion
+            // 
+            this.EstadoPostulacion.DataPropertyName = "EstadoPostulacion";
+            this.EstadoPostulacion.HeaderText = "Estado de Postulación";
+            this.EstadoPostulacion.Name = "EstadoPostulacion";
+            this.EstadoPostulacion.ReadOnly = true;
+            // 
+            // EstadoSeleccion
+            // 
+            this.EstadoSeleccion.DataPropertyName = "EstadoSeleccion";
+            this.EstadoSeleccion.HeaderText = "Estado de Selección";
+            this.EstadoSeleccion.Name = "EstadoSeleccion";
+            this.EstadoSeleccion.ReadOnly = true;
+            // 
             // BuscarCandidato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -248,12 +248,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvBuscarCandidato;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPUCP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Postulante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Seleccionado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chPostulante;
         private System.Windows.Forms.CheckBox chSeleccionado;
@@ -265,5 +259,11 @@
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPUCP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoPostulacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoSeleccion;
     }
 }

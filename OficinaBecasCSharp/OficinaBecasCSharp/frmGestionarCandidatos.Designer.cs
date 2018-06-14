@@ -30,14 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarCandidatos));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
+            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdConvocatoria = new System.Windows.Forms.TextBox();
             this.btnBuscarConvocatoria = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtSeleccionados = new System.Windows.Forms.TextBox();
+            this.txtPostulantes = new System.Windows.Forms.TextBox();
+            this.txtCandidatos = new System.Windows.Forms.TextBox();
             this.txtNombreConvocatoria = new System.Windows.Forms.TextBox();
+            this.dtFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,34 +62,23 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtCodigoPUCP = new System.Windows.Forms.TextBox();
-            this.txtNombres = new System.Windows.Forms.TextBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.rbMasculino = new System.Windows.Forms.RadioButton();
-            this.rbFemenino = new System.Windows.Forms.RadioButton();
-            this.chPostulo = new System.Windows.Forms.CheckBox();
-            this.chFueSeleccionado = new System.Windows.Forms.CheckBox();
-            this.txtEdad = new System.Windows.Forms.TextBox();
-            this.dtFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.txtCorreoPUCP = new System.Windows.Forms.TextBox();
-            this.txtCorreoAlternativo = new System.Windows.Forms.TextBox();
-            this.txtTelefonoMovil = new System.Windows.Forms.TextBox();
-            this.txtTelefonoFijo = new System.Windows.Forms.TextBox();
-            this.txtCandidatos = new System.Windows.Forms.TextBox();
-            this.txtPostulantes = new System.Windows.Forms.TextBox();
-            this.txtSeleccionados = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.btnBuscarCandidato = new System.Windows.Forms.Button();
+            this.txtIdCandidato = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtIdPersona = new System.Windows.Forms.TextBox();
-            this.btnBuscarPersona = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.txtTelefonoFijo = new System.Windows.Forms.TextBox();
+            this.txtTelefonoMovil = new System.Windows.Forms.TextBox();
+            this.txtCorreoAlternativo = new System.Windows.Forms.TextBox();
+            this.txtCorreoPUCP = new System.Windows.Forms.TextBox();
+            this.dtFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.chFueSeleccionado = new System.Windows.Forms.CheckBox();
+            this.chPostulo = new System.Windows.Forms.CheckBox();
+            this.rbFemenino = new System.Windows.Forms.RadioButton();
+            this.rbMasculino = new System.Windows.Forms.RadioButton();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.txtCodigoPUCP = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -98,6 +98,51 @@
             this.toolStrip1.Size = new System.Drawing.Size(1036, 27);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(76, 24);
+            this.btnNuevo.Text = "&Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(86, 24);
+            this.btnGuardar.Text = "&Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(76, 24);
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(99, 24);
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 24);
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label1
             // 
@@ -148,14 +193,67 @@
             this.groupBox1.Text = "Datos de la Convocatoria";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label2
+            // label19
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Nombre:";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(470, 116);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(184, 17);
+            this.label19.TabIndex = 18;
+            this.label19.Text = "Cantidad de Seleccionados:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(470, 76);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(166, 17);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Cantidad de Postulantes:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(470, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(163, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Cantidad de Candidatos:";
+            // 
+            // txtSeleccionados
+            // 
+            this.txtSeleccionados.Location = new System.Drawing.Point(700, 111);
+            this.txtSeleccionados.Name = "txtSeleccionados";
+            this.txtSeleccionados.Size = new System.Drawing.Size(48, 22);
+            this.txtSeleccionados.TabIndex = 15;
+            // 
+            // txtPostulantes
+            // 
+            this.txtPostulantes.Location = new System.Drawing.Point(700, 71);
+            this.txtPostulantes.Name = "txtPostulantes";
+            this.txtPostulantes.Size = new System.Drawing.Size(48, 22);
+            this.txtPostulantes.TabIndex = 14;
+            // 
+            // txtCandidatos
+            // 
+            this.txtCandidatos.Location = new System.Drawing.Point(700, 33);
+            this.txtCandidatos.Name = "txtCandidatos";
+            this.txtCandidatos.Size = new System.Drawing.Size(48, 22);
+            this.txtCandidatos.TabIndex = 13;
+            // 
+            // txtNombreConvocatoria
+            // 
+            this.txtNombreConvocatoria.Location = new System.Drawing.Point(95, 73);
+            this.txtNombreConvocatoria.Name = "txtNombreConvocatoria";
+            this.txtNombreConvocatoria.Size = new System.Drawing.Size(269, 22);
+            this.txtNombreConvocatoria.TabIndex = 12;
+            // 
+            // dtFechaFin
+            // 
+            this.dtFechaFin.Location = new System.Drawing.Point(106, 111);
+            this.dtFechaFin.Name = "dtFechaFin";
+            this.dtFechaFin.Size = new System.Drawing.Size(269, 22);
+            this.dtFechaFin.TabIndex = 11;
             // 
             // label4
             // 
@@ -166,19 +264,14 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Fecha Fin:";
             // 
-            // dtFechaFin
+            // label2
             // 
-            this.dtFechaFin.Location = new System.Drawing.Point(106, 111);
-            this.dtFechaFin.Name = "dtFechaFin";
-            this.dtFechaFin.Size = new System.Drawing.Size(269, 22);
-            this.dtFechaFin.TabIndex = 11;
-            // 
-            // txtNombreConvocatoria
-            // 
-            this.txtNombreConvocatoria.Location = new System.Drawing.Point(95, 73);
-            this.txtNombreConvocatoria.Name = "txtNombreConvocatoria";
-            this.txtNombreConvocatoria.Size = new System.Drawing.Size(269, 22);
-            this.txtNombreConvocatoria.TabIndex = 12;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Nombre:";
             // 
             // label5
             // 
@@ -292,8 +385,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnBuscarPersona);
-            this.groupBox2.Controls.Add(this.txtIdPersona);
+            this.groupBox2.Controls.Add(this.btnBuscarCandidato);
+            this.groupBox2.Controls.Add(this.txtIdCandidato);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.txtTelefonoFijo);
             this.groupBox2.Controls.Add(this.txtTelefonoMovil);
@@ -328,44 +421,93 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Candidato";
             // 
-            // txtCodigoPUCP
+            // btnBuscarCandidato
             // 
-            this.txtCodigoPUCP.Location = new System.Drawing.Point(157, 75);
-            this.txtCodigoPUCP.Name = "txtCodigoPUCP";
-            this.txtCodigoPUCP.Size = new System.Drawing.Size(207, 22);
-            this.txtCodigoPUCP.TabIndex = 22;
+            this.btnBuscarCandidato.Location = new System.Drawing.Point(417, 27);
+            this.btnBuscarCandidato.Name = "btnBuscarCandidato";
+            this.btnBuscarCandidato.Size = new System.Drawing.Size(151, 29);
+            this.btnBuscarCandidato.TabIndex = 39;
+            this.btnBuscarCandidato.Text = "Buscar Candidato";
+            this.btnBuscarCandidato.UseVisualStyleBackColor = true;
+            this.btnBuscarCandidato.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // txtNombres
+            // txtIdCandidato
             // 
-            this.txtNombres.Location = new System.Drawing.Point(157, 112);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(207, 22);
-            this.txtNombres.TabIndex = 23;
+            this.txtIdCandidato.Location = new System.Drawing.Point(311, 30);
+            this.txtIdCandidato.Name = "txtIdCandidato";
+            this.txtIdCandidato.Size = new System.Drawing.Size(53, 22);
+            this.txtIdCandidato.TabIndex = 38;
             // 
-            // txtApellidos
+            // label20
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(157, 146);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(207, 22);
-            this.txtApellidos.TabIndex = 24;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(212, 33);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(93, 17);
+            this.label20.TabIndex = 37;
+            this.label20.Text = "ID Candidato:";
             // 
-            // txtDNI
+            // txtTelefonoFijo
             // 
-            this.txtDNI.Location = new System.Drawing.Point(157, 181);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(207, 22);
-            this.txtDNI.TabIndex = 26;
+            this.txtTelefonoFijo.Location = new System.Drawing.Point(549, 181);
+            this.txtTelefonoFijo.Name = "txtTelefonoFijo";
+            this.txtTelefonoFijo.Size = new System.Drawing.Size(211, 22);
+            this.txtTelefonoFijo.TabIndex = 36;
             // 
-            // rbMasculino
+            // txtTelefonoMovil
             // 
-            this.rbMasculino.AutoSize = true;
-            this.rbMasculino.Location = new System.Drawing.Point(153, 216);
-            this.rbMasculino.Name = "rbMasculino";
-            this.rbMasculino.Size = new System.Drawing.Size(92, 21);
-            this.rbMasculino.TabIndex = 27;
-            this.rbMasculino.TabStop = true;
-            this.rbMasculino.Text = "Masculino";
-            this.rbMasculino.UseVisualStyleBackColor = true;
+            this.txtTelefonoMovil.Location = new System.Drawing.Point(549, 217);
+            this.txtTelefonoMovil.Name = "txtTelefonoMovil";
+            this.txtTelefonoMovil.Size = new System.Drawing.Size(211, 22);
+            this.txtTelefonoMovil.TabIndex = 35;
+            // 
+            // txtCorreoAlternativo
+            // 
+            this.txtCorreoAlternativo.Location = new System.Drawing.Point(549, 144);
+            this.txtCorreoAlternativo.Name = "txtCorreoAlternativo";
+            this.txtCorreoAlternativo.Size = new System.Drawing.Size(211, 22);
+            this.txtCorreoAlternativo.TabIndex = 34;
+            // 
+            // txtCorreoPUCP
+            // 
+            this.txtCorreoPUCP.Location = new System.Drawing.Point(549, 109);
+            this.txtCorreoPUCP.Name = "txtCorreoPUCP";
+            this.txtCorreoPUCP.Size = new System.Drawing.Size(211, 22);
+            this.txtCorreoPUCP.TabIndex = 33;
+            // 
+            // dtFechaNacimiento
+            // 
+            this.dtFechaNacimiento.Location = new System.Drawing.Point(549, 75);
+            this.dtFechaNacimiento.Name = "dtFechaNacimiento";
+            this.dtFechaNacimiento.Size = new System.Drawing.Size(263, 22);
+            this.dtFechaNacimiento.TabIndex = 32;
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(153, 251);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(52, 22);
+            this.txtEdad.TabIndex = 31;
+            // 
+            // chFueSeleccionado
+            // 
+            this.chFueSeleccionado.AutoSize = true;
+            this.chFueSeleccionado.Location = new System.Drawing.Point(523, 296);
+            this.chFueSeleccionado.Name = "chFueSeleccionado";
+            this.chFueSeleccionado.Size = new System.Drawing.Size(143, 21);
+            this.chFueSeleccionado.TabIndex = 30;
+            this.chFueSeleccionado.Text = "Fue Seleccionado";
+            this.chFueSeleccionado.UseVisualStyleBackColor = true;
+            // 
+            // chPostulo
+            // 
+            this.chPostulo.AutoSize = true;
+            this.chPostulo.Location = new System.Drawing.Point(370, 296);
+            this.chPostulo.Name = "chPostulo";
+            this.chPostulo.Size = new System.Drawing.Size(77, 21);
+            this.chPostulo.TabIndex = 29;
+            this.chPostulo.Text = "Postuló";
+            this.chPostulo.UseVisualStyleBackColor = true;
             // 
             // rbFemenino
             // 
@@ -378,185 +520,44 @@
             this.rbFemenino.Text = "Femenino";
             this.rbFemenino.UseVisualStyleBackColor = true;
             // 
-            // chPostulo
+            // rbMasculino
             // 
-            this.chPostulo.AutoSize = true;
-            this.chPostulo.Location = new System.Drawing.Point(370, 296);
-            this.chPostulo.Name = "chPostulo";
-            this.chPostulo.Size = new System.Drawing.Size(77, 21);
-            this.chPostulo.TabIndex = 29;
-            this.chPostulo.Text = "Postuló";
-            this.chPostulo.UseVisualStyleBackColor = true;
+            this.rbMasculino.AutoSize = true;
+            this.rbMasculino.Location = new System.Drawing.Point(153, 216);
+            this.rbMasculino.Name = "rbMasculino";
+            this.rbMasculino.Size = new System.Drawing.Size(92, 21);
+            this.rbMasculino.TabIndex = 27;
+            this.rbMasculino.TabStop = true;
+            this.rbMasculino.Text = "Masculino";
+            this.rbMasculino.UseVisualStyleBackColor = true;
             // 
-            // chFueSeleccionado
+            // txtDNI
             // 
-            this.chFueSeleccionado.AutoSize = true;
-            this.chFueSeleccionado.Location = new System.Drawing.Point(523, 296);
-            this.chFueSeleccionado.Name = "chFueSeleccionado";
-            this.chFueSeleccionado.Size = new System.Drawing.Size(143, 21);
-            this.chFueSeleccionado.TabIndex = 30;
-            this.chFueSeleccionado.Text = "Fue Seleccionado";
-            this.chFueSeleccionado.UseVisualStyleBackColor = true;
+            this.txtDNI.Location = new System.Drawing.Point(157, 181);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(207, 22);
+            this.txtDNI.TabIndex = 26;
             // 
-            // txtEdad
+            // txtApellidos
             // 
-            this.txtEdad.Location = new System.Drawing.Point(153, 251);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(52, 22);
-            this.txtEdad.TabIndex = 31;
+            this.txtApellidos.Location = new System.Drawing.Point(157, 146);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(207, 22);
+            this.txtApellidos.TabIndex = 24;
             // 
-            // dtFechaNacimiento
+            // txtNombres
             // 
-            this.dtFechaNacimiento.Location = new System.Drawing.Point(549, 75);
-            this.dtFechaNacimiento.Name = "dtFechaNacimiento";
-            this.dtFechaNacimiento.Size = new System.Drawing.Size(263, 22);
-            this.dtFechaNacimiento.TabIndex = 32;
+            this.txtNombres.Location = new System.Drawing.Point(157, 112);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(207, 22);
+            this.txtNombres.TabIndex = 23;
             // 
-            // txtCorreoPUCP
+            // txtCodigoPUCP
             // 
-            this.txtCorreoPUCP.Location = new System.Drawing.Point(549, 109);
-            this.txtCorreoPUCP.Name = "txtCorreoPUCP";
-            this.txtCorreoPUCP.Size = new System.Drawing.Size(211, 22);
-            this.txtCorreoPUCP.TabIndex = 33;
-            // 
-            // txtCorreoAlternativo
-            // 
-            this.txtCorreoAlternativo.Location = new System.Drawing.Point(549, 144);
-            this.txtCorreoAlternativo.Name = "txtCorreoAlternativo";
-            this.txtCorreoAlternativo.Size = new System.Drawing.Size(211, 22);
-            this.txtCorreoAlternativo.TabIndex = 34;
-            // 
-            // txtTelefonoMovil
-            // 
-            this.txtTelefonoMovil.Location = new System.Drawing.Point(549, 217);
-            this.txtTelefonoMovil.Name = "txtTelefonoMovil";
-            this.txtTelefonoMovil.Size = new System.Drawing.Size(211, 22);
-            this.txtTelefonoMovil.TabIndex = 35;
-            // 
-            // txtTelefonoFijo
-            // 
-            this.txtTelefonoFijo.Location = new System.Drawing.Point(549, 181);
-            this.txtTelefonoFijo.Name = "txtTelefonoFijo";
-            this.txtTelefonoFijo.Size = new System.Drawing.Size(211, 22);
-            this.txtTelefonoFijo.TabIndex = 36;
-            // 
-            // txtCandidatos
-            // 
-            this.txtCandidatos.Location = new System.Drawing.Point(700, 33);
-            this.txtCandidatos.Name = "txtCandidatos";
-            this.txtCandidatos.Size = new System.Drawing.Size(48, 22);
-            this.txtCandidatos.TabIndex = 13;
-            // 
-            // txtPostulantes
-            // 
-            this.txtPostulantes.Location = new System.Drawing.Point(700, 71);
-            this.txtPostulantes.Name = "txtPostulantes";
-            this.txtPostulantes.Size = new System.Drawing.Size(48, 22);
-            this.txtPostulantes.TabIndex = 14;
-            // 
-            // txtSeleccionados
-            // 
-            this.txtSeleccionados.Location = new System.Drawing.Point(700, 111);
-            this.txtSeleccionados.Name = "txtSeleccionados";
-            this.txtSeleccionados.Size = new System.Drawing.Size(48, 22);
-            this.txtSeleccionados.TabIndex = 15;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(470, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Cantidad de Candidatos:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(470, 76);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(166, 17);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "Cantidad de Postulantes:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(470, 116);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(184, 17);
-            this.label19.TabIndex = 18;
-            this.label19.Text = "Cantidad de Seleccionados:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(218, 33);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(82, 17);
-            this.label20.TabIndex = 37;
-            this.label20.Text = "ID Persona:";
-            // 
-            // txtIdPersona
-            // 
-            this.txtIdPersona.Location = new System.Drawing.Point(311, 30);
-            this.txtIdPersona.Name = "txtIdPersona";
-            this.txtIdPersona.Size = new System.Drawing.Size(53, 22);
-            this.txtIdPersona.TabIndex = 38;
-            // 
-            // btnBuscarPersona
-            // 
-            this.btnBuscarPersona.Location = new System.Drawing.Point(417, 27);
-            this.btnBuscarPersona.Name = "btnBuscarPersona";
-            this.btnBuscarPersona.Size = new System.Drawing.Size(126, 29);
-            this.btnBuscarPersona.TabIndex = 39;
-            this.btnBuscarPersona.Text = "Buscar Persona";
-            this.btnBuscarPersona.UseVisualStyleBackColor = true;
-            this.btnBuscarPersona.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(76, 24);
-            this.btnNuevo.Text = "&Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(86, 24);
-            this.btnGuardar.Text = "&Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(76, 24);
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(99, 24);
-            this.btnActualizar.Text = "Actualizar";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 24);
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.txtCodigoPUCP.Location = new System.Drawing.Point(157, 75);
+            this.txtCodigoPUCP.Name = "txtCodigoPUCP";
+            this.txtCodigoPUCP.Size = new System.Drawing.Size(207, 22);
+            this.txtCodigoPUCP.TabIndex = 22;
             // 
             // frmGestionarCandidatos
             // 
@@ -628,8 +629,8 @@
         private System.Windows.Forms.TextBox txtSeleccionados;
         private System.Windows.Forms.TextBox txtPostulantes;
         private System.Windows.Forms.TextBox txtCandidatos;
-        private System.Windows.Forms.Button btnBuscarPersona;
-        private System.Windows.Forms.TextBox txtIdPersona;
+        private System.Windows.Forms.Button btnBuscarCandidato;
+        private System.Windows.Forms.TextBox txtIdCandidato;
         private System.Windows.Forms.Label label20;
     }
 }

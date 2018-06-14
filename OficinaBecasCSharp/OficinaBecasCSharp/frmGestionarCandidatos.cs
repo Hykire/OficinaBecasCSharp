@@ -1,4 +1,5 @@
-﻿using Modelo;
+﻿using Controlador;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,12 @@ namespace Vista
     public partial class frmGestionarCandidatos : Form
     {
         private Convocatoria convocatoria;
+        private CandidatoBL candidatoBL;
+        private Candidato candidato;
+        private bool actualizar;
         public frmGestionarCandidatos()
         {
+            candidatoBL = new CandidatoBL();
             InitializeComponent();
             EstadoInicial();
         }
@@ -30,7 +35,7 @@ namespace Vista
             txtDNI.Enabled = false;
             txtEdad.Enabled = false;
             txtIdConvocatoria.Enabled = false;
-            txtIdPersona.Enabled = false;
+            txtIdCandidato.Enabled = false;
             txtNombreConvocatoria.Enabled = false;
             txtNombres.Enabled = false;
             txtPostulantes.Enabled = false;
@@ -44,7 +49,7 @@ namespace Vista
             rbFemenino.Enabled = false;
             rbMasculino.Enabled = false;
             btnBuscarConvocatoria.Enabled = true;
-            btnBuscarPersona.Enabled = false;
+            btnBuscarCandidato.Enabled = false;
 
             txtApellidos.Text = null;
             txtCandidatos.Text = null;
@@ -54,7 +59,7 @@ namespace Vista
             txtDNI.Text = null;
             txtEdad.Text = null;
             txtIdConvocatoria.Text = null;
-            txtIdPersona.Text = null;
+            txtIdCandidato.Text = null;
             txtNombreConvocatoria.Text = null;
             txtNombres.Text = null;
             txtPostulantes.Text = null;
@@ -94,6 +99,7 @@ namespace Vista
                 btnBuscar.Enabled = true;
                 btnCancelar.Enabled = true;
                 if (DateTime.Parse(dtFechaFin.Text) >= DateTime.Today) btnNuevo.Enabled = true;
+                else btnNuevo.Enabled = false;
             }
         }
 
@@ -114,6 +120,8 @@ namespace Vista
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            actualizar = false;
+
             txtApellidos.Enabled = true;
             txtCandidatos.Enabled = false;
             txtCodigoPUCP.Enabled = true;
@@ -122,7 +130,7 @@ namespace Vista
             txtDNI.Enabled = true;
             txtEdad.Enabled = true;
             txtIdConvocatoria.Enabled = false;
-            txtIdPersona.Enabled = false;
+            txtIdCandidato.Enabled = false;
             txtNombreConvocatoria.Enabled = false;
             txtNombres.Enabled = true;
             txtPostulantes.Enabled = false;
@@ -136,7 +144,7 @@ namespace Vista
             rbFemenino.Enabled = true;
             rbMasculino.Enabled = true;
             btnBuscarConvocatoria.Enabled = false;
-            btnBuscarPersona.Enabled = true;
+            btnBuscarCandidato.Enabled = true;
 
             btnNuevo.Enabled = false;
             btnBuscar.Enabled = false;
@@ -152,16 +160,16 @@ namespace Vista
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frmBuscarPersona buscarPersona = new frmBuscarPersona();
+            BuscarCandidato buscarPersona = new BuscarCandidato(convocatoria,true);
             if (buscarPersona.ShowDialog() == DialogResult.OK) {
-                Persona persona = buscarPersona.PersonaSeleccionada;
+                Candidato persona = buscarPersona.CandidatoSeleccionado;
                 txtApellidos.Text = persona.Apellidos;
                 txtCodigoPUCP.Text = persona.CodigoPUCP.ToString();
                 txtCorreoAlternativo.Text = persona.CorreoAlternativo;
                 txtCorreoPUCP.Text = persona.CorreoPUCP;
                 txtDNI.Text = persona.Dni.ToString();
                 txtEdad.Text = persona.Edad.ToString();
-                txtIdPersona.Text = persona.Id_persona.ToString();
+                txtIdCandidato.Text = persona.IdCandidato.ToString();
                 txtNombres.Text = persona.Nombres;
                 txtTelefonoFijo.Text = persona.TelfFijo;
                 txtTelefonoMovil.Text = persona.TelfMovil;
@@ -175,7 +183,7 @@ namespace Vista
                 txtCorreoPUCP.Enabled = false;
                 txtDNI.Enabled = false;
                 txtEdad.Enabled = false;
-                txtIdPersona.Enabled = false;
+                txtIdCandidato.Enabled = false;
                 txtNombres.Enabled = false;
                 txtTelefonoFijo.Enabled = false;
                 txtTelefonoMovil.Enabled = false;
@@ -188,6 +196,7 @@ namespace Vista
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Candidato candidato = new Candidato();
+            if (actualizar == true) candidato = this.candidato;
             candidato.Apellidos = txtApellidos.Text;
             candidato.CodigoPUCP = Int32.Parse(txtCodigoPUCP.Text);
             candidato.CorreoAlternativo = txtCorreoAlternativo.Text;
@@ -206,10 +215,42 @@ namespace Vista
             candidato.TelfFijo = txtTelefonoFijo.Text;
             candidato.TelfMovil = txtTelefonoMovil.Text;
 
-            if (txtIdPersona.Text == "") { }
-            else { }
 
-            MessageBox.Show("El candidato se ha registrado con éxito", "Registro Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (actualizar == false)
+            {
+                if (txtIdCandidato.Text == "")
+                {
+                    candidato.Id_persona = candidatoBL.insertarPersona(candidato);
+                    candidato.IdCandidato = candidatoBL.insertarCandidato(candidato, convocatoria.IdConvocatoria);
+                    txtIdCandidato.Text = candidato.IdCandidato.ToString();
+                }
+                else
+                {
+                    candidato.Id_persona = Int32.Parse(txtIdCandidato.Text);
+                    candidatoBL.insertarCandidatoAntiguo(candidato,convocatoria.IdConvocatoria);
+                }
+
+                MessageBox.Show("El candidato se ha registrado con éxito", "Registro Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            if(actualizar == true)
+            {
+                if (convocatoria.FechaFin < DateTime.Today)
+                {
+                    candidatoBL.actualizarCandidatoAntiguo(candidato, convocatoria.IdConvocatoria);
+                }
+                else
+                {
+                    candidatoBL.actualizarCandidatoActual(candidato, convocatoria.IdConvocatoria);
+                }
+                MessageBox.Show("El candidato ha sido actualizado con éxito", "Registro Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            candidatoBL.actualizarContadores(convocatoria);
+
+            txtCandidatos.Text = convocatoria.CantidadCandidatosPrevistos.ToString();
+            txtPostulantes.Text = convocatoria.CantidadPostulantes.ToString();
+            txtSeleccionados.Text = convocatoria.CantidadSeleccionados.ToString();
 
             txtApellidos.Enabled = false;
             txtCodigoPUCP.Enabled = false;
@@ -217,7 +258,7 @@ namespace Vista
             txtCorreoPUCP.Enabled = false;
             txtDNI.Enabled = false;
             txtEdad.Enabled = false;
-            txtIdPersona.Enabled = false;
+            txtIdCandidato.Enabled = false;
             txtNombres.Enabled = false;
             txtTelefonoFijo.Enabled = false;
             txtTelefonoMovil.Enabled = false;
@@ -226,7 +267,7 @@ namespace Vista
             rbFemenino.Enabled = false;
             chPostulo.Enabled = false;
             chFueSeleccionado.Enabled = false;
-            btnBuscarPersona.Enabled = false;
+            btnBuscarCandidato.Enabled = false;
 
             btnActualizar.Enabled = true;
             btnCancelar.Enabled = true;
@@ -240,12 +281,114 @@ namespace Vista
             BuscarCandidato buscarCandidato = new BuscarCandidato(convocatoria);
             if(buscarCandidato.ShowDialog() == DialogResult.OK)
             {
+                Candidato persona = buscarCandidato.CandidatoSeleccionado;
+                candidato = buscarCandidato.CandidatoSeleccionado;
+                txtApellidos.Text = persona.Apellidos;
+                txtCodigoPUCP.Text = persona.CodigoPUCP.ToString();
+                txtCorreoAlternativo.Text = persona.CorreoAlternativo;
+                txtCorreoPUCP.Text = persona.CorreoPUCP;
+                txtDNI.Text = persona.Dni.ToString();
+                txtEdad.Text = persona.Edad.ToString();
+                txtIdCandidato.Text = persona.Id_persona.ToString();
+                txtNombres.Text = persona.Nombres;
+                txtTelefonoFijo.Text = persona.TelfFijo;
+                txtTelefonoMovil.Text = persona.TelfMovil;
+                dtFechaNacimiento.Text = persona.Fecha_nacimiento.ToString();
+                txtIdCandidato.Text = persona.IdCandidato.ToString();
+
+                if (persona.Sexo == 'M') rbMasculino.Checked = true;
+                else if (persona.Sexo == 'F') rbFemenino.Checked = true;
+                if (persona.EstadoPostulacion == "POSTULÓ") chPostulo.Checked = true;
+                else if (persona.EstadoPostulacion == "NO POSTULÓ") chPostulo.Checked = false;
+                if (persona.EstadoSeleccion == "SELECCIONADO") chFueSeleccionado.Checked = true;
+                else if (persona.EstadoSeleccion == "NO SELECCIONADO") chFueSeleccionado.Checked = false;
+
+                txtApellidos.Enabled = false;
+                txtCodigoPUCP.Enabled = false;
+                txtCorreoAlternativo.Enabled = false;
+                txtCorreoPUCP.Enabled = false;
+                txtDNI.Enabled = false;
+                txtEdad.Enabled = false;
+                txtIdCandidato.Enabled = false;
+                txtNombres.Enabled = false;
+                txtTelefonoFijo.Enabled = false;
+                txtTelefonoMovil.Enabled = false;
+                dtFechaNacimiento.Enabled = false;
+                rbMasculino.Enabled = false;
+                rbFemenino.Enabled = false;
+
                 btnActualizar.Enabled = true;
                 btnCancelar.Enabled = true;
                 btnBuscar.Enabled = false;
                 btnGuardar.Enabled = false;
                 btnNuevo.Enabled = false;
             }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            actualizar = true;
+
+            if (convocatoria.FechaFin < DateTime.Today)
+            {
+                txtApellidos.Enabled = false;
+                txtCandidatos.Enabled = false;
+                txtCodigoPUCP.Enabled = false;
+                txtCorreoAlternativo.Enabled = false;
+                txtCorreoPUCP.Enabled = false;
+                txtDNI.Enabled = false;
+                txtEdad.Enabled = false;
+                txtIdConvocatoria.Enabled = false;
+                txtIdCandidato.Enabled = false;
+                txtNombreConvocatoria.Enabled = false;
+                txtNombres.Enabled = false;
+                txtPostulantes.Enabled = false;
+                txtSeleccionados.Enabled = false;
+                txtTelefonoFijo.Enabled = false;
+                txtTelefonoMovil.Enabled = false;
+                dtFechaFin.Enabled = false;
+                dtFechaNacimiento.Enabled = false;
+                chPostulo.Enabled = false;
+                chFueSeleccionado.Enabled = false;
+                rbFemenino.Enabled = false;
+                rbMasculino.Enabled = false;
+                btnBuscarConvocatoria.Enabled = false;
+                btnBuscarCandidato.Enabled = false;
+                chPostulo.Enabled = true;
+                chFueSeleccionado.Enabled = true;
+            }
+            else
+            {
+                txtApellidos.Enabled = true;
+                txtCandidatos.Enabled = false;
+                txtCodigoPUCP.Enabled = true;
+                txtCorreoAlternativo.Enabled = true;
+                txtCorreoPUCP.Enabled = true;
+                txtDNI.Enabled = true;
+                txtEdad.Enabled = true;
+                txtIdConvocatoria.Enabled = false;
+                txtIdCandidato.Enabled = false;
+                txtNombreConvocatoria.Enabled = false;
+                txtNombres.Enabled = true;
+                txtPostulantes.Enabled = false;
+                txtSeleccionados.Enabled = false;
+                txtTelefonoFijo.Enabled = true;
+                txtTelefonoMovil.Enabled = true;
+                dtFechaFin.Enabled = false;
+                dtFechaNacimiento.Enabled = true;
+                chPostulo.Enabled = true;
+                chFueSeleccionado.Enabled = true;
+                rbFemenino.Enabled = true;
+                rbMasculino.Enabled = true;
+                btnBuscarConvocatoria.Enabled = false;
+                btnBuscarCandidato.Enabled = true;
+            }
+
+            btnNuevo.Enabled = false;
+            btnBuscar.Enabled = false;
+            btnActualizar.Enabled = false;
+            btnCancelar.Enabled = true;
+            btnGuardar.Enabled = true;
         }
     }
 }

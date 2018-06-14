@@ -18,12 +18,34 @@ namespace Vista
         private CandidatoBL candidatoBL;
         private Candidato candidatoSeleccionado;
         private BindingList<Candidato> listaCandidatos;
-        public BuscarCandidato(Convocatoria convocatoria)
+        private bool candidatoAnterior;
+
+        public Candidato CandidatoSeleccionado { get => candidatoSeleccionado; set => candidatoSeleccionado = value; }
+
+        public BuscarCandidato(Convocatoria convocatoria, bool candidatoAnterior)
         {
+            this.candidatoAnterior = candidatoAnterior;
+            this.convocatoria = convocatoria;
             InitializeComponent();
             candidatoBL = new CandidatoBL();
             dgvBuscarCandidato.AutoGenerateColumns = false;
+            dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatosAnteriores(convocatoria.IdConvocatoria);
+            dgvBuscarCandidato.Columns[4].Visible = false;
+            dgvBuscarCandidato.Columns[5].Visible = false;
+            rbCodigoPUCP.Checked = true;
+
+        }
+        public BuscarCandidato(Convocatoria convocatoria)
+        {
+            this.candidatoAnterior = false;
+            InitializeComponent();
+            this.convocatoria = convocatoria;
+            candidatoBL = new CandidatoBL();
+            dgvBuscarCandidato.AutoGenerateColumns = false;
             dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatos(convocatoria.IdConvocatoria);
+            dgvBuscarCandidato.Columns[4].Visible = true;
+            dgvBuscarCandidato.Columns[5].Visible = true;
+            rbCodigoPUCP.Checked = true;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -35,13 +57,16 @@ namespace Vista
             rbCodigoPUCP.Checked = false;
             rbDNI.Checked = false;
             rbNombres.Checked = false;
+            rbCodigoPUCP.Checked = true;
 
-            dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatos(convocatoria.IdConvocatoria);
+
+            if(!candidatoAnterior) dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatos(convocatoria.IdConvocatoria);
+            else dgvBuscarCandidato.DataSource = candidatoBL.listarCandidatosAnteriores(convocatoria.IdConvocatoria);
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            candidatoSeleccionado = (Candidato)dgvBuscarCandidato.CurrentRow.DataBoundItem;
+            CandidatoSeleccionado = (Candidato)dgvBuscarCandidato.CurrentRow.DataBoundItem;
             this.DialogResult = DialogResult.OK;
         }
 
@@ -54,10 +79,10 @@ namespace Vista
             if (chSeleccionado.Checked) seleccionado = "SELECCIONADO";
             else seleccionado = "NO SELECCIONADO";
 
-            if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarApellidos(txtFiltro.Text, postulante, seleccionado);
-            else if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarNombre(txtFiltro.Text, postulante, seleccionado);
-            else if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarCodigoPUCP(Int32.Parse(txtFiltro.Text), postulante, seleccionado);
-            else if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarDNI(Int32.Parse(txtFiltro.Text), postulante, seleccionado);
+            if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarApellidos(txtFiltro.Text, postulante, seleccionado,convocatoria.IdConvocatoria);
+            else if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarNombre(txtFiltro.Text, postulante, seleccionado,convocatoria.IdConvocatoria);
+            else if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarCodigoPUCP(Int32.Parse(txtFiltro.Text), postulante, seleccionado, convocatoria.IdConvocatoria);
+            else if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarDNI(Int32.Parse(txtFiltro.Text), postulante, seleccionado, convocatoria.IdConvocatoria);
 
             dgvBuscarCandidato.DataSource = listaCandidatos;
         }
