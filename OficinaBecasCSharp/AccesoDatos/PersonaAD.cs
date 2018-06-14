@@ -12,7 +12,7 @@ namespace AccesoDatos
 {
     public class PersonaAD
     {
-        
+        //Hecho por Yoluana
         public BindingList<Persona> listarBecadosXTutor(String idTut)
         {
             BindingList<Persona> lista = new BindingList<Persona>();
@@ -42,8 +42,8 @@ namespace AccesoDatos
             con.Close();
             return lista;
         }
-       
 
+        //Hecho por Yoluana
         public void enlazarBecario(Tutor pe,int idbec,string ciclo)
         {
            // BindingList<Persona> lista = new BindingList<Persona>();
@@ -66,6 +66,7 @@ namespace AccesoDatos
             con.Close();
         }
 
+        //Hecho por Yoluana
         public void enlazarBecario2(Becado pe,string idAlum)
         {
             //BindingList<Persona> lista = new BindingList<Persona>();
@@ -87,7 +88,7 @@ namespace AccesoDatos
             con.Close(); //update desde workb sii
         }
 
-        
+        //Hecho por Yoluana
         public BindingList<Persona> listarPersonas(String cod)
         {
             BindingList<Persona> lista = new BindingList<Persona>();

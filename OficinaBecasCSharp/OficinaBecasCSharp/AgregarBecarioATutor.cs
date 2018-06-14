@@ -21,7 +21,7 @@ namespace Vista
         public AgregarBecarioATutor()
         {
             InitializeComponent();
-            
+
             txtCodABTXB.Enabled = false;
             txtNombABTXB.Enabled = false;
             txtApABTXB.Enabled = false;
@@ -31,7 +31,7 @@ namespace Vista
             BindingList<Tutor> lstTutores = new BindingList<Tutor>();
             lstTutores = logicaNegocioTutor.traerTutores();
             CBTutorABTXB.ValueMember = "Nombres";
-            foreach(var e in lstTutores)
+            foreach (var e in lstTutores)
             {
                 CBTutorABTXB.Items.Add(e);
             }
@@ -60,16 +60,14 @@ namespace Vista
 
         private void btnAceptarABTXB_Click(object sender, EventArgs e)
         {
-           
             Tutor persona = new Tutor();
             String id = TxtIdOcultoB.Text;
-            persona = (Tutor) CBTutorABTXB.SelectedItem;
+            persona = (Tutor)CBTutorABTXB.SelectedItem;
             int idbec = Convert.ToInt32(TxtIdOcultoB.Text);
             string ciclo = cbxCiclo.SelectedItem.ToString();
             MessageBox.Show(idbec.ToString());
-            logicaNegocioPer.enlazarBecario(persona,idbec, ciclo);
+            logicaNegocioPer.enlazarBecario(persona, idbec, ciclo);
             this.Dispose();
-
         }
 
         private void btnCancelarABTXB_Click(object sender, EventArgs e)

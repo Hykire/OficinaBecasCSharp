@@ -189,6 +189,7 @@ namespace AccesoDatos
             con.Close();
         }
 
+        //Hecho por Yoluana
         public BindingList<Becado> listarBecarios(String cod)
         {
             BindingList<Becado> lista = new BindingList<Becado>();
@@ -231,6 +232,7 @@ namespace AccesoDatos
             return lista;
         }
 
+        //Hecho por Yoluana
         public Becado buscarBecado(String cod)
         {
             

@@ -103,7 +103,7 @@
             this.groupBox5.Controls.Add(this.DGVBXT);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.btnBXTAnadir);
-            this.groupBox5.Location = new System.Drawing.Point(23, 164);
+            this.groupBox5.Location = new System.Drawing.Point(23, 177);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(767, 229);
             this.groupBox5.TabIndex = 23;
@@ -274,9 +274,9 @@
             // 
             this.groupBox4.Controls.Add(this.groupBox2);
             this.groupBox4.Controls.Add(this.groupBox3);
-            this.groupBox4.Location = new System.Drawing.Point(23, 393);
+            this.groupBox4.Location = new System.Drawing.Point(23, 412);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(767, 165);
+            this.groupBox4.Size = new System.Drawing.Size(767, 146);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Buscar por Alumno";
@@ -291,7 +291,7 @@
             this.groupBox2.Controls.Add(this.txtBAcod);
             this.groupBox2.Controls.Add(this.LBXA);
             this.groupBox2.Controls.Add(this.btnBuscarBecadoGBXT);
-            this.groupBox2.Location = new System.Drawing.Point(6, 19);
+            this.groupBox2.Location = new System.Drawing.Point(6, 17);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(338, 125);
             this.groupBox2.TabIndex = 14;
@@ -304,6 +304,7 @@
             this.txtCAIdOcullto.Name = "txtCAIdOcullto";
             this.txtCAIdOcullto.Size = new System.Drawing.Size(41, 20);
             this.txtCAIdOcullto.TabIndex = 18;
+            this.txtCAIdOcullto.Visible = false;
             // 
             // label2
             // 
@@ -352,7 +353,6 @@
             this.LBXA.Size = new System.Drawing.Size(43, 13);
             this.LBXA.TabIndex = 12;
             this.LBXA.Text = "Código:";
-            this.LBXA.Click += new System.EventHandler(this.LBXA_Click);
             // 
             // btnBuscarBecadoGBXT
             // 
@@ -374,7 +374,7 @@
             this.groupBox3.Controls.Add(this.txtBANombTutor);
             this.groupBox3.Controls.Add(this.txtBACodTutor);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(372, 21);
+            this.groupBox3.Location = new System.Drawing.Point(372, 19);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(389, 123);
             this.groupBox3.TabIndex = 20;
@@ -388,6 +388,7 @@
             this.txtIdTutorOculto.Name = "txtIdTutorOculto";
             this.txtIdTutorOculto.Size = new System.Drawing.Size(41, 20);
             this.txtIdTutorOculto.TabIndex = 20;
+            this.txtIdTutorOculto.Visible = false;
             // 
             // label6
             // 
@@ -459,13 +460,12 @@
             this.Nombres,
             this.Telefono,
             this.Apellidos});
-            this.dgvListaTutores.Location = new System.Drawing.Point(33, 43);
+            this.dgvListaTutores.Location = new System.Drawing.Point(33, 49);
             this.dgvListaTutores.Name = "dgvListaTutores";
             this.dgvListaTutores.ReadOnly = true;
             this.dgvListaTutores.Size = new System.Drawing.Size(751, 115);
             this.dgvListaTutores.TabIndex = 21;
             this.dgvListaTutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaTutores_CellClick);
-            this.dgvListaTutores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaTutores_CellContentClick);
             // 
             // Codigo
             // 
@@ -518,7 +518,7 @@
             // 
             this.LGestBecXTutBXT.AutoSize = true;
             this.LGestBecXTutBXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LGestBecXTutBXT.Location = new System.Drawing.Point(10, 9);
+            this.LGestBecXTutBXT.Location = new System.Drawing.Point(20, 19);
             this.LGestBecXTutBXT.Name = "LGestBecXTutBXT";
             this.LGestBecXTutBXT.Size = new System.Drawing.Size(241, 20);
             this.LGestBecXTutBXT.TabIndex = 10;

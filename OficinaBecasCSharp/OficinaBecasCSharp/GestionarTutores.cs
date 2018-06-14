@@ -16,11 +16,11 @@ namespace Vista
     {
         private PersonaBL logicaNegocioPersona;
         private TutorBL logicaNegocioTutor;
-        private Persona tutorSelecc;
+        private Tutor tutorSelecc;
         private Persona p;
         private Becado al;
 
-        public Persona TutorSelecc { get => tutorSelecc; set => tutorSelecc = value; }
+        public Tutor TutorSelecc { get => tutorSelecc; set => tutorSelecc = value; }
 
         public GestionarTutores()
         {
@@ -66,28 +66,17 @@ namespace Vista
             //ni bien aparezca este modal, se muestre la lista de tutores en el DGV
         }
 
-        private void btnEliminarTutor_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("¿Desea eliminar de la lista el Tutor seleccionado?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
-        }
-
         private void CBTutorGBXT_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnBXTVer.Enabled = true;
         }
 
-        private void TBCodTutor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnModificarTXB_Click(object sender, EventArgs e)
         {
             ModificarTXB frmTXB = new ModificarTXB();
             frmTXB.ShowDialog();
         }
-
 
         private void btnBuscarBeca_Click(object sender, EventArgs e)
         {
@@ -129,23 +118,14 @@ namespace Vista
             }
         }
 
-        private void LBXA_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvListaTutores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
         private void dgvListaTutores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            TutorSelecc = (Persona)dgvListaTutores.CurrentRow.DataBoundItem;
+            TutorSelecc = (Tutor)dgvListaTutores.CurrentRow.DataBoundItem;
             TxtCodTutorBXT.Text = TutorSelecc.CodigoPUCP.ToString();
             TxtNombTutorBXT.Text = TutorSelecc.Nombres.ToString();
             TxtApeTutor.Text = TutorSelecc.Apellidos.ToString();
-            TxtIDOculto.Text = TutorSelecc.Id_persona.ToString();
+            TxtIDOculto.Text = TutorSelecc.IdTutor.ToString();
+
             btnBXTVer.Enabled = true;
         }
 

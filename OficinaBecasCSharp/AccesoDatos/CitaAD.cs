@@ -11,6 +11,7 @@ namespace AccesoDatos
 {
     public class CitaAD
     {
+        //Hecho por Yoluana
         public void agregarCita(Cita cita, int idBec, int idTut)
         {
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
@@ -68,6 +69,7 @@ namespace AccesoDatos
             }
         }
 
+        //Hecho por Yoluana
         public BindingList<Cita> buscarcita(DateTime fecha)
         {
             BindingList<Cita> lista = new BindingList<Cita>();
@@ -102,6 +104,7 @@ namespace AccesoDatos
             return lista;
         }
 
+        //Hecho por Yoluana
         public BindingList<Cita> buscarcitaPorTutor(string idTutor)
         {
             BindingList<Cita> lista = new BindingList<Cita>();

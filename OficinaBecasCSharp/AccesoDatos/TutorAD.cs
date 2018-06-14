@@ -12,6 +12,7 @@ namespace AccesoDatos
     public class TutorAD
     {
         Tutor tutor;
+        //Hecho por Yoluana
         public BindingList<Tutor> listarTutorDeBecado(int idBec)
         {
             BindingList<Tutor> lista = new BindingList<Tutor>();
@@ -69,7 +70,7 @@ namespace AccesoDatos
 
         }
 
-
+        //Hecho por Yoluana
         public BindingList<Tutor> traerTutores()
         {
             BindingList<Tutor> lista = new BindingList<Tutor>();
@@ -100,6 +101,8 @@ namespace AccesoDatos
             con.Close();
             return lista;
         }
+
+        //Hecho por Yoluana
         public void eliminarTutor(int idPer)
         {
 
@@ -119,6 +122,7 @@ namespace AccesoDatos
             con.Close();
         }
 
+        //Hecho por Yoluana
         public BindingList<Tutor> traerTutoresCod(string codTut)
         {
             BindingList<Tutor> lista = new BindingList<Tutor>();
@@ -164,6 +168,7 @@ namespace AccesoDatos
             return lista;
         }
 
+        //Hecho por Yoluana
         public void insertarNuevoTutor(String idPer, String idcoord, string est) {
            
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
@@ -210,12 +215,10 @@ namespace AccesoDatos
                 comando2.ExecuteNonQuery();
                 con2.Close();
             }
-
-
-
-                
+      
         }
 
+        //Hecho por Yoluana
         public BindingList<Tutor> listarTutores() {
             BindingList<Tutor> lista = new BindingList<Tutor>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
@@ -250,6 +253,7 @@ namespace AccesoDatos
             return lista;
         }
 
+        //Hecho por Yoluana
         public Tutor buscarTutor(String cod)
         {
             
