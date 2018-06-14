@@ -26,5 +26,9 @@ namespace Controlador {
         {
             return usuarioDA.insertar_usuario(u);
         }
+
+        public string obtenerNombreUsuario(string nombreUsuario) {
+            return usuarioDA.obtenerNombreUsuario(nombreUsuario);
+        }
     }
 }

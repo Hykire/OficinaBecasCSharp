@@ -11,8 +11,11 @@ using System.Windows.Forms;
 namespace Vista {
     public partial class Principal : Form {
 
+        //public Principal(string nombre) {
         public Principal() {
             InitializeComponent();
+
+            //lblNombreUsuario.Text = nombre;
         }
 
         private void bunifuFlatButton4_Click(object sender, EventArgs e)

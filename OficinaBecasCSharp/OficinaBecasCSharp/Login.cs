@@ -25,6 +25,8 @@ namespace Vista
         public void estadoInicial() {
             txtUsuario.Text = "Usuario";
             txtContrasena.Text = "Contrasena";
+            limpiarUsuario = false;
+            limpiarContrasena = false;
         }
 
         public void verificarUsuario() {
@@ -37,6 +39,7 @@ namespace Vista
                 return;
             }
             if (usuarioBL.validarUsuario(txtUsuario.Text, txtContrasena.Text)) {
+                //Principal ventanaPrincipal = new Principal(obtenerNombreUsuario());
                 Principal ventanaPrincipal = new Principal();
                 this.Hide();
                 ventanaPrincipal.ShowDialog();
@@ -45,6 +48,8 @@ namespace Vista
             }
             else {
                 MessageBox.Show("Usuario o contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                limpiarUsuario = false;
+                limpiarContrasena = false;
                 return;
             }
         }
@@ -53,21 +58,7 @@ namespace Vista
             verificarUsuario();
             
         }
-
-        private void bunifuMaterialTextbox1_Click(object sender, EventArgs e) {
-            
-        }
-
-        private void txtUsuario_OnValueChanged(object sender, EventArgs e) {
-            if (!limpiarUsuario) txtUsuario.Text = "";
-            limpiarUsuario = true;
-        }
-
-        private void txtContrasena_OnValueChanged(object sender, EventArgs e) {
-            if (!limpiarContrasena) txtContrasena.Text = "";
-            limpiarContrasena = true;
-        }
-
+        
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e) {
             if (e.KeyChar == Convert.ToChar(Keys.Enter)) {
                 verificarUsuario();
@@ -78,6 +69,24 @@ namespace Vista
             if (e.KeyChar == Convert.ToChar(Keys.Enter)) {
                 verificarUsuario();
             }
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void txtUsuario_Click(object sender, EventArgs e) {
+            if (!limpiarUsuario) txtUsuario.Text = "";
+            limpiarUsuario = true;
+        }
+
+        private void textBox1_Click(object sender, EventArgs e) {
+            if (!limpiarContrasena) txtContrasena.Text = "";
+            limpiarContrasena = true;
+        }
+
+        public string obtenerNombreUsuario() {
+            return usuarioBL.obtenerNombreUsuario(txtUsuario.Text);
         }
     }
 }

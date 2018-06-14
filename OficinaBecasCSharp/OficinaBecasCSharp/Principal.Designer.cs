@@ -31,6 +31,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel_Principal = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -38,6 +40,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.lblNombreUsuario);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonAC);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.buttonTutor);
@@ -46,8 +50,9 @@
             this.panel1.Controls.Add(this.buttonAdmin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1057, 81);
+            this.panel1.Size = new System.Drawing.Size(1409, 100);
             this.panel1.TabIndex = 8;
             // 
             // buttonAC
@@ -71,14 +76,14 @@
             this.buttonAC.IconVisible = false;
             this.buttonAC.IconZoom = 90D;
             this.buttonAC.IsTab = false;
-            this.buttonAC.Location = new System.Drawing.Point(677, 0);
-            this.buttonAC.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAC.Location = new System.Drawing.Point(903, 0);
+            this.buttonAC.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.buttonAC.Name = "buttonAC";
             this.buttonAC.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.buttonAC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonAC.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAC.selected = false;
-            this.buttonAC.Size = new System.Drawing.Size(160, 53);
+            this.buttonAC.Size = new System.Drawing.Size(213, 65);
             this.buttonAC.TabIndex = 14;
             this.buttonAC.Text = "Asistente de Comunicaciones";
             this.buttonAC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,10 +96,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::Vista.Properties.Resources.logoOficinaBecas3;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(45, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(60, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(103, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(137, 71);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -120,14 +125,14 @@
             this.buttonTutor.IconVisible = false;
             this.buttonTutor.IconZoom = 90D;
             this.buttonTutor.IsTab = false;
-            this.buttonTutor.Location = new System.Drawing.Point(518, 0);
-            this.buttonTutor.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonTutor.Location = new System.Drawing.Point(691, 0);
+            this.buttonTutor.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.buttonTutor.Name = "buttonTutor";
             this.buttonTutor.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(148)))), ((int)(((byte)(17)))));
             this.buttonTutor.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonTutor.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonTutor.selected = false;
-            this.buttonTutor.Size = new System.Drawing.Size(160, 53);
+            this.buttonTutor.Size = new System.Drawing.Size(213, 65);
             this.buttonTutor.TabIndex = 13;
             this.buttonTutor.Text = "Tutor";
             this.buttonTutor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -156,14 +161,14 @@
             this.buttonCT.IconVisible = false;
             this.buttonCT.IconZoom = 90D;
             this.buttonCT.IsTab = false;
-            this.buttonCT.Location = new System.Drawing.Point(359, 0);
-            this.buttonCT.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCT.Location = new System.Drawing.Point(479, 0);
+            this.buttonCT.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.buttonCT.Name = "buttonCT";
             this.buttonCT.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.buttonCT.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonCT.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonCT.selected = false;
-            this.buttonCT.Size = new System.Drawing.Size(160, 53);
+            this.buttonCT.Size = new System.Drawing.Size(213, 65);
             this.buttonCT.TabIndex = 12;
             this.buttonCT.Text = "Coordinador de Tutor";
             this.buttonCT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -174,9 +179,10 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.panel4.Location = new System.Drawing.Point(270, 213);
+            this.panel4.Location = new System.Drawing.Point(360, 262);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(545, 329);
+            this.panel4.Size = new System.Drawing.Size(727, 405);
             this.panel4.TabIndex = 10;
             // 
             // buttonAdmin
@@ -200,14 +206,14 @@
             this.buttonAdmin.IconVisible = false;
             this.buttonAdmin.IconZoom = 90D;
             this.buttonAdmin.IsTab = false;
-            this.buttonAdmin.Location = new System.Drawing.Point(200, 0);
-            this.buttonAdmin.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAdmin.Location = new System.Drawing.Point(267, 0);
+            this.buttonAdmin.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.buttonAdmin.Name = "buttonAdmin";
             this.buttonAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.buttonAdmin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonAdmin.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAdmin.selected = false;
-            this.buttonAdmin.Size = new System.Drawing.Size(160, 53);
+            this.buttonAdmin.Size = new System.Drawing.Size(213, 65);
             this.buttonAdmin.TabIndex = 11;
             this.buttonAdmin.Text = "Administrador";
             this.buttonAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -219,26 +225,51 @@
             // 
             this.panel_Principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.panel_Principal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Principal.Location = new System.Drawing.Point(0, 81);
+            this.panel_Principal.Location = new System.Drawing.Point(0, 100);
+            this.panel_Principal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel_Principal.Name = "panel_Principal";
-            this.panel_Principal.Size = new System.Drawing.Size(1057, 705);
+            this.panel_Principal.Size = new System.Drawing.Size(1409, 867);
             this.panel_Principal.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
+            this.label1.Location = new System.Drawing.Point(1258, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Bienvenido";
+            // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.AutoSize = true;
+            this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.lblNombreUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
+            this.lblNombreUsuario.Location = new System.Drawing.Point(1197, 63);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNombreUsuario.Size = new System.Drawing.Size(94, 20);
+            this.lblNombreUsuario.TabIndex = 16;
+            this.lblNombreUsuario.Text = "Freddy Paz";
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1057, 786);
+            this.ClientSize = new System.Drawing.Size(1409, 967);
             this.Controls.Add(this.panel_Principal);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Gestion de Becas";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -253,5 +284,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton buttonCT;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel_Principal;
+        private System.Windows.Forms.Label lblNombreUsuario;
+        private System.Windows.Forms.Label label1;
     }
 }

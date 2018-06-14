@@ -26,18 +26,22 @@ namespace AccesoDatos {
             string nombreObt = aux.ToString();
             conn.Close();
 
+            Console.WriteLine("USUARIO: " + nombreObt);
+            Console.WriteLine("CONTRASENA ESCRITA: " + contraUsuario);
+
             /* Buscas constrasena del usuario */
             conn = new MySqlConnection(url);
             conn.Open();
             cmd = new MySqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "SELECT CONTRASENIA FROM USUARIO WHERE NOMBRE_USUARIO = '" + contraUsuario + "'";
+            cmd.CommandText = "SELECT CONTRASENIA FROM USUARIO WHERE CONTRASENIA = '" + contraUsuario + "'";
             //string contrasenaObt = cmd.ExecuteScalar().ToString();
             aux = cmd.ExecuteScalar();
             if (aux == null) return false;
             string contrasenaObt = aux.ToString();
             conn.Close();
-            
+            Console.WriteLine("CONTRASENA OBTENIDA: " + contrasenaObt);
+
             if (contrasenaObt == contraUsuario) return true;
             else return false;
         }
@@ -83,6 +87,42 @@ namespace AccesoDatos {
             comando.ExecuteNonQuery();
             con.Close();
             return Int32.Parse(comando.Parameters["_id"].Value.ToString());
+        }
+
+        public string obtenerNombreUsuario(string nombreUsuario) {
+            string nombre = "";
+
+            /*MySqlConnection conn = new MySqlConnection(url);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE_USUARIO = '" + nombreUsuario + "'";
+            Object aux = cmd.ExecuteScalar();
+            if (aux == null) return "";
+            string idUsuario = aux.ToString();
+            conn.Close();
+
+            conn = new MySqlConnection(url);
+            conn.Open();
+            cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT NOMBRES FROM PERSONA WHERE ID_USUARIO = " + idUsuario;
+            aux = cmd.ExecuteScalar();
+            if (aux == null) return nombre;
+            nombre = aux.ToString();
+            conn.Close();
+
+            conn = new MySqlConnection(url);
+            conn.Open();
+            cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT APELLIDOS FROM PERSONA WHERE ID_USUARIO = " + idUsuario;
+            aux = cmd.ExecuteScalar();
+            if (aux == null) return nombre;
+            nombre = nombre + " " + aux.ToString();
+            conn.Close();*/
+
+            return nombre;
         }
     }
 }
