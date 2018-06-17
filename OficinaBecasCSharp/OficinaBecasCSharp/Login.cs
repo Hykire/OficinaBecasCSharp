@@ -39,8 +39,7 @@ namespace Vista
                 return;
             }
             if (usuarioBL.validarUsuario(txtUsuario.Text, txtContrasena.Text)) {
-                //Principal ventanaPrincipal = new Principal(obtenerNombreUsuario());
-                Principal ventanaPrincipal = new Principal();
+                Principal ventanaPrincipal = new Principal(obtenerIdUsuario());
                 this.Hide();
                 ventanaPrincipal.ShowDialog();
                 estadoInicial();
@@ -85,8 +84,8 @@ namespace Vista
             limpiarContrasena = true;
         }
 
-        public string obtenerNombreUsuario() {
-            return usuarioBL.obtenerNombreUsuario(txtUsuario.Text);
+        public int obtenerIdUsuario() {
+            return usuarioBL.obtenerIdUsuario(txtUsuario.Text);
         }
     }
 }

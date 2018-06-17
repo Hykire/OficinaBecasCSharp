@@ -25,10 +25,6 @@ namespace AccesoDatos {
             if (aux == null) return false;
             string nombreObt = aux.ToString();
             conn.Close();
-
-            Console.WriteLine("USUARIO: " + nombreObt);
-            Console.WriteLine("CONTRASENA ESCRITA: " + contraUsuario);
-
             /* Buscas constrasena del usuario */
             conn = new MySqlConnection(url);
             conn.Open();
@@ -40,8 +36,6 @@ namespace AccesoDatos {
             if (aux == null) return false;
             string contrasenaObt = aux.ToString();
             conn.Close();
-            Console.WriteLine("CONTRASENA OBTENIDA: " + contrasenaObt);
-
             if (contrasenaObt == contraUsuario) return true;
             else return false;
         }
@@ -89,25 +83,45 @@ namespace AccesoDatos {
             return Int32.Parse(comando.Parameters["_id"].Value.ToString());
         }
 
-        public string obtenerNombreUsuario(string nombreUsuario) {
-            string nombre = "";
+        public void cambiarContrasena(int idUsuario, string nuevaContra) {
+            MySqlConnection conn = new MySqlConnection(url);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "CAMBIAR_CONTRASENA";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            /*MySqlConnection conn = new MySqlConnection(url);
+            cmd.Parameters.AddWithValue("id", idUsuario);
+            cmd.Parameters.AddWithValue("nuevaContra", nuevaContra);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public int obtenerIdUsuario(string nombreUsuario) {
+            MySqlConnection conn = new MySqlConnection(url);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = "SELECT ID_USUARIO FROM USUARIO WHERE NOMBRE_USUARIO = '" + nombreUsuario + "'";
             Object aux = cmd.ExecuteScalar();
-            if (aux == null) return "";
-            string idUsuario = aux.ToString();
+            if (aux == null) return -1;
             conn.Close();
 
-            conn = new MySqlConnection(url);
+            return Int32.Parse(aux.ToString());
+        }
+
+        public string obtenerNombreUsuario(int idUsuario) {
+            if (idUsuario == -1) return "";
+
+            string nombre = "";
+
+            MySqlConnection conn = new MySqlConnection(url);
             conn.Open();
-            cmd = new MySqlCommand();
+            MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = "SELECT NOMBRES FROM PERSONA WHERE ID_USUARIO = " + idUsuario;
-            aux = cmd.ExecuteScalar();
+            Object aux = cmd.ExecuteScalar();
             if (aux == null) return nombre;
             nombre = aux.ToString();
             conn.Close();
@@ -120,9 +134,25 @@ namespace AccesoDatos {
             aux = cmd.ExecuteScalar();
             if (aux == null) return nombre;
             nombre = nombre + " " + aux.ToString();
-            conn.Close();*/
+            conn.Close();
 
             return nombre;
+        }
+
+        public bool contrasenaCoincide(int idUsuario, string contraIngresada) {
+            if (idUsuario == -1) return false;
+            MySqlConnection conn = new MySqlConnection(url);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT CONTRASENIA FROM USUARIO WHERE ID_USUARIO = " + idUsuario.ToString();
+            Object aux = cmd.ExecuteScalar();
+            if (aux == null) return false;
+            string contraObt = aux.ToString();
+            conn.Close();
+
+            if (contraObt != contraIngresada) return false;
+            else return true;
         }
     }
 }

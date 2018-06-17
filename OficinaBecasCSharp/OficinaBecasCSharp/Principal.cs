@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controlador;
 
 namespace Vista {
     public partial class Principal : Form {
-
-        //public Principal(string nombre) {
-        public Principal() {
+        private UsuarioBL usuarioBL;
+        int id = -1;
+        public Principal(int idUsuario) {
             InitializeComponent();
-
-            //lblNombreUsuario.Text = nombre;
+            
+            usuarioBL = new UsuarioBL();
+            id = idUsuario;
+            string nombreUsuario = usuarioBL.obtenerNombreUsuario(idUsuario);
+            lblNombreUsuario.Text = nombreUsuario;
         }
 
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
@@ -72,6 +76,11 @@ namespace Vista {
             this.panel_Principal.Controls.Add(gestionarTutor);
             this.panel_Principal.Tag = gestionarTutor;
             gestionarTutor.Show();
+        }
+
+        private void btnCambiarContra_Click(object sender, EventArgs e) {
+            frmCambiarContrasena ventanaCambioContra = new frmCambiarContrasena(id);
+            ventanaCambioContra.ShowDialog();
         }
     }
 }

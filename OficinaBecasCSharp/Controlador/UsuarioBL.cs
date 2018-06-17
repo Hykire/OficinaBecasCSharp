@@ -26,9 +26,21 @@ namespace Controlador {
         {
             return usuarioDA.insertar_usuario(u);
         }
+        
+        public string obtenerNombreUsuario(int idUsuario) {
+            return usuarioDA.obtenerNombreUsuario(idUsuario);
+        }
 
-        public string obtenerNombreUsuario(string nombreUsuario) {
-            return usuarioDA.obtenerNombreUsuario(nombreUsuario);
+        public void cambiarContrasena(int idUsuario, string nuevaContra) {
+            usuarioDA.cambiarContrasena(idUsuario, nuevaContra);
+        }
+
+        public bool contrasenaCoincide(int idUsuario, string contraIngresada) {
+            return usuarioDA.contrasenaCoincide(idUsuario, contraIngresada);
+        }
+
+        public int obtenerIdUsuario(string nombre) {
+            return usuarioDA.obtenerIdUsuario(nombre);
         }
     }
 }

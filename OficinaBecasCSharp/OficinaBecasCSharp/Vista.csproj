@@ -176,6 +176,12 @@
     <Compile Include="frmBuscarTutor.Designer.cs">
       <DependentUpon>frmBuscarTutor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCambiarContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambiarContrasena.Designer.cs">
+      <DependentUpon>frmCambiarContrasena.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCambiarTutorABecario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -393,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarTutor.resx">
       <DependentUpon>frmBuscarTutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCambiarContrasena.resx">
+      <DependentUpon>frmCambiarContrasena.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCambiarTutorABecario.resx">
       <DependentUpon>frmCambiarTutorABecario.cs</DependentUpon>
