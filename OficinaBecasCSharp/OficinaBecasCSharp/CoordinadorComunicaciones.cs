@@ -45,7 +45,7 @@ namespace Vista
             btnBeca.Enabled = false;
             btnNuevo.Enabled = true;
             btnBuscar.Enabled = true;
-            btnActualizar.Enabled = false;
+            btnEditar.Enabled = false;
             EstadoInicial();
         }
 
@@ -170,13 +170,13 @@ namespace Vista
                 btnBeca.Enabled = false;
                 btnNuevo.Enabled = true;
                 btnBuscar.Enabled = true;
-                btnActualizar.Enabled = false;
+                btnEditar.Enabled = false;
                 EstadoInicial();
                 return;
             }
             btnNuevo.Enabled = false;
             btnGuardar.Enabled = false;
-            btnActualizar.Enabled = true;
+            btnEditar.Enabled = true;
             btnBuscar.Enabled = false;
             btnCancelar.Enabled = true;
         }
@@ -198,7 +198,7 @@ namespace Vista
             btnNuevo.Enabled = false;
             btnBuscar.Enabled = false;
             btnBeca.Enabled = true;
-            btnActualizar.Enabled = false;
+            btnEditar.Enabled = false;
             txtCreadorConvocatoria.Text = asistente.Nombres + " " + asistente.Apellidos;
             txtTotalCandidatos.Text = "0";
             txtCantidadPostulantes.Text = "0";
@@ -225,7 +225,7 @@ namespace Vista
             btnNuevo.Enabled = true;
             btnBuscar.Enabled = true;
             btnBeca.Enabled = false;
-            btnActualizar.Enabled = false;
+            btnEditar.Enabled = false;
             EstadoInicial();
         }
 
@@ -294,7 +294,7 @@ namespace Vista
             btnBeca.Enabled = false;
             btnNuevo.Enabled = true;
             btnBuscar.Enabled = true;
-            btnActualizar.Enabled = false;
+            btnEditar.Enabled = false;
         }
 
         private void btnBeca_Click_1(object sender, EventArgs e)
@@ -324,7 +324,7 @@ namespace Vista
             btnNuevo.Enabled = false;
             btnBuscar.Enabled = false;
             btnBeca.Enabled = true;
-            btnActualizar.Enabled = false;
+            btnEditar.Enabled = false;
             actualizar = true;
         }
 

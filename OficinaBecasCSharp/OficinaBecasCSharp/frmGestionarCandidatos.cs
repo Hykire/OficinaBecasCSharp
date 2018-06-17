@@ -67,8 +67,7 @@ namespace Vista
             txtSeleccionados.Text = null;
             txtTelefonoFijo.Text = null;
             txtTelefonoMovil.Text = null;
-            dtFechaFin.Text = null;
-            dtFechaNacimiento.Text = null;
+            dtFechaFin.Text = DateTime.Today.ToString();
             chPostulo.Checked = false;
             chFueSeleccionado.Checked = false;
             rbFemenino.Checked = false;
@@ -76,7 +75,7 @@ namespace Vista
 
             btnNuevo.Enabled = false;
             btnBuscar.Enabled = false;
-            btnActualizar.Enabled = false;
+            btnEditar.Enabled = false;
             btnCancelar.Enabled = false;
             btnGuardar.Enabled = false;
         }
@@ -129,7 +128,7 @@ namespace Vista
             txtCorreoAlternativo.Enabled = true;
             txtCorreoPUCP.Enabled = true;
             txtDNI.Enabled = true;
-            txtEdad.Enabled = true;
+            txtEdad.Enabled = false;
             txtIdConvocatoria.Enabled = false;
             txtIdCandidato.Enabled = false;
             txtNombreConvocatoria.Enabled = false;
@@ -149,7 +148,7 @@ namespace Vista
 
             btnNuevo.Enabled = false;
             btnBuscar.Enabled = false;
-            btnActualizar.Enabled = false;
+            btnEditar.Enabled = false;
             btnCancelar.Enabled = true;
             btnGuardar.Enabled = true;
         }
@@ -159,7 +158,7 @@ namespace Vista
             EstadoInicial();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e) //Botón Buscar
         {
             BuscarCandidato buscarPersona = new BuscarCandidato(convocatoria, true);
             if (buscarPersona.ShowDialog() == DialogResult.OK)
@@ -199,12 +198,6 @@ namespace Vista
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtApellidos.Text == "" || txtCodigoPUCP.Text == "" || txtCorreoPUCP.Text == "" || txtDNI.Text == "" || txtEdad.Text == "" || (!rbFemenino.Checked && !rbMasculino.Checked) || txtNombres.Text == "" || dtFechaNacimiento.Text == "" || txtTelefonoMovil.Text == "")
-            {
-                MessageBox.Show("Falta completar información", "Datos Incompletos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
             int cantidad;
             if (!Int32.TryParse(txtCodigoPUCP.Text, out cantidad))
             {
@@ -221,12 +214,26 @@ namespace Vista
                 MessageBox.Show("Debe ingresar un número en el campo Edad", "Error en formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if(!(txtCorreoPUCP.Text).Contains("@pucp.edu.pe") && !(txtCorreoPUCP.Text).Contains("@pucp.pe"))
+            {
+                MessageBox.Show("El correo ingresado no es un correo PUCP", "Error en el Formato de Correo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!txtCorreoAlternativo.Text.Contains("@") || !txtCorreoAlternativo.Text.Contains("."))
+            {
+                MessageBox.Show("El texto ingresado no es un correo", "Error en el Formato de Correo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtApellidos.Text == "" || txtCodigoPUCP.Text == "" || txtCorreoPUCP.Text == "" || txtDNI.Text == "" || txtEdad.Text == "" || (!rbFemenino.Checked && !rbMasculino.Checked) || txtNombres.Text == "" || dtFechaNacimiento.Text == "" || txtTelefonoMovil.Text == "")
+            {
+                MessageBox.Show("Falta completar información", "Datos Incompletos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             if (chFueSeleccionado.Checked && !chPostulo.Checked)
             {
                 MessageBox.Show("El candidato no puede haber sido seleccionado sin postular", "Inconsistencia en la Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
 
             Candidato candidato = new Candidato();
             if (actualizar == true || buscar == true) candidato = this.candidato;
@@ -302,7 +309,7 @@ namespace Vista
             chFueSeleccionado.Enabled = false;
             btnBuscarCandidato.Enabled = false;
 
-            btnActualizar.Enabled = true;
+            btnEditar.Enabled = true;
             btnCancelar.Enabled = true;
             btnBuscar.Enabled = false;
             btnGuardar.Enabled = false;
@@ -351,7 +358,7 @@ namespace Vista
                 rbMasculino.Enabled = false;
                 rbFemenino.Enabled = false;
 
-                btnActualizar.Enabled = true;
+                btnEditar.Enabled = true;
                 btnCancelar.Enabled = true;
                 btnBuscar.Enabled = false;
                 btnGuardar.Enabled = false;
@@ -400,7 +407,7 @@ namespace Vista
                 txtCorreoAlternativo.Enabled = true;
                 txtCorreoPUCP.Enabled = true;
                 txtDNI.Enabled = true;
-                txtEdad.Enabled = true;
+                txtEdad.Enabled = false;
                 txtIdConvocatoria.Enabled = false;
                 txtIdCandidato.Enabled = false;
                 txtNombreConvocatoria.Enabled = false;
@@ -421,9 +428,31 @@ namespace Vista
 
             btnNuevo.Enabled = false;
             btnBuscar.Enabled = false;
-            btnActualizar.Enabled = false;
+            btnEditar.Enabled = false;
             btnCancelar.Enabled = true;
             btnGuardar.Enabled = true;
+        }
+
+        private void dtFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            if(DateTime.Parse(dtFechaNacimiento.Text).Month > DateTime.Today.Month)
+            {
+                txtEdad.Text = (DateTime.Today.Year - DateTime.Parse(dtFechaNacimiento.Text).Year - 1).ToString();
+            }
+            else if (DateTime.Parse(dtFechaNacimiento.Text).Month == DateTime.Today.Month)
+            {
+                if (DateTime.Parse(dtFechaNacimiento.Text).Day > DateTime.Today.Day)
+                {
+                    txtEdad.Text = (DateTime.Today.Year - DateTime.Parse(dtFechaNacimiento.Text).Year - 1).ToString();
+                }
+                else txtEdad.Text = (DateTime.Today.Year - DateTime.Parse(dtFechaNacimiento.Text).Year).ToString();
+            }
+            else txtEdad.Text = (DateTime.Today.Year - DateTime.Parse(dtFechaNacimiento.Text).Year).ToString();
+        }
+
+        private void dtFechaNacimiento_ContextMenuStripChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

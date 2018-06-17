@@ -32,8 +32,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
-            this.btnActualizar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdConvocatoria = new System.Windows.Forms.TextBox();
@@ -90,8 +91,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevo,
             this.btnGuardar,
+            this.btnEditar,
+            this.toolStripSeparator1,
             this.btnBuscar,
-            this.btnActualizar,
             this.btnCancelar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -117,6 +119,20 @@
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(72, 24);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
@@ -125,15 +141,6 @@
             this.btnBuscar.Size = new System.Drawing.Size(76, 24);
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(99, 24);
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnCancelar
             // 
@@ -450,6 +457,7 @@
             // txtTelefonoFijo
             // 
             this.txtTelefonoFijo.Location = new System.Drawing.Point(549, 181);
+            this.txtTelefonoFijo.MaxLength = 15;
             this.txtTelefonoFijo.Name = "txtTelefonoFijo";
             this.txtTelefonoFijo.Size = new System.Drawing.Size(211, 22);
             this.txtTelefonoFijo.TabIndex = 36;
@@ -457,6 +465,7 @@
             // txtTelefonoMovil
             // 
             this.txtTelefonoMovil.Location = new System.Drawing.Point(549, 217);
+            this.txtTelefonoMovil.MaxLength = 15;
             this.txtTelefonoMovil.Name = "txtTelefonoMovil";
             this.txtTelefonoMovil.Size = new System.Drawing.Size(211, 22);
             this.txtTelefonoMovil.TabIndex = 35;
@@ -481,10 +490,13 @@
             this.dtFechaNacimiento.Name = "dtFechaNacimiento";
             this.dtFechaNacimiento.Size = new System.Drawing.Size(263, 22);
             this.dtFechaNacimiento.TabIndex = 32;
+            this.dtFechaNacimiento.ValueChanged += new System.EventHandler(this.dtFechaNacimiento_ValueChanged);
+            this.dtFechaNacimiento.ContextMenuStripChanged += new System.EventHandler(this.dtFechaNacimiento_ContextMenuStripChanged);
             // 
             // txtEdad
             // 
             this.txtEdad.Location = new System.Drawing.Point(153, 251);
+            this.txtEdad.MaxLength = 3;
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(52, 22);
             this.txtEdad.TabIndex = 31;
@@ -534,6 +546,7 @@
             // txtDNI
             // 
             this.txtDNI.Location = new System.Drawing.Point(157, 181);
+            this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(207, 22);
             this.txtDNI.TabIndex = 26;
@@ -555,6 +568,7 @@
             // txtCodigoPUCP
             // 
             this.txtCodigoPUCP.Location = new System.Drawing.Point(157, 75);
+            this.txtCodigoPUCP.MaxLength = 8;
             this.txtCodigoPUCP.Name = "txtCodigoPUCP";
             this.txtCodigoPUCP.Size = new System.Drawing.Size(207, 22);
             this.txtCodigoPUCP.TabIndex = 22;
@@ -586,7 +600,7 @@
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnBuscar;
-        private System.Windows.Forms.ToolStripButton btnActualizar;
+        private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIdConvocatoria;
@@ -632,5 +646,6 @@
         private System.Windows.Forms.Button btnBuscarCandidato;
         private System.Windows.Forms.TextBox txtIdCandidato;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
