@@ -49,7 +49,22 @@
             this.cbFiltroCiclo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chNombre = new System.Windows.Forms.CheckBox();
+            this.chDescripcion = new System.Windows.Forms.CheckBox();
+            this.chFechaInicio = new System.Windows.Forms.CheckBox();
+            this.chFechaFin = new System.Windows.Forms.CheckBox();
+            this.chFechaCreacion = new System.Windows.Forms.CheckBox();
+            this.chPrevistos = new System.Windows.Forms.CheckBox();
+            this.chCandidatos = new System.Windows.Forms.CheckBox();
+            this.chPostulantes = new System.Windows.Forms.CheckBox();
+            this.chSeleccionados = new System.Windows.Forms.CheckBox();
+            this.chCiclo = new System.Windows.Forms.CheckBox();
+            this.chBeca = new System.Windows.Forms.CheckBox();
+            this.chCreador = new System.Windows.Forms.CheckBox();
+            this.btnPersonalizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvocatoria)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvConvocatoria
@@ -210,7 +225,6 @@
             // 
             // cbFiltroCiclo
             // 
-            this.cbFiltroCiclo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFiltroCiclo.FormattingEnabled = true;
             this.cbFiltroCiclo.Location = new System.Drawing.Point(154, 77);
             this.cbFiltroCiclo.Name = "cbFiltroCiclo";
@@ -236,11 +250,165 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnPersonalizar);
+            this.groupBox1.Controls.Add(this.chCreador);
+            this.groupBox1.Controls.Add(this.chCiclo);
+            this.groupBox1.Controls.Add(this.chBeca);
+            this.groupBox1.Controls.Add(this.chPostulantes);
+            this.groupBox1.Controls.Add(this.chSeleccionados);
+            this.groupBox1.Controls.Add(this.chPrevistos);
+            this.groupBox1.Controls.Add(this.chCandidatos);
+            this.groupBox1.Controls.Add(this.chFechaFin);
+            this.groupBox1.Controls.Add(this.chFechaCreacion);
+            this.groupBox1.Controls.Add(this.chDescripcion);
+            this.groupBox1.Controls.Add(this.chFechaInicio);
+            this.groupBox1.Controls.Add(this.chNombre);
+            this.groupBox1.Location = new System.Drawing.Point(16, 532);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1167, 114);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Personalizar Columnas Visibles";
+            // 
+            // chNombre
+            // 
+            this.chNombre.AutoSize = true;
+            this.chNombre.Location = new System.Drawing.Point(49, 33);
+            this.chNombre.Name = "chNombre";
+            this.chNombre.Size = new System.Drawing.Size(80, 21);
+            this.chNombre.TabIndex = 13;
+            this.chNombre.Text = "Nombre";
+            this.chNombre.UseVisualStyleBackColor = true;
+            // 
+            // chDescripcion
+            // 
+            this.chDescripcion.AutoSize = true;
+            this.chDescripcion.Location = new System.Drawing.Point(49, 71);
+            this.chDescripcion.Name = "chDescripcion";
+            this.chDescripcion.Size = new System.Drawing.Size(104, 21);
+            this.chDescripcion.TabIndex = 14;
+            this.chDescripcion.Text = "Descripción";
+            this.chDescripcion.UseVisualStyleBackColor = true;
+            // 
+            // chFechaInicio
+            // 
+            this.chFechaInicio.AutoSize = true;
+            this.chFechaInicio.Location = new System.Drawing.Point(217, 33);
+            this.chFechaInicio.Name = "chFechaInicio";
+            this.chFechaInicio.Size = new System.Drawing.Size(105, 21);
+            this.chFechaInicio.TabIndex = 15;
+            this.chFechaInicio.Text = "Fecha Inicio";
+            this.chFechaInicio.UseVisualStyleBackColor = true;
+            // 
+            // chFechaFin
+            // 
+            this.chFechaFin.AutoSize = true;
+            this.chFechaFin.Location = new System.Drawing.Point(217, 71);
+            this.chFechaFin.Name = "chFechaFin";
+            this.chFechaFin.Size = new System.Drawing.Size(92, 21);
+            this.chFechaFin.TabIndex = 16;
+            this.chFechaFin.Text = "Fecha Fin";
+            this.chFechaFin.UseVisualStyleBackColor = true;
+            // 
+            // chFechaCreacion
+            // 
+            this.chFechaCreacion.AutoSize = true;
+            this.chFechaCreacion.Location = new System.Drawing.Point(374, 33);
+            this.chFechaCreacion.Name = "chFechaCreacion";
+            this.chFechaCreacion.Size = new System.Drawing.Size(129, 21);
+            this.chFechaCreacion.TabIndex = 17;
+            this.chFechaCreacion.Text = "Fecha Creación";
+            this.chFechaCreacion.UseVisualStyleBackColor = true;
+            // 
+            // chPrevistos
+            // 
+            this.chPrevistos.AutoSize = true;
+            this.chPrevistos.Location = new System.Drawing.Point(374, 71);
+            this.chPrevistos.Name = "chPrevistos";
+            this.chPrevistos.Size = new System.Drawing.Size(88, 21);
+            this.chPrevistos.TabIndex = 18;
+            this.chPrevistos.Text = "Previstos";
+            this.chPrevistos.UseVisualStyleBackColor = true;
+            // 
+            // chCandidatos
+            // 
+            this.chCandidatos.AutoSize = true;
+            this.chCandidatos.Location = new System.Drawing.Point(548, 33);
+            this.chCandidatos.Name = "chCandidatos";
+            this.chCandidatos.Size = new System.Drawing.Size(101, 21);
+            this.chCandidatos.TabIndex = 19;
+            this.chCandidatos.Text = "Candidatos";
+            this.chCandidatos.UseVisualStyleBackColor = true;
+            // 
+            // chPostulantes
+            // 
+            this.chPostulantes.AutoSize = true;
+            this.chPostulantes.Location = new System.Drawing.Point(548, 71);
+            this.chPostulantes.Name = "chPostulantes";
+            this.chPostulantes.Size = new System.Drawing.Size(104, 21);
+            this.chPostulantes.TabIndex = 20;
+            this.chPostulantes.Text = "Postulantes";
+            this.chPostulantes.UseVisualStyleBackColor = true;
+            // 
+            // chSeleccionados
+            // 
+            this.chSeleccionados.AutoSize = true;
+            this.chSeleccionados.Location = new System.Drawing.Point(717, 33);
+            this.chSeleccionados.Name = "chSeleccionados";
+            this.chSeleccionados.Size = new System.Drawing.Size(122, 21);
+            this.chSeleccionados.TabIndex = 21;
+            this.chSeleccionados.Text = "Seleccionados";
+            this.chSeleccionados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chSeleccionados.UseVisualStyleBackColor = true;
+            // 
+            // chCiclo
+            // 
+            this.chCiclo.AutoSize = true;
+            this.chCiclo.Location = new System.Drawing.Point(717, 71);
+            this.chCiclo.Name = "chCiclo";
+            this.chCiclo.Size = new System.Drawing.Size(60, 21);
+            this.chCiclo.TabIndex = 22;
+            this.chCiclo.Text = "Ciclo";
+            this.chCiclo.UseVisualStyleBackColor = true;
+            // 
+            // chBeca
+            // 
+            this.chBeca.AutoSize = true;
+            this.chBeca.Location = new System.Drawing.Point(894, 33);
+            this.chBeca.Name = "chBeca";
+            this.chBeca.Size = new System.Drawing.Size(62, 21);
+            this.chBeca.TabIndex = 23;
+            this.chBeca.Text = "Beca";
+            this.chBeca.UseVisualStyleBackColor = true;
+            // 
+            // chCreador
+            // 
+            this.chCreador.AutoSize = true;
+            this.chCreador.Location = new System.Drawing.Point(894, 71);
+            this.chCreador.Name = "chCreador";
+            this.chCreador.Size = new System.Drawing.Size(81, 21);
+            this.chCreador.TabIndex = 24;
+            this.chCreador.Text = "Creador";
+            this.chCreador.UseVisualStyleBackColor = true;
+            // 
+            // btnPersonalizar
+            // 
+            this.btnPersonalizar.Location = new System.Drawing.Point(1018, 42);
+            this.btnPersonalizar.Name = "btnPersonalizar";
+            this.btnPersonalizar.Size = new System.Drawing.Size(126, 34);
+            this.btnPersonalizar.TabIndex = 25;
+            this.btnPersonalizar.Text = "Personalizar";
+            this.btnPersonalizar.UseVisualStyleBackColor = true;
+            this.btnPersonalizar.Click += new System.EventHandler(this.btnPersonalizar_Click);
+            // 
             // frmBuscarConvocatoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 525);
+            this.ClientSize = new System.Drawing.Size(1220, 679);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbFiltroCiclo);
@@ -254,6 +422,8 @@
             this.Text = "BuscarConvocatoria";
             this.Load += new System.EventHandler(this.BuscarConvocatoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvocatoria)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,5 +452,19 @@
         private System.Windows.Forms.ComboBox cbFiltroCiclo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox chCreador;
+        private System.Windows.Forms.CheckBox chCiclo;
+        private System.Windows.Forms.CheckBox chBeca;
+        private System.Windows.Forms.CheckBox chPostulantes;
+        private System.Windows.Forms.CheckBox chSeleccionados;
+        private System.Windows.Forms.CheckBox chPrevistos;
+        private System.Windows.Forms.CheckBox chCandidatos;
+        private System.Windows.Forms.CheckBox chFechaFin;
+        private System.Windows.Forms.CheckBox chFechaCreacion;
+        private System.Windows.Forms.CheckBox chDescripcion;
+        private System.Windows.Forms.CheckBox chFechaInicio;
+        private System.Windows.Forms.CheckBox chNombre;
+        private System.Windows.Forms.Button btnPersonalizar;
     }
 }

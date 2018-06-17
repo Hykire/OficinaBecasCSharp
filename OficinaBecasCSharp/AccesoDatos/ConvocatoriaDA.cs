@@ -229,7 +229,7 @@ namespace AccesoDatos
             return convocatorias;
         }
 
-        public BindingList<Convocatoria> filtroConvocatorias(string ciclo)
+        public BindingList<Convocatoria> filtroCiclo(string ciclo)
         {
             BindingList<Convocatoria> convocatorias = new BindingList<Convocatoria>();
             string cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
@@ -343,6 +343,126 @@ namespace AccesoDatos
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = "A_FILTRO_NOMBRE_Y_CICLO";
             comando.Parameters.Add("_CICLO", MySqlDbType.VarChar).Value = ciclo;
+            comando.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = nombre;
+            comando.Connection = con;
+            con.Open();
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Convocatoria convocatoria = new Convocatoria();
+                convocatoria.IdConvocatoria = reader.GetInt32("ID_CONVOCIDATORIA");
+                convocatoria.NombreConvocatoria = reader.GetString("NOMBRE_CONVOCATORIA");
+                convocatoria.DescripcionConvocatoria = reader.GetString("DESCRIPCION_CONVOCATORIA");
+                convocatoria.FechaInicio = reader.GetDateTime("FECHA_INICIO");
+                convocatoria.FechaFin = reader.GetDateTime("FECHA_FIN");
+                convocatoria.FechaCreacion = reader.GetDateTime("FECHA_CREACION");
+                convocatoria.CantidadCandidatosPrevistos = reader.GetInt32("CANTIDAD_CANDIDATOSPREVISTOS");
+                convocatoria.CantidadTotalCandidatos = reader.GetInt32("CANTIDAD_TOTALCANDIDATOS");
+                convocatoria.CantidadPostulantes = reader.GetInt32("CANTIDAD_POSTULANTES");
+                convocatoria.CantidadSeleccionados = reader.GetInt32("CANTIDAD_SELECCIONADOS");
+                convocatoria.CicloConvocatoria = reader.GetString("CICLO_CONVOCATORIA");
+
+                AsistenteComunicaciones persona = new AsistenteComunicaciones();
+                persona.Id_persona = reader.GetInt32("ID_PERSONA");
+                persona.Nombres = reader.GetString("NOMBRES");
+                persona.Apellidos = reader.GetString("APELLIDOS");
+                persona.IdAsistente = reader.GetInt32("ID_ASISTENTECOMUNICACIONES");
+
+                Beca beca = new Beca();
+                beca.Id_beca = reader.GetInt32("ID_BECA");
+                beca.Nombre_beca = reader.GetString("NOMBRE_BECA");
+
+                convocatoria.BecaAsociada = beca;
+                convocatoria.CreadorConvocatoria = persona;
+
+                convocatorias.Add(convocatoria);
+            }
+            con.Close();
+            return convocatorias;
+        }
+
+        //El cambio comienza a partir de aquí
+        public BindingList<Convocatoria> listarConvocatorias(int indicador)
+        {
+            BindingList<Convocatoria> convocatorias = new BindingList<Convocatoria>();
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            if (indicador == 1) comando.CommandText = "A_LISTAR_CONVOCATORIAS";
+            else if (indicador == 2) comando.CommandText = "A_LISTAR_CONVOCATORIAS_ANTIGUAS";
+            else if (indicador == 3) comando.CommandText = "A_LISTAR_CONVOCATORIAS_NUEVAS";
+
+            comando.Connection = con;
+            con.Open();
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Convocatoria convocatoria = new Convocatoria();
+                convocatoria.IdConvocatoria = reader.GetInt32("ID_CONVOCIDATORIA");
+                convocatoria.NombreConvocatoria = reader.GetString("NOMBRE_CONVOCATORIA");
+                convocatoria.DescripcionConvocatoria = reader.GetString("DESCRIPCION_CONVOCATORIA");
+                convocatoria.FechaInicio = reader.GetDateTime("FECHA_INICIO");
+                convocatoria.FechaFin = reader.GetDateTime("FECHA_FIN");
+                convocatoria.FechaCreacion = reader.GetDateTime("FECHA_CREACION");
+                convocatoria.CantidadCandidatosPrevistos = reader.GetInt32("CANTIDAD_CANDIDATOSPREVISTOS");
+                convocatoria.CantidadTotalCandidatos = reader.GetInt32("CANTIDAD_TOTALCANDIDATOS");
+                convocatoria.CantidadPostulantes = reader.GetInt32("CANTIDAD_POSTULANTES");
+                convocatoria.CantidadSeleccionados = reader.GetInt32("CANTIDAD_SELECCIONADOS");
+                convocatoria.CicloConvocatoria = reader.GetString("CICLO_CONVOCATORIA");
+
+                AsistenteComunicaciones persona = new AsistenteComunicaciones();
+                persona.Id_persona = reader.GetInt32("ID_PERSONA");
+                persona.Nombres = reader.GetString("NOMBRES");
+                persona.Apellidos = reader.GetString("APELLIDOS");
+                persona.IdAsistente = reader.GetInt32("ID_ASISTENTECOMUNICACIONES");
+
+                Beca beca = new Beca();
+                beca.Id_beca = reader.GetInt32("ID_BECA");
+                beca.Nombre_beca = reader.GetString("NOMBRE_BECA");
+
+                convocatoria.BecaAsociada = beca;
+                convocatoria.CreadorConvocatoria = persona;
+
+                convocatorias.Add(convocatoria);
+            }
+            con.Close();
+            return convocatorias;
+        }
+        public BindingList<string> listarCiclos(int indicador)
+        {
+            BindingList<string> ciclos = new BindingList<string>();
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            if (indicador == 1) comando.CommandText = "A_CONTAR_CICLOS";
+            else if (indicador == 2) comando.CommandText = "A_CONTAR_CICLOS_ANTIGUOS";
+            else if (indicador == 3) comando.CommandText = "A_CONTAR_CICLOS_NUEVOS";
+            comando.Connection = con;
+            con.Open();
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                ciclos.Add(reader.GetString("CICLOS"));
+            }
+            con.Close();
+            return ciclos;
+        }
+
+        public BindingList<Convocatoria> filtroNombres(int indicador, string nombre)
+        {
+            BindingList<Convocatoria> convocatorias = new BindingList<Convocatoria>();
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            if (indicador == 1) comando.CommandText = "A_FILTRO_NOMBRES";
+            else if (indicador == 2) comando.CommandText = "A_FILTRO_NOMBRES_ANTIGUO";
+            else if (indicador == 3) comando.CommandText = "A_FILTRO_NOMBRES_NUEVO";
+
             comando.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = nombre;
             comando.Connection = con;
             con.Open();

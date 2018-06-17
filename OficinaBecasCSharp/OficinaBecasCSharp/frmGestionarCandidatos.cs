@@ -86,7 +86,7 @@ namespace Vista
             BindingList<string> listaNula = new BindingList<string>();
             listaNula.Add("");
             listaNula.Add("");
-            frmBuscarConvocatoria frmBuscarConvocatoria = new frmBuscarConvocatoria(listaNula, false);
+            frmBuscarConvocatoria frmBuscarConvocatoria = new frmBuscarConvocatoria(1);
 
             if (frmBuscarConvocatoria.ShowDialog() == DialogResult.OK)
             {

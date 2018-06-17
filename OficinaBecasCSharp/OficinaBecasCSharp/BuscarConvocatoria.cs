@@ -18,34 +18,55 @@ namespace Vista
         private BindingList<Convocatoria> convocatorias;
         private Convocatoria convocatoriaSeleccionada;
         private BindingList<string> ciclos;
-        private bool esCicloActual;
+        private int indicador;
 
         public Convocatoria ConvocatoriaSeleccionada { get => convocatoriaSeleccionada; set => convocatoriaSeleccionada = value; }
 
-        public frmBuscarConvocatoria(BindingList<string> ciclos, bool esCicloActual)
+        public frmBuscarConvocatoria(int indicador)
         {
             InitializeComponent();
-            this.ciclos = ciclos;
-            this.esCicloActual = esCicloActual;
+            this.indicador = indicador;
             convocatoriaBL = new ConvocatoriaBL();
-            if (esCicloActual)
+            convocatorias = convocatoriaBL.listarConvocatorias(indicador);
+            ciclos = convocatoriaBL.listarCiclos(indicador);
+
+            if(indicador == 1)
             {
-                convocatorias = convocatoriaBL.listarConvocatoriasActuales(ciclos[0],ciclos[1]);
-                cbFiltroCiclo.DataSource = ciclos;
+                btnSeleccionar.Visible = true;
+                btnEliminar.Visible = false;
             }
-            else
+            if(indicador == 2)
             {
                 btnSeleccionar.Visible = false;
                 btnEliminar.Visible = false;
-                convocatorias = convocatoriaBL.listarConvocatoriasAnteriores(ciclos[0], ciclos[1]);
-                cbFiltroCiclo.DataSource = convocatoriaBL.ciclosAnteriores(ciclos[0], ciclos[1]);
             }
-            if (ciclos[0] == "" && ciclos[1] == "") btnSeleccionar.Visible = true;
+            if(indicador == 3)
+            {
+                btnSeleccionar.Visible = true;
+                btnEliminar.Visible = true;
+            }
 
+            cbFiltroCiclo.DataSource = ciclos;
             cbFiltroCiclo.Text = null;
+            cbFiltroCiclo.Text = " - Seleccione - ";
             dgvConvocatoria.AutoGenerateColumns = false;
             dgvConvocatoria.DataSource = convocatorias;
-        }
+
+            chNombre.Checked = true;
+            chDescripcion.Checked = true;
+            chFechaInicio.Checked = true;
+            chFechaFin.Checked = true;
+            chFechaCreacion.Checked = true;
+            chPrevistos.Checked = true;
+            chCandidatos.Checked = true;
+            chPostulantes.Checked = true;
+            chSeleccionados.Checked = true;
+            chCiclo.Checked = true;
+            chBeca.Checked = true;
+            chCreador.Checked = true;
+
+            if (convocatorias.Count == 0) btnSeleccionar.Enabled = false;
+       }
 
         private void BuscarConvocatoria_Load(object sender, EventArgs e)
         {
@@ -65,53 +86,26 @@ namespace Vista
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (esCicloActual == true)
+            if (txtFiltroNombre.Text == "" && cbFiltroCiclo.Text == "")
             {
-                if (txtFiltroNombre.Text == "" && cbFiltroCiclo.Text == "")
-                {
-                    MessageBox.Show("Debe ingresar un nombre o un ciclo a buscar", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                else if (txtFiltroNombre.Text == "")
-                {
-                    convocatorias = convocatoriaBL.filtroConvocatorias(cbFiltroCiclo.Text);
-                    dgvConvocatoria.DataSource = convocatorias;
-                }
-                else if (cbFiltroCiclo.Text == "")
-                {
-                    convocatorias = convocatoriaBL.listarFiltroNombreActual(txtFiltroNombre.Text, ciclos[0], ciclos[1]);
-                    dgvConvocatoria.DataSource = convocatorias;
-                }
-
-                else
-                {
-                    convocatorias = convocatoriaBL.filtroNombreCiclo(txtFiltroNombre.Text, cbFiltroCiclo.Text);
-                    dgvConvocatoria.DataSource = convocatorias;
-                }
+                MessageBox.Show("Debe ingresar un nombre o un ciclo a buscar", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+            else if (txtFiltroNombre.Text == "")
+            {
+                convocatorias = convocatoriaBL.filtroCiclo(cbFiltroCiclo.Text);
+                dgvConvocatoria.DataSource = convocatorias;
+            }
+            else if (cbFiltroCiclo.Text == "")
+            {
+                convocatorias = convocatoriaBL.filtroNombres(indicador, txtFiltroNombre.Text);
+                dgvConvocatoria.DataSource = convocatorias;
+            }
+
             else
             {
-                if (txtFiltroNombre.Text == "" && cbFiltroCiclo.Text == "")
-                {
-                    MessageBox.Show("Debe ingresar un nombre o un ciclo a buscar", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                else if (txtFiltroNombre.Text == "")
-                {
-                    convocatorias = convocatoriaBL.filtroConvocatorias(cbFiltroCiclo.Text);
-                    dgvConvocatoria.DataSource = convocatorias;
-                }
-                else if (cbFiltroCiclo.Text == "")
-                {
-                    convocatorias = convocatoriaBL.listarFiltroNombreAnterior(txtFiltroNombre.Text, ciclos[0], ciclos[1]);
-                    dgvConvocatoria.DataSource = convocatorias;
-                }
-
-                else
-                {
-                    convocatorias = convocatoriaBL.filtroNombreCiclo(txtFiltroNombre.Text, cbFiltroCiclo.Text);
-                    dgvConvocatoria.DataSource = convocatorias;
-                }
+                convocatorias = convocatoriaBL.filtroNombreCiclo(txtFiltroNombre.Text, cbFiltroCiclo.Text);
+                dgvConvocatoria.DataSource = convocatorias;
             }
         }
 
@@ -120,7 +114,9 @@ namespace Vista
             if(MessageBox.Show("Está apunto de eliminar un registro de la base de datos. ¿Está seguro que desea realizarlo?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK) {
                 Convocatoria convocatoria = (Convocatoria)dgvConvocatoria.CurrentRow.DataBoundItem;
                 convocatoriaBL.eliminarConvocatoria(convocatoria);
-                convocatorias = convocatoriaBL.listarConvocatoriasActuales(ciclos[0], ciclos[1]);
+                txtFiltroNombre.Text = null;
+                cbFiltroCiclo.Text = null;
+                convocatorias = convocatoriaBL.listarConvocatorias(indicador);
                 dgvConvocatoria.DataSource = convocatorias;
                 MessageBox.Show("El registro ha sido eliminado", "Registro Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -130,15 +126,41 @@ namespace Vista
         {
             txtFiltroNombre.Text = null;
             cbFiltroCiclo.Text = null;
-            if (esCicloActual)
-            {
-                convocatorias = convocatoriaBL.listarConvocatoriasActuales(ciclos[0], ciclos[1]);
-            }
-            else
-            {
-                convocatorias = convocatoriaBL.listarConvocatoriasAnteriores(ciclos[0], ciclos[1]);
-            }
+            convocatorias = convocatoriaBL.listarConvocatorias(indicador);
             dgvConvocatoria.DataSource = convocatorias;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPersonalizar_Click(object sender, EventArgs e)
+        {
+            if (chNombre.Checked) dgvConvocatoria.Columns[0].Visible = true;
+            else dgvConvocatoria.Columns[0].Visible = false;
+            if (chDescripcion.Checked) dgvConvocatoria.Columns[1].Visible = true;
+            else dgvConvocatoria.Columns[1].Visible = false;
+            if (chFechaInicio.Checked) dgvConvocatoria.Columns[2].Visible = true;
+            else dgvConvocatoria.Columns[2].Visible = false;
+            if (chFechaFin.Checked) dgvConvocatoria.Columns[3].Visible = true;
+            else dgvConvocatoria.Columns[3].Visible = false;
+            if (chFechaCreacion.Checked) dgvConvocatoria.Columns[4].Visible = true;
+            else dgvConvocatoria.Columns[4].Visible = false;
+            if (chPrevistos.Checked) dgvConvocatoria.Columns[5].Visible = true;
+            else dgvConvocatoria.Columns[5].Visible = false;
+            if (chCandidatos.Checked) dgvConvocatoria.Columns[6].Visible = true;
+            else dgvConvocatoria.Columns[6].Visible = false;
+            if (chPostulantes.Checked) dgvConvocatoria.Columns[7].Visible = true;
+            else dgvConvocatoria.Columns[7].Visible = false;
+            if (chSeleccionados.Checked) dgvConvocatoria.Columns[8].Visible = true;
+            else dgvConvocatoria.Columns[8].Visible = false;
+            if (chCiclo.Checked) dgvConvocatoria.Columns[9].Visible = true;
+            else dgvConvocatoria.Columns[9].Visible = false;
+            if (chBeca.Checked) dgvConvocatoria.Columns[10].Visible = true;
+            else dgvConvocatoria.Columns[10].Visible = false;
+            if (chCreador.Checked) dgvConvocatoria.Columns[11].Visible = true;
+            else dgvConvocatoria.Columns[11].Visible = false;
         }
     }
 }

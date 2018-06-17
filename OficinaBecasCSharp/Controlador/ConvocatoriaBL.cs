@@ -35,9 +35,9 @@ namespace Controlador
             return convocatoriaDA.listarFiltroNombreActual(nombre,ciclo, ciclo2);
         }
 
-        public BindingList<Convocatoria> filtroConvocatorias(string ciclo)
+        public BindingList<Convocatoria> filtroCiclo(string ciclo)
         {
-            return convocatoriaDA.filtroConvocatorias(ciclo);
+            return convocatoriaDA.filtroCiclo(ciclo);
         }
         public BindingList<Convocatoria> listarConvocatoriasAnteriores(string ciclo, string ciclo2)
         {
@@ -62,6 +62,23 @@ namespace Controlador
         public BindingList<Convocatoria> filtroNombreCiclo(string nombre, string ciclo)
         {
             return convocatoriaDA.filtroNombreCiclo(nombre, ciclo);
+        }
+
+        //El cambio comienza desde acá
+
+        public BindingList<Convocatoria> listarConvocatorias(int indicador)
+        {
+            return convocatoriaDA.listarConvocatorias(indicador);
+        }
+
+        public BindingList<string> listarCiclos(int indicador)
+        {
+            return convocatoriaDA.listarCiclos(indicador);
+        }
+
+        public BindingList<Convocatoria> filtroNombres(int indicador, string nombre)
+        {
+            return convocatoriaDA.filtroNombres(indicador, nombre);
         }
     }
 }

@@ -187,7 +187,6 @@
             // dtFechaFin
             // 
             this.dtFechaFin.Location = new System.Drawing.Point(683, 84);
-            this.dtFechaFin.MinDate = new System.DateTime(2018, 6, 14, 0, 0, 0, 0);
             this.dtFechaFin.Name = "dtFechaFin";
             this.dtFechaFin.Size = new System.Drawing.Size(200, 22);
             this.dtFechaFin.TabIndex = 4;
@@ -195,10 +194,10 @@
             // dtFechaInicio
             // 
             this.dtFechaInicio.Location = new System.Drawing.Point(683, 36);
-            this.dtFechaInicio.MinDate = new System.DateTime(2018, 6, 14, 0, 0, 0, 0);
             this.dtFechaInicio.Name = "dtFechaInicio";
             this.dtFechaInicio.Size = new System.Drawing.Size(200, 22);
             this.dtFechaInicio.TabIndex = 2;
+            this.dtFechaInicio.Value = new System.DateTime(2109, 12, 31, 0, 0, 0, 0);
             // 
             // txtDescripcionConvocatoria
             // 

@@ -23,8 +23,8 @@ namespace Vista
             InitializeComponent();
             convocatoriaBL = new ConvocatoriaBL();
             asistente = new AsistenteComunicaciones();
-            asistente.Nombres = "ADRIAN";
-            asistente.Apellidos = "LECAROS";
+            asistente.Nombres = "Ariana";
+            asistente.Apellidos = "Grande";
             asistente.IdAsistente = 1;
             cbCicloConvocatoria.DataSource = agregarCiclos(DateTime.Today);
             txtIdConvocatoria.Enabled = false;
@@ -52,7 +52,7 @@ namespace Vista
         public BindingList<string> agregarCiclos(DateTime fecha)
         {
             BindingList<string> ciclos = new BindingList<string>();
-            if (fecha.Month >= 7)
+            if (fecha.Month > 6)
             {
                 ciclos.Add((fecha.Year + 1).ToString() + "-" + "1");
                 ciclos.Add((fecha.Year + 1).ToString() + "-" + "2");
@@ -82,6 +82,10 @@ namespace Vista
             txtBecaAsociada.Text = null;
             actualizar = false;
             cbCicloConvocatoria.Text = " - Seleccione - ";
+            dtFechaInicio.MinDate = DateTime.Today;
+            dtFechaFin.MinDate = DateTime.Today;
+            dtFechaInicio.MaxDate = DateTime.Today.AddYears(1);
+            dtFechaFin.MaxDate = DateTime.Today.AddYears(1);
         }
 
         private void btnBeca_Click(object sender, EventArgs e)
@@ -124,11 +128,12 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frmBuscarConvocatoria convocatoria = new frmBuscarConvocatoria(agregarCiclos(DateTime.Today), true);
+            frmBuscarConvocatoria convocatoria = new frmBuscarConvocatoria(3);
             convocatoria.Owner = this;
             actualizar = false;
             if (convocatoria.ShowDialog() == DialogResult.OK)
             {
+                dtFechaInicio.MinDate = DateTime.Today.AddYears(-10);
                 txtIdConvocatoria.Text = convocatoria.ConvocatoriaSeleccionada.IdConvocatoria.ToString();
                 txtNombreConvocatoria.Text = convocatoria.ConvocatoriaSeleccionada.NombreConvocatoria;
                 txtDescripcionConvocatoria.Text = convocatoria.ConvocatoriaSeleccionada.DescripcionConvocatoria;
@@ -147,7 +152,6 @@ namespace Vista
             }
             if (txtIdConvocatoria.Text == "")
             {
-                MessageBox.Show("No se ha seleccionado registro", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtIdConvocatoria.Enabled = false;
                 txtNombreConvocatoria.Enabled = false;
                 txtDescripcionConvocatoria.Enabled = false;
@@ -233,9 +237,14 @@ namespace Vista
                 return;
             }
             int cantidad;
-            if (!Int32.TryParse(txtCantidadCandidatosPrevistos.Text,out cantidad))
+            if (!Int32.TryParse(txtCantidadCandidatosPrevistos.Text, out cantidad))
             {
                 MessageBox.Show("Debe ingresar un número en el campo Candidatos Previstos", "Error en formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if ((DateTime.Parse(dtFechaFin.Text).Month > 6 && cbCicloConvocatoria.Text.EndsWith("2")) || (DateTime.Parse(dtFechaFin.Text).Month <= 6 && cbCicloConvocatoria.Text.EndsWith("1")))
+            {
+                MessageBox.Show("La fecha fin no puede pertenecer al ciclo de la convocatoria", "Error en Rango de Fecha", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
