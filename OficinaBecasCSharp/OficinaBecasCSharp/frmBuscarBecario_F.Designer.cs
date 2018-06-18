@@ -74,6 +74,7 @@
             // 
             // tbox_apellidos
             // 
+            this.tbox_apellidos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbox_apellidos.Location = new System.Drawing.Point(123, 79);
             this.tbox_apellidos.Name = "tbox_apellidos";
             this.tbox_apellidos.Size = new System.Drawing.Size(200, 20);
@@ -81,6 +82,7 @@
             // 
             // tbox_nombres
             // 
+            this.tbox_nombres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbox_nombres.Location = new System.Drawing.Point(123, 53);
             this.tbox_nombres.Name = "tbox_nombres";
             this.tbox_nombres.Size = new System.Drawing.Size(200, 20);

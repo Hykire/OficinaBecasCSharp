@@ -17,7 +17,7 @@ namespace Vista
     {
         private int flag_elementoNuevo = 0;
         private int flag_elementoEditar = 0;
-        private Becado_x_BecaBL logicaNegoAB;
+        private Becado_x_BecaBL logicaNegoBB;
 
         public enum Estado
         {
@@ -39,12 +39,9 @@ namespace Vista
 
             estadoComponentes(Estado.Deshabilitado);
             limpiarComponentes();
-            logicaNegoAB = new Becado_x_BecaBL();
+            logicaNegoBB = new Becado_x_BecaBL();
 
-            //cargamos el combo box de beca
-            BecaBL logicaNegoBeca = new BecaBL();
-            cbox_beca.DataSource = logicaNegoBeca.listar_Beca();
-            cbox_beca.Sorted = false;
+            
         }
 
         public void estadoComponentes(Estado estado)
@@ -189,14 +186,21 @@ namespace Vista
                 tbox_apellidos.Text = formBAlumno.AlumnoSeleccionado.Apellidos;
                 tbox_codigo.Text = formBAlumno.AlumnoSeleccionado.CodigoPUCP.ToString();
                 tbox_id_becado.Text = formBAlumno.AlumnoSeleccionado.Id_becado.ToString();
+                tbox_especialidad.Text = formBAlumno.AlumnoSeleccionado.Especialidad.ToString();
+                //cargamos el combo box de beca
+                BecaBL logicaNegoBeca = new BecaBL();
+                cbox_beca.DataSource = logicaNegoBeca.listar_BecaPorEspecialidad(Int32.Parse(tbox_especialidad.Text));
+                cbox_beca.Sorted = false;
 
                 //se listará los ciclos
-                BindingList<Becado_x_Beca> listaCiclo = logicaNegoAB.BuscarBecaxAlumno(formBAlumno.AlumnoSeleccionado.Id_becado);
+                BindingList<Becado_x_Beca> listaCiclo = logicaNegoBB.BuscarBecaxAlumno(formBAlumno.AlumnoSeleccionado.Id_becado);
                 cbox_ciclo.DataSource = listaCiclo;
                 cbox_ciclo.Sorted = false;
 
+
                 //se limpia
                 limpiarComponentes();
+                cbox_beca.Text = "";
             }
         }
 
@@ -217,72 +221,77 @@ namespace Vista
 
             //se vuelve a cargar las becas por si se agregaron mas en el proceso
             //cargamos el combo box de beca
+            //cargamos el combo box de beca
             BecaBL logicaNegoBeca = new BecaBL();
-            cbox_beca.DataSource = logicaNegoBeca.listar_Beca();
+            cbox_beca.DataSource = logicaNegoBeca.listar_BecaPorEspecialidad(Int32.Parse(tbox_especialidad.Text));
             cbox_beca.Sorted = false;
+            cbox_beca.SelectedIndex = -1;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            btnNuevo.Enabled = true;
-            btnGuardar.Enabled = false;
-            btnEditar.Enabled = false;
-            btnBuscar.Enabled = false;
-            //btn_historiaacademica.Enabled = false;
-            estadoComponentes(Estado.Deshabilitado);
-
-
-
-            Becado_x_Beca axb = new Becado_x_Beca();
-
-            if (flag_elementoEditar == 1)
+            if (validar())
             {
-                axb.Id_becado_x_beca = Int32.Parse(tbox_id_becadoxbeca.Text);
-            }
-            axb.Id_becado = Int32.Parse(tbox_id_becado.Text);
-            axb.Id_beca = ((Beca)cbox_beca.SelectedItem).Id_beca;
-            axb.Ciclo = cbox_ciclo_nuevo1.Text + "-" + cbox_ciclo_nuevo2.Text;
-            axb.Tipo_escala_pago = cbox_tipoescala.Text;
-            if (cbox_tipoescala.Text == "ANTIGUA") axb.Escala_pago = Int32.Parse(cbox_escalapago1.Text);
-            else if (cbox_tipoescala.Text == "ACTUAL") axb.Escala_pago = Int32.Parse(cbox_escalapago2.Text);
-            axb.Nivel_creditos = Int32.Parse(cbox_nivelcreditos.Text);
-            axb.Ncreditos_cubiertos = Double.Parse(tbox_cubiertos.Text, CultureInfo.InvariantCulture);
-            axb.Ncreditos_utilizados = Double.Parse(tbox_utilizados.Text, CultureInfo.InvariantCulture);
-            axb.Ncreditos_restantes = Double.Parse(tbox_restantes.Text, CultureInfo.InvariantCulture);
-            axb.Nsemestres_regular = Int32.Parse(tbox_nregularC.Text);
-            axb.Nsemestres_verano = Int32.Parse(tbox_nveranoC.Text);
-            axb.Nsemestres_restantes = Int32.Parse(tbox_nregularesRC.Text);
-            if (cbox_renovacion.Text == "Sí") axb.Renovacion = 1; else axb.Renovacion = 0;
-            if (cbox_suspencion.Text == "Sí") axb.Suspencion = 1; else axb.Suspencion = 0;
-            if (cbox_ampliacion.Text == "Sí") axb.Ampliacion = 1; else axb.Ampliacion = 0;
-            axb.Ciclo_solicitado = cbox_cicloS1.Text + "-" + cbox_cicloS2.Text;
-            axb.Respuesta = rtbox_respuesta.Text;
-            axb.Ncarta = tbox_ncarta.Text;
+                relleno();
+                btnNuevo.Enabled = true;
+                btnGuardar.Enabled = false;
+                btnEditar.Enabled = false;
+                btnBuscar.Enabled = false;
+                //btn_historiaacademica.Enabled = false;
+                estadoComponentes(Estado.Deshabilitado);
 
-            if (cbox_bonomateriales.Text == "Sí") axb.Redencion_materiales = 1; else axb.Redencion_materiales = 0;
-            if (cbox_bonoalojamiento.Text == "Sí") axb.Redencion_alojamiento = 1; else axb.Redencion_alojamiento = 0;
-            if (cbox_sansion.Text == "Sí") axb.Sansion = 1; else axb.Sansion = 0;
-            axb.Sansion_tipo = tbox_tiposansion.Text;
-            axb.Sansion_ini = DateTime.Parse(dt_sansionini.Text);
-            axb.Sansion_fin = DateTime.Parse(dt_sansionfin.Text);
+                Becado_x_Beca axb = new Becado_x_Beca();
 
-            if (cbox_intercambio.Text == "Sí") axb.Intercambio = 1; else axb.Intercambio = 0;
-            axb.Intercambio_tipo = cbox_tipointercambio.Text;
-            axb.Intercambio_ini = DateTime.Parse(dt_periodointercambioini.Text);
-            axb.Intercambio_fin = DateTime.Parse(dt_sansionfin.Text);
-            if (cbox_adelantobono.Text == "Sí") axb.Adelanto = 1; else axb.Adelanto = 0;
+                if (flag_elementoEditar == 1)
+                {
+                    axb.Id_becado_x_beca = Int32.Parse(tbox_id_becadoxbeca.Text);
+                }
+                axb.Id_becado = Int32.Parse(tbox_id_becado.Text);
+                axb.Id_beca = ((Beca)cbox_beca.SelectedItem).Id_beca;
+                axb.Ciclo = cbox_ciclo_nuevo1.Text + "-" + cbox_ciclo_nuevo2.Text;
+                axb.Tipo_escala_pago = cbox_tipoescala.Text;
+                if (cbox_tipoescala.Text == "ANTIGUA") axb.Escala_pago = Int32.Parse(cbox_escalapago1.Text);
+                else if (cbox_tipoescala.Text == "ACTUAL") axb.Escala_pago = Int32.Parse(cbox_escalapago2.Text);
+                axb.Nivel_creditos = Int32.Parse(cbox_nivelcreditos.Text);
+                axb.Ncreditos_cubiertos = Double.Parse(tbox_cubiertos.Text, CultureInfo.InvariantCulture);
+                axb.Ncreditos_utilizados = Double.Parse(tbox_utilizados.Text, CultureInfo.InvariantCulture);
+                axb.Ncreditos_restantes = Double.Parse(tbox_restantes.Text, CultureInfo.InvariantCulture);
+                axb.Nsemestres_regular = Int32.Parse(tbox_nregularC.Text);
+                axb.Nsemestres_verano = Int32.Parse(tbox_nveranoC.Text);
+                axb.Nsemestres_restantes = Int32.Parse(tbox_nregularesRC.Text);
+                if (cbox_renovacion.Text == "Sí") axb.Renovacion = 1; else axb.Renovacion = 0;
+                if (cbox_suspencion.Text == "Sí") axb.Suspencion = 1; else axb.Suspencion = 0;
+                if (cbox_ampliacion.Text == "Sí") axb.Ampliacion = 1; else axb.Ampliacion = 0;
+                if (cbox_cicloS1.Text == "" || cbox_cicloS2.Text == "") { axb.Ciclo_solicitado = "1000-0"; }
+                else { axb.Ciclo_solicitado = cbox_cicloS1.Text + "-" + cbox_cicloS2.Text; }
+                axb.Respuesta = rtbox_respuesta.Text;
+                axb.Ncarta = tbox_ncarta.Text;
 
-            if (flag_elementoNuevo == 1)
-            {
-                flag_elementoNuevo = 0;
-                logicaNegoAB.RegistrarBecaxAlumno(axb);
-                MessageBox.Show("Se ha registrado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            if (flag_elementoEditar == 1)
-            {
-                flag_elementoEditar = 0;
-                logicaNegoAB.ActualizarBecaxAlumno(axb);
-                MessageBox.Show("Se ha registrado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (cbox_bonomateriales.Text == "Sí") axb.Redencion_materiales = 1; else axb.Redencion_materiales = 0;
+                if (cbox_bonoalojamiento.Text == "Sí") axb.Redencion_alojamiento = 1; else axb.Redencion_alojamiento = 0;
+                if (cbox_sansion.Text == "Sí") axb.Sansion = 1; else axb.Sansion = 0;
+                axb.Sansion_tipo = tbox_tiposansion.Text;
+                axb.Sansion_ini = DateTime.Parse(dt_sansionini.Text);
+                axb.Sansion_fin = DateTime.Parse(dt_sansionfin.Text);
+
+                if (cbox_intercambio.Text == "Sí") axb.Intercambio = 1; else axb.Intercambio = 0;
+                axb.Intercambio_tipo = cbox_tipointercambio.Text;
+                axb.Intercambio_ini = DateTime.Parse(dt_periodointercambioini.Text);
+                axb.Intercambio_fin = DateTime.Parse(dt_sansionfin.Text);
+                if (cbox_adelantobono.Text == "Sí") axb.Adelanto = 1; else axb.Adelanto = 0;
+
+                if (flag_elementoNuevo == 1)
+                {
+                    flag_elementoNuevo = 0;
+                    logicaNegoBB.RegistrarBecaxAlumno(axb);
+                    MessageBox.Show("Se ha registrado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                if (flag_elementoEditar == 1)
+                {
+                    flag_elementoEditar = 0;
+                    logicaNegoBB.ActualizarBecaxAlumno(axb);
+                    MessageBox.Show("Se ha registrado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -368,8 +377,17 @@ namespace Vista
                 if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Renovacion == 1) cbox_renovacion.Text = "Sí"; else cbox_renovacion.Text = "No";
                 if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Ampliacion == 1) cbox_ampliacion.Text = "Sí"; else cbox_ampliacion.Text = "No";
                 if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Suspencion == 1) cbox_suspencion.Text = "Sí"; else cbox_suspencion.Text = "No";
-                cbox_cicloS1.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado.Substring(0, 4);
-                cbox_cicloS2.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado.Substring(5, 1);
+
+                if (((Becado_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado == "1000-0")
+                {
+                    cbox_cicloS1.Text = "";
+                    cbox_cicloS2.Text = "";
+                }
+                else
+                {
+                    cbox_cicloS1.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado.Substring(0, 4);
+                    cbox_cicloS2.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Ciclo_solicitado.Substring(5, 1);
+                }
                 tbox_ncarta.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Ncarta;
                 rtbox_respuesta.Text = ((Becado_x_Beca)cbox_ciclo.SelectedItem).Respuesta;
 
@@ -477,8 +495,9 @@ namespace Vista
             int r_b;
             if (cbox_ciclo_nuevo1.Text == "") { validacion.Add(1); }
             if (cbox_ciclo_nuevo2.Text == "") { validacion.Add(1); }
-            if (cbox_escalapago1.Text == "") { validacion.Add(2); }
-            if (cbox_escalapago2.Text == "") { validacion.Add(3); }
+            if (cbox_tipoescala.Text == "") { validacion.Add(2); }
+            if (cbox_tipoescala.Text == "ANTIGUA" && cbox_escalapago1.Text == "") { validacion.Add(3); }
+            else if (cbox_tipoescala.Text == "ACTUAL" && cbox_escalapago2.Text == "") { validacion.Add(3); }
             if (cbox_nivelcreditos.Text == "") { validacion.Add(4); }
             if (double.TryParse(tbox_cubiertos.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(5); }
             if (double.TryParse(tbox_utilizados.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out r_a) == false) { validacion.Add(6); }
@@ -487,7 +506,12 @@ namespace Vista
             if (int.TryParse(tbox_nveranoC.Text, out r_b) == false) { validacion.Add(9); }
             if (int.TryParse(tbox_nregularesRC.Text, out r_b) == false) { validacion.Add(10); }
 
-            foreach(int i in validacion)
+            int n_1 = DateTime.Compare(dt_periodointercambioini.Value, dt_periodointercambiofin.Value);
+            if ( cbox_intercambio.Text == "Sí" && n_1 > 0) { validacion.Add(11); }
+            int n_2 = DateTime.Compare(dt_sansionini.Value, dt_sansionfin.Value);
+            if ( cbox_sansion.Text == "Sí" && n_2 > 0) { validacion.Add(12); }
+
+            foreach (int i in validacion)
             {
                 if (i == 1) { MessageBox.Show("Debe ingresar un ciclo valido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 2) { MessageBox.Show("Debe ingresar un tipo de escala.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
@@ -499,8 +523,25 @@ namespace Vista
                 if (i == 8) { MessageBox.Show("Debe ingresar un número válido en Nro. de Semestre Regular con Cobertura.  Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 9) { MessageBox.Show("Debe ingresar un número válido en Nro. de Semestre de Verano con Cobertura.  Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 10) { MessageBox.Show("Debe ingresar un número válido en Nro. de Semestres Regulares Restantes con Cobertura.  Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 11) { MessageBox.Show("Debe ingresar un rango de fechas de periodo de intercambio validads.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 12) { MessageBox.Show("Debe ingresar un rango de fechas de periodo de sansión validads.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
             }
             return true;
+        }
+
+        private void relleno()
+        {
+            if (cbox_intercambio.Text == "") { cbox_intercambio.Text = "No"; }
+            if (cbox_tipointercambio.Text == "") { cbox_tipointercambio.Text = "--"; }
+            if (cbox_adelantobono.Text == "") { cbox_adelantobono.Text = "--"; }
+            if (cbox_ampliacion.Text == "") { cbox_ampliacion.Text = "No"; }
+            if(cbox_renovacion.Text == "") { cbox_renovacion.Text = "No"; }
+            if(cbox_suspencion.Text == "") { cbox_suspencion.Text = "No"; }
+            if (rtbox_respuesta.Text == "") { rtbox_respuesta.Text = "--"; }
+            if (tbox_ncarta.Text == "") { tbox_ncarta.Text = "--"; }
+            if (cbox_bonoalojamiento.Text == "") { cbox_bonoalojamiento.Text = "No"; }
+            if (cbox_bonomateriales.Text == "") { cbox_bonomateriales.Text = "No"; }
+            if (cbox_sansion.Text == "") { cbox_sansion.Text = "No"; }
         }
     }
 }

@@ -175,7 +175,7 @@ namespace AccesoDatos
             return lista;
         }
         //hecho por Francisco
-        public void insertar_persona(Persona p, int id_usuario)
+        public int insertar_persona(Persona p, int id_usuario)
         {
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
             MySqlConnection con = new MySqlConnection(cadena);
@@ -203,7 +203,79 @@ namespace AccesoDatos
             con.Open();
             comando.ExecuteNonQuery();
             int id = Int32.Parse(comando.Parameters["_id"].Value.ToString());
-            con.Close();            
+            con.Close();
+            return id;
         }
+        //hecho por Francisco inserta una persona que es tipo coordinador tutoria en su propia tabla
+        public void insertar_personaEnTCoordinadorTuto(int id_persona)
+        {
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandText = "INSERT INTO COORDINADOR_TUTORIA(ID_PERSONA) VALUES(" + id_persona.ToString() +");";
+
+            comando.Connection = con;
+            con.Open();
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
+        public void insertar_personaEnAsistenteCom(int id_persona)
+        {
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandText = "INSERT INTO ASISTENTE_COMUNICACIONES(ID_PERSONA) VALUES(" + id_persona.ToString() + ");";
+
+            comando.Connection = con;
+            con.Open();
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
+        //hecho por Francisco actualiza persona
+        public void actualizar_persona(Persona a)
+        {
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.CommandText = "F_ACTUALIZAR_PERSONA";
+            comando.Parameters.Add("_id_persona", MySqlDbType.Int32).Value = a.Id_persona;
+            comando.Parameters.Add("_codigo_pucp", MySqlDbType.Int32).Value = a.CodigoPUCP;
+            comando.Parameters.Add("_nombres", MySqlDbType.VarChar).Value = a.Nombres;
+            comando.Parameters.Add("_apellidos", MySqlDbType.VarChar).Value = a.Apellidos;
+            comando.Parameters.Add("_sexo", MySqlDbType.VarChar).Value = a.Sexo;
+            comando.Parameters.Add("_dni", MySqlDbType.Int32).Value = a.Dni;
+            comando.Parameters.Add("_edad", MySqlDbType.Int32).Value = a.Edad;
+            comando.Parameters.Add("_fecha_nacimiento", MySqlDbType.Date).Value = a.Fecha_nacimiento;
+            comando.Parameters.Add("_correo_pucp", MySqlDbType.VarChar).Value = a.CorreoPUCP;
+            comando.Parameters.Add("_correo_alternativo", MySqlDbType.VarChar).Value = a.CorreoAlternativo;
+            comando.Parameters.Add("_telf_movil", MySqlDbType.VarChar).Value = a.TelfMovil;
+            comando.Parameters.Add("_telf_fijo", MySqlDbType.VarChar).Value = a.TelfFijo;
+            comando.Parameters.Add("_estado", MySqlDbType.VarChar).Value = a.Estado;
+
+            comando.Connection = con;
+            con.Open();
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
+        //hecho por Francisco para validacion de codigo
+        public bool existe_cod(int codigo)
+        {
+            bool flag = false;
+
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandText = "SELECT * FROM PERSONA WHERE CODIGO_PUCP = " + codigo.ToString()+";";
+            comando.Connection = con;
+
+            con.Open();
+            MySqlDataReader rs = comando.ExecuteReader();
+            if (rs.Read()) { flag = true; }
+            con.Close();
+            return flag;
+        }
+
     }
 }

@@ -24,16 +24,16 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCambiarContra = new System.Windows.Forms.Button();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAC = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonTutor = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buttonCT = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel_Principal = new System.Windows.Forms.Panel();
-            this.btnCambiarContra = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -52,20 +52,32 @@
             this.panel1.Controls.Add(this.buttonAdmin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1409, 100);
+            this.panel1.Size = new System.Drawing.Size(969, 81);
             this.panel1.TabIndex = 8;
+            // 
+            // btnCambiarContra
+            // 
+            this.btnCambiarContra.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCambiarContra.Location = new System.Drawing.Point(819, 51);
+            this.btnCambiarContra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCambiarContra.Name = "btnCambiarContra";
+            this.btnCambiarContra.Size = new System.Drawing.Size(123, 25);
+            this.btnCambiarContra.TabIndex = 17;
+            this.btnCambiarContra.Text = "Cambiar contraseña";
+            this.btnCambiarContra.UseVisualStyleBackColor = true;
+            this.btnCambiarContra.Click += new System.EventHandler(this.btnCambiarContra_Click);
             // 
             // lblNombreUsuario
             // 
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.lblNombreUsuario.Location = new System.Drawing.Point(1198, 29);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(816, 32);
+            this.lblNombreUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNombreUsuario.Size = new System.Drawing.Size(94, 20);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(80, 17);
             this.lblNombreUsuario.TabIndex = 16;
             this.lblNombreUsuario.Text = "Freddy Paz";
             // 
@@ -74,9 +86,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.label1.Location = new System.Drawing.Point(1256, 9);
+            this.label1.Location = new System.Drawing.Point(816, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 20);
+            this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 15;
             this.label1.Text = "Bienvenido";
             // 
@@ -101,20 +114,33 @@
             this.buttonAC.IconVisible = false;
             this.buttonAC.IconZoom = 90D;
             this.buttonAC.IsTab = false;
-            this.buttonAC.Location = new System.Drawing.Point(903, 0);
-            this.buttonAC.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonAC.Location = new System.Drawing.Point(617, 0);
+            this.buttonAC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAC.Name = "buttonAC";
             this.buttonAC.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.buttonAC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonAC.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAC.selected = false;
-            this.buttonAC.Size = new System.Drawing.Size(213, 65);
+            this.buttonAC.Size = new System.Drawing.Size(140, 53);
             this.buttonAC.TabIndex = 14;
             this.buttonAC.Text = "Asistente de Comunicaciones";
             this.buttonAC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonAC.Textcolor = System.Drawing.Color.White;
-            this.buttonAC.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.buttonAC.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAC.Click += new System.EventHandler(this.bunifuFlatButton4_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::Vista.Properties.Resources.logoOficinaBecas3;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(45, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(103, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // buttonTutor
             // 
@@ -137,19 +163,19 @@
             this.buttonTutor.IconVisible = false;
             this.buttonTutor.IconZoom = 90D;
             this.buttonTutor.IsTab = false;
-            this.buttonTutor.Location = new System.Drawing.Point(691, 0);
-            this.buttonTutor.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonTutor.Location = new System.Drawing.Point(478, 0);
+            this.buttonTutor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonTutor.Name = "buttonTutor";
             this.buttonTutor.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(148)))), ((int)(((byte)(17)))));
             this.buttonTutor.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonTutor.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonTutor.selected = false;
-            this.buttonTutor.Size = new System.Drawing.Size(213, 65);
+            this.buttonTutor.Size = new System.Drawing.Size(140, 53);
             this.buttonTutor.TabIndex = 13;
             this.buttonTutor.Text = "Tutor";
             this.buttonTutor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonTutor.Textcolor = System.Drawing.Color.White;
-            this.buttonTutor.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.buttonTutor.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTutor.Click += new System.EventHandler(this.buttonTutor_Click);
             // 
             // buttonCT
@@ -173,28 +199,27 @@
             this.buttonCT.IconVisible = false;
             this.buttonCT.IconZoom = 90D;
             this.buttonCT.IsTab = false;
-            this.buttonCT.Location = new System.Drawing.Point(479, 0);
-            this.buttonCT.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonCT.Location = new System.Drawing.Point(339, 0);
+            this.buttonCT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCT.Name = "buttonCT";
             this.buttonCT.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.buttonCT.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonCT.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonCT.selected = false;
-            this.buttonCT.Size = new System.Drawing.Size(213, 65);
+            this.buttonCT.Size = new System.Drawing.Size(140, 53);
             this.buttonCT.TabIndex = 12;
             this.buttonCT.Text = "Coordinador de Tutor";
             this.buttonCT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonCT.Textcolor = System.Drawing.Color.White;
-            this.buttonCT.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.buttonCT.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCT.Click += new System.EventHandler(this.buttonCT_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.panel4.Location = new System.Drawing.Point(360, 262);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(270, 213);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(727, 405);
+            this.panel4.Size = new System.Drawing.Size(545, 329);
             this.panel4.TabIndex = 10;
             // 
             // buttonAdmin
@@ -218,14 +243,14 @@
             this.buttonAdmin.IconVisible = false;
             this.buttonAdmin.IconZoom = 90D;
             this.buttonAdmin.IsTab = false;
-            this.buttonAdmin.Location = new System.Drawing.Point(267, 0);
-            this.buttonAdmin.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonAdmin.Location = new System.Drawing.Point(200, 0);
+            this.buttonAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAdmin.Name = "buttonAdmin";
             this.buttonAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.buttonAdmin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.buttonAdmin.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAdmin.selected = false;
-            this.buttonAdmin.Size = new System.Drawing.Size(213, 65);
+            this.buttonAdmin.Size = new System.Drawing.Size(140, 53);
             this.buttonAdmin.TabIndex = 11;
             this.buttonAdmin.Text = "Administrador";
             this.buttonAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,46 +262,21 @@
             // 
             this.panel_Principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
             this.panel_Principal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Principal.Location = new System.Drawing.Point(0, 100);
-            this.panel_Principal.Margin = new System.Windows.Forms.Padding(4);
+            this.panel_Principal.Location = new System.Drawing.Point(0, 81);
             this.panel_Principal.Name = "panel_Principal";
-            this.panel_Principal.Size = new System.Drawing.Size(1409, 867);
+            this.panel_Principal.Size = new System.Drawing.Size(969, 575);
             this.panel_Principal.TabIndex = 12;
-            // 
-            // btnCambiarContra
-            // 
-            this.btnCambiarContra.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCambiarContra.Location = new System.Drawing.Point(1216, 62);
-            this.btnCambiarContra.Name = "btnCambiarContra";
-            this.btnCambiarContra.Size = new System.Drawing.Size(164, 31);
-            this.btnCambiarContra.TabIndex = 17;
-            this.btnCambiarContra.Text = "Cambiar contraseña";
-            this.btnCambiarContra.UseVisualStyleBackColor = true;
-            this.btnCambiarContra.Click += new System.EventHandler(this.btnCambiarContra_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Vista.Properties.Resources.logoOficinaBecas3;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(60, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1409, 967);
+            this.ClientSize = new System.Drawing.Size(969, 656);
             this.Controls.Add(this.panel_Principal);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -45,9 +45,30 @@ namespace Controlador
         public void registrar_persona(Persona p, Usuario u)
         {
             int id_usuario = accesoDatosUsuario.insertar_usuario(u);
-            accesoDatosPersona.insertar_persona(p, id_usuario);
+            int id_persona = accesoDatosPersona.insertar_persona(p, id_usuario);
             //se inserta en las tablas correspondientes
+            if (u.Id_tipo_usuario == 3)
+            {
+                accesoDatosPersona.insertar_personaEnTCoordinadorTuto(id_persona);
+            }
+            if (u.Id_tipo_usuario == 5)
+            {
+                accesoDatosPersona.insertar_personaEnAsistenteCom(id_persona);
+            }
+        }
+        public void editar_persona(Persona p, Usuario u)
+        {
+            accesoDatosPersona.actualizar_persona(p);
+            accesoDatosUsuario.actualizarUsuario(u);
+        }
 
+        public bool existe_codigo(int codigo)
+        {
+            return accesoDatosPersona.existe_cod(codigo);
+        }
+        public bool existe_usuario(string n_usuario)
+        {
+            return accesoDatosUsuario.existe_user(n_usuario);
         }
         //hecho por Francisco, se usa en el frmBuscarPersona_F
         public BindingList<Persona> buscar_Persona_F(string codigoB, string nombreB, string apellidoB)

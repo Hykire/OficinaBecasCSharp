@@ -154,5 +154,37 @@ namespace AccesoDatos {
             if (contraObt != contraIngresada) return false;
             else return true;
         }
+        //hecho por Francisco par actualizar un usuario
+        public void actualizarUsuario(Usuario u)
+        {
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            string aux_1 = "UPDATE USUARIO SET ";
+            string aux_2 = "NOMBRE_USUARIO ='" + u.User + "', CONTRASENIA = '" + u.Password + "' WHERE ID_USUARIO = " + u.Id_usuario.ToString() + ";";
+            comando.CommandText = aux_1 + aux_2; ;
+
+            comando.Connection = con;
+            con.Open();
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
+        //hecho por Francisco para validacion de nombre de usuario
+        public bool existe_user(string n_usuario)
+        {
+            bool flag = false;
+
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandText = "SELECT * FROM USUARIO WHERE NOMBRE_USUARIO = '" + n_usuario + "';";
+            comando.Connection = con;
+
+            con.Open();
+            MySqlDataReader rs = comando.ExecuteReader();
+            if (rs.Read()) { flag = true; }
+            con.Close();
+            return flag;
+        }
     }
 }

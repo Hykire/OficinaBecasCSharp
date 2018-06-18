@@ -164,51 +164,55 @@ namespace Vista
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Becado a = new Becado();
-            if (flag_elementoEditar == 1) { a.Id_persona = Int32.Parse(tbox_id_persona.Text); a.Id_becado = Int32.Parse(tbox_id_becado.Text); }
-
-            a.CodigoPUCP = Int32.Parse(tbox_codigo.Text);
-            a.Nombres = tbox_nombres.Text;
-            a.Apellidos = tbox_apellidos.Text;
-            if (rbutton_masculino.Checked == true) a.Sexo = 'M'; else if (rbutton_femenino.Checked == true) a.Sexo = 'F';
-            a.Edad = Int32.Parse(tbox_edad.Text);
-            a.Dni = Int32.Parse(tbox_dni.Text);
-            a.CorreoPUCP = tbox_correopucp.Text;
-            a.CorreoAlternativo = tbox_correoalternativo.Text;
-            a.TelfMovil = tbox_movil.Text;
-            a.TelfFijo = tbox_fijo.Text;
-            a.Ciclo_ingreso = cbox_ciclo1.Text + "-" + cbox_ciclo2.Text;
-
-            a.Especialidad = ((Especialidad)cbox_especialidad.SelectedItem).Id_especialidad;
-            a.Facultad = ((Especialidad)cbox_especialidad.SelectedItem).Facultad.Id_facultad;
-
-            a.Tipo_grupo = cbox_tipogrupo.Text;
-            a.Direccion = tbox_direccion.Text;
-            a.Distrito_actual = cbox_distrito.Text;
-            a.Distrito_nacimiento = tbox_provinciaN.Text;
-            a.Provincia_actual = tbox_provincia.Text;
-            a.Provincia_nacimiento = tbox_provinciaN.Text;
-            a.Departamento_actual = cbox_departamento.Text;
-            a.Departamento_nacimiento = cbox_departamentoN.Text;
-            a.Pais_nacimiento = cbox_paisN.Text;
-            a.Fecha_nacimiento = DateTime.Parse(dt_fechanacimiento.Text);
-            a.Estado = cbox_estado.Text;
-
-            estadoComponentes(Estado.Deshabilitado);
-            if (flag_elementoNuevo == 1)
+            if (validar())
             {
-                flag_elementoNuevo = 0;
-                id_becado_ParaHistoriaAcademica = logicaNegoAlumno.registrarAlumno(a);
-                MessageBox.Show("Se ha registrado un nuevo alumno con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btn_historiaacademica.Enabled = true;
+                relleno();
+                Becado a = new Becado();
+                if (flag_elementoEditar == 1) { a.Id_persona = Int32.Parse(tbox_id_persona.Text); a.Id_becado = Int32.Parse(tbox_id_becado.Text); }
+
+                a.CodigoPUCP = Int32.Parse(tbox_codigo.Text);
+                a.Nombres = tbox_nombres.Text;
+                a.Apellidos = tbox_apellidos.Text;
+                if (rbutton_masculino.Checked == true) a.Sexo = 'M'; else if (rbutton_femenino.Checked == true) a.Sexo = 'F';
+                a.Edad = Int32.Parse(tbox_edad.Text);
+                a.Dni = Int32.Parse(tbox_dni.Text);
+                a.CorreoPUCP = tbox_correopucp.Text;
+                a.CorreoAlternativo = tbox_correoalternativo.Text;
+                a.TelfMovil = tbox_movil.Text;
+                a.TelfFijo = tbox_fijo.Text;
+                a.Ciclo_ingreso = cbox_ciclo1.Text + "-" + cbox_ciclo2.Text;
+
+                a.Especialidad = ((Especialidad)cbox_especialidad.SelectedItem).Id_especialidad;
+                a.Facultad = ((Especialidad)cbox_especialidad.SelectedItem).Facultad.Id_facultad;
+
+                a.Tipo_grupo = cbox_tipogrupo.Text;
+                a.Direccion = tbox_direccion.Text;
+                a.Distrito_actual = cbox_distrito.Text;
+                a.Distrito_nacimiento = tbox_provinciaN.Text;
+                a.Provincia_actual = tbox_provincia.Text;
+                a.Provincia_nacimiento = tbox_provinciaN.Text;
+                a.Departamento_actual = cbox_departamento.Text;
+                a.Departamento_nacimiento = cbox_departamentoN.Text;
+                a.Pais_nacimiento = cbox_paisN.Text;
+                a.Fecha_nacimiento = DateTime.Parse(dt_fechanacimiento.Text);
+                a.Estado = cbox_estado.Text;
+
+                estadoComponentes(Estado.Deshabilitado);
+                if (flag_elementoNuevo == 1)
+                {
+                    flag_elementoNuevo = 0;
+                    id_becado_ParaHistoriaAcademica = logicaNegoAlumno.registrarAlumno(a);
+                    MessageBox.Show("Se ha registrado un nuevo alumno con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btn_historiaacademica.Enabled = true;
+                }
+                else if (flag_elementoEditar == 1)
+                {
+                    flag_elementoEditar = 0;
+                    logicaNegoAlumno.actualizarAlumno(a);
+                    MessageBox.Show("Se ha actualizado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                btnGuardar.Enabled = false;
             }
-            else if (flag_elementoEditar == 1)
-            {
-                flag_elementoEditar = 0;
-                logicaNegoAlumno.actualizarAlumno(a);
-                MessageBox.Show("Se ha actualizado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            btnGuardar.Enabled = false;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -320,11 +324,13 @@ namespace Vista
         {
             BindingList<int> validaciones = new BindingList<int>();
             bool flag = false;
+            PersonaBL logicanegocioPersona = new PersonaBL();
 
             //validacion de codigo
             if (tbox_codigo.Text == "") { validaciones.Add(1); }
             else if (tbox_codigo.Text.Length != 8) { validaciones.Add(2); }
             else if (int.TryParse(tbox_codigo.Text, out int result) == false) { validaciones.Add(3); }
+            else if (logicanegocioPersona.existe_codigo(int.Parse(tbox_codigo.Text)) == true) { validaciones.Add(20); }
 
             //validacion de nombres
             if (tbox_nombres.Text == "") { validaciones.Add(4); }
@@ -341,7 +347,7 @@ namespace Vista
             if (tbox_edad.Text == "") { validaciones.Add(12); }
             //validad de correo pucp
             if (tbox_correopucp.Text == "") { validaciones.Add(13); }
-            else if (tbox_correopucp.Text.Contains("@") == false) { validaciones.Add(14); }
+            else if (!(tbox_correopucp.Text.Contains("@pucp.pe") || tbox_correopucp.Text.Contains("@pucp.edu.pe") )) { validaciones.Add(14); }
             //validacion de correo alternativo
             if (tbox_correoalternativo.Text == "") { }
             else if (tbox_correoalternativo.Text.Contains("@") == false) { validaciones.Add(15); }
@@ -353,6 +359,7 @@ namespace Vista
             if (cbox_especialidad.Text == "") { validaciones.Add(18); }
             // validacion del tipo de grupo
             if (cbox_tipogrupo.Text == "") { validaciones.Add(19); }
+
 
             foreach (int i in validaciones)
             {
@@ -380,6 +387,8 @@ namespace Vista
                 if (i == 17) { MessageBox.Show("Debe ingresar un semestre ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 18) { MessageBox.Show("Debe ingresar una especialidad de ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 19) { MessageBox.Show("Debe ingresar un tipo de grupo de ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 20) { MessageBox.Show("Debe ingresar un tipo de grupo de ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 20) { MessageBox.Show("Debe ingresar un tipo de grupo de ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 flag = true;
             }
             return true;

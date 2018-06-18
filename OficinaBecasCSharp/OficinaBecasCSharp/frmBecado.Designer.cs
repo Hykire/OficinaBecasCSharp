@@ -32,12 +32,10 @@
             this.panel_Alumno = new System.Windows.Forms.Panel();
             this.btn_historiaacademica = new System.Windows.Forms.Button();
             this.gbox_datosIngreso = new System.Windows.Forms.GroupBox();
-            this.cbox_tipogrupo = new System.Windows.Forms.ComboBox();
             this.cbox_ciclo2 = new System.Windows.Forms.ComboBox();
             this.cbox_ciclo1 = new System.Windows.Forms.ComboBox();
             this.tbox_facultad = new System.Windows.Forms.TextBox();
             this.cbox_especialidad = new System.Windows.Forms.ComboBox();
-            this.label_tipogrupo = new System.Windows.Forms.Label();
             this.label_especialidad = new System.Windows.Forms.Label();
             this.label_facultad = new System.Windows.Forms.Label();
             this.label_cicloI = new System.Windows.Forms.Label();
@@ -62,11 +60,13 @@
             this.tbox_direccion = new System.Windows.Forms.TextBox();
             this.label_direccion = new System.Windows.Forms.Label();
             this.gbox_datosGenerales = new System.Windows.Forms.GroupBox();
+            this.cbox_tipogrupo = new System.Windows.Forms.ComboBox();
             this.label_estado = new System.Windows.Forms.Label();
             this.cbox_estado = new System.Windows.Forms.ComboBox();
             this.tbox_id_becado = new System.Windows.Forms.TextBox();
             this.tbox_id_persona = new System.Windows.Forms.TextBox();
             this.label_fijo = new System.Windows.Forms.Label();
+            this.label_tipogrupo = new System.Windows.Forms.Label();
             this.label_movil = new System.Windows.Forms.Label();
             this.label_correoAlternativo = new System.Windows.Forms.Label();
             this.tbox_fijo = new System.Windows.Forms.TextBox();
@@ -117,7 +117,7 @@
             // 
             // btn_historiaacademica
             // 
-            this.btn_historiaacademica.Location = new System.Drawing.Point(621, 352);
+            this.btn_historiaacademica.Location = new System.Drawing.Point(613, 353);
             this.btn_historiaacademica.Name = "btn_historiaacademica";
             this.btn_historiaacademica.Size = new System.Drawing.Size(106, 23);
             this.btn_historiaacademica.TabIndex = 17;
@@ -127,37 +127,19 @@
             // 
             // gbox_datosIngreso
             // 
-            this.gbox_datosIngreso.Controls.Add(this.cbox_tipogrupo);
             this.gbox_datosIngreso.Controls.Add(this.cbox_ciclo2);
             this.gbox_datosIngreso.Controls.Add(this.cbox_ciclo1);
             this.gbox_datosIngreso.Controls.Add(this.tbox_facultad);
             this.gbox_datosIngreso.Controls.Add(this.cbox_especialidad);
-            this.gbox_datosIngreso.Controls.Add(this.label_tipogrupo);
             this.gbox_datosIngreso.Controls.Add(this.label_especialidad);
             this.gbox_datosIngreso.Controls.Add(this.label_facultad);
             this.gbox_datosIngreso.Controls.Add(this.label_cicloI);
-            this.gbox_datosIngreso.Location = new System.Drawing.Point(20, 344);
+            this.gbox_datosIngreso.Location = new System.Drawing.Point(20, 373);
             this.gbox_datosIngreso.Name = "gbox_datosIngreso";
-            this.gbox_datosIngreso.Size = new System.Drawing.Size(340, 147);
+            this.gbox_datosIngreso.Size = new System.Drawing.Size(340, 119);
             this.gbox_datosIngreso.TabIndex = 16;
             this.gbox_datosIngreso.TabStop = false;
-            this.gbox_datosIngreso.Text = "Datos de Ingreso";
-            // 
-            // cbox_tipogrupo
-            // 
-            this.cbox_tipogrupo.FormattingEnabled = true;
-            this.cbox_tipogrupo.Items.AddRange(new object[] {
-            "EXONERACIÓN",
-            "ITS",
-            "POP",
-            "PRIMERA OPCIÓN",
-            "TALENTO",
-            "TERCIO SUPERIOR"});
-            this.cbox_tipogrupo.Location = new System.Drawing.Point(120, 107);
-            this.cbox_tipogrupo.Name = "cbox_tipogrupo";
-            this.cbox_tipogrupo.Size = new System.Drawing.Size(200, 21);
-            this.cbox_tipogrupo.Sorted = true;
-            this.cbox_tipogrupo.TabIndex = 37;
+            this.gbox_datosIngreso.Text = "Datos de Especialidad Actual:";
             // 
             // cbox_ciclo2
             // 
@@ -206,16 +188,6 @@
             this.cbox_especialidad.TabIndex = 31;
             this.cbox_especialidad.SelectedIndexChanged += new System.EventHandler(this.cbox_especialidad_SelectedIndexChanged);
             // 
-            // label_tipogrupo
-            // 
-            this.label_tipogrupo.AutoSize = true;
-            this.label_tipogrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_tipogrupo.Location = new System.Drawing.Point(18, 109);
-            this.label_tipogrupo.Name = "label_tipogrupo";
-            this.label_tipogrupo.Size = new System.Drawing.Size(76, 13);
-            this.label_tipogrupo.TabIndex = 29;
-            this.label_tipogrupo.Text = "Tipo de grupo:";
-            // 
             // label_especialidad
             // 
             this.label_especialidad.AutoSize = true;
@@ -242,9 +214,9 @@
             this.label_cicloI.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label_cicloI.Location = new System.Drawing.Point(18, 29);
             this.label_cicloI.Name = "label_cicloI";
-            this.label_cicloI.Size = new System.Drawing.Size(33, 13);
+            this.label_cicloI.Size = new System.Drawing.Size(44, 13);
             this.label_cicloI.TabIndex = 23;
-            this.label_cicloI.Text = "Ciclo:";
+            this.label_cicloI.Text = "Al ciclo:";
             // 
             // gbox_datosNacimiento
             // 
@@ -707,11 +679,13 @@
             // 
             // gbox_datosGenerales
             // 
+            this.gbox_datosGenerales.Controls.Add(this.cbox_tipogrupo);
             this.gbox_datosGenerales.Controls.Add(this.label_estado);
             this.gbox_datosGenerales.Controls.Add(this.cbox_estado);
             this.gbox_datosGenerales.Controls.Add(this.tbox_id_becado);
             this.gbox_datosGenerales.Controls.Add(this.tbox_id_persona);
             this.gbox_datosGenerales.Controls.Add(this.label_fijo);
+            this.gbox_datosGenerales.Controls.Add(this.label_tipogrupo);
             this.gbox_datosGenerales.Controls.Add(this.label_movil);
             this.gbox_datosGenerales.Controls.Add(this.label_correoAlternativo);
             this.gbox_datosGenerales.Controls.Add(this.tbox_fijo);
@@ -734,10 +708,26 @@
             this.gbox_datosGenerales.Controls.Add(this.label_apellidos);
             this.gbox_datosGenerales.Location = new System.Drawing.Point(20, 13);
             this.gbox_datosGenerales.Name = "gbox_datosGenerales";
-            this.gbox_datosGenerales.Size = new System.Drawing.Size(340, 325);
+            this.gbox_datosGenerales.Size = new System.Drawing.Size(340, 344);
             this.gbox_datosGenerales.TabIndex = 13;
             this.gbox_datosGenerales.TabStop = false;
             this.gbox_datosGenerales.Text = "Datos Generales";
+            // 
+            // cbox_tipogrupo
+            // 
+            this.cbox_tipogrupo.FormattingEnabled = true;
+            this.cbox_tipogrupo.Items.AddRange(new object[] {
+            "EXONERACIÓN",
+            "ITS",
+            "POP",
+            "PRIMERA OPCIÓN",
+            "TALENTO",
+            "TERCIO SUPERIOR"});
+            this.cbox_tipogrupo.Location = new System.Drawing.Point(120, 312);
+            this.cbox_tipogrupo.Name = "cbox_tipogrupo";
+            this.cbox_tipogrupo.Size = new System.Drawing.Size(200, 21);
+            this.cbox_tipogrupo.Sorted = true;
+            this.cbox_tipogrupo.TabIndex = 37;
             // 
             // label_estado
             // 
@@ -786,6 +776,16 @@
             this.label_fijo.Size = new System.Drawing.Size(71, 13);
             this.label_fijo.TabIndex = 22;
             this.label_fijo.Text = "Teléfono Fijo:";
+            // 
+            // label_tipogrupo
+            // 
+            this.label_tipogrupo.AutoSize = true;
+            this.label_tipogrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label_tipogrupo.Location = new System.Drawing.Point(18, 315);
+            this.label_tipogrupo.Name = "label_tipogrupo";
+            this.label_tipogrupo.Size = new System.Drawing.Size(76, 13);
+            this.label_tipogrupo.TabIndex = 29;
+            this.label_tipogrupo.Text = "Tipo de grupo:";
             // 
             // label_movil
             // 
@@ -1033,6 +1033,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(764, 568);
             this.Controls.Add(this.toolStrip_historiaacademica);
             this.Controls.Add(this.panel_Alumno);

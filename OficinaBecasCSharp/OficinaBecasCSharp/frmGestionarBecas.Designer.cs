@@ -215,9 +215,9 @@
             this.gboxCarreras.Controls.Add(this.groupBox6);
             this.gboxCarreras.Controls.Add(this.groupBox5);
             this.gboxCarreras.Controls.Add(this.groupBox12);
-            this.gboxCarreras.Location = new System.Drawing.Point(262, 14);
+            this.gboxCarreras.Location = new System.Drawing.Point(19, 179);
             this.gboxCarreras.Name = "gboxCarreras";
-            this.gboxCarreras.Size = new System.Drawing.Size(459, 500);
+            this.gboxCarreras.Size = new System.Drawing.Size(702, 337);
             this.gboxCarreras.TabIndex = 14;
             this.gboxCarreras.TabStop = false;
             this.gboxCarreras.Text = "Carreras";
@@ -225,7 +225,7 @@
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.check_48);
-            this.groupBox11.Location = new System.Drawing.Point(239, 452);
+            this.groupBox11.Location = new System.Drawing.Point(239, 286);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(200, 36);
             this.groupBox11.TabIndex = 21;
@@ -245,9 +245,9 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.check_31);
-            this.groupBox4.Location = new System.Drawing.Point(20, 452);
+            this.groupBox4.Location = new System.Drawing.Point(239, 206);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 36);
+            this.groupBox4.Size = new System.Drawing.Size(95, 36);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ciencias Contables";
@@ -265,9 +265,9 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.check_36);
-            this.groupBox7.Location = new System.Drawing.Point(239, 160);
+            this.groupBox7.Location = new System.Drawing.Point(344, 206);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(200, 36);
+            this.groupBox7.Size = new System.Drawing.Size(95, 36);
             this.groupBox7.TabIndex = 19;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Derecho";
@@ -285,7 +285,7 @@
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.check_40);
-            this.groupBox9.Location = new System.Drawing.Point(239, 294);
+            this.groupBox9.Location = new System.Drawing.Point(239, 248);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(200, 36);
             this.groupBox9.TabIndex = 20;
@@ -450,9 +450,9 @@
             this.groupBox10.Controls.Add(this.check_44);
             this.groupBox10.Controls.Add(this.check_43);
             this.groupBox10.Controls.Add(this.check_42);
-            this.groupBox10.Location = new System.Drawing.Point(239, 336);
+            this.groupBox10.Location = new System.Drawing.Point(454, 137);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(200, 110);
+            this.groupBox10.Size = new System.Drawing.Size(229, 110);
             this.groupBox10.TabIndex = 16;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Letras y Ciencias Humanas";
@@ -470,7 +470,7 @@
             // check_47
             // 
             this.check_47.AutoSize = true;
-            this.check_47.Location = new System.Drawing.Point(110, 65);
+            this.check_47.Location = new System.Drawing.Point(122, 65);
             this.check_47.Name = "check_47";
             this.check_47.Size = new System.Drawing.Size(73, 17);
             this.check_47.TabIndex = 8;
@@ -480,7 +480,7 @@
             // check_46
             // 
             this.check_46.AutoSize = true;
-            this.check_46.Location = new System.Drawing.Point(110, 42);
+            this.check_46.Location = new System.Drawing.Point(122, 42);
             this.check_46.Name = "check_46";
             this.check_46.Size = new System.Drawing.Size(91, 17);
             this.check_46.TabIndex = 7;
@@ -490,7 +490,7 @@
             // check_45
             // 
             this.check_45.AutoSize = true;
-            this.check_45.Location = new System.Drawing.Point(110, 19);
+            this.check_45.Location = new System.Drawing.Point(122, 19);
             this.check_45.Name = "check_45";
             this.check_45.Size = new System.Drawing.Size(61, 17);
             this.check_45.TabIndex = 6;
@@ -552,9 +552,9 @@
             this.groupBox8.Controls.Add(this.check_39);
             this.groupBox8.Controls.Add(this.check_38);
             this.groupBox8.Controls.Add(this.check_37);
-            this.groupBox8.Location = new System.Drawing.Point(239, 202);
+            this.groupBox8.Location = new System.Drawing.Point(454, 253);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(200, 86);
+            this.groupBox8.Size = new System.Drawing.Size(229, 69);
             this.groupBox8.TabIndex = 20;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Educación";
@@ -562,7 +562,7 @@
             // check_39
             // 
             this.check_39.AutoSize = true;
-            this.check_39.Location = new System.Drawing.Point(6, 65);
+            this.check_39.Location = new System.Drawing.Point(119, 19);
             this.check_39.Name = "check_39";
             this.check_39.Size = new System.Drawing.Size(134, 17);
             this.check_39.TabIndex = 4;
@@ -595,7 +595,7 @@
             this.groupBox6.Controls.Add(this.check_35);
             this.groupBox6.Controls.Add(this.check_33);
             this.groupBox6.Controls.Add(this.check_32);
-            this.groupBox6.Location = new System.Drawing.Point(239, 22);
+            this.groupBox6.Location = new System.Drawing.Point(20, 244);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(200, 63);
             this.groupBox6.TabIndex = 19;
@@ -648,7 +648,7 @@
             this.groupBox5.Controls.Add(this.check_16);
             this.groupBox5.Controls.Add(this.check_15);
             this.groupBox5.Controls.Add(this.check_14);
-            this.groupBox5.Location = new System.Drawing.Point(239, 91);
+            this.groupBox5.Location = new System.Drawing.Point(239, 137);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(200, 63);
             this.groupBox5.TabIndex = 18;
@@ -711,9 +711,9 @@
             this.groupBox12.Controls.Add(this.check_2);
             this.groupBox12.Controls.Add(this.check_11);
             this.groupBox12.Controls.Add(this.check_10);
-            this.groupBox12.Location = new System.Drawing.Point(20, 244);
+            this.groupBox12.Location = new System.Drawing.Point(239, 22);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(200, 202);
+            this.groupBox12.Size = new System.Drawing.Size(443, 109);
             this.groupBox12.TabIndex = 0;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Ciencias e Ingeniería";
@@ -721,7 +721,7 @@
             // check_13
             // 
             this.check_13.AutoSize = true;
-            this.check_13.Location = new System.Drawing.Point(108, 179);
+            this.check_13.Location = new System.Drawing.Point(326, 39);
             this.check_13.Name = "check_13";
             this.check_13.Size = new System.Drawing.Size(66, 17);
             this.check_13.TabIndex = 15;
@@ -731,7 +731,7 @@
             // check_12
             // 
             this.check_12.AutoSize = true;
-            this.check_12.Location = new System.Drawing.Point(108, 157);
+            this.check_12.Location = new System.Drawing.Point(326, 16);
             this.check_12.Name = "check_12";
             this.check_12.Size = new System.Drawing.Size(86, 17);
             this.check_12.TabIndex = 14;
@@ -741,17 +741,17 @@
             // check_18
             // 
             this.check_18.AutoSize = true;
-            this.check_18.Location = new System.Drawing.Point(88, 88);
+            this.check_18.Location = new System.Drawing.Point(214, 61);
             this.check_18.Name = "check_18";
-            this.check_18.Size = new System.Drawing.Size(106, 17);
+            this.check_18.Size = new System.Drawing.Size(160, 17);
             this.check_18.TabIndex = 13;
-            this.check_18.Text = "Ing. de Telecom.";
+            this.check_18.Text = "Ing. de Telecomunicaciones";
             this.check_18.UseVisualStyleBackColor = true;
             // 
             // check_9
             // 
             this.check_9.AutoSize = true;
-            this.check_9.Location = new System.Drawing.Point(88, 65);
+            this.check_9.Location = new System.Drawing.Point(214, 84);
             this.check_9.Name = "check_9";
             this.check_9.Size = new System.Drawing.Size(90, 17);
             this.check_9.TabIndex = 12;
@@ -761,7 +761,7 @@
             // check_7
             // 
             this.check_7.AutoSize = true;
-            this.check_7.Location = new System.Drawing.Point(88, 42);
+            this.check_7.Location = new System.Drawing.Point(214, 39);
             this.check_7.Name = "check_7";
             this.check_7.Size = new System.Drawing.Size(94, 17);
             this.check_7.TabIndex = 11;
@@ -771,7 +771,7 @@
             // check_8
             // 
             this.check_8.AutoSize = true;
-            this.check_8.Location = new System.Drawing.Point(88, 19);
+            this.check_8.Location = new System.Drawing.Point(214, 16);
             this.check_8.Name = "check_8";
             this.check_8.Size = new System.Drawing.Size(106, 17);
             this.check_8.TabIndex = 10;
@@ -781,7 +781,7 @@
             // check_1
             // 
             this.check_1.AutoSize = true;
-            this.check_1.Location = new System.Drawing.Point(6, 180);
+            this.check_1.Location = new System.Drawing.Point(108, 85);
             this.check_1.Name = "check_1";
             this.check_1.Size = new System.Drawing.Size(99, 17);
             this.check_1.TabIndex = 9;
@@ -791,7 +791,7 @@
             // check_6
             // 
             this.check_6.AutoSize = true;
-            this.check_6.Location = new System.Drawing.Point(6, 157);
+            this.check_6.Location = new System.Drawing.Point(108, 62);
             this.check_6.Name = "check_6";
             this.check_6.Size = new System.Drawing.Size(89, 17);
             this.check_6.TabIndex = 8;
@@ -801,7 +801,7 @@
             // check_5
             // 
             this.check_5.AutoSize = true;
-            this.check_5.Location = new System.Drawing.Point(6, 134);
+            this.check_5.Location = new System.Drawing.Point(108, 39);
             this.check_5.Name = "check_5";
             this.check_5.Size = new System.Drawing.Size(95, 17);
             this.check_5.TabIndex = 7;
@@ -811,7 +811,7 @@
             // check_4
             // 
             this.check_4.AutoSize = true;
-            this.check_4.Location = new System.Drawing.Point(6, 111);
+            this.check_4.Location = new System.Drawing.Point(108, 18);
             this.check_4.Name = "check_4";
             this.check_4.Size = new System.Drawing.Size(100, 17);
             this.check_4.TabIndex = 6;
@@ -871,14 +871,14 @@
             this.gbox_datosGenerales.Controls.Add(this.label_nombre);
             this.gbox_datosGenerales.Location = new System.Drawing.Point(19, 14);
             this.gbox_datosGenerales.Name = "gbox_datosGenerales";
-            this.gbox_datosGenerales.Size = new System.Drawing.Size(239, 261);
+            this.gbox_datosGenerales.Size = new System.Drawing.Size(353, 159);
             this.gbox_datosGenerales.TabIndex = 13;
             this.gbox_datosGenerales.TabStop = false;
             this.gbox_datosGenerales.Text = "Datos Generales Beca";
             // 
             // tbox_financiador
             // 
-            this.tbox_financiador.Location = new System.Drawing.Point(18, 218);
+            this.tbox_financiador.Location = new System.Drawing.Point(87, 48);
             this.tbox_financiador.Name = "tbox_financiador";
             this.tbox_financiador.Size = new System.Drawing.Size(200, 20);
             this.tbox_financiador.TabIndex = 40;
@@ -887,7 +887,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(16, 202);
+            this.label1.Location = new System.Drawing.Point(16, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 39;
@@ -895,16 +895,16 @@
             // 
             // tbox_idBeca
             // 
-            this.tbox_idBeca.Location = new System.Drawing.Point(183, 64);
+            this.tbox_idBeca.Location = new System.Drawing.Point(199, 74);
             this.tbox_idBeca.Name = "tbox_idBeca";
             this.tbox_idBeca.Size = new System.Drawing.Size(35, 20);
             this.tbox_idBeca.TabIndex = 38;
             // 
             // rtbox_descripcion
             // 
-            this.rtbox_descripcion.Location = new System.Drawing.Point(18, 106);
+            this.rtbox_descripcion.Location = new System.Drawing.Point(87, 107);
             this.rtbox_descripcion.Name = "rtbox_descripcion";
-            this.rtbox_descripcion.Size = new System.Drawing.Size(200, 92);
+            this.rtbox_descripcion.Size = new System.Drawing.Size(200, 36);
             this.rtbox_descripcion.TabIndex = 15;
             this.rtbox_descripcion.Text = "";
             // 
@@ -912,7 +912,7 @@
             // 
             this.label_descri.AutoSize = true;
             this.label_descri.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_descri.Location = new System.Drawing.Point(15, 90);
+            this.label_descri.Location = new System.Drawing.Point(15, 110);
             this.label_descri.Name = "label_descri";
             this.label_descri.Size = new System.Drawing.Size(66, 13);
             this.label_descri.TabIndex = 37;
@@ -922,7 +922,7 @@
             // 
             this.label_estado.AutoSize = true;
             this.label_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_estado.Location = new System.Drawing.Point(15, 67);
+            this.label_estado.Location = new System.Drawing.Point(16, 77);
             this.label_estado.Name = "label_estado";
             this.label_estado.Size = new System.Drawing.Size(43, 13);
             this.label_estado.TabIndex = 36;
@@ -934,7 +934,7 @@
             this.cbox_estado.Items.AddRange(new object[] {
             "ACTIVO",
             "INACTIVO"});
-            this.cbox_estado.Location = new System.Drawing.Point(71, 64);
+            this.cbox_estado.Location = new System.Drawing.Point(87, 74);
             this.cbox_estado.Name = "cbox_estado";
             this.cbox_estado.Size = new System.Drawing.Size(95, 21);
             this.cbox_estado.Sorted = true;
@@ -942,16 +942,16 @@
             // 
             // tbox_nombre
             // 
-            this.tbox_nombre.Location = new System.Drawing.Point(19, 38);
+            this.tbox_nombre.Location = new System.Drawing.Point(87, 22);
             this.tbox_nombre.Name = "tbox_nombre";
-            this.tbox_nombre.Size = new System.Drawing.Size(147, 20);
+            this.tbox_nombre.Size = new System.Drawing.Size(200, 20);
             this.tbox_nombre.TabIndex = 2;
             // 
             // label_nombre
             // 
             this.label_nombre.AutoSize = true;
             this.label_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_nombre.Location = new System.Drawing.Point(16, 22);
+            this.label_nombre.Location = new System.Drawing.Point(17, 25);
             this.label_nombre.Name = "label_nombre";
             this.label_nombre.Size = new System.Drawing.Size(47, 13);
             this.label_nombre.TabIndex = 0;

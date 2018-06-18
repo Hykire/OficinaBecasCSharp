@@ -107,31 +107,39 @@ namespace Vista
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Persona p = new Persona();
-            Usuario u = new Usuario();
-            if (flag_elementoEditar ==1) { p.Id_persona = Int32.Parse(tbox_id_persona.Text);  u.Id_usuario = Int32.Parse(tbox_id_usuario.Text); }
-
-            p.CodigoPUCP = Int32.Parse(tbox_codigo.Text);
-            p.Nombres = tbox_nombres.Text;
-            p.Apellidos = tbox_apellidos.Text;
-            if (rbutton_masculino.Checked == true) p.Sexo = 'M'; else if (rbutton_femenino.Checked == true) p.Sexo = 'F';
-            p.Edad = Int32.Parse(tbox_edad.Text);
-            p.Dni = Int32.Parse(tbox_dni.Text);
-            p.CorreoPUCP = tbox_correopucp.Text;
-            p.CorreoAlternativo = tbox_correoalternativo.Text;
-            p.TelfMovil = tbox_movil.Text;
-            p.TelfFijo = tbox_fijo.Text;
-            p.Fecha_nacimiento = DateTime.Parse(dt_fechanacimiento.Text);
-            p.Estado = cbox_estado.Text;
-
-            u.User = tbox_user.Text;
-            u.Password = tbox_password.Text;
-            u.Id_tipo_usuario = Int32.Parse(cbox_tipo.Text);
-
-            if (flag_elementoNuevo == 1)
+            if (validar())
             {
-                flag_elementoNuevo = 0;
-                logicanegocioPersona.registrar_persona(p, u);
+                Persona p = new Persona();
+                Usuario u = new Usuario();
+                if (flag_elementoEditar == 1) { p.Id_persona = Int32.Parse(tbox_id_persona.Text); u.Id_usuario = Int32.Parse(tbox_id_usuario.Text); }
+
+                p.CodigoPUCP = Int32.Parse(tbox_codigo.Text);
+                p.Nombres = tbox_nombres.Text;
+                p.Apellidos = tbox_apellidos.Text;
+                if (rbutton_masculino.Checked == true) p.Sexo = 'M'; else if (rbutton_femenino.Checked == true) p.Sexo = 'F';
+                p.Edad = Int32.Parse(tbox_edad.Text);
+                p.Dni = Int32.Parse(tbox_dni.Text);
+                p.CorreoPUCP = tbox_correopucp.Text;
+                p.CorreoAlternativo = tbox_correoalternativo.Text;
+                p.TelfMovil = tbox_movil.Text;
+                p.TelfFijo = tbox_fijo.Text;
+                p.Fecha_nacimiento = DateTime.Parse(dt_fechanacimiento.Text);
+                p.Estado = cbox_estado.Text;
+
+                u.User = tbox_user.Text;
+                u.Password = tbox_password.Text;
+                u.Id_tipo_usuario = Int32.Parse(cbox_tipo.Text);
+
+                if (flag_elementoNuevo == 1)
+                {
+                    flag_elementoNuevo = 0;
+                    logicanegocioPersona.registrar_persona(p, u);
+                }
+                if (flag_elementoEditar == 1)
+                {
+                    flag_elementoEditar = 0;
+                    logicanegocioPersona.editar_persona(p, u);
+                }
             }
         }
 
@@ -221,6 +229,84 @@ namespace Vista
 
             //se habilitan los campos
             estadoComponentes(Estado.Habilitado);
+
+            //bloqueo
+            cbox_tipo.Enabled = false;
+        }
+
+        private bool validar()
+        {
+            BindingList<int> validaciones = new BindingList<int>();
+            bool flag = false;
+
+            //validacion de codigo
+            if (tbox_codigo.Text == "") { validaciones.Add(1); }
+            else if (tbox_codigo.Text.Length != 8) { validaciones.Add(2); }
+            else if (int.TryParse(tbox_codigo.Text, out int result) == false) { validaciones.Add(3); }
+            else if (logicanegocioPersona.existe_codigo(int.Parse(tbox_codigo.Text))==true) { validaciones.Add(16); }
+
+            //validacion de nombres
+                if (tbox_nombres.Text == "") { validaciones.Add(4); }
+            else if (tbox_nombres.Text.Any(char.IsDigit) == true) { validaciones.Add(5); }
+            if (tbox_apellidos.Text == "") { validaciones.Add(6); }
+            else if (tbox_apellidos.Text.Any(char.IsDigit) == true) { validaciones.Add(7); }
+            //validacion de genero
+            if (rbutton_femenino.Checked == false && rbutton_masculino.Checked == false) { validaciones.Add(8); }
+            //validacion de dni
+            if (tbox_dni.Text == "") { validaciones.Add(9); }
+            else if (tbox_dni.Text.Length != 8) { validaciones.Add(10); }
+            else if (int.TryParse(tbox_dni.Text, out int result_2) == false) { validaciones.Add(11); }
+            //validacion de edad
+            if (tbox_edad.Text == "") { validaciones.Add(12); }
+            //validad de correo pucp
+            if (tbox_correopucp.Text == "") { validaciones.Add(13); }
+            else
+            {
+                bool a = tbox_correopucp.Text.Contains("@pucp.pe");
+                bool b = tbox_correopucp.Text.Contains("@pucp.edu.pe");
+                if (!(a||b)) { validaciones.Add(14); }
+            }
+            //validacion de correo alternativo
+            if (tbox_correoalternativo.Text == "") { }
+            else if (tbox_correoalternativo.Text.Contains("@") == false) { validaciones.Add(15); }
+            //validar el estado
+            if (cbox_estado.Text == "") { validaciones.Add(17); }
+            if (tbox_user.Text == "") { validaciones.Add(18); }
+            else if (logicanegocioPersona.existe_usuario(tbox_user.Text) == true) { validaciones.Add(19); }
+            if (tbox_password.Text == "") { validaciones.Add(20); }
+            if (cbox_tipo.Text == "") { validaciones.Add(21); }
+
+            foreach (int i in validaciones)
+            {
+                if (i == 1) { MessageBox.Show("Debe ingresar un codigo.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 2) { MessageBox.Show("El codigo ingresado no es de 8 dígitos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 3) { MessageBox.Show("El codigo ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+
+                if (i == 4) { MessageBox.Show("Debe ingresar por lo menos un nombre.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 5) { MessageBox.Show("Los nombres ingresados cuentan con caracteres numéricos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 6) { MessageBox.Show("Debe ingresar por lo menos un apellido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 7) { MessageBox.Show("Los apellidos ingresados cuentan con caracteres numéricos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+
+                if (i == 8) { MessageBox.Show("Debe seleccionar un genero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 9) { MessageBox.Show("Debe ingresar un dni.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 10) { MessageBox.Show("El dni ingresado no es de 8 dígitos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 11) { MessageBox.Show("El dni ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+
+                if (i == 12) { MessageBox.Show("Debe ingresar una fecha de nacimiento.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+
+                if (i == 13) { MessageBox.Show("Debe ingresar el correo pucp.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 14) { MessageBox.Show("El correo pucp ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 15) { MessageBox.Show("El correo alternativo ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 16) { MessageBox.Show("El codigo ingresado ya existe en la base de datos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 17) { MessageBox.Show("Debe seleccionar un estado.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 18) { MessageBox.Show("Debe ingresar un usuario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 19) { MessageBox.Show("El usuario ingresado ya existe.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 20) { MessageBox.Show("Debe ingresar una contraseña.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 21) { MessageBox.Show("Debe ingresar un tipo.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+
+                flag = true;
+            }
+            return true;
         }
     }
 }

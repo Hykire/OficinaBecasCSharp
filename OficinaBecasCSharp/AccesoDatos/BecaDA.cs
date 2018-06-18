@@ -79,6 +79,38 @@ namespace AccesoDatos
             comando.ExecuteNonQuery();
             con.Close();
         }
+        //hechor por Francisco
+        public BindingList<Beca> listarBecaPorEspecialidad(int id_especialidad)
+        {
+            BindingList<Beca> lista = new BindingList<Beca>();
+
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g6;" + "database=inf282g6;" + "port=3306;" + "password=Nk2ewy;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            MySqlCommand comando = new MySqlCommand();
+
+            string aux_1 = "SELECT B.ID_BECA, B.NOMBRE_BECA, B.DESCRIPCION, B.FINANCIADOR, B.ESTADO FROM BECA B INNER JOIN BECA_X_ESPECIALIDAD E ";
+            string aux_2 = "WHERE E.ID_BECA = B.ID_BECA AND B.ESTADO = 'ACTIVO' AND E.ID_ESPECIALIDAD = " + id_especialidad.ToString()+ ";";
+            comando.CommandText = aux_1 + aux_2;
+
+            comando.Connection = con;
+            con.Open();
+            MySqlDataReader rs = comando.ExecuteReader();
+
+            while (rs.Read())
+            {
+                Beca b = new Beca();
+                b.Id_beca = rs.GetInt32("ID_BECA");
+                b.Nombre_beca = rs.GetString("NOMBRE_BECA");
+                b.Descripcion = rs.GetString("DESCRIPCION");
+                b.Financiador = rs.GetString("FINANCIADOR");
+                b.Estado = rs.GetString("ESTADO");
+                lista.Add(b);
+            }
+            con.Close();
+            return lista;
+        }
+
+
 
 
         //----?

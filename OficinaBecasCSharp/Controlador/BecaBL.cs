@@ -42,7 +42,13 @@ namespace Controlador
         {
             return accesoDatos_BxE.obtenerEspecialidades_BxE(b);
         }
-
+        //hecho por Francisco
+        public BindingList<Beca> listar_BecaPorEspecialidad(int id_especialidad)
+        {
+            BindingList<Beca> lista = accesoDatos.listarBecaPorEspecialidad(id_especialidad);
+            BindingList<Beca> ltsOrdenada = new BindingList<Beca>(lista.OrderBy(x => x.Nombre_beca).ToList());
+            return ltsOrdenada;
+        }
 
 
 

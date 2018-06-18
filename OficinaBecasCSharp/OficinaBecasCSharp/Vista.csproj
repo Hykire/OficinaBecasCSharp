@@ -74,12 +74,6 @@
     <Compile Include="AdministrarTareaTutor.Designer.cs">
       <DependentUpon>AdministrarTareaTutor.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarBecaGB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AgregarBecaGB.Designer.cs">
-      <DependentUpon>AgregarBecaGB.cs</DependentUpon>
-    </Compile>
     <Compile Include="AgregarBecarioATutor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,35 +260,17 @@
     <Compile Include="DatosUsuario.Designer.cs">
       <DependentUpon>DatosUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarBecaGB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditarBecaGB.Designer.cs">
-      <DependentUpon>EditarBecaGB.cs</DependentUpon>
-    </Compile>
     <Compile Include="EditarCita.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditarCita.Designer.cs">
       <DependentUpon>EditarCita.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarDoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditarDoc.Designer.cs">
-      <DependentUpon>EditarDoc.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTutor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTutor.Designer.cs">
       <DependentUpon>FormTutor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GestionarBecas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GestionarBecas.Designer.cs">
-      <DependentUpon>GestionarBecas.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionarTutores.cs">
       <SubType>Form</SubType>
@@ -348,9 +324,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdministrarTareaTutor.resx">
       <DependentUpon>AdministrarTareaTutor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AgregarBecaGB.resx">
-      <DependentUpon>AgregarBecaGB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarBecarioATutor.resx">
       <DependentUpon>AgregarBecarioATutor.cs</DependentUpon>
@@ -445,20 +418,11 @@
     <EmbeddedResource Include="DatosUsuario.resx">
       <DependentUpon>DatosUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarBecaGB.resx">
-      <DependentUpon>EditarBecaGB.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EditarCita.resx">
       <DependentUpon>EditarCita.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarDoc.resx">
-      <DependentUpon>EditarDoc.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormTutor.resx">
       <DependentUpon>FormTutor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GestionarBecas.resx">
-      <DependentUpon>GestionarBecas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarTutores.resx">
       <DependentUpon>GestionarTutores.cs</DependentUpon>

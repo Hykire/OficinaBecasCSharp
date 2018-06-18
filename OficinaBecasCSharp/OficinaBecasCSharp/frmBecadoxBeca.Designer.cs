@@ -41,12 +41,12 @@
             this.cbox_ciclo_nuevo1 = new System.Windows.Forms.ComboBox();
             this.label_ciclo = new System.Windows.Forms.Label();
             this.gbox_datosGenerales = new System.Windows.Forms.GroupBox();
+            this.tbox_especialidad = new System.Windows.Forms.TextBox();
             this.cbox_nivelcreditos = new System.Windows.Forms.ComboBox();
             this.cbox_tipoescala = new System.Windows.Forms.ComboBox();
             this.cbox_escalapago2 = new System.Windows.Forms.ComboBox();
             this.cbox_escalapago1 = new System.Windows.Forms.ComboBox();
             this.tbox_id_becadoxbeca = new System.Windows.Forms.TextBox();
-            this.tbox_id_becado = new System.Windows.Forms.TextBox();
             this.cbox_beca = new System.Windows.Forms.ComboBox();
             this.label_nivelcreditos = new System.Windows.Forms.Label();
             this.label_escalapago = new System.Windows.Forms.Label();
@@ -71,6 +71,7 @@
             this.label_renovacion = new System.Windows.Forms.Label();
             this.label_suspencion = new System.Windows.Forms.Label();
             this.label_ampliacion = new System.Windows.Forms.Label();
+            this.tbox_id_becado = new System.Windows.Forms.TextBox();
             this.gbox_intercambio = new System.Windows.Forms.GroupBox();
             this.cbox_intercambio = new System.Windows.Forms.ComboBox();
             this.label_intercambio = new System.Windows.Forms.Label();
@@ -240,6 +241,7 @@
             // 
             // gbox_datosGenerales
             // 
+            this.gbox_datosGenerales.Controls.Add(this.tbox_especialidad);
             this.gbox_datosGenerales.Controls.Add(this.cbox_nivelcreditos);
             this.gbox_datosGenerales.Controls.Add(this.cbox_tipoescala);
             this.gbox_datosGenerales.Controls.Add(this.cbox_escalapago2);
@@ -261,6 +263,13 @@
             this.gbox_datosGenerales.TabIndex = 73;
             this.gbox_datosGenerales.TabStop = false;
             this.gbox_datosGenerales.Text = "Datos Generales";
+            // 
+            // tbox_especialidad
+            // 
+            this.tbox_especialidad.Location = new System.Drawing.Point(219, 132);
+            this.tbox_especialidad.Name = "tbox_especialidad";
+            this.tbox_especialidad.Size = new System.Drawing.Size(100, 20);
+            this.tbox_especialidad.TabIndex = 76;
             // 
             // cbox_nivelcreditos
             // 
@@ -333,13 +342,6 @@
             this.tbox_id_becadoxbeca.Name = "tbox_id_becadoxbeca";
             this.tbox_id_becadoxbeca.Size = new System.Drawing.Size(100, 20);
             this.tbox_id_becadoxbeca.TabIndex = 25;
-            // 
-            // tbox_id_becado
-            // 
-            this.tbox_id_becado.Location = new System.Drawing.Point(239, 14);
-            this.tbox_id_becado.Name = "tbox_id_becado";
-            this.tbox_id_becado.Size = new System.Drawing.Size(100, 20);
-            this.tbox_id_becado.TabIndex = 24;
             // 
             // cbox_beca
             // 
@@ -593,6 +595,13 @@
             this.label_ampliacion.Size = new System.Drawing.Size(183, 13);
             this.label_ampliacion.TabIndex = 56;
             this.label_ampliacion.Text = "Solicitud de Ampliación de Cobertura:";
+            // 
+            // tbox_id_becado
+            // 
+            this.tbox_id_becado.Location = new System.Drawing.Point(239, 14);
+            this.tbox_id_becado.Name = "tbox_id_becado";
+            this.tbox_id_becado.Size = new System.Drawing.Size(100, 20);
+            this.tbox_id_becado.TabIndex = 24;
             // 
             // gbox_intercambio
             // 
@@ -961,6 +970,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(764, 728);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip_historiaacademica);
@@ -982,7 +992,6 @@
             this.gbox_cobertura.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -1064,5 +1073,6 @@
         private System.Windows.Forms.Label label_nutilizados;
         private System.Windows.Forms.TextBox tbox_cubiertos;
         private System.Windows.Forms.Label label_ncubiertos;
+        private System.Windows.Forms.TextBox tbox_especialidad;
     }
 }
