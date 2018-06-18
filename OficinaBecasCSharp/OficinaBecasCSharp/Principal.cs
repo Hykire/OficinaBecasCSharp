@@ -22,8 +22,7 @@ namespace Vista {
             lblNombreUsuario.Text = nombreUsuario;
 
             int tipoUsuario = usuarioBL.obtenerTipoUsuario(idUsuario);
-            MessageBox.Show(idUsuario.ToString());
-            MessageBox.Show(tipoUsuario.ToString());
+
             if (tipoUsuario != -1) {
                 if (tipoUsuario == 2) modoTutor(); //tutor
                 else if (tipoUsuario == 3) modoCoordTutor(); //coordinador de tutoria
