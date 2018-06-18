@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsistenteComunicacionesBL.cs" />
     <Compile Include="BecadoBL.cs" />
     <Compile Include="Becado_x_BecaBL.cs" />
     <Compile Include="BecaBL.cs" />

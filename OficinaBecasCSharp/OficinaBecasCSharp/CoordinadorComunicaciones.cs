@@ -15,17 +15,16 @@ namespace Vista
     public partial class CoordinadorComunicaciones : Form
     {
         private ConvocatoriaBL convocatoriaBL;
+        private AsistenteComunicacionesBL asistenteComunicacionesBL;
         private AsistenteComunicaciones asistente;
         private Beca beca;
         private bool actualizar;
-        public CoordinadorComunicaciones()
+        public CoordinadorComunicaciones(int idUsuario)
         {
             InitializeComponent();
             convocatoriaBL = new ConvocatoriaBL();
-            asistente = new AsistenteComunicaciones();
-            asistente.Nombres = "Ariana";
-            asistente.Apellidos = "Grande";
-            asistente.IdAsistente = 1;
+            asistenteComunicacionesBL = new AsistenteComunicacionesBL();
+            asistente = asistenteComunicacionesBL.buscarAsistente(idUsuario);
             cbCicloConvocatoria.DataSource = agregarCiclos(DateTime.Today);
             txtIdConvocatoria.Enabled = false;
             txtNombreConvocatoria.Enabled = false;
@@ -41,7 +40,7 @@ namespace Vista
             cbCicloConvocatoria.Enabled = false;
             txtBecaAsociada.Enabled = false;
             btnGuardar.Enabled = false;
-            btnCancelar.Enabled = false;
+            btnLimpiar.Enabled = false;
             btnBeca.Enabled = false;
             btnNuevo.Enabled = true;
             btnBuscar.Enabled = true;
@@ -166,7 +165,7 @@ namespace Vista
                 cbCicloConvocatoria.Enabled = false;
                 txtBecaAsociada.Enabled = false;
                 btnGuardar.Enabled = false;
-                btnCancelar.Enabled = false;
+                btnLimpiar.Enabled = false;
                 btnBeca.Enabled = false;
                 btnNuevo.Enabled = true;
                 btnBuscar.Enabled = true;
@@ -178,7 +177,7 @@ namespace Vista
             btnGuardar.Enabled = false;
             btnEditar.Enabled = true;
             btnBuscar.Enabled = false;
-            btnCancelar.Enabled = true;
+            btnLimpiar.Enabled = true;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -194,7 +193,7 @@ namespace Vista
             txtCantidadSeleccionados.Enabled = false;
             cbCicloConvocatoria.Enabled = true;
             btnGuardar.Enabled = true;
-            btnCancelar.Enabled = true;
+            btnLimpiar.Enabled = true;
             btnNuevo.Enabled = false;
             btnBuscar.Enabled = false;
             btnBeca.Enabled = true;
@@ -221,7 +220,7 @@ namespace Vista
             cbCicloConvocatoria.Enabled = false;
             txtBecaAsociada.Enabled = false;
             btnGuardar.Enabled = false;
-            btnCancelar.Enabled = false;
+            btnLimpiar.Enabled = false;
             btnNuevo.Enabled = true;
             btnBuscar.Enabled = true;
             btnBeca.Enabled = false;
@@ -290,7 +289,7 @@ namespace Vista
             cbCicloConvocatoria.Enabled = false;
             txtBecaAsociada.Enabled = false;
             btnGuardar.Enabled = false;
-            btnCancelar.Enabled = false;
+            btnLimpiar.Enabled = false;
             btnBeca.Enabled = false;
             btnNuevo.Enabled = true;
             btnBuscar.Enabled = true;
@@ -320,7 +319,7 @@ namespace Vista
             txtCantidadSeleccionados.Enabled = false;
             cbCicloConvocatoria.Enabled = true;
             btnGuardar.Enabled = true;
-            btnCancelar.Enabled = true;
+            btnLimpiar.Enabled = true;
             btnNuevo.Enabled = false;
             btnBuscar.Enabled = false;
             btnBeca.Enabled = true;

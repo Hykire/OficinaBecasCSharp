@@ -62,10 +62,10 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnBuscar = new System.Windows.Forms.ToolStripButton();
+            this.btnLimpiar = new System.Windows.Forms.ToolStripButton();
             this.panelCC.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -160,6 +160,7 @@
             // txtCantidadCandidatosPrevistos
             // 
             this.txtCantidadCandidatosPrevistos.Location = new System.Drawing.Point(274, 240);
+            this.txtCantidadCandidatosPrevistos.MaxLength = 4;
             this.txtCantidadCandidatosPrevistos.Name = "txtCantidadCandidatosPrevistos";
             this.txtCantidadCandidatosPrevistos.Size = new System.Drawing.Size(59, 22);
             this.txtCantidadCandidatosPrevistos.TabIndex = 8;
@@ -203,6 +204,7 @@
             // txtDescripcionConvocatoria
             // 
             this.txtDescripcionConvocatoria.Location = new System.Drawing.Point(234, 139);
+            this.txtDescripcionConvocatoria.MaxLength = 200;
             this.txtDescripcionConvocatoria.Name = "txtDescripcionConvocatoria";
             this.txtDescripcionConvocatoria.Size = new System.Drawing.Size(722, 22);
             this.txtDescripcionConvocatoria.TabIndex = 5;
@@ -320,6 +322,7 @@
             // 
             this.txtNombreConvocatoria.Location = new System.Drawing.Point(234, 86);
             this.txtNombreConvocatoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombreConvocatoria.MaxLength = 50;
             this.txtNombreConvocatoria.Name = "txtNombreConvocatoria";
             this.txtNombreConvocatoria.Size = new System.Drawing.Size(192, 22);
             this.txtNombreConvocatoria.TabIndex = 3;
@@ -361,7 +364,7 @@
             this.btnEditar,
             this.toolStripSeparator1,
             this.btnBuscar,
-            this.btnCancelar});
+            this.btnLimpiar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1067, 27);
@@ -386,15 +389,6 @@
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(76, 24);
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // btnEditar
             // 
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
@@ -404,19 +398,28 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 24);
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(76, 24);
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
+            this.btnLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(83, 24);
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // CoordinadorComunicaciones
             // 
@@ -473,7 +476,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnGuardar;
-        private System.Windows.Forms.ToolStripButton btnCancelar;
+        private System.Windows.Forms.ToolStripButton btnLimpiar;
         private System.Windows.Forms.ToolStripButton btnBuscar;
         private System.Windows.Forms.TextBox txtCantidadSeleccionados;
         private System.Windows.Forms.Label label10;

@@ -21,9 +21,27 @@ namespace Controlador
             return candidatoDA.listarCandidatos(idConvocatoria);
         }
 
+        //Busca listar los candidatos que no se encuentran en esa convocatoria
         public BindingList<Candidato> listarCandidatosAnteriores(int idConvocatoria)
         {
-            return candidatoDA.listarCandidatosAnteriores(idConvocatoria);
+            BindingList<Candidato> resultado = new BindingList<Candidato>();
+            bool candidatoRepetido;
+
+            foreach(Candidato cAnt in candidatoDA.listarCandidatosAnteriores(idConvocatoria))
+            {
+                candidatoRepetido = false;
+                foreach(Candidato cAct in candidatoDA.listarCandidatos(idConvocatoria))
+                {
+                    if(cAnt.IdCandidato == cAct.IdCandidato)
+                    {
+                        candidatoRepetido = true;
+                        break;
+                    }
+                }
+                if (!candidatoRepetido) resultado.Add(cAnt);
+            }
+
+            return resultado;
         }
 
         public int insertarPersona(Persona persona)

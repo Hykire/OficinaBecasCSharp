@@ -64,7 +64,7 @@ namespace Vista {
             if (this.panel_Principal.Controls.Count > 0)
                 this.panel_Principal.Controls.RemoveAt(0);
             AdministrarAsistComunicaciones form = Application.OpenForms.OfType<AdministrarAsistComunicaciones>().FirstOrDefault();
-            AdministrarAsistComunicaciones ventanaCC = form ?? new AdministrarAsistComunicaciones();
+            AdministrarAsistComunicaciones ventanaCC = form ?? new AdministrarAsistComunicaciones(id);
             ventanaCC.TopLevel = false;
             ventanaCC.FormBorderStyle = FormBorderStyle.None;
             ventanaCC.Dock = DockStyle.Fill;

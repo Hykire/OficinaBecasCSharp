@@ -12,11 +12,13 @@ namespace Vista
 {
     public partial class AdministrarAsistComunicaciones : Form
     {
-        public AdministrarAsistComunicaciones()
+        private int idUsuario;
+        public AdministrarAsistComunicaciones(int idUsuario)
         {
             InitializeComponent();
             cbConsulta.Items.Add("Ciclo Actual");
             cbConsulta.Items.Add("Ciclos Anteriores");
+            this.idUsuario = idUsuario;
         }
         private void GC_button_Click_1(object sender, EventArgs e)
         {
@@ -25,7 +27,7 @@ namespace Vista
                 if (this.panel2.Controls.Count > 0)
                     this.panel2.Controls.RemoveAt(0);
                 CoordinadorComunicaciones form = Application.OpenForms.OfType<CoordinadorComunicaciones>().FirstOrDefault();
-                CoordinadorComunicaciones ventana = form ?? new CoordinadorComunicaciones();
+                CoordinadorComunicaciones ventana = form ?? new CoordinadorComunicaciones(idUsuario);
                 ventana.TopLevel = false;
                 ventana.FormBorderStyle = FormBorderStyle.None;
                 ventana.Dock = DockStyle.Fill;

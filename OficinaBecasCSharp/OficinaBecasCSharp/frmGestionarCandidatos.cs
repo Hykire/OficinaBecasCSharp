@@ -67,7 +67,7 @@ namespace Vista
             txtSeleccionados.Text = null;
             txtTelefonoFijo.Text = null;
             txtTelefonoMovil.Text = null;
-            dtFechaFin.Text = DateTime.Today.ToString();
+            dtFechaFin.Text = DateTime.Today.AddYears(-15).ToString();
             chPostulo.Checked = false;
             chFueSeleccionado.Checked = false;
             rbFemenino.Checked = false;
@@ -76,7 +76,7 @@ namespace Vista
             btnNuevo.Enabled = false;
             btnBuscar.Enabled = false;
             btnEditar.Enabled = false;
-            btnCancelar.Enabled = false;
+            btnLimpiar.Enabled = false;
             btnGuardar.Enabled = false;
         }
 
@@ -97,7 +97,7 @@ namespace Vista
                 txtPostulantes.Text = frmBuscarConvocatoria.ConvocatoriaSeleccionada.CantidadPostulantes.ToString();
                 txtSeleccionados.Text = frmBuscarConvocatoria.ConvocatoriaSeleccionada.CantidadSeleccionados.ToString();
                 btnBuscar.Enabled = true;
-                btnCancelar.Enabled = true;
+                btnLimpiar.Enabled = true;
                 if (DateTime.Parse(dtFechaFin.Text) >= DateTime.Today) btnNuevo.Enabled = true;
                 else btnNuevo.Enabled = false;
             }
@@ -120,6 +120,9 @@ namespace Vista
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            dtFechaNacimiento.MaxDate = DateTime.Today.AddYears(-15);
+            dtFechaNacimiento.MinDate = DateTime.Today.AddYears(-100);
+
             actualizar = false;
 
             txtApellidos.Enabled = true;
@@ -149,7 +152,7 @@ namespace Vista
             btnNuevo.Enabled = false;
             btnBuscar.Enabled = false;
             btnEditar.Enabled = false;
-            btnCancelar.Enabled = true;
+            btnLimpiar.Enabled = true;
             btnGuardar.Enabled = true;
         }
 
@@ -310,7 +313,7 @@ namespace Vista
             btnBuscarCandidato.Enabled = false;
 
             btnEditar.Enabled = true;
-            btnCancelar.Enabled = true;
+            btnLimpiar.Enabled = true;
             btnBuscar.Enabled = false;
             btnGuardar.Enabled = false;
             btnNuevo.Enabled = false;
@@ -359,7 +362,7 @@ namespace Vista
                 rbFemenino.Enabled = false;
 
                 btnEditar.Enabled = true;
-                btnCancelar.Enabled = true;
+                btnLimpiar.Enabled = true;
                 btnBuscar.Enabled = false;
                 btnGuardar.Enabled = false;
                 btnNuevo.Enabled = false;
@@ -429,13 +432,13 @@ namespace Vista
             btnNuevo.Enabled = false;
             btnBuscar.Enabled = false;
             btnEditar.Enabled = false;
-            btnCancelar.Enabled = true;
+            btnLimpiar.Enabled = true;
             btnGuardar.Enabled = true;
         }
 
         private void dtFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
-            if(DateTime.Parse(dtFechaNacimiento.Text).Month > DateTime.Today.Month)
+            if (DateTime.Parse(dtFechaNacimiento.Text).Month > DateTime.Today.Month)
             {
                 txtEdad.Text = (DateTime.Today.Year - DateTime.Parse(dtFechaNacimiento.Text).Year - 1).ToString();
             }
