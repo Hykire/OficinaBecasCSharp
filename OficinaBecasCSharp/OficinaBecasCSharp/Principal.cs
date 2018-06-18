@@ -20,6 +20,44 @@ namespace Vista {
             id = idUsuario;
             string nombreUsuario = usuarioBL.obtenerNombreUsuario(idUsuario);
             lblNombreUsuario.Text = nombreUsuario;
+
+            int tipoUsuario = usuarioBL.obtenerTipoUsuario(idUsuario);
+            MessageBox.Show(idUsuario.ToString());
+            MessageBox.Show(tipoUsuario.ToString());
+            if (tipoUsuario != -1) {
+                if (tipoUsuario == 2) modoTutor(); //tutor
+                else if (tipoUsuario == 3) modoCoordTutor(); //coordinador de tutoria
+                else if (tipoUsuario == 4) modoAdministrador(); //administrador
+                else if (tipoUsuario == 5) modoAsistComunicacion(); //asistente de comunicacion
+            }
+        }
+
+        public void modoAdministrador() {
+            buttonAdmin.Enabled = true;
+            buttonCT.Enabled = true;
+            buttonTutor.Enabled = true;
+            buttonAC.Enabled = true;
+        }
+
+        public void modoCoordTutor() {
+            buttonAdmin.Enabled = false;
+            buttonCT.Enabled = true;
+            buttonTutor.Enabled = false;
+            buttonAC.Enabled = false;
+        }
+
+        public void modoTutor() {
+            buttonAdmin.Enabled = false;
+            buttonCT.Enabled = false;
+            buttonTutor.Enabled = true;
+            buttonAC.Enabled = false;
+        }
+
+        public void modoAsistComunicacion() {
+            buttonAdmin.Enabled = false;
+            buttonCT.Enabled = false;
+            buttonTutor.Enabled = false;
+            buttonAC.Enabled = true;
         }
 
         private void bunifuFlatButton4_Click(object sender, EventArgs e)

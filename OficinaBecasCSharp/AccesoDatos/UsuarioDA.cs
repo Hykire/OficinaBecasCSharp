@@ -154,6 +154,25 @@ namespace AccesoDatos {
             if (contraObt != contraIngresada) return false;
             else return true;
         }
+
+        public int obtenerTipoUsuario(int idUsuario) {
+            if (idUsuario == -1) return -1;
+
+            int tipoUsuario = -1;
+
+            MySqlConnection conn = new MySqlConnection(url);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT ID_TIPOUSUARIO FROM USUARIO WHERE ID_USUARIO = " + idUsuario;
+            Object aux = cmd.ExecuteScalar();
+            if (aux == null) return tipoUsuario;
+            tipoUsuario = Int32.Parse(aux.ToString());
+            conn.Close();
+            
+            return tipoUsuario;
+        }
+
         //hecho por Francisco par actualizar un usuario
         public void actualizarUsuario(Usuario u)
         {

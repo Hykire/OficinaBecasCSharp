@@ -42,5 +42,9 @@ namespace Controlador {
         public int obtenerIdUsuario(string nombre) {
             return usuarioDA.obtenerIdUsuario(nombre);
         }
+
+        public int obtenerTipoUsuario(int idUsuario) {
+            return usuarioDA.obtenerTipoUsuario(idUsuario);
+        }
     }
 }
