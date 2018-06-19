@@ -207,12 +207,12 @@ namespace Vista
                 MessageBox.Show("Debe ingresar un número en el campo Código PUCP", "Error en formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (!Int32.TryParse(txtDNI.Text, out cantidad))
+            if (!Int32.TryParse(txtDNI.Text, out cantidad) || cantidad < 0)
             {
                 MessageBox.Show("Debe ingresar un número en el campo DNI", "Error en formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (!Int32.TryParse(txtEdad.Text, out cantidad))
+            if (!Int32.TryParse(txtEdad.Text, out cantidad) || cantidad < 0)
             {
                 MessageBox.Show("Debe ingresar un número en el campo Edad", "Error en formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
