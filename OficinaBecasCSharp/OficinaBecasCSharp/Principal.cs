@@ -119,5 +119,11 @@ namespace Vista {
             frmCambiarContrasena ventanaCambioContra = new frmCambiarContrasena(id);
             ventanaCambioContra.ShowDialog();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmCambiarContrasena ventanaCambioContra = new frmCambiarContrasena(id);
+            ventanaCambioContra.ShowDialog();
+        }
     }
 }

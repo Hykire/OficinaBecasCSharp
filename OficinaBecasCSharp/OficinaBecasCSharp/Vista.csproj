@@ -242,29 +242,17 @@
     <Compile Include="DatosUsuario.Designer.cs">
       <DependentUpon>DatosUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionarTutores.cs">
+    <Compile Include="frmGestionarTutores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionarTutores.Designer.cs">
-      <DependentUpon>GestionarTutores.cs</DependentUpon>
+    <Compile Include="frmGestionarTutores.Designer.cs">
+      <DependentUpon>frmGestionarTutores.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModificarTXB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModificarTXB.Designer.cs">
-      <DependentUpon>ModificarTXB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NuevoTutor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NuevoTutor.Designer.cs">
-      <DependentUpon>NuevoTutor.cs</DependentUpon>
     </Compile>
     <Compile Include="OvalPictureBox.cs">
       <SubType>Component</SubType>
@@ -373,17 +361,11 @@
     <EmbeddedResource Include="DatosUsuario.resx">
       <DependentUpon>DatosUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionarTutores.resx">
-      <DependentUpon>GestionarTutores.cs</DependentUpon>
+    <EmbeddedResource Include="frmGestionarTutores.resx">
+      <DependentUpon>frmGestionarTutores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModificarTXB.resx">
-      <DependentUpon>ModificarTXB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NuevoTutor.resx">
-      <DependentUpon>NuevoTutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panelConsultarBecario = new System.Windows.Forms.Panel();
+            this.DGVCicloXBeca = new System.Windows.Forms.DataGridView();
+            this.Ciclo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVerHistBecas = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,17 +52,15 @@
             this.BecarioActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtCodBecario = new System.Windows.Forms.TextBox();
-            this.DGVCicloXBeca = new System.Windows.Forms.DataGridView();
-            this.Ciclo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Beca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelConsultarBecario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCicloXBeca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).BeginInit();
             this.SuspendLayout();
             // 
             // panelConsultarBecario
             // 
             this.panelConsultarBecario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelConsultarBecario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelConsultarBecario.Controls.Add(this.DGVCicloXBeca);
             this.panelConsultarBecario.Controls.Add(this.btnVerHistBecas);
             this.panelConsultarBecario.Controls.Add(this.label2);
@@ -75,10 +76,39 @@
             this.panelConsultarBecario.Controls.Add(this.dgvBecarios);
             this.panelConsultarBecario.Controls.Add(this.txtApellidos);
             this.panelConsultarBecario.Controls.Add(this.txtCodBecario);
-            this.panelConsultarBecario.Location = new System.Drawing.Point(12, 12);
+            this.panelConsultarBecario.Location = new System.Drawing.Point(10, 17);
             this.panelConsultarBecario.Name = "panelConsultarBecario";
-            this.panelConsultarBecario.Size = new System.Drawing.Size(701, 541);
+            this.panelConsultarBecario.Size = new System.Drawing.Size(740, 525);
             this.panelConsultarBecario.TabIndex = 13;
+            // 
+            // DGVCicloXBeca
+            // 
+            this.DGVCicloXBeca.AllowUserToAddRows = false;
+            this.DGVCicloXBeca.AllowUserToDeleteRows = false;
+            this.DGVCicloXBeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVCicloXBeca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ciclo,
+            this.Beca});
+            this.DGVCicloXBeca.Location = new System.Drawing.Point(384, 372);
+            this.DGVCicloXBeca.Name = "DGVCicloXBeca";
+            this.DGVCicloXBeca.ReadOnly = true;
+            this.DGVCicloXBeca.Size = new System.Drawing.Size(294, 139);
+            this.DGVCicloXBeca.TabIndex = 39;
+            // 
+            // Ciclo
+            // 
+            this.Ciclo.DataPropertyName = "Ciclo";
+            this.Ciclo.HeaderText = "Ciclo";
+            this.Ciclo.Name = "Ciclo";
+            this.Ciclo.ReadOnly = true;
+            // 
+            // Beca
+            // 
+            this.Beca.DataPropertyName = "Id_beca";
+            this.Beca.HeaderText = "Beca";
+            this.Beca.Name = "Beca";
+            this.Beca.ReadOnly = true;
+            this.Beca.Width = 150;
             // 
             // btnVerHistBecas
             // 
@@ -197,7 +227,7 @@
             this.dgvBecarios.Location = new System.Drawing.Point(23, 96);
             this.dgvBecarios.Name = "dgvBecarios";
             this.dgvBecarios.ReadOnly = true;
-            this.dgvBecarios.Size = new System.Drawing.Size(655, 218);
+            this.dgvBecarios.Size = new System.Drawing.Size(692, 200);
             this.dgvBecarios.TabIndex = 3;
             this.dgvBecarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBecarios_CellClick);
             // 
@@ -258,47 +288,18 @@
             this.txtCodBecario.Size = new System.Drawing.Size(497, 20);
             this.txtCodBecario.TabIndex = 1;
             // 
-            // DGVCicloXBeca
-            // 
-            this.DGVCicloXBeca.AllowUserToAddRows = false;
-            this.DGVCicloXBeca.AllowUserToDeleteRows = false;
-            this.DGVCicloXBeca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVCicloXBeca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Ciclo,
-            this.Beca});
-            this.DGVCicloXBeca.Location = new System.Drawing.Point(384, 372);
-            this.DGVCicloXBeca.Name = "DGVCicloXBeca";
-            this.DGVCicloXBeca.ReadOnly = true;
-            this.DGVCicloXBeca.Size = new System.Drawing.Size(294, 139);
-            this.DGVCicloXBeca.TabIndex = 39;
-            // 
-            // Ciclo
-            // 
-            this.Ciclo.DataPropertyName = "Ciclo";
-            this.Ciclo.HeaderText = "Ciclo";
-            this.Ciclo.Name = "Ciclo";
-            this.Ciclo.ReadOnly = true;
-            // 
-            // Beca
-            // 
-            this.Beca.DataPropertyName = "Id_beca";
-            this.Beca.HeaderText = "Beca";
-            this.Beca.Name = "Beca";
-            this.Beca.ReadOnly = true;
-            this.Beca.Width = 150;
-            // 
             // frmConsultarBecarioT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 565);
+            this.ClientSize = new System.Drawing.Size(764, 568);
             this.Controls.Add(this.panelConsultarBecario);
             this.Name = "frmConsultarBecarioT";
             this.Text = "frmConsultarBecarioT";
             this.panelConsultarBecario.ResumeLayout(false);
             this.panelConsultarBecario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCicloXBeca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).EndInit();
             this.ResumeLayout(false);
 
         }

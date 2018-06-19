@@ -55,6 +55,7 @@
             // panelConsultarBecaT
             // 
             this.panelConsultarBecaT.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelConsultarBecaT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelConsultarBecaT.Controls.Add(this.label5);
             this.panelConsultarBecaT.Controls.Add(this.label4);
             this.panelConsultarBecaT.Controls.Add(this.label3);
@@ -70,15 +71,15 @@
             this.panelConsultarBecaT.Controls.Add(this.btnBuscarBecaCBT);
             this.panelConsultarBecaT.Controls.Add(this.DGVConsBecaT);
             this.panelConsultarBecaT.Controls.Add(this.txtCodBecCBT);
-            this.panelConsultarBecaT.Location = new System.Drawing.Point(12, 12);
+            this.panelConsultarBecaT.Location = new System.Drawing.Point(10, 17);
             this.panelConsultarBecaT.Name = "panelConsultarBecaT";
-            this.panelConsultarBecaT.Size = new System.Drawing.Size(904, 603);
+            this.panelConsultarBecaT.Size = new System.Drawing.Size(740, 525);
             this.panelConsultarBecaT.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(504, 362);
+            this.label5.Location = new System.Drawing.Point(388, 275);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 35;
@@ -87,7 +88,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(166, 411);
+            this.label4.Location = new System.Drawing.Point(50, 324);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 13);
             this.label4.TabIndex = 34;
@@ -96,7 +97,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(166, 475);
+            this.label3.Location = new System.Drawing.Point(50, 388);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 33;
@@ -105,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(166, 365);
+            this.label2.Location = new System.Drawing.Point(50, 278);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 32;
@@ -114,7 +115,7 @@
             // txtDescripcionSelec
             // 
             this.txtDescripcionSelec.Enabled = false;
-            this.txtDescripcionSelec.Location = new System.Drawing.Point(507, 386);
+            this.txtDescripcionSelec.Location = new System.Drawing.Point(391, 299);
             this.txtDescripcionSelec.Multiline = true;
             this.txtDescripcionSelec.Name = "txtDescripcionSelec";
             this.txtDescripcionSelec.Size = new System.Drawing.Size(259, 45);
@@ -123,7 +124,7 @@
             // txtFinanciadorSelec
             // 
             this.txtFinanciadorSelec.Enabled = false;
-            this.txtFinanciadorSelec.Location = new System.Drawing.Point(169, 507);
+            this.txtFinanciadorSelec.Location = new System.Drawing.Point(53, 420);
             this.txtFinanciadorSelec.Multiline = true;
             this.txtFinanciadorSelec.Name = "txtFinanciadorSelec";
             this.txtFinanciadorSelec.Size = new System.Drawing.Size(259, 42);
@@ -132,7 +133,7 @@
             // txtFechaConvocatoriaSelec
             // 
             this.txtFechaConvocatoriaSelec.Enabled = false;
-            this.txtFechaConvocatoriaSelec.Location = new System.Drawing.Point(289, 411);
+            this.txtFechaConvocatoriaSelec.Location = new System.Drawing.Point(173, 324);
             this.txtFechaConvocatoriaSelec.Name = "txtFechaConvocatoriaSelec";
             this.txtFechaConvocatoriaSelec.Size = new System.Drawing.Size(157, 20);
             this.txtFechaConvocatoriaSelec.TabIndex = 29;
@@ -140,7 +141,7 @@
             // txtNombreBecaSelec
             // 
             this.txtNombreBecaSelec.Enabled = false;
-            this.txtNombreBecaSelec.Location = new System.Drawing.Point(289, 362);
+            this.txtNombreBecaSelec.Location = new System.Drawing.Point(173, 275);
             this.txtNombreBecaSelec.Name = "txtNombreBecaSelec";
             this.txtNombreBecaSelec.Size = new System.Drawing.Size(157, 20);
             this.txtNombreBecaSelec.TabIndex = 28;
@@ -188,7 +189,7 @@
             // 
             // btnBuscarBecaCBT
             // 
-            this.btnBuscarBecaCBT.Location = new System.Drawing.Point(672, 58);
+            this.btnBuscarBecaCBT.Location = new System.Drawing.Point(506, 29);
             this.btnBuscarBecaCBT.Name = "btnBuscarBecaCBT";
             this.btnBuscarBecaCBT.Size = new System.Drawing.Size(133, 23);
             this.btnBuscarBecaCBT.TabIndex = 2;
@@ -212,7 +213,7 @@
             this.DGVConsBecaT.Location = new System.Drawing.Point(169, 99);
             this.DGVConsBecaT.Name = "DGVConsBecaT";
             this.DGVConsBecaT.ReadOnly = true;
-            this.DGVConsBecaT.Size = new System.Drawing.Size(636, 220);
+            this.DGVConsBecaT.Size = new System.Drawing.Size(470, 140);
             this.DGVConsBecaT.TabIndex = 3;
             this.DGVConsBecaT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVConsBecaT_CellClick);
             // 
@@ -255,7 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 627);
+            this.ClientSize = new System.Drawing.Size(764, 568);
             this.Controls.Add(this.panelConsultarBecaT);
             this.Name = "frmConsultarBecaTutor";
             this.Text = "frmConsultarBecaTutor";

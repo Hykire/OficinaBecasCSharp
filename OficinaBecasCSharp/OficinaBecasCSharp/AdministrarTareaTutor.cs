@@ -58,6 +58,5 @@ namespace Vista
             this.panel2.Tag = ventana;
             ventana.Show();
         }
-
     }
 }

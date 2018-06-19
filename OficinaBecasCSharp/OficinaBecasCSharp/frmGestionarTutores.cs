@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class GestionarTutores : Form
+    public partial class frmGestionarTutores : Form
     {
         private PersonaBL logicaNegocioPersona;
         private TutorBL logicaNegocioTutor;
@@ -22,7 +22,7 @@ namespace Vista
 
         public Tutor TutorSelecc { get => tutorSelecc; set => tutorSelecc = value; }
 
-        public GestionarTutores()
+        public frmGestionarTutores()
         {
             InitializeComponent();
             BindingList<Persona> lsttutores = new BindingList<Persona>();
@@ -54,13 +54,6 @@ namespace Vista
             frmABTXB.ShowDialog();
         }
 
-
-        private void btnNuevoTutor_Click(object sender, EventArgs e)
-        {
-            NuevoTutor frmNT = new NuevoTutor();
-            frmNT.ShowDialog();
-        }
-
         private void GestionarTutores_Load(object sender, EventArgs e)
         {
             //ni bien aparezca este modal, se muestre la lista de tutores en el DGV
@@ -69,13 +62,6 @@ namespace Vista
         private void CBTutorGBXT_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnBXTVer.Enabled = true;
-        }
-
-
-        private void btnModificarTXB_Click(object sender, EventArgs e)
-        {
-            ModificarTXB frmTXB = new ModificarTXB();
-            frmTXB.ShowDialog();
         }
 
         private void btnBuscarBeca_Click(object sender, EventArgs e)

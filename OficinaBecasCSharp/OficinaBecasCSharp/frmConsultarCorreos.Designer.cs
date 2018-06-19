@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelConsultarEmails = new System.Windows.Forms.Panel();
+            this.txtCorreosObtenidos = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.cbSexo = new System.Windows.Forms.ComboBox();
@@ -48,7 +49,6 @@
             this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCicloSolicitado = new System.Windows.Forms.TextBox();
-            this.txtCorreosObtenidos = new System.Windows.Forms.TextBox();
             this.panelConsultarEmails.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarEmails)).BeginInit();
@@ -57,6 +57,7 @@
             // panelConsultarEmails
             // 
             this.panelConsultarEmails.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelConsultarEmails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelConsultarEmails.Controls.Add(this.txtCorreosObtenidos);
             this.panelConsultarEmails.Controls.Add(this.groupBox1);
             this.panelConsultarEmails.Controls.Add(this.btnDescargarEmails);
@@ -66,10 +67,18 @@
             this.panelConsultarEmails.Controls.Add(this.btnBuscarCorreos);
             this.panelConsultarEmails.Controls.Add(this.dgvConsultarEmails);
             this.panelConsultarEmails.Controls.Add(this.txtCicloSolicitado);
-            this.panelConsultarEmails.Location = new System.Drawing.Point(12, 11);
+            this.panelConsultarEmails.Location = new System.Drawing.Point(10, 17);
             this.panelConsultarEmails.Name = "panelConsultarEmails";
-            this.panelConsultarEmails.Size = new System.Drawing.Size(787, 439);
+            this.panelConsultarEmails.Size = new System.Drawing.Size(740, 525);
             this.panelConsultarEmails.TabIndex = 14;
+            // 
+            // txtCorreosObtenidos
+            // 
+            this.txtCorreosObtenidos.Location = new System.Drawing.Point(41, 419);
+            this.txtCorreosObtenidos.Multiline = true;
+            this.txtCorreosObtenidos.Name = "txtCorreosObtenidos";
+            this.txtCorreosObtenidos.Size = new System.Drawing.Size(200, 79);
+            this.txtCorreosObtenidos.TabIndex = 20;
             // 
             // groupBox1
             // 
@@ -136,7 +145,7 @@
             // 
             // btnDescargarEmails
             // 
-            this.btnDescargarEmails.Location = new System.Drawing.Point(416, 344);
+            this.btnDescargarEmails.Location = new System.Drawing.Point(296, 453);
             this.btnDescargarEmails.Name = "btnDescargarEmails";
             this.btnDescargarEmails.Size = new System.Drawing.Size(141, 23);
             this.btnDescargarEmails.TabIndex = 18;
@@ -200,7 +209,7 @@
             this.dgvConsultarEmails.Location = new System.Drawing.Point(194, 81);
             this.dgvConsultarEmails.Name = "dgvConsultarEmails";
             this.dgvConsultarEmails.ReadOnly = true;
-            this.dgvConsultarEmails.Size = new System.Drawing.Size(582, 248);
+            this.dgvConsultarEmails.Size = new System.Drawing.Size(533, 332);
             this.dgvConsultarEmails.TabIndex = 3;
             // 
             // nombreConsultarEmails
@@ -252,19 +261,11 @@
             this.txtCicloSolicitado.Size = new System.Drawing.Size(251, 20);
             this.txtCicloSolicitado.TabIndex = 1;
             // 
-            // txtCorreosObtenidos
-            // 
-            this.txtCorreosObtenidos.Location = new System.Drawing.Point(194, 344);
-            this.txtCorreosObtenidos.Multiline = true;
-            this.txtCorreosObtenidos.Name = "txtCorreosObtenidos";
-            this.txtCorreosObtenidos.Size = new System.Drawing.Size(200, 79);
-            this.txtCorreosObtenidos.TabIndex = 20;
-            // 
             // frmConsultarCorreos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 437);
+            this.ClientSize = new System.Drawing.Size(764, 568);
             this.Controls.Add(this.panelConsultarEmails);
             this.Name = "frmConsultarCorreos";
             this.Text = "frmConsultarCorreos";

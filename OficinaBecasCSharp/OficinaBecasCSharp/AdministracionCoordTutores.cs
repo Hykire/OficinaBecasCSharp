@@ -21,8 +21,8 @@ namespace Vista
         {
             if (this.panel2.Controls.Count > 0)
                 this.panel2.Controls.RemoveAt(0);
-            GestionarTutores form = Application.OpenForms.OfType<GestionarTutores>().FirstOrDefault();
-            GestionarTutores ventana = form ?? new GestionarTutores();
+            frmGestionarTutores form = Application.OpenForms.OfType<frmGestionarTutores>().FirstOrDefault();
+            frmGestionarTutores ventana = form ?? new frmGestionarTutores();
             ventana.TopLevel = false;
             ventana.FormBorderStyle = FormBorderStyle.None;
             ventana.Dock = DockStyle.Fill;
@@ -37,20 +37,6 @@ namespace Vista
                 this.panel2.Controls.RemoveAt(0);
             frmGestionarTutoresTutor form = Application.OpenForms.OfType<frmGestionarTutoresTutor>().FirstOrDefault();
             frmGestionarTutoresTutor ventana = form ?? new frmGestionarTutoresTutor();
-            ventana.TopLevel = false;
-            ventana.FormBorderStyle = FormBorderStyle.None;
-            ventana.Dock = DockStyle.Fill;
-            this.panel2.Controls.Add(ventana);
-            this.panel2.Tag = ventana;
-            ventana.Show();
-        }
-
-        private void CB_button_Click(object sender, EventArgs e)
-        {
-            if (this.panel2.Controls.Count > 0)
-                this.panel2.Controls.RemoveAt(0);
-            frmConsultarBecaTutor form = Application.OpenForms.OfType<frmConsultarBecaTutor>().FirstOrDefault();
-            frmConsultarBecaTutor ventana = form ?? new frmConsultarBecaTutor();
             ventana.TopLevel = false;
             ventana.FormBorderStyle = FormBorderStyle.None;
             ventana.Dock = DockStyle.Fill;

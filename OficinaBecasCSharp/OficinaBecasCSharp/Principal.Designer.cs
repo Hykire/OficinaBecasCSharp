@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCambiarContra = new System.Windows.Forms.Button();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAC = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -34,6 +33,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonAdmin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel_Principal = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -41,7 +41,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.btnCambiarContra);
+            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.lblNombreUsuario);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonAC);
@@ -55,18 +55,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(969, 81);
             this.panel1.TabIndex = 8;
-            // 
-            // btnCambiarContra
-            // 
-            this.btnCambiarContra.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCambiarContra.Location = new System.Drawing.Point(776, 45);
-            this.btnCambiarContra.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCambiarContra.Name = "btnCambiarContra";
-            this.btnCambiarContra.Size = new System.Drawing.Size(123, 25);
-            this.btnCambiarContra.TabIndex = 17;
-            this.btnCambiarContra.Text = "Cambiar contraseña";
-            this.btnCambiarContra.UseVisualStyleBackColor = true;
-            this.btnCambiarContra.Click += new System.EventHandler(this.btnCambiarContra_Click);
             // 
             // lblNombreUsuario
             // 
@@ -267,6 +255,18 @@
             this.panel_Principal.Size = new System.Drawing.Size(969, 590);
             this.panel_Principal.TabIndex = 12;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(773, 56);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(101, 13);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Cambiar contraseña";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +299,6 @@
         private System.Windows.Forms.Panel panel_Principal;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCambiarContra;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

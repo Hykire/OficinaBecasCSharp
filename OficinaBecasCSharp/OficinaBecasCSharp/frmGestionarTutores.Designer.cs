@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class GestionarTutores
+    partial class frmGestionarTutores
     {
         /// <summary>
         /// Required designer variable.
