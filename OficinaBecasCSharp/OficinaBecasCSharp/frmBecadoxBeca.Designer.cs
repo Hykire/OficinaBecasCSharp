@@ -185,9 +185,11 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.tbox_especialidad);
             this.panel1.Controls.Add(this.cbox_ciclo_nuevo2);
             this.panel1.Controls.Add(this.cbox_ciclo_nuevo1);
             this.panel1.Controls.Add(this.label_ciclo);
+            this.panel1.Controls.Add(this.tbox_id_becadoxbeca);
             this.panel1.Controls.Add(this.gbox_datosGenerales);
             this.panel1.Controls.Add(this.gbox_solicitudesConsejo);
             this.panel1.Controls.Add(this.tbox_id_becado);
@@ -207,7 +209,7 @@
             "0",
             "1",
             "2"});
-            this.cbox_ciclo_nuevo2.Location = new System.Drawing.Point(131, 13);
+            this.cbox_ciclo_nuevo2.Location = new System.Drawing.Point(131, 21);
             this.cbox_ciclo_nuevo2.Name = "cbox_ciclo_nuevo2";
             this.cbox_ciclo_nuevo2.Size = new System.Drawing.Size(34, 21);
             this.cbox_ciclo_nuevo2.TabIndex = 81;
@@ -225,7 +227,7 @@
             "2016",
             "2017",
             "2018"});
-            this.cbox_ciclo_nuevo1.Location = new System.Drawing.Point(65, 13);
+            this.cbox_ciclo_nuevo1.Location = new System.Drawing.Point(65, 21);
             this.cbox_ciclo_nuevo1.Name = "cbox_ciclo_nuevo1";
             this.cbox_ciclo_nuevo1.Size = new System.Drawing.Size(60, 21);
             this.cbox_ciclo_nuevo1.TabIndex = 80;
@@ -233,7 +235,7 @@
             // label_ciclo
             // 
             this.label_ciclo.AutoSize = true;
-            this.label_ciclo.Location = new System.Drawing.Point(26, 16);
+            this.label_ciclo.Location = new System.Drawing.Point(26, 24);
             this.label_ciclo.Name = "label_ciclo";
             this.label_ciclo.Size = new System.Drawing.Size(33, 13);
             this.label_ciclo.TabIndex = 75;
@@ -241,12 +243,10 @@
             // 
             // gbox_datosGenerales
             // 
-            this.gbox_datosGenerales.Controls.Add(this.tbox_especialidad);
             this.gbox_datosGenerales.Controls.Add(this.cbox_nivelcreditos);
             this.gbox_datosGenerales.Controls.Add(this.cbox_tipoescala);
             this.gbox_datosGenerales.Controls.Add(this.cbox_escalapago2);
             this.gbox_datosGenerales.Controls.Add(this.cbox_escalapago1);
-            this.gbox_datosGenerales.Controls.Add(this.tbox_id_becadoxbeca);
             this.gbox_datosGenerales.Controls.Add(this.cbox_beca);
             this.gbox_datosGenerales.Controls.Add(this.label_nivelcreditos);
             this.gbox_datosGenerales.Controls.Add(this.label_escalapago);
@@ -266,10 +266,11 @@
             // 
             // tbox_especialidad
             // 
-            this.tbox_especialidad.Location = new System.Drawing.Point(219, 132);
+            this.tbox_especialidad.Location = new System.Drawing.Point(272, 47);
             this.tbox_especialidad.Name = "tbox_especialidad";
             this.tbox_especialidad.Size = new System.Drawing.Size(100, 20);
             this.tbox_especialidad.TabIndex = 76;
+            this.tbox_especialidad.Visible = false;
             // 
             // cbox_nivelcreditos
             // 
@@ -287,7 +288,7 @@
             "10",
             "11",
             "12"});
-            this.cbox_nivelcreditos.Location = new System.Drawing.Point(270, 184);
+            this.cbox_nivelcreditos.Location = new System.Drawing.Point(270, 159);
             this.cbox_nivelcreditos.Name = "cbox_nivelcreditos";
             this.cbox_nivelcreditos.Size = new System.Drawing.Size(50, 21);
             this.cbox_nivelcreditos.TabIndex = 75;
@@ -298,7 +299,7 @@
             this.cbox_tipoescala.Items.AddRange(new object[] {
             "ANTIGUA",
             "ACTUAL"});
-            this.cbox_tipoescala.Location = new System.Drawing.Point(157, 157);
+            this.cbox_tipoescala.Location = new System.Drawing.Point(158, 132);
             this.cbox_tipoescala.Name = "cbox_tipoescala";
             this.cbox_tipoescala.Size = new System.Drawing.Size(100, 21);
             this.cbox_tipoescala.TabIndex = 67;
@@ -317,7 +318,7 @@
             "7",
             "8",
             "9"});
-            this.cbox_escalapago2.Location = new System.Drawing.Point(270, 158);
+            this.cbox_escalapago2.Location = new System.Drawing.Point(270, 132);
             this.cbox_escalapago2.Name = "cbox_escalapago2";
             this.cbox_escalapago2.Size = new System.Drawing.Size(50, 21);
             this.cbox_escalapago2.TabIndex = 74;
@@ -331,17 +332,18 @@
             "3",
             "4",
             "5"});
-            this.cbox_escalapago1.Location = new System.Drawing.Point(270, 157);
+            this.cbox_escalapago1.Location = new System.Drawing.Point(270, 132);
             this.cbox_escalapago1.Name = "cbox_escalapago1";
             this.cbox_escalapago1.Size = new System.Drawing.Size(50, 21);
             this.cbox_escalapago1.TabIndex = 73;
             // 
             // tbox_id_becadoxbeca
             // 
-            this.tbox_id_becadoxbeca.Location = new System.Drawing.Point(20, 132);
+            this.tbox_id_becadoxbeca.Location = new System.Drawing.Point(158, 47);
             this.tbox_id_becadoxbeca.Name = "tbox_id_becadoxbeca";
             this.tbox_id_becadoxbeca.Size = new System.Drawing.Size(100, 20);
             this.tbox_id_becadoxbeca.TabIndex = 25;
+            this.tbox_id_becadoxbeca.Visible = false;
             // 
             // cbox_beca
             // 
@@ -359,7 +361,7 @@
             // 
             this.label_nivelcreditos.AutoSize = true;
             this.label_nivelcreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_nivelcreditos.Location = new System.Drawing.Point(17, 187);
+            this.label_nivelcreditos.Location = new System.Drawing.Point(21, 162);
             this.label_nivelcreditos.Name = "label_nivelcreditos";
             this.label_nivelcreditos.Size = new System.Drawing.Size(109, 13);
             this.label_nivelcreditos.TabIndex = 11;
@@ -369,7 +371,7 @@
             // 
             this.label_escalapago.AutoSize = true;
             this.label_escalapago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label_escalapago.Location = new System.Drawing.Point(17, 161);
+            this.label_escalapago.Location = new System.Drawing.Point(21, 135);
             this.label_escalapago.Name = "label_escalapago";
             this.label_escalapago.Size = new System.Drawing.Size(85, 13);
             this.label_escalapago.TabIndex = 9;
@@ -598,10 +600,11 @@
             // 
             // tbox_id_becado
             // 
-            this.tbox_id_becado.Location = new System.Drawing.Point(239, 14);
+            this.tbox_id_becado.Location = new System.Drawing.Point(238, 21);
             this.tbox_id_becado.Name = "tbox_id_becado";
             this.tbox_id_becado.Size = new System.Drawing.Size(100, 20);
             this.tbox_id_becado.TabIndex = 24;
+            this.tbox_id_becado.Visible = false;
             // 
             // gbox_intercambio
             // 
@@ -712,7 +715,7 @@
             // cbox_ciclo
             // 
             this.cbox_ciclo.FormattingEnabled = true;
-            this.cbox_ciclo.Location = new System.Drawing.Point(65, 13);
+            this.cbox_ciclo.Location = new System.Drawing.Point(65, 21);
             this.cbox_ciclo.Name = "cbox_ciclo";
             this.cbox_ciclo.Size = new System.Drawing.Size(57, 21);
             this.cbox_ciclo.TabIndex = 76;
@@ -992,6 +995,7 @@
             this.gbox_cobertura.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

@@ -127,6 +127,7 @@
             // 
             // dvg_alumnos
             // 
+            this.dvg_alumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvg_alumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvg_alumnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CODIGO_PUCP,

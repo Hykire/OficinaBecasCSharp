@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.dgv_beca = new System.Windows.Forms.DataGridView();
-            this.btn_seleccionar = new System.Windows.Forms.Button();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FINANCIADOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_seleccionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_beca)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_beca
             // 
+            this.dgv_beca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_beca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_beca.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NOMBRE,
@@ -49,16 +50,6 @@
             this.dgv_beca.Name = "dgv_beca";
             this.dgv_beca.Size = new System.Drawing.Size(577, 234);
             this.dgv_beca.TabIndex = 0;
-            // 
-            // btn_seleccionar
-            // 
-            this.btn_seleccionar.Location = new System.Drawing.Point(514, 252);
-            this.btn_seleccionar.Name = "btn_seleccionar";
-            this.btn_seleccionar.Size = new System.Drawing.Size(75, 23);
-            this.btn_seleccionar.TabIndex = 25;
-            this.btn_seleccionar.Text = "Seleccionar";
-            this.btn_seleccionar.UseVisualStyleBackColor = true;
-            this.btn_seleccionar.Click += new System.EventHandler(this.btn_seleccionar_Click);
             // 
             // NOMBRE
             // 
@@ -83,6 +74,16 @@
             this.ESTADO.DataPropertyName = "Estado";
             this.ESTADO.HeaderText = "ESTADO";
             this.ESTADO.Name = "ESTADO";
+            // 
+            // btn_seleccionar
+            // 
+            this.btn_seleccionar.Location = new System.Drawing.Point(514, 252);
+            this.btn_seleccionar.Name = "btn_seleccionar";
+            this.btn_seleccionar.Size = new System.Drawing.Size(75, 23);
+            this.btn_seleccionar.TabIndex = 25;
+            this.btn_seleccionar.Text = "Seleccionar";
+            this.btn_seleccionar.UseVisualStyleBackColor = true;
+            this.btn_seleccionar.Click += new System.EventHandler(this.btn_seleccionar_Click);
             // 
             // frmBuscarBeca_F
             // 

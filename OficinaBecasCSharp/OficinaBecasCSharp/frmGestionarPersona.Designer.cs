@@ -203,6 +203,7 @@
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 39;
             this.label5.Text = "Id usuario:";
+            this.label5.Visible = false;
             // 
             // tbox_id_usuario
             // 
@@ -210,6 +211,7 @@
             this.tbox_id_usuario.Name = "tbox_id_usuario";
             this.tbox_id_usuario.Size = new System.Drawing.Size(28, 20);
             this.tbox_id_usuario.TabIndex = 38;
+            this.tbox_id_usuario.Visible = false;
             // 
             // label3
             // 
@@ -327,6 +329,7 @@
             this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 37;
             this.label4.Text = "Id persona:";
+            this.label4.Visible = false;
             // 
             // dt_fechanacimiento
             // 
@@ -364,6 +367,7 @@
             this.tbox_id_persona.Name = "tbox_id_persona";
             this.tbox_id_persona.Size = new System.Drawing.Size(28, 20);
             this.tbox_id_persona.TabIndex = 23;
+            this.tbox_id_persona.Visible = false;
             // 
             // label_fijo
             // 

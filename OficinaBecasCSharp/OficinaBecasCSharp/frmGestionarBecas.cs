@@ -130,7 +130,7 @@ namespace Vista
             btnGuardar.Enabled = false; btnEditar.Enabled = false;
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             Beca b = new Beca();
             if (flag_elementoEditar == 1) { b.Id_beca = Int32.Parse(tbox_idBeca.Text); }
@@ -182,7 +182,7 @@ namespace Vista
             btnGuardar.Enabled = false;
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnNuevo_Click_1(object sender, EventArgs e)
         {
             //habilita flag
             flag_elementoNuevo = 1;
@@ -196,7 +196,7 @@ namespace Vista
 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEditar_Click_1(object sender, EventArgs e)
         {
             //habilita flag
             flag_elementoEditar = 1;
@@ -209,7 +209,7 @@ namespace Vista
             estadoComponentes(Estado.Habilitado);
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click_1(object sender, EventArgs e)
         {
             //habilitamos botones
             btnEditar.Enabled = true;
@@ -281,7 +281,7 @@ namespace Vista
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             //habilitamos botones
             btnNuevo.Enabled = true; btnCancelar.Enabled = true; btnBuscar.Enabled = true;
