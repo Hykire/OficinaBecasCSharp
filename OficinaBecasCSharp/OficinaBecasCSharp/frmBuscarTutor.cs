@@ -31,8 +31,13 @@ namespace Vista
 
         private void btnAgregarT_Click(object sender, EventArgs e)
         {
-            PersonaSeleccionada = (Tutor)DGVBuscartutor.CurrentRow.DataBoundItem;
-            this.DialogResult = DialogResult.OK;
+            if(DGVBuscartutor.SelectedRows.Count == 0 ){
+                MessageBox.Show("Seleccione un Tutor", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else {
+                PersonaSeleccionada = (Tutor)DGVBuscartutor.CurrentRow.DataBoundItem;
+                this.DialogResult = DialogResult.OK;
+            }
         }
 
         private void btnBuscarT_Click(object sender, EventArgs e)

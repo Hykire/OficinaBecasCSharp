@@ -18,6 +18,7 @@ namespace Vista
         Becado per;
         PersonaBL logicaNegocioPer;
         TutorBL logicaNegocioTutor;
+        
         public AgregarBecarioATutor()
         {
             InitializeComponent();
@@ -34,6 +35,24 @@ namespace Vista
             foreach (var e in lstTutores)
             {
                 CBTutorABTXB.Items.Add(e);
+            }
+            CBTutorABTXB.SelectedIndex = 0;
+        }
+        public AgregarBecarioATutor(string nombTutor) {
+            InitializeComponent();
+
+            txtCodABTXB.Enabled = false;
+            txtNombABTXB.Enabled = false;
+            txtApABTXB.Enabled = false;
+            btnAceptarABTXB.Enabled = false;
+            logicaNegocioPer = new PersonaBL();
+            logicaNegocioTutor = new TutorBL();
+            BindingList<Tutor> lstTutores = new BindingList<Tutor>();
+            lstTutores = logicaNegocioTutor.traerTutores();
+            CBTutorABTXB.ValueMember = "Nombres";
+            foreach (var e in lstTutores) {
+                if(e.Nombres == nombTutor)
+                    CBTutorABTXB.Items.Add(e);
             }
             CBTutorABTXB.SelectedIndex = 0;
         }

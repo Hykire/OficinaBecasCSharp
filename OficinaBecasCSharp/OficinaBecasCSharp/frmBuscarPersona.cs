@@ -39,8 +39,14 @@ namespace Vista
 
         private void btnAgregarBTBP_Click(object sender, EventArgs e)
         {
-            PersonaSeleccionada = (Persona)DGVBuscarPersona.CurrentRow.DataBoundItem;
-            this.DialogResult = DialogResult.OK;
+            
+            if (DGVBuscarPersona.SelectedRows.Count == 0) {
+                MessageBox.Show("Seleccione una Persona", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else {
+                PersonaSeleccionada = (Persona)DGVBuscarPersona.CurrentRow.DataBoundItem;
+                this.DialogResult = DialogResult.OK;
+            }
         }
     }
 }

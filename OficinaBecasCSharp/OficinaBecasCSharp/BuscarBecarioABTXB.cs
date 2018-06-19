@@ -29,8 +29,14 @@ namespace Vista
 
         private void btnAgregarABTXB_Click(object sender, EventArgs e)
         {
-            PersonaSeleccionada = (Becado)DGVBuscarBecarioABTXB.CurrentRow.DataBoundItem;
-            this.DialogResult = DialogResult.OK;
+            if (DGVBuscarBecarioABTXB.SelectedRows.Count == 0) {
+                MessageBox.Show("Seleccione un Becario", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else {
+                PersonaSeleccionada = (Becado)DGVBuscarBecarioABTXB.CurrentRow.DataBoundItem;
+                this.DialogResult = DialogResult.OK;
+            }
+            
             //this.Dispose();
         }
 

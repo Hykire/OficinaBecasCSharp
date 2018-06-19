@@ -263,10 +263,15 @@ namespace Vista
         private void BBuscarCita2GC_Click(object sender, EventArgs e)
         {
             txtBObsGC.Enabled = false;
-
-            BindingList<Cita> lista = new BindingList<Cita>();
-            lista = logicaNegocioCita.buscarcitaPorTutor(txtIdtutOculto2.Text.ToString());
-            DGVCitas.DataSource = lista;
+            if(txtCodTutor2.Text == "") {
+                MessageBox.Show("Seleccione un Tutor", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else {
+                BindingList<Cita> lista = new BindingList<Cita>();
+                lista = logicaNegocioCita.buscarcitaPorTutor(txtIdtutOculto2.Text.ToString());
+                DGVCitas.DataSource = lista;
+            }
+            
         }
     }
 }
