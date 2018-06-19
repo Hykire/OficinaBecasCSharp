@@ -25,12 +25,11 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionSistema));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_gestionarPersona = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_gestionarBecas = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btn_fake = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_becados_x_Becas = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_gestionarBecados = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_gestionarPersona = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +38,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.panel1.Controls.Add(this.btn_gestionarPersona);
             this.panel1.Controls.Add(this.btn_gestionarBecas);
-            this.panel1.Controls.Add(this.btn_fake);
             this.panel1.Controls.Add(this.btn_becados_x_Becas);
             this.panel1.Controls.Add(this.btn_gestionarBecados);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -47,6 +45,41 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 441);
             this.panel1.TabIndex = 27;
+            // 
+            // btn_gestionarPersona
+            // 
+            this.btn_gestionarPersona.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_gestionarPersona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btn_gestionarPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_gestionarPersona.BorderRadius = 0;
+            this.btn_gestionarPersona.ButtonText = "Gestionar Personas";
+            this.btn_gestionarPersona.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_gestionarPersona.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_gestionarPersona.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_gestionarPersona.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_gestionarPersona.Iconimage")));
+            this.btn_gestionarPersona.Iconimage_right = null;
+            this.btn_gestionarPersona.Iconimage_right_Selected = null;
+            this.btn_gestionarPersona.Iconimage_Selected = null;
+            this.btn_gestionarPersona.IconMarginLeft = 0;
+            this.btn_gestionarPersona.IconMarginRight = 0;
+            this.btn_gestionarPersona.IconRightVisible = true;
+            this.btn_gestionarPersona.IconRightZoom = 0D;
+            this.btn_gestionarPersona.IconVisible = true;
+            this.btn_gestionarPersona.IconZoom = 90D;
+            this.btn_gestionarPersona.IsTab = true;
+            this.btn_gestionarPersona.Location = new System.Drawing.Point(0, 216);
+            this.btn_gestionarPersona.Name = "btn_gestionarPersona";
+            this.btn_gestionarPersona.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btn_gestionarPersona.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.btn_gestionarPersona.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_gestionarPersona.selected = false;
+            this.btn_gestionarPersona.Size = new System.Drawing.Size(200, 48);
+            this.btn_gestionarPersona.TabIndex = 10;
+            this.btn_gestionarPersona.Text = "Gestionar Personas";
+            this.btn_gestionarPersona.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_gestionarPersona.Textcolor = System.Drawing.Color.White;
+            this.btn_gestionarPersona.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_gestionarPersona.Click += new System.EventHandler(this.btn_gestionarPersona_Click);
             // 
             // btn_gestionarBecas
             // 
@@ -82,41 +115,6 @@
             this.btn_gestionarBecas.Textcolor = System.Drawing.Color.White;
             this.btn_gestionarBecas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_gestionarBecas.Click += new System.EventHandler(this.btn_gestionarBecas_Click);
-            // 
-            // btn_fake
-            // 
-            this.btn_fake.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_fake.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_fake.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_fake.BorderRadius = 0;
-            this.btn_fake.ButtonText = "fake :v";
-            this.btn_fake.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_fake.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_fake.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_fake.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_fake.Iconimage")));
-            this.btn_fake.Iconimage_right = null;
-            this.btn_fake.Iconimage_right_Selected = null;
-            this.btn_fake.Iconimage_Selected = null;
-            this.btn_fake.IconMarginLeft = 0;
-            this.btn_fake.IconMarginRight = 0;
-            this.btn_fake.IconRightVisible = true;
-            this.btn_fake.IconRightZoom = 0D;
-            this.btn_fake.IconVisible = true;
-            this.btn_fake.IconZoom = 90D;
-            this.btn_fake.IsTab = false;
-            this.btn_fake.Location = new System.Drawing.Point(0, 0);
-            this.btn_fake.Name = "btn_fake";
-            this.btn_fake.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_fake.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btn_fake.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_fake.selected = false;
-            this.btn_fake.Size = new System.Drawing.Size(200, 48);
-            this.btn_fake.TabIndex = 8;
-            this.btn_fake.Text = "fake :v";
-            this.btn_fake.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_fake.Textcolor = System.Drawing.Color.White;
-            this.btn_fake.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_fake.Visible = false;
             // 
             // btn_becados_x_Becas
             // 
@@ -199,41 +197,6 @@
             this.panel2.TabIndex = 28;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // btn_gestionarPersona
-            // 
-            this.btn_gestionarPersona.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btn_gestionarPersona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btn_gestionarPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_gestionarPersona.BorderRadius = 0;
-            this.btn_gestionarPersona.ButtonText = "Gestionar Personas";
-            this.btn_gestionarPersona.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_gestionarPersona.DisabledColor = System.Drawing.Color.Gray;
-            this.btn_gestionarPersona.Iconcolor = System.Drawing.Color.Transparent;
-            this.btn_gestionarPersona.Iconimage = ((System.Drawing.Image)(resources.GetObject("btn_gestionarPersona.Iconimage")));
-            this.btn_gestionarPersona.Iconimage_right = null;
-            this.btn_gestionarPersona.Iconimage_right_Selected = null;
-            this.btn_gestionarPersona.Iconimage_Selected = null;
-            this.btn_gestionarPersona.IconMarginLeft = 0;
-            this.btn_gestionarPersona.IconMarginRight = 0;
-            this.btn_gestionarPersona.IconRightVisible = true;
-            this.btn_gestionarPersona.IconRightZoom = 0D;
-            this.btn_gestionarPersona.IconVisible = true;
-            this.btn_gestionarPersona.IconZoom = 90D;
-            this.btn_gestionarPersona.IsTab = true;
-            this.btn_gestionarPersona.Location = new System.Drawing.Point(0, 216);
-            this.btn_gestionarPersona.Name = "btn_gestionarPersona";
-            this.btn_gestionarPersona.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btn_gestionarPersona.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.btn_gestionarPersona.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_gestionarPersona.selected = false;
-            this.btn_gestionarPersona.Size = new System.Drawing.Size(200, 48);
-            this.btn_gestionarPersona.TabIndex = 10;
-            this.btn_gestionarPersona.Text = "Gestionar Personas";
-            this.btn_gestionarPersona.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_gestionarPersona.Textcolor = System.Drawing.Color.White;
-            this.btn_gestionarPersona.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_gestionarPersona.Click += new System.EventHandler(this.btn_gestionarPersona_Click);
-            // 
             // AdministracionSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,7 +222,6 @@
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuFlatButton btn_gestionarBecados;
         private Bunifu.Framework.UI.BunifuFlatButton btn_becados_x_Becas;
-        private Bunifu.Framework.UI.BunifuFlatButton btn_fake;
         private Bunifu.Framework.UI.BunifuFlatButton btn_gestionarBecas;
         private Bunifu.Framework.UI.BunifuFlatButton btn_gestionarPersona;
     }

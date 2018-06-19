@@ -51,10 +51,9 @@
             this.welcometext.AutoSize = true;
             this.welcometext.Font = new System.Drawing.Font("Tw Cen MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcometext.ForeColor = System.Drawing.Color.White;
-            this.welcometext.Location = new System.Drawing.Point(158, 68);
-            this.welcometext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.welcometext.Location = new System.Drawing.Point(118, 55);
             this.welcometext.Name = "welcometext";
-            this.welcometext.Size = new System.Drawing.Size(189, 35);
+            this.welcometext.Size = new System.Drawing.Size(153, 28);
             this.welcometext.TabIndex = 1;
             this.welcometext.Text = "¡BIENVENIDO!";
             // 
@@ -65,10 +64,9 @@
             this.bttnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnIngresar.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnIngresar.ForeColor = System.Drawing.Color.White;
-            this.bttnIngresar.Location = new System.Drawing.Point(35, 379);
-            this.bttnIngresar.Margin = new System.Windows.Forms.Padding(4);
+            this.bttnIngresar.Location = new System.Drawing.Point(26, 267);
             this.bttnIngresar.Name = "bttnIngresar";
-            this.bttnIngresar.Size = new System.Drawing.Size(428, 58);
+            this.bttnIngresar.Size = new System.Drawing.Size(321, 47);
             this.bttnIngresar.TabIndex = 6;
             this.bttnIngresar.TabStop = false;
             this.bttnIngresar.Text = "INGRESAR";
@@ -78,8 +76,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Vista.Properties.Resources.lock11;
-            this.pictureBox2.Location = new System.Drawing.Point(35, 284);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(26, 190);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(0, 0);
             this.pictureBox2.TabIndex = 5;
@@ -88,10 +85,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 577);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 394);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(499, 210);
+            this.pictureBox3.Size = new System.Drawing.Size(374, 171);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
@@ -99,10 +95,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(37, 207);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 127);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -110,10 +105,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(37, 285);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Location = new System.Drawing.Point(28, 191);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 37);
+            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
@@ -123,12 +117,12 @@
             this.lblOlvContra.AutoSize = true;
             this.lblOlvContra.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOlvContra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(209)))), ((int)(((byte)(220)))));
-            this.lblOlvContra.Location = new System.Drawing.Point(160, 458);
-            this.lblOlvContra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOlvContra.Location = new System.Drawing.Point(120, 331);
             this.lblOlvContra.Name = "lblOlvContra";
-            this.lblOlvContra.Size = new System.Drawing.Size(183, 20);
+            this.lblOlvContra.Size = new System.Drawing.Size(148, 17);
             this.lblOlvContra.TabIndex = 9;
             this.lblOlvContra.Text = "¿Olvidó su contraseña?";
+            this.lblOlvContra.Visible = false;
             // 
             // txtUsuario
             // 
@@ -136,9 +130,10 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(209)))), ((int)(((byte)(220)))));
-            this.txtUsuario.Location = new System.Drawing.Point(93, 214);
+            this.txtUsuario.Location = new System.Drawing.Point(70, 133);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(369, 23);
+            this.txtUsuario.Size = new System.Drawing.Size(277, 19);
             this.txtUsuario.TabIndex = 16;
             this.txtUsuario.Text = "Usuario";
             this.txtUsuario.Click += new System.EventHandler(this.txtUsuario_Click);
@@ -148,9 +143,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(209)))), ((int)(((byte)(220)))));
-            this.label1.Location = new System.Drawing.Point(90, 227);
+            this.label1.Location = new System.Drawing.Point(68, 143);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(376, 17);
+            this.label1.Size = new System.Drawing.Size(283, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "______________________________________________";
             // 
@@ -160,10 +156,11 @@
             this.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContrasena.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.txtContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(209)))), ((int)(((byte)(220)))));
-            this.txtContrasena.Location = new System.Drawing.Point(93, 292);
+            this.txtContrasena.Location = new System.Drawing.Point(70, 196);
+            this.txtContrasena.Margin = new System.Windows.Forms.Padding(2);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '•';
-            this.txtContrasena.Size = new System.Drawing.Size(369, 23);
+            this.txtContrasena.Size = new System.Drawing.Size(277, 19);
             this.txtContrasena.TabIndex = 18;
             this.txtContrasena.Text = "Contrasena";
             this.txtContrasena.Click += new System.EventHandler(this.textBox1_Click);
@@ -173,19 +170,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(209)))), ((int)(((byte)(220)))));
-            this.label2.Location = new System.Drawing.Point(90, 305);
+            this.label2.Location = new System.Drawing.Point(68, 207);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(376, 17);
+            this.label2.Size = new System.Drawing.Size(283, 13);
             this.label2.TabIndex = 19;
             this.label2.Text = "______________________________________________";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(499, 734);
+            this.ClientSize = new System.Drawing.Size(374, 552);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.pictureBox4);
@@ -197,7 +195,6 @@
             this.Controls.Add(this.lblOlvContra);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
