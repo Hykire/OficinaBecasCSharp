@@ -27,9 +27,7 @@ namespace Modelo
         private string nombreEspecialidad;
         private int _id_tutor;
         //private BindingList<HistoriaAcademica> _historia_academica;
-        public Becado() {
-            nombreEspecialidad = "";
-        }
+        public Becado() { nombreEspecialidad = ""; }
 
         public int Id_becado { get => _id_becado; set => _id_becado = value; }
         public string Ciclo_ingreso { get => _ciclo_ingreso; set => _ciclo_ingreso = value; }

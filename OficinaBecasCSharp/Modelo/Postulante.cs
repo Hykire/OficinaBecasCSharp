@@ -16,64 +16,13 @@ namespace Modelo
 
         public Postulante() { }
 
-        public float Promedio
-        {
-            set
-            {
-                promedio = value;
-            }
-            get
-            {
-                return promedio;
-            }
-        }
+        public float Promedio { get => promedio; set => promedio = value; }
 
-        public float Craest
-        {
-            set
-            {
-                craest = value;
-            }
-            get
-            {
-                return craest;
-            }
-        }
+        public float Craest { get => craest; set => craest = value; }
 
-        public int Ciclo
-        {
-            set
-            {
-                ciclo = value;
-            }
-            get
-            {
-                return ciclo;
-            }
-        }
+        public int Ciclo { get => ciclo; set => ciclo = value; }
 
-        public float PorcentajeMerito
-        {
-            set
-            {
-                porcentajeMerito = value;
-            }
-            get
-            {
-                return porcentajeMerito;
-            }
-        }
-
-        public int Escala
-        {
-            set
-            {
-                escala = value;
-            }
-            get
-            {
-                return escala;
-            }
-        }
+        public float PorcentajeMerito { get => porcentajeMerito; set => porcentajeMerito = value; }
+        public int Escala { get => escala; set => escala = value; }
     }
 }

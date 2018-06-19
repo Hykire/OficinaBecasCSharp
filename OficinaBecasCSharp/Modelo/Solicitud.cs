@@ -15,61 +15,10 @@ namespace Modelo
         private string estado_beca;
         private string estado_progreso;
 
-        public Beca _beca
-        {
-            set
-            {
-                beca = value;
-            }
-            get
-            {
-                return beca;
-            }
-        }
-        public Persona _postulante
-        {
-            set
-            {
-                postulante = value;
-            }
-            get
-            {
-                return postulante;
-            }
-        }
-        public int _id_solicitud
-        {
-            set
-            {
-                id_solicitud = value;
-            }
-            get
-            {
-                return id_solicitud;
-            }
-        }
-
-        public string _estado_beca
-        {
-            set
-            {
-                estado_beca = value;
-            }
-            get
-            {
-                return estado_beca;
-            }
-        }
-        public string _estado_progreso
-        {
-            set
-            {
-                estado_progreso = value;
-            }
-            get
-            {
-                return estado_progreso;
-            }
-        }
+        public Beca _beca { get => beca; set => beca = value; }
+        public Persona _postulante { get => postulante; set => postulante = value; }
+        public int _id_solicitud { get => id_solicitud; set => id_solicitud = value; }
+        public string _estado_beca { get => estado_beca; set => estado_beca = value; }
+        public string _estado_progreso { get => estado_progreso; set => estado_progreso = value; }
     }
 }

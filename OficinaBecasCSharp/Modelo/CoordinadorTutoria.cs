@@ -10,22 +10,9 @@ namespace Modelo
     {
         private List<Tutor> tutores;
         private int id_coordinador;
-        public CoordinadorTutoria()
-        {
-            tutores = new List<Tutor>();
-        }
+        public CoordinadorTutoria() { tutores = new List<Tutor>(); }
 
-        public List<Tutor> Tutores
-        {
-            set
-            {
-                tutores = value;
-            }
-            get
-            {
-                return tutores;
-            }
-        }
+        public List<Tutor> Tutores { get => tutores; set => tutores = value; }
 
         public int Id_coordinador { get => id_coordinador; set => id_coordinador = value; }
     }

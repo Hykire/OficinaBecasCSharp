@@ -23,14 +23,10 @@ namespace Modelo
         private string _telfFijo;
         private string _estado;
 
-        private string _profesion; //lo uso en gestionar profes
-
-        //private TipoUsuario tipoUsuario;
-        //private Usuario usuarioP;
+        private string _profesion;
 
         public Persona() {
             _sexo = '\0';
-
         }
 
         public int Id_persona { get => _id_persona; set => _id_persona = value; }
@@ -45,7 +41,7 @@ namespace Modelo
         public string CorreoAlternativo { get => _correoAlternativo; set => _correoAlternativo = value; }
         public string TelfMovil { get => _telfMovil; set => _telfMovil = value; }
         public string TelfFijo { get => _telfFijo; set => _telfFijo = value; }
-        public string Profesion { get => _profesion; set => _profesion = value; }//lo uso en gestionar profes
+        public string Profesion { get => _profesion; set => _profesion = value; }
         public string Estado { get => _estado; set => _estado = value; }
         public int Id_usuario { get => _id_usuario; set => _id_usuario = value; }
     }
