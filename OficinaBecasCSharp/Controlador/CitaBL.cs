@@ -16,9 +16,9 @@ namespace Controlador
         {
             accesoDatosCita = new CitaAD();
         }
-        public void agregarCita(Cita cita, int idBec, int idTut)
+        public bool agregarCita(Cita cita, int idBec, int idTut)
         {
-            accesoDatosCita.agregarCita(cita, idBec, idTut);
+            return accesoDatosCita.agregarCita(cita, idBec, idTut);
         }
         public BindingList<Cita> buscarcita(DateTime fecha)
         {

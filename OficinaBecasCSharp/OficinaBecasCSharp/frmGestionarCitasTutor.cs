@@ -177,8 +177,11 @@ namespace Vista
             {
                 cita.IdCita = Convert.ToInt32(txtIdCitaOculto.Text);
             }
-            
-            logicaNegocioCita.agregarCita(cita, idBec, idTut);
+
+            if (logicaNegocioCita.agregarCita(cita, idBec, idTut))
+                MessageBox.Show("la operación se realizó con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("No se pudo realizar la operación", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void DGVCitas_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -63,11 +63,21 @@ namespace Vista
             Tutor persona = new Tutor();
             String id = TxtIdOcultoB.Text;
             persona = (Tutor)CBTutorABTXB.SelectedItem;
-            int idbec = Convert.ToInt32(TxtIdOcultoB.Text);
-            string ciclo = cbxCiclo.SelectedItem.ToString();
-            MessageBox.Show(idbec.ToString());
-            logicaNegocioPer.enlazarBecario(persona, idbec, ciclo);
-            this.Dispose();
+            
+            if (TxtIdOcultoB.Text == "") {
+                MessageBox.Show("Seleccione un alumno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(cbxCiclo.SelectedItem == null) {
+                MessageBox.Show("Seleccione un ciclo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else {
+                //lo que sigue del codigo
+                int idbec = Convert.ToInt32(TxtIdOcultoB.Text);
+                string ciclo = cbxCiclo.SelectedItem.ToString();
+                //MessageBox.Show(idbec.ToString());
+                logicaNegocioPer.enlazarBecario(persona, idbec, ciclo);
+                this.Dispose();
+            }
         }
 
         private void btnCancelarABTXB_Click(object sender, EventArgs e)

@@ -12,61 +12,71 @@ namespace AccesoDatos
     public class CitaAD
     {
         //Hecho por Yoluana
-        public void agregarCita(Cita cita, int idBec, int idTut)
+        public bool agregarCita(Cita cita, int idBec, int idTut)
         {
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
                 "user=inf282g6;database=inf282g6;" +
                 "port=3306;password=Nk2ewy;SslMode=none;" +
                 "";
             MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            MySqlCommand comando = new MySqlCommand();
-            int idcita = cita.IdCita;
-            comando.CommandText = "SELECT ID_BECADO FROM CITA WHERE ID_CITA ='" + idcita + "'";
-            comando.Connection = con;
-            Object aux = comando.ExecuteScalar();
-            con.Close();
-            if (!(aux==null))
-            {
-                //update
-                MySqlConnection con1 = new MySqlConnection(cadena);
-                con1.Open();
-                MySqlCommand comando1 = new MySqlCommand();
-                comando1.CommandType = System.Data.CommandType.StoredProcedure;
-                comando1.CommandText = "Y_ACTUALIZAR_CITA";
+            MySqlConnection con1 = new MySqlConnection(cadena);
+            MySqlConnection con2 = new MySqlConnection(cadena);
+            try {
+                con.Open();
+                MySqlCommand comando = new MySqlCommand();
+                int idcita = cita.IdCita;
+                comando.CommandText = "SELECT ID_BECADO FROM CITA WHERE ID_CITA ='" + idcita + "'";
+                comando.Connection = con;
+                Object aux = comando.ExecuteScalar();
+                con.Close();
+                if (!(aux == null)) {
+                    //update
+                    
+                    con1.Open();
+                    MySqlCommand comando1 = new MySqlCommand();
+                    comando1.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando1.CommandText = "Y_ACTUALIZAR_CITA";
 
-                comando1.Connection = con1;
-                comando1.Parameters.AddWithValue("fecha", cita.Fecha);
-                comando1.Parameters.AddWithValue("hora", cita.Hora);
-                comando1.Parameters.AddWithValue("lugar", cita.Lugar);
-                comando1.Parameters.AddWithValue("obs", cita.Observacion);
-                comando1.Parameters.AddWithValue("idBec", idBec);
-                comando1.Parameters.AddWithValue("idTut", idTut);
-                comando1.Parameters.AddWithValue("idcita", cita.IdCita);
+                    comando1.Connection = con1;
+                    comando1.Parameters.AddWithValue("fecha", cita.Fecha);
+                    comando1.Parameters.AddWithValue("hora", cita.Hora);
+                    comando1.Parameters.AddWithValue("lugar", cita.Lugar);
+                    comando1.Parameters.AddWithValue("obs", cita.Observacion);
+                    comando1.Parameters.AddWithValue("idBec", idBec);
+                    comando1.Parameters.AddWithValue("idTut", idTut);
+                    comando1.Parameters.AddWithValue("idcita", cita.IdCita);
 
-                comando1.ExecuteNonQuery();
-                con1.Close();
+                    comando1.ExecuteNonQuery();
+                    con1.Close();
+                }
+                else {
+                    //insert
+                    
+                    con2.Open();
+                    MySqlCommand comando2 = new MySqlCommand();
+                    comando2.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando2.CommandText = "Y_INSERTAR_CITA";
+
+                    comando2.Connection = con2;
+                    comando2.Parameters.AddWithValue("fecha", cita.Fecha);
+                    comando2.Parameters.AddWithValue("hora", cita.Hora);
+                    comando2.Parameters.AddWithValue("lugar", cita.Lugar);
+                    comando2.Parameters.AddWithValue("obs", cita.Observacion);
+                    comando2.Parameters.AddWithValue("idBec", idBec);
+                    comando2.Parameters.AddWithValue("idTut", idTut);
+
+                    comando2.ExecuteNonQuery();
+                    con2.Close();
+                }
+                return true;
             }
-            else
-            {
-                //insert
-                MySqlConnection con2 = new MySqlConnection(cadena);
-                con2.Open();
-                MySqlCommand comando2 = new MySqlCommand();
-                comando2.CommandType = System.Data.CommandType.StoredProcedure;
-                comando2.CommandText = "Y_INSERTAR_CITA";
-
-                comando2.Connection = con2;
-                comando2.Parameters.AddWithValue("fecha", cita.Fecha);
-                comando2.Parameters.AddWithValue("hora", cita.Hora);
-                comando2.Parameters.AddWithValue("lugar", cita.Lugar);
-                comando2.Parameters.AddWithValue("obs", cita.Observacion);
-                comando2.Parameters.AddWithValue("idBec", idBec);
-                comando2.Parameters.AddWithValue("idTut", idTut);
-
-                comando2.ExecuteNonQuery();
-                con2.Close();
+            catch(Exception e) {
+                con.Close();
+                con1.Clone();
+                con2.Clone();
+                return false;
             }
+            
         }
 
         //Hecho por Yoluana

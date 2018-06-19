@@ -125,12 +125,18 @@ namespace Vista
 
         private void btnCambiarTutorAlumno_Click(object sender, EventArgs e)
         {
-            frmCambiarTutorABecario frmCambTut = new frmCambiarTutorABecario();
-            frmCambTut.txtCodCambiar.Text = txtBAcod.Text;
-            frmCambTut.txtNombCambiar.Text = txtBANomb.Text;
-            frmCambTut.txtApCambiar.Text = txtBAApe.Text;
-            frmCambTut.txtIdOcultoCambiar.Text = txtCAIdOcullto.Text;
-            frmCambTut.ShowDialog();
+            if (txtBAcod.Text == "")
+                MessageBox.Show("Seleccione un Alumno para cambiar su tutor", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else {
+                frmCambiarTutorABecario frmCambTut = new frmCambiarTutorABecario();
+                frmCambTut.txtCodCambiar.Text = txtBAcod.Text;
+                frmCambTut.txtNombCambiar.Text = txtBANomb.Text;
+                frmCambTut.txtApCambiar.Text = txtBAApe.Text;
+                frmCambTut.txtIdOcultoCambiar.Text = txtCAIdOcullto.Text;
+                frmCambTut.ShowDialog();
+            }
+
         }
+    
     }
 }
