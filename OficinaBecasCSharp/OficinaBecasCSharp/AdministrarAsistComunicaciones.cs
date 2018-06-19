@@ -16,14 +16,10 @@ namespace Vista
         public AdministrarAsistComunicaciones(int idUsuario)
         {
             InitializeComponent();
-            cbConsulta.Items.Add("Ciclo Actual");
-            cbConsulta.Items.Add("Ciclos Anteriores");
             this.idUsuario = idUsuario;
         }
         private void GC_button_Click_1(object sender, EventArgs e)
         {
-            if (cbConsulta.Text == "Ciclo Actual")
-            {
                 if (this.panel2.Controls.Count > 0)
                     this.panel2.Controls.RemoveAt(0);
                 CoordinadorComunicaciones form = Application.OpenForms.OfType<CoordinadorComunicaciones>().FirstOrDefault();
@@ -34,21 +30,7 @@ namespace Vista
                 this.panel2.Controls.Add(ventana);
                 this.panel2.Tag = ventana;
                 ventana.Show();
-            }
-            else if (cbConsulta.Text == "Ciclos Anteriores")
-            {
-                if (this.panel2.Controls.Count > 0)
-                    this.panel2.Controls.RemoveAt(0);
-                frmBuscarConvocatoria form = Application.OpenForms.OfType<frmBuscarConvocatoria>().FirstOrDefault();
-                frmBuscarConvocatoria ventana = form ?? new frmBuscarConvocatoria(2);
-                ventana.TopLevel = false;
-                ventana.FormBorderStyle = FormBorderStyle.None;
-                ventana.Dock = DockStyle.Fill;
-                this.panel2.Controls.Add(ventana);
-                this.panel2.Tag = ventana;
-                ventana.Show();
-            }
-            else MessageBox.Show("Debe seleccionar una opción", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
         public BindingList<string> agregarCiclos(DateTime fecha)
         {
@@ -76,6 +58,20 @@ namespace Vista
                 this.panel2.Controls.RemoveAt(0);
             frmGestionarCandidatos form = Application.OpenForms.OfType<frmGestionarCandidatos>().FirstOrDefault();
             frmGestionarCandidatos ventana = form ?? new frmGestionarCandidatos();
+            ventana.TopLevel = false;
+            ventana.FormBorderStyle = FormBorderStyle.None;
+            ventana.Dock = DockStyle.Fill;
+            this.panel2.Controls.Add(ventana);
+            this.panel2.Tag = ventana;
+            ventana.Show();
+        }
+
+        private void btnGestionarConvocatoriaActual_Click(object sender, EventArgs e)
+        {
+            if (this.panel2.Controls.Count > 0)
+                this.panel2.Controls.RemoveAt(0);
+            frmBuscarConvocatoria form = Application.OpenForms.OfType<frmBuscarConvocatoria>().FirstOrDefault();
+            frmBuscarConvocatoria ventana = form ?? new frmBuscarConvocatoria(2);
             ventana.TopLevel = false;
             ventana.FormBorderStyle = FormBorderStyle.None;
             ventana.Dock = DockStyle.Fill;

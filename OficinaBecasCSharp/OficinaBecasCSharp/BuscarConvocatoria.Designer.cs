@@ -29,18 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvConvocatoria = new System.Windows.Forms.DataGridView();
-            this.NombreConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadCandidatosPrevistos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadTotalCandidatos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadPostulantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadSeleccionados = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CicloConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreBeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCreadorConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiltroNombre = new System.Windows.Forms.TextBox();
             this.btnSeleccionar = new System.Windows.Forms.Button();
@@ -63,6 +51,18 @@
             this.chDescripcion = new System.Windows.Forms.CheckBox();
             this.chFechaInicio = new System.Windows.Forms.CheckBox();
             this.chNombre = new System.Windows.Forms.CheckBox();
+            this.NombreConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadCandidatosPrevistos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadTotalCandidatos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadPostulantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadSeleccionados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CicloConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreBeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCreadorConvocatoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvocatoria)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,92 +89,8 @@
             this.dgvConvocatoria.Name = "dgvConvocatoria";
             this.dgvConvocatoria.ReadOnly = true;
             this.dgvConvocatoria.RowTemplate.Height = 24;
-            this.dgvConvocatoria.Size = new System.Drawing.Size(1108, 388);
+            this.dgvConvocatoria.Size = new System.Drawing.Size(966, 388);
             this.dgvConvocatoria.TabIndex = 0;
-            // 
-            // NombreConvocatoria
-            // 
-            this.NombreConvocatoria.DataPropertyName = "NombreConvocatoria";
-            this.NombreConvocatoria.HeaderText = "Nombre de Convocatoria";
-            this.NombreConvocatoria.Name = "NombreConvocatoria";
-            this.NombreConvocatoria.ReadOnly = true;
-            // 
-            // DescripcionConvocatoria
-            // 
-            this.DescripcionConvocatoria.DataPropertyName = "DescripcionConvocatoria";
-            this.DescripcionConvocatoria.HeaderText = "Descripción de Convocatoria";
-            this.DescripcionConvocatoria.Name = "DescripcionConvocatoria";
-            this.DescripcionConvocatoria.ReadOnly = true;
-            // 
-            // FechaInicio
-            // 
-            this.FechaInicio.DataPropertyName = "FechaInicio";
-            this.FechaInicio.HeaderText = "Fecha de Inicio";
-            this.FechaInicio.Name = "FechaInicio";
-            this.FechaInicio.ReadOnly = true;
-            // 
-            // FechaFin
-            // 
-            this.FechaFin.DataPropertyName = "FechaFin";
-            this.FechaFin.HeaderText = "Fecha de Fin";
-            this.FechaFin.Name = "FechaFin";
-            this.FechaFin.ReadOnly = true;
-            // 
-            // FechaCreacion
-            // 
-            this.FechaCreacion.DataPropertyName = "FechaCreacion";
-            this.FechaCreacion.HeaderText = "Fecha de Creación";
-            this.FechaCreacion.Name = "FechaCreacion";
-            this.FechaCreacion.ReadOnly = true;
-            // 
-            // CantidadCandidatosPrevistos
-            // 
-            this.CantidadCandidatosPrevistos.DataPropertyName = "CantidadCandidatosPrevistos";
-            this.CantidadCandidatosPrevistos.HeaderText = "Cantidad de Candidatos Previstos";
-            this.CantidadCandidatosPrevistos.Name = "CantidadCandidatosPrevistos";
-            this.CantidadCandidatosPrevistos.ReadOnly = true;
-            // 
-            // CantidadTotalCandidatos
-            // 
-            this.CantidadTotalCandidatos.DataPropertyName = "CantidadTotalCandidatos";
-            this.CantidadTotalCandidatos.HeaderText = "Cantidad Total de Candidatos";
-            this.CantidadTotalCandidatos.Name = "CantidadTotalCandidatos";
-            this.CantidadTotalCandidatos.ReadOnly = true;
-            // 
-            // CantidadPostulantes
-            // 
-            this.CantidadPostulantes.DataPropertyName = "CantidadPostulantes";
-            this.CantidadPostulantes.HeaderText = "Cantidad de Postulantes";
-            this.CantidadPostulantes.Name = "CantidadPostulantes";
-            this.CantidadPostulantes.ReadOnly = true;
-            // 
-            // CantidadSeleccionados
-            // 
-            this.CantidadSeleccionados.DataPropertyName = "CantidadSeleccionados";
-            this.CantidadSeleccionados.HeaderText = "Cantidad de Seleccionados";
-            this.CantidadSeleccionados.Name = "CantidadSeleccionados";
-            this.CantidadSeleccionados.ReadOnly = true;
-            // 
-            // CicloConvocatoria
-            // 
-            this.CicloConvocatoria.DataPropertyName = "CicloConvocatoria";
-            this.CicloConvocatoria.HeaderText = "Ciclo de Convocatoria";
-            this.CicloConvocatoria.Name = "CicloConvocatoria";
-            this.CicloConvocatoria.ReadOnly = true;
-            // 
-            // NombreBeca
-            // 
-            this.NombreBeca.DataPropertyName = "NombreBeca";
-            this.NombreBeca.HeaderText = "Beca Asociada";
-            this.NombreBeca.Name = "NombreBeca";
-            this.NombreBeca.ReadOnly = true;
-            // 
-            // NombreCreadorConvocatoria
-            // 
-            this.NombreCreadorConvocatoria.DataPropertyName = "NombreCreadorConvocatoria";
-            this.NombreCreadorConvocatoria.HeaderText = "Creador de Convocatoria";
-            this.NombreCreadorConvocatoria.Name = "NombreCreadorConvocatoria";
-            this.NombreCreadorConvocatoria.ReadOnly = true;
             // 
             // label1
             // 
@@ -265,9 +181,9 @@
             this.groupBox1.Controls.Add(this.chDescripcion);
             this.groupBox1.Controls.Add(this.chFechaInicio);
             this.groupBox1.Controls.Add(this.chNombre);
-            this.groupBox1.Location = new System.Drawing.Point(56, 533);
+            this.groupBox1.Location = new System.Drawing.Point(26, 528);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1042, 177);
+            this.groupBox1.Size = new System.Drawing.Size(966, 159);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personalizar Columnas Visibles";
@@ -404,11 +320,96 @@
             this.chNombre.Text = "Nombre";
             this.chNombre.UseVisualStyleBackColor = true;
             // 
+            // NombreConvocatoria
+            // 
+            this.NombreConvocatoria.DataPropertyName = "NombreConvocatoria";
+            this.NombreConvocatoria.HeaderText = "Nombre de Convocatoria";
+            this.NombreConvocatoria.Name = "NombreConvocatoria";
+            this.NombreConvocatoria.ReadOnly = true;
+            // 
+            // DescripcionConvocatoria
+            // 
+            this.DescripcionConvocatoria.DataPropertyName = "DescripcionConvocatoria";
+            this.DescripcionConvocatoria.HeaderText = "Descripción de Convocatoria";
+            this.DescripcionConvocatoria.Name = "DescripcionConvocatoria";
+            this.DescripcionConvocatoria.ReadOnly = true;
+            this.DescripcionConvocatoria.Width = 180;
+            // 
+            // FechaInicio
+            // 
+            this.FechaInicio.DataPropertyName = "FechaInicio";
+            this.FechaInicio.HeaderText = "Fecha de Inicio";
+            this.FechaInicio.Name = "FechaInicio";
+            this.FechaInicio.ReadOnly = true;
+            // 
+            // FechaFin
+            // 
+            this.FechaFin.DataPropertyName = "FechaFin";
+            this.FechaFin.HeaderText = "Fecha de Fin";
+            this.FechaFin.Name = "FechaFin";
+            this.FechaFin.ReadOnly = true;
+            // 
+            // FechaCreacion
+            // 
+            this.FechaCreacion.DataPropertyName = "FechaCreacion";
+            this.FechaCreacion.HeaderText = "Fecha de Creación";
+            this.FechaCreacion.Name = "FechaCreacion";
+            this.FechaCreacion.ReadOnly = true;
+            // 
+            // CantidadCandidatosPrevistos
+            // 
+            this.CantidadCandidatosPrevistos.DataPropertyName = "CantidadCandidatosPrevistos";
+            this.CantidadCandidatosPrevistos.HeaderText = "Cantidad de Candidatos Previstos";
+            this.CantidadCandidatosPrevistos.Name = "CantidadCandidatosPrevistos";
+            this.CantidadCandidatosPrevistos.ReadOnly = true;
+            // 
+            // CantidadTotalCandidatos
+            // 
+            this.CantidadTotalCandidatos.DataPropertyName = "CantidadTotalCandidatos";
+            this.CantidadTotalCandidatos.HeaderText = "Cantidad Total de Candidatos";
+            this.CantidadTotalCandidatos.Name = "CantidadTotalCandidatos";
+            this.CantidadTotalCandidatos.ReadOnly = true;
+            // 
+            // CantidadPostulantes
+            // 
+            this.CantidadPostulantes.DataPropertyName = "CantidadPostulantes";
+            this.CantidadPostulantes.HeaderText = "Cantidad de Postulantes";
+            this.CantidadPostulantes.Name = "CantidadPostulantes";
+            this.CantidadPostulantes.ReadOnly = true;
+            // 
+            // CantidadSeleccionados
+            // 
+            this.CantidadSeleccionados.DataPropertyName = "CantidadSeleccionados";
+            this.CantidadSeleccionados.HeaderText = "Cantidad de Seleccionados";
+            this.CantidadSeleccionados.Name = "CantidadSeleccionados";
+            this.CantidadSeleccionados.ReadOnly = true;
+            // 
+            // CicloConvocatoria
+            // 
+            this.CicloConvocatoria.DataPropertyName = "CicloConvocatoria";
+            this.CicloConvocatoria.HeaderText = "Ciclo de Convocatoria";
+            this.CicloConvocatoria.Name = "CicloConvocatoria";
+            this.CicloConvocatoria.ReadOnly = true;
+            // 
+            // NombreBeca
+            // 
+            this.NombreBeca.DataPropertyName = "NombreBeca";
+            this.NombreBeca.HeaderText = "Beca Asociada";
+            this.NombreBeca.Name = "NombreBeca";
+            this.NombreBeca.ReadOnly = true;
+            // 
+            // NombreCreadorConvocatoria
+            // 
+            this.NombreCreadorConvocatoria.DataPropertyName = "NombreCreadorConvocatoria";
+            this.NombreCreadorConvocatoria.HeaderText = "Creador de Convocatoria";
+            this.NombreCreadorConvocatoria.Name = "NombreCreadorConvocatoria";
+            this.NombreCreadorConvocatoria.ReadOnly = true;
+            // 
             // frmBuscarConvocatoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 738);
+            this.ClientSize = new System.Drawing.Size(1019, 699);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label2);
@@ -438,18 +439,6 @@
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreConvocatoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionConvocatoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCreacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadCandidatosPrevistos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadTotalCandidatos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadPostulantes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadSeleccionados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CicloConvocatoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreBeca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCreadorConvocatoria;
         private System.Windows.Forms.ComboBox cbFiltroCiclo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLimpiar;
@@ -467,5 +456,17 @@
         private System.Windows.Forms.CheckBox chFechaInicio;
         private System.Windows.Forms.CheckBox chNombre;
         private System.Windows.Forms.Button btnPersonalizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreConvocatoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionConvocatoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCreacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadCandidatosPrevistos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadTotalCandidatos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadPostulantes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadSeleccionados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CicloConvocatoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreBeca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCreadorConvocatoria;
     }
 }

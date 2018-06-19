@@ -59,7 +59,7 @@
             this.lbBeca = new System.Windows.Forms.Label();
             this.lbDescripciónConvocatoria = new System.Windows.Forms.Label();
             this.lbNumeroRespuestas = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStrip_historiaacademica = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
@@ -68,7 +68,7 @@
             this.btnLimpiar = new System.Windows.Forms.ToolStripButton();
             this.panelCC.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip_historiaacademica.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCC
@@ -76,10 +76,10 @@
             this.panelCC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelCC.Controls.Add(this.groupBox1);
             this.panelCC.Controls.Add(this.lbNumeroRespuestas);
-            this.panelCC.Location = new System.Drawing.Point(31, 2);
+            this.panelCC.Location = new System.Drawing.Point(7, 74);
             this.panelCC.Margin = new System.Windows.Forms.Padding(4);
             this.panelCC.Name = "panelCC";
-            this.panelCC.Size = new System.Drawing.Size(1036, 553);
+            this.panelCC.Size = new System.Drawing.Size(1012, 553);
             this.panelCC.TabIndex = 1;
             // 
             // groupBox1
@@ -111,9 +111,9 @@
             this.groupBox1.Controls.Add(this.txtNombreConvocatoria);
             this.groupBox1.Controls.Add(this.lbBeca);
             this.groupBox1.Controls.Add(this.lbDescripciónConvocatoria);
-            this.groupBox1.Location = new System.Drawing.Point(15, 42);
+            this.groupBox1.Location = new System.Drawing.Point(6, 47);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1020, 481);
+            this.groupBox1.Size = new System.Drawing.Size(994, 481);
             this.groupBox1.TabIndex = 75;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Generales de la Convocatoria";
@@ -355,21 +355,21 @@
             this.lbNumeroRespuestas.TabIndex = 44;
             this.lbNumeroRespuestas.Click += new System.EventHandler(this.lbNumeroRespuestas_Click);
             // 
-            // toolStrip1
+            // toolStrip_historiaacademica
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStrip_historiaacademica.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip_historiaacademica.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevo,
             this.btnGuardar,
             this.btnEditar,
             this.toolStripSeparator1,
             this.btnBuscar,
             this.btnLimpiar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1067, 27);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip_historiaacademica.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip_historiaacademica.Name = "toolStrip_historiaacademica";
+            this.toolStrip_historiaacademica.Size = new System.Drawing.Size(1019, 27);
+            this.toolStrip_historiaacademica.TabIndex = 5;
+            this.toolStrip_historiaacademica.Text = "toolStrip2";
             // 
             // btnNuevo
             // 
@@ -378,7 +378,6 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(76, 24);
             this.btnNuevo.Text = "&Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
             // 
@@ -387,7 +386,6 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(86, 24);
             this.btnGuardar.Text = "&Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEditar
             // 
@@ -396,7 +394,6 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(72, 24);
             this.btnEditar.Text = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
@@ -410,7 +407,6 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(76, 24);
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnLimpiar
             // 
@@ -419,14 +415,13 @@
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(83, 24);
             this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // CoordinadorComunicaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.toolStrip1);
+            this.ClientSize = new System.Drawing.Size(1019, 699);
+            this.Controls.Add(this.toolStrip_historiaacademica);
             this.Controls.Add(this.panelCC);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CoordinadorComunicaciones";
@@ -436,8 +431,8 @@
             this.panelCC.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip_historiaacademica.ResumeLayout(false);
+            this.toolStrip_historiaacademica.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,14 +468,14 @@
         private System.Windows.Forms.Button btnBeca;
         private System.Windows.Forms.Label lbBeca;
         private System.Windows.Forms.ComboBox cbCicloConvocatoria;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnNuevo;
-        private System.Windows.Forms.ToolStripButton btnGuardar;
-        private System.Windows.Forms.ToolStripButton btnLimpiar;
-        private System.Windows.Forms.ToolStripButton btnBuscar;
         private System.Windows.Forms.TextBox txtCantidadSeleccionados;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ToolStrip toolStrip_historiaacademica;
+        private System.Windows.Forms.ToolStripButton btnNuevo;
+        private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnBuscar;
+        private System.Windows.Forms.ToolStripButton btnLimpiar;
     }
 }

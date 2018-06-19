@@ -80,6 +80,7 @@
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.txtCodigoPUCP = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,7 +98,7 @@
             this.btnLimpiar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1036, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1019, 27);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -192,7 +193,7 @@
             this.groupBox1.Controls.Add(this.btnBuscarConvocatoria);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtIdConvocatoria);
-            this.groupBox1.Location = new System.Drawing.Point(90, 66);
+            this.groupBox1.Location = new System.Drawing.Point(92, 96);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(837, 162);
             this.groupBox1.TabIndex = 7;
@@ -421,7 +422,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(90, 256);
+            this.groupBox2.Location = new System.Drawing.Point(92, 286);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(837, 339);
             this.groupBox2.TabIndex = 21;
@@ -575,14 +576,22 @@
             this.txtCodigoPUCP.Size = new System.Drawing.Size(207, 22);
             this.txtCodigoPUCP.TabIndex = 22;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(26, 68);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(967, 601);
+            this.panel1.TabIndex = 22;
+            // 
             // frmGestionarCandidatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 613);
+            this.ClientSize = new System.Drawing.Size(1019, 699);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.panel1);
             this.Name = "frmGestionarCandidatos";
             this.Text = "Gestionar Candidatos";
             this.toolStrip1.ResumeLayout(false);
@@ -649,5 +658,6 @@
         private System.Windows.Forms.TextBox txtIdCandidato;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

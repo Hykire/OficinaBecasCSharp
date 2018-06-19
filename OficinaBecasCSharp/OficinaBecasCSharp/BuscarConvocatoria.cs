@@ -54,7 +54,12 @@ namespace Vista
 
             visibilidadInicial();
 
-            if (convocatorias.Count == 0) btnSeleccionar.Enabled = false;
+            if (convocatorias.Count == 0)
+            {
+                btnSeleccionar.Enabled = false;
+                btnFiltrar.Enabled = false;
+                btnLimpiar.Enabled = false;
+            }
        }
 
         public void visibilidadInicial()
@@ -104,7 +109,7 @@ namespace Vista
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (txtFiltroNombre.Text == " - Seleccione - " && cbFiltroCiclo.Text == "")
+            if (txtFiltroNombre.Text == "" && cbFiltroCiclo.Text == " - Seleccione - ")
             {
                 MessageBox.Show("Debe ingresar un nombre o un ciclo a buscar", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;

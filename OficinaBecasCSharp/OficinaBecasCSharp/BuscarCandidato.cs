@@ -35,6 +35,13 @@ namespace Vista
             rbCodigoPUCP.Checked = true;
             chPostulante.Visible = false;
             chSeleccionado.Visible = false;
+
+            if(candidatoBL.listarCandidatosAnteriores(convocatoria.IdConvocatoria).Count == 0)
+            {
+                btnSeleccionar.Enabled = false;
+                btnFiltrar.Enabled = false;
+                btnLimpiar.Enabled = false;
+            }
         }
         public BuscarCandidato(Convocatoria convocatoria)
         {
@@ -49,6 +56,13 @@ namespace Vista
             rbCodigoPUCP.Checked = true;
             chPostulante.Visible = false;
             chSeleccionado.Visible = false;
+
+            if (candidatoBL.listarCandidatos(convocatoria.IdConvocatoria).Count == 0)
+            {
+                btnSeleccionar.Enabled = false;
+                btnFiltrar.Enabled = false;
+                btnLimpiar.Enabled = false;
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -82,10 +96,33 @@ namespace Vista
             if (chSeleccionado.Checked) seleccionado = "SELECCIONADO";
             else seleccionado = "NO SELECCIONADO";
 
-            if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarApellidos(txtFiltro.Text, postulante, seleccionado, convocatoria.IdConvocatoria);
+            if (txtFiltro.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un valor a buscar", "Falta Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else if (rbApellidos.Checked) listaCandidatos = candidatoBL.filtrarApellidos(txtFiltro.Text, postulante, seleccionado, convocatoria.IdConvocatoria);
             else if (rbNombres.Checked) listaCandidatos = candidatoBL.filtrarNombre(txtFiltro.Text, postulante, seleccionado, convocatoria.IdConvocatoria);
-            else if (rbCodigoPUCP.Checked) listaCandidatos = candidatoBL.filtrarCodigoPUCP(Int32.Parse(txtFiltro.Text), postulante, seleccionado, convocatoria.IdConvocatoria);
-            else if (rbDNI.Checked) listaCandidatos = candidatoBL.filtrarDNI(Int32.Parse(txtFiltro.Text), postulante, seleccionado, convocatoria.IdConvocatoria);
+            else if (rbCodigoPUCP.Checked)
+            {
+                int i;
+                if (Int32.TryParse(txtFiltro.Text, out i)) listaCandidatos = candidatoBL.filtrarCodigoPUCP(i, postulante, seleccionado, convocatoria.IdConvocatoria);
+                else
+                {
+                    MessageBox.Show("Debe ingresar un Número", "Error en la Información", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+            else if (rbDNI.Checked)
+            {
+                int i;
+                if (Int32.TryParse(txtFiltro.Text, out i)) listaCandidatos = candidatoBL.filtrarDNI(i, postulante, seleccionado, convocatoria.IdConvocatoria);
+                else
+                {
+                    MessageBox.Show("Debe ingresar un Número", "Error en la Información", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
 
             dgvBuscarCandidato.DataSource = listaCandidatos;
         }
