@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class AdministrarTareaTutor
+    partial class AdministracionTutor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministrarTareaTutor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionTutor));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnConsultarCorreos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnConsultarBecario = new Bunifu.Framework.UI.BunifuFlatButton();

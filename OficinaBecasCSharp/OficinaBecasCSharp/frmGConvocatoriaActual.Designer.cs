@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class CoordinadorComunicaciones
+    partial class frmGConvocatoriaActual
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoordinadorComunicaciones));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGConvocatoriaActual));
             this.panelCC = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCantidadSeleccionados = new System.Windows.Forms.TextBox();
@@ -66,17 +66,17 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnBuscar = new System.Windows.Forms.ToolStripButton();
             this.btnLimpiar = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.panelCC.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.toolStrip_historiaacademica.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCC
@@ -85,9 +85,9 @@
             this.panelCC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelCC.Controls.Add(this.groupBox1);
             this.panelCC.Controls.Add(this.lbNumeroRespuestas);
-            this.panelCC.Location = new System.Drawing.Point(10, 28);
+            this.panelCC.Location = new System.Drawing.Point(10, 17);
             this.panelCC.Name = "panelCC";
-            this.panelCC.Size = new System.Drawing.Size(740, 270);
+            this.panelCC.Size = new System.Drawing.Size(740, 245);
             this.panelCC.TabIndex = 1;
             // 
             // groupBox1
@@ -119,10 +119,10 @@
             this.groupBox1.Controls.Add(this.txtNombreConvocatoria);
             this.groupBox1.Controls.Add(this.lbBeca);
             this.groupBox1.Controls.Add(this.lbDescripciónConvocatoria);
-            this.groupBox1.Location = new System.Drawing.Point(19, 38);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(19, 13);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(700, 212);
             this.groupBox1.TabIndex = 75;
             this.groupBox1.TabStop = false;
@@ -132,7 +132,7 @@
             // txtCantidadSeleccionados
             // 
             this.txtCantidadSeleccionados.Location = new System.Drawing.Point(635, 149);
-            this.txtCantidadSeleccionados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadSeleccionados.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadSeleccionados.Name = "txtCantidadSeleccionados";
             this.txtCantidadSeleccionados.Size = new System.Drawing.Size(45, 20);
             this.txtCantidadSeleccionados.TabIndex = 70;
@@ -151,7 +151,7 @@
             // 
             this.cbCicloConvocatoria.FormattingEnabled = true;
             this.cbCicloConvocatoria.Location = new System.Drawing.Point(189, 173);
-            this.cbCicloConvocatoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCicloConvocatoria.Margin = new System.Windows.Forms.Padding(2);
             this.cbCicloConvocatoria.Name = "cbCicloConvocatoria";
             this.cbCicloConvocatoria.Size = new System.Drawing.Size(137, 21);
             this.cbCicloConvocatoria.TabIndex = 9;
@@ -159,7 +159,7 @@
             // txtCreadorConvocatoria
             // 
             this.txtCreadorConvocatoria.Location = new System.Drawing.Point(536, 101);
-            this.txtCreadorConvocatoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCreadorConvocatoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtCreadorConvocatoria.Name = "txtCreadorConvocatoria";
             this.txtCreadorConvocatoria.Size = new System.Drawing.Size(144, 20);
             this.txtCreadorConvocatoria.TabIndex = 11;
@@ -167,7 +167,7 @@
             // txtTotalCandidatos
             // 
             this.txtTotalCandidatos.Location = new System.Drawing.Point(635, 125);
-            this.txtTotalCandidatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotalCandidatos.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalCandidatos.Name = "txtTotalCandidatos";
             this.txtTotalCandidatos.Size = new System.Drawing.Size(45, 20);
             this.txtTotalCandidatos.TabIndex = 7;
@@ -175,7 +175,7 @@
             // txtCantidadCandidatosPrevistos
             // 
             this.txtCantidadCandidatosPrevistos.Location = new System.Drawing.Point(189, 125);
-            this.txtCantidadCandidatosPrevistos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadCandidatosPrevistos.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadCandidatosPrevistos.MaxLength = 4;
             this.txtCantidadCandidatosPrevistos.Name = "txtCantidadCandidatosPrevistos";
             this.txtCantidadCandidatosPrevistos.Size = new System.Drawing.Size(45, 20);
@@ -184,7 +184,7 @@
             // txtCantidadPostulantes
             // 
             this.txtCantidadPostulantes.Location = new System.Drawing.Point(189, 149);
-            this.txtCantidadPostulantes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadPostulantes.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadPostulantes.Name = "txtCantidadPostulantes";
             this.txtCantidadPostulantes.Size = new System.Drawing.Size(45, 20);
             this.txtCantidadPostulantes.TabIndex = 10;
@@ -192,7 +192,7 @@
             // dtFechaCreacion
             // 
             this.dtFechaCreacion.Location = new System.Drawing.Point(189, 101);
-            this.dtFechaCreacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtFechaCreacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtFechaCreacion.Name = "dtFechaCreacion";
             this.dtFechaCreacion.Size = new System.Drawing.Size(190, 20);
             this.dtFechaCreacion.TabIndex = 6;
@@ -200,23 +200,23 @@
             // txtBecaAsociada
             // 
             this.txtBecaAsociada.Location = new System.Drawing.Point(469, 173);
-            this.txtBecaAsociada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBecaAsociada.Margin = new System.Windows.Forms.Padding(2);
             this.txtBecaAsociada.Name = "txtBecaAsociada";
             this.txtBecaAsociada.Size = new System.Drawing.Size(179, 20);
             this.txtBecaAsociada.TabIndex = 12;
             // 
             // dtFechaFin
             // 
-            this.dtFechaFin.Location = new System.Drawing.Point(493, 53);
-            this.dtFechaFin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtFechaFin.Location = new System.Drawing.Point(486, 52);
+            this.dtFechaFin.Margin = new System.Windows.Forms.Padding(2);
             this.dtFechaFin.Name = "dtFechaFin";
             this.dtFechaFin.Size = new System.Drawing.Size(194, 20);
             this.dtFechaFin.TabIndex = 4;
             // 
             // dtFechaInicio
             // 
-            this.dtFechaInicio.Location = new System.Drawing.Point(493, 29);
-            this.dtFechaInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtFechaInicio.Location = new System.Drawing.Point(485, 29);
+            this.dtFechaInicio.Margin = new System.Windows.Forms.Padding(2);
             this.dtFechaInicio.Name = "dtFechaInicio";
             this.dtFechaInicio.Size = new System.Drawing.Size(195, 20);
             this.dtFechaInicio.TabIndex = 2;
@@ -225,7 +225,7 @@
             // txtDescripcionConvocatoria
             // 
             this.txtDescripcionConvocatoria.Location = new System.Drawing.Point(189, 77);
-            this.txtDescripcionConvocatoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcionConvocatoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcionConvocatoria.MaxLength = 200;
             this.txtDescripcionConvocatoria.Name = "txtDescripcionConvocatoria";
             this.txtDescripcionConvocatoria.Size = new System.Drawing.Size(491, 20);
@@ -234,7 +234,7 @@
             // txtIdConvocatoria
             // 
             this.txtIdConvocatoria.Location = new System.Drawing.Point(189, 29);
-            this.txtIdConvocatoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdConvocatoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdConvocatoria.Name = "txtIdConvocatoria";
             this.txtIdConvocatoria.Size = new System.Drawing.Size(45, 20);
             this.txtIdConvocatoria.TabIndex = 1;
@@ -333,7 +333,7 @@
             // btnBeca
             // 
             this.btnBeca.Location = new System.Drawing.Point(654, 173);
-            this.btnBeca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBeca.Margin = new System.Windows.Forms.Padding(2);
             this.btnBeca.Name = "btnBeca";
             this.btnBeca.Size = new System.Drawing.Size(26, 20);
             this.btnBeca.TabIndex = 13;
@@ -354,7 +354,7 @@
             // txtNombreConvocatoria
             // 
             this.txtNombreConvocatoria.Location = new System.Drawing.Point(189, 53);
-            this.txtNombreConvocatoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreConvocatoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreConvocatoria.MaxLength = 50;
             this.txtNombreConvocatoria.Name = "txtNombreConvocatoria";
             this.txtNombreConvocatoria.Size = new System.Drawing.Size(145, 20);
@@ -452,6 +452,21 @@
             this.btnLimpiar.Size = new System.Drawing.Size(71, 24);
             this.btnLimpiar.Text = "Limpiar";
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripSeparator2,
+            this.toolStripButton4,
+            this.btnCancelar});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 27);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(764, 25);
+            this.toolStrip2.TabIndex = 72;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
             // toolStripButton1
             // 
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
@@ -497,31 +512,16 @@
             this.btnCancelar.Size = new System.Drawing.Size(67, 22);
             this.btnCancelar.Text = "Limpiar";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripSeparator2,
-            this.toolStripButton4,
-            this.btnCancelar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 27);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(764, 25);
-            this.toolStrip1.TabIndex = 70;
-            this.toolStrip1.Text = "toolStrip2";
-            // 
-            // CoordinadorComunicaciones
+            // frmGConvocatoriaActual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 568);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip_historiaacademica);
             this.Controls.Add(this.panelCC);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "CoordinadorComunicaciones";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmGConvocatoriaActual";
             this.Text = "CoordinadorComunicaciones";
             this.Load += new System.EventHandler(this.CoordinadorComunicaciones_Load);
             this.panelCC.ResumeLayout(false);
@@ -530,8 +530,8 @@
             this.groupBox1.PerformLayout();
             this.toolStrip_historiaacademica.ResumeLayout(false);
             this.toolStrip_historiaacademica.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,12 +576,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnBuscar;
         private System.Windows.Forms.ToolStripButton btnLimpiar;
+        private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton btnCancelar;
-        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }

@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class CoordinadorComunicaciones : Form
+    public partial class frmGConvocatoriaActual : Form
     {
         private ConvocatoriaBL convocatoriaBL;
         private AsistenteComunicacionesBL asistenteComunicacionesBL;
         private AsistenteComunicaciones asistente;
         private Beca beca;
         private bool actualizar;
-        public CoordinadorComunicaciones(int idUsuario)
+        public frmGConvocatoriaActual(int idUsuario)
         {
             InitializeComponent();
             convocatoriaBL = new ConvocatoriaBL();
@@ -214,9 +214,5 @@ namespace Vista
             actualizar = true;
         }
 
-        private void cbCicloConvocatoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

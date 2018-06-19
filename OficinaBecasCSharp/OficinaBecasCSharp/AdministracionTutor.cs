@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class AdministrarTareaTutor : Form
+    public partial class AdministracionTutor : Form
     {
-        public AdministrarTareaTutor()
+        public AdministracionTutor()
         {
             InitializeComponent();
         }

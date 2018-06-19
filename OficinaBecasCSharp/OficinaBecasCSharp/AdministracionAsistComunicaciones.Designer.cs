@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class AdministrarAsistComunicaciones
+    partial class AdministracionAsistComunicaciones
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministrarAsistComunicaciones));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionAsistComunicaciones));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGestionarConvocatoriaActual = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -73,9 +73,9 @@
             this.btnGestionarConvocatoriaActual.IconRightZoom = 0D;
             this.btnGestionarConvocatoriaActual.IconVisible = true;
             this.btnGestionarConvocatoriaActual.IconZoom = 90D;
-            this.btnGestionarConvocatoriaActual.IsTab = false;
+            this.btnGestionarConvocatoriaActual.IsTab = true;
             this.btnGestionarConvocatoriaActual.Location = new System.Drawing.Point(0, 108);
-            this.btnGestionarConvocatoriaActual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGestionarConvocatoriaActual.Margin = new System.Windows.Forms.Padding(4);
             this.btnGestionarConvocatoriaActual.Name = "btnGestionarConvocatoriaActual";
             this.btnGestionarConvocatoriaActual.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.btnGestionarConvocatoriaActual.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
@@ -109,9 +109,9 @@
             this.bunifuFlatButton1.IconRightZoom = 0D;
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
-            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.IsTab = true;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 162);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
@@ -145,9 +145,9 @@
             this.btnGestionarConvocatoriaAnterior.IconRightZoom = 0D;
             this.btnGestionarConvocatoriaAnterior.IconVisible = true;
             this.btnGestionarConvocatoriaAnterior.IconZoom = 90D;
-            this.btnGestionarConvocatoriaAnterior.IsTab = false;
+            this.btnGestionarConvocatoriaAnterior.IsTab = true;
             this.btnGestionarConvocatoriaAnterior.Location = new System.Drawing.Point(0, 54);
-            this.btnGestionarConvocatoriaAnterior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGestionarConvocatoriaAnterior.Margin = new System.Windows.Forms.Padding(4);
             this.btnGestionarConvocatoriaAnterior.Name = "btnGestionarConvocatoriaAnterior";
             this.btnGestionarConvocatoriaAnterior.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.btnGestionarConvocatoriaAnterior.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
@@ -164,7 +164,7 @@
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(471, 260);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(432, 20);
             this.txtFiltro.TabIndex = 60;
@@ -172,7 +172,7 @@
             // btnFiltrarResultados
             // 
             this.btnFiltrarResultados.Location = new System.Drawing.Point(927, 255);
-            this.btnFiltrarResultados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFiltrarResultados.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltrarResultados.Name = "btnFiltrarResultados";
             this.btnFiltrarResultados.Size = new System.Drawing.Size(104, 27);
             this.btnFiltrarResultados.TabIndex = 42;
@@ -189,14 +189,14 @@
             this.panel2.Size = new System.Drawing.Size(604, 441);
             this.panel2.TabIndex = 63;
             // 
-            // AdministrarAsistComunicaciones
+            // AdministracionAsistComunicaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 441);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "AdministrarAsistComunicaciones";
+            this.Name = "AdministracionAsistComunicaciones";
             this.Text = "AdministrarAsistComunicaciones";
             this.Load += new System.EventHandler(this.AdministrarAsistComunicaciones_Load);
             this.panel1.ResumeLayout(false);

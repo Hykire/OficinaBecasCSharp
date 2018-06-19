@@ -62,17 +62,17 @@
     <Compile Include="AdministracionSistema.Designer.cs">
       <DependentUpon>AdministracionSistema.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdministrarAsistComunicaciones.cs">
+    <Compile Include="AdministracionAsistComunicaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministrarAsistComunicaciones.Designer.cs">
-      <DependentUpon>AdministrarAsistComunicaciones.cs</DependentUpon>
+    <Compile Include="AdministracionAsistComunicaciones.Designer.cs">
+      <DependentUpon>AdministracionAsistComunicaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdministrarTareaTutor.cs">
+    <Compile Include="AdministracionTutor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministrarTareaTutor.Designer.cs">
-      <DependentUpon>AdministrarTareaTutor.cs</DependentUpon>
+    <Compile Include="AdministracionTutor.Designer.cs">
+      <DependentUpon>AdministracionTutor.cs</DependentUpon>
     </Compile>
     <Compile Include="AgregarBecarioATutor.cs">
       <SubType>Form</SubType>
@@ -98,11 +98,11 @@
     <Compile Include="BuscarCandidato.Designer.cs">
       <DependentUpon>BuscarCandidato.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarConvocatoria.cs">
+    <Compile Include="frmGConvocatoriaAntiguas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarConvocatoria.Designer.cs">
-      <DependentUpon>BuscarConvocatoria.cs</DependentUpon>
+    <Compile Include="frmGConvocatoriaAntiguas.Designer.cs">
+      <DependentUpon>frmGConvocatoriaAntiguas.cs</DependentUpon>
     </Compile>
     <Compile Include="BuscarTutorNT.cs">
       <SubType>Form</SubType>
@@ -230,11 +230,11 @@
     <Compile Include="frmGestionarPersona.Designer.cs">
       <DependentUpon>frmGestionarPersona.cs</DependentUpon>
     </Compile>
-    <Compile Include="CoordinadorComunicaciones.cs">
+    <Compile Include="frmGConvocatoriaActual.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CoordinadorComunicaciones.Designer.cs">
-      <DependentUpon>CoordinadorComunicaciones.cs</DependentUpon>
+    <Compile Include="frmGConvocatoriaActual.Designer.cs">
+      <DependentUpon>frmGConvocatoriaActual.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionarTutores.cs">
       <SubType>Form</SubType>
@@ -265,11 +265,11 @@
     <EmbeddedResource Include="AdministracionSistema.resx">
       <DependentUpon>AdministracionSistema.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdministrarAsistComunicaciones.resx">
-      <DependentUpon>AdministrarAsistComunicaciones.cs</DependentUpon>
+    <EmbeddedResource Include="AdministracionAsistComunicaciones.resx">
+      <DependentUpon>AdministracionAsistComunicaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdministrarTareaTutor.resx">
-      <DependentUpon>AdministrarTareaTutor.cs</DependentUpon>
+    <EmbeddedResource Include="AdministracionTutor.resx">
+      <DependentUpon>AdministracionTutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarBecarioATutor.resx">
       <DependentUpon>AgregarBecarioATutor.cs</DependentUpon>
@@ -283,8 +283,8 @@
     <EmbeddedResource Include="BuscarCandidato.resx">
       <DependentUpon>BuscarCandidato.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarConvocatoria.resx">
-      <DependentUpon>BuscarConvocatoria.cs</DependentUpon>
+    <EmbeddedResource Include="frmGConvocatoriaAntiguas.resx">
+      <DependentUpon>frmGConvocatoriaAntiguas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarTutorNT.resx">
       <DependentUpon>BuscarTutorNT.cs</DependentUpon>
@@ -349,8 +349,8 @@
     <EmbeddedResource Include="frmGestionarPersona.resx">
       <DependentUpon>frmGestionarPersona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CoordinadorComunicaciones.resx">
-      <DependentUpon>CoordinadorComunicaciones.cs</DependentUpon>
+    <EmbeddedResource Include="frmGConvocatoriaActual.resx">
+      <DependentUpon>frmGConvocatoriaActual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarTutores.resx">
       <DependentUpon>frmGestionarTutores.cs</DependentUpon>

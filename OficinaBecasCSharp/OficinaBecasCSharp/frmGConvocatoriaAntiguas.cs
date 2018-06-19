@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class frmBuscarConvocatoria : Form
+    public partial class frmGConvocatoriaAntiguas : Form
     {
         private ConvocatoriaBL convocatoriaBL;
         private BindingList<Convocatoria> convocatorias;
@@ -22,7 +22,7 @@ namespace Vista
 
         public Convocatoria ConvocatoriaSeleccionada { get => convocatoriaSeleccionada; set => convocatoriaSeleccionada = value; }
 
-        public frmBuscarConvocatoria(int indicador)
+        public frmGConvocatoriaAntiguas(int indicador)
         {
             InitializeComponent();
             this.indicador = indicador;

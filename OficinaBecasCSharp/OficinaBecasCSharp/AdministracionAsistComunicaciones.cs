@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class AdministrarAsistComunicaciones : Form
+    public partial class AdministracionAsistComunicaciones : Form
     {
         private int idUsuario;
-        public AdministrarAsistComunicaciones(int idUsuario)
+        public AdministracionAsistComunicaciones(int idUsuario)
         {
             InitializeComponent();
             this.idUsuario = idUsuario;
@@ -22,8 +22,8 @@ namespace Vista
         {
                 if (this.panel2.Controls.Count > 0)
                     this.panel2.Controls.RemoveAt(0);
-                CoordinadorComunicaciones form = Application.OpenForms.OfType<CoordinadorComunicaciones>().FirstOrDefault();
-                CoordinadorComunicaciones ventana = form ?? new CoordinadorComunicaciones(idUsuario);
+                frmGConvocatoriaActual form = Application.OpenForms.OfType<frmGConvocatoriaActual>().FirstOrDefault();
+                frmGConvocatoriaActual ventana = form ?? new frmGConvocatoriaActual(idUsuario);
                 ventana.TopLevel = false;
                 ventana.FormBorderStyle = FormBorderStyle.None;
                 ventana.Dock = DockStyle.Fill;
@@ -47,10 +47,7 @@ namespace Vista
             }
             return ciclos;
         }
-        private void AdministrarAsistComunicaciones_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void AdministrarAsistComunicaciones_Load(object sender, EventArgs e) { }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
@@ -70,8 +67,8 @@ namespace Vista
         {
             if (this.panel2.Controls.Count > 0)
                 this.panel2.Controls.RemoveAt(0);
-            frmBuscarConvocatoria form = Application.OpenForms.OfType<frmBuscarConvocatoria>().FirstOrDefault();
-            frmBuscarConvocatoria ventana = form ?? new frmBuscarConvocatoria(2);
+            frmGConvocatoriaAntiguas form = Application.OpenForms.OfType<frmGConvocatoriaAntiguas>().FirstOrDefault();
+            frmGConvocatoriaAntiguas ventana = form ?? new frmGConvocatoriaAntiguas(2);
             ventana.TopLevel = false;
             ventana.FormBorderStyle = FormBorderStyle.None;
             ventana.Dock = DockStyle.Fill;

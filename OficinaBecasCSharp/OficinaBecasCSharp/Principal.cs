@@ -63,8 +63,8 @@ namespace Vista {
         {
             if (this.panel_Principal.Controls.Count > 0)
                 this.panel_Principal.Controls.RemoveAt(0);
-            AdministrarAsistComunicaciones form = Application.OpenForms.OfType<AdministrarAsistComunicaciones>().FirstOrDefault();
-            AdministrarAsistComunicaciones ventanaCC = form ?? new AdministrarAsistComunicaciones(id);
+            AdministracionAsistComunicaciones form = Application.OpenForms.OfType<AdministracionAsistComunicaciones>().FirstOrDefault();
+            AdministracionAsistComunicaciones ventanaCC = form ?? new AdministracionAsistComunicaciones(id);
             ventanaCC.TopLevel = false;
             ventanaCC.FormBorderStyle = FormBorderStyle.None;
             ventanaCC.Dock = DockStyle.Fill;
@@ -105,8 +105,8 @@ namespace Vista {
         {
             if (this.panel_Principal.Controls.Count > 0)
                 this.panel_Principal.Controls.RemoveAt(0);
-            AdministrarTareaTutor form = Application.OpenForms.OfType<AdministrarTareaTutor>().FirstOrDefault();
-            AdministrarTareaTutor gestionarTutor = form ?? new AdministrarTareaTutor();
+            AdministracionTutor form = Application.OpenForms.OfType<AdministracionTutor>().FirstOrDefault();
+            AdministracionTutor gestionarTutor = form ?? new AdministracionTutor();
             gestionarTutor.TopLevel = false;
             gestionarTutor.FormBorderStyle = FormBorderStyle.None;
             gestionarTutor.Dock = DockStyle.Fill;
