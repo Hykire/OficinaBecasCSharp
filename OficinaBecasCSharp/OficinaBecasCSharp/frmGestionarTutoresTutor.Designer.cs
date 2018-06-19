@@ -53,13 +53,6 @@
             this.LCodigoTutNT = new System.Windows.Forms.Label();
             this.LGestTutBXT = new System.Windows.Forms.Label();
             this.DGVTutores = new System.Windows.Forms.DataGridView();
-            this.toolStrip_GestionarTutores = new System.Windows.Forms.ToolStrip();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.C1Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +61,13 @@
             this.C3Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip_GestionarTutores = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.panelTutor.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.GBEstadoNT.SuspendLayout();
@@ -80,14 +80,15 @@
             // 
             this.panelTutor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelTutor.AutoSize = true;
+            this.panelTutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTutor.Controls.Add(this.groupBox1);
             this.panelTutor.Controls.Add(this.GBEstadoNT);
             this.panelTutor.Controls.Add(this.GBNuevoTutorNT);
             this.panelTutor.Controls.Add(this.LGestTutBXT);
             this.panelTutor.Controls.Add(this.DGVTutores);
-            this.panelTutor.Location = new System.Drawing.Point(25, 28);
+            this.panelTutor.Location = new System.Drawing.Point(12, 17);
             this.panelTutor.Name = "panelTutor";
-            this.panelTutor.Size = new System.Drawing.Size(787, 493);
+            this.panelTutor.Size = new System.Drawing.Size(740, 457);
             this.panelTutor.TabIndex = 4;
             // 
             // groupBox1
@@ -99,9 +100,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtDni);
             this.groupBox1.Controls.Add(this.txtTelf);
-            this.groupBox1.Location = new System.Drawing.Point(371, 260);
+            this.groupBox1.Location = new System.Drawing.Point(378, 238);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(390, 147);
+            this.groupBox1.Size = new System.Drawing.Size(330, 138);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de Contacto";
@@ -109,7 +110,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 97);
+            this.label3.Location = new System.Drawing.Point(26, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 13;
@@ -117,7 +118,7 @@
             // 
             // txtEstado
             // 
-            this.txtEstado.Location = new System.Drawing.Point(79, 97);
+            this.txtEstado.Location = new System.Drawing.Point(84, 89);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(100, 20);
             this.txtEstado.TabIndex = 12;
@@ -125,15 +126,16 @@
             // txtIdOcultoGT
             // 
             this.txtIdOcultoGT.Enabled = false;
-            this.txtIdOcultoGT.Location = new System.Drawing.Point(203, 28);
+            this.txtIdOcultoGT.Location = new System.Drawing.Point(226, 19);
             this.txtIdOcultoGT.Name = "txtIdOcultoGT";
             this.txtIdOcultoGT.Size = new System.Drawing.Size(63, 20);
             this.txtIdOcultoGT.TabIndex = 11;
+            this.txtIdOcultoGT.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 31);
+            this.label1.Location = new System.Drawing.Point(26, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 7;
@@ -142,7 +144,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 63);
+            this.label2.Location = new System.Drawing.Point(26, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 10;
@@ -150,14 +152,14 @@
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(79, 28);
+            this.txtDni.Location = new System.Drawing.Point(84, 37);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(117, 20);
             this.txtDni.TabIndex = 8;
             // 
             // txtTelf
             // 
-            this.txtTelf.Location = new System.Drawing.Point(79, 60);
+            this.txtTelf.Location = new System.Drawing.Point(84, 63);
             this.txtTelf.Name = "txtTelf";
             this.txtTelf.Size = new System.Drawing.Size(117, 20);
             this.txtTelf.TabIndex = 9;
@@ -168,9 +170,9 @@
             this.GBEstadoNT.Controls.Add(this.label5);
             this.GBEstadoNT.Controls.Add(this.label4);
             this.GBEstadoNT.Controls.Add(this.CBEstadoNT);
-            this.GBEstadoNT.Location = new System.Drawing.Point(371, 423);
+            this.GBEstadoNT.Location = new System.Drawing.Point(26, 382);
             this.GBEstadoNT.Name = "GBEstadoNT";
-            this.GBEstadoNT.Size = new System.Drawing.Size(390, 57);
+            this.GBEstadoNT.Size = new System.Drawing.Size(682, 57);
             this.GBEstadoNT.TabIndex = 7;
             this.GBEstadoNT.TabStop = false;
             this.GBEstadoNT.Text = "Nuevo";
@@ -178,7 +180,7 @@
             // cbxCoordinador
             // 
             this.cbxCoordinador.FormattingEnabled = true;
-            this.cbxCoordinador.Location = new System.Drawing.Point(246, 25);
+            this.cbxCoordinador.Location = new System.Drawing.Point(451, 25);
             this.cbxCoordinador.Name = "cbxCoordinador";
             this.cbxCoordinador.Size = new System.Drawing.Size(138, 21);
             this.cbxCoordinador.TabIndex = 3;
@@ -186,7 +188,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(173, 28);
+            this.label5.Location = new System.Drawing.Point(378, 28);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 2;
@@ -195,7 +197,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 28);
+            this.label4.Location = new System.Drawing.Point(18, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 1;
@@ -207,7 +209,7 @@
             this.CBEstadoNT.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.CBEstadoNT.Location = new System.Drawing.Point(58, 25);
+            this.CBEstadoNT.Location = new System.Drawing.Point(76, 25);
             this.CBEstadoNT.Name = "CBEstadoNT";
             this.CBEstadoNT.Size = new System.Drawing.Size(99, 21);
             this.CBEstadoNT.TabIndex = 0;
@@ -221,16 +223,16 @@
             this.GBNuevoTutorNT.Controls.Add(this.LApeTutNT);
             this.GBNuevoTutorNT.Controls.Add(this.LNombreTutNT);
             this.GBNuevoTutorNT.Controls.Add(this.LCodigoTutNT);
-            this.GBNuevoTutorNT.Location = new System.Drawing.Point(24, 260);
+            this.GBNuevoTutorNT.Location = new System.Drawing.Point(26, 238);
             this.GBNuevoTutorNT.Name = "GBNuevoTutorNT";
-            this.GBNuevoTutorNT.Size = new System.Drawing.Size(306, 147);
+            this.GBNuevoTutorNT.Size = new System.Drawing.Size(330, 138);
             this.GBNuevoTutorNT.TabIndex = 6;
             this.GBNuevoTutorNT.TabStop = false;
             this.GBNuevoTutorNT.Text = "Datos Principales";
             // 
             // btnBuscarNT
             // 
-            this.btnBuscarNT.Location = new System.Drawing.Point(189, 27);
+            this.btnBuscarNT.Location = new System.Drawing.Point(228, 39);
             this.btnBuscarNT.Name = "btnBuscarNT";
             this.btnBuscarNT.Size = new System.Drawing.Size(82, 20);
             this.btnBuscarNT.TabIndex = 6;
@@ -240,29 +242,29 @@
             // 
             // txtApGt
             // 
-            this.txtApGt.Location = new System.Drawing.Point(65, 101);
+            this.txtApGt.Location = new System.Drawing.Point(76, 89);
             this.txtApGt.Name = "txtApGt";
-            this.txtApGt.Size = new System.Drawing.Size(230, 20);
+            this.txtApGt.Size = new System.Drawing.Size(234, 20);
             this.txtApGt.TabIndex = 5;
             // 
             // txtNombGT
             // 
-            this.txtNombGT.Location = new System.Drawing.Point(65, 64);
+            this.txtNombGT.Location = new System.Drawing.Point(76, 63);
             this.txtNombGT.Name = "txtNombGT";
-            this.txtNombGT.Size = new System.Drawing.Size(230, 20);
+            this.txtNombGT.Size = new System.Drawing.Size(234, 20);
             this.txtNombGT.TabIndex = 4;
             // 
             // txtCodGT
             // 
-            this.txtCodGT.Location = new System.Drawing.Point(65, 27);
+            this.txtCodGT.Location = new System.Drawing.Point(76, 37);
             this.txtCodGT.Name = "txtCodGT";
-            this.txtCodGT.Size = new System.Drawing.Size(117, 20);
+            this.txtCodGT.Size = new System.Drawing.Size(106, 20);
             this.txtCodGT.TabIndex = 3;
             // 
             // LApeTutNT
             // 
             this.LApeTutNT.AutoSize = true;
-            this.LApeTutNT.Location = new System.Drawing.Point(6, 109);
+            this.LApeTutNT.Location = new System.Drawing.Point(18, 92);
             this.LApeTutNT.Name = "LApeTutNT";
             this.LApeTutNT.Size = new System.Drawing.Size(52, 13);
             this.LApeTutNT.TabIndex = 2;
@@ -271,7 +273,7 @@
             // LNombreTutNT
             // 
             this.LNombreTutNT.AutoSize = true;
-            this.LNombreTutNT.Location = new System.Drawing.Point(6, 71);
+            this.LNombreTutNT.Location = new System.Drawing.Point(18, 66);
             this.LNombreTutNT.Name = "LNombreTutNT";
             this.LNombreTutNT.Size = new System.Drawing.Size(47, 13);
             this.LNombreTutNT.TabIndex = 1;
@@ -280,7 +282,7 @@
             // LCodigoTutNT
             // 
             this.LCodigoTutNT.AutoSize = true;
-            this.LCodigoTutNT.Location = new System.Drawing.Point(6, 34);
+            this.LCodigoTutNT.Location = new System.Drawing.Point(18, 43);
             this.LCodigoTutNT.Name = "LCodigoTutNT";
             this.LCodigoTutNT.Size = new System.Drawing.Size(43, 13);
             this.LCodigoTutNT.TabIndex = 0;
@@ -290,7 +292,7 @@
             // 
             this.LGestTutBXT.AutoSize = true;
             this.LGestTutBXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LGestTutBXT.Location = new System.Drawing.Point(9, 13);
+            this.LGestTutBXT.Location = new System.Drawing.Point(29, 10);
             this.LGestTutBXT.Name = "LGestTutBXT";
             this.LGestTutBXT.Size = new System.Drawing.Size(154, 20);
             this.LGestTutBXT.TabIndex = 5;
@@ -310,77 +312,12 @@
             this.C3Tutor,
             this.Telefono,
             this.Estado});
-            this.DGVTutores.Location = new System.Drawing.Point(24, 57);
+            this.DGVTutores.Location = new System.Drawing.Point(28, 38);
             this.DGVTutores.Name = "DGVTutores";
             this.DGVTutores.ReadOnly = true;
-            this.DGVTutores.Size = new System.Drawing.Size(737, 186);
+            this.DGVTutores.Size = new System.Drawing.Size(680, 186);
             this.DGVTutores.TabIndex = 4;
             this.DGVTutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVTutores_CellClick);
-            // 
-            // toolStrip_GestionarTutores
-            // 
-            this.toolStrip_GestionarTutores.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNuevo,
-            this.btnGuardar,
-            this.btnEditar,
-            this.toolStripSeparator1,
-            this.btnCancelar,
-            this.btnEliminar});
-            this.toolStrip_GestionarTutores.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip_GestionarTutores.Name = "toolStrip_GestionarTutores";
-            this.toolStrip_GestionarTutores.Size = new System.Drawing.Size(826, 25);
-            this.toolStrip_GestionarTutores.TabIndex = 5;
-            this.toolStrip_GestionarTutores.Text = "toolStrip2";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(62, 22);
-            this.btnNuevo.Text = "&Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(69, 22);
-            this.btnGuardar.Text = "&Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(57, 22);
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(73, 22);
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 22);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // C1Tutor
             // 
@@ -439,11 +376,76 @@
             this.Estado.ReadOnly = true;
             this.Estado.Visible = false;
             // 
+            // toolStrip_GestionarTutores
+            // 
+            this.toolStrip_GestionarTutores.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnNuevo,
+            this.btnGuardar,
+            this.btnEditar,
+            this.toolStripSeparator1,
+            this.btnCancelar,
+            this.btnEliminar});
+            this.toolStrip_GestionarTutores.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip_GestionarTutores.Name = "toolStrip_GestionarTutores";
+            this.toolStrip_GestionarTutores.Size = new System.Drawing.Size(764, 25);
+            this.toolStrip_GestionarTutores.TabIndex = 5;
+            this.toolStrip_GestionarTutores.Text = "toolStrip2";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(62, 22);
+            this.btnNuevo.Text = "&Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(69, 22);
+            this.btnGuardar.Text = "&Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(57, 22);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(73, 22);
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(70, 22);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // frmGestionarTutoresTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 568);
+            this.ClientSize = new System.Drawing.Size(764, 568);
             this.Controls.Add(this.toolStrip_GestionarTutores);
             this.Controls.Add(this.panelTutor);
             this.Name = "frmGestionarTutoresTutor";

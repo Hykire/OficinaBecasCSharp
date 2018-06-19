@@ -59,8 +59,8 @@
             // btnCambiarContra
             // 
             this.btnCambiarContra.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCambiarContra.Location = new System.Drawing.Point(819, 51);
-            this.btnCambiarContra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCambiarContra.Location = new System.Drawing.Point(776, 45);
+            this.btnCambiarContra.Margin = new System.Windows.Forms.Padding(2);
             this.btnCambiarContra.Name = "btnCambiarContra";
             this.btnCambiarContra.Size = new System.Drawing.Size(123, 25);
             this.btnCambiarContra.TabIndex = 17;
@@ -73,7 +73,7 @@
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.lblNombreUsuario.Location = new System.Drawing.Point(816, 32);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(773, 26);
             this.lblNombreUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -86,7 +86,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(222)))));
-            this.label1.Location = new System.Drawing.Point(816, 11);
+            this.label1.Location = new System.Drawing.Point(773, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 17);
@@ -115,7 +115,7 @@
             this.buttonAC.IconZoom = 90D;
             this.buttonAC.IsTab = false;
             this.buttonAC.Location = new System.Drawing.Point(617, 0);
-            this.buttonAC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAC.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAC.Name = "buttonAC";
             this.buttonAC.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.buttonAC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
@@ -135,7 +135,7 @@
             this.pictureBox1.BackgroundImage = global::Vista.Properties.Resources.logoOficinaBecas3;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(45, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(103, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -164,7 +164,7 @@
             this.buttonTutor.IconZoom = 90D;
             this.buttonTutor.IsTab = false;
             this.buttonTutor.Location = new System.Drawing.Point(478, 0);
-            this.buttonTutor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTutor.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTutor.Name = "buttonTutor";
             this.buttonTutor.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(148)))), ((int)(((byte)(17)))));
             this.buttonTutor.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
@@ -200,7 +200,7 @@
             this.buttonCT.IconZoom = 90D;
             this.buttonCT.IsTab = false;
             this.buttonCT.Location = new System.Drawing.Point(339, 0);
-            this.buttonCT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCT.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCT.Name = "buttonCT";
             this.buttonCT.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.buttonCT.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
@@ -244,7 +244,7 @@
             this.buttonAdmin.IconZoom = 90D;
             this.buttonAdmin.IsTab = false;
             this.buttonAdmin.Location = new System.Drawing.Point(200, 0);
-            this.buttonAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdmin.Name = "buttonAdmin";
             this.buttonAdmin.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.buttonAdmin.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
@@ -264,7 +264,7 @@
             this.panel_Principal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Principal.Location = new System.Drawing.Point(0, 81);
             this.panel_Principal.Name = "panel_Principal";
-            this.panel_Principal.Size = new System.Drawing.Size(969, 575);
+            this.panel_Principal.Size = new System.Drawing.Size(969, 590);
             this.panel_Principal.TabIndex = 12;
             // 
             // Principal
@@ -272,11 +272,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(969, 656);
+            this.ClientSize = new System.Drawing.Size(969, 671);
             this.Controls.Add(this.panel_Principal);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

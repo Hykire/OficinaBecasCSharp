@@ -88,13 +88,14 @@
             // 
             this.panelBecariosXTutor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelBecariosXTutor.AutoSize = true;
+            this.panelBecariosXTutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBecariosXTutor.Controls.Add(this.groupBox5);
             this.panelBecariosXTutor.Controls.Add(this.groupBox4);
             this.panelBecariosXTutor.Controls.Add(this.dgvListaTutores);
             this.panelBecariosXTutor.Controls.Add(this.LGestBecXTutBXT);
-            this.panelBecariosXTutor.Location = new System.Drawing.Point(11, 2);
+            this.panelBecariosXTutor.Location = new System.Drawing.Point(12, 32);
             this.panelBecariosXTutor.Name = "panelBecariosXTutor";
-            this.panelBecariosXTutor.Size = new System.Drawing.Size(804, 561);
+            this.panelBecariosXTutor.Size = new System.Drawing.Size(740, 563);
             this.panelBecariosXTutor.TabIndex = 6;
             // 
             // groupBox5
@@ -103,9 +104,9 @@
             this.groupBox5.Controls.Add(this.DGVBXT);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.btnBXTAnadir);
-            this.groupBox5.Location = new System.Drawing.Point(23, 177);
+            this.groupBox5.Location = new System.Drawing.Point(19, 167);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(767, 229);
+            this.groupBox5.Size = new System.Drawing.Size(700, 216);
             this.groupBox5.TabIndex = 23;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Buscar por Tutor";
@@ -121,16 +122,16 @@
             this.groupBox1.Controls.Add(this.LNombTutor);
             this.groupBox1.Controls.Add(this.LCodTutor);
             this.groupBox1.Controls.Add(this.btnBXTVer);
-            this.groupBox1.Location = new System.Drawing.Point(6, 26);
+            this.groupBox1.Location = new System.Drawing.Point(20, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(299, 171);
+            this.groupBox1.Size = new System.Drawing.Size(320, 171);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tutor";
             // 
             // TxtIDOculto
             // 
-            this.TxtIDOculto.Location = new System.Drawing.Point(227, 41);
+            this.TxtIDOculto.Location = new System.Drawing.Point(254, 38);
             this.TxtIDOculto.Name = "TxtIDOculto";
             this.TxtIDOculto.Size = new System.Drawing.Size(45, 20);
             this.TxtIDOculto.TabIndex = 11;
@@ -139,7 +140,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(202, 48);
+            this.label8.Location = new System.Drawing.Point(229, 41);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(19, 13);
             this.label8.TabIndex = 10;
@@ -149,7 +150,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 99);
+            this.label4.Location = new System.Drawing.Point(17, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 9;
@@ -157,31 +158,31 @@
             // 
             // TxtApeTutor
             // 
-            this.TxtApeTutor.Location = new System.Drawing.Point(67, 96);
+            this.TxtApeTutor.Location = new System.Drawing.Point(75, 90);
             this.TxtApeTutor.Name = "TxtApeTutor";
-            this.TxtApeTutor.Size = new System.Drawing.Size(207, 20);
+            this.TxtApeTutor.Size = new System.Drawing.Size(224, 20);
             this.TxtApeTutor.TabIndex = 8;
             // 
             // TxtNombTutorBXT
             // 
             this.TxtNombTutorBXT.Enabled = false;
-            this.TxtNombTutorBXT.Location = new System.Drawing.Point(67, 69);
+            this.TxtNombTutorBXT.Location = new System.Drawing.Point(75, 64);
             this.TxtNombTutorBXT.Name = "TxtNombTutorBXT";
-            this.TxtNombTutorBXT.Size = new System.Drawing.Size(207, 20);
+            this.TxtNombTutorBXT.Size = new System.Drawing.Size(225, 20);
             this.TxtNombTutorBXT.TabIndex = 5;
             // 
             // TxtCodTutorBXT
             // 
             this.TxtCodTutorBXT.Enabled = false;
-            this.TxtCodTutorBXT.Location = new System.Drawing.Point(67, 43);
+            this.TxtCodTutorBXT.Location = new System.Drawing.Point(75, 38);
             this.TxtCodTutorBXT.Name = "TxtCodTutorBXT";
-            this.TxtCodTutorBXT.Size = new System.Drawing.Size(128, 20);
+            this.TxtCodTutorBXT.Size = new System.Drawing.Size(112, 20);
             this.TxtCodTutorBXT.TabIndex = 4;
             // 
             // LNombTutor
             // 
             this.LNombTutor.AutoSize = true;
-            this.LNombTutor.Location = new System.Drawing.Point(10, 72);
+            this.LNombTutor.Location = new System.Drawing.Point(17, 67);
             this.LNombTutor.Name = "LNombTutor";
             this.LNombTutor.Size = new System.Drawing.Size(52, 13);
             this.LNombTutor.TabIndex = 3;
@@ -190,7 +191,7 @@
             // LCodTutor
             // 
             this.LCodTutor.AutoSize = true;
-            this.LCodTutor.Location = new System.Drawing.Point(14, 44);
+            this.LCodTutor.Location = new System.Drawing.Point(17, 41);
             this.LCodTutor.Name = "LCodTutor";
             this.LCodTutor.Size = new System.Drawing.Size(43, 13);
             this.LCodTutor.TabIndex = 2;
@@ -198,7 +199,7 @@
             // 
             // btnBXTVer
             // 
-            this.btnBXTVer.Location = new System.Drawing.Point(67, 135);
+            this.btnBXTVer.Location = new System.Drawing.Point(147, 128);
             this.btnBXTVer.Name = "btnBXTVer";
             this.btnBXTVer.Size = new System.Drawing.Size(152, 23);
             this.btnBXTVer.TabIndex = 1;
@@ -216,10 +217,10 @@
             this.C2BXT,
             this.C3BXT,
             this.C4BXT});
-            this.DGVBXT.Location = new System.Drawing.Point(326, 47);
+            this.DGVBXT.Location = new System.Drawing.Point(360, 47);
             this.DGVBXT.Name = "DGVBXT";
             this.DGVBXT.ReadOnly = true;
-            this.DGVBXT.Size = new System.Drawing.Size(426, 150);
+            this.DGVBXT.Size = new System.Drawing.Size(320, 150);
             this.DGVBXT.TabIndex = 4;
             // 
             // C1BXT
@@ -254,7 +255,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(323, 26);
+            this.label5.Location = new System.Drawing.Point(359, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 15);
             this.label5.TabIndex = 15;
@@ -262,9 +263,9 @@
             // 
             // btnBXTAnadir
             // 
-            this.btnBXTAnadir.Location = new System.Drawing.Point(629, 18);
+            this.btnBXTAnadir.Location = new System.Drawing.Point(592, 19);
             this.btnBXTAnadir.Name = "btnBXTAnadir";
-            this.btnBXTAnadir.Size = new System.Drawing.Size(123, 23);
+            this.btnBXTAnadir.Size = new System.Drawing.Size(87, 23);
             this.btnBXTAnadir.TabIndex = 0;
             this.btnBXTAnadir.Text = "Añadir Becario\r\n";
             this.btnBXTAnadir.UseVisualStyleBackColor = true;
@@ -273,10 +274,11 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.groupBox2);
+            this.groupBox4.Controls.Add(this.txtIdTutorOculto);
             this.groupBox4.Controls.Add(this.groupBox3);
-            this.groupBox4.Location = new System.Drawing.Point(23, 412);
+            this.groupBox4.Location = new System.Drawing.Point(19, 389);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(767, 146);
+            this.groupBox4.Size = new System.Drawing.Size(700, 162);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Buscar por Alumno";
@@ -291,16 +293,16 @@
             this.groupBox2.Controls.Add(this.txtBAcod);
             this.groupBox2.Controls.Add(this.LBXA);
             this.groupBox2.Controls.Add(this.btnBuscarBecadoGBXT);
-            this.groupBox2.Location = new System.Drawing.Point(6, 17);
+            this.groupBox2.Location = new System.Drawing.Point(20, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(338, 125);
+            this.groupBox2.Size = new System.Drawing.Size(320, 125);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Alumno";
             // 
             // txtCAIdOcullto
             // 
-            this.txtCAIdOcullto.Location = new System.Drawing.Point(279, 26);
+            this.txtCAIdOcullto.Location = new System.Drawing.Point(256, 2);
             this.txtCAIdOcullto.Name = "txtCAIdOcullto";
             this.txtCAIdOcullto.Size = new System.Drawing.Size(41, 20);
             this.txtCAIdOcullto.TabIndex = 18;
@@ -309,7 +311,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 82);
+            this.label2.Location = new System.Drawing.Point(14, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 17;
@@ -318,7 +320,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 56);
+            this.label1.Location = new System.Drawing.Point(14, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 16;
@@ -326,29 +328,29 @@
             // 
             // txtBAApe
             // 
-            this.txtBAApe.Location = new System.Drawing.Point(67, 82);
+            this.txtBAApe.Location = new System.Drawing.Point(72, 80);
             this.txtBAApe.Name = "txtBAApe";
-            this.txtBAApe.Size = new System.Drawing.Size(253, 20);
+            this.txtBAApe.Size = new System.Drawing.Size(225, 20);
             this.txtBAApe.TabIndex = 15;
             // 
             // txtBANomb
             // 
-            this.txtBANomb.Location = new System.Drawing.Point(67, 56);
+            this.txtBANomb.Location = new System.Drawing.Point(72, 53);
             this.txtBANomb.Name = "txtBANomb";
-            this.txtBANomb.Size = new System.Drawing.Size(205, 20);
+            this.txtBANomb.Size = new System.Drawing.Size(225, 20);
             this.txtBANomb.TabIndex = 14;
             // 
             // txtBAcod
             // 
-            this.txtBAcod.Location = new System.Drawing.Point(67, 26);
+            this.txtBAcod.Location = new System.Drawing.Point(72, 26);
             this.txtBAcod.Name = "txtBAcod";
-            this.txtBAcod.Size = new System.Drawing.Size(124, 20);
+            this.txtBAcod.Size = new System.Drawing.Size(112, 20);
             this.txtBAcod.TabIndex = 11;
             // 
             // LBXA
             // 
             this.LBXA.AutoSize = true;
-            this.LBXA.Location = new System.Drawing.Point(7, 33);
+            this.LBXA.Location = new System.Drawing.Point(14, 29);
             this.LBXA.Name = "LBXA";
             this.LBXA.Size = new System.Drawing.Size(43, 13);
             this.LBXA.TabIndex = 12;
@@ -356,7 +358,7 @@
             // 
             // btnBuscarBecadoGBXT
             // 
-            this.btnBuscarBecadoGBXT.Location = new System.Drawing.Point(197, 24);
+            this.btnBuscarBecadoGBXT.Location = new System.Drawing.Point(221, 24);
             this.btnBuscarBecadoGBXT.Name = "btnBuscarBecadoGBXT";
             this.btnBuscarBecadoGBXT.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarBecadoGBXT.TabIndex = 13;
@@ -366,7 +368,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtIdTutorOculto);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.btnCambiarTutorAlumno);
             this.groupBox3.Controls.Add(this.label3);
@@ -374,9 +375,9 @@
             this.groupBox3.Controls.Add(this.txtBANombTutor);
             this.groupBox3.Controls.Add(this.txtBACodTutor);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(372, 19);
+            this.groupBox3.Location = new System.Drawing.Point(360, 21);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(389, 123);
+            this.groupBox3.Size = new System.Drawing.Size(319, 123);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tutor del Alumno";
@@ -384,7 +385,7 @@
             // txtIdTutorOculto
             // 
             this.txtIdTutorOculto.Enabled = false;
-            this.txtIdTutorOculto.Location = new System.Drawing.Point(196, 26);
+            this.txtIdTutorOculto.Location = new System.Drawing.Point(617, 9);
             this.txtIdTutorOculto.Name = "txtIdTutorOculto";
             this.txtIdTutorOculto.Size = new System.Drawing.Size(41, 20);
             this.txtIdTutorOculto.TabIndex = 20;
@@ -393,7 +394,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 83);
+            this.label6.Location = new System.Drawing.Point(17, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 13;
@@ -401,7 +402,7 @@
             // 
             // btnCambiarTutorAlumno
             // 
-            this.btnCambiarTutorAlumno.Location = new System.Drawing.Point(281, 78);
+            this.btnCambiarTutorAlumno.Location = new System.Drawing.Point(194, 25);
             this.btnCambiarTutorAlumno.Name = "btnCambiarTutorAlumno";
             this.btnCambiarTutorAlumno.Size = new System.Drawing.Size(108, 23);
             this.btnCambiarTutorAlumno.TabIndex = 16;
@@ -411,7 +412,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(6, 27);
+            this.label3.Location = new System.Drawing.Point(17, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 19);
             this.label3.TabIndex = 18;
@@ -419,30 +420,30 @@
             // 
             // txtBAApeTutor
             // 
-            this.txtBAApeTutor.Location = new System.Drawing.Point(65, 80);
+            this.txtBAApeTutor.Location = new System.Drawing.Point(75, 83);
             this.txtBAApeTutor.Name = "txtBAApeTutor";
-            this.txtBAApeTutor.Size = new System.Drawing.Size(207, 20);
+            this.txtBAApeTutor.Size = new System.Drawing.Size(225, 20);
             this.txtBAApeTutor.TabIndex = 12;
             // 
             // txtBANombTutor
             // 
             this.txtBANombTutor.Enabled = false;
-            this.txtBANombTutor.Location = new System.Drawing.Point(65, 53);
+            this.txtBANombTutor.Location = new System.Drawing.Point(75, 53);
             this.txtBANombTutor.Name = "txtBANombTutor";
-            this.txtBANombTutor.Size = new System.Drawing.Size(207, 20);
+            this.txtBANombTutor.Size = new System.Drawing.Size(225, 20);
             this.txtBANombTutor.TabIndex = 11;
             // 
             // txtBACodTutor
             // 
-            this.txtBACodTutor.Location = new System.Drawing.Point(65, 27);
+            this.txtBACodTutor.Location = new System.Drawing.Point(75, 27);
             this.txtBACodTutor.Name = "txtBACodTutor";
-            this.txtBACodTutor.Size = new System.Drawing.Size(113, 20);
+            this.txtBACodTutor.Size = new System.Drawing.Size(112, 20);
             this.txtBACodTutor.TabIndex = 19;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 56);
+            this.label7.Location = new System.Drawing.Point(17, 56);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 10;
@@ -460,10 +461,10 @@
             this.Nombres,
             this.Telefono,
             this.Apellidos});
-            this.dgvListaTutores.Location = new System.Drawing.Point(33, 49);
+            this.dgvListaTutores.Location = new System.Drawing.Point(40, 37);
             this.dgvListaTutores.Name = "dgvListaTutores";
             this.dgvListaTutores.ReadOnly = true;
-            this.dgvListaTutores.Size = new System.Drawing.Size(751, 115);
+            this.dgvListaTutores.Size = new System.Drawing.Size(662, 115);
             this.dgvListaTutores.TabIndex = 21;
             this.dgvListaTutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaTutores_CellClick);
             // 
@@ -518,7 +519,7 @@
             // 
             this.LGestBecXTutBXT.AutoSize = true;
             this.LGestBecXTutBXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LGestBecXTutBXT.Location = new System.Drawing.Point(20, 19);
+            this.LGestBecXTutBXT.Location = new System.Drawing.Point(36, 9);
             this.LGestBecXTutBXT.Name = "LGestBecXTutBXT";
             this.LGestBecXTutBXT.Size = new System.Drawing.Size(241, 20);
             this.LGestBecXTutBXT.TabIndex = 10;
@@ -528,7 +529,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 568);
+            this.ClientSize = new System.Drawing.Size(764, 599);
             this.Controls.Add(this.panelBecariosXTutor);
             this.Name = "GestionarTutores";
             this.Text = "GestionarTutores";
@@ -541,6 +542,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVBXT)).EndInit();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
