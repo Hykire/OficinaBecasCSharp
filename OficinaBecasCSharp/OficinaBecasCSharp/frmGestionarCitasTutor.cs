@@ -44,12 +44,6 @@ namespace Vista
             txtBLugarGC.Enabled = false;
             txtHora.Enabled = false;
         }
-        private void BAgregarCitaGC_Click(object sender, EventArgs e)
-        {
-            AgregarCita frmAgergar = new AgregarCita();
-            frmAgergar.ShowDialog();
-        }
-        
         private void BBuscarCitaGC_Click(object sender, EventArgs e)
         {
             txtBObsGC.Enabled = false;

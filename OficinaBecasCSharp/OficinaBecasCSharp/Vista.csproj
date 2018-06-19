@@ -80,18 +80,6 @@
     <Compile Include="AgregarBecarioATutor.Designer.cs">
       <DependentUpon>AgregarBecarioATutor.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarCita.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AgregarCita.Designer.cs">
-      <DependentUpon>AgregarCita.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AgregarFecha.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AgregarFecha.Designer.cs">
-      <DependentUpon>AgregarFecha.cs</DependentUpon>
-    </Compile>
     <Compile Include="BuscarBeca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,12 +230,6 @@
     <Compile Include="frmGestionarPersona.Designer.cs">
       <DependentUpon>frmGestionarPersona.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionarTutor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GestionarTutor.Designer.cs">
-      <DependentUpon>GestionarTutor.cs</DependentUpon>
-    </Compile>
     <Compile Include="CoordinadorComunicaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,29 +242,11 @@
     <Compile Include="DatosUsuario.Designer.cs">
       <DependentUpon>DatosUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarCita.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditarCita.Designer.cs">
-      <DependentUpon>EditarCita.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormTutor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTutor.Designer.cs">
-      <DependentUpon>FormTutor.cs</DependentUpon>
-    </Compile>
     <Compile Include="GestionarTutores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GestionarTutores.Designer.cs">
       <DependentUpon>GestionarTutores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GestionarUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GestionarUsuarios.Designer.cs">
-      <DependentUpon>GestionarUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -327,12 +291,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarBecarioATutor.resx">
       <DependentUpon>AgregarBecarioATutor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AgregarCita.resx">
-      <DependentUpon>AgregarCita.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AgregarFecha.resx">
-      <DependentUpon>AgregarFecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarBeca.resx">
       <DependentUpon>BuscarBeca.cs</DependentUpon>
@@ -409,26 +367,14 @@
     <EmbeddedResource Include="frmGestionarPersona.resx">
       <DependentUpon>frmGestionarPersona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionarTutor.resx">
-      <DependentUpon>GestionarTutor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CoordinadorComunicaciones.resx">
       <DependentUpon>CoordinadorComunicaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatosUsuario.resx">
       <DependentUpon>DatosUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarCita.resx">
-      <DependentUpon>EditarCita.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTutor.resx">
-      <DependentUpon>FormTutor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GestionarTutores.resx">
       <DependentUpon>GestionarTutores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GestionarUsuarios.resx">
-      <DependentUpon>GestionarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
