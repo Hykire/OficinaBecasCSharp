@@ -56,7 +56,6 @@
     <Compile Include="Persona.cs" />
     <Compile Include="Postulante.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solicitud.cs" />
     <Compile Include="Tutor.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
