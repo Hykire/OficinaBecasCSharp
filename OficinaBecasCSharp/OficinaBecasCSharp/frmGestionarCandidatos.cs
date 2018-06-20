@@ -161,7 +161,7 @@ namespace Vista
             EstadoInicial();
         }
 
-        private void button1_Click_1(object sender, EventArgs e) //Botón Buscar
+        private void button1_Click_1(object sender, EventArgs e) //Botón Buscar Candidato Antiguo
         {
             BuscarCandidato buscarPersona = new BuscarCandidato(convocatoria, true);
             if (buscarPersona.ShowDialog() == DialogResult.OK)
@@ -179,6 +179,8 @@ namespace Vista
                 txtNombres.Text = persona.Nombres;
                 txtTelefonoFijo.Text = persona.TelfFijo;
                 txtTelefonoMovil.Text = persona.TelfMovil;
+                dtFechaNacimiento.MaxDate = DateTime.Today.AddYears(0);
+                dtFechaNacimiento.MinDate = DateTime.Today.AddYears(-100);
                 dtFechaNacimiento.Text = persona.Fecha_nacimiento.ToString();
                 if (persona.Sexo == 'M') rbMasculino.Checked = true;
                 else if (persona.Sexo == 'F') rbFemenino.Checked = true;
@@ -269,7 +271,8 @@ namespace Vista
                 }
                 else
                 {
-                    candidato.Id_persona = Int32.Parse(txtIdCandidato.Text);
+                    candidato.IdCandidato = Int32.Parse(txtIdCandidato.Text);
+                    candidato.Id_persona = this.candidato.Id_persona;
                     candidatoBL.insertarCandidatoAntiguo(candidato, convocatoria.IdConvocatoria);
                 }
 

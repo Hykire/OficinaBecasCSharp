@@ -19,12 +19,13 @@ namespace Vista
         private AsistenteComunicaciones asistente;
         private Beca beca;
         private bool actualizar;
+        private int idUsuario;
         public frmGConvocatoriaActual(int idUsuario)
         {
             InitializeComponent();
             convocatoriaBL = new ConvocatoriaBL();
             asistenteComunicacionesBL = new AsistenteComunicacionesBL();
-            asistente = asistenteComunicacionesBL.buscarAsistente(idUsuario);
+            this.idUsuario = idUsuario;
             cbCicloConvocatoria.DataSource = agregarCiclos(DateTime.Today);
             txtIdConvocatoria.Enabled = false;
             txtNombreConvocatoria.Enabled = false;
@@ -66,6 +67,7 @@ namespace Vista
 
         public void EstadoInicial()
         {
+            asistente = asistenteComunicacionesBL.buscarAsistente(idUsuario);
             txtIdConvocatoria.Text = null;
             txtNombreConvocatoria.Text = null;
             txtDescripcionConvocatoria.Text = null;
