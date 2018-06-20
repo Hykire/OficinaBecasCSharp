@@ -13,7 +13,7 @@ namespace Vista {
     public partial class Principal : Form {
         private UsuarioBL usuarioBL;
         int id = -1;
-        public Principal(int idUsuario) {
+        public Principal(int idUsuario, int tipoUsuario) {
             InitializeComponent();
             
             usuarioBL = new UsuarioBL();
@@ -21,7 +21,7 @@ namespace Vista {
             string nombreUsuario = usuarioBL.obtenerNombreUsuario(idUsuario);
             lblNombreUsuario.Text = nombreUsuario;
 
-            int tipoUsuario = usuarioBL.obtenerTipoUsuario(idUsuario);
+            //int tipoUsuario = usuarioBL.obtenerTipoUsuario(idUsuario);
 
             if (tipoUsuario != -1) {
                 if (tipoUsuario == 2) modoTutor(); //tutor

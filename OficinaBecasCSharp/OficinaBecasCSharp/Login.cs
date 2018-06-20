@@ -39,7 +39,13 @@ namespace Vista
                 return;
             }
             if (usuarioBL.validarUsuario(txtUsuario.Text, txtContrasena.Text)) {
-                Principal ventanaPrincipal = new Principal(obtenerIdUsuario());
+                int id = obtenerIdUsuario();
+                int tipo = obtenerTipoUsuario(id);
+                if (tipo == 1 || tipo == 6) {
+                    MessageBox.Show("Usted no puede acceder al sistema.", "Permiso denegado", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                Principal ventanaPrincipal = new Principal(id, tipo);
                 this.Hide();
                 ventanaPrincipal.ShowDialog();
                 estadoInicial();
@@ -86,6 +92,10 @@ namespace Vista
 
         public int obtenerIdUsuario() {
             return usuarioBL.obtenerIdUsuario(txtUsuario.Text);
+        }
+
+        public int obtenerTipoUsuario(int idUsuario) {
+            return usuarioBL.obtenerTipoUsuario(idUsuario);
         }
     }
 }

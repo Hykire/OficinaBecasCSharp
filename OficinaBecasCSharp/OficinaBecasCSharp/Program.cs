@@ -20,8 +20,9 @@ namespace Vista
             //Application.Run(new Principal());
             Login ventanaLogin = new Login();
             int idUsuario = ventanaLogin.obtenerIdUsuario();
+            int tipoUsuario = ventanaLogin.obtenerTipoUsuario(idUsuario);
             if (ventanaLogin.ShowDialog() == DialogResult.OK) {
-                Application.Run(new Principal(idUsuario));
+                Application.Run(new Principal(idUsuario, tipoUsuario));
             }
             else {
                 Application.Exit();
