@@ -69,15 +69,15 @@
             this.panelConsultarEmails.Controls.Add(this.txtCicloSolicitado);
             this.panelConsultarEmails.Location = new System.Drawing.Point(10, 17);
             this.panelConsultarEmails.Name = "panelConsultarEmails";
-            this.panelConsultarEmails.Size = new System.Drawing.Size(740, 525);
+            this.panelConsultarEmails.Size = new System.Drawing.Size(740, 498);
             this.panelConsultarEmails.TabIndex = 14;
             // 
             // txtCorreosObtenidos
             // 
-            this.txtCorreosObtenidos.Location = new System.Drawing.Point(41, 419);
+            this.txtCorreosObtenidos.Location = new System.Drawing.Point(365, 406);
             this.txtCorreosObtenidos.Multiline = true;
             this.txtCorreosObtenidos.Name = "txtCorreosObtenidos";
-            this.txtCorreosObtenidos.Size = new System.Drawing.Size(200, 79);
+            this.txtCorreosObtenidos.Size = new System.Drawing.Size(352, 69);
             this.txtCorreosObtenidos.TabIndex = 20;
             // 
             // groupBox1
@@ -87,19 +87,19 @@
             this.groupBox1.Controls.Add(this.cbEspecialidad);
             this.groupBox1.Controls.Add(this.lblSexo);
             this.groupBox1.Controls.Add(this.lblEspecialidad);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(25, 81);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox1.Location = new System.Drawing.Point(21, 126);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(156, 187);
+            this.groupBox1.Size = new System.Drawing.Size(156, 157);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(18, 156);
+            this.btnFiltrar.Location = new System.Drawing.Point(41, 118);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(119, 23);
+            this.btnFiltrar.Size = new System.Drawing.Size(66, 23);
             this.btnFiltrar.TabIndex = 17;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -108,18 +108,18 @@
             // cbSexo
             // 
             this.cbSexo.FormattingEnabled = true;
-            this.cbSexo.Location = new System.Drawing.Point(16, 53);
+            this.cbSexo.Location = new System.Drawing.Point(16, 41);
             this.cbSexo.Name = "cbSexo";
-            this.cbSexo.Size = new System.Drawing.Size(121, 24);
+            this.cbSexo.Size = new System.Drawing.Size(121, 21);
             this.cbSexo.TabIndex = 16;
             this.cbSexo.SelectedIndexChanged += new System.EventHandler(this.cbSexo_SelectedIndexChanged);
             // 
             // cbEspecialidad
             // 
             this.cbEspecialidad.FormattingEnabled = true;
-            this.cbEspecialidad.Location = new System.Drawing.Point(16, 108);
+            this.cbEspecialidad.Location = new System.Drawing.Point(16, 81);
             this.cbEspecialidad.Name = "cbEspecialidad";
-            this.cbEspecialidad.Size = new System.Drawing.Size(121, 24);
+            this.cbEspecialidad.Size = new System.Drawing.Size(121, 21);
             this.cbEspecialidad.TabIndex = 14;
             this.cbEspecialidad.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidad_SelectedIndexChanged);
             // 
@@ -127,7 +127,7 @@
             // 
             this.lblSexo.AutoSize = true;
             this.lblSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(15, 37);
+            this.lblSexo.Location = new System.Drawing.Point(13, 25);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(31, 13);
             this.lblSexo.TabIndex = 9;
@@ -137,7 +137,7 @@
             // 
             this.lblEspecialidad.AutoSize = true;
             this.lblEspecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspecialidad.Location = new System.Drawing.Point(16, 92);
+            this.lblEspecialidad.Location = new System.Drawing.Point(15, 65);
             this.lblEspecialidad.Name = "lblEspecialidad";
             this.lblEspecialidad.Size = new System.Drawing.Size(67, 13);
             this.lblEspecialidad.TabIndex = 15;
@@ -145,9 +145,9 @@
             // 
             // btnDescargarEmails
             // 
-            this.btnDescargarEmails.Location = new System.Drawing.Point(296, 453);
+            this.btnDescargarEmails.Location = new System.Drawing.Point(229, 404);
             this.btnDescargarEmails.Name = "btnDescargarEmails";
-            this.btnDescargarEmails.Size = new System.Drawing.Size(141, 23);
+            this.btnDescargarEmails.Size = new System.Drawing.Size(101, 23);
             this.btnDescargarEmails.TabIndex = 18;
             this.btnDescargarEmails.Text = "Descargar Emails";
             this.btnDescargarEmails.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@
             // 
             this.lblEmails.AutoSize = true;
             this.lblEmails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmails.Location = new System.Drawing.Point(12, 10);
+            this.lblEmails.Location = new System.Drawing.Point(16, 16);
             this.lblEmails.Name = "lblEmails";
             this.lblEmails.Size = new System.Drawing.Size(253, 20);
             this.lblEmails.TabIndex = 17;
@@ -166,7 +166,7 @@
             // lblCiclo
             // 
             this.lblCiclo.AutoSize = true;
-            this.lblCiclo.Location = new System.Drawing.Point(194, 49);
+            this.lblCiclo.Location = new System.Drawing.Point(18, 56);
             this.lblCiclo.Name = "lblCiclo";
             this.lblCiclo.Size = new System.Drawing.Size(33, 13);
             this.lblCiclo.TabIndex = 7;
@@ -175,7 +175,7 @@
             // lblConsultarEmails
             // 
             this.lblConsultarEmails.AutoSize = true;
-            this.lblConsultarEmails.Location = new System.Drawing.Point(648, 52);
+            this.lblConsultarEmails.Location = new System.Drawing.Point(55, 76);
             this.lblConsultarEmails.Name = "lblConsultarEmails";
             this.lblConsultarEmails.Size = new System.Drawing.Size(83, 13);
             this.lblConsultarEmails.TabIndex = 6;
@@ -183,9 +183,9 @@
             // 
             // btnBuscarCorreos
             // 
-            this.btnBuscarCorreos.Location = new System.Drawing.Point(537, 42);
+            this.btnBuscarCorreos.Location = new System.Drawing.Point(57, 92);
             this.btnBuscarCorreos.Name = "btnBuscarCorreos";
-            this.btnBuscarCorreos.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarCorreos.Size = new System.Drawing.Size(78, 20);
             this.btnBuscarCorreos.TabIndex = 2;
             this.btnBuscarCorreos.Text = "Buscar";
             this.btnBuscarCorreos.UseVisualStyleBackColor = true;
@@ -206,10 +206,10 @@
             this.CodigoPUCP,
             this.Sex,
             this.nombEspecialidad});
-            this.dgvConsultarEmails.Location = new System.Drawing.Point(194, 81);
+            this.dgvConsultarEmails.Location = new System.Drawing.Point(197, 53);
             this.dgvConsultarEmails.Name = "dgvConsultarEmails";
             this.dgvConsultarEmails.ReadOnly = true;
-            this.dgvConsultarEmails.Size = new System.Drawing.Size(533, 332);
+            this.dgvConsultarEmails.Size = new System.Drawing.Size(520, 332);
             this.dgvConsultarEmails.TabIndex = 3;
             // 
             // nombreConsultarEmails
@@ -256,9 +256,9 @@
             // 
             // txtCicloSolicitado
             // 
-            this.txtCicloSolicitado.Location = new System.Drawing.Point(246, 45);
+            this.txtCicloSolicitado.Location = new System.Drawing.Point(57, 53);
             this.txtCicloSolicitado.Name = "txtCicloSolicitado";
-            this.txtCicloSolicitado.Size = new System.Drawing.Size(251, 20);
+            this.txtCicloSolicitado.Size = new System.Drawing.Size(78, 20);
             this.txtCicloSolicitado.TabIndex = 1;
             // 
             // frmConsultarCorreos

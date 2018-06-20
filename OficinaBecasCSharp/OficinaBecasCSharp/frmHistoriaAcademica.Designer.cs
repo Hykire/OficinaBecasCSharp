@@ -161,6 +161,7 @@
             this.label11.Size = new System.Drawing.Size(112, 13);
             this.label11.TabIndex = 87;
             this.label11.Text = "id Historia Academica:";
+            this.label11.Visible = false;
             // 
             // tbox_id_historia_academica
             // 
@@ -168,6 +169,7 @@
             this.tbox_id_historia_academica.Name = "tbox_id_historia_academica";
             this.tbox_id_historia_academica.Size = new System.Drawing.Size(100, 20);
             this.tbox_id_historia_academica.TabIndex = 86;
+            this.tbox_id_historia_academica.Visible = false;
             // 
             // cbox_ciclo_nuevo2
             // 

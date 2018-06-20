@@ -134,11 +134,13 @@ namespace Vista
                 {
                     flag_elementoNuevo = 0;
                     logicanegocioPersona.registrar_persona(p, u);
+                    MessageBox.Show("Se ha registrado una nueva persona con éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (flag_elementoEditar == 1)
                 {
                     flag_elementoEditar = 0;
                     logicanegocioPersona.editar_persona(p, u);
+                    MessageBox.Show("Se ha actualizado con éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -243,7 +245,7 @@ namespace Vista
             if (tbox_codigo.Text == "") { validaciones.Add(1); }
             else if (tbox_codigo.Text.Length != 8) { validaciones.Add(2); }
             else if (int.TryParse(tbox_codigo.Text, out int result) == false) { validaciones.Add(3); }
-            else if (logicanegocioPersona.existe_codigo(int.Parse(tbox_codigo.Text))==true) { validaciones.Add(16); }
+            else if (flag_elementoEditar==0 && logicanegocioPersona.existe_codigo(int.Parse(tbox_codigo.Text))==true) { validaciones.Add(16); }
 
             //validacion de nombres
                 if (tbox_nombres.Text == "") { validaciones.Add(4); }
@@ -278,16 +280,16 @@ namespace Vista
 
             foreach (int i in validaciones)
             {
-                if (i == 1) { MessageBox.Show("Debe ingresar un codigo.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 2) { MessageBox.Show("El codigo ingresado no es de 8 dígitos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
-                if (i == 3) { MessageBox.Show("El codigo ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 1) { MessageBox.Show("Debe ingresar un código.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 2) { MessageBox.Show("El código ingresado no es de 8 dígitos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 3) { MessageBox.Show("El código ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
 
                 if (i == 4) { MessageBox.Show("Debe ingresar por lo menos un nombre.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 5) { MessageBox.Show("Los nombres ingresados cuentan con caracteres numéricos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 if (i == 6) { MessageBox.Show("Debe ingresar por lo menos un apellido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 7) { MessageBox.Show("Los apellidos ingresados cuentan con caracteres numéricos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
 
-                if (i == 8) { MessageBox.Show("Debe seleccionar un genero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 8) { MessageBox.Show("Debe seleccionar un género.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 if (i == 9) { MessageBox.Show("Debe ingresar un dni.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 10) { MessageBox.Show("El dni ingresado no es de 8 dígitos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 if (i == 11) { MessageBox.Show("El dni ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
@@ -297,7 +299,7 @@ namespace Vista
                 if (i == 13) { MessageBox.Show("Debe ingresar el correo pucp.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 14) { MessageBox.Show("El correo pucp ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 if (i == 15) { MessageBox.Show("El correo alternativo ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
-                if (i == 16) { MessageBox.Show("El codigo ingresado ya existe en la base de datos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 16) { MessageBox.Show("El código ingresado ya existe en la base de datos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 if (i == 17) { MessageBox.Show("Debe seleccionar un estado.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 if (i == 18) { MessageBox.Show("Debe ingresar un usuario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 if (i == 19) { MessageBox.Show("El usuario ingresado ya existe.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }

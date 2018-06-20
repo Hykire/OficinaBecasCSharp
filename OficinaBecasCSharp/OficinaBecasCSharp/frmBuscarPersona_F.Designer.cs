@@ -58,6 +58,7 @@
             // 
             // dvg_persona
             // 
+            this.dvg_persona.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvg_persona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvg_persona.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CODIGO_PUCP,

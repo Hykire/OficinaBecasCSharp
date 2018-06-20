@@ -202,14 +202,14 @@ namespace Vista
                 {
                     flag_elementoNuevo = 0;
                     id_becado_ParaHistoriaAcademica = logicaNegoAlumno.registrarAlumno(a);
-                    MessageBox.Show("Se ha registrado un nuevo alumno con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se ha registrado un nuevo alumno con éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btn_historiaacademica.Enabled = true;
                 }
                 else if (flag_elementoEditar == 1)
                 {
                     flag_elementoEditar = 0;
                     logicaNegoAlumno.actualizarAlumno(a);
-                    MessageBox.Show("Se ha actualizado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se ha actualizado con éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 btnGuardar.Enabled = false;
             }
@@ -330,7 +330,7 @@ namespace Vista
             if (tbox_codigo.Text == "") { validaciones.Add(1); }
             else if (tbox_codigo.Text.Length != 8) { validaciones.Add(2); }
             else if (int.TryParse(tbox_codigo.Text, out int result) == false) { validaciones.Add(3); }
-            else if (logicanegocioPersona.existe_codigo(int.Parse(tbox_codigo.Text)) == true) { validaciones.Add(20); }
+            else if (flag_elementoEditar==0 && logicanegocioPersona.existe_codigo(int.Parse(tbox_codigo.Text)) == true) { validaciones.Add(20); }
 
             //validacion de nombres
             if (tbox_nombres.Text == "") { validaciones.Add(4); }
@@ -363,16 +363,16 @@ namespace Vista
 
             foreach (int i in validaciones)
             {
-                if (i == 1) { MessageBox.Show("Debe ingresar un codigo.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 2) { MessageBox.Show("El codigo ingresado no es de 8 dígitos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
-                if (i == 3) { MessageBox.Show("El codigo ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 1) { MessageBox.Show("Debe ingresar un código.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 2) { MessageBox.Show("El código ingresado no es de 8 dígitos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 3) { MessageBox.Show("El código ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
 
                 if (i == 4) { MessageBox.Show("Debe ingresar por lo menos un nombre.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 5) { MessageBox.Show("Los nombres ingresados cuentan con caracteres numéricos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 if (i == 6) { MessageBox.Show("Debe ingresar por lo menos un apellido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 7) { MessageBox.Show("Los apellidos ingresados cuentan con caracteres numéricos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
 
-                if (i == 8) { MessageBox.Show("Debe seleccionar un genero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
+                if (i == 8) { MessageBox.Show("Debe seleccionar un género.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 if (i == 9) { MessageBox.Show("Debe ingresar un dni.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 10) { MessageBox.Show("El dni ingresado no es de 8 dígitos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
                 if (i == 11) { MessageBox.Show("El dni ingresado es incorrecto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
@@ -387,8 +387,7 @@ namespace Vista
                 if (i == 17) { MessageBox.Show("Debe ingresar un semestre ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 18) { MessageBox.Show("Debe ingresar una especialidad de ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 19) { MessageBox.Show("Debe ingresar un tipo de grupo de ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 20) { MessageBox.Show("Debe ingresar un tipo de grupo de ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 20) { MessageBox.Show("Debe ingresar un tipo de grupo de ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 20) { MessageBox.Show("El código ingresado ya existe en la base de datos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 flag = true;
             }
             return true;

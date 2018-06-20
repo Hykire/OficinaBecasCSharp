@@ -195,13 +195,13 @@ namespace Vista
                 {
                     flag_elementoNuevo = 0;
                     logicaNegoHistoria.registrarHistoriaAcademica(h);
-                    MessageBox.Show("Se ha registrado un nuevo alumno con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se ha registrado un nuevo alumno con éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (flag_elementoEditar == 1)
                 {
                     flag_elementoEditar = 0;
                     logicaNegoHistoria.actualizarHistoriaAcademica(h);
-                    MessageBox.Show("Se ha actualizado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se ha actualizado con éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 //se listará los ciclos nuevamente con la informacion actualizada
@@ -360,21 +360,21 @@ namespace Vista
 
             foreach (int i in validacion)
             {
-                if (i == 1) { MessageBox.Show("Debe ingresar un ciclo valido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 2) { MessageBox.Show("Debe ingresar un último ciclo valido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 1) { MessageBox.Show("Debe ingresar un ciclo válido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 2) { MessageBox.Show("Debe ingresar un último ciclo válido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 3) { MessageBox.Show("Debe ingresar un número de craest válido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 4) { MessageBox.Show("Debe ingresar un orden de merito válido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 5) { MessageBox.Show("Debe ingresar un numero de ciclos válido. Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 6) { MessageBox.Show("Debe ingresar una etapa.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 7) { MessageBox.Show("Debe ingresar un número de creditos restantes válido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 8)  { MessageBox.Show("Debe ingresar un numero válido en Nro de Cursos Matriculados sin Retirados. Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 9)  { MessageBox.Show("Debe ingresar un numero válido en Nro de Cursos Retirados. Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 10) { MessageBox.Show("Debe ingresar un numero válido en Nro de Créditos Matriculados sin Retirados.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 11) { MessageBox.Show("Debe ingresar un número válido en Nro de Créditos Matriculados Retirados.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 12) { MessageBox.Show("Debe ingresar un número válido en Nro de Créditos llevados por 1era vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 13) { MessageBox.Show("Debe ingresar un número válido en Nro de Créditos llevados por 2da vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 14) { MessageBox.Show("Debe ingresar un número válido en Nro de Créditos llevados por 3era vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 15) { MessageBox.Show("Debe ingresar un número válido en Nro de Créditos llevados por 4ta vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 7) { MessageBox.Show("Debe ingresar un número de créditos restantes válido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 8)  { MessageBox.Show("Debe ingresar un numero válido en Nro. de Cursos Matriculados sin Retirados. Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 9)  { MessageBox.Show("Debe ingresar un numero válido en Nro. de Cursos Retirados. Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 10) { MessageBox.Show("Debe ingresar un numero válido en Nro. de Créditos Matriculados sin Retirados.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 11) { MessageBox.Show("Debe ingresar un número válido en Nro. de Créditos Matriculados Retirados.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 12) { MessageBox.Show("Debe ingresar un número válido en Nro. de Créditos llevados por 1era vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 13) { MessageBox.Show("Debe ingresar un número válido en Nro. de Créditos llevados por 2da vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 14) { MessageBox.Show("Debe ingresar un número válido en Nro. de Créditos llevados por 3era vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 15) { MessageBox.Show("Debe ingresar un número válido en Nro. de Créditos llevados por 4ta vez.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 16) { MessageBox.Show("Debe ingresar un número válido en Créditos Aprobados Historicos Normal.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 17) { MessageBox.Show("Debe ingresar un número válido en Total de Créditos Aprobados Convalidados.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 18) { MessageBox.Show("Debe ingresar un número válido en Créditos Desaprobados Histórico.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }

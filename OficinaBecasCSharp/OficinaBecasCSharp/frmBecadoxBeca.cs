@@ -284,13 +284,13 @@ namespace Vista
                 {
                     flag_elementoNuevo = 0;
                     logicaNegoBB.RegistrarBecaxAlumno(axb);
-                    MessageBox.Show("Se ha registrado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se ha registrado con éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (flag_elementoEditar == 1)
                 {
                     flag_elementoEditar = 0;
                     logicaNegoBB.ActualizarBecaxAlumno(axb);
-                    MessageBox.Show("Se ha registrado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se ha registrado con éxito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -513,7 +513,7 @@ namespace Vista
 
             foreach (int i in validacion)
             {
-                if (i == 1) { MessageBox.Show("Debe ingresar un ciclo valido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 1) { MessageBox.Show("Debe ingresar un ciclo válido.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 2) { MessageBox.Show("Debe ingresar un tipo de escala.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 3) { MessageBox.Show("Debe ingresar un número de escala.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 4) { MessageBox.Show("Debe ingresar un nivel de créditos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
@@ -523,8 +523,8 @@ namespace Vista
                 if (i == 8) { MessageBox.Show("Debe ingresar un número válido en Nro. de Semestre Regular con Cobertura.  Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 9) { MessageBox.Show("Debe ingresar un número válido en Nro. de Semestre de Verano con Cobertura.  Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
                 if (i == 10) { MessageBox.Show("Debe ingresar un número válido en Nro. de Semestres Regulares Restantes con Cobertura.  Recuerde, el número debe ser entero.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 11) { MessageBox.Show("Debe ingresar un rango de fechas de periodo de intercambio validads.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
-                if (i == 12) { MessageBox.Show("Debe ingresar un rango de fechas de periodo de sansión validads.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 11) { MessageBox.Show("Debe ingresar un rango de fechas de periodo de intercambio válidas.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
+                if (i == 12) { MessageBox.Show("Debe ingresar un rango de fechas de periodo de sansión válidas.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return false; }
             }
             return true;
         }
