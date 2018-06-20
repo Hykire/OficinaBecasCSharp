@@ -248,7 +248,7 @@ namespace Vista
             else if (flag_elementoEditar==0 && logicanegocioPersona.existe_codigo(int.Parse(tbox_codigo.Text))==true) { validaciones.Add(16); }
 
             //validacion de nombres
-                if (tbox_nombres.Text == "") { validaciones.Add(4); }
+            if (tbox_nombres.Text == "") { validaciones.Add(4); }
             else if (tbox_nombres.Text.Any(char.IsDigit) == true) { validaciones.Add(5); }
             if (tbox_apellidos.Text == "") { validaciones.Add(6); }
             else if (tbox_apellidos.Text.Any(char.IsDigit) == true) { validaciones.Add(7); }
@@ -274,7 +274,7 @@ namespace Vista
             //validar el estado
             if (cbox_estado.Text == "") { validaciones.Add(17); }
             if (tbox_user.Text == "") { validaciones.Add(18); }
-            else if (logicanegocioPersona.existe_usuario(tbox_user.Text) == true) { validaciones.Add(19); }
+            else if (flag_elementoEditar == 0 && logicanegocioPersona.existe_usuario(tbox_user.Text) == true) { validaciones.Add(19); }
             if (tbox_password.Text == "") { validaciones.Add(20); }
             if (cbox_tipo.Text == "") { validaciones.Add(21); }
 
