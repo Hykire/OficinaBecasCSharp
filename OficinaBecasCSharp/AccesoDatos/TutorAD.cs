@@ -248,6 +248,7 @@ namespace AccesoDatos
                 per.Dni = reader.GetInt32("DNI");
                 per.CorreoPUCP = reader.GetString("CORREO_PUCP");
                 per.Estado = reader.GetString("ESTADO");
+                per.IdCoord = reader.GetInt32("ID_COORDINADOR_TUTORIA");  //###############################
                 lista.Add(per);
             }
             con.Close();

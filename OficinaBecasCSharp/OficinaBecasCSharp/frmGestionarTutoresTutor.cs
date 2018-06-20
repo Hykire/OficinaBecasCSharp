@@ -42,6 +42,9 @@ namespace Vista
             //btnEditar.Enabled = false;
             btnCancelar.Enabled = false;
             btnGuardar.Enabled = false;
+            cbxCoordinador.Enabled = false;
+            txtCoordinador.Enabled = false;
+            CBEstadoNT.SelectedItem = "ACTIVO";  //#############################3
 
             BindingList<CoordinadorTutoria> lstTutores = new BindingList<CoordinadorTutoria>();
             lstTutores = logicaNegocioCoordTutoria.traerCoordinadores();
@@ -65,10 +68,11 @@ namespace Vista
             if (DGVTutores.SelectedRows.Count == 1)
             {
                 cbxCoordinador.Enabled = true;
-                CBEstadoNT.Enabled = true;
+                CBEstadoNT.Enabled = false;
                 btnCancelar.Enabled = true;
                 btnNuevo.Enabled = false;
                 btnGuardar.Enabled = true;
+                cbxCoordinador.Enabled = true;
             }
             else
             {
@@ -87,6 +91,16 @@ namespace Vista
             txtIdOcultoGT.Text = TutorSelecc.IdTutor.ToString();
             txtDni.Text = TutorSelecc.Dni.ToString();
             txtTelf.Text = TutorSelecc.TelfMovil.ToString();
+            int idC = TutorSelecc.IdCoord;
+            if(idC == 1)
+            {
+                txtCoordinador.Text = "ALBUS";
+            }
+            else
+            {
+                txtCoordinador.Text = "DOLORES";
+            }
+             
             string est = TutorSelecc.Estado;
             if (est == "ACTIVO")
             {
@@ -110,7 +124,7 @@ namespace Vista
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             btnBuscarNT.Enabled = true;
-            CBEstadoNT.Enabled = true;
+            CBEstadoNT.Enabled = false;
             btnEditar.Enabled = true;
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
@@ -139,6 +153,7 @@ namespace Vista
             btnCancelar.Enabled = false;
             btnEditar.Enabled = true;
             btnNuevo.Enabled = true;
+            cbxCoordinador.Enabled = false;
             btnGuardar.Enabled = false;
 
             txtIdPersonaOculto.Text = "";

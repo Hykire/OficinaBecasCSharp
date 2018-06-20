@@ -54,13 +54,6 @@
             this.LCodigoTutNT = new System.Windows.Forms.Label();
             this.LGestTutBXT = new System.Windows.Forms.Label();
             this.DGVTutores = new System.Windows.Forms.DataGridView();
-            this.toolStrip_GestionarTutores = new System.Windows.Forms.ToolStrip();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.C1Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +62,15 @@
             this.C3Tutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip_GestionarTutores = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtCoordinador = new System.Windows.Forms.TextBox();
             this.panelTutor.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.GBEstadoNT.SuspendLayout();
@@ -94,6 +96,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCoordinador);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtIdPersonaOculto);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtEstado);
@@ -130,7 +134,7 @@
             // 
             this.txtEstado.Location = new System.Drawing.Point(84, 89);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(100, 20);
+            this.txtEstado.Size = new System.Drawing.Size(117, 20);
             this.txtEstado.TabIndex = 12;
             // 
             // txtIdOcultoGT
@@ -216,8 +220,8 @@
             // 
             this.CBEstadoNT.FormattingEnabled = true;
             this.CBEstadoNT.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
+            "ACTIVO",
+            "INACTIVO"});
             this.CBEstadoNT.Location = new System.Drawing.Point(76, 25);
             this.CBEstadoNT.Name = "CBEstadoNT";
             this.CBEstadoNT.Size = new System.Drawing.Size(99, 21);
@@ -328,6 +332,63 @@
             this.DGVTutores.TabIndex = 4;
             this.DGVTutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVTutores_CellClick);
             // 
+            // C1Tutor
+            // 
+            this.C1Tutor.DataPropertyName = "CodigoPUCP";
+            this.C1Tutor.HeaderText = "Codigo";
+            this.C1Tutor.Name = "C1Tutor";
+            this.C1Tutor.ReadOnly = true;
+            // 
+            // IdTutor
+            // 
+            this.IdTutor.DataPropertyName = "IdTutor";
+            this.IdTutor.HeaderText = "IdTutor";
+            this.IdTutor.Name = "IdTutor";
+            this.IdTutor.ReadOnly = true;
+            // 
+            // DNI
+            // 
+            this.DNI.DataPropertyName = "DNI";
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "CorreoPUCP";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // C2Tutor
+            // 
+            this.C2Tutor.DataPropertyName = "Nombres";
+            this.C2Tutor.HeaderText = "Nombre";
+            this.C2Tutor.Name = "C2Tutor";
+            this.C2Tutor.ReadOnly = true;
+            // 
+            // C3Tutor
+            // 
+            this.C3Tutor.DataPropertyName = "Apellidos";
+            this.C3Tutor.HeaderText = "Apellidos";
+            this.C3Tutor.Name = "C3Tutor";
+            this.C3Tutor.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "TelfMovil";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado1";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
+            // 
             // toolStrip_GestionarTutores
             // 
             this.toolStrip_GestionarTutores.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -393,62 +454,21 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // C1Tutor
+            // label6
             // 
-            this.C1Tutor.DataPropertyName = "CodigoPUCP";
-            this.C1Tutor.HeaderText = "Codigo";
-            this.C1Tutor.Name = "C1Tutor";
-            this.C1Tutor.ReadOnly = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 119);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Coordinador:";
             // 
-            // IdTutor
+            // txtCoordinador
             // 
-            this.IdTutor.DataPropertyName = "IdTutor";
-            this.IdTutor.HeaderText = "IdTutor";
-            this.IdTutor.Name = "IdTutor";
-            this.IdTutor.ReadOnly = true;
-            // 
-            // DNI
-            // 
-            this.DNI.DataPropertyName = "DNI";
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            // 
-            // Correo
-            // 
-            this.Correo.DataPropertyName = "CorreoPUCP";
-            this.Correo.HeaderText = "Correo";
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            // 
-            // C2Tutor
-            // 
-            this.C2Tutor.DataPropertyName = "Nombres";
-            this.C2Tutor.HeaderText = "Nombre";
-            this.C2Tutor.Name = "C2Tutor";
-            this.C2Tutor.ReadOnly = true;
-            // 
-            // C3Tutor
-            // 
-            this.C3Tutor.DataPropertyName = "Apellidos";
-            this.C3Tutor.HeaderText = "Apellidos";
-            this.C3Tutor.Name = "C3Tutor";
-            this.C3Tutor.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "TelfMovil";
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado1";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Visible = false;
+            this.txtCoordinador.Location = new System.Drawing.Point(101, 116);
+            this.txtCoordinador.Name = "txtCoordinador";
+            this.txtCoordinador.Size = new System.Drawing.Size(100, 20);
+            this.txtCoordinador.TabIndex = 16;
             // 
             // frmGestionarTutoresTutor
             // 
@@ -518,5 +538,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn C3Tutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.TextBox txtCoordinador;
+        private System.Windows.Forms.Label label6;
     }
 }
