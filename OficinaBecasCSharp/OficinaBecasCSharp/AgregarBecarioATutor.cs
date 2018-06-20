@@ -94,7 +94,14 @@ namespace Vista
                 int idbec = Convert.ToInt32(TxtIdOcultoB.Text);
                 string ciclo = cbxCiclo.SelectedItem.ToString();
                 //MessageBox.Show(idbec.ToString());
-                logicaNegocioPer.enlazarBecario(persona, idbec, ciclo);
+                if(logicaNegocioPer.enlazarBecario(persona, idbec, ciclo))
+                {
+                    MessageBox.Show("La operación se realizó con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo realizar la operación", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 this.Dispose();
             }
         }

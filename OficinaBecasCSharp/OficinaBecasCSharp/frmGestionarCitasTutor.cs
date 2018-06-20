@@ -43,6 +43,7 @@ namespace Vista
             txtIdCitaOculto.Enabled = false;
             txtBLugarGC.Enabled = false;
             txtHora.Enabled = false;
+            btnGuardar.Enabled = false;
         }
         private void BBuscarCitaGC_Click(object sender, EventArgs e)
         {
@@ -57,7 +58,13 @@ namespace Vista
         {
             if (DGVCitas.SelectedRows.Count == 1)
             {
-                MessageBox.Show("¿Desea eliminar la cita seleccionada?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (MessageBox.Show("¿Desea eliminar la cita seleccionada?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                {
+                    int idCita = Convert.ToInt32(txtIdCitaOculto.Text);
+                    logicaNegocioCita.eliminarCita(idCita);
+                    DGVCitas.DataSource = logicaNegocioCita.buscarcita(DateTime.Parse(DTPSelDiaGC.Text));
+                }
+                
             }
             else
             {
@@ -89,7 +96,8 @@ namespace Vista
             btnBuscarBecario.Enabled = true;
             txtBLugarGC.Enabled = true;
             txtHora.Enabled = true;
-            
+            btnEditar.Enabled = false;
+            btnGuardar.Enabled = true;
         }
 
         private void btnBuscarBecario_Click(object sender, EventArgs e)
@@ -151,7 +159,8 @@ namespace Vista
             txtIdCitaOculto.Enabled = false;
             txtBLugarGC.Enabled = false;
             txtHora.Enabled = false;
-
+            btnEditar.Enabled = true;
+            btnGuardar.Enabled = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -179,7 +188,7 @@ namespace Vista
             }
 
             if (logicaNegocioCita.agregarCita(cita, idBec, idTut))
-                MessageBox.Show("la operación se realizó con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("La operación se realizó con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("No se pudo realizar la operación", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -239,6 +248,7 @@ namespace Vista
                 txtBLugarGC.Enabled = true;
                 txtHora.Enabled = true;
                 txtBObsGC.Enabled = true;
+                btnGuardar.Enabled = true;
             }
             else
             {

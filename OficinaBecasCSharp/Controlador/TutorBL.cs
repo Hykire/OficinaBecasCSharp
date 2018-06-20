@@ -26,9 +26,9 @@ namespace Controlador
         {
             return accesoDatosTutor.traerTutores();
         }
-        public void eliminarTutor(int idPer)
+        public void eliminarTutor(int idPer, int idTablaPersona)
         {
-            accesoDatosTutor.eliminarTutor(idPer);
+            accesoDatosTutor.eliminarTutor(idPer, idTablaPersona);
         }
         public BindingList<Tutor> traerTutoresCod(string codTut)
         {
@@ -39,6 +39,10 @@ namespace Controlador
         }
         public BindingList<Tutor> listarTutores() {
             return accesoDatosTutor.listarTutores();
+        }
+        public BindingList<Tutor> listarTutores1()
+        {
+            return accesoDatosTutor.listarTutores1();
         }
         public Tutor buscarTutor(String cod)
         {

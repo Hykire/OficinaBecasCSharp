@@ -20,6 +20,10 @@ namespace Controlador
         {
             return accesoDatosCita.agregarCita(cita, idBec, idTut);
         }
+        public void eliminarCita(int idCita)
+        {
+            accesoDatosCita.eliminarCita(idCita);
+        }
         public BindingList<Cita> buscarcita(DateTime fecha)
         {
             return accesoDatosCita.buscarcita(fecha);

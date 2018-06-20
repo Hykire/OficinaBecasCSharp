@@ -44,7 +44,7 @@ namespace AccesoDatos
         }
 
         //Hecho por Yoluana
-        public void enlazarBecario(Tutor pe,int idbec,string ciclo)
+        public bool enlazarBecario(Tutor pe,int idbec,string ciclo)
         {
            // BindingList<Persona> lista = new BindingList<Persona>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
@@ -52,22 +52,32 @@ namespace AccesoDatos
                 "port=3306;password=Nk2ewy;SslMode=none;" +
                 "";
             MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            MySqlCommand comando = new MySqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "Y_ENLAZAR_BECARIO_TUTOR";
-            //SET ID_TUTOR = idTut WHERE ID_BECADO = idBecario
-            comando.Connection = con;
-            comando.Parameters.AddWithValue("idBecario", idbec);
-            comando.Parameters.AddWithValue("idTut", pe.IdTutor);
-            comando.Parameters.AddWithValue("ciclo", ciclo);
-            //eroooooor en c#
-            comando.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                con.Open();
+                MySqlCommand comando = new MySqlCommand();
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "Y_ENLAZAR_BECARIO_TUTOR";
+                //SET ID_TUTOR = idTut WHERE ID_BECADO = idBecario
+                comando.Connection = con;
+                comando.Parameters.AddWithValue("idBecario", idbec);
+                comando.Parameters.AddWithValue("idTut", pe.IdTutor);
+                comando.Parameters.AddWithValue("ciclo", ciclo);
+                
+                comando.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                con.Clone();
+                return false;
+            }
+            
         }
 
         //Hecho por Yoluana
-        public void enlazarBecario2(Becado pe,string idAlum)
+        public bool enlazarBecario2(Becado pe,string idAlum)
         {
             //BindingList<Persona> lista = new BindingList<Persona>();
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
@@ -75,17 +85,28 @@ namespace AccesoDatos
                 "port=3306;password=Nk2ewy;SslMode=none;" +
                 "";
             MySqlConnection con = new MySqlConnection(cadena);
-            con.Open();
-            MySqlCommand comando = new MySqlCommand();
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.CommandText = "Y_ENLAZAR_BECARIO_TUTOR2";
-            //SET ID_TUTOR = idTut WHERE ID_BECADO = idBecario
-            comando.Connection = con;
-            comando.Parameters.AddWithValue("idBecario", idAlum);
-            comando.Parameters.AddWithValue("idTut", pe.Id_tutor);
+
+            try
+            {
+                con.Open();
+                MySqlCommand comando = new MySqlCommand();
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "Y_ENLAZAR_BECARIO_TUTOR2";
+                //SET ID_TUTOR = idTut WHERE ID_BECADO = idBecario
+                comando.Connection = con;
+                comando.Parameters.AddWithValue("idBecario", idAlum);
+                comando.Parameters.AddWithValue("idTut", pe.Id_tutor);
+
+                comando.ExecuteNonQuery();
+                con.Close(); //update desde workb sii
+                return true;
+            }
+            catch (Exception e)
+            {
+                con.Close();
+                return false;
+            }
             
-            comando.ExecuteNonQuery();
-            con.Close(); //update desde workb sii
         }
 
         //Hecho por Yoluana
@@ -100,8 +121,8 @@ namespace AccesoDatos
             con.Open();
             MySqlCommand comando = new MySqlCommand();
             if (cod.Length == 0)
-            {
-                comando.CommandText = "SELECT * FROM PERSONA";
+            {//BUSCAR PERSONAS CUYO ID_TIPOUSUARIO SEA 2 (TUTOR)
+                comando.CommandText = "SELECT * FROM PERSONA INNER JOIN USUARIO WHERE PERSONA.ID_USUARIO = USUARIO.ID_USUARIO AND USUARIO.ID_TIPOUSUARIO = 2;";
                 comando.Connection = con;
 
             }

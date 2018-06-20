@@ -41,6 +41,7 @@ namespace Vista
             cbxCoordinador.Enabled = false;
             //btnEditar.Enabled = false;
             btnCancelar.Enabled = false;
+            btnGuardar.Enabled = false;
 
             BindingList<CoordinadorTutoria> lstTutores = new BindingList<CoordinadorTutoria>();
             lstTutores = logicaNegocioCoordTutoria.traerCoordinadores();
@@ -67,6 +68,7 @@ namespace Vista
                 CBEstadoNT.Enabled = true;
                 btnCancelar.Enabled = true;
                 btnNuevo.Enabled = false;
+                btnGuardar.Enabled = true;
             }
             else
             {
@@ -81,6 +83,7 @@ namespace Vista
             txtCodGT.Text = TutorSelecc.CodigoPUCP.ToString();
             txtNombGT.Text = TutorSelecc.Nombres.ToString();
             txtApGt.Text = TutorSelecc.Apellidos.ToString();
+            txtIdPersonaOculto.Text = TutorSelecc.Id_persona.ToString();
             txtIdOcultoGT.Text = TutorSelecc.IdTutor.ToString();
             txtDni.Text = TutorSelecc.Dni.ToString();
             txtTelf.Text = TutorSelecc.TelfMovil.ToString();
@@ -109,9 +112,16 @@ namespace Vista
             btnBuscarNT.Enabled = true;
             CBEstadoNT.Enabled = true;
             btnEditar.Enabled = true;
+            btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
             cbxCoordinador.Enabled = true;
-            
+            txtIdOcultoGT.Text = "";
+            txtCodGT.Text = "";
+            txtNombGT.Text = "";
+            txtApGt.Text = "";
+            txtDni.Text = "";
+            txtTelf.Text = "";
+            txtEstado.Text = "";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -129,7 +139,9 @@ namespace Vista
             btnCancelar.Enabled = false;
             btnEditar.Enabled = true;
             btnNuevo.Enabled = true;
+            btnGuardar.Enabled = false;
 
+            txtIdPersonaOculto.Text = "";
             txtIdOcultoGT.Text = "";
             txtCodGT.Text = "";
             txtNombGT.Text = "";
@@ -153,7 +165,7 @@ namespace Vista
                 txtApGt.Text = p.Apellidos;
                 txtDni.Text = p.Dni.ToString();
                 txtTelf.Text = p.TelfMovil.ToString();
-                txtEstado.Text = "Sin Estado";
+                txtEstado.Text = p.Estado;
 
             }
         }
@@ -176,7 +188,7 @@ namespace Vista
             per1 = (CoordinadorTutoria)cbxCoordinador.SelectedItem;
             string idcoord = per1.Id_coordinador.ToString(); //aqui esta el id del coordinador
             logicaNegocioTutor.insertarNuevoTutor(idPer, idcoord, est);
-            DGVTutores.Refresh();
+            DGVTutores.DataSource = logicaNegocioTutor.listarTutores();
             //DGVTutores.Update();
         }
 
@@ -187,9 +199,10 @@ namespace Vista
                 if (MessageBox.Show("¿Desea eliminar el tutor seleccionado?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
                 {
                     //MessageBox.Show("holi");
-                    int idPersona = Convert.ToInt32(txtIdOcultoGT.Text);
-                    logicaNegocioTutor.eliminarTutor(idPersona);
-                    DGVTutores.Refresh();
+                    int idPersona = Convert.ToInt32(txtIdOcultoGT.Text);//tutor
+                    int idTablaPersona = Convert.ToInt32(txtIdPersonaOculto.Text);
+                    logicaNegocioTutor.eliminarTutor(idPersona,idTablaPersona);//idTutor
+                    DGVTutores.DataSource = logicaNegocioTutor.listarTutores();
                 }
             }
             else

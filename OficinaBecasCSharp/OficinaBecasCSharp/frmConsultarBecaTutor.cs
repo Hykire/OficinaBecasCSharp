@@ -60,7 +60,7 @@ namespace Vista
             becaSeleccionada = (Beca)DGVConsBecaT.CurrentRow.DataBoundItem;
             txtDescripcionSelec.Text = becaSeleccionada.Descripcion.ToString();
             //txtFechaConvocatoriaSelec.Text = becaSeleccionada.FechaConvocatoria.ToString();
-            txtFechaConvocatoriaSelec.Text = "";
+            //txtFechaConvocatoriaSelec.Text = "";
             txtFinanciadorSelec.Text = becaSeleccionada.Financiador.ToString();
             txtNombreBecaSelec.Text = becaSeleccionada.Nombre_beca.ToString();
         }

@@ -44,14 +44,12 @@
             this.lblCodBecario = new System.Windows.Forms.Label();
             this.btnBuscarBecario = new System.Windows.Forms.Button();
             this.dgvBecarios = new System.Windows.Forms.DataGridView();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtCodBecario = new System.Windows.Forms.TextBox();
             this.NombreBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidosBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codPUCPBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexoBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correoBecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BecarioActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.txtCodBecario = new System.Windows.Forms.TextBox();
             this.panelConsultarBecario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCicloXBeca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecarios)).BeginInit();
@@ -221,15 +219,28 @@
             this.NombreBecario,
             this.ApellidosBecario,
             this.codPUCPBecario,
-            this.sexoBecario,
-            this.correoBecario,
-            this.BecarioActivo});
+            this.correoBecario});
             this.dgvBecarios.Location = new System.Drawing.Point(23, 96);
             this.dgvBecarios.Name = "dgvBecarios";
             this.dgvBecarios.ReadOnly = true;
             this.dgvBecarios.Size = new System.Drawing.Size(692, 200);
             this.dgvBecarios.TabIndex = 3;
             this.dgvBecarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBecarios_CellClick);
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Enabled = false;
+            this.txtApellidos.Location = new System.Drawing.Point(109, 409);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(193, 20);
+            this.txtApellidos.TabIndex = 30;
+            // 
+            // txtCodBecario
+            // 
+            this.txtCodBecario.Location = new System.Drawing.Point(23, 57);
+            this.txtCodBecario.Name = "txtCodBecario";
+            this.txtCodBecario.Size = new System.Drawing.Size(497, 20);
+            this.txtCodBecario.TabIndex = 1;
             // 
             // NombreBecario
             // 
@@ -252,41 +263,12 @@
             this.codPUCPBecario.Name = "codPUCPBecario";
             this.codPUCPBecario.ReadOnly = true;
             // 
-            // sexoBecario
-            // 
-            this.sexoBecario.DataPropertyName = "Sexo";
-            this.sexoBecario.HeaderText = "Sexo";
-            this.sexoBecario.Name = "sexoBecario";
-            this.sexoBecario.ReadOnly = true;
-            // 
             // correoBecario
             // 
             this.correoBecario.DataPropertyName = "CorreoPUCP";
             this.correoBecario.HeaderText = "Correo Electrónico";
             this.correoBecario.Name = "correoBecario";
             this.correoBecario.ReadOnly = true;
-            // 
-            // BecarioActivo
-            // 
-            this.BecarioActivo.DataPropertyName = "Estado";
-            this.BecarioActivo.HeaderText = "Activo";
-            this.BecarioActivo.Name = "BecarioActivo";
-            this.BecarioActivo.ReadOnly = true;
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.Enabled = false;
-            this.txtApellidos.Location = new System.Drawing.Point(109, 409);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(193, 20);
-            this.txtApellidos.TabIndex = 30;
-            // 
-            // txtCodBecario
-            // 
-            this.txtCodBecario.Location = new System.Drawing.Point(23, 57);
-            this.txtCodBecario.Name = "txtCodBecario";
-            this.txtCodBecario.Size = new System.Drawing.Size(497, 20);
-            this.txtCodBecario.TabIndex = 1;
             // 
             // frmConsultarBecarioT
             // 
@@ -312,12 +294,6 @@
         private System.Windows.Forms.Button btnBuscarBecario;
         private System.Windows.Forms.DataGridView dgvBecarios;
         private System.Windows.Forms.TextBox txtCodBecario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreBecario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidosBecario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codPUCPBecario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexoBecario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correoBecario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BecarioActivo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -330,5 +306,9 @@
         private System.Windows.Forms.DataGridView DGVCicloXBeca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ciclo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Beca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreBecario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidosBecario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codPUCPBecario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correoBecario;
     }
 }

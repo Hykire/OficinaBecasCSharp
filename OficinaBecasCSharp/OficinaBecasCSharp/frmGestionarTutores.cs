@@ -35,7 +35,7 @@ namespace Vista
             btnBXTVer.Enabled = false;
             DGVBXT.AutoGenerateColumns = false;
             dgvListaTutores.AutoGenerateColumns = false;
-            dgvListaTutores.DataSource = logicaNegocioTutor.listarTutores();
+            dgvListaTutores.DataSource = logicaNegocioTutor.listarTutores1();
 
             //de segunda seccion
             txtBAcod.Enabled = false;
@@ -45,7 +45,7 @@ namespace Vista
             txtBANombTutor.Enabled = false;
             txtBAApeTutor.Enabled = false;
             txtCAIdOcullto.Enabled = false;
-            dgvListaTutores.DataSource = logicaNegocioTutor.listarTutores();
+            dgvListaTutores.DataSource = logicaNegocioTutor.listarTutores1();
         }
 
         private void btnBXTAnadir_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace Vista
                 AgregarBecarioATutor frmABTXB = new AgregarBecarioATutor(TxtNombTutorBXT.Text);
                 frmABTXB.ShowDialog();
             }
-            dgvListaTutores.DataSource = logicaNegocioTutor.listarTutores();
+            dgvListaTutores.DataSource = logicaNegocioTutor.listarTutores1();
         }
 
         private void btnBuscarBecadoGBXT_Click(object sender, EventArgs e)

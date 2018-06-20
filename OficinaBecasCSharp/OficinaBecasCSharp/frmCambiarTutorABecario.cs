@@ -55,8 +55,14 @@ namespace Vista
             Becado pe = new Becado();
             pe.Id_tutor = persona.IdTutor;
             //pe.Id_persona = Convert.ToInt32(idAlum);
-
-            logicaNegocioPer.enlazarBecario2(pe,idAlum);
+            if (logicaNegocioPer.enlazarBecario2(pe, idAlum))
+            {
+                MessageBox.Show("La operación se realizó con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo realizar la operación", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             this.Dispose();
         }
     }

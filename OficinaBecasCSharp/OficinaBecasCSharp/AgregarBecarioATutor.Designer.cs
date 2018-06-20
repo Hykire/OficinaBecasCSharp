@@ -107,10 +107,12 @@
             // 
             // TxtIdOcultoB
             // 
+            this.TxtIdOcultoB.Enabled = false;
             this.TxtIdOcultoB.Location = new System.Drawing.Point(263, 64);
             this.TxtIdOcultoB.Name = "TxtIdOcultoB";
             this.TxtIdOcultoB.Size = new System.Drawing.Size(32, 20);
             this.TxtIdOcultoB.TabIndex = 7;
+            this.TxtIdOcultoB.Visible = false;
             // 
             // btnBuscarABTXB
             // 

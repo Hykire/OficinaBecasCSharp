@@ -26,14 +26,14 @@ namespace Controlador
             return accesoDatosPersona.listarBecadosXTutor(idTut);
         }
 
-        public void enlazarBecario(Tutor pe,int idbec,string ciclo)
+        public bool enlazarBecario(Tutor pe,int idbec,string ciclo)
         {
-            accesoDatosPersona.enlazarBecario(pe, idbec,ciclo);
+           return accesoDatosPersona.enlazarBecario(pe, idbec,ciclo);
         }
 
-        public void enlazarBecario2(Becado pe, string idAlum)
+        public bool enlazarBecario2(Becado pe, string idAlum)
         {
-            accesoDatosPersona.enlazarBecario2(pe, idAlum);
+            return accesoDatosPersona.enlazarBecario2(pe, idAlum);
         }
 
         public BindingList<Persona> listarPersonas(String cod)

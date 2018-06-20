@@ -10,10 +10,11 @@ namespace Modelo
     {
         private List<Cita> lstCitas;
         private int idTutor;
-
+        private string estado;
         private int idCoord;
         public Tutor() { lstCitas = new List<Cita>(); }
         public int IdTutor { get => idTutor; set => idTutor = value; }
         public int IdCoord { get => idCoord; set => idCoord = value; }
+        public string Estado1 { get => estado; set => estado = value; }
     }
 }

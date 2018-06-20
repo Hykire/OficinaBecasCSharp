@@ -38,7 +38,7 @@ namespace AccesoDatos
                     comando1.CommandText = "Y_ACTUALIZAR_CITA";
 
                     comando1.Connection = con1;
-                    comando1.Parameters.AddWithValue("fecha", cita.Fecha);
+                   // comando1.Parameters.AddWithValue("fecha", cita.Fecha);
                     comando1.Parameters.AddWithValue("hora", cita.Hora);
                     comando1.Parameters.AddWithValue("lugar", cita.Lugar);
                     comando1.Parameters.AddWithValue("obs", cita.Observacion);
@@ -147,6 +147,29 @@ namespace AccesoDatos
             }
             con.Close();
             return lista;
+        }
+
+        //Hecho por Yoluana
+        public void eliminarCita(int idCita)
+        {
+           
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                "user=inf282g6;database=inf282g6;" +
+                "port=3306;password=Nk2ewy;SslMode=none;Convert Zero DateTime=True;" +
+                "";
+           
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "Y_ELIMINAR_CITA";
+            comando.Connection = con;
+            comando.Parameters.AddWithValue("idCita", idCita);
+            comando.Connection = con;
+
+            comando.ExecuteNonQuery();
+           
+            con.Close();
         }
     }
 }

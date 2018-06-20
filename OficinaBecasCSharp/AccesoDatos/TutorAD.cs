@@ -103,7 +103,7 @@ namespace AccesoDatos
         }
 
         //Hecho por Yoluana
-        public void eliminarTutor(int idPer)
+        public void eliminarTutor(int idPer, int idTablaPersona)
         {
 
             String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
@@ -116,7 +116,8 @@ namespace AccesoDatos
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = "Y_ELIMINAR_TUTOR";
             comando.Connection = con;
-            comando.Parameters.AddWithValue("idPertut", idPer);
+            comando.Parameters.AddWithValue("idPertut", idPer);//3
+            comando.Parameters.AddWithValue("idPersona", idTablaPersona);
 
             comando.ExecuteNonQuery();
             con.Close();
@@ -138,7 +139,7 @@ namespace AccesoDatos
             {
                 comando.CommandText = "SELECT P.ID_PERSONA, P.CODIGO_PUCP, P.NOMBRES," +
                     " P.APELLIDOS, P.TELF_MOVIL, P.CORREO_PUCP, P.DNI, P.ESTADO, T.ID_TUTOR " +
-                    "FROM PERSONA P INNER JOIN TUTOR T WHERE P.ID_PERSONA = T.ID_PERSONA ";
+                    "FROM PERSONA P INNER JOIN TUTOR T WHERE P.ID_PERSONA = T.ID_PERSONA AND T.ESTADO = 'ACTIVO'";
                 comando.Connection = con;
 
             }
@@ -235,6 +236,43 @@ namespace AccesoDatos
 
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read()) {
+                // P.ID_PERSONA, P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.TELF_MOVIL, P.CORREO_PUCP, P.DNI FROM PERSONA P INNER JOIN
+                Tutor per = new Tutor();
+                per.Id_persona = reader.GetInt32("ID_PERSONA");
+                per.IdTutor = reader.GetInt32("ID_TUTOR");
+                per.CodigoPUCP = reader.GetInt32("CODIGO_PUCP");
+                per.Nombres = reader.GetString("NOMBRES");
+                per.Apellidos = reader.GetString("APELLIDOS");
+                per.TelfMovil = reader.GetInt32("TELF_MOVIL").ToString();
+                //per.Profesion = reader.GetString("profesion");
+                per.Dni = reader.GetInt32("DNI");
+                per.CorreoPUCP = reader.GetString("CORREO_PUCP");
+                per.Estado = reader.GetString("ESTADO");
+                lista.Add(per);
+            }
+            con.Close();
+            return lista;
+        }
+
+        //Hecho por Yoluana
+        public BindingList<Tutor> listarTutores1()
+        {
+            BindingList<Tutor> lista = new BindingList<Tutor>();
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                "user=inf282g6;database=inf282g6;" +
+                "port=3306;password=Nk2ewy;SslMode=none;" +
+                "";
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "Y_LISTAR_TUTORES1";
+
+            comando.Connection = con;
+
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
                 // P.ID_PERSONA, P.CODIGO_PUCP, P.NOMBRES, P.APELLIDOS, P.TELF_MOVIL, P.CORREO_PUCP, P.DNI FROM PERSONA P INNER JOIN
                 Tutor per = new Tutor();
                 per.Id_persona = reader.GetInt32("ID_PERSONA");
